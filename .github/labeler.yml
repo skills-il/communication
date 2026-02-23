@@ -1,0 +1,3 @@
+israeli-sms-gateway:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-sms-gateway/**'
