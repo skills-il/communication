@@ -1,20 +1,38 @@
 ---
 name: israeli-sms-gateway
 description: >-
-  Integrate with Israeli SMS gateway providers for business messaging, OTP,
-  and notifications. Use when user asks about sending SMS in Israel, Israeli
-  SMS providers, phone number validation (Israeli format), OTP implementation,
-  bulk SMS, or SMS marketing compliance. Covers SMS4Free, InforUMobile, and
-  international providers with Israeli support. Do NOT use for WhatsApp
-  Business API (see separate skill) or non-Israeli telecom.
+  Integrate with Israeli SMS gateway providers for business messaging, OTP, and
+  notifications. Use when user asks about sending SMS in Israel, Israeli SMS
+  providers, phone number validation (Israeli format), OTP implementation, bulk
+  SMS, or SMS marketing compliance. Covers SMS4Free, InforUMobile, and
+  international providers with Israeli support. Do NOT use for WhatsApp Business
+  API (see separate skill) or non-Israeli telecom.
 license: MIT
-allowed-tools: "Bash(python:*) WebFetch"
-compatibility: "Requires API key from chosen SMS provider. Network access required."
+allowed-tools: 'Bash(python:*) WebFetch'
+compatibility: Requires API key from chosen SMS provider. Network access required.
 metadata:
   author: skills-il
   version: 1.0.0
   category: communication
-  tags: [sms, messaging, otp, telecom, notifications, israel]
+  tags:
+    - sms
+    - messaging
+    - otp
+    - telecom
+    - notifications
+    - israel
+  display_name:
+    he: שער SMS ישראלי
+    en: Israeli Sms Gateway
+  display_description:
+    he: שליחת SMS דרך ספקים ישראליים עם תמיכה בעברית ומספרים מקומיים
+    en: >-
+      Integrate with Israeli SMS gateway providers for business messaging, OTP,
+      and notifications. Use when user asks about sending SMS in Israel, Israeli
+      SMS providers, phone number validation (Israeli format), OTP
+      implementation, bulk SMS, or SMS marketing compliance. Covers SMS4Free,
+      InforUMobile, and international providers with Israeli support. Do NOT use
+      for WhatsApp Business API (see separate skill) or non-Israeli telecom.
 ---
 
 # Israeli SMS Gateway
