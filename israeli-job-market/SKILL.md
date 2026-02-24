@@ -9,13 +9,36 @@ description: >-
   Israeli workplace culture. Do NOT use for international job markets outside
   Israel or immigration/visa work permits (see separate skill).
 license: MIT
-allowed-tools: "Bash(python:*) WebFetch"
-compatibility: "Requires network access for job platform data. No API keys needed for public job listings."
+allowed-tools: 'Bash(python:*) WebFetch'
+compatibility: >-
+  Requires network access for job platform data. No API keys needed for public
+  job listings.
 metadata:
   author: skills-il
   version: 1.0.0
   category: communication
-  tags: [jobs, employment, cv, salary, career, hebrew, israel]
+  tags:
+    - jobs
+    - employment
+    - cv
+    - salary
+    - career
+    - hebrew
+    - israel
+  display_name:
+    he: שוק העבודה הישראלי
+    en: Israeli Job Market
+  display_description:
+    he: 'חיפוש עבודה, מיטוב קורות חיים והשוואת שכר בשוק הישראלי'
+    en: >-
+      Aggregate Israeli job market data, optimize Hebrew CVs, benchmark
+      salaries, and track employment trends. Use when user asks about job
+      searching in Israel, Israeli CV writing, Hebrew resume, salary
+      expectations in Israel, AllJobs, Drushim, JobMaster, JobNet, LinkedIn
+      Israel, Israeli job interviews, or Israeli employment benefits. Covers
+      major job platforms, salary data, and Israeli workplace culture. Do NOT
+      use for international job markets outside Israel or immigration/visa work
+      permits (see separate skill).
 ---
 
 # Israeli Job Market
