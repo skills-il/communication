@@ -1,22 +1,25 @@
 # Communication Skills
 
-AI agent skills for SMS, email, and customer communication in Israel.
+AI agent skills for Israeli business communication: SMS, WhatsApp, job market, and team workflows.
 
-Part of [Skills IL](https://agentskills.co.il) — curated AI agent skills for Israeli developers.
+Part of [Skills IL](https://github.com/skills-il) — curated AI agent skills for Israeli developers.
 
 ## Skills
 
-| Skill | Description | Trust | Agents |
-|-------|-------------|-------|--------|
-| [israeli-sms-gateway](./israeli-sms-gateway/) | Send SMS via Israeli providers with Hebrew support | Trusted | Claude Code, Cursor, Copilot, Windsurf |
+| Skill | Description | Scripts | References |
+|-------|-------------|---------|------------|
+| [israeli-sms-gateway](./israeli-sms-gateway/) | Israeli SMS provider integration: SMS4Free, InforUMobile, Twilio. Phone validation, OTP, bulk messaging, compliance. | `validate_phone.py`, `send_sms.py` | -- |
+| [israeli-job-market](./israeli-job-market/) | Israeli job platforms (AllJobs, Drushim, JobMaster, LinkedIn Israel), Hebrew CV writing, salary benchmarks in NIS. | -- | 1 |
+| [israeli-whatsapp-business](./israeli-whatsapp-business/) | WhatsApp Business Cloud API for Israel: Hebrew templates, Shabbat-aware sending, anti-spam compliance, CRM integration. | `send_whatsapp.py` | -- |
+| [monday-com-workflows](./monday-com-workflows/) | Monday.com optimization for Israeli teams: Sunday-Thursday sprints, Hebrew boards, holiday-aware automations, GraphQL API. | -- | 1 |
 
 ## Install
 
 ```bash
-# Claude Code
-npx skills-il add skills-il/communication --skill israeli-sms-gateway
+# Claude Code - install a specific skill
+claude install github:skills-il/communication/israeli-sms-gateway
 
-# Or clone and use directly
+# Or clone the full repo
 git clone https://github.com/skills-il/communication.git
 ```
 
