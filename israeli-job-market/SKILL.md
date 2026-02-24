@@ -181,6 +181,11 @@ Actions:
 4. Advise on negotiation approach
 Result: Contextual salary analysis with negotiation guidance.
 
+## Bundled Resources
+
+### References
+- `references/israeli-cv-template.md` — Standard Israeli CV templates in both English and Hebrew formats with section-by-section structure, including personal details, professional summary, work experience, military service, education, skills, and languages. Covers photo guidelines, Hebrew RTL formatting notes, and Israeli hiring conventions. Consult when helping users write or optimize CVs for the Israeli job market.
+
 ## Troubleshooting
 
 ### Issue: "Job listings are all in Hebrew"

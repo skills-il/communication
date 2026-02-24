@@ -267,6 +267,11 @@ Actions:
 4. Set up tracking for open rates and responses
 Result: Compliant promotional campaign with Israeli timing.
 
+## Bundled Resources
+
+### Scripts
+- `scripts/send_whatsapp.py` — Sends WhatsApp Business messages via the Meta Cloud API for the Israeli market. Supports template messages (with language and parameter substitution) and free-form text messages within the 24-hour conversation window. Includes Israeli phone number validation and Shabbat-aware sending time checks. Run: `python scripts/send_whatsapp.py --help`
+
 ## Troubleshooting
 
 ### Error: "Template rejected"

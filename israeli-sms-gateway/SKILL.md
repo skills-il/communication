@@ -96,6 +96,12 @@ Result: Generate 6-digit code, send via SMS provider API, handle delivery confir
 User says: "Convert 054-1234567 to international format"
 Result: +972541234567
 
+## Bundled Resources
+
+### Scripts
+- `scripts/send_sms.py` — Sends SMS messages via Israeli gateway providers (SMS4Free, Twilio, InforUMobile). Supports provider selection, message delivery, and delivery status checking. Accepts credentials via CLI arguments or environment variables (SMS_API_KEY, TWILIO_ACCOUNT_SID, etc.). Run: `python scripts/send_sms.py --help`
+- `scripts/validate_phone.py` — Validates and normalizes Israeli phone numbers from any common format (local 05X, international +972, with/without dashes) to the standard +972XXXXXXXXX international format. Distinguishes mobile from landline numbers. Run: `python scripts/validate_phone.py --help`
+
 ## Troubleshooting
 
 ### Error: "Message not delivered"

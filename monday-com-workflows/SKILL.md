@@ -295,6 +295,11 @@ Actions:
 4. Optionally send notification summary
 Result: Structured list of overdue items with assignee breakdown.
 
+## Bundled Resources
+
+### References
+- `references/graphql-patterns.md` — Monday.com GraphQL API query and mutation patterns covering authentication, board/item CRUD, column value updates, group management, pagination, and webhook setup. Consult when constructing API queries for board automation, bulk item operations, or custom integrations beyond what the MCP server provides.
+
 ## Troubleshooting
 
 ### Error: "Complexity budget exceeded"
