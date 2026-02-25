@@ -81,16 +81,18 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
 ```python
 import requests
 
-def send_sms_sms4free(to: str, message: str, api_key: str, sender: str):
+def send_sms_sms4free(to: str, message: str, api_key: str,
+                      username: str, password: str, sender: str):
     url = "https://www.sms4free.co.il/ApiSMS/SendSMS"
     payload = {
         "key": api_key,
-        "user": "username",
-        "pass": "password",
+        "user": username,
+        "pass": password,
         "sender": sender,
         "recipient": to,
         "msg": message
     }
+    # NOTE: Store credentials in environment variables, not in code
     response = requests.get(url, params=payload)
     return response.text
 ```
@@ -114,11 +116,25 @@ Result: Generate 6-digit code, send via SMS provider API, handle delivery confir
 User says: "Convert 054-1234567 to international format"
 Result: +972541234567
 
+### Example 3: Bulk Marketing SMS
+User says: "Send a promotional SMS to my customer list about a holiday sale"
+Actions:
+1. Validate all phone numbers in list (normalize to +972 format)
+2. Check Robinson List compliance and opt-in status
+3. Apply Chok HaSpam rules: include sender identity, opt-out mechanism
+4. Schedule for Israeli business hours (not Shabbat/holidays)
+5. Send via bulk API with delivery tracking
+Result: Compliant bulk SMS campaign with delivery report.
+
 ## Bundled Resources
 
 ### Scripts
 - `scripts/send_sms.py` — Sends SMS messages via Israeli gateway providers (SMS4Free, Twilio, InforUMobile). Supports provider selection, message delivery, and delivery status checking. Accepts credentials via CLI arguments or environment variables (SMS_API_KEY, TWILIO_ACCOUNT_SID, etc.). Run: `python scripts/send_sms.py --help`
 - `scripts/validate_phone.py` — Validates and normalizes Israeli phone numbers from any common format (local 05X, international +972, with/without dashes) to the standard +972XXXXXXXXX international format. Distinguishes mobile from landline numbers. Run: `python scripts/validate_phone.py --help`
+
+### References
+- `references/israeli-sms-compliance.md` — Israeli anti-spam law (Chok HaSpam) requirements for SMS marketing: explicit opt-in consent rules, Robinson List (Do Not Disturb registry) lookup process, required unsubscribe mechanisms, permitted sending hours, and penalty structure for violations (up to 1,000 NIS per unsolicited message). Consult when setting up commercial SMS campaigns or verifying compliance.
+- `references/provider-api-docs.md` — API documentation summaries for Israeli SMS providers (SMS4Free, InforUMobile) and international providers with Israeli support (Twilio, Vonage), covering authentication, endpoint URLs, response codes, delivery reports, and Hebrew character encoding (GSM-7 vs. UCS-2 for Hebrew). Consult when integrating with a specific provider or troubleshooting delivery issues.
 
 ## Troubleshooting
 
@@ -129,3 +145,7 @@ Solution: Check number validation, verify API credentials, check provider dashbo
 ### Error: "Sender ID rejected"
 Cause: Custom sender IDs require pre-registration in Israel
 Solution: Register sender ID with your SMS provider. Unregistered IDs default to provider's generic number.
+
+### Error: "Hebrew characters garbled in SMS"
+Cause: Hebrew requires UCS-2 encoding which reduces SMS length from 160 to 70 characters per segment
+Solution: Use UCS-2 encoding for Hebrew messages. Note that messages over 70 Hebrew characters are split into multi-part SMS (67 chars per segment). Budget accordingly for bulk SMS costs. Some providers handle encoding automatically.

@@ -155,19 +155,19 @@ Notification: Send sprint summary to team lead
 **Recipe 3: Holiday Freeze**
 ```python
 # Israeli holidays that affect sprint planning
-israeli_holidays_2025 = [
-    ("2025-04-13", "2025-04-19", "Pesach"),
-    ("2025-06-02", "2025-06-02", "Shavuot"),
-    ("2025-09-23", "2025-09-24", "Rosh Hashana"),
-    ("2025-10-02", "2025-10-02", "Yom Kippur"),
-    ("2025-10-07", "2025-10-13", "Sukkot"),
+israeli_holidays_2026 = [
+    ("2026-04-02", "2026-04-08", "Pesach"),
+    ("2026-05-22", "2026-05-22", "Shavuot"),
+    ("2026-09-12", "2026-09-13", "Rosh Hashana"),
+    ("2026-09-21", "2026-09-21", "Yom Kippur"),
+    ("2026-09-26", "2026-10-03", "Sukkot"),
 ]
 
 def is_israeli_holiday(date_str: str) -> tuple[bool, str]:
     """Check if a date falls on an Israeli holiday."""
     from datetime import datetime
     check_date = datetime.strptime(date_str, "%Y-%m-%d").date()
-    for start, end, name in israeli_holidays_2025:
+    for start, end, name in israeli_holidays_2026:
         start_d = datetime.strptime(start, "%Y-%m-%d").date()
         end_d = datetime.strptime(end, "%Y-%m-%d").date()
         if start_d <= check_date <= end_d:
@@ -318,6 +318,9 @@ Actions:
 Result: Structured list of overdue items with assignee breakdown.
 
 ## Bundled Resources
+
+### Scripts
+- `scripts/setup_board.py` — Creates pre-configured Monday.com boards for Israeli teams via the GraphQL API: sprint boards (Sun-Thu work week), sales pipelines (Hebrew stages), and client onboarding flows. Includes holiday-aware automation setup and Hebrew column naming. Run: `python scripts/setup_board.py --help`
 
 ### References
 - `references/graphql-patterns.md` — Monday.com GraphQL API query and mutation patterns covering authentication, board/item CRUD, column value updates, group management, pagination, and webhook setup. Consult when constructing API queries for board automation, bulk item operations, or custom integrations beyond what the MCP server provides.

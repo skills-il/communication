@@ -128,16 +128,16 @@ Determine which job market service the user needs:
 israeli_salary_data = {
     "currency": "NIS (New Israeli Shekel)",
     "pay_frequency": "Monthly gross (bruto)",
-    "average_national": 12000,  # NIS/month approximate
+    "average_national": 14000,  # NIS/month approximate (CBS 2025-2026 data)
     "tech_ranges": {
-        "junior_developer": (14000, 20000),
-        "mid_developer": (20000, 32000),
-        "senior_developer": (30000, 45000),
-        "team_lead": (35000, 50000),
-        "vp_engineering": (50000, 80000),
-        "product_manager": (22000, 40000),
-        "data_scientist": (22000, 42000),
-        "devops_engineer": (22000, 38000),
+        "junior_developer": (16000, 23000),
+        "mid_developer": (23000, 35000),
+        "senior_developer": (33000, 50000),
+        "team_lead": (38000, 55000),
+        "vp_engineering": (55000, 85000),
+        "product_manager": (25000, 45000),
+        "data_scientist": (25000, 48000),
+        "devops_engineer": (25000, 42000),
     },
     "benefits_value": {
         "pension": "6.5% employer contribution (mandatory)",
@@ -183,7 +183,7 @@ Actions:
 1. Recommend LinkedIn Israel + Drushim for tech roles
 2. Suggest search terms: "Python developer", "Backend developer", "Senior developer"
 3. Filter: Gush Dan region, 5+ years experience
-4. Provide salary range: 30,000-42,000 NIS/month for senior Python
+4. Provide salary range: 33,000-50,000 NIS/month for senior Python
 Result: Curated platform recommendations with salary context.
 
 ### Example 2: CV Review
@@ -205,6 +205,9 @@ Actions:
 Result: Contextual salary analysis with negotiation guidance.
 
 ## Bundled Resources
+
+### Scripts
+- `scripts/salary_calculator.py` — Estimates Israeli salary ranges by role, industry, and experience level, computes gross-to-net approximation for job offers, and compares benefits packages (pension, keren hishtalmut, vacation days) against Israeli labor law minimums. Run: `python scripts/salary_calculator.py --help`
 
 ### References
 - `references/israeli-cv-template.md` — Standard Israeli CV templates in both English and Hebrew formats with section-by-section structure, including personal details, professional summary, work experience, military service, education, skills, and languages. Covers photo guidelines, Hebrew RTL formatting notes, and Israeli hiring conventions. Consult when helping users write or optimize CVs for the Israeli job market.

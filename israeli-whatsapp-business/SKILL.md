@@ -58,7 +58,7 @@ import requests
 
 def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
     """Verify WhatsApp Business API access."""
-    url = f"https://graph.facebook.com/v18.0/{phone_number_id}"
+    url = f"https://graph.facebook.com/v21.0/{phone_number_id}"
     headers = {"Authorization": f"Bearer {access_token}"}
     response = requests.get(url, headers=headers)
     return response.json()
@@ -81,7 +81,7 @@ def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
 ```python
 def create_template(waba_id: str, access_token: str, template: dict):
     """Create a WhatsApp message template."""
-    url = f"https://graph.facebook.com/v18.0/{waba_id}/message_templates"
+    url = f"https://graph.facebook.com/v21.0/{waba_id}/message_templates"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -99,7 +99,7 @@ appointment_template = {
             "type": "BODY",
             "text": "Shalom {{1}},\nReminder: appointment at {{2}} on {{3}} at {{4}}.\nConfirm reply 1, Cancel reply 2.",
             "example": {
-                "body_text": [["Israel", "Dr. Cohen Dental Clinic", "15.03.2025", "10:00"]]
+                "body_text": [["Israel", "Dr. Cohen Dental Clinic", "15.03.2026", "10:00"]]
             }
         },
         {
@@ -121,7 +121,7 @@ def send_template_message(phone_number_id: str, access_token: str,
                           to: str, template_name: str, language: str,
                           parameters: list):
     """Send a WhatsApp template message."""
-    url = f"https://graph.facebook.com/v18.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v21.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -153,7 +153,7 @@ send_template_message(
     to="972541234567",
     template_name="appointment_reminder_he",
     language="he",
-    parameters=["Israel", "Dental Clinic", "15.03.2025", "10:00"]
+    parameters=["Israel", "Dental Clinic", "15.03.2026", "10:00"]
 )
 ```
 
@@ -162,7 +162,7 @@ send_template_message(
 def send_interactive_list(phone_number_id: str, access_token: str,
                           to: str, body_text: str, sections: list):
     """Send an interactive list message in Hebrew."""
-    url = f"https://graph.facebook.com/v18.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v21.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -294,6 +294,10 @@ Result: Compliant promotional campaign with Israeli timing.
 
 ### Scripts
 - `scripts/send_whatsapp.py` — Sends WhatsApp Business messages via the Meta Cloud API for the Israeli market. Supports template messages (with language and parameter substitution) and free-form text messages within the 24-hour conversation window. Includes Israeli phone number validation and Shabbat-aware sending time checks. Run: `python scripts/send_whatsapp.py --help`
+
+### References
+- `references/whatsapp-api-guide.md` — Meta WhatsApp Business Cloud API reference covering authentication, API versioning, rate limits, template submission guidelines, and message types (text, media, interactive, location). Consult when constructing API requests, troubleshooting template rejections, or handling webhook events.
+- `references/israeli-messaging-compliance.md` — Israeli anti-spam law (Chok HaSpam, Amendment 40 to the Communications Law) requirements for commercial messaging: opt-in consent rules, unsubscribe mechanisms, Robinson List (Do Not Disturb registry) checking, permitted sending hours, and penalties for violations. Consult when setting up marketing campaigns or verifying compliance.
 
 ## Troubleshooting
 
