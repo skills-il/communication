@@ -39,6 +39,14 @@ metadata:
       with Israeli team best practices including Sunday-Thursday work week,
       Hebrew boards, and holiday-aware scheduling. Do NOT use for other project
       management tools (Jira, Asana, etc.).
+  supported_agents:
+    - claude-code
+    - cursor
+    - github-copilot
+    - windsurf
+    - opencode
+    - codex
+    - openclaw
 ---
 
 # Monday.com Workflows
