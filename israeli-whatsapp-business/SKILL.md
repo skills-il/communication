@@ -19,13 +19,22 @@ metadata:
   version: 1.0.0
   category: communication
   tags:
-    - whatsapp
-    - messaging
-    - business
-    - crm
-    - hebrew
-    - marketing
-    - israel
+    he:
+      - ווטסאפ
+      - הודעות
+      - עסק
+      - ניהול-לקוחות
+      - עברית
+      - שיווק
+      - ישראל
+    en:
+      - whatsapp
+      - messaging
+      - business
+      - crm
+      - hebrew
+      - marketing
+      - israel
   display_name:
     he: וואטסאפ עסקי ישראלי
     en: Israeli Whatsapp Business
