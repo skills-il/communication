@@ -40,6 +40,14 @@ metadata:
       Covers Cloud API setup, template creation, compliance with Israeli
       anti-spam law, and Israeli consumer communication preferences. Do NOT use
       for personal WhatsApp or non-Israeli WhatsApp markets.
+  supported_agents:
+    - claude-code
+    - cursor
+    - github-copilot
+    - windsurf
+    - opencode
+    - codex
+    - openclaw
 ---
 
 # Israeli WhatsApp Business
