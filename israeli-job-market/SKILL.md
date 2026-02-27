@@ -18,13 +18,22 @@ metadata:
   version: 1.0.0
   category: communication
   tags:
-    - jobs
-    - employment
-    - cv
-    - salary
-    - career
-    - hebrew
-    - israel
+    he:
+      - משרות
+      - תעסוקה
+      - קורות-חיים
+      - משכורת
+      - קריירה
+      - עברית
+      - ישראל
+    en:
+      - jobs
+      - employment
+      - cv
+      - salary
+      - career
+      - hebrew
+      - israel
   display_name:
     he: שוק העבודה הישראלי
     en: Israeli Job Market
