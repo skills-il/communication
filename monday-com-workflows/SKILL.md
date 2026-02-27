@@ -46,7 +46,6 @@ metadata:
     - windsurf
     - opencode
     - codex
-    - openclaw
 ---
 
 # Monday.com Workflows
