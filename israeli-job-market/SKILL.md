@@ -39,6 +39,14 @@ metadata:
       major job platforms, salary data, and Israeli workplace culture. Do NOT
       use for international job markets outside Israel or immigration/visa work
       permits (see separate skill).
+  supported_agents:
+    - claude-code
+    - cursor
+    - github-copilot
+    - windsurf
+    - opencode
+    - codex
+    - openclaw
 ---
 
 # Israeli Job Market
