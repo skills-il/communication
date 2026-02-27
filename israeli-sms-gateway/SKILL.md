@@ -33,6 +33,14 @@ metadata:
       implementation, bulk SMS, or SMS marketing compliance. Covers SMS4Free,
       InforUMobile, and international providers with Israeli support. Do NOT use
       for WhatsApp Business API (see separate skill) or non-Israeli telecom.
+  supported_agents:
+    - claude-code
+    - cursor
+    - github-copilot
+    - windsurf
+    - opencode
+    - codex
+    - openclaw
 ---
 
 # Israeli SMS Gateway
