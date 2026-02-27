@@ -18,12 +18,20 @@ metadata:
   version: 1.0.0
   category: communication
   tags:
-    - monday
-    - project-management
-    - workflow
-    - automation
-    - teams
-    - israel
+    he:
+      - Monday
+      - ניהול-פרויקטים
+      - תהליך-עבודה
+      - אוטומציה
+      - צוותות
+      - ישראל
+    en:
+      - monday
+      - project-management
+      - workflow
+      - automation
+      - teams
+      - israel
   mcp-server: mondaycom/mcp
   display_name:
     he: תהליכי עבודה ב-Monday
