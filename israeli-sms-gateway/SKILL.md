@@ -15,12 +15,20 @@ metadata:
   version: 1.0.0
   category: communication
   tags:
-    - sms
-    - messaging
-    - otp
-    - telecom
-    - notifications
-    - israel
+    he:
+      - הודעות-טקסט
+      - הודעות
+      - OTP
+      - טלקום
+      - התראות
+      - ישראל
+    en:
+      - sms
+      - messaging
+      - otp
+      - telecom
+      - notifications
+      - israel
   display_name:
     he: שער SMS ישראלי
     en: Israeli Sms Gateway
