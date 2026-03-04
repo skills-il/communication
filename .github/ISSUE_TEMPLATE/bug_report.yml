@@ -8,7 +8,12 @@ body:
     attributes:
       label: Which skill?
       options:
+        - israeli-email-compliance
+        - israeli-job-market
         - israeli-sms-gateway
+        - israeli-whatsapp-automation
+        - israeli-whatsapp-business
+        - monday-com-workflows
         - Other
     validations:
       required: true

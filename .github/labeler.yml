@@ -1,3 +1,23 @@
+israeli-email-compliance:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-email-compliance/**'
+
+israeli-job-market:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-job-market/**'
+
 israeli-sms-gateway:
   - changed-files:
     - any-glob-to-any-file: 'israeli-sms-gateway/**'
+
+israeli-whatsapp-automation:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-whatsapp-automation/**'
+
+israeli-whatsapp-business:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-whatsapp-business/**'
+
+monday-com-workflows:
+  - changed-files:
+    - any-glob-to-any-file: 'monday-com-workflows/**'
