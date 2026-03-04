@@ -97,7 +97,7 @@ israeli_salary_data = {
         "devops_engineer": (22000, 38000),
     },
     "benefits_value": {
-        "pension": "6.5% employer contribution (mandatory)",
+        "pension": "6% employee + 6.5% employer (mandatory)",
         "keren_hishtalmut": "7.5% employer (2.5% employee) -- tax-free savings",
         "vacation_days": "12-20 days/year depending on seniority",
         "sick_days": "18 days/year (accumulate)",
@@ -178,4 +178,4 @@ israeli_salary_data = {
 
 ### בעיה: "השכר נראה נמוך בהשוואה לארה"ב"
 סיבה: שכר ישראלי נמוך יותר במונחים מוחלטים אך כולל הטבות חובה
-פתרון: חשבו תגמול כולל הכולל פנסיה (6.5%), קרן השתלמות (7.5%) והטבות נוספות. קחו בחשבון גם עלויות בריאות נמוכות יותר ויוקר מחיה שונה.
+פתרון: חשבו תגמול כולל הכולל פנסיה (6% עובד + 6.5% מעסיק), קרן השתלמות (7.5%) והטבות נוספות. קחו בחשבון גם עלויות בריאות נמוכות יותר ויוקר מחיה שונה.

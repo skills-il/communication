@@ -156,7 +156,7 @@ israeli_salary_data = {
         "devops_engineer": (25000, 42000),
     },
     "benefits_value": {
-        "pension": "6.5% employer contribution (mandatory)",
+        "pension": "6% employee + 6.5% employer (mandatory)",
         "keren_hishtalmut": "7.5% employer (2.5% employee) -- tax-free savings",
         "vacation_days": "12-20 days/year depending on seniority",
         "sick_days": "18 days/year (accumulate)",
@@ -240,4 +240,4 @@ Solution: Use LinkedIn connections, attend meetups (Meetup.com Israel), ask for 
 
 ### Issue: "Salary seems low compared to US"
 Cause: Israeli salaries are lower in absolute terms but include mandatory benefits
-Solution: Calculate total compensation including pension (6.5%), Keren Hishtalmut (7.5%), and other benefits. Also factor in lower healthcare costs and different cost of living.
+Solution: Calculate total compensation including pension (6% employee + 6.5% employer), Keren Hishtalmut (7.5%), and other benefits. Also factor in lower healthcare costs and different cost of living.
