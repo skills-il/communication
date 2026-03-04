@@ -3,7 +3,7 @@
 
 Usage:
     python send_sms.py --provider sms4free --to 054-1234567 --message "Hello" \
-        --api-key YOUR_KEY --user YOUR_USER --password YOUR_PASS --sender MySender
+        --api-key YOUR_KEY --user YOUR_USER --pass-key YOUR_PASS --sender MySender
 
     python send_sms.py --provider twilio --to 054-1234567 --message "Hello" \
         --account-sid YOUR_SID --auth-token YOUR_TOKEN --from-number +972XXXXXXX
@@ -12,7 +12,7 @@ Environment variables (alternative to CLI args):
     SMS_PROVIDER        Provider name (sms4free, twilio, inforu)
     SMS_API_KEY         API key for the provider
     SMS_USER            Username (sms4free)
-    SMS_PASSWORD        Password (sms4free)
+    SMS_PASS_KEY        Pass key (sms4free)
     SMS_SENDER          Sender ID
     TWILIO_ACCOUNT_SID  Twilio Account SID
     TWILIO_AUTH_TOKEN   Twilio Auth Token
@@ -50,7 +50,7 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
 
 
 def send_sms4free(to: str, message: str, api_key: str, user: str,
-                  password: str, sender: str) -> dict:
+                  pass_key: str, sender: str) -> dict:
     """Send SMS via SMS4Free (sms4free.co.il).
 
     Args:
@@ -58,7 +58,7 @@ def send_sms4free(to: str, message: str, api_key: str, user: str,
         message: Message text (Hebrew supported).
         api_key: SMS4Free API key.
         user: SMS4Free username.
-        password: SMS4Free password.
+        pass_key: SMS4Free pass key.
         sender: Sender ID (must be registered).
 
     Returns:
@@ -68,7 +68,7 @@ def send_sms4free(to: str, message: str, api_key: str, user: str,
     params = {
         "key": api_key,
         "user": user,
-        "pass": password,
+        "pass": pass_key,
         "sender": sender,
         "recipient": to.replace('+', ''),
         "msg": message
@@ -188,8 +188,8 @@ def main():
                         help="API key for the provider")
     parser.add_argument("--user", default=os.environ.get("SMS_USER"),
                         help="Username (sms4free)")
-    parser.add_argument("--password", default=os.environ.get("SMS_PASSWORD"),
-                        help="Password (sms4free)")
+    parser.add_argument("--pass-key", default=os.environ.get("SMS_PASS_KEY"),
+                        help="Pass key (sms4free)")
     parser.add_argument("--sender", default=os.environ.get("SMS_SENDER"),
                         help="Sender ID")
 
@@ -213,11 +213,11 @@ def main():
 
     # Send based on provider
     if args.provider == "sms4free":
-        if not all([args.api_key, args.user, args.password, args.sender]):
+        if not all([args.api_key, args.user, args.pass_key, args.sender]):
             print("Error: sms4free requires --api-key, --user, --password, --sender")
             sys.exit(1)
         result = send_sms4free(normalized, args.message, args.api_key,
-                               args.user, args.password, args.sender)
+                               args.user, args.pass_key, args.sender)
 
     elif args.provider == "twilio":
         if not all([args.account_sid, args.auth_token, args.from_number]):

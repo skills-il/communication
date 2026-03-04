@@ -97,12 +97,12 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
 import requests
 
 def send_sms_sms4free(to: str, message: str, api_key: str,
-                      username: str, password: str, sender: str):
+                      username: str, pass_key: str, sender: str):
     url = "https://www.sms4free.co.il/ApiSMS/SendSMS"
     payload = {
         "key": api_key,
         "user": username,
-        "pass": password,
+        "pass": pass_key,
         "sender": sender,
         "recipient": to,
         "msg": message
