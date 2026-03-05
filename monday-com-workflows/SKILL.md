@@ -54,6 +54,7 @@ metadata:
     - windsurf
     - opencode
     - codex
+    - antigravity
 ---
 
 # Monday.com Workflows
