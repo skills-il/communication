@@ -21,7 +21,7 @@ import sys
 from decimal import Decimal, ROUND_HALF_UP
 
 # Current Israeli VAT rate (as of 2026)
-VAT_RATE = Decimal("0.17")
+VAT_RATE = Decimal("0.18")
 
 
 def format_shekel(amount: Decimal, include_symbol: bool = True) -> str:
@@ -93,7 +93,7 @@ def main():
     )
     parser.add_argument("amount", type=str, help="Amount to format (number)")
     parser.add_argument(
-        "--vat", action="store_true", help="Include VAT (17%%) breakdown"
+        "--vat", action="store_true", help="Include VAT (18%%) breakdown"
     )
     parser.add_argument(
         "--terms",
@@ -139,7 +139,7 @@ def main():
         if args.vat:
             vat_info = calculate_vat(amount)
             print(f'סכום: {format_shekel(vat_info["base"])} (לא כולל מע"מ)')
-            print(f'מע"מ (17%): {format_shekel(vat_info["vat"])}')
+            print(f'מע"מ (18%): {format_shekel(vat_info["vat"])}')
             print(f'סה"כ: {format_shekel(vat_info["total"])} (כולל מע"מ)')
         else:
             print(format_shekel(amount))

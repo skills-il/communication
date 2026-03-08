@@ -116,7 +116,7 @@ gws gmail send \
 - Use the Shekel symbol: ש"ח (Shekel Chadash)
 - Format: `15,000 ש"ח` (comma-separated thousands, symbol after amount)
 - For VAT: specify `לא כולל מע"מ` (excluding VAT) or `כולל מע"מ` (including VAT)
-- VAT rate reference: 17% (current Israeli VAT rate)
+- VAT rate reference: 18% (current Israeli VAT rate)
 
 ### Step 3: Payment Reminder Email Sequences
 
