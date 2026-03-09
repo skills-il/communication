@@ -15,7 +15,7 @@ compatibility: >-
   User must authenticate via gws auth login with a Google Workspace or Gmail account.
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
-  author: choroshin
+  author: skills-il
   version: 1.0.0
   category: communication
   tags:
