@@ -1,15 +1,15 @@
 ---
 name: gws-hebrew-email-automation
 description: >-
-  Gmail automation for Israeli freelancers using the Google Workspace CLI (gws).
-  Use when user asks to draft Hebrew client emails, send payment reminders in Shekels,
-  triage inbox with Hebrew labels, set up Gmail filters for Israeli services, or
-  schedule emails respecting Israeli business hours. Key capabilities include bilingual
-  email drafting, payment reminder sequences with ILS amounts, Hebrew-aware inbox triage,
+  Gmail automation for Israeli freelancers using the Google Workspace CLI (gws). Use
+  when user asks to draft Hebrew client emails, send payment reminders in Shekels,
+  triage inbox with Hebrew labels, set up Gmail filters for Israeli services, or schedule
+  emails respecting Israeli business hours. Key capabilities include bilingual email
+  drafting, payment reminder sequences with ILS amounts, Hebrew-aware inbox triage,
   and Shabbat-aware send scheduling. Do NOT use for non-Gmail email providers, Microsoft
   Outlook automation, or CRM-level contact management.
 license: MIT
-allowed-tools: 'Bash(gws:*) Bash(npx:*) Bash(npm:*) WebFetch Read Write Edit'
+allowed-tools: Bash(gws:*) Bash(npx:*) Bash(npm:*) WebFetch Read Write Edit
 compatibility: >-
   Requires Node.js 18+ and the Google Workspace CLI (npm install -g @google/gws).
   User must authenticate via gws auth login with a Google Workspace or Gmail account.
@@ -20,37 +20,43 @@ metadata:
   category: communication
   tags:
     he:
-      - גוגל-וורקספייס
-      - ג'ימייל
-      - אוטומציית-מייל
-      - מייל-בעברית
-      - פרילנסר
-      - חיוב
+    - גוגל-וורקספייס
+    - ג'ימייל
+    - אוטומציית-מייל
+    - מייל-בעברית
+    - פרילנסר
+    - חיוב
     en:
-      - google-workspace
-      - gmail
-      - email-automation
-      - hebrew-email
-      - freelancer
-      - billing
+    - google-workspace
+    - gmail
+    - email-automation
+    - hebrew-email
+    - freelancer
+    - billing
   display_name:
-    he: "אוטומציית מייל בעברית עם GWS"
-    en: "GWS Hebrew Email Automation"
+    he: אוטומציית מייל בעברית עם GWS
+    en: GWS Hebrew Email Automation
   display_description:
     he: >-
       אוטומציית תהליכי ג'ימייל לפרילנסרים ישראלים באמצעות Google Workspace CLI --
       מיילים דו-לשוניים, תזכורות תשלום, מיון תיבת דואר בעברית ותזמון מותאם שבת.
     en: >-
-      Automate Gmail workflows for Israeli freelancers using the Google Workspace CLI --
-      bilingual emails, payment reminders, Hebrew inbox triage, and Shabbat-aware scheduling.
+      Gmail automation for Israeli freelancers using the Google Workspace CLI (gws).
+      Use when user asks to draft Hebrew client emails, send payment reminders in
+      Shekels, triage inbox with Hebrew labels, set up Gmail filters for Israeli services,
+      or schedule emails respecting Israeli business hours. Key capabilities include
+      bilingual email drafting, payment reminder sequences with ILS amounts, Hebrew-aware
+      inbox triage, and Shabbat-aware send scheduling. Do NOT use for non-Gmail email
+      providers, Microsoft Outlook automation, or CRM-level contact management.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
 ---
+
 
 # GWS Hebrew Email Automation
 
