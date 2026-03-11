@@ -1,14 +1,13 @@
 ---
 name: israeli-telecom-comparator
 description: >-
-  Compare cellular plans, internet packages, TV bundles, and triple deals across
-  all Israeli telecom providers including Partner, Cellcom, Pelephone, HOT, Golan
-  Telecom, Bezeq, Yes, and MVNOs. Use when a user needs to find the best telecom
-  deal, switch carriers, compare 5G or fiber plans, evaluate family packages, or
-  understand number portability in Israel. Covers eSIM support, contract vs.
-  no-contract options, international roaming, and negotiation tips. Do NOT use for
-  enterprise or business-grade telecom solutions, VoIP/SIP trunk setup, or network
-  infrastructure engineering.
+  Compare cellular plans, internet packages, TV bundles, and triple deals across all
+  Israeli telecom providers including Partner, Cellcom, Pelephone, HOT, Golan Telecom,
+  Bezeq, Yes, and MVNOs. Use when a user needs to find the best telecom deal, switch
+  carriers, compare 5G or fiber plans, evaluate family packages, or understand number
+  portability in Israel. Covers eSIM support, contract vs. no-contract options, international
+  roaming, and negotiation tips. Do NOT use for enterprise or business-grade telecom
+  solutions, VoIP/SIP trunk setup, or network infrastructure engineering.
 license: MIT
 metadata:
   author: skills-il
@@ -16,33 +15,43 @@ metadata:
   category: communication
   tags:
     he:
-      - סלולר
-      - אינטרנט
-      - טלוויזיה
-      - חבילות
-      - השוואת מחירים
-      - תקשורת
+    - סלולר
+    - אינטרנט
+    - טלוויזיה
+    - חבילות
+    - השוואת מחירים
+    - תקשורת
     en:
-      - cellular
-      - internet
-      - television
-      - packages
-      - price-comparison
-      - telecom
+    - cellular
+    - internet
+    - television
+    - packages
+    - price-comparison
+    - telecom
   display_name:
-    he: "השוואת חבילות תקשורת בישראל"
-    en: "Israeli Telecom Comparator"
+    he: השוואת חבילות תקשורת בישראל
+    en: Israeli Telecom Comparator
   display_description:
-    he: "השוואת חבילות סלולר, אינטרנט, טלוויזיה וחבילות משולבות בין כל ספקי התקשורת בישראל"
-    en: "Compare cellular, internet, TV, and bundled packages across all Israeli telecom providers"
+    he: >-
+      השוואת חבילות סלולר, אינטרנט, טלוויזיה וחבילות משולבות בין כל ספקי התקשורת בישראל
+    en: >-
+      Compare cellular plans, internet packages, TV bundles, and triple deals across
+      all Israeli telecom providers including Partner, Cellcom, Pelephone, HOT, Golan
+      Telecom, Bezeq, Yes, and MVNOs. Use when a user needs to find the best telecom
+      deal, switch carriers, compare 5G or fiber plans, evaluate family packages,
+      or understand number portability in Israel. Covers eSIM support, contract vs.
+      no-contract options, international roaming, and negotiation tips. Do NOT use
+      for enterprise or business-grade telecom solutions, VoIP/SIP trunk setup, or
+      network infrastructure engineering.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
 ---
+
 
 # Israeli Telecom Comparator
 
