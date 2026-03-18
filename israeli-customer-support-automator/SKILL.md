@@ -17,7 +17,7 @@ compatibility: >-
   Python 3.9+ required for the classifier script. Works with Claude Code, Claude.ai, Cursor.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -493,6 +493,14 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 ### References
 - `references/consumer-protection-law.md` -- Key provisions of the Israeli Consumer Protection Law 1981. Covers cooling-off periods, return policies, cancellation fees, warranty obligations, and complaint handling requirements. Consult when handling returns, complaints, or any dispute involving consumer rights.
 - `references/hebrew-response-templates.md` -- Ready-to-use Hebrew canned responses for common support scenarios. Includes templates for acknowledgment, refund processing, return instructions, issue resolution, escalation notices, and satisfaction surveys. Consult when creating or customizing support response templates.
+
+## Gotchas
+
+- The 14-day cooling-off period in Israel starts from the delivery date or the date the consumer received the contract terms, whichever is later. Agents may calculate it from the purchase date.
+- SLA timers must account for the Israeli work week (Sunday-Thursday). A ticket opened on Friday afternoon should not start its SLA clock until Sunday 08:30.
+- The Hebrew word for "complaint" (תלונה) and "query" (שאילתה) are often confused by text classifiers. Auto-categorization should weight escalation keywords like "עורך דין" (lawyer) and "בית משפט" (court) heavily.
+- Israeli Consumer Protection Law allows a maximum cancellation fee of 5% or 100 NIS, whichever is lower. Agents may use 5% without the 100 NIS cap, overcharging on small transactions.
+- WhatsApp has over 90% adoption in Israel and is the preferred support channel. Agents may default to email-first support strategies that don't match Israeli consumer expectations.
 
 ## Troubleshooting
 

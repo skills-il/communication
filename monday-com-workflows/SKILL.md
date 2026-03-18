@@ -15,7 +15,7 @@ compatibility: >-
   Monday.com API token.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -340,6 +340,14 @@ Result: Structured list of overdue items with assignee breakdown.
 
 ### References
 - `references/graphql-patterns.md` — Monday.com GraphQL API query and mutation patterns covering authentication, board/item CRUD, column value updates, group management, pagination, and webhook setup. Consult when constructing API queries for board automation, bulk item operations, or custom integrations beyond what the MCP server provides.
+
+## Gotchas
+
+- Monday.com sprint planning must use the Israeli work week (Sunday-Thursday). Agents may generate sprint cycles based on Monday-Friday, causing misaligned deadlines and capacity calculations.
+- Hebrew column names in Monday.com boards are stored as RTL text. API queries using column names must match the exact Hebrew string including any spaces or punctuation.
+- Monday.com automations triggered by date columns do not account for Israeli holidays by default. Agents must add holiday exceptions manually or the automation will fire on Rosh Hashana, Yom Kippur, etc.
+- Israeli teams on Monday.com commonly use a Sunday standup pattern. Agents may set up Monday standup automations that miss the first day of the Israeli work week.
+- Monday.com's timezone setting must be set to Asia/Jerusalem (UTC+2/+3) for Israeli teams. Agents may default to UTC, causing automations to trigger at wrong times.
 
 ## Troubleshooting
 

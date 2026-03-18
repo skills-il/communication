@@ -11,7 +11,7 @@ description: >-
 license: MIT
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -262,6 +262,14 @@ Actions:
 5. Explain that the user can keep their physical SIM from one carrier and add an eSIM from another (dual SIM capability)
 
 Result: Recommend Partner, Cellcom, or Pelephone for 5G + eSIM. Check coverage maps for the user's specific area. eSIM activation is done through the carrier's mobile app and takes about 15 minutes.
+
+## Gotchas
+
+- Israeli telecom plans change frequently (monthly promotions). Agents with static training data may recommend plans or prices that no longer exist. Always verify current pricing.
+- Number portability (niud mispar) in Israel takes 1-3 business days by law. Agents may cite longer timelines from other countries.
+- Golan Telecom disrupted the Israeli market in 2012 with low-cost plans, but their plan structures have changed significantly since. Agents may reference outdated Golan pricing as a benchmark.
+- Israeli telecom contracts distinguish between "commitment" (hitkashrut) and "no-commitment" (lelo hitkashrut) plans. Agents may not flag early termination fees that apply to commitment plans.
+- Triple deals (telecom + internet + TV) in Israel often bundle from different providers (e.g., HOT internet + Partner cellular). Agents may assume all services come from a single provider.
 
 ## Troubleshooting
 

@@ -16,7 +16,7 @@ compatibility: >-
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -361,6 +361,14 @@ Result: Email scheduled for Sunday morning, respecting Erev Shabbat. User inform
 ### References
 - `references/israeli-business-email-templates.md` -- Collection of Hebrew email templates for common freelancer scenarios: quotes, invoices, follow-ups, project updates. Consult when drafting professional Hebrew emails for Israeli clients.
 - `references/gws-gmail-commands.md` -- Quick reference for Google Workspace CLI gmail subcommands, flags, and output formats. Consult when constructing gws commands or troubleshooting CLI errors.
+
+## Gotchas
+
+- Israeli business days are Sunday through Thursday, not Monday through Friday. Agents may schedule emails for Saturday or assume Friday is a full workday.
+- Shekel amounts should be written as "15,000 ש"ח" (symbol after the number), not "₪15,000" (symbol before). Agents may use the currency symbol placement conventions of USD/EUR.
+- Israeli invoice dates use DD.MM.YYYY format (dot-separated), not DD/MM/YYYY or MM/DD/YYYY. Agents may generate invoices with the wrong date format.
+- The standard Israeli payment term is "שוטף + 30" (shotef plus 30), meaning net 30 from end of current month. Agents may interpret this as simply net 30 from invoice date.
+- Hebrew email subjects must be concise (under 50 characters) because RTL text in email clients often gets truncated differently than LTR text.
 
 ## Troubleshooting
 

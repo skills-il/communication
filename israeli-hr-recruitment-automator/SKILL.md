@@ -20,7 +20,7 @@ compatibility: >-
   Python 3.9+ required for helper scripts. Works with Claude Code, Claude.ai, Cursor.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -381,6 +381,14 @@ Result: Job posted on both platforms with tracking details.
 ### References
 - `references/anti-discrimination-law.md` -- Summary of the Equal Employment Opportunities Law 1988 (chok shivyon hizdamnuyot ba'avoda). Lists all protected characteristics, permitted exceptions, enforcement mechanisms, and penalties. Consult when writing job descriptions or screening criteria.
 - `references/mandatory-benefits.md` -- Complete table of mandatory employment benefits in Israel for 2026. Includes pension rates, keren hishtalmut, vacation days by seniority, sick days, convalescence pay, overtime rules, and notice periods. Consult when drafting offer letters or employment terms.
+
+## Gotchas
+
+- Israeli job descriptions must use gender-inclusive Hebrew (e.g., "מפתח/ת" not "מפתח"). The Equal Employment Opportunities Law 1988 prohibits gender-specific job postings. Agents may generate masculine-only Hebrew forms.
+- Military service type and unit (e.g., 8200, Mamram) must never be used as screening criteria, even though they appear on most Israeli resumes. Filtering by unit violates anti-discrimination law.
+- Pension contributions in Israel are mandatory from day 1 (or after 6 months for first-time employees). The minimum is 6% employee + 6.5% employer. Agents may use outdated lower rates from pre-2017 regulations.
+- Section 14 (Siman 14) waiver is standard in Israeli tech but must be explicitly stated in the offer letter. Without it, employers owe full severance on top of pension contributions. Agents may omit this critical clause.
+- Israeli convalescence pay (dmei havra'a) is a mandatory annual benefit with a fixed per-day rate (updated yearly). Agents unfamiliar with Israeli labor law may omit it entirely from offer letters.
 
 ## Troubleshooting
 

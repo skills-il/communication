@@ -12,7 +12,7 @@ allowed-tools: 'Bash(python:*) WebFetch'
 compatibility: Requires API key from chosen SMS provider. Network access required.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -151,6 +151,14 @@ Result: Compliant bulk SMS campaign with delivery report.
 ### References
 - `references/israeli-sms-compliance.md` — Israeli anti-spam law (Chok HaSpam) requirements for SMS marketing: explicit opt-in consent rules, Robinson List (Do Not Disturb registry) lookup process, required unsubscribe mechanisms, permitted sending hours, and penalty structure for violations (up to 1,000 NIS per unsolicited message). Consult when setting up commercial SMS campaigns or verifying compliance.
 - `references/provider-api-docs.md` — API documentation summaries for Israeli SMS providers (SMS4Free, InforUMobile) and international providers with Israeli support (Twilio, Vonage), covering authentication, endpoint URLs, response codes, delivery reports, and Hebrew character encoding (GSM-7 vs. UCS-2 for Hebrew). Consult when integrating with a specific provider or troubleshooting delivery issues.
+
+## Gotchas
+
+- Israeli mobile numbers start with 05x (10 digits total: 05X-XXXXXXX). Agents may validate against US 10-digit formats or miss the leading zero when using the +972 prefix (should be +9725XXXXXXXX, dropping the 0).
+- Israel has strict anti-spam laws (Amendment 40 to the Communications Law). Sending unsolicited SMS requires prior explicit opt-in consent, not just opt-out. Agents may recommend opt-out-based flows that violate Israeli law.
+- Israeli SMS providers (SMS4Free, InforUMobile, Cellact) use different API formats than international providers like Twilio. Agents may generate Twilio-compatible code that does not work with Israeli providers.
+- Hebrew SMS messages are limited to 70 characters per segment (vs 160 for Latin). Agents may not account for this when composing messages, resulting in unexpected multi-part SMS costs.
+- Sending SMS on Shabbat (Friday evening to Saturday evening) is considered poor practice for B2C in Israel and may result in customer complaints or opt-outs.
 
 ## Troubleshooting
 

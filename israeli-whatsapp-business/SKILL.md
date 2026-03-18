@@ -16,7 +16,7 @@ compatibility: >-
   access required.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -315,6 +315,14 @@ Result: Compliant promotional campaign with Israeli timing.
 ### References
 - `references/whatsapp-api-guide.md` — Meta WhatsApp Business Cloud API reference covering authentication, API versioning, rate limits, template submission guidelines, and message types (text, media, interactive, location). Consult when constructing API requests, troubleshooting template rejections, or handling webhook events.
 - `references/israeli-messaging-compliance.md` — Israeli anti-spam law (Chok HaSpam, Amendment 40 to the Communications Law) requirements for commercial messaging: opt-in consent rules, unsubscribe mechanisms, Robinson List (Do Not Disturb registry) checking, permitted sending hours, and penalties for violations. Consult when setting up marketing campaigns or verifying compliance.
+
+## Gotchas
+
+- Israeli phone numbers for WhatsApp API must use the 972 country code without the leading zero: +972521234567, not +9720521234567. Agents frequently include the extra zero.
+- WhatsApp message templates submitted in Hebrew must pass Meta's review. Templates with Hebrew text in code blocks may be rejected because code blocks don't support RTL rendering properly.
+- Israeli businesses sending WhatsApp marketing messages must comply with Amendment 40 of the Communications Law (anti-spam). Prior explicit opt-in is required, not just an existing business relationship.
+- WhatsApp Business API has a 24-hour customer service window. After 24 hours, only pre-approved template messages can be sent. Agents may not account for this when designing conversation flows.
+- Hebrew text in WhatsApp template variables can break message formatting when mixed with numbers or English. Use Unicode isolate characters (U+2066/U+2069) around mixed-direction content.
 
 ## Troubleshooting
 

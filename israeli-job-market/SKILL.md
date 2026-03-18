@@ -15,7 +15,7 @@ compatibility: >-
   job listings.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: communication
   tags:
     he:
@@ -228,6 +228,14 @@ Result: Contextual salary analysis with negotiation guidance.
 
 ### References
 - `references/israeli-cv-template.md` — Standard Israeli CV templates in both English and Hebrew formats with section-by-section structure, including personal details, professional summary, work experience, military service, education, skills, and languages. Covers photo guidelines, Hebrew RTL formatting notes, and Israeli hiring conventions. Consult when helping users write or optimize CVs for the Israeli job market.
+
+## Gotchas
+
+- Israeli salaries are always quoted as monthly gross (bruto), not annual. Agents may convert to annual figures and confuse candidates who expect monthly numbers.
+- Keren Hishtalmut (education fund) adds approximately 10% to total compensation (7.5% employer + 2.5% employee) and is tax-free after 6 years. Agents may omit this significant benefit when comparing Israeli offers to international ones.
+- The Israeli tech job market peaks Sunday-Tuesday for job postings. Agents may recommend posting on Mondays (which is already the 3rd day of the Israeli work week).
+- Israeli CVs commonly include a photo, date of birth, and military service section. Agents trained on US resume conventions may flag these as inappropriate when they are standard practice in Israel.
+- "Shotef + 30" payment terms mean net 30 from end of month, not net 30 from invoice date. This is the most common freelancer payment term in Israel and agents frequently misinterpret it.
 
 ## Troubleshooting
 
