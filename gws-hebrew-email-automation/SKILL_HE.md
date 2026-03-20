@@ -27,7 +27,7 @@ metadata:
 gws --version
 
 # התקנה אם חסר
-npm install -g @google/gws
+npm install -g @googleworkspace/cli
 
 # אימות עם חשבון Google
 gws auth login
@@ -330,7 +330,7 @@ gws gmail send \
 
 ### שגיאה: "gws: command not found"
 סיבה: ה-Google Workspace CLI לא מותקן או לא נמצא ב-PATH.
-פתרון: התקנה דרך `npm install -g @google/gws`. אם משתמשים ב-npx, להוסיף קידומת `npx @google/gws` לפקודות. אימות התקנה עם `gws --version`.
+פתרון: התקנה דרך `npm install -g @googleworkspace/cli`. אם משתמשים ב-npx, להוסיף קידומת `npx @googleworkspace/cli` לפקודות. אימות התקנה עם `gws --version`.
 
 ### שגיאה: "Authentication required"
 סיבה: המשתמש לא השלים את התחברות ה-OAuth או שהטוקן פג תוקף.

@@ -139,7 +139,7 @@ After generating the job description, help the user post to Israeli job boards.
 |---|---|---|---|
 | AllJobs | alljobs.co.il | Yes (employer portal) | Largest Israeli job board, supports Hebrew postings |
 | Drushim | drushim.co.il | Yes (employer API) | Strong in tech and startup roles |
-| JobMaster | jobmaster.co.il | Limited | Government and public sector focus |
+| JobMaster | jobmaster.co.il | Limited | General job board |
 | LinkedIn Israel | linkedin.com | Yes (LinkedIn API) | International and tech roles, English-friendly |
 | Glassdoor Israel | glassdoor.co.il | Via Indeed API | Review-focused, salary transparency |
 | Comeet | comeet.com | Yes | Israeli ATS with job board distribution |

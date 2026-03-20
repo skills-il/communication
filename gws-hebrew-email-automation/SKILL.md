@@ -11,7 +11,7 @@ description: >-
 license: MIT
 allowed-tools: Bash(gws:*) Bash(npx:*) Bash(npm:*) WebFetch Read Write Edit
 compatibility: >-
-  Requires Node.js 18+ and the Google Workspace CLI (npm install -g @google/gws).
+  Requires Node.js 18+ and the Google Workspace CLI (npm install -g @googleworkspace/cli).
   User must authenticate via gws auth login with a Google Workspace or Gmail account.
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
@@ -71,7 +71,7 @@ Before running any Gmail commands, confirm the GWS CLI is available and authenti
 gws --version
 
 # If not installed, install globally
-npm install -g @google/gws
+npm install -g @googleworkspace/cli
 
 # Authenticate with Google account
 gws auth login
@@ -374,7 +374,7 @@ Result: Email scheduled for Sunday morning, respecting Erev Shabbat. User inform
 
 ### Error: "gws: command not found"
 Cause: The Google Workspace CLI is not installed or not in PATH.
-Solution: Install via `npm install -g @google/gws`. If using npx, prefix commands with `npx @google/gws`. Verify installation with `gws --version`.
+Solution: Install via `npm install -g @googleworkspace/cli`. If using npx, prefix commands with `npx @googleworkspace/cli`. Verify installation with `gws --version`.
 
 ### Error: "Authentication required"
 Cause: The user has not completed OAuth login or the token has expired.

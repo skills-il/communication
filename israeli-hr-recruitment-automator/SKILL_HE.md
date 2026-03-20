@@ -88,7 +88,7 @@ metadata:
 |---|---|---|---|
 | AllJobs | alljobs.co.il | כן (פורטל מעסיקים) | לוח הדרושים הגדול בישראל |
 | דרושים | drushim.co.il | כן (API מעסיקים) | חזק בהייטק וסטארטאפים |
-| JobMaster | jobmaster.co.il | מוגבל | מגזר ציבורי וממשלתי |
+| JobMaster | jobmaster.co.il | מוגבל | לוח דרושים כללי |
 | LinkedIn Israel | linkedin.com | כן (LinkedIn API) | משרות בינלאומיות והייטק |
 
 **טיפים לפרסום:**

@@ -74,10 +74,10 @@ Determine the user's priorities: price, speed, coverage area, contract flexibili
 Reference the correct providers for each service type:
 
 **Cellular carriers (full network operators):**
-- Partner (Orange) - operates own 4G/5G network
+- Partner - operates own 4G/5G network
 - Cellcom - operates own 4G/5G network
 - Pelephone (Bezeq subsidiary) - operates own 4G/5G network
-- HOT Mobile - operates own 4G network
+- HOT Mobile - operates own 4G/5G network
 
 **Cellular MVNOs (virtual operators using host networks):**
 - Golan Telecom - uses Cellcom's network, known for low flat-rate plans
@@ -105,7 +105,7 @@ Reference the correct providers for each service type:
 If the user is switching or comparing against their current plan, collect:
 
 1. Current provider and plan name
-2. Monthly cost (including VAT, which is 17% in Israel)
+2. Monthly cost (including VAT, which is 18% in Israel)
 3. Data allowance (or unlimited status)
 4. Contract end date and early termination fees
 5. Any bundled services (internet, TV, landline)
@@ -254,7 +254,7 @@ Actions:
    - Partner: eSIM supported, 5G available in major cities
    - Cellcom: eSIM supported, 5G available in major cities
    - Pelephone: eSIM supported, 5G available in major cities
-   - HOT Mobile: eSIM supported, 4G only (no 5G yet)
+   - HOT Mobile: eSIM supported, 4G/5G available
    - Golan Telecom: No eSIM support as of current date
 2. Check 5G coverage at the user's location using carrier coverage maps
 3. Compare 5G plan pricing (typically 10-20 NIS/month more than equivalent 4G plans)

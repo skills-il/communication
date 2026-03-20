@@ -80,7 +80,7 @@ Determine which job market service the user needs:
 | Sector | Best Platform | Why |
 |--------|--------------|-----|
 | Tech / Startups | LinkedIn Israel, Drushim | English-friendly, tech focus |
-| Government / Public | JobNet (jobnet.gov.il) | Official government jobs |
+| Government / Public | Israeli Employment Service (taasuka.gov.il) | Official government jobs |
 | General market | AllJobs | Largest listing volume |
 | Entry level | JobMaster, AllJobs | Broadest coverage |
 | Senior / Executive | LinkedIn, headhunters | Network-driven hiring |

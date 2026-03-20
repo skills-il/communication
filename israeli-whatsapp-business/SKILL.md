@@ -75,7 +75,7 @@ import requests
 
 def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
     """Verify WhatsApp Business API access."""
-    url = f"https://graph.facebook.com/v21.0/{phone_number_id}"
+    url = f"https://graph.facebook.com/v25.0/{phone_number_id}"
     headers = {"Authorization": f"Bearer {access_token}"}
     response = requests.get(url, headers=headers)
     return response.json()
@@ -98,7 +98,7 @@ def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
 ```python
 def create_template(waba_id: str, access_token: str, template: dict):
     """Create a WhatsApp message template."""
-    url = f"https://graph.facebook.com/v21.0/{waba_id}/message_templates"
+    url = f"https://graph.facebook.com/v25.0/{waba_id}/message_templates"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -138,7 +138,7 @@ def send_template_message(phone_number_id: str, access_token: str,
                           to: str, template_name: str, language: str,
                           parameters: list):
     """Send a WhatsApp template message."""
-    url = f"https://graph.facebook.com/v21.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -179,7 +179,7 @@ send_template_message(
 def send_interactive_list(phone_number_id: str, access_token: str,
                           to: str, body_text: str, sections: list):
     """Send an interactive list message in Hebrew."""
-    url = f"https://graph.facebook.com/v21.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
