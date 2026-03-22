@@ -16,7 +16,7 @@ compatibility: >-
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
   author: skills-il
-  version: 1.0.1
+  version: 1.1.0
   category: communication
   tags:
     he:
@@ -122,7 +122,7 @@ gws gmail send \
 - Use the Shekel symbol: ש"ח (Shekel Chadash)
 - Format: `15,000 ש"ח` (comma-separated thousands, symbol after amount)
 - For VAT: specify `לא כולל מע"מ` (excluding VAT) or `כולל מע"מ` (including VAT)
-- VAT rate reference: 18% (current Israeli VAT rate)
+- VAT rate reference: 17% (current Israeli VAT rate)
 
 ### Step 3: Payment Reminder Email Sequences
 
@@ -232,7 +232,7 @@ When scheduling emails, respect Israeli business customs:
 | Rule | Details |
 |------|---------|
 | Business days | Sunday through Thursday (ראשון עד חמישי) |
-| Business hours | 09:00-18:00 IST (Israel Standard Time, UTC+2 / IDT UTC+3) |
+| Business hours | 09:00-18:00 Israel Daylight Time (IDT, UTC+3) |
 | Friday | Work ends early, typically by 13:00-14:00 |
 | Erev Shabbat | Do NOT send after 14:00 on Friday |
 | Shabbat | Do NOT send from Friday sunset to Saturday sunset |
