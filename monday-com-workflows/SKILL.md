@@ -1,60 +1,9 @@
 ---
 name: monday-com-workflows
-description: >-
-  Optimize Monday.com workflows for Israeli teams with board management,
-  automation recipes, and API integration. Use when user asks about Monday.com
-  boards, Monday.com automations, "monday.com API", work management, sprint
-  planning with Israeli calendar, or team workflow optimization on Monday.com.
-  Enhances the official mondaycom/mcp server with Israeli team best practices
-  including Sunday-Thursday work week, Hebrew boards, and holiday-aware
-  scheduling. Do NOT use for other project management tools (Jira, Asana, etc.).
+description: Optimize Monday.com workflows for Israeli teams with board management, automation recipes, and API integration. Use when user asks about Monday.com boards, Monday.com automations, "monday.com API", work management, sprint planning with Israeli calendar, or team workflow optimization on Monday.com. Enhances the official mondaycom/mcp server with Israeli team best practices including Sunday-Thursday work week, Hebrew boards, and holiday-aware scheduling. Do NOT use for other project management tools (Jira, Asana, etc.).
 license: MIT
-allowed-tools: 'Bash(python:*) Bash(curl:*) WebFetch'
-compatibility: >-
-  Best with mondaycom/mcp MCP server. Works standalone for guidance. Requires
-  Monday.com API token.
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: communication
-  tags:
-    he:
-      - Monday
-      - ניהול-פרויקטים
-      - תהליך-עבודה
-      - אוטומציה
-      - צוותות
-      - ישראל
-    en:
-      - monday
-      - project-management
-      - workflow
-      - automation
-      - teams
-      - israel
-  mcp-server: mondaycom/mcp
-  display_name:
-    he: תהליכי עבודה ב-Monday
-    en: Monday Com Workflows
-  display_description:
-    he: אוטומציה ומיטוב תהליכי עבודה ב-Monday.com לצוותים ישראליים
-    en: >-
-      Optimize Monday.com workflows for Israeli teams with board management,
-      automation recipes, and API integration. Use when user asks about
-      Monday.com boards, Monday.com automations, "monday.com API", work
-      management, sprint planning with Israeli calendar, or team workflow
-      optimization on Monday.com. Enhances the official mondaycom/mcp server
-      with Israeli team best practices including Sunday-Thursday work week,
-      Hebrew boards, and holiday-aware scheduling. Do NOT use for other project
-      management tools (Jira, Asana, etc.).
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
-    - antigravity
+allowed-tools: Bash(python:*) Bash(curl:*) WebFetch
+compatibility: Best with mondaycom/mcp MCP server. Works standalone for guidance. Requires Monday.com API token.
 ---
 
 # Monday.com Workflows

@@ -1,68 +1,9 @@
 ---
 name: israeli-hr-recruitment-automator
-description: >-
-  Employer-side hiring automation for Israeli companies. Generates Hebrew job descriptions
-  compliant with the Equal Employment Opportunities Law 1988, posts to Israeli job boards
-  (AllJobs, Drushim, JobMaster, LinkedIn Israel), screens resumes with Israeli context
-  (military service, academic institutions, tech bootcamps), schedules interviews around
-  Israeli holidays and Shabbat, and generates offer letters with mandatory Israeli employment
-  clauses. Use when user asks to "write a job description", "post a job in Israel",
-  "screen Israeli resumes", "pirsum misra", "srikat meumadim", "michtav ha'a'sa'a",
-  or automate hiring workflows for Israeli companies. Ensures compliance with Israeli
-  anti-discrimination law and mandatory benefits. Do NOT use for job searching (use
-  israeli-job-market), interview preparation (use israeli-tech-interview-prep), salary
-  negotiation (use israeli-tech-salary-negotiator), employment contracts legal review
-  (use israeli-employment-contracts), or freelancer hiring.
+description: Employer-side hiring automation for Israeli companies. Generates Hebrew job descriptions compliant with the Equal Employment Opportunities Law 1988, posts to Israeli job boards (AllJobs, Drushim, JobMaster, LinkedIn Israel), screens resumes with Israeli context (military service, academic institutions, tech bootcamps), schedules interviews around Israeli holidays and Shabbat, and generates offer letters with mandatory Israeli employment clauses. Use when user asks to "write a job description", "post a job in Israel", "screen Israeli resumes", "pirsum misra", "srikat meumadim", "michtav ha'a'sa'a", or automate hiring workflows for Israeli companies. Ensures compliance with Israeli anti-discrimination law and mandatory benefits. Do NOT use for job searching (use israeli-job-market), interview preparation (use israeli-tech-interview-prep), salary negotiation (use israeli-tech-salary-negotiator), employment contracts legal review (use israeli-employment-contracts), or freelancer hiring.
 license: MIT
-allowed-tools: 'Bash(python:*)'
-compatibility: >-
-  No network required for job description generation and offer letter drafting.
-  Python 3.9+ required for helper scripts. Works with Claude Code, Claude.ai, Cursor.
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: communication
-  tags:
-    he:
-      - גיוס
-      - משאבי-אנוש
-      - מודעת-דרושים
-      - תיאור-משרה
-      - תאימות
-      - ישראל
-    en:
-      - recruitment
-      - hiring
-      - hr
-      - job-description
-      - compliance
-      - israel
-  display_name:
-    he: "אוטומציית גיוס עובדים"
-    en: Israeli HR Recruitment Automator
-  display_description:
-    he: >-
-      אוטומציה של תהליך הגיוס לחברות ישראליות. יצירת מודעות דרושים בעברית תואמות
-      חוק שוויון הזדמנויות בעבודה, פרסום בלוחות עבודה ישראליים (AllJobs, דרושים,
-      JobMaster, LinkedIn), סינון קורות חיים בהקשר ישראלי (שירות צבאי, מוסדות
-      אקדמיים, בוטקמפים), תיאום ראיונות עם לוח שנה ישראלי, והפקת מכתבי הצעה
-      עם סעיפי חובה (פנסיה, קרן השתלמות, סעיף 14, ימי חופשה, מחלה, הבראה).
-    en: >-
-      Employer-side hiring automation for Israeli companies. Generates Hebrew job
-      descriptions compliant with the Equal Employment Opportunities Law 1988, posts to
-      Israeli job boards (AllJobs, Drushim, JobMaster, LinkedIn Israel), screens resumes
-      with Israeli context (military service, academic institutions, tech bootcamps),
-      schedules interviews around Israeli holidays and Shabbat, and generates offer letters
-      with mandatory Israeli employment clauses (pension, keren hishtalmut, Section 14,
-      vacation, sick days, convalescence pay). Do NOT use for job searching, interview
-      preparation, salary negotiation, employment contracts legal review, or freelancer hiring.
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+allowed-tools: Bash(python:*)
+compatibility: No network required for job description generation and offer letter drafting. Python 3.9+ required for helper scripts. Works with Claude Code, Claude.ai, Cursor.
 ---
 
 # Israeli HR Recruitment Automator

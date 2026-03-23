@@ -1,0 +1,42 @@
+{
+  "author": "skills-il",
+  "version": "1.0.1",
+  "category": "communication",
+  "tags": {
+    "he": [
+      "ווטסאפ",
+      "הודעות",
+      "עסק",
+      "ניהול-לקוחות",
+      "עברית",
+      "שיווק",
+      "ישראל"
+    ],
+    "en": [
+      "whatsapp",
+      "messaging",
+      "business",
+      "crm",
+      "hebrew",
+      "marketing",
+      "israel"
+    ]
+  },
+  "display_name": {
+    "he": "וואטסאפ עסקי ישראלי",
+    "en": "Israeli Whatsapp Business"
+  },
+  "display_description": {
+    "he": "ממשק WhatsApp Business API להודעות עסקיות בעברית",
+    "en": "Integrate WhatsApp Business API for the Israeli market with Hebrew message templates, customer communication, and CRM integration. Use when user asks about WhatsApp Business in Israel, Hebrew WhatsApp templates, WhatsApp marketing to Israeli customers, business messaging via WhatsApp, or integrating WhatsApp with Israeli CRM tools (Monday.com, Priority, etc.). Covers Cloud API setup, template creation, compliance with Israeli anti-spam law, and Israeli consumer communication preferences. Do NOT use for personal WhatsApp or non-Israeli WhatsApp markets."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "antigravity"
+  ]
+}

@@ -1,65 +1,9 @@
 ---
 name: israeli-customer-support-automator
-description: >-
-  Deploy and configure customer support automation for Israeli businesses. Categorizes
-  Hebrew support tickets, manages complaints per Consumer Protection Law 1981
-  (14-day returns, cooling-off periods), configures SLA with Israeli hours
-  (Sunday-Thursday), and generates Hebrew canned responses for multi-channel support.
-  Use when user asks to "set up customer support", "automate ticket routing",
-  "sherut lakokhot", "handle complaints", or configure helpdesk for Israeli companies.
-  Integrates with Monday.com and Priority ERP. Do NOT use for building chatbots
-  (use hebrew-chatbot-builder), WhatsApp API (use israeli-whatsapp-business),
-  or non-Israeli consumer protection.
+description: Deploy and configure customer support automation for Israeli businesses. Categorizes Hebrew support tickets, manages complaints per Consumer Protection Law 1981 (14-day returns, cooling-off periods), configures SLA with Israeli hours (Sunday-Thursday), and generates Hebrew canned responses for multi-channel support. Use when user asks to "set up customer support", "automate ticket routing", "sherut lakokhot", "handle complaints", or configure helpdesk for Israeli companies. Integrates with Monday.com and Priority ERP. Do NOT use for building chatbots (use hebrew-chatbot-builder), WhatsApp API (use israeli-whatsapp-business), or non-Israeli consumer protection.
 license: MIT
-allowed-tools: 'Bash(python:*)'
-compatibility: >-
-  No network required for ticket classification and template generation.
-  Python 3.9+ required for the classifier script. Works with Claude Code, Claude.ai, Cursor.
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: communication
-  tags:
-    he:
-      - שירות-לקוחות
-      - תמיכה
-      - תלונות
-      - הגנת-צרכן
-      - כרטיסים
-      - ישראל
-    en:
-      - customer-support
-      - helpdesk
-      - tickets
-      - complaints
-      - consumer-protection
-      - israel
-  display_name:
-    he: "אוטומציית שירות לקוחות ישראלי"
-    en: Israeli Customer Support Automator
-  display_description:
-    he: >-
-      אוטומציה של תמיכת לקוחות לעסקים ישראליים. מיון וניתוב כרטיסי תמיכה בעברית,
-      ניהול תלונות בהתאם לחוק הגנת הצרכן 1981 (מדיניות החזרה של 14 ימים, תקופת
-      צינון, זמני תגובה חובה), ניהול SLA בשעות עבודה ישראליות (ראשון עד חמישי),
-      כללי הסלמה, תגובות מוכנות בעברית, ותמיכה רב-ערוצית (WhatsApp, מייל, טלפון,
-      רשתות חברתיות). משתלב עם Monday.com ו-Priority ERP.
-    en: >-
-      Deploy and configure customer support automation for Israeli businesses. Categorizes
-      and routes Hebrew support tickets, manages complaint workflows per Israeli Consumer
-      Protection Law 1981 (14-day return policy, cooling-off periods, mandatory response
-      timeframes), configures SLA management with Israeli business hours (Sunday-Thursday),
-      builds escalation rules, and generates canned responses in Hebrew for multi-channel
-      support (WhatsApp, email, phone, social media). Do NOT use for building chatbots from
-      scratch, WhatsApp Business API integration, general CRM setup, or non-Israeli
-      consumer protection compliance.
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+allowed-tools: Bash(python:*)
+compatibility: No network required for ticket classification and template generation. Python 3.9+ required for the classifier script. Works with Claude Code, Claude.ai, Cursor.
 ---
 
 # Israeli Customer Support Automator
