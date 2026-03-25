@@ -1,0 +1,16 @@
+{
+  "display_name": { "he": "עוזר אישי ישראלי", "en": "Israeli Personal Assistant" },
+  "display_description": {
+    "he": "עוזר אישי חכם שמבין את ההקשר הישראלי: תכנון יום עבודה (ראשון-חמישי), טיוטת הודעות בעברית טבעית, תזכורות לחובות עסקיות (מע״מ, ביטוח לאומי, חגים), ועזרה בניסוח מיילים לגורמים רשמיים. השתמשו כשצריך סיכום בוקר, ניסוח הודעת ווטסאפ מקצועית, תכנון סביב שבת וחגים, או כתיבת מייל רשמי בעברית. חוסך זמן יומי ומונע שגיאות תקשורת.",
+    "en": "A smart personal assistant that understands the Israeli context: workday planning (Sunday-Thursday), drafting messages in natural Hebrew, reminders for business obligations (VAT, Bituach Leumi, holidays), and help composing emails to official bodies. Use when you need a morning brief, professional WhatsApp drafting, scheduling around Shabbat and holidays, or writing formal Hebrew emails. Saves daily time and prevents communication missteps. Do NOT use for calendar API integration (use shabbat-aware-scheduler), automated email sending (use gws-hebrew-email-automation), or accounting calculations (use accounting skills)."
+  },
+  "tags": {
+    "he": ["עוזר-אישי", "תכנון-יום", "עברית", "תקשורת", "פרילנסר", "עסק-קטן"],
+    "en": ["personal-assistant", "daily-planning", "hebrew", "communication", "freelancer", "small-business"]
+  },
+  "author": "skills-il",
+  "version": "1.0.0",
+  "category": "communication",
+  "supported_agents": ["claude-desktop", "claude-ai", "claude-code", "chatgpt", "cursor", "windsurf", "openclaw"],
+  "openclaw": true
+}
