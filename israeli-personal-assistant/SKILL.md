@@ -2,6 +2,7 @@
 name: israeli-personal-assistant
 description: "A smart personal assistant that understands the Israeli context: workday planning (Sunday-Thursday), drafting messages in natural Hebrew, reminders for business obligations (VAT, Bituach Leumi, holidays), and help composing emails to official bodies. Use when you need a morning brief, professional WhatsApp drafting, scheduling around Shabbat and holidays, or writing formal Hebrew emails. Saves daily time and prevents communication missteps. Do NOT use for calendar API integration (use shabbat-aware-scheduler), automated email sending (use gws-hebrew-email-automation), or accounting calculations (use accounting skills)."
 license: MIT
+version: 1.0.1
 ---
 
 ## Overview
@@ -306,7 +307,7 @@ Jewish holiday dates shift every year based on the Hebrew calendar. Ask your age
 ## References
 
 - HebCal Hebrew calendar API: https://www.hebcal.com/home/195/jewish-calendar-rest-api
-- Israel Tax Authority (רשות המיסים): https://www.gov.il/he/departments/israel_tax_authority
-- National Insurance Institute (ביטוח לאומי): https://www.btl.gov.il
+- Israel Tax Authority (רשות המיסים): https://taxes.gov.il
+- National Insurance Institute (ביטוח לאומי): http://www.btl.gov.il/Pages/default.aspx
 - `references/hebrew-communication-templates.md` - Full Hebrew message template library
 - `references/israeli-business-calendar.md` - Key dates and seasonal patterns
