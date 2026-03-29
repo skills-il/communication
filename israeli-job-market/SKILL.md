@@ -2,6 +2,7 @@
 name: israeli-job-market
 description: Aggregate Israeli job market data, optimize Hebrew CVs, benchmark salaries, and track employment trends. Use when user asks about job searching in Israel, Israeli CV writing, Hebrew resume, salary expectations in Israel, AllJobs, Drushim, JobMaster, JobNet, LinkedIn Israel, Israeli job interviews, or Israeli employment benefits. Covers major job platforms, salary data, and Israeli workplace culture. Do NOT use for international job markets outside Israel or immigration/visa work permits (see separate skill).
 license: MIT
+version: 1.0.1
 allowed-tools: Bash(python:*) WebFetch
 compatibility: Requires network access for job platform data. No API keys needed for public job listings.
 ---
@@ -93,16 +94,16 @@ Determine which job market service the user needs:
 israeli_salary_data = {
     "currency": "NIS (New Israeli Shekel)",
     "pay_frequency": "Monthly gross (bruto)",
-    "average_national": 14000,  # NIS/month approximate (CBS 2025-2026 data)
+    "average_national": 17000,  # NIS/month approximate (CBS 2026 data)
     "tech_ranges": {
-        "junior_developer": (16000, 23000),
-        "mid_developer": (23000, 35000),
-        "senior_developer": (33000, 50000),
-        "team_lead": (38000, 55000),
-        "vp_engineering": (55000, 85000),
-        "product_manager": (25000, 45000),
-        "data_scientist": (25000, 48000),
-        "devops_engineer": (25000, 42000),
+        "junior_developer": (18000, 25000),
+        "mid_developer": (25000, 38000),
+        "senior_developer": (36000, 55000),
+        "team_lead": (42000, 60000),
+        "vp_engineering": (60000, 90000),
+        "product_manager": (28000, 50000),
+        "data_scientist": (28000, 52000),
+        "devops_engineer": (28000, 48000),
     },
     "benefits_value": {
         "pension": "6% employee + 6.5% employer (mandatory)",
@@ -148,7 +149,7 @@ Actions:
 1. Recommend LinkedIn Israel + Drushim for tech roles
 2. Suggest search terms: "Python developer", "Backend developer", "Senior developer"
 3. Filter: Gush Dan region, 5+ years experience
-4. Provide salary range: 33,000-50,000 NIS/month for senior Python
+4. Provide salary range: 36,000-55,000 NIS/month for senior Python
 Result: Curated platform recommendations with salary context.
 
 ### Example 2: CV Review
@@ -163,7 +164,7 @@ Result: Structured Hebrew CV following Israeli conventions.
 ### Example 3: Salary Negotiation
 User says: "I got an offer for 28,000 NIS as a mid-level developer, is that fair?"
 Actions:
-1. Check against benchmarks (mid-dev range: 20,000-32,000)
+1. Check against benchmarks (mid-dev range: 25,000-38,000)
 2. Factor in location (Tel Aviv premium vs periphery)
 3. Calculate total compensation including benefits
 4. Advise on negotiation approach

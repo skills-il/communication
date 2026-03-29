@@ -1,3 +1,12 @@
+---
+name: israeli-job-market
+description: Aggregate Israeli job market data, optimize Hebrew CVs, benchmark salaries, and track employment trends. Use when user asks about job searching in Israel, Israeli CV writing, Hebrew resume, salary expectations in Israel, AllJobs, Drushim, JobMaster, JobNet, LinkedIn Israel, Israeli job interviews, or Israeli employment benefits. Covers major job platforms, salary data, and Israeli workplace culture. Do NOT use for international job markets outside Israel or immigration/visa work permits (see separate skill).
+license: MIT
+version: 1.0.1
+allowed-tools: Bash(python:*) WebFetch
+compatibility: Requires network access for job platform data. No API keys needed for public job listings.
+---
+
 # שוק העבודה הישראלי
 
 ## הנחיות
@@ -85,16 +94,16 @@
 israeli_salary_data = {
     "currency": "NIS (New Israeli Shekel)",
     "pay_frequency": "Monthly gross (bruto)",
-    "average_national": 12000,  # NIS/month approximate
+    "average_national": 17000,  # NIS/month approximate (CBS 2026 data)
     "tech_ranges": {
-        "junior_developer": (14000, 20000),
-        "mid_developer": (20000, 32000),
-        "senior_developer": (30000, 45000),
-        "team_lead": (35000, 50000),
-        "vp_engineering": (50000, 80000),
-        "product_manager": (22000, 40000),
-        "data_scientist": (22000, 42000),
-        "devops_engineer": (22000, 38000),
+        "junior_developer": (18000, 25000),
+        "mid_developer": (25000, 38000),
+        "senior_developer": (36000, 55000),
+        "team_lead": (42000, 60000),
+        "vp_engineering": (60000, 90000),
+        "product_manager": (28000, 50000),
+        "data_scientist": (28000, 52000),
+        "devops_engineer": (28000, 48000),
     },
     "benefits_value": {
         "pension": "6% employee + 6.5% employer (mandatory)",
@@ -140,7 +149,7 @@ israeli_salary_data = {
 1. המליצו על LinkedIn Israel + דרושים למשרות הייטק
 2. הציעו מונחי חיפוש: "Python developer", "Backend developer", "Senior developer"
 3. סינון: אזור גוש דן, 5+ שנות ניסיון
-4. ציינו טווח שכר: 30,000-42,000 ש"ח/חודש למפתח Python בכיר
+4. ציינו טווח שכר: 36,000-55,000 ש"ח/חודש למפתח Python בכיר
 תוצאה: המלצות פלטפורמה מותאמות עם הקשר שכר.
 
 ### דוגמה 2: סקירת קורות חיים
@@ -155,7 +164,7 @@ israeli_salary_data = {
 ### דוגמה 3: משא ומתן על שכר
 המשתמש אומר: "קיבלתי הצעה ל-28,000 ש"ח כמפתח ברמת ביניים, זה הוגן?"
 פעולות:
-1. בדקו מול אמות המידה (טווח מפתח ביניים: 20,000-32,000)
+1. בדקו מול אמות המידה (טווח מפתח ביניים: 25,000-38,000)
 2. קחו בחשבון מיקום (פרמיית תל אביב מול פריפריה)
 3. חשבו תגמול כולל כולל הטבות
 4. ייעצו לגבי גישת משא ומתן
