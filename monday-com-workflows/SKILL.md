@@ -4,6 +4,7 @@ description: Optimize Monday.com workflows for Israeli teams with board manageme
 license: MIT
 allowed-tools: Bash(python:*) Bash(curl:*) WebFetch
 compatibility: Best with mondaycom/mcp MCP server. Works standalone for guidance. Requires Monday.com API token.
+version: 1.0.1
 ---
 
 # Monday.com Workflows
@@ -18,7 +19,7 @@ import requests
 
 def verify_monday_access(api_token: str) -> dict:
     """Verify Monday.com API access and get account info."""
-    url = "https://api.monday.com/v2"
+    url = "https://api.monday.com/v2/"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -51,7 +52,7 @@ If API-only: Use GraphQL queries directly.
 def create_israeli_sprint_board(api_token: str, workspace_id: int,
                                  sprint_name: str) -> dict:
     """Create a sprint board optimized for Israeli work week."""
-    url = "https://api.monday.com/v2"
+    url = "https://api.monday.com/v2/"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -154,7 +155,7 @@ Action: Notify assigned person
 ```python
 def search_items(api_token: str, board_id: int, column_id: str, value: str):
     """Search items by column value."""
-    url = "https://api.monday.com/v2"
+    url = "https://api.monday.com/v2/"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -187,7 +188,7 @@ def search_items(api_token: str, board_id: int, column_id: str, value: str):
 def bulk_update_status(api_token: str, board_id: int,
                        item_ids: list, status: str):
     """Update status for multiple items."""
-    url = "https://api.monday.com/v2"
+    url = "https://api.monday.com/v2/"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -214,7 +215,7 @@ def create_hebrew_item(api_token: str, board_id: int, group_id: str,
                        item_name: str, column_values: dict):
     """Create a board item with Hebrew name and values."""
     import json
-    url = "https://api.monday.com/v2"
+    url = "https://api.monday.com/v2/"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
