@@ -4,6 +4,7 @@ description: Integrate with Israeli SMS gateway providers for business messaging
 license: MIT
 allowed-tools: Bash(python:*) WebFetch
 compatibility: Requires API key from chosen SMS provider. Network access required.
+version: 1.0.1
 ---
 
 # Israeli SMS Gateway
@@ -54,7 +55,8 @@ import requests
 
 def send_sms_sms4free(to: str, message: str, api_key: str,
                       username: str, pass_key: str, sender: str):
-    url = "https://www.sms4free.co.il/ApiSMS/SendSMS"
+    # Note: Original SMS4Free API endpoint is no longer available
+    # Contact SMS4Free for current API documentation and endpoints
     payload = {
         "key": api_key,
         "user": username,
@@ -64,15 +66,15 @@ def send_sms_sms4free(to: str, message: str, api_key: str,
         "msg": message
     }
     # NOTE: Store credentials in environment variables, not in code
-    response = requests.get(url, params=payload)
-    return response.text
+    # Check with SMS4Free for current API endpoint
+    print("Contact SMS4Free for current API endpoint and documentation")
 ```
 
 ### Step 4: Compliance Checklist
 Before sending commercial SMS:
 - [ ] Recipient opted in (explicit consent)
 - [ ] Unsubscribe mechanism included (reply STOP / link)
-- [ ] Not on Robinson List (Do Not Disturb registry)
+- [ ] Not on Israeli Do Not Disturb registry (current regulatory requirements)
 - [ ] Sender ID registered with provider
 - [ ] Message content complies with Israeli advertising law
 - [ ] Sending during permitted hours (not Shabbat for religious recipients)
@@ -91,8 +93,8 @@ Result: +972541234567
 User says: "Send a promotional SMS to my customer list about a holiday sale"
 Actions:
 1. Validate all phone numbers in list (normalize to +972 format)
-2. Check Robinson List compliance and opt-in status
-3. Apply Chok HaSpam rules: include sender identity, opt-out mechanism
+2. Check Do Not Disturb registry compliance and opt-in status
+3. Apply Israeli anti-spam regulations: include sender identity, opt-out mechanism
 4. Schedule for Israeli business hours (not Shabbat/holidays)
 5. Send via bulk API with delivery tracking
 Result: Compliant bulk SMS campaign with delivery report.
@@ -104,13 +106,13 @@ Result: Compliant bulk SMS campaign with delivery report.
 - `scripts/validate_phone.py` — Validates and normalizes Israeli phone numbers from any common format (local 05X, international +972, with/without dashes) to the standard +972XXXXXXXXX international format. Distinguishes mobile from landline numbers. Run: `python scripts/validate_phone.py --help`
 
 ### References
-- `references/israeli-sms-compliance.md` — Israeli anti-spam law (Chok HaSpam) requirements for SMS marketing: explicit opt-in consent rules, Robinson List (Do Not Disturb registry) lookup process, required unsubscribe mechanisms, permitted sending hours, and penalty structure for violations (up to 1,000 NIS per unsolicited message). Consult when setting up commercial SMS campaigns or verifying compliance.
+- `references/israeli-sms-compliance.md` — Israeli anti-spam law requirements for SMS marketing: explicit opt-in consent rules, Do Not Disturb registry lookup process, required unsubscribe mechanisms, permitted sending hours, and penalty structure for violations (up to 1,000 NIS per unsolicited message). Consult when setting up commercial SMS campaigns or verifying compliance.
 - `references/provider-api-docs.md` — API documentation summaries for Israeli SMS providers (SMS4Free, InforUMobile) and international providers with Israeli support (Twilio, Vonage), covering authentication, endpoint URLs, response codes, delivery reports, and Hebrew character encoding (GSM-7 vs. UCS-2 for Hebrew). Consult when integrating with a specific provider or troubleshooting delivery issues.
 
 ## Gotchas
 
 - Israeli mobile numbers start with 05x (10 digits total: 05X-XXXXXXX). Agents may validate against US 10-digit formats or miss the leading zero when using the +972 prefix (should be +9725XXXXXXXX, dropping the 0).
-- Israel has strict anti-spam laws (Amendment 40 to the Communications Law). Sending unsolicited SMS requires prior explicit opt-in consent, not just opt-out. Agents may recommend opt-out-based flows that violate Israeli law.
+- Israel has strict anti-spam regulations under the Communications Law. Sending unsolicited SMS requires prior explicit opt-in consent, not just opt-out. Agents may recommend opt-out-based flows that violate Israeli law.
 - Israeli SMS providers (SMS4Free, InforUMobile, Cellact) use different API formats than international providers like Twilio. Agents may generate Twilio-compatible code that does not work with Israeli providers.
 - Hebrew SMS messages are limited to 70 characters per segment (vs 160 for Latin). Agents may not account for this when composing messages, resulting in unexpected multi-part SMS costs.
 - Sending SMS on Shabbat (Friday evening to Saturday evening) is considered poor practice for B2C in Israel and may result in customer complaints or opt-outs.
