@@ -2,6 +2,7 @@
 name: israeli-telecom-comparator
 description: Compare cellular plans, internet packages, TV bundles, and triple deals across all Israeli telecom providers including Partner, Cellcom, Pelephone, HOT, Golan Telecom, Bezeq, Yes, and MVNOs. Use when a user needs to find the best telecom deal, switch carriers, compare 5G or fiber plans, evaluate family packages, or understand number portability in Israel. Covers eSIM support, contract vs. no-contract options, international roaming, and negotiation tips. Do NOT use for enterprise or business-grade telecom solutions, VoIP/SIP trunk setup, or network infrastructure engineering.
 license: MIT
+version: 1.0.1
 ---
 
 
@@ -67,20 +68,17 @@ If the user is switching or comparing against their current plan, collect:
 
 Direct the user to Israeli telecom comparison platforms for up-to-date pricing:
 
-- **Kamaze** (https://www.kamaze.co.il) - comprehensive cellular plan comparison, filterable by data, price, carrier
-- **Mishtalemli** (https://www.mishtalemli.co.il) - internet and TV package comparisons
 - **SmartCut** (https://www.smartcut.co.il) - cellular plan comparison with user reviews
 - **Haboreret** (https://www.haboreret.co.il) - telecom news and plan comparisons
 - **KamazeOle** (https://www.kamazeole.co.il) - focused on new immigrant (oleh) plans and English-language carriers
 
 Also reference official provider websites for the most current offers:
 - Partner: https://www.partner.co.il
-- Cellcom: https://www.cellcom.co.il
-- Pelephone: https://www.pelephone.co.il
-- HOT: https://www.hot.net.il
+- Cellcom: https://cellcom.co.il/
+- Pelephone: https://www.pelephone.co.il/digitalsite/heb/home/
+- HOT: http://www.hot.net.il
 - Golan Telecom: https://www.golantelecom.co.il
 - Bezeq: https://www.bezeq.co.il
-- Yes: https://www.yes.co.il
 
 ### Step 5: Compare Cellular Plans
 
@@ -91,8 +89,7 @@ When comparing cellular plans, evaluate these dimensions:
 3. **Network quality** - Full operators (Partner, Cellcom, Pelephone) generally have better coverage than MVNOs; 5G availability varies by area
 4. **5G access** - Currently offered by Partner, Cellcom, and Pelephone; check coverage maps for the user's area:
    - Partner 5G: https://www.partner.co.il/5g
-   - Cellcom 5G: https://www.cellcom.co.il/5g
-   - Pelephone 5G: https://www.pelephone.co.il/5g
+   - Cellcom 5G: https://cellcom.co.il/5g
 5. **eSIM support** - Available from Partner, Cellcom, Pelephone, and HOT Mobile; activation is typically through the carrier's app
 6. **Contract terms** - Budget carriers (Golan, 012, Rami Levy) typically offer no-contract plans; major carriers may require 12-36 month commitments for subsidized devices
 7. **International roaming** - Compare roaming packages for frequent travelers; some plans include specific country bundles
@@ -102,9 +99,7 @@ When comparing cellular plans, evaluate these dimensions:
 
 For home internet comparisons:
 
-1. **Check infrastructure availability** - Fiber (FTTH) is not available everywhere; use the provider's address checker:
-   - Bezeq fiber checker: https://www.bezeq.co.il/internetandphone/internet/checkaddress/
-   - HOT address checker: https://www.hot.net.il/check-address
+1. **Check infrastructure availability** - Fiber (FTTH) is not available everywhere; use the provider's address checker when available
 2. **Speed tiers** - Common Israeli internet speeds:
    - Basic: 100 Mbps
    - Standard: 200-500 Mbps
@@ -177,7 +172,7 @@ Actions:
    - Partner family plan: ~60 NIS/line with family discount, total ~200 NIS/month, but includes 5G access
    - Cellcom family: ~55 NIS/line, total ~185 NIS/month with 5G
 3. Note that Golan Telecom is cheapest but uses Cellcom's network as an MVNO, so coverage in remote areas may differ from a full operator
-4. Recommend checking kamaze.co.il with the "family plan" filter for the most current pricing
+4. Recommend checking comparison platforms with the "family plan" filter for the most current pricing
 
 Result: Present a comparison table with monthly cost per line, total family cost, network type (own vs. MVNO), 5G availability, and contract requirements. Recommend Golan Telecom for budget priority or Partner/Cellcom for 5G and network quality priority.
 
@@ -186,7 +181,7 @@ Result: Present a comparison table with monthly cost per line, total family cost
 User says: "I'm moving to a new apartment in Tel Aviv. I need internet and TV. What should I get?"
 
 Actions:
-1. Check fiber availability at the user's address using Bezeq and HOT address checkers
+1. Check fiber availability at the user's address using provider address checkers when available
 2. Since Tel Aviv has extensive fiber coverage, present fiber-based options:
    - Bezeq fiber (1 Gbps) + Yes IPTV: ~250-350 NIS/month for internet + premium TV with sport channels
    - HOT fiber (1 Gbps) + HOT TV: ~230-320 NIS/month, cable infrastructure with IPTV option
@@ -233,18 +228,18 @@ Solution:
 1. Contact the new carrier's customer service and ask for the porting status
 2. Verify that there is no unpaid balance with the old carrier
 3. Confirm that the ID number (teudat zehut) provided matches the account holder exactly
-4. If the delay exceeds 3 business days, file a complaint with the Ministry of Communications (https://www.gov.il/he/departments/ministry_of_communications)
+4. If the delay exceeds 3 business days, contact the Ministry of Communications through their official channels
 
 ### Error: "Fiber internet speed is much slower than advertised"
 
 Cause: Several factors can reduce actual fiber speeds: Wi-Fi router limitations, network congestion during peak hours, old Ethernet cables (Cat5 instead of Cat5e/Cat6), or provider throttling.
 
 Solution:
-1. Test speed using a wired Ethernet connection (not Wi-Fi) at https://www.speedtest.net or https://www.bezeq.co.il/speedtest
+1. Test speed using a wired Ethernet connection (not Wi-Fi) at https://www.speedtest.net
 2. If wired speed is correct but Wi-Fi is slow, upgrade to a Wi-Fi 6 router or request one from the provider
 3. If wired speed is also slow, contact the provider's technical support with the speed test results
 4. Check that the router is using the 5GHz band (not 2.4GHz) for devices that support it
-5. If the provider cannot resolve the issue, you can file a complaint with the Ministry of Communications
+5. If the provider cannot resolve the issue, you can contact the Ministry of Communications through their official channels
 
 ### Error: "I signed a contract and want to cancel early"
 
