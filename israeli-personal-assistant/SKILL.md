@@ -2,7 +2,6 @@
 name: israeli-personal-assistant
 description: "A smart personal assistant that understands the Israeli context: workday planning (Sunday-Thursday), drafting messages in natural Hebrew, reminders for business obligations (VAT, Bituach Leumi, holidays), and help composing emails to official bodies. Use when you need a morning brief, professional WhatsApp drafting, scheduling around Shabbat and holidays, or writing formal Hebrew emails. Saves daily time and prevents communication missteps. Do NOT use for calendar API integration (use shabbat-aware-scheduler), automated email sending (use gws-hebrew-email-automation), or accounting calculations (use accounting skills)."
 license: MIT
-version: 1.0.1
 ---
 
 ## Overview
@@ -102,43 +101,43 @@ Use this structure when asking for a morning brief. Ask your AI: "Give me a morn
 ### Example Morning Brief (English)
 
 ```
-Morning Brief - Sunday, April 6, 2026 / י״ח בניסן תשפ״ו
+Morning Brief - Sunday, April 5, 2026 / י״ח בניסן תשפ״ו
 
 Day: Start of work week (Sunday). Full workday.
-Holiday alert: Pesach Chol HaMoed. Many contacts may be on vacation - expect slower responses.
+Holiday alert: Pesach Chol HaMoed (through April 7). Many contacts may be on vacation - expect slower responses.
 
 Open tasks:
 - Follow up with Rivka on the design proposal (3 days overdue)
 - Send invoice #87 to client ABC Ltd.
 
 Upcoming deadlines:
-- VAT reporting window opens April 10 (for Feb-March period)
-- Project delivery for XYZ: April 9
+- Pesach last days: April 8-9 (full shutdown, plan ahead)
+- Bituach Leumi advance payment due April 15
 
 Reminders:
-- Bituach Leumi advance payment due April 15
-- Last day of Pesach: April 12 (plan for slower week)
+- Next VAT deadline: May 15 (for Mar-Apr period)
+- Post-Pesach week starts April 12 (expect gradual ramp-up)
 ```
 
 ### Example Morning Brief (Hebrew)
 
 ```
-סיכום בוקר - יום ראשון, 6.4.2026 / י״ח בניסן תשפ״ו
+סיכום בוקר - יום ראשון, 5.4.2026 / י״ח בניסן תשפ״ו
 
 יום: תחילת שבוע עבודה (ראשון). יום עבודה מלא.
-התראת חג: חול המועד פסח. רבים בחופשה - צפויות תגובות איטיות יותר.
+התראת חג: חול המועד פסח (עד 7 באפריל). רבים בחופשה - צפויות תגובות איטיות.
 
 משימות פתוחות:
 - לעקוב אחרי רבקה בנושא הצעת העיצוב (3 ימי איחור)
 - לשלוח חשבונית מספר 87 ללקוח ABC בע"מ
 
 דדליינים קרובים:
-- חלון דיווח מע"מ נפתח ב-10 באפריל (לתקופת פברואר-מרץ)
-- מסירת פרויקט XYZ: 9 באפריל
+- ימי פסח אחרונים: 8-9 באפריל (סגירה מוחלטת, לתכנן מראש)
+- תשלום מקדמה לביטוח לאומי עד 15 באפריל
 
 תזכורות:
-- תשלום מקדמה לביטוח לאומי עד 15 באפריל
-- סוף פסח: 12 באפריל (לתכנן לשבוע איטי יותר)
+- דיווח מע"מ הבא: 15 במאי (לתקופת מרץ-אפריל)
+- שבוע אחרי פסח מתחיל ב-12 באפריל (צפויה עלייה הדרגתית בפעילות)
 ```
 
 ---
@@ -288,6 +287,25 @@ Agents lack context about how Jewish holidays affect business for the days aroun
 
 ---
 
+## Bundled Resources
+
+### Scripts
+
+| Script | Purpose | Usage |
+|--------|---------|-------|
+| `scripts/morning-brief.py` | Generates a structured morning brief with Hebrew date from HebCal API | `python3 morning-brief.py [--date YYYY-MM-DD] [--lang he\|en\|both] [--tasks "task1, task2"]` |
+
+**Requirements:** `pip install requests python-dateutil`
+
+### References
+
+| File | Contents |
+|------|----------|
+| `references/hebrew-communication-templates.md` | Ready-to-use Hebrew message templates: invoice reminders, client communication, government correspondence, supplier messages, and team updates |
+| `references/israeli-business-calendar.md` | Jewish holiday dates (5786 cycle), recurring business deadlines, VAT reporting periods, and seasonal business patterns |
+
+---
+
 ## Troubleshooting
 
 **The Hebrew sounds stiff or translated**
@@ -307,7 +325,7 @@ Jewish holiday dates shift every year based on the Hebrew calendar. Ask your age
 ## References
 
 - HebCal Hebrew calendar API: https://www.hebcal.com/home/195/jewish-calendar-rest-api
-- Israel Tax Authority (רשות המיסים): https://taxes.gov.il
-- National Insurance Institute (ביטוח לאומי): http://www.btl.gov.il/Pages/default.aspx
+- Israel Tax Authority (רשות המיסים): https://www.gov.il/he/departments/israel_tax_authority
+- National Insurance Institute (ביטוח לאומי): https://www.btl.gov.il
 - `references/hebrew-communication-templates.md` - Full Hebrew message template library
 - `references/israeli-business-calendar.md` - Key dates and seasonal patterns

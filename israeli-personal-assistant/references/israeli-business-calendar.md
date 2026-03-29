@@ -43,28 +43,31 @@ These change slightly each year. Treat these as approximate; confirm current yea
 
 ---
 
-## Jewish Holiday Calendar (5785-5786 / 2025-2026)
+## Jewish Holiday Calendar (5786 / 2025-2026)
 
-Note: Hebrew calendar dates shift each Gregorian year. The dates below are for the 5785-5786 cycle. Always verify against HebCal (https://www.hebcal.com) for precise dates.
+Note: Hebrew calendar dates shift each Gregorian year. The dates below are for the 5786 cycle, verified against HebCal (https://www.hebcal.com). Always re-verify before relying on specific dates.
 
 ### High Holidays / Yamim Noraim (ימים נוראים)
 
 | Holiday | 2025 Gregorian Date | Business Impact |
 |---------|---------------------|-----------------|
-| Rosh Hashana (ראש השנה) | Sep 22-24, 2025 | Full shutdown 2 days. Many take Sep 22-26 off |
-| Yom Kippur (יום כיפור) | Oct 1-2, 2025 | Complete national shutdown. Even secular Israelis don't work |
-| Sukkot - first days (סוכות) | Oct 6-7, 2025 | Full shutdown |
-| Sukkot - Chol HaMoed | Oct 8-12, 2025 | Partial operation; many on vacation |
-| Shmini Atzeret / Simchat Torah | Oct 13-14, 2025 | Full shutdown |
+| Erev Rosh Hashana | Sep 22, 2025 | Short day (closes early) |
+| Rosh Hashana (ראש השנה) | Sep 23-24, 2025 | Full shutdown 2 days. Many take Sep 22-26 off |
+| Erev Yom Kippur | Oct 1, 2025 | Short day (closes early) |
+| Yom Kippur (יום כיפור) | Oct 2, 2025 | Complete national shutdown. Even secular Israelis don't work |
+| Erev Sukkot | Oct 6, 2025 | Short day (closes early) |
+| Sukkot - first days (סוכות) | Oct 7-8, 2025 | Full shutdown |
+| Sukkot - Chol HaMoed | Oct 9-13, 2025 | Partial operation; many on vacation. Oct 13 is Hoshana Raba |
+| Shmini Atzeret / Simchat Torah | Oct 14-15, 2025 | Full shutdown |
 
-**Planning note:** The Tishrei holiday cluster (Rosh Hashana through Simchat Torah) effectively shuts down Israeli business for most of October. Build this into any project timeline that spans September-November.
+**Planning note:** The Tishrei holiday cluster (Rosh Hashana through Simchat Torah) effectively shuts down Israeli business for most of September 22 through October 15. Build this into any project timeline that spans September-November.
 
 ### Winter Holidays
 
 | Holiday | 2025-2026 Date | Business Impact |
 |---------|----------------|-----------------|
-| Chanukah (חנוכה) | Dec 25, 2025 - Jan 2, 2026 | Business operates normally. Schools are off; childcare disruptions |
-| Tu B'Shvat (ט"ו בשבט) | Feb 13, 2026 | No business impact |
+| Chanukah (חנוכה) | Dec 14-22, 2025 | Business operates normally. Schools are off; childcare disruptions |
+| Tu B'Shvat (ט"ו בשבט) | Feb 2, 2026 | No business impact |
 | Purim (פורים) | Mar 3, 2026 (Jerusalem: Mar 4) | Many take the day off. Expect reduced availability |
 
 ### Spring Holidays
@@ -73,12 +76,12 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 |---------|-----------|-----------------|
 | Pesach - Eve (ערב פסח) | Apr 1, 2026 | Short day (closes early) |
 | Pesach - First days | Apr 2-3, 2026 | Full shutdown |
-| Pesach - Chol HaMoed | Apr 4-8, 2026 | Partial; many on vacation |
-| Pesach - Last day | Apr 9, 2026 | Full shutdown |
-| Yom HaShoah (יום השואה) | Apr 20, 2026 | Business operates but culturally solemn. Not a holiday. |
-| Yom HaZikaron (יום הזיכרון) | May 11, 2026 | Business operates but solemn. Avoid entertainment/events. |
-| Yom HaAtzmaut (יום העצמאות) | May 12, 2026 | National holiday. Full shutdown for most businesses |
-| Lag B'Omer (ל"ג בעומר) | May 14, 2026 | Business operates; bonfires at night |
+| Pesach - Chol HaMoed | Apr 4-7, 2026 | Partial; many on vacation |
+| Pesach - Last days | Apr 8-9, 2026 | Full shutdown |
+| Yom HaShoah (יום השואה) | Apr 14, 2026 | Business operates but culturally solemn. Not a holiday |
+| Yom HaZikaron (יום הזיכרון) | Apr 21, 2026 | Business operates but solemn. Avoid entertainment/events |
+| Yom HaAtzmaut (יום העצמאות) | Apr 22, 2026 | National holiday. Full shutdown for most businesses |
+| Lag BaOmer (ל"ג בעומר) | May 5, 2026 | Business operates; bonfires at night |
 | Shavuot (שבועות) | May 22-23, 2026 | Full shutdown 1-2 days |
 
 ---
@@ -92,7 +95,7 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 - January: Post-holiday slow start. Many decisions deferred from previous year
 - February: Budget approvals typically land; new annual contracts kick in
 - March: Purim disrupts one week. Fiscal year-end planning for companies on April-March cycle
-- **VAT reminder:** Feb-Mar report due April 15
+- **VAT reminder:** Jan-Feb report due March 15
 
 ### Q2 (April-June)
 
@@ -102,7 +105,7 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 - May: Yom HaZikaron/Yom HaAtzmaut back-to-back creates a mini-holiday period
 - June: Strong productivity month. Good for closing deals and launching projects
 - **Annual tax return season.** Self-employed freelancers and businesses submit annual reports
-- **VAT reminder:** Apr-May report due June 15; Jun-Jul due Aug 15 (if on bi-monthly cycle, adjust)
+- **VAT reminder:** Mar-Apr report due May 15; May-Jun due July 15
 
 ### Q3 (July-September)
 
