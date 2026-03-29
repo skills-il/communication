@@ -4,6 +4,7 @@ description: Integrate WhatsApp Business API for the Israeli market with Hebrew 
 license: MIT
 allowed-tools: Bash(python:*) Bash(curl:*) WebFetch
 compatibility: Requires Meta Business Account and WhatsApp Business API access. Network access required.
+version: 1.0.1
 ---
 
 # Israeli WhatsApp Business
@@ -22,7 +23,7 @@ import requests
 
 def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
     """Verify WhatsApp Business API access."""
-    url = f"https://graph.facebook.com/v25.0/{phone_number_id}"
+    url = f"https://graph.facebook.com/v27.0/{phone_number_id}"
     headers = {"Authorization": f"Bearer {access_token}"}
     response = requests.get(url, headers=headers)
     return response.json()
@@ -45,7 +46,7 @@ def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
 ```python
 def create_template(waba_id: str, access_token: str, template: dict):
     """Create a WhatsApp message template."""
-    url = f"https://graph.facebook.com/v25.0/{waba_id}/message_templates"
+    url = f"https://graph.facebook.com/v27.0/{waba_id}/message_templates"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -85,7 +86,7 @@ def send_template_message(phone_number_id: str, access_token: str,
                           to: str, template_name: str, language: str,
                           parameters: list):
     """Send a WhatsApp template message."""
-    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v27.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -126,7 +127,7 @@ send_template_message(
 def send_interactive_list(phone_number_id: str, access_token: str,
                           to: str, body_text: str, sections: list):
     """Send an interactive list message in Hebrew."""
-    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v27.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -197,10 +198,10 @@ def compliance_checklist(message_type: str) -> list:
 ### Step 5: CRM Integration Guidance
 
 **Monday.com + WhatsApp:**
-1. Use Monday.com WhatsApp integration (native)
+1. Use Monday.com integration methods (automation or third-party connectors)
 2. Trigger WhatsApp messages from board status changes
 3. Log incoming messages as Monday.com updates
-4. Use Monday.com automations: "When status changes to X, send WhatsApp template"
+4. Set up automated workflows: "When status changes to X, send WhatsApp template"
 
 **Custom CRM Integration:**
 ```python

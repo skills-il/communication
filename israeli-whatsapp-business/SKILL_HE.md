@@ -1,3 +1,12 @@
+---
+name: israeli-whatsapp-business
+description: Integrate WhatsApp Business API for the Israeli market with Hebrew message templates, customer communication, and CRM integration. Use when user asks about WhatsApp Business in Israel, Hebrew WhatsApp templates, WhatsApp marketing to Israeli customers, business messaging via WhatsApp, or integrating WhatsApp with Israeli CRM tools (Monday.com, Priority, etc.). Covers Cloud API setup, template creation, compliance with Israeli anti-spam law, and Israeli consumer communication preferences. Do NOT use for personal WhatsApp or non-Israeli WhatsApp markets.
+license: MIT
+allowed-tools: Bash(python:*) Bash(curl:*) WebFetch
+compatibility: Requires Meta Business Account and WhatsApp Business API access. Network access required.
+version: 1.0.1
+---
+
 # וואטסאפ עסקי ישראלי
 
 ## הנחיות
@@ -14,7 +23,7 @@ import requests
 
 def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
     """Verify WhatsApp Business API access."""
-    url = f"https://graph.facebook.com/v25.0/{phone_number_id}"
+    url = f"https://graph.facebook.com/v27.0/{phone_number_id}"
     headers = {"Authorization": f"Bearer {access_token}"}
     response = requests.get(url, headers=headers)
     return response.json()
@@ -37,7 +46,7 @@ def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
 ```python
 def create_template(waba_id: str, access_token: str, template: dict):
     """Create a WhatsApp message template."""
-    url = f"https://graph.facebook.com/v25.0/{waba_id}/message_templates"
+    url = f"https://graph.facebook.com/v27.0/{waba_id}/message_templates"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -55,7 +64,7 @@ appointment_template = {
             "type": "BODY",
             "text": "Shalom {{1}},\nReminder: appointment at {{2}} on {{3}} at {{4}}.\nConfirm reply 1, Cancel reply 2.",
             "example": {
-                "body_text": [["Israel", "Dr. Cohen Dental Clinic", "15.03.2025", "10:00"]]
+                "body_text": [["Israel", "Dr. Cohen Dental Clinic", "15.03.2026", "10:00"]]
             }
         },
         {
@@ -77,7 +86,7 @@ def send_template_message(phone_number_id: str, access_token: str,
                           to: str, template_name: str, language: str,
                           parameters: list):
     """Send a WhatsApp template message."""
-    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v27.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -109,7 +118,7 @@ send_template_message(
     to="972541234567",
     template_name="appointment_reminder_he",
     language="he",
-    parameters=["Israel", "Dental Clinic", "15.03.2025", "10:00"]
+    parameters=["Israel", "Dental Clinic", "15.03.2026", "10:00"]
 )
 ```
 
@@ -118,7 +127,7 @@ send_template_message(
 def send_interactive_list(phone_number_id: str, access_token: str,
                           to: str, body_text: str, sections: list):
     """Send an interactive list message in Hebrew."""
-    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v27.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -189,10 +198,10 @@ def compliance_checklist(message_type: str) -> list:
 ### שלב 5: הנחיות לאינטגרציה עם CRM
 
 **Monday.com + WhatsApp:**
-1. השתמשו באינטגרציית WhatsApp של Monday.com (מובנית)
+1. השתמשו בשיטות אינטגרציה של Monday.com (אוטומציות או מחברים של צד שלישי)
 2. הפעילו שליחת הודעות WhatsApp בשינוי סטטוס בלוח
 3. תעדו הודעות נכנסות כעדכונים ב-Monday.com
-4. השתמשו באוטומציות Monday.com: "כשסטטוס משתנה ל-X, שלח תבנית WhatsApp"
+4. הגדירו זרימות עבודה אוטומטיות: "כשסטטוס משתנה ל-X, שלח תבנית WhatsApp"
 
 **אינטגרציית CRM מותאמת אישית:**
 ```python
