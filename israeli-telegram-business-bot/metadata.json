@@ -1,0 +1,21 @@
+{
+  "display_name": {
+    "he": "בוט טלגרם לעסקים ישראליים",
+    "en": "Israeli Telegram Business Bot"
+  },
+  "display_description": {
+    "he": "הקימו בוט טלגרם לעסק הישראלי שלכם עם קביעת תורים, ניהול הזמנות, מענה אוטומטי בעברית, מודעות לשעות פעילות (ראשון-חמישי), קישורי תשלום, והתראות ללקוחות. השתמשו כשבעל עסק רוצה בוט טלגרם לשירות לקוחות, תשובות אוטומטיות, קבלת הזמנות, או תיאום פגישות. מתאים גם למי שלא מתכנת. אל תשתמשו לוואטסאפ עסקי (השתמשו ב-israeli-whatsapp-business), בניית בוטים בקוד (השתמשו ב-telegram-bot-builder), או בוטים קוליים (השתמשו ב-hebrew-voice-bot-builder).",
+    "en": "Set up Telegram bots for Israeli small businesses with appointment booking, order management, FAQ auto-replies in Hebrew, business hours awareness (Sunday-Thursday), payment links, and customer notifications. Use when an Israeli business owner asks about creating a Telegram bot, automating customer replies, or scheduling appointments through a bot. Helps non-technical users deploy a working business bot without writing code. Do NOT use for WhatsApp Business (use israeli-whatsapp-business), building bots from code (use telegram-bot-builder), or voice bots (use hebrew-voice-bot-builder)."
+  },
+  "tags": {
+    "he": ["טלגרם", "בוט עסקי", "עסקים קטנים", "תורים", "הזמנות", "שירות לקוחות", "עברית", "ישראל"],
+    "en": ["telegram", "business-bot", "small-business", "appointments", "orders", "customer-service", "hebrew", "israel"]
+  },
+  "author": "skills-il",
+  "version": "1.0.0",
+  "category": "communication",
+  "supported_agents": ["claude-code", "openclaw", "cursor", "windsurf", "opencode", "codex"],
+  "openclaw": {
+    "display_name": "Israeli Telegram Business Bot"
+  }
+}
