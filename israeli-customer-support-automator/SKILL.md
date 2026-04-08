@@ -438,6 +438,23 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 - `references/consumer-protection-law.md` -- Key provisions of the Israeli Consumer Protection Law 1981. Covers cooling-off periods, return policies, cancellation fees, warranty obligations, and complaint handling requirements. Consult when handling returns, complaints, or any dispute involving consumer rights.
 - `references/hebrew-response-templates.md` -- Ready-to-use Hebrew canned responses for common support scenarios. Includes templates for acknowledgment, refund processing, return instructions, issue resolution, escalation notices, and satisfaction surveys. Consult when creating or customizing support response templates.
 
+## Recommended MCP Servers
+
+| MCP | What It Adds |
+|-----|-------------|
+| [Israel Law MCP](https://agentskills.co.il/he/mcps/legal-tech/israel-law) | Query 66 Israeli statutes including Consumer Protection Law provisions directly from the agent, enabling real-time legal reference during complaint handling |
+| [Kolzchut (All-Rights)](https://agentskills.co.il/he/mcps/government-services/kolzchut) | Search Israel's authoritative rights and entitlements database for consumer rights, return policies, and extended cooling-off eligibility for protected groups |
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Consumer Protection Authority | https://www.gov.il/he/pages/returns | Official return/cancellation policies and consumer rights |
+| Kolzchut - Remote Purchase Cancellation | https://www.kolzchut.org.il/he/ביטול_עסקה_שנעשתה_באינטרנט_או_בטלפון | Cooling-off periods, cancellation fees, extended rights for protected groups |
+| Consumer Protection Law (Full Text) | https://www.nevo.co.il/law_html/law00/70305.htm | Full text of the law with all amendments |
+| Small Claims Court Guide | https://www.gov.il/en/service/filing_a_small_claim | Current maximum claim amount and filing procedures |
+| Israel Consumer Council | https://www.consumers.org.il | Consumer advocacy, complaint filing guidance |
+
 ## Gotchas
 
 - The 14-day cooling-off period in Israel starts from the delivery date or the date the consumer received the contract terms, whichever is later. Agents may calculate it from the purchase date.

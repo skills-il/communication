@@ -116,13 +116,13 @@ This is the most frequently referenced section in customer support operations.
 | Website | gov.il (search: Rashut Haganat HaTzarchan) |
 | Filing complaints | Online portal, by phone, or in writing |
 | Investigation | Can investigate businesses, issue fines, and initiate criminal proceedings |
-| Penalties | Administrative fines up to NIS 226,000 per violation (2025 rates) |
+| Penalties | Administrative fines up to NIS 226,000 per violation (2025 rates, CPI-adjusted annually; verify current amount via gov.il) |
 
 ### Small Claims Court (Beit Mishpat leTvi'ot Ktanot)
 
 | Parameter | Value |
 |---|---|
-| Maximum claim amount | NIS 38,900 (updated annually) |
+| Maximum claim amount | NIS 38,900 (as of 1.1.2025, CPI-adjusted annually; verify current amount via court.gov.il) |
 | Legal representation | Not permitted (consumer and business represent themselves) |
 | Filing fee | Approximately NIS 1% of claim amount |
 | Timeline | Typically 2-6 months from filing to hearing |
