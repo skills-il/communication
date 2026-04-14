@@ -2,41 +2,46 @@
 name: gws-hebrew-email-automation
 description: >-
   אוטומציית ג'ימייל לפרילנסרים ישראלים באמצעות Google Workspace CLI (gws).
-  Use when user asks to "שלח מייל ללקוח", "תזכורת תשלום", "מיין את תיבת הדואר",
-  "הגדר פילטרים לג'ימייל", או "תזמן מייל". יכולות מרכזיות כוללות ניסוח מיילים
-  דו-לשוניים, רצפי תזכורות תשלום בשקלים, מיון תיבת דואר עם תוויות בעברית,
-  ותזמון שליחה מותאם שבת. Do NOT use for ספקי מייל שאינם Gmail, אוטומציית Outlook,
+  מתאים כשהמשתמש מבקש "לשלוח מייל ללקוח", "תזכורת תשלום בשקלים",
+  "למיין את תיבת הדואר עם תוויות בעברית", "להגדיר פילטרים לג'ימייל",
+  או "לשמור טיוטה לשליחה מאוחרת" שמכבדת שעות עבודה ישראליות.
+  יכולות מרכזיות: ניסוח מיילים דו-לשוניים דרך gws gmail +send,
+  רצפי תזכורות תשלום בשקלים, תיוג תיבת דואר בעברית דרך Discovery API,
+  ותהליך draft-then-send מותאם שבת.
+  Do NOT use for ספקי מייל שאינם Gmail, אוטומציית Outlook,
   או ניהול CRM.
 license: MIT
-metadata:
-  author: choroshin
-  version: 1.0.0
-  category: communication
 ---
 
 # אוטומציית מייל בעברית עם GWS
 
 ## הוראות
 
-### שלב 1: בדיקת התקנה ואימות GWS CLI
+### שלב 1: התקנה ואימות gws
 
-לפני הרצת פקודות Gmail, יש לוודא שה-GWS CLI מותקן ומאומת.
+לפני כל פקודת Gmail, יש לוודא ש-`gws` מותקן ומאומת. `gws` הוא בינארי Rust שנכתב על ידי הקהילה ומופץ ב-npm בשם `@googleworkspace/cli`. הוא אינו מוצר רשמי של גוגל, לכן המשתמש צריך לספק פרויקט Google Cloud ו-OAuth client משלו.
 
 ```bash
-# בדיקה אם gws מותקן
+# בדיקת גרסה (האחרונה היא 0.22.x)
 gws --version
 
-# התקנה אם חסר
+# התקנה גלובלית אם חסר
 npm install -g @googleworkspace/cli
 
-# אימות עם חשבון Google
-gws auth login
+# הגדרה ראשונית: פרויקט GCP, הפעלת Gmail API,
+# יצירת OAuth client מסוג Desktop. דורש gcloud CLI.
+gws auth setup
 
-# בדיקת סטטוס אימות
+# התחברות ואישור הרשאות Gmail (פותח דפדפן)
+gws auth login --scopes gmail
+
+# אימות הסטטוס
 gws auth status
 ```
 
-אם המשתמש לא ביצע אימות, יש להנחות אותו דרך `gws auth login` שפותח חלון דפדפן ל-OAuth. ה-CLI שומר טוקנים מקומית ומרענן אותם אוטומטית.
+אם `gws auth setup` לא מוצא את `gcloud`, יש לפתוח את ה-Google Cloud Console, ליצור פרויקט, להפעיל את Gmail API, ליצור OAuth client מסוג Desktop ולשמור את קובץ ה-JSON שהורד ב-`~/.config/gws/client_secret.json`. ואז להריץ `gws auth login --scopes gmail`.
+
+הטוקנים מוצפנים במנוחה (AES-256-GCM) ומתרעננים אוטומטית, לכן אין פקודת `refresh` נפרדת.
 
 ### שלב 2: ניסוח ושליחת מיילים דו-לשוניים עברית/אנגלית
 
@@ -47,15 +52,17 @@ gws auth status
 | חלק | שפה | הנחיות |
 |-----|-----|--------|
 | שורת נושא | עברית | עד 50 תווים, כולל פריט פעולה מרכזי |
-| ברכה | עברית | רשמי: "שלום [שם]," או לא רשמי: "היי [שם]," |
+| ברכה | עברית | רשמי: `שלום [שם],` או לא רשמי: `היי [שם],` |
 | גוף | עברית (ראשי) | ימין-לשמאל, שימוש במונחים עסקיים מקומיים |
-| חלק אנגלי | אנגלית (אופציונלי) | הוסף מתחת למפריד אם הנמען צריך |
+| חלק אנגלי | אנגלית (אופציונלי) | להוסיף מתחת למפריד אם הנמען צריך |
 | חתימה | דו-לשוני | שם בעברית קודם, אנגלית מתחת |
 
-**שליחת מייל:**
+**שליחת מייל עם ה-helper ‎`+send`:**
+
+הקידומת `+` מסמנת פקודות helper כתובות ביד ב-`gws`, הן קיימות במקביל למשטח Discovery האוטומטי ולא מתנגשות בשמות מתודות. הדגלים האמיתיים של `gws gmail +send`: `--to`, `--subject`, `--body`, `--cc`, `--bcc`, `--from`, `--attach`/`-a`, `--html`, `--draft`, `--dry-run`.
 
 ```bash
-gws gmail send \
+gws gmail +send \
   --to "client@example.com" \
   --subject "הצעת מחיר - פרויקט פיתוח אתר" \
   --body "שלום רב,
@@ -72,13 +79,13 @@ gws gmail send \
   --dry-run
 ```
 
-**חשוב:** תמיד להשתמש ב-`--dry-run` קודם לתצוגה מקדימה. להסיר את הדגל רק לאחר אישור המשתמש.
+**חשוב:** תמיד להריץ קודם עם `--dry-run` כדי לראות את הבקשה המלאה. להסיר את הדגל רק לאחר אישור המשתמש. לסקירה לפני שליחה אמיתית, להשתמש ב-`--draft` ששומר את המייל כטיוטה ב-Gmail במקום לשלוח.
 
 **עיצוב סכומים בשקלים (ILS):**
-- סימן השקל: ש"ח (שקל חדש)
-- פורמט: `15,000 ש"ח` (הפרדת אלפים בפסיק, סימן אחרי הסכום)
-- עבור מע"מ: ציין `לא כולל מע"מ` או `כולל מע"מ`
-- שיעור מע"מ: 18% (שיעור המע"מ הנוכחי בישראל)
+- קיצור השקל: `ש"ח` (שקל חדש)
+- פורמט: `15,000 ש"ח` (הפרדת אלפים בפסיק, הקיצור אחרי המספר)
+- עבור מע"מ: לציין `לא כולל מע"מ` או `כולל מע"מ`
+- שיעור מע"מ ישראלי נוכחי: **18%** (הועלה מ-17% ב-1 בינואר 2025 לפי חוק ההסדרים). אפשר להשתמש ב-`scripts/shekel-formatter.py --vat` לחישוב הפירוט.
 
 ### שלב 3: רצפי תזכורות תשלום
 
@@ -91,10 +98,10 @@ gws gmail send \
 | הודעה אחרונה | 22-30 | רשמי, דחוף | תזכורת אחרונה - |
 | אזהרת איחור | 30+ | טון משפטי | חשבונית באיחור - |
 
-**דוגמה: תזכורת תשלום ידידותית**
+**דוגמה: תזכורת תשלום ידידותית שנשמרת כטיוטה לסקירת המשתמש**
 
 ```bash
-gws gmail send \
+gws gmail +send \
   --to "client@example.com" \
   --subject "תזכורת - חשבונית מס' 1042 לתשלום" \
   --body "שלום [שם הלקוח],
@@ -112,124 +119,156 @@ gws gmail send \
 
 תודה רבה,
 [שם]" \
-  --dry-run
+  --draft
 ```
+
+לשמור כ-`--draft`, ואז לבקש מהמשתמש לפתוח את Gmail, לסקור וללחוץ שלח (או לתזמן דרך ממשק Gmail).
 
 **עיצוב תאריכים לחשבוניות ישראליות:**
 - פורמט DD.MM.YYYY (תקן ישראלי)
-- תנאי תשלום: שוטף + 30 (Net+30), שוטף + 45 (Net+45), שוטף + 60 (Net+60)
+- תנאי תשלום: שוטף + 30 (נטו 30 מסוף החודש הנוכחי), שוטף + 45, שוטף + 60
 
-### שלב 4: מיון תיבת דואר עם מודעות לעברית
+### שלב 4: מיון תיבת הדואר ותיוג בעברית
 
-שימוש ב-`gws gmail triage` לתיוג וארגון אוטומטי של מיילים משירותים ישראליים.
+ה-helper ‎`+triage` הוא סיכום לקריאה בלבד, הוא מציג הודעות לא נקראות אבל לא מתייג דבר. כדי באמת להחיל תוויות עבריות על מיילים תואמים, יש לשלב שלוש פקודות Discovery: רשימת תוויות, רשימת הודעות לפי שאילתה, ואז modify לכל הודעה להוספת התווית.
+
+**4א. סיכום הודעות לא נקראות (קריאה בלבד):**
+
+```bash
+# ברירת מחדל: 20 ההודעות הלא נקראות האחרונות בטבלה
+gws gmail +triage
+
+# צמצום לפי שאילתת חיפוש של Gmail
+gws gmail +triage --max 10 --query "from:(leumi.co.il OR bankhapoalim.co.il)"
+
+# כולל שמות תוויות לכל הודעה
+gws gmail +triage --labels
+```
+
+דגלים ש-`+triage` מקבל: `--max`, `--query`, `--labels`. אין דגלי `--from` או `--label`.
+
+**4ב. יצירת תווית בעברית (פעם אחת בלבד):**
+
+```bash
+gws gmail users labels create \
+  --params '{"userId": "me"}' \
+  --json '{"name": "בנקאות", "labelListVisibility": "labelShow", "messageListVisibility": "show"}' \
+  --dry-run
+```
+
+יש לקחת את ה-`id` שחוזר (לדוגמה `Label_1234567890`) לשלב הבא.
+
+**4ג. רשימת הודעות לפי שאילתת Gmail והחלת התווית:**
+
+```bash
+# מציאת מיילים של בנקים (שימוש בתחביר חיפוש Gmail ב-`q`)
+gws gmail users messages list \
+  --params '{"userId": "me", "q": "from:(leumi.co.il OR bankhapoalim.co.il OR discountbank.co.il OR mizrahi-tefahot.co.il)", "maxResults": 50}' \
+  | jq -r '.messages[].id' > /tmp/bank-msg-ids.txt
+
+# החלת התווית על כל הודעה תואמת
+while read -r msg_id; do
+  gws gmail users messages modify \
+    --params "{\"userId\": \"me\", \"id\": \"$msg_id\"}" \
+    --json '{"addLabelIds": ["Label_1234567890"]}' \
+    --dry-run
+done < /tmp/bank-msg-ids.txt
+```
 
 **מבנה תוויות לפרילנסרים ישראלים:**
 
-| תווית (עברית) | תווית (אנגלית) | התאמות |
-|--------------|----------------|--------|
-| בנקאות | Banking | לאומי, הפועלים, דיסקונט, מזרחי, מרכנתיל |
-| חשבוניות | Invoices | חשבשבת (Morning), חשבונית ירוקה (Green Invoice), iCount |
-| ממשלתי | Government | gov.il, taxes.gov.il, btl.gov.il |
+| תווית (עברית) | תווית (אנגלית) | שאילתת `q:` מוצעת |
+|--------------|----------------|-------------------|
+| בנקאות | Banking | `from:(leumi.co.il OR bankhapoalim.co.il OR discountbank.co.il OR mizrahi-tefahot.co.il OR mercantile.co.il)` |
+| חשבוניות | Invoices | `from:(greeninvoice.co.il OR icount.co.il OR ezcount.co.il OR hashavshevet.co.il)` |
+| ממשלתי | Government | `from:(gov.il OR taxes.gov.il OR btl.gov.il)` |
 | לקוחות/פעיל | Clients/Active | דומיינים של לקוחות (מוגדר ע"י המשתמש) |
-| לקוחות/ליד | Clients/Lead | דומיינים של לקוחות פוטנציאליים |
-| קבלות | Receipts | PayBox, Bit, PayPal |
+| קבלות | Receipts | `from:(paybox.co.il OR bitpay.co.il OR paypal.com)` |
 
-**הרצת מיון:**
+### שלב 5: יצירת פילטרים קבועים לג'ימייל
+
+פילטרים של Gmail מתייגים אוטומטית דואר נכנס. אין helper ‎`gws gmail +filter`, יש להשתמש במתודת Discovery ‎`users settings filters create` עם סכמת הפילטרים האמיתית של Gmail.
 
 ```bash
-gws gmail triage \
-  --label "בנקאות" \
-  --from "leumi.co.il,bankhapoalim.co.il,discountbank.co.il,mizrahi-tefahot.co.il" \
+# פילטר: תיוג התראות בנקאיות ישראליות
+gws gmail users settings filters create \
+  --params '{"userId": "me"}' \
+  --json '{
+    "criteria": {"from": "leumi.co.il OR bankhapoalim.co.il OR discountbank.co.il"},
+    "action": {"addLabelIds": ["Label_1234567890"]}
+  }' \
+  --dry-run
+
+# פילטר: ארכוב קבלות אוטומטית (דילוג על INBOX, החלת תווית)
+gws gmail users settings filters create \
+  --params '{"userId": "me"}' \
+  --json '{
+    "criteria": {"from": "greeninvoice.co.il OR icount.co.il"},
+    "action": {"addLabelIds": ["Label_2345678901"], "removeLabelIds": ["INBOX"]}
+  }' \
   --dry-run
 ```
 
-```bash
-gws gmail triage \
-  --label "חשבוניות" \
-  --from "greeninvoice.co.il,morning-invoice.co.il,icount.co.il" \
-  --dry-run
-```
-
-```bash
-gws gmail triage \
-  --label "ממשלתי" \
-  --from "gov.il,taxes.gov.il,btl.gov.il,nevo.co.il" \
-  --dry-run
-```
-
-### שלב 5: הגדרת פילטרים לג'ימייל לדפוסים עסקיים ישראליים
-
-יצירת פילטרים קבועים לג'ימייל לתיוג אוטומטי של דואר נכנס משירותים ישראליים.
-
-```bash
-# פילטר להתראות בנקאיות ישראליות
-gws gmail filter \
-  --from "leumi.co.il OR bankhapoalim.co.il OR discountbank.co.il" \
-  --label "בנקאות" \
-  --dry-run
-
-# פילטר לשירותי חשבוניות (חשבשבת / חשבונית ירוקה)
-gws gmail filter \
-  --from "greeninvoice.co.il OR morning-invoice.co.il" \
-  --label "חשבוניות" \
-  --dry-run
-
-# פילטר לגורמים ממשלתיים
-gws gmail filter \
-  --from "gov.il" \
-  --label "ממשלתי" \
-  --dry-run
-```
+אפשר להשתמש ב-`gws gmail users settings filters list --params '{"userId": "me"}'` לבדיקת פילטרים קיימים וב-`gws gmail users settings filters delete --params '{"userId": "me", "id": "FILTER_ID"}'` למחיקה.
 
 ### שלב 6: שמירה על שעות עבודה ישראליות ושבת
 
-בתזמון מיילים, יש לכבד את המנהגים העסקיים הישראליים:
+ל-`gws gmail +send` **אין** דגל תזמון שליחה. תזמון שליחה של Gmail זמין רק בממשק הווב והמובייל של Gmail. כדי לכבד את המנהגים העסקיים הישראליים מה-CLI, יש לשמור טיוטות עם `--draft` ולאפשר למשתמש לסקור ולשלוח (או לתזמן) אותן מ-Gmail.
 
 | כלל | פרטים |
 |-----|-------|
 | ימי עבודה | ראשון עד חמישי |
-| שעות עבודה | 09:00-18:00 שעון ישראל (IST/IDT) |
+| שעות עבודה | 09:00-18:00 שעון ישראל (חורף UTC+2, קיץ UTC+3) |
 | יום שישי | העבודה מסתיימת מוקדם, בדרך כלל עד 13:00-14:00 |
 | ערב שבת | לא לשלוח אחרי 14:00 ביום שישי |
 | שבת | לא לשלוח משקיעת החמה ביום שישי עד מוצאי שבת |
 | חגים יהודיים | להימנע משליחה בחגים |
 
-**תזמון שליחה בשעות עבודה:**
+**זרימת עבודה מומלצת:**
 
 ```bash
-# בדיקת השעה הנוכחית בישראל
+# 1. בדיקת השעה הנוכחית בישראל
 TZ=Asia/Jerusalem date
 
-# תזמון ליום עבודה הבא בבוקר אם מחוץ לשעות
-gws gmail send \
+# 2. אם זה מחוץ לשעות עבודה, לשמור כטיוטה לסקירה
+gws gmail +send \
   --to "client@example.com" \
   --subject "עדכון פרויקט" \
-  --body "..." \
-  --schedule "next Sunday 09:00" \
-  --dry-run
+  --body "שלום,
+
+מצורף עדכון שבועי לגבי התקדמות הפרויקט..." \
+  --draft
+
+# 3. להודיע למשתמש: הטיוטה נשמרה. לפתוח Gmail, Drafts,
+#    ללחוץ Schedule send ולבחור ראשון 09:00 שעון ישראל.
 ```
 
-**לפני שליחת כל מייל, יש לבדוק:**
-1. האם זה יום שישי אחרי 14:00? אם כן, לתזמן ליום ראשון 09:00
-2. האם זה יום שבת? אם כן, לתזמן ליום ראשון 09:00
-3. האם זה אחרי 18:00 ביום חול? אם כן, לתזמן לבוקר למחרת 09:00
-4. האם זה חג יהודי? אם כן, לתזמן ליום העבודה הבא
+**לפני ניסוח כל מייל יוצא, לבדוק:**
+1. האם זה יום שישי אחרי 14:00 שעון ישראל? לשמור כ-`--draft` ולהגיד למשתמש לתזמן ליום ראשון 09:00.
+2. האם זה שבת (משקיעת החמה בשישי עד מוצאי שבת)? לשמור כ-`--draft`.
+3. האם זה אחרי 18:00 ביום חול? לשמור כ-`--draft` ולהציע שליחה לבוקר למחרת.
+4. האם זה חג יהודי (לאמת עם המשתמש)? לשמור כ-`--draft`.
 
-### שלב 7: מעקב אחר מיילים נכנסים
+### שלב 7: מעקב אחר מיילים נכנסים (מתקדם, אופציונלי)
 
-הגדרת ניטור בזמן אמת למיילים עסקיים חשובים:
+ה-helper ‎`+watch` מזרים מיילים חדשים כ-NDJSON באמצעות Gmail push notifications מעל Google Pub/Sub. הוא דורש פרויקט GCP עם Pub/Sub מופעל ומסנן רק לפי **label IDs**, לא לפי דומיינים של שולחים. כדאי להשתמש כשצריך תגובה בזמן אמת (חשבונית חדשה ואז ping ל-Slack), לא לארגון פסיבי של תיבת הדואר.
 
 ```bash
-# מעקב אחר חשבוניות חדשות משירותים ישראליים
-gws gmail watch \
-  --from "greeninvoice.co.il,morning-invoice.co.il" \
-  --label "חשבוניות"
+# משיכה חד-פעמית: מביא הודעות חדשות ב-INBOX פעם אחת ויוצא
+gws gmail +watch \
+  --project my-gcp-project \
+  --label-ids INBOX \
+  --once
 
-# מעקב אחר התראות בנקאיות
-gws gmail watch \
-  --from "leumi.co.il,bankhapoalim.co.il" \
-  --label "בנקאות"
+# watch ארוך טווח עם ניקוי Pub/Sub אוטומטי
+gws gmail +watch \
+  --project my-gcp-project \
+  --label-ids INBOX,UNREAD \
+  --cleanup \
+  --output-dir ./incoming
 ```
+
+דגלים אמיתיים: `--project`, `--subscription`, `--topic`, `--label-ids`, `--max-messages`, `--poll-interval`, `--msg-format`, `--once`, `--cleanup`, `--output-dir`. רישומי Gmail watch פגים אחרי 7 ימים ויש לחדש אותם. אם למשתמש אין כבר Pub/Sub מוגדר, כדאי לדלג על השלב הזה, זרימת התיוג הבסיסית בשלב 4 מספיקה לרוב הפרילנסרים.
 
 ## דוגמאות
 
@@ -241,12 +280,12 @@ gws gmail watch \
 1. חישוב תאריך הפירעון המקורי (לפני 10 ימים מהיום)
 2. קביעת שלב ההסלמה: 8-21 ימים = "הודעה שנייה"
 3. ניסוח מייל בעברית בטון מקצועי ונחרץ
-4. עיצוב סכום כ-12,000 ש"ח
-5. הכללת טבלת פרטי חשבונית
-6. הרצה עם --dry-run תחילה לאישור המשתמש
+4. עיצוב סכום כ-`12,000 ש"ח`
+5. הכללת פרטי חשבונית
+6. שמירה כ-`--draft` לסקירת המשתמש לפני שליחה
 
 ```bash
-gws gmail send \
+gws gmail +send \
   --to "david@techstartup.co.il" \
   --subject "תזכורת שנייה - חשבונית 2045 לתשלום" \
   --body "שלום דוד,
@@ -262,84 +301,125 @@ gws gmail send \
 
 בברכה,
 [שם]" \
-  --dry-run
+  --draft
 ```
 
-תוצאה: מייל נוסח בעברית מקצועית עם עיצוב שקלים נכון, תצוגה מקדימה דרך dry-run לאישור המשתמש.
+תוצאה: המייל נשמר כטיוטה ב-Gmail בעברית מקצועית עם עיצוב שקלים נכון. המשתמש פותח Gmail, Drafts, Send.
 
-### דוגמה 2: מיון אוטומטי של תיבת דואר עם תוויות בעברית
+### דוגמה 2: תיוג מיילים מבנקים עם תווית בעברית
 
-המשתמש אומר: "תארגן לי את תיבת הדואר, תתייג את כל המיילים מהבנקים ושירותי החשבוניות"
+המשתמש אומר: "תארגן לי את תיבת הדואר, תתייג את כל המיילים מהבנקים עם בנקאות"
 
 פעולות:
-1. יצירת תוויות בעברית אם לא קיימות: בנקאות, חשבוניות, ממשלתי
-2. הרצת מיון לבנקים ישראליים (לאומי, הפועלים, דיסקונט, מזרחי)
-3. הרצת מיון לפלטפורמות חשבוניות (חשבשבת, חשבונית ירוקה, iCount)
-4. הרצת מיון לגורמים ממשלתיים
-5. דיווח סיכום של מיילים שתויגו
+1. יצירת התווית בעברית אם לא קיימת, לקיחת ה-`id`
+2. רשימת הודעות לא נקראות מבנקים ישראליים עם `users messages list`
+3. עבור כל הודעה תואמת, החלת התווית עם `users messages modify`
+4. דיווח על המספר
 
 ```bash
-gws gmail triage --label "בנקאות" --from "leumi.co.il,bankhapoalim.co.il,discountbank.co.il,mizrahi-tefahot.co.il" --dry-run
-gws gmail triage --label "חשבוניות" --from "greeninvoice.co.il,morning-invoice.co.il,icount.co.il" --dry-run
-gws gmail triage --label "ממשלתי" --from "gov.il,taxes.gov.il,btl.gov.il" --dry-run
+# יצירת תווית (פעם אחת)
+LABEL_ID=$(gws gmail users labels create \
+  --params '{"userId": "me"}' \
+  --json '{"name": "בנקאות"}' | jq -r '.id')
+
+# רשימת מיילים של בנקים
+gws gmail users messages list \
+  --params '{"userId": "me", "q": "from:(leumi.co.il OR bankhapoalim.co.il OR discountbank.co.il OR mizrahi-tefahot.co.il)", "maxResults": 50}' \
+  | jq -r '.messages[].id' > /tmp/bank-msgs.txt
+
+# החלת התווית
+while read -r id; do
+  gws gmail users messages modify \
+    --params "{\"userId\": \"me\", \"id\": \"$id\"}" \
+    --json "{\"addLabelIds\": [\"$LABEL_ID\"]}"
+done < /tmp/bank-msgs.txt
+
+echo "תויגו $(wc -l < /tmp/bank-msgs.txt) הודעות בנקים תחת בנקאות"
 ```
 
-תוצאה: תיבת הדואר מאורגנת עם תוויות בעברית. מיילים בנקאיים תויגו תחת "בנקאות", חשבוניות תחת "חשבוניות", דואר ממשלתי תחת "ממשלתי".
+תוצאה: כל המיילים התואמים של בנקים נושאים את התווית בנקאות ב-Gmail.
 
-### דוגמה 3: תזמון מייל תוך כיבוד שבת
+### דוגמה 3: שמירת טיוטה במקום שליחה ביום שישי אחה"צ
 
 המשתמש אומר: "שלח עדכון פרויקט ללקוח, אבל עכשיו יום שישי אחר הצהריים"
 
 פעולות:
-1. בדיקת שעון ישראל הנוכחי: יום שישי 15:30 IST
+1. בדיקת שעון ישראל הנוכחי: `TZ=Asia/Jerusalem date` מראה יום שישי 15:30 IDT
 2. קביעה שזה אחרי סף 14:00 של יום שישי (ערב שבת)
-3. תזמון המייל ליום ראשון 09:00 IST במקום
-4. הודעה למשתמש על תזמון מותאם שבת
+3. שמירת המייל כטיוטה ב-Gmail במקום לשלוח
+4. הנחיית המשתמש לפתוח Gmail Drafts וללחוץ Schedule send ליום ראשון 09:00
 
 ```bash
-gws gmail send \
+TZ=Asia/Jerusalem date
+# Fri Apr 17 15:30:12 IDT 2026, אחרי 14:00, לא לשלוח
+
+gws gmail +send \
   --to "client@example.com" \
   --subject "עדכון שבועי - פרויקט אתר" \
   --body "שלום,
 
 מצורף עדכון שבועי לגבי התקדמות הפרויקט..." \
-  --schedule "next Sunday 09:00" \
-  --dry-run
+  --draft
 ```
 
-תוצאה: המייל תוזמן לבוקר יום ראשון, תוך כיבוד ערב שבת. המשתמש עודכן ששליחות ביום שישי אחה"צ נדחות אוטומטית.
+תוצאה: הטיוטה נשמרה. המשתמש עודכן ששליחות בשישי אחה"צ נדחות, לפתוח Gmail Drafts לסקירה ולתזמן שליחה ליום ראשון 09:00 שעון ישראל.
 
 ## משאבים מצורפים
 
 ### סקריפטים
-- `scripts/shekel-formatter.py` -- עיצוב סכומי מטבע לתקן השקל הישראלי (ILS) עם סימון נכון. הרצה: `python scripts/shekel-formatter.py --help`
+- `scripts/shekel-formatter.py` — עיצוב סכומי מטבע לתקן השקל הישראלי (ILS) עם סימון נכון ופירוט מע"מ 18% אופציונלי. הרצה: `python scripts/shekel-formatter.py --help`
 
 ### מסמכי עזר
-- `references/israeli-business-email-templates.md` -- אוסף תבניות מייל בעברית לתרחישים נפוצים של פרילנסרים: הצעות מחיר, חשבוניות, מעקב, עדכוני פרויקט. יש להיוועץ בעת ניסוח מיילים מקצועיים בעברית ללקוחות ישראליים.
-- `references/gws-gmail-commands.md` -- מדריך מהיר לפקודות gmail של Google Workspace CLI, דגלים ופורמטים של פלט. יש להיוועץ בעת בניית פקודות gws או פתרון שגיאות CLI.
+- `references/israeli-business-email-templates.md` — אוסף תבניות מייל בעברית לתרחישים נפוצים של פרילנסרים: הצעות מחיר, חשבוניות, מעקב, עדכוני פרויקט. להיוועץ בעת ניסוח מיילים מקצועיים בעברית ללקוחות ישראליים.
+- `references/gws-gmail-commands.md` — מדריך מהיר לפקודות האמיתיות של `gws gmail` שבשימוש בסקיל הזה (`+send`, `+triage`, `+watch`, ובנוסף משטח Discovery של ‎`users.labels`, `users.messages.list/modify`, `users.settings.filters`). להיוועץ בעת בניית פקודות `gws` או פתרון תקלות.
+
+## שרתי MCP מומלצים
+
+אין כרגע שרתי MCP של Gmail או Google Workspace ברשימת skills-il. אם משתמש מעדיף גישה מבוססת כלים על פני פקודות CLI, להפנות אותו ל-`gws auth setup` ולהוראות בשלב 1, ה-CLI הוא הנתיב הנתמך.
 
 ## מלכודות נפוצות
 
-- ימי העבודה בישראל הם ראשון עד חמישי, לא שני עד שישי. סוכנים עלולים לתזמן מיילים ליום שבת או להניח ששישי הוא יום עבודה מלא.
-- סכומים בשקלים נכתבים "15,000 ש"ח" (הסימן אחרי המספר), לא "₪15,000" (הסימן לפני). סוכנים עלולים להשתמש במוסכמות הצבת סימן מטבע של דולר/יורו.
-- תאריכי חשבוניות ישראליות בפורמט DD.MM.YYYY (מופרד בנקודות), לא DD/MM/YYYY או MM/DD/YYYY. סוכנים עלולים ליצור חשבוניות עם פורמט תאריך שגוי.
-- תנאי התשלום הסטנדרטי בישראל הוא "שוטף + 30", כלומר 30 יום מסוף החודש הנוכחי. סוכנים עלולים לפרש זאת פשוט כ-net 30 מתאריך החשבונית.
-- שורות נושא של מיילים בעברית חייבות להיות תמציתיות (עד 50 תווים) כי טקסט RTL נחתך בצורה שונה מ-LTR בלקוחות מייל.
+- פקודות helper של `gws` משתמשות בקידומת `+` (`gws gmail +send`, `gws gmail +triage`, `gws gmail +watch`). סוכנים שאומנו על מוסכמות CLI אחרות פעמים רבות משמיטים את ה-`+` ומייצרים פקודות שיחזירו "unknown subcommand". תמיד לכלול את סימן הפלוס ב-helpers.
+- ל-`gws gmail +send` **אין** דגל `--schedule`. תזמון השליחה של Gmail קיים רק בממשק הווב והמובייל של Gmail. סוכנים שמניחים שיש דגל `--schedule` יפיקו פקודות שיחזירו שגיאה. להשתמש ב-`--draft` ולהנחות את המשתמש לתזמן מ-Gmail אם צריך שליחה דחויה.
+- `gws gmail +triage` הוא **קריאה בלבד**, הוא מציג טבלה של הודעות לא נקראות אבל לא משנה את תיבת הדואר. כדי באמת להחיל תוויות, יש להשתמש ברצף ‎`users messages list` ו-‎`users messages modify` משלב 4. סוכנים מבלבלים ביניהם לעיתים קרובות.
+- ימי העבודה בישראל הם ראשון עד חמישי, לא שני עד שישי. סוכנים עלולים לתזמן מיילים לשבת או להניח ששישי הוא יום עבודה מלא.
+- סכומים בשקלים נכתבים `15,000 ש"ח` (הקיצור אחרי המספר), לא `₪15,000`. סוכנים עלולים להשתמש במוסכמות הצבת סימן מטבע של דולר/יורו.
+- תאריכי חשבוניות ישראליות בפורמט DD.MM.YYYY (מופרד בנקודות), לא DD/MM/YYYY או MM/DD/YYYY.
+- תנאי התשלום הישראלי הסטנדרטי `שוטף + 30` פירושו נטו 30 מ**סוף החודש הנוכחי**, לא 30 יום מתאריך החשבונית. חשבונית מ-01.01 ב-שוטף + 30 פירעונה 28.02, לא 31.01.
+
+## קישורי עזר
+
+| מקור | URL | מה לבדוק |
+|------|-----|---------|
+| README של Google Workspace CLI | https://github.com/googleworkspace/cli/blob/main/README.md | התקנה, זרימת auth, רשימת פקודות helper |
+| סקיל קנוני ‎`gws gmail +send` | https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-send/SKILL.md | הדגלים המדויקים ש-`+send` מקבל |
+| סקיל קנוני ‎`gws gmail +triage` | https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-triage/SKILL.md | `+triage` הוא סיכום קריאה בלבד, דגלים `--max`, `--query`, `--labels` |
+| סקיל קנוני ‎`gws gmail +watch` | https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-watch/SKILL.md | דרישות Pub/Sub, `--label-ids` (לא `--from`) |
+| Gmail API ‎`users.settings.filters` | https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters | סכמת criteria/action לשלב 5 |
+| שיעור מע"מ ישראלי (18% מ-1 בינואר 2025) | https://www.gov.il/BlobFolder/dynamiccollectorresultitem/represent-info-051224-2/he/vat_represent-info-051224-2.pdf | הוראת פרשנות 1/2025 של רשות המסים: העלאת מע"מ מ-17% ל-18% |
 
 ## פתרון בעיות
 
 ### שגיאה: "gws: command not found"
-סיבה: ה-Google Workspace CLI לא מותקן או לא נמצא ב-PATH.
-פתרון: התקנה דרך `npm install -g @googleworkspace/cli`. אם משתמשים ב-npx, להוסיף קידומת `npx @googleworkspace/cli` לפקודות. אימות התקנה עם `gws --version`.
+סיבה: `@googleworkspace/cli` לא מותקן או לא נמצא ב-`PATH`.
+פתרון: התקנה עם `npm install -g @googleworkspace/cli`. אימות עם `gws --version`. אפשר גם להוריד בינארי מוכן מעמוד [GitHub Releases](https://github.com/googleworkspace/cli/releases) ולשים אותו ב-`PATH`.
 
-### שגיאה: "Authentication required"
-סיבה: המשתמש לא השלים את התחברות ה-OAuth או שהטוקן פג תוקף.
-פתרון: להריץ `gws auth login` להתחלת OAuth בדפדפן. אם הטוקנים פגו, להריץ `gws auth refresh`. בדיקת סטטוס עם `gws auth status`.
+### שגיאה: "Access blocked" או 403 במהלך `gws auth login`
+סיבה: אפליקציית ה-OAuth נמצאת במצב בדיקה וחשבון הגוגל שלך לא רשום כ-test user, או שביקשת יותר מדי scopes בבת אחת (אפליקציות לא מאומתות מוגבלות ל-~25).
+פתרון: פתח את [OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent) בפרויקט ה-GCP שלך, הוסף את המייל שלך תחת Test users, והרץ שוב עם רשימת scopes מצומצמת: `gws auth login --scopes gmail`.
 
-### שגיאה: "Label not found" בהרצת מיון
-סיבה: התווית בעברית עדיין לא קיימת בחשבון ה-Gmail של המשתמש.
-פתרון: Gmail יוצר תוויות אוטומטית בהרצת מיון ראשונה. אם השגיאה נמשכת, ליצור את התווית ידנית בהגדרות Gmail או להשתמש ב-`gws gmail label create "בנקאות"`.
+### שגיאה: `accessNotConfigured`, "Gmail API has not been used in project ..."
+סיבה: ה-Gmail API לא מופעל בפרויקט ה-GCP הקשור ל-OAuth client שלך.
+פתרון: עקוב אחר ה-`enable_url` שמודפס בשגיאה ל-Cloud Console API library, לחץ Enable, חכה ~10 שניות, ונסה שוב. `gws auth setup` יכול להפעיל גם APIs נדרשים אוטומטית.
 
-### שגיאה: "Rate limit exceeded" בשליחת תזכורות מרובות
-סיבה: API של Gmail מגביל שליחה ל-100 מיילים ביום לחשבונות צרכניים, 2000 לחשבונות Workspace.
-פתרון: לפזר שליחות על פני מספר ימים. להשתמש ב-`--schedule` לפיזור מיילים. לצרכים בנפח גבוה, מומלץ לשדרג ל-Google Workspace Business.
+### שגיאה: "unknown subcommand: send"
+סיבה: כתבת `gws gmail send` במקום `gws gmail +send`. פקודות helper ב-`gws` משתמשות בקידומת `+` כדי להבדיל בינן לבין מתודות Discovery האוטומטיות.
+פתרון: להוסיף את סימן הפלוס: `gws gmail +send --to ... --subject ... --body ...`.
+
+### שגיאה: "Label not found" בהחלת תווית
+סיבה: התווית בעברית עדיין לא קיימת, או השתמשת בשם התווית במקום ב-`id` של התווית.
+פתרון: צור קודם את התווית עם `gws gmail users labels create --params '{"userId": "me"}' --json '{"name": "בנקאות"}'`, קח את ה-`id` שחוזר, והעבר את ה-`id` הזה ל-`addLabelIds` ב-`users messages modify`.
+
+### שגיאה: "Rate limit exceeded" בתיוג הודעות רבות
+סיבה: Gmail API אוכף מכסת quota units לשנייה לכל משתמש, קריאות `messages modify` בלולאה צפופה יכולות להיתקל במכסה.
+פתרון: להוסיף `sleep 0.1` קטן בין קריאות `modify` או לעבד הודעות בבאצ'ים. לגבי מגבלות שליחה יומיות, Gmail צרכני מוגבל ל-100 נמענים ביום ו-Google Workspace ל-2,000 נמענים ביום.

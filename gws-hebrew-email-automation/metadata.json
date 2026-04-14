@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "category": "communication",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "GWS Hebrew Email Automation"
   },
   "display_description": {
-    "he": "אוטומציית תהליכי ג'ימייל לפרילנסרים ישראלים באמצעות Google Workspace CLI -- מיילים דו-לשוניים, תזכורות תשלום, מיון תיבת דואר בעברית ותזמון מותאם שבת.",
-    "en": "Gmail automation for Israeli freelancers using the Google Workspace CLI (gws). Use when user asks to draft Hebrew client emails, send payment reminders in Shekels, triage inbox with Hebrew labels, set up Gmail filters for Israeli services, or schedule emails respecting Israeli business hours. Key capabilities include bilingual email drafting, payment reminder sequences with ILS amounts, Hebrew-aware inbox triage, and Shabbat-aware send scheduling. Do NOT use for non-Gmail email providers, Microsoft Outlook automation, or CRM-level contact management."
+    "he": "אוטומציית ג'ימייל לפרילנסרים ישראלים באמצעות Google Workspace CLI (gws). מתאים כשהמשתמש מבקש לנסח מיילים דו-לשוניים בעברית עם gws gmail +send, לשלוח תזכורות תשלום בשקלים, לתייג תיבת הדואר בעברית דרך users.messages.list ו-users.messages.modify, להגדיר פילטרים קבועים לג'ימייל דרך users.settings.filters, ולשמור טיוטות שמכבדות שעות עבודה ישראליות ושבת. מבוסס על הפקודות האמיתיות של gws (גרסה 0.22.x) ולא על תחביר מומצא. לא מתאים לספקי מייל שאינם Gmail, אוטומציית Outlook, או ניהול CRM.",
+    "en": "Gmail automation for Israeli freelancers using the Google Workspace CLI (gws). Use when user asks to draft bilingual Hebrew emails with gws gmail +send, send payment reminders in Shekels, label the inbox in Hebrew via users.messages.list and users.messages.modify, set up persistent Gmail filters via users.settings.filters, or save drafts that respect Israeli business hours and Shabbat. Built around real gws v0.22.x command syntax (no fabricated flags). Do NOT use for non-Gmail email providers, Microsoft Outlook automation, or CRM-level contact management."
   },
   "supported_agents": [
     "claude-code",
