@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "category": "communication",
   "tags": {
     "he": [
@@ -26,7 +26,7 @@
     "en": "Monday Com Workflows"
   },
   "display_description": {
-    "he": "אוטומציה ומיטוב תהליכי עבודה ב-Monday.com לצוותים ישראליים",
+    "he": "תהליכי עבודה, אוטומציות ואינטגרציית API ב-Monday.com לצוותים ישראליים, כולל ניהול לוחות, תכנון ספרינט לשבוע עבודה ראשון-חמישי, לוחות בעברית ותזמון מודע לחגי ישראל. השתמשו כשצריך להגדיר לוח חדש, ליצור אוטומציות, או לבצע שאילתות GraphQL מול ה-API של Monday.com. משלים את שרת ה-MCP הרשמי mondaycom/mcp עם הקשר ישראלי. אל תשתמשו בכלים אחרים לניהול פרויקטים כמו Jira או Asana.",
     "en": "Optimize Monday.com workflows for Israeli teams with board management, automation recipes, and API integration. Use when user asks about Monday.com boards, Monday.com automations, \"monday.com API\", work management, sprint planning with Israeli calendar, or team workflow optimization on Monday.com. Enhances the official mondaycom/mcp server with Israeli team best practices including Sunday-Thursday work week, Hebrew boards, and holiday-aware scheduling. Do NOT use for other project management tools (Jira, Asana, etc.)."
   },
   "supported_agents": [

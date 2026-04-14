@@ -4,7 +4,7 @@ description: Optimize Monday.com workflows for Israeli teams with board manageme
 license: MIT
 allowed-tools: Bash(python:*) Bash(curl:*) WebFetch
 compatibility: Best with mondaycom/mcp MCP server. Works standalone for guidance. Requires Monday.com API token.
-version: 1.0.1
+version: 1.2.0
 ---
 
 # Monday.com Workflows
@@ -19,7 +19,7 @@ import requests
 
 def verify_monday_access(api_token: str) -> dict:
     """Verify Monday.com API access and get account info."""
-    url = "https://api.monday.com/v2/"
+    url = "https://api.monday.com/v2"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -52,7 +52,7 @@ If API-only: Use GraphQL queries directly.
 def create_israeli_sprint_board(api_token: str, workspace_id: int,
                                  sprint_name: str) -> dict:
     """Create a sprint board optimized for Israeli work week."""
-    url = "https://api.monday.com/v2/"
+    url = "https://api.monday.com/v2"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -155,7 +155,7 @@ Action: Notify assigned person
 ```python
 def search_items(api_token: str, board_id: int, column_id: str, value: str):
     """Search items by column value."""
-    url = "https://api.monday.com/v2/"
+    url = "https://api.monday.com/v2"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -188,7 +188,7 @@ def search_items(api_token: str, board_id: int, column_id: str, value: str):
 def bulk_update_status(api_token: str, board_id: int,
                        item_ids: list, status: str):
     """Update status for multiple items."""
-    url = "https://api.monday.com/v2/"
+    url = "https://api.monday.com/v2"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -215,7 +215,7 @@ def create_hebrew_item(api_token: str, board_id: int, group_id: str,
                        item_name: str, column_values: dict):
     """Create a board item with Hebrew name and values."""
     import json
-    url = "https://api.monday.com/v2/"
+    url = "https://api.monday.com/v2"
     headers = {
         "Authorization": api_token,
         "Content-Type": "application/json"
@@ -285,11 +285,8 @@ Result: Structured list of overdue items with assignee breakdown.
 
 ## Bundled Resources
 
-### Scripts
-- `scripts/setup_board.py` — Creates pre-configured Monday.com boards for Israeli teams via the GraphQL API: sprint boards (Sun-Thu work week), sales pipelines (Hebrew stages), and client onboarding flows. Includes holiday-aware automation setup and Hebrew column naming. Run: `python scripts/setup_board.py --help`
-
 ### References
-- `references/graphql-patterns.md` — Monday.com GraphQL API query and mutation patterns covering authentication, board/item CRUD, column value updates, group management, pagination, and webhook setup. Consult when constructing API queries for board automation, bulk item operations, or custom integrations beyond what the MCP server provides.
+- `references/graphql-patterns.md` -- Monday.com GraphQL API query and mutation patterns covering authentication, board/item CRUD, column value updates, group management, pagination, and webhook setup. Consult when constructing API queries for board automation, bulk item operations, or custom integrations beyond what the MCP server provides.
 
 ## Gotchas
 
@@ -299,15 +296,25 @@ Result: Structured list of overdue items with assignee breakdown.
 - Israeli teams on Monday.com commonly use a Sunday standup pattern. Agents may set up Monday standup automations that miss the first day of the Israeli work week.
 - Monday.com's timezone setting must be set to Asia/Jerusalem (UTC+2/+3) for Israeli teams. Agents may default to UTC, causing automations to trigger at wrong times.
 
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Monday.com API Authentication | https://developer.monday.com/api-reference/docs/authentication | Endpoint URL, Authorization header format |
+| Monday.com Rate Limits | https://developer.monday.com/api-reference/docs/rate-limits | Complexity budget (10M points/min per user), reset interval |
+| Monday.com GraphQL Overview | https://developer.monday.com/api-reference/docs/introduction-to-graphql | Query structure, default complexities, `complexity` field |
+| Monday.com Items API | https://developer.monday.com/api-reference/docs/items | `items_page`, cursor pagination, column values |
+| Monday.com Automations | https://support.monday.com/hc/en-us/articles/360001222900-Get-started-with-monday-automations | Trigger/action recipes, date column automations |
+
 ## Troubleshooting
 
 ### Error: "Complexity budget exceeded"
-Cause: GraphQL query too complex (over 10,000 points per minute)
-Solution: Simplify queries, paginate with `limit` and `cursor`, avoid requesting all column values when not needed. Use `items_page` instead of `items` for large boards.
+Cause: GraphQL queries consumed the per-user budget (10,000,000 complexity points per minute; 1,000,000 for trial and free accounts). A single query cannot exceed 5,000,000 points.
+Solution: Add the `complexity` field to queries to see remaining budget, paginate with `items_page` + `cursor` instead of `items`, request only the columns you need, and back off until the next minute resets the budget.
 
 ### Error: "MCP server not responding"
 Cause: mondaycom/mcp server not configured or token invalid
-Solution: Verify API token at monday.com then Admin then API. Restart MCP server. This skill works standalone without MCP using direct API calls.
+Solution: Verify the API token in monday.com under Developers -> My Access Tokens. Restart the MCP server. This skill works standalone without MCP using direct API calls.
 
 ### Error: "Column value format invalid"
 Cause: Monday.com column values require specific JSON formats

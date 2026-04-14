@@ -112,19 +112,19 @@ def create_israeli_sprint_board(api_token: str, workspace_id: int,
 **מתכון 3: הקפאת חגים**
 ```python
 # Israeli holidays that affect sprint planning
-israeli_holidays_2025 = [
-    ("2025-04-13", "2025-04-19", "Pesach"),
-    ("2025-06-02", "2025-06-02", "Shavuot"),
-    ("2025-09-23", "2025-09-24", "Rosh Hashana"),
-    ("2025-10-02", "2025-10-02", "Yom Kippur"),
-    ("2025-10-07", "2025-10-13", "Sukkot"),
+israeli_holidays_2026 = [
+    ("2026-04-02", "2026-04-08", "Pesach"),
+    ("2026-05-22", "2026-05-22", "Shavuot"),
+    ("2026-09-12", "2026-09-13", "Rosh Hashana"),
+    ("2026-09-21", "2026-09-21", "Yom Kippur"),
+    ("2026-09-26", "2026-10-03", "Sukkot"),
 ]
 
 def is_israeli_holiday(date_str: str) -> tuple[bool, str]:
     """Check if a date falls on an Israeli holiday."""
     from datetime import datetime
     check_date = datetime.strptime(date_str, "%Y-%m-%d").date()
-    for start, end, name in israeli_holidays_2025:
+    for start, end, name in israeli_holidays_2026:
         start_d = datetime.strptime(start, "%Y-%m-%d").date()
         end_d = datetime.strptime(end, "%Y-%m-%d").date()
         if start_d <= check_date <= end_d:
@@ -277,7 +277,7 @@ def create_hebrew_item(api_token: str, board_id: int, group_id: str,
 ## משאבים מצורפים
 
 ### קובצי עזר
-- `references/graphql-patterns.md` — תבניות שאילתות ומוטציות GraphQL ל-Monday.com API הכוללות אימות, CRUD של לוחות/פריטים, עדכוני ערכי עמודות, ניהול קבוצות, עימוד והגדרת webhooks. היעזרו בקובץ בעת בניית שאילתות API לאוטומציית לוחות, פעולות פריטים בכמות, או אינטגרציות מותאמות מעבר למה ששרת ה-MCP מספק.
+- `references/graphql-patterns.md` -- תבניות שאילתות ומוטציות GraphQL ל-Monday.com API הכוללות אימות, CRUD של לוחות/פריטים, עדכוני ערכי עמודות, ניהול קבוצות, עימוד והגדרת webhooks. היעזרו בקובץ בעת בניית שאילתות API לאוטומציית לוחות, פעולות פריטים בכמות, או אינטגרציות מותאמות מעבר למה ששרת ה-MCP מספק.
 
 ## מלכודות נפוצות
 
@@ -287,15 +287,25 @@ def create_hebrew_item(api_token: str, board_id: int, group_id: str,
 - צוותים ישראליים ב-Monday.com משתמשים בדרך כלל בדפוס סטנדאפ ביום ראשון. סוכנים עלולים להגדיר אוטומציות סטנדאפ ליום שני, מה שמחמיץ את היום הראשון בשבוע העבודה.
 - הגדרת אזור הזמן ב-Monday.com חייבת להיות Asia/Jerusalem (UTC+2/+3) לצוותים ישראליים. סוכנים עלולים להגדיר UTC כברירת מחדל, מה שגורם לאוטומציות לפעול בזמנים שגויים.
 
+## קישורי עזר
+
+| מקור | כתובת | מה לבדוק |
+|------|-------|-----------|
+| תיעוד אימות API של Monday.com | https://developer.monday.com/api-reference/docs/authentication | כתובת ה-endpoint, פורמט כותרת Authorization |
+| מגבלות קצב ב-Monday.com | https://developer.monday.com/api-reference/docs/rate-limits | תקציב מורכבות (10 מיליון נקודות לדקה למשתמש), איפוס |
+| סקירת GraphQL של Monday.com | https://developer.monday.com/api-reference/docs/introduction-to-graphql | מבנה שאילתות, מורכבויות ברירת מחדל, שדה `complexity` |
+| תיעוד Items API | https://developer.monday.com/api-reference/docs/items | `items_page`, עימוד עם cursor, ערכי עמודות |
+| אוטומציות ב-Monday.com | https://support.monday.com/hc/en-us/articles/360001222900-Get-started-with-monday-automations | מתכוני טריגר/פעולה, אוטומציות לפי עמודות תאריך |
+
 ## פתרון בעיות
 
 ### שגיאה: "חריגה מתקציב מורכבות"
-סיבה: שאילתת GraphQL מורכבת מדי (מעל 10,000 נקודות לדקה)
-פתרון: פשטו שאילתות, השתמשו בעימוד עם `limit` ו-`cursor`, הימנעו מבקשת כל ערכי העמודות כשלא נדרש. השתמשו ב-`items_page` במקום `items` ללוחות גדולים.
+סיבה: שאילתות GraphQL חרגו מתקציב המשתמש (10,000,000 נקודות מורכבות לדקה; 1,000,000 לחשבונות ניסיון וחינמיים). שאילתה בודדת לא יכולה לעבור 5,000,000 נקודות.
+פתרון: הוסיפו את שדה `complexity` לשאילתות כדי לראות את יתרת התקציב, השתמשו ב-`items_page` עם `cursor` במקום `items`, בקשו רק את העמודות שאתם צריכים, והמתינו לאיפוס התקציב בתחילת הדקה הבאה.
 
 ### שגיאה: "שרת MCP לא מגיב"
 סיבה: שרת mondaycom/mcp לא מוגדר או אסימון לא תקין
-פתרון: ודאו את אסימון ה-API ב-monday.com ואז Admin ואז API. הפעילו מחדש את שרת ה-MCP. סקיל זה עובד גם ללא MCP באמצעות קריאות API ישירות.
+פתרון: ודאו את אסימון ה-API ב-monday.com תחת Developers -> My Access Tokens. הפעילו מחדש את שרת ה-MCP. הסקיל עובד גם ללא MCP באמצעות קריאות API ישירות.
 
 ### שגיאה: "פורמט ערך עמודה לא תקין"
 סיבה: ערכי עמודות Monday.com דורשים פורמטי JSON ספציפיים
