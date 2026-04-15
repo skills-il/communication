@@ -331,6 +331,17 @@ Result: Job posted on both platforms with tracking details.
 - Section 14 (Siman 14) waiver is standard in Israeli tech but must be explicitly stated in the offer letter. Without it, employers owe full severance on top of pension contributions. Agents may omit this critical clause.
 - Israeli convalescence pay (dmei havra'a) is a mandatory annual benefit with a fixed per-day rate (updated yearly). Agents unfamiliar with Israeli labor law may omit it entirely from offer letters.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Knesset legislation portal | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Equal Employment Opportunities Law, 1988; discrimination grounds |
+| Kol Zchut – hiring obligations | https://www.kolzchut.org.il/he | Employer duties, mandatory notice to employee |
+| Ministry of Labor | https://www.gov.il/he/departments/ministry_of_labor_social_affairs_and_social_services | Minimum wage, mandatory benefits, equal pay |
+| AllJobs | https://www.alljobs.co.il | Job posting formats, category structure |
+| Drushim | https://www.drushim.co.il | Alternative job board, posting conventions |
+
 ## Troubleshooting
 
 ### Error: "Job description flagged for discrimination"
