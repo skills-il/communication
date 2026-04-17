@@ -25,7 +25,7 @@
     "en": "GWS Hebrew Email Automation"
   },
   "display_description": {
-    "he": "אוטומציית ג'ימייל לפרילנסרים ישראלים באמצעות Google Workspace CLI (gws). מתאים כשהמשתמש מבקש לנסח מיילים דו-לשוניים בעברית עם gws gmail +send, לשלוח תזכורות תשלום בשקלים, לתייג תיבת הדואר בעברית דרך users.messages.list ו-users.messages.modify, להגדיר פילטרים קבועים לג'ימייל דרך users.settings.filters, ולשמור טיוטות שמכבדות שעות עבודה ישראליות ושבת. מבוסס על הפקודות האמיתיות של gws (גרסה 0.22.x) ולא על תחביר מומצא. לא מתאים לספקי מייל שאינם Gmail, אוטומציית Outlook, או ניהול CRM.",
+    "he": "אוטומציית ג'ימייל לפרילנסרים ישראלים דרך Google Workspace CLI (gws). מתאים כשאתם רוצים לנסח מיילים דו-לשוניים בעברית עם gws gmail +send, לשלוח תזכורות תשלום בשקלים, לתייג את תיבת הדואר בעברית דרך users.messages.list ו-users.messages.modify, להגדיר פילטרים קבועים לג'ימייל דרך users.settings.filters, ולשמור טיוטות שמכבדות שעות עבודה ישראליות ושבת. מבוסס על הפקודות האמיתיות של gws (גרסה 0.22.x), לא על תחביר מומצא. לא מתאים לספקי מייל שאינם Gmail, אוטומציית Outlook, או ניהול CRM.",
     "en": "Gmail automation for Israeli freelancers using the Google Workspace CLI (gws). Use when user asks to draft bilingual Hebrew emails with gws gmail +send, send payment reminders in Shekels, label the inbox in Hebrew via users.messages.list and users.messages.modify, set up persistent Gmail filters via users.settings.filters, or save drafts that respect Israeli business hours and Shabbat. Built around real gws v0.22.x command syntax (no fabricated flags). Do NOT use for non-Gmail email providers, Microsoft Outlook automation, or CRM-level contact management."
   },
   "supported_agents": [
