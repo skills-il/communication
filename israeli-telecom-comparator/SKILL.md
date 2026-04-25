@@ -2,7 +2,7 @@
 name: israeli-telecom-comparator
 description: Compare cellular plans, internet packages, TV bundles, and triple deals across all Israeli telecom providers including Partner, Cellcom, Pelephone, HOT, Golan Telecom, Bezeq, Yes, and MVNOs. Use when a user needs to find the best telecom deal, switch carriers, compare 5G or fiber plans, evaluate family packages, or understand number portability in Israel. Covers eSIM support, contract vs. no-contract options, international roaming, and negotiation tips. Do NOT use for enterprise or business-grade telecom solutions, VoIP/SIP trunk setup, or network infrastructure engineering.
 license: MIT
-version: 1.0.1
+version: 1.1.0
 ---
 
 
@@ -84,16 +84,18 @@ Also reference official provider websites for the most current offers:
 
 When comparing cellular plans, evaluate these dimensions:
 
-1. **Monthly price** - Always compare VAT-inclusive prices (Israeli prices are often displayed before VAT)
+1. **Monthly price** - Always compare VAT-inclusive prices (Israeli prices are often displayed before VAT, currently 18%)
 2. **Data allowance** - Most Israeli plans offer unlimited data, but throttling thresholds differ (e.g., full speed up to 50GB, then throttled)
-3. **Network quality** - Full operators (Partner, Cellcom, Pelephone) generally have better coverage than MVNOs; 5G availability varies by area
-4. **5G access** - Currently offered by Partner, Cellcom, and Pelephone; check coverage maps for the user's area:
+3. **Network quality** - Full operators (Partner, Cellcom, Pelephone, HOT Mobile) generally have better coverage than MVNOs; 5G availability varies by area
+4. **5G access** - Offered by Partner, Cellcom, Pelephone, and HOT Mobile; coverage now reaches most major cities and many peripheral areas. Check coverage maps for the user's area:
    - Partner 5G: https://www.partner.co.il/5g
    - Cellcom 5G: https://cellcom.co.il/5g
-5. **eSIM support** - Available from Partner, Cellcom, Pelephone, and HOT Mobile; activation is typically through the carrier's app
-6. **Contract terms** - Budget carriers (Golan, 012, Rami Levy) typically offer no-contract plans; major carriers may require 12-36 month commitments for subsidized devices
-7. **International roaming** - Compare roaming packages for frequent travelers; some plans include specific country bundles
-8. **Family discounts** - Multi-line plans from the same carrier often provide 10-30% discount per additional line
+   - Pelephone 5G: https://www.pelephone.co.il/5g
+5. **2G/3G shutdown** - Israel completed the 2G/3G network shutdown in January 2026. Older feature phones, alarm panels, elevator emergency phones, and some IoT devices that relied on 2G/3G may no longer connect. Confirm the user's device supports VoLTE (4G voice) before recommending a SIM-only plan.
+6. **eSIM support** - Available from Partner, Cellcom, Pelephone, and HOT Mobile; activation is typically through the carrier's app
+7. **Contract terms** - Budget carriers (Golan, 012, Rami Levy) typically offer no-contract plans; major carriers may require 12-36 month commitments for subsidized devices
+8. **International roaming** - Compare roaming packages for frequent travelers; some plans include specific country bundles
+9. **Family discounts** - Multi-line plans from the same carrier often provide 10-30% discount per additional line
 
 ### Step 6: Compare Internet Packages
 
@@ -217,6 +219,25 @@ Result: Recommend Partner, Cellcom, or Pelephone for 5G + eSIM. Check coverage m
 - Golan Telecom disrupted the Israeli market in 2012 with low-cost plans, but their plan structures have changed significantly since. Agents may reference outdated Golan pricing as a benchmark.
 - Israeli telecom contracts distinguish between "commitment" (hitkashrut) and "no-commitment" (lelo hitkashrut) plans. Agents may not flag early termination fees that apply to commitment plans.
 - Triple deals (telecom + internet + TV) in Israel often bundle from different providers (e.g., HOT internet + Partner cellular). Agents may assume all services come from a single provider.
+- Israel finished shutting down 2G and 3G networks in January 2026. Plans that previously worked on legacy phones, alarm panels, GPS trackers, or elevator emergency lines now require 4G/VoLTE-capable devices. Agents trained on pre-2026 data may not flag this when a user describes an old device.
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Ministry of Communications (משרד התקשורת) | https://www.gov.il/he/departments/ministry_of_communications | Official rules on number portability, complaints, 5G policy, 2G/3G shutdown announcements |
+| MoC consumer rights portal | https://www.gov.il/he/departments/topics/communication_consumer_rights | Consumer protection rules for telecom contracts and exit fees |
+| Partner | https://www.partner.co.il | Cellular plans, fiber, TV, 5G coverage map |
+| Cellcom | https://cellcom.co.il/ | Cellular plans, Cellcom Fiber, Cellcom TV, 5G coverage map |
+| Pelephone | https://www.pelephone.co.il/digitalsite/heb/home/ | Cellular plans, 5G coverage map |
+| HOT (cable + mobile) | https://www.hot.net.il | HOT Mobile plans, cable internet, HOT TV, fiber checker |
+| Bezeq | https://www.bezeq.co.il | Fiber/DSL home internet, address fiber checker |
+| Yes (satellite/IPTV) | https://www.yes.co.il | TV channel lineup, Yes+ streaming |
+| Golan Telecom (MVNO on Cellcom) | https://www.golantelecom.co.il | Low-cost no-contract plans |
+| Rami Levy Communications (MVNO on Pelephone) | https://www.rami-levy.co.il/he/communication | Budget cellular plans |
+| 019 Mobile (MVNO) | https://www.019mobile.co.il | International calling and budget cellular |
+| IBC (Israel Broadband Company) | https://www.ibc.co.il | Wholesale fiber availability map |
+| SmartCut comparison | https://www.smartcut.co.il | Crowd-sourced cellular plan comparisons and reviews |
 
 ## Troubleshooting
 
