@@ -1,4 +1,4 @@
-# Google Workspace CLI (gws) — Gmail Commands Reference
+# Google Workspace CLI (gws): Gmail Commands Reference
 
 `gws` is a community Rust binary distributed as the npm package `@googleworkspace/cli`. It is **not** an officially supported Google product. All command shapes in this reference come from the canonical SKILL.md files in `googleworkspace/cli`:
 
@@ -52,7 +52,7 @@ Helper commands always start with `+` (`gws gmail +send`), which is how they are
 
 Run `gws gmail --help` to see both surfaces together.
 
-## `gws gmail +send` — Send an email
+## `gws gmail +send`: Send an email
 
 ```bash
 gws gmail +send --to alice@example.com --subject 'Hello' --body 'Hi!'
@@ -76,7 +76,7 @@ gws gmail +send --to alice@example.com --subject 'Hello' --body 'Hi!'
 - `--html` accepts fragment tags (`<p>`, `<b>`, `<a>`, `<br>`, etc.), no `<html>`/`<body>` wrapper needed.
 - `--from` only works for aliases that are already configured as send-as addresses in your Gmail settings.
 
-## `gws gmail +triage` — Unread inbox summary
+## `gws gmail +triage`: Unread inbox summary
 
 ```bash
 gws gmail +triage
@@ -92,7 +92,7 @@ gws gmail +triage --labels
 
 **`+triage` is read-only.** It prints a table and never modifies the mailbox. To apply labels, use the Discovery sequence below.
 
-## `gws gmail +watch` — Stream new emails as NDJSON
+## `gws gmail +watch`: Stream new emails as NDJSON
 
 ```bash
 gws gmail +watch --project my-gcp-project --label-ids INBOX --once
@@ -101,16 +101,16 @@ gws gmail +watch --project my-gcp-project --cleanup --output-dir ./incoming
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--project` | — | GCP project ID for Pub/Sub resources |
-| `--subscription` | — | Existing Pub/Sub subscription (skip setup) |
-| `--topic` | — | Existing Pub/Sub topic with Gmail push permission |
-| `--label-ids` | — | Comma-separated Gmail label IDs to filter (e.g., `INBOX`, `UNREAD`) |
+| `--project` | (none) | GCP project ID for Pub/Sub resources |
+| `--subscription` | (none) | Existing Pub/Sub subscription (skip setup) |
+| `--topic` | (none) | Existing Pub/Sub topic with Gmail push permission |
+| `--label-ids` | (none) | Comma-separated Gmail label IDs to filter (e.g., `INBOX`, `UNREAD`) |
 | `--max-messages` | 10 | Max messages per pull batch |
 | `--poll-interval` | 5 | Seconds between pulls |
 | `--msg-format` | `full` | `full`, `metadata`, `minimal`, or `raw` |
 | `--once` | off | Pull once and exit |
 | `--cleanup` | off | Delete created Pub/Sub resources on exit |
-| `--output-dir` | — | Write each message as a JSON file in this directory |
+| `--output-dir` | (none) | Write each message as a JSON file in this directory |
 
 **Notes**
 - Requires Google Pub/Sub on the same GCP project.

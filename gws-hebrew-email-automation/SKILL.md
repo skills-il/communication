@@ -361,11 +361,11 @@ Result: Draft saved. User informed that Friday-afternoon sends are deferred, ope
 ## Bundled Resources
 
 ### Scripts
-- `scripts/shekel-formatter.py` — Format currency amounts to Israeli Shekel (ILS) standard with proper notation and optional 18% VAT breakdown. Run: `python scripts/shekel-formatter.py --help`
+- `scripts/shekel-formatter.py`: Format currency amounts to Israeli Shekel (ILS) standard with proper notation and optional 18% VAT breakdown. Run: `python scripts/shekel-formatter.py --help`
 
 ### References
-- `references/israeli-business-email-templates.md` — Collection of Hebrew email templates for common freelancer scenarios: quotes, invoices, follow-ups, project updates. Consult when drafting professional Hebrew emails for Israeli clients.
-- `references/gws-gmail-commands.md` — Quick reference for the real `gws gmail` commands used in this skill (`+send`, `+triage`, `+watch`, plus the Discovery-surface `users.labels`, `users.messages.list/modify`, `users.settings.filters`). Consult when constructing or troubleshooting `gws` calls.
+- `references/israeli-business-email-templates.md`: Collection of Hebrew email templates for common freelancer scenarios: quotes, invoices, follow-ups, project updates. Consult when drafting professional Hebrew emails for Israeli clients.
+- `references/gws-gmail-commands.md`: Quick reference for the real `gws gmail` commands used in this skill (`+send`, `+triage`, `+watch`, plus the Discovery-surface `users.labels`, `users.messages.list/modify`, `users.settings.filters`). Consult when constructing or troubleshooting `gws` calls.
 
 ## Recommended MCP Servers
 

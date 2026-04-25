@@ -367,11 +367,11 @@ gws gmail +send \
 ## משאבים מצורפים
 
 ### סקריפטים
-- `scripts/shekel-formatter.py` — עיצוב סכומי מטבע לתקן השקל הישראלי (ILS) עם סימון נכון ופירוט מע"מ 18% אופציונלי. הרצה: `python scripts/shekel-formatter.py --help`
+- `scripts/shekel-formatter.py`: עיצוב סכומי מטבע לתקן השקל הישראלי (ILS) עם סימון נכון ופירוט מע"מ 18% אופציונלי. הרצה: `python scripts/shekel-formatter.py --help`
 
 ### מסמכי עזר
-- `references/israeli-business-email-templates.md` — אוסף תבניות מייל בעברית לתרחישים נפוצים של פרילנסרים: הצעות מחיר, חשבוניות, מעקב, עדכוני פרויקט. תעיינו בזה כשאתם מנסחים מיילים מקצועיים בעברית ללקוחות ישראליים.
-- `references/gws-gmail-commands.md` — מדריך מהיר לפקודות האמיתיות של `gws gmail` שבשימוש בסקיל הזה (`+send`, `+triage`, `+watch`, ובנוסף משטח Discovery של ‎`users.labels`, `users.messages.list/modify`, `users.settings.filters`). תעיינו בזה כשאתם בונים פקודות `gws` או מתקשים בפתרון תקלות.
+- `references/israeli-business-email-templates.md`: אוסף תבניות מייל בעברית לתרחישים נפוצים של פרילנסרים: הצעות מחיר, חשבוניות, מעקב, עדכוני פרויקט. תעיינו בזה כשאתם מנסחים מיילים מקצועיים בעברית ללקוחות ישראליים.
+- `references/gws-gmail-commands.md`: מדריך מהיר לפקודות האמיתיות של `gws gmail` שבשימוש בסקיל הזה (`+send`, `+triage`, `+watch`, ובנוסף משטח Discovery של ‎`users.labels`, `users.messages.list/modify`, `users.settings.filters`). תעיינו בזה כשאתם בונים פקודות `gws` או מתקשים בפתרון תקלות.
 
 ## שרתי MCP מומלצים
 
