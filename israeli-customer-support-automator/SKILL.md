@@ -103,6 +103,13 @@ Check if within 14-day cooling-off period
 
 Consult `references/consumer-protection-law.md` for the full legal reference.
 
+**Privacy Protection Law Amendment 13 (in force August 14, 2025).** Customer-support data is "personal information" under the law. Practical implications for support automation:
+- Every form, chat widget, or auto-reply that collects PII must show a clear purpose statement and a link to your privacy policy at the point of collection (chova ledayikan).
+- Limit ticket-payload retention to what's needed for the purpose. Default retention guidance: 12 months for resolved billing/return tickets, 7 years only when needed for accounting/tax compliance, then auto-delete.
+- Honor data-subject access (zechut iyun) and deletion (zechut limchikat meida) requests within 30 days. Build a tag in the helpdesk ("DSAR") to track them.
+- Sub-processors (Zendesk, Intercom, transcription vendors) must appear in your privacy notice and have a signed data-processing addendum.
+- The Privacy Protection Authority (PPA) gained direct fining power in this amendment; non-compliance fines start at NIS 25,000 and scale to several percent of turnover for serious cases.
+
 ### Step 3: Configure SLA Management with Israeli Business Hours
 
 Set up SLA timers that respect Israeli business hours and holidays.
@@ -322,11 +329,24 @@ Connect support workflows with CRM and ERP systems commonly used by Israeli busi
 
 | Tool | Use Case | Integration Method |
 |---|---|---|
-| Salesforce | Enterprise CRM | API, webhooks |
+| Salesforce (incl. Salesforce IL) | Enterprise CRM | API, webhooks |
 | HubSpot | SMB CRM | API, native integration |
+| Zoho Desk / Zoho CRM | SMB Israeli CRM | API, native integration |
 | Jira | Bug tracking | API, webhook on tech tickets |
 | Slack / Teams | Internal notifications | Webhook, bot |
 | Twilio | SMS/WhatsApp | API |
+
+**Hebrew-NLU support on major helpdesk platforms (as of 2026):**
+
+| Platform | Hebrew UI | Hebrew AI/NLU | 2026 AI agent (autonomous) | Notes |
+|---|---|---|---|---|
+| Zendesk | Yes | Yes (multilingual GPT-4-class models in "Advanced AI") | Zendesk AI Agents (formerly Ultimate.ai), per-resolution pricing (~$1.50 per autonomous resolution as of 2025-2026) | Best-supported Hebrew tier; macros, triggers, and intent classification all support Hebrew. |
+| Intercom | Yes | Yes (Fin AI Agent) | Fin, charged per resolution (~$0.99 base) | Fin handles Hebrew tickets; verify tone with sample conversations before going live. |
+| HelpScout | Partial | Limited | AI Assist + AI Drafts (per-seat) | Hebrew works in tickets/macros, but autoresponder language detection is weaker than Zendesk. |
+| Freshdesk | Yes | Yes (Freddy AI) | Freddy Self-Service / Freddy Copilot (per agent or per resolution) | Common with Israeli SMB; good Hebrew classification. |
+| Front | Yes | Partial (English-leaning AI) | AI Drafts (per seat) | Hebrew works in conversations but AI suggestions are weaker. |
+
+Pick one tier above your team's volume: agent-assist (drafts, summaries, sentiment) is cheaper and lower-risk; autonomous AI agent (Fin, Zendesk AI Agents) replaces L1 entirely but needs Hebrew QA on a 100-ticket sample before launch.
 
 ### Step 8: Measure Customer Satisfaction
 
