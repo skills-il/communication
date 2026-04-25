@@ -2,7 +2,7 @@
 name: israeli-job-market
 description: Aggregate Israeli job market data, optimize Hebrew CVs, benchmark salaries, and track employment trends. Use when user asks about job searching in Israel, Israeli CV writing, Hebrew resume, salary expectations in Israel, AllJobs, Drushim, JobMaster, JobNet, LinkedIn Israel, Israeli job interviews, or Israeli employment benefits. Covers major job platforms, salary data, and Israeli workplace culture. Do NOT use for international job markets outside Israel or immigration/visa work permits (see separate skill).
 license: MIT
-version: 1.0.1
+version: 1.1.0
 allowed-tools: Bash(python:*) WebFetch
 compatibility: Requires network access for job platform data. No API keys needed for public job listings.
 ---
@@ -94,16 +94,22 @@ compatibility: Requires network access for job platform data. No API keys needed
 israeli_salary_data = {
     "currency": "NIS (New Israeli Shekel)",
     "pay_frequency": "Monthly gross (bruto)",
-    "average_national": 17000,  # NIS/month approximate (CBS 2026 data)
-    "tech_ranges": {
-        "junior_developer": (18000, 25000),
-        "mid_developer": (25000, 38000),
-        "senior_developer": (36000, 55000),
-        "team_lead": (42000, 60000),
-        "vp_engineering": (60000, 90000),
-        "product_manager": (28000, 50000),
-        "data_scientist": (28000, 52000),
-        "devops_engineer": (28000, 48000),
+    "average_national": 13500,  # NIS/month average wage (CBS, all sectors, 2026)
+    "tech_ranges": {  # Tel Aviv / Gush Dan, gross monthly NIS, 2026 bands
+        "junior_developer": (18000, 26000),
+        "mid_developer": (26000, 40000),
+        "senior_developer": (38000, 60000),
+        "staff_engineer": (55000, 85000),
+        "team_lead": (45000, 65000),
+        "engineering_manager": (55000, 80000),
+        "vp_engineering": (65000, 110000),
+        "product_manager": (28000, 55000),
+        "senior_pm": (40000, 70000),
+        "data_scientist": (30000, 58000),
+        "ai_engineer": (35000, 70000),  # New band, premium for LLM/genAI experience
+        "ml_research_engineer": (40000, 80000),
+        "devops_engineer": (30000, 55000),
+        "security_engineer": (35000, 65000),
     },
     "benefits_value": {
         "pension": "6% employee + 6.5% employer (mandatory)",
@@ -118,10 +124,50 @@ israeli_salary_data = {
 ```
 
 **איפה לבדוק שכר:**
-1. סקר שכר AllJobs: alljobs.co.il/salary
-2. Glassdoor ישראל: glassdoor.com (תסננו לפי ישראל)
-3. סטטיסטיקת שכר הלמ"ס: data.gov.il (תחפשו נתוני שכר)
-4. LinkedIn Salary Insights: זמין למשתמשי פרימיום
+1. levels.fyi (סינון לישראל), המקור הכי טוב לחברות FAANG IL ולתפקידי הייטק בכירים, כולל אקוויטי
+2. סקר שכר AllJobs: alljobs.co.il/salary
+3. Glassdoor ישראל: glassdoor.com (תסננו לפי ישראל)
+4. דוח השכר של Ethosia (שנתי, PDF חינמי), ממוקד הייטק ישראלי
+5. סטטיסטיקת שכר הלמ"ס: data.gov.il (תחפשו נתוני שכר)
+6. LinkedIn Salary Insights: זמין למשתמשי פרימיום
+7. סקרי השכר של גיקטיים: geektime.co.il (העמקה שנתית)
+
+**מעסיקים מובילים בישראל (תמונת מצב 2026):**
+
+| שכבה | דוגמאות | הערות |
+|---|---|---|
+| מרכזי פיתוח של FAANG בישראל | Google IL, Meta IL, Amazon IL (כולל AWS), Apple IL, Microsoft IL, Nvidia IL, Intel IL | בסיס + RSU הכי גבוה. הגיוס התהדק אחרי 2023 ובסוף 2025 חזר, בעיקר ל-AI ותשתית. אינטל ישראל קיצצה ב-2024-2025; אנבידיה ומיקרוסופט מתרחבות. |
+| חדי-קרן וסקייל-אפ ישראליים | Wiz, Mobileye, Wix, monday.com, Lemonade, Riskified, Rapyd, Lightricks, Fiverr, Gong, JFrog, Cellebrite, Verbit, Tipalti, Snyk, Trax, Pagaya | Wiz נרכשה ע"י גוגל ב-2024 בכ-$32 מיליארד (ממשיכה לפעול כ-Wiz). באמצע 2026 Wix ו-Lemonade יציבות; Riskified ו-Lightricks עברו מספר סבבי קיצוצים ב-2024-2025 ואז חזרו לגיוס סלקטיבי. |
+| AI-native (גל פוסט-2023) | AI21 Labs, Run:ai (נרכשה ע"י Nvidia ב-2024), Pinecone IL, Aporia, Hour One, D-ID | תגמול פרימיום למומחיות LLM/agents. רבים מהמייסדים בוגרי 8200/תלפיות. |
+| סטארטאפים ב-mid-tier | Series B-C ב-SaaS, פינטק, סייבר | בסיס נמוך ב-10-25% מחדי-קרן, לפעמים אקוויטי גבוה יותר באחוזים. |
+| בנקים וביטוח | פועלים, לאומי, דיסקונט, מזרחי-טפחות, מגדל, הראל, הפניקס, כלל | יציב, סולמות מוגדרים, בסיס נמוך יותר להייטק אבל פנסיה נדיבה. דומיננטיות ב-Java/.NET בצד-שרת. |
+| ממשלה וביטחון | ממר"ם של צה"ל, רפא"ל, התעשייה האווירית, אלביט, מוסד/שב"כ (סיווג), משטרה, אגף מערכות מידע בביטוח לאומי | בסיס נמוך אבל פנסיה + פרמיית "תפקיד בסיווג" (תפקידים בסיווג יכולים אחר כך לעבור לחדי-קרן ביטחוניים). |
+
+**הקשר שוק מאז 7 באוקטובר 2023 ו-2024-2026.** שוק ההייטק הישראלי ספג מכה בסוף 2023 בגלל המלחמה ועליות הריבית בעולם. ב-2024 היו גלי קיצוצים ב-Wix, Lightricks, Riskified, Cellebrite, Snyk, JFrog והרבה סטארטאפים ב-Series B. במחצית השנייה של 2025 הגיוס התחדש, עם הטיה ברורה לתפקידי AI engineering, infra ו-security. גיוסי מילואים נשארו גורם משמעותי בראיונות, הרבה מעסיקים שואלים על ימי המילואים הצפויים ומשלימים את התשלום של ביטוח לאומי. גידול בשכר בסיס היה צנוע ב-2024 אבל תפקידי AI פרצו, וחבילות תגמול כולל של $250k-$400k הפכו לסטנדרט למהנדסי AI בכירים בחברות מובילות.
+
+**איתותי יחידות צה"ל בקו"ח** (מגייסים בהייטק הישראלי סורקים את אלה):
+
+| יחידה | משמעות | השפעה על גיוס |
+|---|---|---|
+| 8200 | מודיעין אותות / סייבר | איתות חזק לסייבר, דאטה, ML; יחוס מייסדים שכיח |
+| ממר"ם | מרכז המחשבים והמידע של צה"ל | איתות חזק לבק-אנד/תשתית; רשת בוגרי קורס ממר"ם |
+| תלפיות | מסלול קצונה אקדמית מובחר | איתות מהשורה הראשונה, מאגר בוגרים קטן, לעיתים מסלול מייסדים |
+| 9900 | חיל הים-יבשה / מודיעין חזותי וגיאוגרפי | איתות חזק לראייה ממוחשבת/ML על תמונות |
+| 81 / מצפן | יחידות טכנולוגיות מיוחדות | נישתי אבל מכובד לחומרה/embedded |
+| מגלן / סיירת מטכ"ל / שייטת 13 | יחידות מובחרות בלוחמה | איתות מנהיגות, לעיתים בצמוד להכשרה טכנית מאוחרת יותר |
+| עתודה | דחיית גיוס לאקדמיה | נפוץ למהנדסים, מאותת על תואר לפני שירות |
+
+מועמד שלא שירת (לא יליד הארץ, פטור או בחר שלא לשרת), זה בדרך כלל לא חוסם תפקידים בהייטק אזרחי, אבל מגייסים יכולים לשאול. תפקידים בסיווג (רפא"ל, התעשייה האווירית, חדי-קרן ביטחוניים) דורשים בדרך כלל אזרחות ישראלית ושירות.
+
+**בוטקאמפים ומסלולים אלטרנטיביים:**
+
+| בוטקאמפ | פוקוס | הערות |
+|---|---|---|
+| ITC (Israel Tech Challenge) | מדעי הנתונים, הנדסת תוכנה | מהשורה הראשונה, באנגלית, פופולרי בקרב עולים |
+| Coding Academy של ג'ון ברייס | פול-סטאק | הגדול בנפח |
+| HackerU / ThriveDX | סייבר, פול-סטאק | מסלולי עברית + אנגלית |
+| She Codes | קהילת קוד חינמית לנשים | איתות חזק לתפקידי כניסה |
+| Wix Academy / monday Academy | מסלולים פנימיים | לעיתים מגייסים בוגרים ישירות |
 
 ### שלב 5: תרבות הראיונות בישראל
 
@@ -173,7 +219,21 @@ israeli_salary_data = {
 ## משאבים מצורפים
 
 ### קובצי עזר
-- `references/israeli-cv-template.md` — תבניות קורות חיים ישראליות סטנדרטיות באנגלית ובעברית עם מבנה סעיף-אחר-סעיף, כולל פרטים אישיים, תקציר מקצועי, ניסיון תעסוקתי, שירות צבאי, השכלה, כישורים ושפות. כולל הנחיות לתמונה, הערות עיצוב עברי RTL ומוסכמות גיוס ישראליות. תסתכלו על הקובץ הזה כשאתם עוזרים למשתמשים לכתוב או לשפר קורות חיים לשוק העבודה הישראלי.
+- `references/israeli-cv-template.md` -- תבניות קורות חיים ישראליות סטנדרטיות באנגלית ובעברית עם מבנה סעיף-אחר-סעיף, כולל פרטים אישיים, תקציר מקצועי, ניסיון תעסוקתי, שירות צבאי, השכלה, כישורים ושפות. כולל הנחיות לתמונה, הערות עיצוב עברי RTL ומוסכמות גיוס ישראליות. תסתכלו על הקובץ הזה כשאתם עוזרים למשתמשים לכתוב או לשפר קורות חיים לשוק העבודה הישראלי.
+
+## קישורי עזר
+
+| מקור | כתובת | מה לבדוק |
+|------|--------|----------|
+| levels.fyi (סינון לישראל) | https://www.levels.fyi/?country=120 | תגמול ב-FAANG IL ובהייטק בכיר כולל אקוויטי |
+| גיקטיים | https://www.geektime.co.il | חדשות הייטק יומיות בעברית, סיקור גיוסים/קיצוצים, סקרי שכר שנתיים |
+| כלכליסט הייטק | https://www.calcalist.co.il/Tech | חדשות הייטק וביזנס בעברית, סבבי גיוס, הודעות קיצוצים |
+| TheMarker הייטק | https://www.themarker.com/technation | חדשות הייטק וביזנס בעברית |
+| AllJobs | https://www.alljobs.co.il | לוח המשרות הגדול בעברית, סקר שכר ב-/salary |
+| דרושים | https://www.drushim.co.il | לוח משרות בעברית, חזק במשרות הייטק |
+| דוח השכר של Ethosia | https://www.ethosia.co.il | PDF שנתי של שכר ההייטק הישראלי (חינם) |
+| נתוני שכר הלמ"ס | https://www.cbs.gov.il | סטטיסטיקת שכר רשמית לפי ענף וגילאים |
+| דמי מילואים בביטוח לאומי | https://www.btl.gov.il/benefits/Reserves | חוקי תשלום מילואים (רלוונטי למועמדים 2024-2026) |
 
 ## מלכודות נפוצות
 
