@@ -280,9 +280,11 @@ Different column types require specific JSON formats:
 
 ## Rate Limiting
 
-- **Standard plan:** 10,000,000 complexity points per month
-- **Per-minute limit:** 10,000 complexity points per 60 seconds
-- **Rate limit header:** Check `X-Complexity-Points` in response
+- **Paid plans:** 10,000,000 complexity points per minute
+- **Single-query cap:** 5,000,000 complexity points (one operation cannot exceed this)
+- **App reads/writes:** 5,000,000 complexity points per minute
+- **Trial / free plan:** 1,000,000 complexity points per minute
+- **Rate-limit header:** Check `X-Complexity-Points` in response
 
 ### Complexity Estimation
 - Simple query (1 board, few columns): ~100 points

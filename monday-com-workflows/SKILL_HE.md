@@ -113,11 +113,17 @@ def create_israeli_sprint_board(api_token: str, workspace_id: int,
 ```python
 # Israeli holidays that affect sprint planning
 israeli_holidays_2026 = [
-    ("2026-04-02", "2026-04-08", "Pesach"),
+    ("2026-03-03", "2026-03-03", "Purim"),
+    ("2026-04-01", "2026-04-09", "Pesach"),
+    ("2026-04-14", "2026-04-14", "Yom HaShoah"),
+    ("2026-04-21", "2026-04-21", "Yom HaZikaron"),
+    ("2026-04-22", "2026-04-22", "Yom Ha'Atzmaut"),
     ("2026-05-22", "2026-05-22", "Shavuot"),
+    ("2026-07-23", "2026-07-23", "Tisha B'Av"),
     ("2026-09-12", "2026-09-13", "Rosh Hashana"),
     ("2026-09-21", "2026-09-21", "Yom Kippur"),
     ("2026-09-26", "2026-10-03", "Sukkot"),
+    ("2026-12-04", "2026-12-12", "Hanukkah"),
 ]
 
 def is_israeli_holiday(date_str: str) -> tuple[bool, str]:
@@ -276,6 +282,37 @@ def create_hebrew_item(api_token: str, board_id: int, group_id: str,
 
 ## משאבים מצורפים
 
+### שרתי MCP מומלצים
+
+הסקיל הזה תוכנן להעצים את **שרת ה-MCP הרשמי `mondaycom/mcp`**. חברו את ה-MCP הזה תחילה, ואז השתמשו בסקיל לתבניות ישראליות מעליו.
+
+| MCP | מה הוא מוסיף |
+|-----|--------------|
+| [`mondaycom/mcp`](https://github.com/mondaycom/mcp) (npm `@mondaydotcomorg/monday-api-mcp`) | כלים סטטיים ל-CRUD של לוחות/פריטים/קבוצות: `create_item`, `change_item_column_values`, `move_item_to_group`, `create_board`, `get_board_schema`, `create_column`, `delete_column`, `list_users_and_teams`, `create_form`/`get_form`, ובנוסף **Dynamic API Tools** (בטא) שיוצרים כל GraphQL בזמן ריצה. זמין כהתקנת npm מקומית או כ-MCP מארח. |
+
+לכל מה שלא מכוסה בכלים סטטיים (validation rules, פעולות בפרויקטים/פורטפוליו, knowledge base CRUD, notetaker, שדות מטא-דאטה של לוח), השתמשו ב-Dynamic API Tools beta והקפידו על `API-Version: 2026-04` (או חדש יותר) בבקשה.
+
+### גרסאות API
+
+Monday.com מנהלת גרסאות API לפי חודש. נכון ל-2026-04 **גרסת ברירת המחדל היא `2026-04`**, עם `2026-07` כ-RC ו-`2026-10` בהפצה. גרסאות `2024-10` ו-`2025-01` **הוצאו משימוש ב-2026-02-15**.
+
+קבעו גרסה במפורש בכל בקשה:
+
+```python
+headers = {
+    "Authorization": API_TOKEN,
+    "API-Version": "2026-04",
+    "Content-Type": "application/json",
+}
+```
+
+**שינויים שוברים מאז 2025-04:**
+- משתנים בשאילתות חייבים להיות JSON, לא string
+- `column_type` באותיות שונות (למשל `StatusColumn` → `status`)
+- `ColumnValueException` נזרק במחמירות על JSON שגוי בעמודה
+- `value` בעמודות connect-boards / dependency / subtasks מחזיר עכשיו `null`; השתמשו ב-`linked_items` / `linked_item_ids`
+- שאילתות על `users` בלי הגבלה מפורשת מקבלות 200 כברירת מחדל (היה ללא הגבלה)
+
 ### קובצי עזר
 - `references/graphql-patterns.md` -- תבניות שאילתות ומוטציות GraphQL ל-Monday.com API שכוללות אימות, CRUD של לוחות/פריטים, עדכוני ערכי עמודות, ניהול קבוצות, עימוד והגדרת webhooks. תסתכלו על הקובץ הזה כשאתם בונים שאילתות API לאוטומציית לוחות, פעולות פריטים בכמות, או אינטגרציות מותאמות מעבר למה ששרת ה-MCP מספק.
 
@@ -295,7 +332,8 @@ def create_hebrew_item(api_token: str, board_id: int, group_id: str,
 | מגבלות קצב ב-Monday.com | https://developer.monday.com/api-reference/docs/rate-limits | תקציב מורכבות (10 מיליון נקודות לדקה למשתמש), איפוס |
 | סקירת GraphQL של Monday.com | https://developer.monday.com/api-reference/docs/introduction-to-graphql | מבנה שאילתות, מורכבויות ברירת מחדל, שדה `complexity` |
 | תיעוד Items API | https://developer.monday.com/api-reference/docs/items | `items_page`, עימוד עם cursor, ערכי עמודות |
-| אוטומציות ב-Monday.com | https://support.monday.com/hc/en-us/articles/360001222900-Get-started-with-monday-automations | מתכוני טריגר/פעולה, אוטומציות לפי עמודות תאריך |
+| אוטומציות ב-Monday.com | https://developer.monday.com/api-reference/reference/automations | מתכוני טריגר/פעולה, ממשק API לאוטומציות |
+| גרסאות API של Monday.com | https://developer.monday.com/api-reference/docs/api-versioning | גרסה נוכחית / RC / מיושנת, מדריכי מיגרציה |
 
 ## פתרון בעיות
 

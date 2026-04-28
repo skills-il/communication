@@ -122,11 +122,18 @@ Notification: Send sprint summary to team lead
 ```python
 # Israeli holidays that affect sprint planning
 israeli_holidays_2026 = [
-    ("2026-04-02", "2026-04-08", "Pesach"),
-    ("2026-05-22", "2026-05-22", "Shavuot"),
+    # Yom Tov + chol hamoed; first/last days are observed as full holidays
+    ("2026-03-03", "2026-03-03", "Purim"),
+    ("2026-04-01", "2026-04-09", "Pesach"),  # Yom Tov Apr 2-3 + Apr 8-9; chol hamoed Apr 4-7
+    ("2026-04-14", "2026-04-14", "Yom HaShoah"),
+    ("2026-04-21", "2026-04-21", "Yom HaZikaron"),  # eve Apr 20
+    ("2026-04-22", "2026-04-22", "Yom Ha'Atzmaut"),  # eve Apr 21
+    ("2026-05-22", "2026-05-22", "Shavuot"),  # eve May 21
+    ("2026-07-23", "2026-07-23", "Tisha B'Av"),
     ("2026-09-12", "2026-09-13", "Rosh Hashana"),
     ("2026-09-21", "2026-09-21", "Yom Kippur"),
-    ("2026-09-26", "2026-10-03", "Sukkot"),
+    ("2026-09-26", "2026-10-03", "Sukkot"),  # Yom Tov Sep 26 + Oct 3; chol hamoed Sep 27-Oct 2
+    ("2026-12-04", "2026-12-12", "Hanukkah"),  # workdays in most companies, schools off
 ]
 
 def is_israeli_holiday(date_str: str) -> tuple[bool, str]:
@@ -288,6 +295,37 @@ Result: Structured list of overdue items with assignee breakdown.
 ### References
 - `references/graphql-patterns.md` -- Monday.com GraphQL API query and mutation patterns covering authentication, board/item CRUD, column value updates, group management, pagination, and webhook setup. Consult when constructing API queries for board automation, bulk item operations, or custom integrations beyond what the MCP server provides.
 
+## Recommended MCP Servers
+
+This skill is designed to enhance the **official `mondaycom/mcp` server**. Connect that MCP first, then use this skill for Israeli team patterns on top.
+
+| MCP | What It Adds |
+|-----|--------------|
+| [`mondaycom/mcp`](https://github.com/mondaycom/mcp) (npm `@mondaydotcomorg/monday-api-mcp`) | Static tools for board/item/group CRUD: `create_item`, `change_item_column_values`, `move_item_to_group`, `create_board`, `get_board_schema`, `create_column`, `delete_column`, `list_users_and_teams`, `create_form`/`get_form`, plus the **Dynamic API Tools** (beta) which generate any GraphQL query/mutation on demand. Available as a local npm install or hosted MCP. |
+
+When building anything not covered by static tools (validation rules, projects/portfolio mutations, knowledge base CRUD, notetaker, board metadata fields), reach for the Dynamic API Tools beta and pin `API-Version: 2026-04` (or later) on the request.
+
+## API Versioning
+
+Monday.com versions its API by month. As of 2026-04 the **default version is `2026-04`**, with `2026-07` in release-candidate and `2026-10` rolling out. Versions `2024-10` and `2025-01` were **deprecated 2026-02-15**.
+
+Pin your version explicitly on every request:
+
+```python
+headers = {
+    "Authorization": API_TOKEN,
+    "API-Version": "2026-04",
+    "Content-Type": "application/json",
+}
+```
+
+**Breaking changes since 2025-04 to be aware of:**
+- Variables in queries must be JSON objects, not strings
+- `column_type` casing changed (e.g., `StatusColumn` → `status`)
+- `ColumnValueException` is now strictly thrown on bad column JSON
+- `value` for connect-boards / dependency / subtasks columns now returns `null`; query `linked_items` / `linked_item_ids` instead
+- Queries on `users` without an explicit limit default to 200 (was unbounded)
+
 ## Gotchas
 
 - Monday.com sprint planning must use the Israeli work week (Sunday-Thursday). Agents may generate sprint cycles based on Monday-Friday, causing misaligned deadlines and capacity calculations.
@@ -304,7 +342,8 @@ Result: Structured list of overdue items with assignee breakdown.
 | Monday.com Rate Limits | https://developer.monday.com/api-reference/docs/rate-limits | Complexity budget (10M points/min per user), reset interval |
 | Monday.com GraphQL Overview | https://developer.monday.com/api-reference/docs/introduction-to-graphql | Query structure, default complexities, `complexity` field |
 | Monday.com Items API | https://developer.monday.com/api-reference/docs/items | `items_page`, cursor pagination, column values |
-| Monday.com Automations | https://support.monday.com/hc/en-us/articles/360001222900-Get-started-with-monday-automations | Trigger/action recipes, date column automations |
+| Monday.com Automations | https://developer.monday.com/api-reference/reference/automations | Trigger/action recipes, automation API surface |
+| Monday.com API Versioning | https://developer.monday.com/api-reference/docs/api-versioning | Current / RC / deprecated versions, migration guides |
 
 ## Troubleshooting
 

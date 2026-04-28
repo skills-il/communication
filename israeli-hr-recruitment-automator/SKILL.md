@@ -142,15 +142,17 @@ Schedule interviews while respecting Israeli holidays, Shabbat, and business cus
 
 | Holiday | Hebrew Name | Dates (2026) | Duration |
 |---|---|---|---|
+| Purim | פורים | Mar 3 | 1 day (Mar 4 in walled cities / Shushan Purim) |
+| Pesach | פסח | Apr 1 (eve) - Apr 9 | First seder Apr 1 evening, Yom Tov Apr 2-3 + Apr 8-9; Apr 4-7 chol hamoed |
+| Yom HaShoah | יום השואה | Apr 14 | 1 day (siren 10:00) |
+| Yom HaZikaron | יום הזיכרון | Apr 20 (eve) - Apr 21 | 1 day (sirens 20:00 prev day, 11:00) |
+| Yom Ha'Atzmaut | יום העצמאות | Apr 21 (eve) - Apr 22 | 1 day |
+| Shavuot | שבועות | May 21 (eve) - May 22 | 1 day |
+| Tisha B'Av | תשעה באב | Jul 23 | Fast day, partial work day in some firms |
 | Rosh Hashana | ראש השנה | Sep 12-13 | 2 days |
 | Yom Kippur | יום כיפור | Sep 21 | 1 day (fasting, no work) |
-| Sukkot | סוכות | Sep 26 - Oct 2 | 7 days (first/last holy) |
-| Hanukkah | חנוכה | Dec 15-22 | 8 days (workdays, school off) |
-| Purim | פורים | Mar 5 (2027) | 1 day |
-| Pesach | פסח | Apr 2-8 | 7 days (first/last holy) |
-| Yom HaZikaron | יום הזיכרון | Apr 22 | 1 day |
-| Yom Ha'Atzmaut | יום העצמאות | Apr 23 | 1 day |
-| Shavuot | שבועות | May 22 | 1 day |
+| Sukkot | סוכות | Sep 26 - Oct 3 | First/last days Yom Tov (Sep 26 + Oct 3); Sep 27-Oct 2 chol hamoed |
+| Hanukkah | חנוכה | Dec 4-12 | 8 days (workdays, school off) |
 
 **Scheduling rules:**
 - Never schedule on Shabbat (Friday evening to Saturday evening)
@@ -168,11 +170,12 @@ When generating an offer letter (michtav ha'asa'a), include all mandatory employ
 
 | Benefit | Employee Contribution | Employer Contribution | Notes |
 |---|---|---|---|
-| Pension (pensia) | 6.0% of salary | 6.5% of salary | Mandatory from day 1 (or after 6 months for new employees without existing pension) |
-| Keren Hishtalmut | 2.5% of salary | 7.5% of salary | Not mandatory but standard in tech sector; tax-exempt after 6 years |
+| Minimum wage (sachar minimum) | N/A | NIS 6,443.85 / month, NIS 34.64 / hour | Effective Apr 1, 2026 (3.3% raise from NIS 6,248). Offer letter salary must meet or exceed. |
+| Pension (pensia) | 6.0% of salary | 6.5% of salary | Mandatory; retroactive from day 1 after 6 months without prior pension; from day 1 (or 3 months / end of tax year, whichever is first) for employees with prior pension |
+| Keren Hishtalmut | 2.5% of salary | 7.5% of salary | Not mandatory but standard in tech sector; tax-exempt after 6 years. 2026 tax-exempt salary ceiling: NIS 15,712 / month |
 | Severance (pitzuim) | N/A | 8.33% of salary | Can be included in pension via Section 14 waiver |
 
-**Section 14 waiver (siman 14):** Most employers include a Section 14 waiver (ishur klali le-pi siman 14), which means pension contributions count toward severance. This must be explicitly stated in the offer letter. Without it, the employer may owe full severance on top of pension contributions.
+**Section 14 waiver (siman 14):** Most employers include a Section 14 waiver (ishur klali le-pi siman 14), which means pension contributions count toward severance. This must be explicitly stated in the offer letter. Without it, the employer may owe full severance on top of pension contributions. **Critical precondition:** Section 14 only takes effect when 100% of pension and severance contributions are deposited from day 1 on the employee's full salary. Partial coverage (e.g., contributions delayed for the 6-month new-employee window, or computed on base salary only) invalidates Section 14 — the employer is then liable for full statutory severance on top of what was deposited.
 
 **Vacation days (yemei chufsha) minimums by seniority:**
 
@@ -189,7 +192,7 @@ When generating an offer letter (michtav ha'asa'a), include all mandatory employ
 | Term | Requirement |
 |---|---|
 | Sick days (yemei machala) | 1.5 days per month, up to 90 days accumulated |
-| Convalescence pay (dmei havra'a) | 5-10 days per year depending on seniority, calculated at fixed rate per day (NIS 418 per day as of 2025, updated annually) |
+| Convalescence pay (dmei havra'a) | 5-10 days per year depending on seniority. **2026 private-sector rate: NIS 418 per day** (frozen, same as 2025). Public-sector rate is approximately NIS 471.4 per day. Sample annual entitlements at NIS 418: year 1 = 5 days = NIS 2,090; year 2-3 = 6 days = NIS 2,508; year 4-10 = 7 days = NIS 2,926. |
 | Overtime pay (sha'ot nosafot) | 125% for first 2 hours, 150% thereafter |
 | Travel expenses (hoza'ot nesi'a) | Public transport reimbursement or set amount |
 | Notice period (hodaa mukdemet) | Varies by seniority (1 day per month for first 6 months, then 2.5 days per month) |
@@ -336,9 +339,10 @@ Result: Job posted on both platforms with tracking details.
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| Knesset legislation portal | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Equal Employment Opportunities Law, 1988; discrimination grounds |
-| Kol Zchut – hiring obligations | https://www.kolzchut.org.il/he | Employer duties, mandatory notice to employee |
-| Ministry of Labor | https://www.gov.il/he/departments/ministry_of_labor_social_affairs_and_social_services | Minimum wage, mandatory benefits, equal pay |
+| Equal Employment Opportunities Law (Nevo) | https://www.nevo.co.il/law_html/law00/72482.htm | Full text of Law 1988 with all amendments through 2025 |
+| Kol Zchut, hiring obligations | https://www.kolzchut.org.il/he/חוק_שוויון_ההזדמנויות_בעבודה | Employer duties, mandatory notice to employee, recent amendments |
+| Israel Ministry of Economy and Industry | https://www.gov.il/he/departments/ministry_of_economy_and_industry | Minimum wage, mandatory benefits, equal pay |
+| Israel Equal Employment Opportunities Commission | https://www.gov.il/he/departments/equal_employment_opportunities_commission | EEOC complaint statistics, guidance, enforcement |
 | AllJobs | https://www.alljobs.co.il | Job posting formats, category structure |
 | Drushim | https://www.drushim.co.il | Alternative job board, posting conventions |
 
