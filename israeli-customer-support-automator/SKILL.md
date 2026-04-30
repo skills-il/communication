@@ -462,8 +462,8 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 
 | MCP | What It Adds |
 |-----|-------------|
-| [Israel Law MCP](https://agentskills.co.il/he/mcps/legal-tech/israel-law) | Query 66 Israeli statutes including Consumer Protection Law provisions directly from the agent, enabling real-time legal reference during complaint handling |
-| [Kolzchut (All-Rights)](https://agentskills.co.il/he/mcps/government-services/kolzchut) | Search Israel's authoritative rights and entitlements database for consumer rights, return policies, and extended cooling-off eligibility for protected groups |
+| [Israel Law MCP](https://agentskills.co.il/he/mcp/israel-law) | Query 66 Israeli statutes including Consumer Protection Law provisions directly from the agent, enabling real-time legal reference during complaint handling |
+| [Kolzchut (All-Rights)](https://agentskills.co.il/he/mcp/kolzchut) | Search Israel's authoritative rights and entitlements database for consumer rights, return policies, and extended cooling-off eligibility for protected groups |
 
 ## Reference Links
 
