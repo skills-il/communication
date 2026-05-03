@@ -13,7 +13,18 @@ These deadlines repeat every month or every two months throughout the year.
 | 15th of each month | VAT (מע"מ) payment and reporting | Businesses on monthly VAT cycle (turnover above threshold) |
 | 15th of each month | Bituach Leumi (ביטוח לאומי) advance payment | Self-employed (עצמאים) |
 | 15th of each month | Income tax advance (מקדמת מס הכנסה) | Self-employed with advance payment obligation |
-| 15th of every odd month | VAT reporting - bi-monthly cycle | Businesses on bi-monthly VAT cycle |
+| 15th of every odd month | VAT reporting - bi-monthly cycle | Businesses on bi-monthly VAT cycle (annual turnover up to ₪1,775,000 in 2026) |
+
+**Standard VAT rate (2026): 18%** (raised from 17% on Jan 1, 2025; the 2026 budget kept it at 18% after a proposed bump to 19% was rejected).
+
+**חשבוניות ישראל / Allocation Number regime (חוק חשבוניות ישראל):** Tax-deductible business invoices above a threshold must include an Allocation Number (מספר הקצאה) generated in real time by the Tax Authority, or the buyer cannot claim the VAT input.
+
+| Effective | Threshold (ex-VAT) |
+|-----------|--------------------|
+| Jan 1, 2026 | ₪10,000 per invoice |
+| Jun 1, 2026 | ₪5,000 per invoice |
+
+This affects every Israeli freelancer issuing invoices to businesses, and every business processing supplier invoices. Most accounting software (Green Invoice, iCount, Hashavshevet) handles allocation requests automatically once the integration is set up.
 
 **VAT reporting periods (bi-monthly):**
 
@@ -45,7 +56,7 @@ These change slightly each year. Treat these as approximate; confirm current yea
 
 ## Jewish Holiday Calendar (5786 / 2025-2026)
 
-Note: Hebrew calendar dates shift each Gregorian year. The dates below are for the 5786 cycle, verified against HebCal (https://www.hebcal.com). Always re-verify before relying on specific dates.
+Note: Hebrew calendar dates shift each Gregorian year. The dates below are for the 5786 cycle in **Israel** (one yom tov per holiday side, not the diaspora two-day pattern), verified against HebCal (https://www.hebcal.com/?i=on). Always re-verify before relying on specific dates.
 
 ### High Holidays / Yamim Noraim (ימים נוראים)
 
@@ -56,11 +67,12 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 | Erev Yom Kippur | Oct 1, 2025 | Short day (closes early) |
 | Yom Kippur (יום כיפור) | Oct 2, 2025 | Complete national shutdown. Even secular Israelis don't work |
 | Erev Sukkot | Oct 6, 2025 | Short day (closes early) |
-| Sukkot - first days (סוכות) | Oct 7-8, 2025 | Full shutdown |
-| Sukkot - Chol HaMoed | Oct 9-13, 2025 | Partial operation; many on vacation. Oct 13 is Hoshana Raba |
-| Shmini Atzeret / Simchat Torah | Oct 14-15, 2025 | Full shutdown |
+| Sukkot - first day (סוכות) | Oct 7, 2025 | Full shutdown |
+| Sukkot - Chol HaMoed | Oct 8-13, 2025 | Partial operation; many on vacation. Oct 13 is Hoshana Raba (short day) |
+| Shmini Atzeret / Simchat Torah | Oct 14, 2025 | Full shutdown (single combined day in Israel) |
+| Iron Swords Memorial Day (יום הזיכרון לחללי מלחמת חרבות ברזל) | Oct 16, 2025 (24 Tishrei) | National observance with siren and ceremonies. Avoid entertainment events. Established by Knesset law in 2024 |
 
-**Planning note:** The Tishrei holiday cluster (Rosh Hashana through Simchat Torah) effectively shuts down Israeli business for most of September 22 through October 15. Build this into any project timeline that spans September-November.
+**Planning note:** The Tishrei holiday cluster (Rosh Hashana through Simchat Torah, plus the Iron Swords Memorial Day on 24 Tishrei) effectively shuts down Israeli business for most of September 22 through October 16. Build this into any project timeline that spans September-November.
 
 ### Winter Holidays
 
@@ -70,19 +82,21 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 | Tu B'Shvat (ט"ו בשבט) | Feb 2, 2026 | No business impact |
 | Purim (פורים) | Mar 3, 2026 (Jerusalem: Mar 4) | Many take the day off. Expect reduced availability |
 
-### Spring Holidays
+### Spring and Early Summer Holidays
 
 | Holiday | 2026 Date | Business Impact |
 |---------|-----------|-----------------|
 | Pesach - Eve (ערב פסח) | Apr 1, 2026 | Short day (closes early) |
-| Pesach - First days | Apr 2-3, 2026 | Full shutdown |
-| Pesach - Chol HaMoed | Apr 4-7, 2026 | Partial; many on vacation |
-| Pesach - Last days | Apr 8-9, 2026 | Full shutdown |
-| Yom HaShoah (יום השואה) | Apr 14, 2026 | Business operates but culturally solemn. Not a holiday |
-| Yom HaZikaron (יום הזיכרון) | Apr 21, 2026 | Business operates but solemn. Avoid entertainment/events |
+| Pesach - First day | Apr 2, 2026 | Full shutdown |
+| Pesach - Chol HaMoed | Apr 3-8, 2026 | Partial; many on vacation. Apr 8 is the eve of the last day (short day) |
+| Pesach - Last day | Apr 9, 2026 | Full shutdown |
+| Yom HaShoah (יום השואה) | Apr 14, 2026 | Business operates but culturally solemn. Siren at 10:00 |
+| Yom HaZikaron (יום הזיכרון) | Apr 21, 2026 | Business operates but solemn. Sirens at 20:00 (Apr 20) and 11:00 (Apr 21). Avoid entertainment/events |
 | Yom HaAtzmaut (יום העצמאות) | Apr 22, 2026 | National holiday. Full shutdown for most businesses |
 | Lag BaOmer (ל"ג בעומר) | May 5, 2026 | Business operates; bonfires at night |
-| Shavuot (שבועות) | May 22-23, 2026 | Full shutdown 1-2 days |
+| Yom Yerushalayim (יום ירושלים) | May 15, 2026 (28 Iyar) | National observance. Major impact in Jerusalem (parade, road closures); minimal elsewhere |
+| Erev Shavuot (ערב שבועות) | May 21, 2026 | Short day (closes early) |
+| Shavuot (שבועות) | May 22, 2026 | Full shutdown (single day in Israel) |
 
 ---
 
@@ -101,8 +115,8 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 
 **Pace:** Very disrupted. Pesach dominates April.
 
-- April: Pesach effectively halves the month. Chol HaMoed productivity is low
-- May: Yom HaZikaron/Yom HaAtzmaut back-to-back creates a mini-holiday period
+- April: Pesach effectively halves the month. Full shutdown on Apr 2 (first day) and Apr 9 (last day); Chol HaMoed runs Apr 3-8 with low productivity
+- May: Yom HaZikaron/Yom HaAtzmaut back-to-back (Apr 21-22) creates a mini-holiday period. Yom Yerushalayim May 15 mostly affects Jerusalem. Shavuot May 22 is a single-day shutdown in Israel
 - June: Strong productivity month. Good for closing deals and launching projects
 - **Annual tax return season.** Self-employed freelancers and businesses submit annual reports
 - **VAT reminder:** Mar-Apr report due May 15; May-Jun due July 15

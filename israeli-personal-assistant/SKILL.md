@@ -58,28 +58,45 @@ The Israeli work week runs **Sunday (יום ראשון) through Thursday (יום
 
 ### Jewish Holiday Impact on Business
 
-| Holiday | Duration | Business Impact |
-|---------|----------|-----------------|
+Israel observes a single day of yom tov per holiday side, not the diaspora two-day pattern. This matters: the skill schedules around the Israeli calendar, not the global Jewish calendar.
+
+| Holiday | Duration in Israel | Business Impact |
+|---------|--------------------|-----------------|
 | Yom Kippur | 1 day | Complete shutdown. Even secular Israelis don't work |
 | Rosh Hashana | 2 days | Full shutdown, most take additional days |
-| Sukkot | 7 days | Full shutdown on first/last days; Chol HaMoed is partial |
-| Pesach | 7 days | Full shutdown on first/last days; Chol HaMoed is partial |
-| Shavuot | 1-2 days | Full shutdown |
-| Purim | 1 day | Many take the day off; expect slow responses |
+| Sukkot | 1 day yom tov + 5 days Chol HaMoed + 1 day Shmini Atzeret/Simchat Torah (combined) | Full shutdown on first day and on Shmini Atzeret; Chol HaMoed is partial |
+| Pesach | 1 day yom tov + 6 days Chol HaMoed + 1 day yom tov | Full shutdown on first and last days; Chol HaMoed is partial |
+| Shavuot | 1 day | Full shutdown |
+| Purim | 1 day (Mar 3, 2026; Mar 4 in Jerusalem) | Many take the day off; expect slow responses |
+| Iron Swords Memorial Day (יום הזיכרון לחללי מלחמת חרבות ברזל) | 1 day (24 Tishrei, e.g., Oct 16, 2025) | National observance with siren and ceremonies. Avoid entertainment events. Established by Knesset law in 2024 |
 
 **Chol HaMoed note:** Businesses technically operate during Chol HaMoed (intermediate days of Sukkot and Pesach), but many employees are on vacation. Expect 30-50% slower response times and limited availability.
 
 **August:** Israeli summer vacation season. Many families travel. Expect slower response rates throughout the month, especially during the last two weeks.
 
+### National Observances (Working Days with Cultural Weight)
+
+These are working days, but communication tone and event scheduling should respect them.
+
+| Observance | 2026 Date | What to Avoid |
+|------------|-----------|---------------|
+| Yom HaShoah (יום השואה) | Apr 14 | Entertainment, sales pitches, jokes. Siren at 10:00 |
+| Yom HaZikaron (יום הזיכרון) | Apr 21 | Entertainment, parties, ad campaigns. Sirens at 20:00 (Apr 20) and 11:00 (Apr 21) |
+| Yom Yerushalayim (יום ירושלים) | May 15 (28 Iyar) | Mostly Jerusalem-focused; expect road closures and parade in the city |
+
 ### Key Business Obligation Dates
 
 | Obligation | Frequency | Window |
 |------------|-----------|--------|
-| VAT (מע"מ) reporting | Bi-monthly | 15th of the month following the reporting period |
-| VAT payment | Bi-monthly | Same as reporting |
+| VAT (מע"מ) reporting | Bi-monthly (annual turnover up to ₪1,775,000) or monthly (above) | 15th of the month following the reporting period |
+| VAT payment | Same as reporting | Same as reporting |
 | Bituach Leumi (NII) advance payments | Monthly | 15th of each month |
 | Annual tax return (עצמאים) | Annual | Typically April-May (check current year deadline) |
 | Income tax advance (מקדמות) | Monthly | 15th of each month |
+
+**Standard VAT rate (2026): 18%** (raised from 17% on Jan 1, 2025; the 2026 budget kept it at 18%).
+
+**חשבוניות ישראל / Allocation Number regime:** As of **Jan 1, 2026**, business invoices above ₪10,000 (ex-VAT) require an Allocation Number (מספר הקצאה) generated in real time by the Tax Authority, or the buyer cannot reclaim VAT. The threshold drops to **₪5,000 from Jun 1, 2026**. Most accounting software (Green Invoice, iCount, Hashavshevet) handles allocation requests automatically. This is the single biggest 2024-2026 change for Israeli freelancers issuing invoices to businesses.
 
 Always verify current deadlines with the relevant authority (רשות המיסים, המוסד לביטוח לאומי), as dates can shift around holidays.
 
