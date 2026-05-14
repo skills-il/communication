@@ -407,7 +407,11 @@ The simplest approach for Israeli businesses. Generate a payment link from your 
 - **iCount** - invoicing with payment links
 - **Meshulam** - payment clearing for small businesses
 
-### Option 2: Telegram Stars (for Digital Goods)
+### Option 2: Telegram Native Payments (Payment API)
+
+A middle option between external links and Telegram Stars. Telegram has a built-in Payment API: you connect a payment provider through @BotFather (the `/mybots` menu has a "Payments" entry where you link a supported provider), and the bot can then send native invoice messages that customers pay without leaving Telegram. This keeps the checkout inside the chat instead of bouncing the customer to an external browser tab, while still settling real money (unlike Telegram Stars, which is for digital goods only). Availability of payment providers varies by country, so check which providers are offered for Israel before relying on this. For the current provider list and setup steps, consult the official Telegram payments documentation.
+
+### Option 3: Telegram Stars (for Digital Goods)
 
 Telegram supports Telegram Stars for in-app purchases of digital goods and services. This works well for:
 - Digital consultations
@@ -415,7 +419,7 @@ Telegram supports Telegram Stars for in-app purchases of digital goods and servi
 - Digital files/templates
 - Premium content access
 
-Note: Telegram Stars is for digital goods only. Physical products and services should use external payment links.
+Note: Telegram Stars is for digital goods only. Physical products and services should use external payment links or the native Payment API.
 
 ### Payment Confirmation Message
 
@@ -477,6 +481,18 @@ Create a Telegram channel linked to your bot for broadcasting updates:
 שבת מנוחה! 🌸
 ```
 
+### Israeli Spam Law (חוק הספאם) Compliance
+
+Before broadcasting promotions or marketing messages, the business must comply with Israel's Spam Law, Section 30a of the Communications Law (Telecommunications and Broadcasting), 1982, added by Amendment 40 (2008). The law explicitly covers instant messaging applications, so Telegram broadcasts to customers count as "advertising material" the moment they promote a product, service, or discount.
+
+Three legal requirements every broadcast must meet:
+
+1. **Prior explicit consent (הסכמה מפורשת מראש)** - You may not send a commercial message to a customer who has not actively opted in. A customer starting a chat with the bot is NOT consent to receive marketing. Add a clear opt-in step (for example an inline-keyboard button "כן, שלחו לי מבצעים ועדכונים") and store who agreed. Transactional messages (order status, appointment reminders the customer asked for) are not "advertising material" and do not need this consent.
+2. **Opt-out in every message (אפשרות הסרה)** - Every promotional broadcast must include a simple way to stop receiving them, for example a button "הסר אותי מרשימת התפוצה" or the instruction "כדי להפסיק לקבל מבצעים, שלחו /stop". Honor opt-outs immediately.
+3. **Sender identification (זיהוי השולח)** - The message must clearly identify the business sending it (business name) and include contact details. Do not send anonymous promotions.
+
+Sending commercial messages without consent exposes the business to statutory damages of up to 1,000 ILS per message, with no need for the recipient to prove any damage. When in doubt, treat a message as a promotion and get consent first. For exact current obligations, consult [official legal sources].
+
 ---
 
 ## Phase 9: No-Code Bot Platforms
@@ -519,6 +535,10 @@ You do NOT need to write code to build a Telegram business bot. These platforms 
 | Payment links | Via messages | Via HTTP nodes | Via messages |
 | Learning curve | Medium | Medium | Low |
 | Israeli platform integrations | Via API | Native nodes for many | Limited |
+
+### Webhook vs Polling (Deployment Note)
+
+Telegram delivers updates to a bot in one of two ways: **polling** (the bot repeatedly asks Telegram "any new messages?") or **webhooks** (Telegram pushes each update to an HTTPS URL the bot exposes). Webhooks are faster and cheaper but need a public HTTPS endpoint; polling needs no public URL but a process that runs continuously. With the no-code platforms above (BotPress, n8n, ManyChat) this choice is abstracted away. The platform hosts the connection for you, so a non-technical business owner never configures a webhook or a polling loop directly. The distinction only matters if you later move to a self-hosted setup or debug a "bot not responding" issue.
 
 ---
 
@@ -750,7 +770,7 @@ Document checklist (when selected):
 
 - **Privacy mode**: By default, bots in groups only see messages starting with `/`. Use BotFather's `/setprivacy` to change this if needed
 - **Bot blocked**: The user may have blocked your bot. You cannot send messages to users who blocked you
-- **Rate limits**: Telegram limits bots to 30 messages/second. For broadcasts to many users, add delays between messages
+- **Rate limits**: Telegram limits bots to roughly 30 messages/second. For broadcasts to many users, add delays between messages. This rate limit, the BotFather command set, and the Bot API behavior described in this skill are current as of the skill's revision date; the Telegram Bot API is versioned and updated regularly, so check the official API changelog if a feature behaves differently than documented here
 
 ### Hebrew Text Display Issues
 
@@ -778,3 +798,24 @@ If you suspect someone has your bot token:
 3. Select your bot
 4. You'll get a new token. Update it in your platform immediately
 5. Check recent bot activity for suspicious messages
+
+---
+
+## Reference Links
+
+Official documentation this skill relies on. Verify against these before relying on a specific method, field, or limit.
+
+| Resource | URL | What it covers |
+|----------|-----|----------------|
+| Telegram Bot API | https://core.telegram.org/bots/api | Full API reference: methods, types, rate limits, the changelog at the top |
+| Telegram Bot Features | https://core.telegram.org/bots/features | BotFather setup, commands, inline keyboards, privacy mode |
+| Telegram Payments | https://core.telegram.org/bots/api#payments | Native Payment API, invoices, payment providers, Telegram Stars |
+| BotPress docs | https://botpress.com/docs | No-code visual flow builder used in Phase 9 |
+| n8n docs | https://docs.n8n.io | Workflow automation, Telegram trigger node, scheduled messages |
+| ManyChat | https://manychat.com | No-code multi-channel bot platform used in Phase 9 |
+
+---
+
+## Recommended MCP Servers
+
+- **`hebcal`** - Hebrew calendar MCP server. This skill repeatedly tells the business owner to "check a holiday calendar" or "use a holiday API" for Israeli holiday dates (Phase 4 holiday awareness, Gotcha #10). The `hebcal` MCP exposes Hebrew-calendar holiday dates so an agent can resolve when Rosh Hashana, Yom Kippur, Sukkot, Pesach, Shavuot, and Yom Ha'atzmaut fall in any given year, instead of hardcoding dates that go stale annually. Use it to drive the bot's "holiday auto-reply mode" and to validate that booking flows never offer a slot on a closed holiday.
