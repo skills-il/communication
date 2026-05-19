@@ -202,7 +202,7 @@ These are the most common mistakes AI agents make when writing Israeli CVs. Each
 |--------|-----|---------------|
 | Employment (Equal Opportunities) Law 5748-1988 (official English text) | https://www.icj.org/wp-content/uploads/2013/05/Israel-Employment-Equal-Opportunities-Law-5748-1988-eng.pdf | Protected categories that must NOT appear on a CV |
 | Wikipedia: Employment (Equal Opportunities) Law, 1988 | https://en.wikipedia.org/wiki/Employment_(Equal_Opportunities)_Law,_1988 | Overview of the law and its amendments |
-| Nevo legal database: Equal Opportunities Law text | https://www.nevo.co.il/law_html/law01/055_002.htm | Hebrew source of the law |
+| Nevo legal database: Equal Opportunities Law text | https://www.nevo.co.il/law_html/law01/p214m1_001.htm | Hebrew source of the law |
 | Nefesh B'Nefesh: Israeli Resume Do's and Don'ts | https://www.nbn.org.il/aliyah-inspiration/nbn-blogger-network/nbn-employment-blog/writing-your-israeli-resume-the-dos-and-donts/ | Aliyah-specific CV guidance for olim |
 | JobMob: Israeli CV translation tips | https://jobmob.co.il/blog/israeli-cv-translation-tips/ | Converting foreign resumes to Israeli format |
 | Anglo-List: Preparing a stand-out resume for Israel | https://anglo-list.com/your-israel-resume/ | Tone, length, and section order |

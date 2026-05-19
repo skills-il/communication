@@ -43,9 +43,9 @@ Thanks,
 ```
 Hi {Name},
 
-{Company}'s {product line} has been on my radar since {specific reason — maybe a talk you saw, a blog post, a product they shipped}. I'm reaching out about the {role} opening.
+{Company}'s {product line} has been on my radar since {specific reason, e.g. a talk you saw, a blog post, a product they shipped}. I'm reaching out about the {role} opening.
 
-I currently lead a team of {N} engineers at {company}, shipping {what}. Two recent results: we {team-level achievement 1 with number} and we {team-level achievement 2 with number}. I care a lot about {one engineering leadership value that matches the job posting — velocity, mentorship, quality, ownership}.
+I currently lead a team of {N} engineers at {company}, shipping {what}. Two recent results: we {team-level achievement 1 with number} and we {team-level achievement 2 with number}. I care a lot about {one engineering leadership value that matches the job posting, e.g. velocity, mentorship, quality, ownership}.
 
 I'd love to hear about what success looks like in the first 6 months. Happy to set up a quick call whenever works.
 
@@ -77,7 +77,7 @@ Hi {Name},
 
 I'm writing about the {role} opening. I'm making a deliberate move from {previous domain} into {new domain}, and {company} is one of a short list where I'd want to start.
 
-My background is in {previous domain}, where I {achievement that is transferable}. Over the last {N} months I've been {evidence of commitment to the new field — course, side project, open source, certification}. The overlap I see is {one concrete bridge between old and new}.
+My background is in {previous domain}, where I {achievement that is transferable}. Over the last {N} months I've been {evidence of commitment to the new field, e.g. course, side project, open source, certification}. The overlap I see is {one concrete bridge between old and new}.
 
 I know a career change always needs a conversation. Would you be open to a 20-min call so I can walk you through my work on {transferable achievement}?
 

@@ -56,7 +56,7 @@ Built, launched, shipped, migrated, owned, scaled, automated, reduced, improved,
 - 3-5 bullets per role maximum
 - Each bullet on one line. If it wraps to two lines on the printed page, shorten it
 - Past tense for past roles, present tense ONLY for current role
-- Quantify at least 2 bullets per role (team size, % improvement, NIS saved, users affected)
+- Quantify at least 2 bullets per role (team size, % improvement, money saved, users affected)
 - Avoid generic bullets ("worked on backend systems") that could apply to any engineer
 
 ## Military Service (Israeli citizens)
