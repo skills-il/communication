@@ -241,9 +241,60 @@ gws gmail +send \
 1. Is it Friday after 14:00 Israel time? Save as `--draft` and tell the user to schedule for Sunday 09:00.
 2. Is it Shabbat (Friday sunset to Saturday night)? Save as `--draft`.
 3. Is it after 18:00 on a weekday? Save as `--draft` and suggest next-morning send.
-4. Is it a Jewish holiday (check with the user)? Save as `--draft`.
+4. Is it a Jewish holiday in the Israeli calendar? Save as `--draft`.
 
-### Step 7: Watch for Incoming Emails (Advanced, Optional)
+**Auto-detect Jewish holidays via the Hebcal API** (free, CC-BY, no key required, rate-limited to 90 requests / 10 seconds):
+
+```bash
+# Is today a major Israeli holiday (yom tov, chol ha-mo'ed, or fast day)?
+TODAY=$(TZ=Asia/Jerusalem date +%Y-%m-%d)
+HOLIDAY=$(curl -s "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&mod=on&nx=on&i=on&start=${TODAY}&end=${TODAY}" \
+  | jq -r '.items[]? | select(.category=="holiday" or .category=="fast") | .title' | head -1)
+
+if [ -n "$HOLIDAY" ]; then
+  echo "Today is $HOLIDAY (Israeli observance). Save as --draft."
+fi
+```
+
+The `i=on` flag scopes results to Israeli observance (one day of yom tov for Pesach/Sukkot, etc., versus diaspora). Pass `cfg=json` for the JSON shape. Erev chag and motzei chag are also returned with `subcat` keys (`major` for chag, `roshchodesh` for Rosh Chodesh, etc.); treat erev chag the same as Friday: do not send after ~14:00 Israel time.
+
+### Step 7: Anti-Spam Compliance (Section 30A) and Bulk-Sender Authentication
+
+Before automating any outbound that goes to more than a handful of recipients, gate the workflow on Israel's anti-spam rules and Gmail's 2024-2025 bulk-sender rules.
+
+**Israel's spam law (Section 30A of the Communications Law (Broadcasting and Telecommunications), 5742-1982):**
+
+- "Davar pirsomet" (advertising content) cannot be sent via email, SMS, fax, or automated dialer **without explicit prior consent** of the recipient. Consent must be in writing (an opt-in checkbox or signed form, not pre-checked).
+- Statutory damages: **up to 1,000 NIS per offending message**, awarded without proof of actual harm. Damages are cumulative, so a 500-recipient blast can expose the sender to 500,000 NIS in a class action.
+- Criminal fine for knowing violation: **up to 226,000 NIS** (as of 2026, indexed annually).
+- Every message must include:
+  - The word `פרסומת` (advertisement) at the start of the subject line.
+  - The sender's full name, full street address, and contact details.
+  - A clear and prominent **opt-out** mechanism (an unsubscribe link or a reply-to-stop instruction), and the opt-out must be honored.
+- **Exemption**: transactional and relationship messages to an existing customer about a product/service of the same kind they already bought, sent within 6 months of the purchase, are not "davar pirsomet", but a separate opt-out path is still required.
+
+**Bulk-sender rules (Gmail, in force since February 2024, enforcement ramped up November 2025):**
+
+If the user sends more than 5,000 messages/day to gmail.com addresses (e.g., a newsletter blast from `@yourdomain.co.il`):
+
+| Requirement | What to set up |
+|-------------|----------------|
+| SPF | DNS TXT record authorizing the sending IPs |
+| DKIM | DNS TXT record with the public key, signing keys configured on the sending domain |
+| DMARC | DNS TXT record at `_dmarc.yourdomain.co.il`, policy at least `p=none` for monitoring (move to `quarantine`/`reject` after audit) |
+| RFC 8058 one-click unsubscribe | Both `List-Unsubscribe: <https://...>, <mailto:...>` AND `List-Unsubscribe-Post: List-Unsubscribe=One-Click` headers |
+| Spam complaint rate | Below 0.1% (red line at 0.3%) |
+| Visible unsubscribe link | In the email body |
+
+A `gws gmail +send --html` blast from a Workspace account is subject to all of the above once you cross 5,000/day to Gmail addresses. The CLI does **not** add `List-Unsubscribe` headers automatically; you must build them into your `--body` HTML or use a transactional ESP (Resend, SendGrid, Mailgun) for the actual blast.
+
+**Practical workflow before drafting any outbound that resembles marketing:**
+
+1. Ask the user: is this message advertising content (offer, promotion, newsletter)? If yes, confirm the recipient has explicit written consent on file.
+2. If marketing, prefix the subject with `פרסומת - ...` and append the sender's full details + a `הסרה` (unsubscribe) instruction to the body.
+3. If volume is >100/day, recommend the user move the blast to a transactional ESP rather than `gws gmail +send` (Gmail's daily limit and authentication burden are not built for marketing volume).
+
+### Step 8: Watch for Incoming Emails (Advanced, Optional)
 
 The `+watch` helper streams new emails as NDJSON using Gmail's push notifications over Google Pub/Sub. It requires a GCP project with Pub/Sub enabled and only filters by **label IDs**, not sender domains. Use it when the user needs real-time reactions (new invoice then Slack ping), not for passive inbox organization.
 
@@ -380,6 +431,9 @@ No Gmail or Google Workspace MCP servers are currently listed in the skills-il d
 - Shekel amounts should be written as `15,000 ש"ח` (abbreviation after the number), not `₪15,000`. Agents may use USD/EUR symbol placement conventions.
 - Israeli invoice dates use DD.MM.YYYY format (dot-separated), not DD/MM/YYYY or MM/DD/YYYY.
 - The standard Israeli payment term `שוטף + 30` means net 30 from **end of current month**, not 30 days from the invoice date. A 01.01 invoice on שוטף + 30 is due 02.28, not 01.31.
+- For `gws gmail +send --html`, Gmail and Outlook **strip the `dir="rtl"` attribute from `<body>` and `<html>` tags** for security. Hebrew renders left-aligned even though it reads right-to-left. Apply RTL with inline CSS on every block-level element: `<p style="direction:rtl; text-align:right;">...</p>`. Apple Mail and Yahoo honor `dir="rtl"` correctly, Gmail/Outlook need inline styles.
+- Gmail bulk-sender rules (in force since February 2024, enforcement ramped November 2025) require SPF + DKIM + DMARC + RFC 8058 one-click unsubscribe once you cross 5,000 messages/day to gmail.com. `gws gmail +send` does **not** add `List-Unsubscribe` headers automatically, so agents that wire it into marketing blasts above this threshold will see deliveries silently rejected. Use a transactional ESP for volume.
+- Israel's anti-spam law (Section 30A) imposes statutory damages of **up to 1,000 NIS per offending email**, with no need to prove harm. Marketing messages must (a) carry explicit written consent on file, (b) begin the subject with `פרסומת`, (c) include sender's full name + address, (d) offer a working `הסרה` (opt-out) mechanism. Skipping any of these is class-action exposure.
 
 ## Reference Links
 
@@ -390,7 +444,12 @@ No Gmail or Google Workspace MCP servers are currently listed in the skills-il d
 | `gws gmail +triage` canonical skill | https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-triage/SKILL.md | `+triage` is read-only summary, flags `--max`, `--query`, `--labels` |
 | `gws gmail +watch` canonical skill | https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-watch/SKILL.md | Pub/Sub requirements, `--label-ids` (not `--from`) |
 | Gmail API `users.settings.filters` | https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters | Filter criteria/action schema for Step 5 |
-| Israeli VAT rate (18% from 1 Jan 2025) | https://www.gov.il/BlobFolder/dynamiccollectorresultitem/represent-info-051224-2/he/vat_represent-info-051224-2.pdf | Israel Tax Authority Interpretation Directive 1/2025: raising VAT from 17% to 18% |
+| Israeli VAT rate (18% from 1 Jan 2025, unchanged for 2026) | https://www.gov.il/BlobFolder/dynamiccollectorresultitem/represent-info-051224-2/he/vat_represent-info-051224-2.pdf | Israel Tax Authority Interpretation Directive 1/2025: raising VAT from 17% to 18%. 2026 Budget kept the rate at 18%. |
+| Section 30A (Israel anti-spam) summary | https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם) | 1,000 NIS statutory damages per offending email; 226,000 NIS criminal fine (as of 2026); subject prefix `פרסומת` required |
+| Gmail bulk-sender requirements | https://support.google.com/a/answer/81126 | SPF + DKIM + DMARC + RFC 8058 one-click unsubscribe for senders ≥5,000 messages/day to Gmail; enforcement ramped November 2025 |
+| Gmail API quota | https://developers.google.com/workspace/gmail/api/reference/quota | Per-user per-minute 6,000 quota units (as of May 2026 quota refresh); `messages.modify`=5 units, `messages.send`=100 units |
+| Gmail recipient limits | https://support.google.com/a/answer/166852 | Consumer Gmail 500 recipients/day; Workspace 2,000/day via Gmail (10,000/day via SMTP relay) |
+| Hebcal Jewish calendar REST API | https://www.hebcal.com/home/195/jewish-calendar-rest-api | Free JSON API for Israeli holiday detection; `i=on` for Israeli observance; 90 requests / 10s rate limit |
 
 ## Troubleshooting
 
@@ -415,5 +474,5 @@ Cause: The Hebrew label does not exist yet, or you used the label name instead o
 Solution: Create the label first with `gws gmail users labels create --params '{"userId": "me"}' --json '{"name": "בנקאות"}'`, capture the returned `id`, and pass that `id` to `addLabelIds` in `users messages modify`.
 
 ### Error: "Rate limit exceeded" when labeling many messages
-Cause: Gmail API enforces per-user quota units per second, bulk `messages modify` calls in a tight loop can trip this.
-Solution: Add a small `sleep 0.1` between `modify` calls or process messages in batches. For daily send limits, consumer Gmail is capped at 100 recipients/day and Google Workspace at 2,000 recipients/day.
+Cause: Gmail API enforces per-user quota units per minute (6,000 units/user/project/minute per Gmail API quota docs, May 2026). Each `users.messages.modify` costs 5 units, so a tight loop can still trip the per-minute cap on large mailboxes.
+Solution: Add a small `sleep 0.1` between `modify` calls or process messages in batches. For daily send limits, consumer Gmail is capped at 500 recipients/day and Google Workspace at 2,000 recipients/day via the Gmail API (10,000/day via SMTP relay on Workspace).

@@ -194,12 +194,26 @@ gws gmail users messages list --params '{"userId":"me","q":"is:unread"}' | jq -r
 
 ## Rate limits
 
-| Account type | Daily send limit | Note |
+| Account type | Daily send limit (Gmail API / SMTP) | Note |
 |--------------|-----------------|------|
-| Consumer Gmail (`@gmail.com`) | 100 recipients/day | Messages with many recipients count per-recipient |
-| Google Workspace | 2,000 recipients/day | Business/Enterprise tiers |
+| Consumer Gmail (`@gmail.com`) | 500 recipients/day | Rolling 24h; recipients (not messages) counted; a 10-recipient email = 10 units |
+| Google Workspace via Gmail API | 2,000 recipients/day | Business/Enterprise tiers |
+| Google Workspace via SMTP relay | 10,000 recipients/day | Requires the SMTP relay service to be enabled in Admin Console |
 
-Gmail API also applies per-user quota units per second. For bulk `users messages modify` loops, add a small `sleep` between calls or process in batches.
+Gmail API also applies per-user per-minute quota units (6,000 units/user/project/minute per the May 2026 quota refresh). `users.messages.modify` costs 5 units, `users.messages.send` costs 100 units, `users.messages.list` costs 5 units. For bulk `users messages modify` loops, add a small `sleep` between calls or process in batches.
+
+## Additional Gmail helpers (v0.18.0+, v0.20.0+, v0.22.0+)
+
+Beyond `+send`, `+triage`, `+watch`, recent `gws` versions ship more helpers:
+
+| Helper | Added | Purpose |
+|--------|-------|---------|
+| `+reply` | v0.20.0 | Reply to a message by ID, preserving inline images and threading |
+| `+reply-all` | v0.20.0 | Same as `+reply` but Cc's all original recipients |
+| `+forward` | v0.20.0 | Forward a message, including original attachments by default |
+| `+read` | v0.18.0 | Print the rendered content of a message (subject, body, headers) |
+
+All four accept `--draft` (v0.22.0) and `--dry-run`. The `-a`/`--attach` flag (v0.18.0) lets `+send`/`+reply`/`+forward` attach files (25 MB total per message).
 
 ## Common error patterns
 
