@@ -109,6 +109,9 @@ Consult `references/consumer-protection-law.md` for the full legal reference.
 - Honor data-subject access (zechut iyun) and deletion (zechut limchikat meida) requests within 30 days. Build a tag in the helpdesk ("DSAR") to track them.
 - Sub-processors (Zendesk, Intercom, transcription vendors) must appear in your privacy notice and have a signed data-processing addendum.
 - The Privacy Protection Authority (PPA) gained direct fining power in this amendment; non-compliance fines start at NIS 25,000 and scale to several percent of turnover for serious cases.
+- The PPA's AI-systems guidelines (published 2024, in force alongside Amendment 13) explicitly cover chatbots. If your chat widget makes automated decisions or routes tickets via an AI agent (Fin, Zendesk AI Agents, Freddy), disclose that the conversation is handled by AI, run a Data Protection Impact Assessment (DPIA) before launch, and document safeguards. Bot transcripts are personal information once linked to a customer identifier.
+
+**Extended cooling-off for protected groups (Section 14G).** Standard consumers get 14 days; consumers who are persons with a disability, senior citizens (65+), or new immigrants (within 2 years) get **4 months** to cancel a remote-purchase transaction, provided the transaction involved a phone call or electronic correspondence with the seller. Your auto-categorizer should NOT auto-reject return requests beyond day 14 without checking the customer's protected-group status first.
 
 ### Step 3: Configure SLA Management with Israeli Business Hours
 
@@ -144,6 +147,14 @@ Set up SLA timers that respect Israeli business hours and holidays.
 **Holiday SLA adjustments.** During the following periods, extend SLAs by 1 business day:
 - Rosh Hashana, Yom Kippur, Sukkot, Pesach (multi-day holidays with reduced staffing)
 - Days between holidays when many employees take vacation (gashranim)
+
+**Telephone wait-time obligation (Consumer Protection Regulations on Telephone Service, 2012, in force).** This is a hard regulatory cap for any business with a phone support channel:
+- Maximum wait time for a human agent on tickets relating to fault repair, billing dispute, or contract termination: **6 minutes from start of call**. Up to 15% of calls may exceed the cap over a 2-week rolling window.
+- If expected wait time exceeds **3 minutes**, the business must announce the estimated wait time within the first 2 minutes of the call AND offer a callback option. If the customer leaves a callback request, the business must call back within **3 hours** with a human agent.
+- License-holders (telecom and similar regulated sectors) have a stricter average-wait obligation of **4.5 minutes** over a 2-week rolling window.
+- The Ministry of Communications publishes quarterly compliance reports; carriers that miss the cap have been fined. Build wait-time reporting into your phone-channel dashboard from day 1.
+
+If you route phone tickets to an IVR + automated triage, the 6-minute clock starts when the customer picks the "speak to an agent" option, not at the start of the IVR menu.
 
 ### Step 4: Build Escalation Workflows
 
@@ -292,6 +303,13 @@ Set up support across multiple channels common in the Israeli market.
 - Support Hebrew text direction (RTL)
 - Send order updates and tracking proactively
 - Business hours auto-reply for after-hours messages
+- **Per-message pricing (effective 1 January 2026):** Meta switched the WhatsApp Business Platform from conversation-based billing (24-hour windows) to per-template-message pricing. Marketing, utility, authentication, and service templates each have their own rate per country. Israel rates are mid-tier; budget on a per-message basis when forecasting WhatsApp support costs, and audit template categories monthly because Meta auto-reclassifies templates (utility -> marketing is the most common silent reclassification, and marketing is ~3-5x the price). Most Israeli operations go through a Business Solution Provider (BSP); BSPs typically add 15-20% markup on top of Meta rates.
+
+**SMS auto-reply consent (Section 30A Communications Law, "chok haspam", as amended).** Sending marketing or promotional SMS to a customer requires **prior explicit opt-in consent** ("Hasakama meforeshet mukdemet"); transactional support replies (order status, ticket updates, password resets) are exempt. Every marketing SMS must include:
+- The Hebrew word "פרסומת" or "מסחרי" at the start of the message body so the recipient can identify it as an ad before opening.
+- Sender name and contact details.
+- A clear, free, one-step unsubscribe path ("הסר" reply or unsubscribe link).
+Penalty: up to **NIS 1,000 statutory damages per message** in civil court, no proof of harm required. The same rule applies to email, WhatsApp marketing (not 1:1 transactional), and automated phone calls. Tag every outbound channel in your helpdesk as "transactional" or "marketing" and gate marketing on a verified opt-in flag.
 
 **Email:**
 - Use professional Hebrew templates
@@ -340,8 +358,8 @@ Connect support workflows with CRM and ERP systems commonly used by Israeli busi
 
 | Platform | Hebrew UI | Hebrew AI/NLU | 2026 AI agent (autonomous) | Notes |
 |---|---|---|---|---|
-| Zendesk | Yes | Yes (multilingual GPT-4-class models in "Advanced AI") | Zendesk AI Agents (formerly Ultimate.ai), per-resolution pricing (~$1.50 per autonomous resolution as of 2025-2026) | Best-supported Hebrew tier; macros, triggers, and intent classification all support Hebrew. |
-| Intercom | Yes | Yes (Fin AI Agent) | Fin, charged per resolution (~$0.99 base) | Fin handles Hebrew tickets; verify tone with sample conversations before going live. |
+| Zendesk | Yes | Yes (multilingual GPT-4-class models in "Advanced AI") | Zendesk AI Agents (formerly Ultimate.ai), per-resolution pricing: $1.50 per resolution committed, $2.00 PAYG (2026 rates), plus $50/agent/month Advanced AI add-on | Best-supported Hebrew tier; macros, triggers, and intent classification all support Hebrew. Per-resolution fees auto-bill for overages with no prior warning since Jan 2026. |
+| Intercom | Yes | Yes (Fin AI Agent) | Fin, $0.99 per successful resolution, minimum 50 resolutions/month, on top of seat fees ($29-$132 per seat per month depending on plan) | Fin handles Hebrew tickets; verify tone with sample conversations before going live. |
 | HelpScout | Partial | Limited | AI Assist + AI Drafts (per-seat) | Hebrew works in tickets/macros, but autoresponder language detection is weaker than Zendesk. |
 | Freshdesk | Yes | Yes (Freddy AI) | Freddy Self-Service / Freddy Copilot (per agent or per resolution) | Common with Israeli SMB; good Hebrew classification. |
 | Front | Yes | Partial (English-leaning AI) | AI Drafts (per seat) | Hebrew works in conversations but AI suggestions are weaker. |
@@ -471,7 +489,10 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 |--------|-----|---------------|
 | Consumer Protection Authority | https://www.gov.il/he/pages/returns | Official return/cancellation policies and consumer rights |
 | Kolzchut - Remote Purchase Cancellation | https://www.kolzchut.org.il/he/ביטול_עסקה_שנעשתה_באינטרנט_או_בטלפון | Cooling-off periods, cancellation fees, extended rights for protected groups |
+| Kolzchut - Free Telephone Service Right | https://www.kolzchut.org.il/he/מענה_טלפוני_חינם_לצרכן_מאת_ספקי_שירותים | 6-minute human-agent wait cap, 3-hour callback rule, sectors covered |
 | Consumer Protection Law (Full Text) | https://www.nevo.co.il/law_html/law00/70305.htm | Full text of the law with all amendments |
+| Privacy Protection Authority - AI Guidelines | https://www.gov.il/he/departments/the_privacy_protection_authority | AI/chatbot disclosure obligations under Amendment 13 |
+| Section 30A Communications Law (Spam) | https://www.gov.il/en/pages/17052018_7 | Marketing SMS/email consent rules, NIS 1,000 per-message statutory damages |
 | Small Claims Court Guide | https://www.gov.il/en/service/filing_a_small_claim | Current maximum claim amount and filing procedures |
 | Israel Consumer Council | https://www.consumers.org.il | Consumer advocacy, complaint filing guidance |
 
@@ -482,6 +503,9 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 - The Hebrew word for "complaint" (תלונה) and "query" (שאילתה) are often confused by text classifiers. Auto-categorization should weight escalation keywords like "עורך דין" (lawyer) and "בית משפט" (court) heavily.
 - Israeli Consumer Protection Law allows a maximum cancellation fee of 5% or 100 NIS, whichever is lower. Agents may use 5% without the 100 NIS cap, overcharging on small transactions.
 - WhatsApp has over 90% adoption in Israel and is the preferred support channel. Agents may default to email-first support strategies that don't match Israeli consumer expectations.
+- Protected groups (people with disabilities, citizens 65+, new immigrants within 2 years) get a 4-month cooling-off period on remote purchases, not 14 days. A naive 14-day calculator will wrongly reject these returns. Add a customer-profile check before any auto-rejection.
+- The 6-minute phone wait cap is per-call from the moment the customer enters the human-agent queue, not call-center average. A long IVR menu does not stop the clock if the customer is waiting to speak to a person.
+- Marketing SMS without prior opt-in carries up to NIS 1,000 in statutory damages per message (Section 30A Communications Law). Transactional support messages (order updates, ticket replies, password resets) are exempt; marketing blasts are not. Agents may treat all outbound SMS the same.
 
 ## Troubleshooting
 

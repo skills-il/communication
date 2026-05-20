@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-customer-support-automator",
+  "generated_at": "2026-05-20",
+  "claims": [
+    {
+      "claim_id": "phone-wait-6min",
+      "claim": "Maximum wait time for human agent on fault/billing/termination calls is 6 minutes from start of call; up to 15% of calls may exceed in a 2-week window.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+      "raw_snippet": "משך ההמתנה לקבלת מענה אנושי מקצועי בנושאי טיפול בתקלה, בירור חשבון וסיום התקשרות לא יעלה על 6 דקות מתחילת השיחה. ניתן לחרוג בשיעור של עד 15% מהשיחות במשך שבועיים רצופים.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 3 telephone wait-time obligation", "SKILL_HE.md שלב 3 חובת זמן המתנה", "Gotchas section"]
+    },
+    {
+      "claim_id": "phone-wait-3min-callback",
+      "claim": "If expected wait exceeds 3 minutes, business must announce estimated wait within first 2 minutes and offer callback; callback must occur within 3 hours with a human agent.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+      "raw_snippet": "במקרה שזמן ההמתנה הצפוי למענה האנושי עולה על שלוש דקות, אזי בתוך שתי דקות מתחילת השיחה על העוסק להודיע לצרכן את זמן ההמתנה המשוער וליתן לו אפשרות להשארת הודעה בעקבותיה חייב העוסק לחזור לצרכן באמצעות מענה אנושי בתוך 3 שעות.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 3", "SKILL_HE.md שלב 3"]
+    },
+    {
+      "claim_id": "phone-wait-license-4.5min",
+      "claim": "License-holders (telecom and similar regulated sectors) have a stricter obligation of 4.5 minutes average wait over a 2-week rolling window.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+      "raw_snippet": "בעל רישיון יעמוד במשך המתנה ממוצע שאינו עולה על 4.5 דקות באותן פניות בתקופה של שבועיים רצופים - יעד מחמיר יותר.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 3", "SKILL_HE.md שלב 3"]
+    },
+    {
+      "claim_id": "protected-groups-4months",
+      "claim": "Persons with disability, senior citizens (65+), or new immigrants (within 2 years) get 4 months to cancel a remote-purchase transaction, provided the transaction involved phone call or electronic correspondence.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94_%D7%A9%D7%A0%D7%A2%D7%A9%D7%AA%D7%94_%D7%91%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98_%D7%90%D7%95_%D7%91%D7%98%D7%9C%D7%A4%D7%95%D7%9F",
+      "raw_snippet": "אנשים עם מוגבלות, אזרחים ותיקים או עולים חדשים יכולים לבטל עסקת מכר מרחוק תוך ארבעה חודשים מיום ביצוע העסקה, קבלת המוצר או חוזה עסקה, לפי המאוחר מביניהם, בתנאי שבעת ביצוע העסקה התקיימה שיחה בין המוכר לצרכן בטלפון או בהתכתבות אלקטרונית.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 2 extended cooling-off", "SKILL_HE.md שלב 2 תקופת צינון מורחבת", "Gotchas section"]
+    },
+    {
+      "claim_id": "cooling-off-14days",
+      "claim": "14-day cooling-off period for remote purchases; cancellation fee max 5% of transaction price or NIS 100, whichever is lower; business must refund within 14 days of cancellation notice.",
+      "source_url": "https://www.gov.il/he/pages/returns",
+      "raw_snippet": "ניתן לבטל עסקה שנעשתה מרחוק תוך 14 ימים. דמי ביטול בגובה של 5% מהמחיר או 100 ש\"ח, לפי הנמוך מביניהם. בעל העסק צריך להחזיר את הכסף תוך 14 ימים מקבלת הודעת הביטול.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 2 table", "SKILL_HE.md שלב 2 table", "references/consumer-protection-law.md"]
+    },
+    {
+      "claim_id": "amendment-13-effective",
+      "claim": "Privacy Protection Law Amendment 13 entered into force on August 14, 2025; PPA gained expanded enforcement and direct fining power.",
+      "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
+      "raw_snippet": "Amendment 13 to the Protection of Privacy Law took effect on August 14, 2025... The Privacy Protection Authority (PPA) will gain expanded enforcement powers, including the ability to issue administrative orders, levy significant monetary penalties.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 2 Privacy Protection block", "SKILL_HE.md שלב 2 privacy block"]
+    },
+    {
+      "claim_id": "amendment-13-ai-guidelines",
+      "claim": "Amendment 13 (with PPA AI guidelines) explicitly covers AI/chatbots: informed consent, disclosure, DPIA requirements, and data subject rights apply.",
+      "source_url": "https://www.gornitzky.com/privacy-in-artificial-intelligence-systems-guidelines-of-the-israeli-privacy-protection-authority/",
+      "raw_snippet": "Amendment 13 is one of the first data protection laws to explicitly cover AI, requiring the same rigor as other data use: informed consent, clear disclosures, and accountability. Data subject rights — access, correction, and deletion — will be strictly enforced for AI systems. Organizations should conduct Data Protection Impact Assessments (DPIAs)... Privacy notices should consider including disclosures in AI tools that interact directly with data subjects (e.g., chatbots).",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 2 PPA AI guidelines bullet", "SKILL_HE.md שלב 2 הנחיות AI"]
+    },
+    {
+      "claim_id": "whatsapp-per-message-2026",
+      "claim": "Meta switched WhatsApp Business Platform pricing from conversation-based (24-hour window) to per-template-message effective January 1, 2026.",
+      "source_url": "https://whatsappbusiness.com/products/platform-pricing/",
+      "raw_snippet": "Meta has officially announced a new global pricing structure for the WhatsApp Business API, effective January 1, 2026, introducing per-message pricing for template messages, replacing the existing conversation-based billing system.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 6 WhatsApp per-message bullet", "SKILL_HE.md שלב 6 תמחור פר-הודעה"]
+    },
+    {
+      "claim_id": "whatsapp-bsp-markup",
+      "claim": "BSPs typically add 15-20% markup on top of Meta's WhatsApp Business API rates.",
+      "source_url": "https://whapi.cloud/blog/whatsapp-bsp-pricing-hidden-costs-2026",
+      "raw_snippet": "BSP markups (15-20%) apply on top of every Meta charge; template reclassification silently converts utility rates to marketing rates overnight.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 6 WhatsApp bullet", "SKILL_HE.md שלב 6"]
+    },
+    {
+      "claim_id": "spam-section-30a",
+      "claim": "Section 30A Communications Law requires prior explicit consent for marketing SMS/email/fax/automated calls; word פרסומת required at start of body; statutory damages up to NIS 1,000 per message in civil court without proof of harm.",
+      "source_url": "https://www.gov.il/en/pages/17052018_7",
+      "raw_snippet": "Section 30 of the Communications Broadcasting Law prohibits sending advertisements by message, email, facsimile and automatic dialing system without the prior consent of the recipient. Recipients of spam email may seek damages in civil court of as much as ILS 1,000 per message sent by the advertiser to the recipient.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 6 SMS auto-reply consent block", "SKILL_HE.md שלב 6 הסכמה ל-SMS שיווקי", "Gotchas"]
+    },
+    {
+      "claim_id": "zendesk-pricing-2026",
+      "claim": "Zendesk AI Agents 2026 pricing: $1.50 per resolution committed, $2.00 PAYG, plus $50/agent/month Advanced AI add-on.",
+      "source_url": "https://corepiper.com/blog/zendesk-ai-agent-pricing-2026/",
+      "raw_snippet": "Zendesk AI agent pricing in 2026 charges $1.50-$2.00 per automated resolution plus a $50/agent/month Advanced AI add-on. $1.50/automated resolution committed, $2.00 PAYG. Per-resolution fees auto-bill for overages since January 2026, with no prior warning.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 7 Hebrew-NLU helpdesk table", "SKILL_HE.md שלב 7 table"]
+    },
+    {
+      "claim_id": "intercom-fin-pricing-2026",
+      "claim": "Intercom Fin AI Agent: $0.99 per successful resolution, minimum 50 resolutions/month, on top of seat fees ($29-$132/seat/month).",
+      "source_url": "https://www.intercom.com/pricing",
+      "raw_snippet": "Fin is priced at $0.99 per outcome. Intercom's seat-based plans start at $29/seat/month on annual billing (Essential)... Advanced plan runs $85 annual or $99 monthly per seat, and Expert runs $132 annual or $139 monthly per seat. Intercom Fin AI Agent operates on a resolution-based pricing model at $0.99 per successful resolution, with a mandatory minimum of 50 resolutions per month.",
+      "fetched_at": "2026-05-20",
+      "appears_in": ["SKILL.md Step 7 helpdesk table", "SKILL_HE.md שלב 7 table"]
+    }
+  ]
+}
