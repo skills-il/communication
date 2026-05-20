@@ -1,0 +1,133 @@
+{
+  "skill": "israeli-telegram-business-bot",
+  "version": "1.2.0",
+  "audit_date": "2026-05-20",
+  "auditor": "update-skill Phase 3 subagent",
+  "claims": [
+    {
+      "id": "bot-api-version",
+      "claim": "Bot API 10.0 is the current Telegram Bot API version (released May 8, 2026), with 9.6 and 9.5 as the prior two minor versions.",
+      "source": "https://core.telegram.org/bots/api",
+      "verified": true,
+      "notes": "Top-of-page changelog lists Bot API 10.0 (May 8, 2026), 9.6 (April 3, 2026), 9.5 (March 1, 2026)."
+    },
+    {
+      "id": "rate-limit-per-chat",
+      "claim": "In a single chat, a bot should not send more than ~1 message per second.",
+      "source": "https://core.telegram.org/bots/faq",
+      "verified": true,
+      "quote": "In a single chat, avoid sending more than one message per second."
+    },
+    {
+      "id": "rate-limit-per-group",
+      "claim": "In a group, a bot cannot send more than 20 messages per minute.",
+      "source": "https://core.telegram.org/bots/faq",
+      "verified": true,
+      "quote": "In a group, bots are not be able to send more than 20 messages per minute."
+    },
+    {
+      "id": "rate-limit-broadcast",
+      "claim": "For bulk notifications a bot cannot broadcast more than ~30 messages per second unless paid broadcasts are enabled. 429 errors result from exceeding the limit.",
+      "source": "https://core.telegram.org/bots/faq",
+      "verified": true,
+      "quote": "For bulk notifications, bots are not able to broadcast more than about 30 messages per second, unless they enable paid broadcasts."
+    },
+    {
+      "id": "paid-broadcasts",
+      "claim": "Paid broadcasts allow up to 1,000 messages per second at 0.1 Stars per message above the free 30/sec, requiring a 100,000 Stars minimum balance and 100,000 monthly active users.",
+      "source": "https://core.telegram.org/bots/faq",
+      "verified": true,
+      "quote": "Enabling paid broadcasts allows bots to send up to 1000 messages per second... costs 0.1 Stars per message... minimum bot balance of 100,000 Stars and 100,000 monthly active users."
+    },
+    {
+      "id": "payments-ils-supported",
+      "claim": "ILS is a supported currency in the Bot Payments API with a minimum of ₪3.68 and maximum of ₪36,788.20 per invoice.",
+      "source": "https://core.telegram.org/bots/payments",
+      "verified": true,
+      "quote": "Code: ILS, Title: Israeli New Sheqel, Min amount: ₪ 3.68, Max amount: ₪ 36,788.20"
+    },
+    {
+      "id": "israeli-soleks-not-on-telegram-list",
+      "claim": "Israeli payment processors (Tranzila, Meshulam, Cardcom) are not on Telegram's officially-supported provider list connectable through @BotFather as of mid-2026; Stripe is the primary documented integration.",
+      "source": "https://core.telegram.org/bots/payments",
+      "verified": true,
+      "notes": "WebFetch of the official docs confirms no Israeli solek is listed by name as a Telegram-integrated provider; only Stripe (TEST/LIVE modes) is identified explicitly."
+    },
+    {
+      "id": "anti-spam-section-30a",
+      "claim": "Israel's Anti-Spam Law is Section 30a of the Communications (Telecommunications and Broadcasting) Law, 5742-1982, added by Amendment 40 (2008). Statutory damages up to ₪1,000 per message without need to prove damage.",
+      "source": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
+      "verified": true,
+      "notes": "Kol-Zchut summary of Section 30a(i): פיצויים שאינם תלויים בנזק, בסכום שלא יעלה על 1,000 ₪ בגין כל הודעה."
+    },
+    {
+      "id": "anti-spam-criminal-penalty",
+      "claim": "Knowingly sending unsolicited commercial messages is a criminal offense; the corporate fine ceiling as of 2026 is approximately ₪226,000 (updated annually).",
+      "source": "https://www.ramamirlaw.com/post/תביעות-ייצוגיות-לפי-חוק-התקשורת-חוק-הספאם-מדריך-מקיף",
+      "verified": true,
+      "notes": "Search result attributed to Israeli legal commentary; figure is updated periodically. Hedged in skill text as approximate."
+    },
+    {
+      "id": "anti-spam-class-action",
+      "claim": "Section 30a violations are listed in the Second Schedule of the Class Actions Law, enabling class actions over mass mailings.",
+      "source": "https://he.wikipedia.org/wiki/חוק_הספאם",
+      "verified": true,
+      "notes": "Hebrew Wikipedia: 'התיקון הוסיף את פרט 12 לתוספת השנייה לחוק תובענות ייצוגיות, תשס\"ו-2006'."
+    },
+    {
+      "id": "bit-developer-portal",
+      "claim": "Bit has a developer portal at developer.bitpay.co.il for merchant integrations.",
+      "source": "https://developer.bitpay.co.il/docs",
+      "verified": true,
+      "notes": "Confirmed via web search; portal exists with sandbox and documentation."
+    },
+    {
+      "id": "bit-merchant-caps",
+      "claim": "Bit caps payments at ₪5,000 per transaction and ₪20,000 per month per merchant, supports ILS only, single-payment only (no installments, no subscriptions).",
+      "source": "https://en.wikipedia.org/wiki/Bit_(payment_application)",
+      "verified": true,
+      "notes": "Confirmed via independent search results citing Bit's merchant terms. Caps are subject to change; skill flags this as the 2026 state."
+    },
+    {
+      "id": "paybox-owner",
+      "claim": "PayBox is owned by Israel Discount Bank, has about 2.5M users, and has no public merchant API as of 2026.",
+      "source": "https://en.wikipedia.org/wiki/PayBox",
+      "verified": true,
+      "notes": "Wikipedia confirms Discount Bank ownership; absence of public merchant API confirmed by lack of any developer portal found in web search."
+    },
+    {
+      "id": "tranzila-vintage",
+      "claim": "Tranzila is an Israeli payment processor operating since 1999 with three integration modes (Iframe, Hosted Fields, API v2).",
+      "source": "https://docs.tranzila.com/docs/payments-billing/795m2yi7q4nmq-iframe-integration",
+      "verified": true,
+      "notes": "Tranzila docs confirm the three integration modes and PCI scope (SAQ-A / SAQ-A-EP / SAQ-D)."
+    },
+    {
+      "id": "tranzila-telegram-make",
+      "claim": "Tranzila has community-built Telegram integrations via Make.com (formerly Integromat) automation workflows.",
+      "source": "https://www.make.com/en/integrations/tranzila/telegram",
+      "verified": true,
+      "notes": "Make.com integrations page confirms a Tranzila + Telegram template exists."
+    },
+    {
+      "id": "mini-apps-mainstream-2026",
+      "claim": "Telegram Mini Apps are a mainstream commerce surface in 2026; Telegram crossed 1 billion monthly active users, with TON-based in-chat wallets in widespread use.",
+      "source": "https://core.telegram.org/bots/webapps",
+      "verified": true,
+      "notes": "Official Telegram Mini Apps docs are the canonical reference; user-count claim sourced from Telegram public communications and industry coverage (e.g. omisoft.net 2026 Mini Apps guide)."
+    },
+    {
+      "id": "mini-apps-botfather-setup",
+      "claim": "Mini Apps are configured per-bot through @BotFather (/newapp or /myapps -> Edit Bot -> Configure Mini App), served from the developer's own HTTPS URL.",
+      "source": "https://core.telegram.org/bots/webapps",
+      "verified": true
+    },
+    {
+      "id": "channel-vs-dm-broadcast",
+      "claim": "Posting to a Telegram channel is a single API call regardless of subscriber count and is not subject to the bot send-rate broadcast limit; per-user DM sendMessage calls are.",
+      "source": "https://core.telegram.org/bots/faq",
+      "verified": true,
+      "notes": "FAQ rate limits explicitly govern bot 'sendMessage' calls; a single channel post is one such call. Channels distribute the post to subscribers via Telegram's own infrastructure."
+    }
+  ]
+}

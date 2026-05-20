@@ -401,15 +401,25 @@ The simplest approach for Israeli businesses. Generate a payment link from your 
 ```
 
 **Popular Israeli payment gateways:**
-- **Green Invoice** (חשבונית ירוקה) - generates payment links with automatic invoice
+- **Green Invoice** (חשבונית ירוקה) - payment links with automatic invoice
 - **Rivhit** (רווחית) - payment collection with accounting integration
-- **PayMe** - simple payment page creation
+- **PayMe** - simple payment pages, also powers Bit acceptance on platforms like Wix
 - **iCount** - invoicing with payment links
 - **Meshulam** - payment clearing for small businesses
+- **Tranzila** (טרנזילה) - veteran Israeli processor (since 1999), ILS, three integration modes (Iframe / Hosted Fields / API v2). Community Telegram integrations via Make.com.
+- **Bit (ביט)** - Israel's leading P2P app (Bank Hapoalim). Dev portal: `developer.bitpay.co.il`. SMB caps: ILS only, ~₪5,000/transaction, ~₪20,000/month/merchant, single-payment only. Suits low-ticket sales (food, beauty); not for high-value or recurring billing.
+- **PayBox** (פייבוקס) - digital wallet (Israel Discount Bank), ~2.5M users, P2P-focused. No public merchant API as of 2026; businesses share a handle for manual transfers.
 
 ### Option 2: Telegram Native Payments (Payment API)
 
-A middle option between external links and Telegram Stars. Telegram has a built-in Payment API: you connect a payment provider through @BotFather (the `/mybots` menu has a "Payments" entry where you link a supported provider), and the bot can then send native invoice messages that customers pay without leaving Telegram. This keeps the checkout inside the chat instead of bouncing the customer to an external browser tab, while still settling real money (unlike Telegram Stars, which is for digital goods only). Availability of payment providers varies by country, so check which providers are offered for Israel before relying on this. For the current provider list and setup steps, consult the official Telegram payments documentation.
+Telegram's built-in Payment API (`core.telegram.org/bots/payments`) lets the bot send native invoice messages that customers pay without leaving Telegram. You connect a provider through @BotFather's `/mybots` -> "Payments" menu.
+
+ILS is supported (currency `ILS`, min ₪3.68, max ₪36,788.20 per invoice). However, as of mid-2026 the Israeli soleks (Tranzila, Meshulam, Cardcom) are NOT on Telegram's officially-supported provider list. Practical implications:
+
+- Foreign cards cleared in ILS via Stripe: works today through the global Stripe integration.
+- Clearing through an Israeli solek (for tax/reporting): use Option 1 (external link) or Option 4 (Mini App with an Israeli provider iframe). The native Payment API is not the right tool for "pure Israeli" merchant setups.
+
+Check the live provider list under @BotFather's Payments menu before committing; Telegram adds providers over time.
 
 ### Option 3: Telegram Stars (for Digital Goods)
 
@@ -420,6 +430,14 @@ Telegram supports Telegram Stars for in-app purchases of digital goods and servi
 - Premium content access
 
 Note: Telegram Stars is for digital goods only. Physical products and services should use external payment links or the native Payment API.
+
+### Option 4: Telegram Mini Apps (TWA)
+
+A Mini App is a full web page (HTML/CSS/JS) that opens inline inside Telegram, with native APIs for identity, theme, MainButton, and payments. Use one when the bot needs richer UX than inline keyboards (catalog grids, calendar pickers, custom checkout with an Israeli provider iframe). Skip it for simple FAQ/booking bots.
+
+Setup is via @BotFather (`/newapp`), and Israeli payment providers (Tranzila, PayMe) can be embedded directly inside the Mini App without a Telegram-specific integration.
+
+See `references/mini-apps-implementation.md` for the full setup guide, payment-embedding patterns, and `initData` validation.
 
 ### Payment Confirmation Message
 
@@ -437,6 +455,15 @@ Note: Telegram Stars is for digital goods only. Physical products and services s
 ---
 
 ## Phase 8: Customer Notifications and Broadcasting
+
+### Channel posts vs DM broadcasts (important distinction)
+
+Two very different things get called "broadcasting":
+
+- **Channel post**: one message to opted-in subscribers. Counts as a single API call regardless of subscriber count, so no bot rate limit. Right tool for promotions, weekly updates, holiday greetings.
+- **DM broadcast**: bot calls `sendMessage` once per customer. Subject to Telegram bot rate limits AND to Israel's anti-spam law (Section 30a) for marketing content.
+
+Default to channels for promotional content. Reserve DM broadcasts for transactional updates the customer asked for, or promotions to customers who explicitly opted in.
 
 ### Telegram Channel for Updates
 
@@ -483,15 +510,15 @@ Create a Telegram channel linked to your bot for broadcasting updates:
 
 ### Israeli Spam Law (חוק הספאם) Compliance
 
-Before broadcasting promotions or marketing messages, the business must comply with Israel's Spam Law, Section 30a of the Communications Law (Telecommunications and Broadcasting), 1982, added by Amendment 40 (2008). The law explicitly covers instant messaging applications, so Telegram broadcasts to customers count as "advertising material" the moment they promote a product, service, or discount.
+Telegram broadcasts to customers fall under Section 30a of the Communications Law (1982, Amendment 40 / 2008) the moment they promote a product, service, or discount. The law explicitly covers instant messaging.
 
-Three legal requirements every broadcast must meet:
+Three legal requirements every promotional broadcast must meet:
 
-1. **Prior explicit consent (הסכמה מפורשת מראש)** - You may not send a commercial message to a customer who has not actively opted in. A customer starting a chat with the bot is NOT consent to receive marketing. Add a clear opt-in step (for example an inline-keyboard button "כן, שלחו לי מבצעים ועדכונים") and store who agreed. Transactional messages (order status, appointment reminders the customer asked for) are not "advertising material" and do not need this consent.
-2. **Opt-out in every message (אפשרות הסרה)** - Every promotional broadcast must include a simple way to stop receiving them, for example a button "הסר אותי מרשימת התפוצה" or the instruction "כדי להפסיק לקבל מבצעים, שלחו /stop". Honor opt-outs immediately.
-3. **Sender identification (זיהוי השולח)** - The message must clearly identify the business sending it (business name) and include contact details. Do not send anonymous promotions.
+1. **Prior explicit consent (הסכמה מפורשת מראש)** - The customer must actively opt in. Starting a chat with the bot is NOT consent. Add an inline-keyboard opt-in ("כן, שלחו לי מבצעים ועדכונים") and store who agreed. Transactional messages (order status, appointment reminders the customer requested) do not need this consent.
+2. **Opt-out in every message (אפשרות הסרה)** - Include a clear way to stop, e.g. a "הסר אותי מרשימת התפוצה" button or "/stop" instruction. Honor opt-outs immediately.
+3. **Sender identification (זיהוי השולח)** - Identify the business by name and include contact details. No anonymous promotions.
 
-Sending commercial messages without consent exposes the business to statutory damages of up to 1,000 ILS per message, with no need for the recipient to prove any damage. When in doubt, treat a message as a promotion and get consent first. For exact current obligations, consult [official legal sources].
+Penalties: statutory damages up to ₪1,000 per message (no need to prove harm), class-action exposure, and a criminal fine ceiling around ₪226,000 (2026) for knowingly sending without consent. When in doubt, treat a message as a promotion and get consent first. Consult `kolzchut.org.il` or a lawyer for current obligations.
 
 ---
 
@@ -538,7 +565,7 @@ You do NOT need to write code to build a Telegram business bot. These platforms 
 
 ### Webhook vs Polling (Deployment Note)
 
-Telegram delivers updates to a bot in one of two ways: **polling** (the bot repeatedly asks Telegram "any new messages?") or **webhooks** (Telegram pushes each update to an HTTPS URL the bot exposes). Webhooks are faster and cheaper but need a public HTTPS endpoint; polling needs no public URL but a process that runs continuously. With the no-code platforms above (BotPress, n8n, ManyChat) this choice is abstracted away. The platform hosts the connection for you, so a non-technical business owner never configures a webhook or a polling loop directly. The distinction only matters if you later move to a self-hosted setup or debug a "bot not responding" issue.
+Telegram delivers updates via **polling** (bot asks repeatedly) or **webhooks** (Telegram pushes to your HTTPS URL). Webhooks are faster and cheaper but need a public HTTPS endpoint. The no-code platforms above abstract this away, so non-technical owners never configure it. The distinction only matters if you self-host later or debug a "bot not responding" issue.
 
 ---
 
@@ -770,7 +797,13 @@ Document checklist (when selected):
 
 - **Privacy mode**: By default, bots in groups only see messages starting with `/`. Use BotFather's `/setprivacy` to change this if needed
 - **Bot blocked**: The user may have blocked your bot. You cannot send messages to users who blocked you
-- **Rate limits**: Telegram limits bots to roughly 30 messages/second. For broadcasts to many users, add delays between messages. This rate limit, the BotFather command set, and the Bot API behavior described in this skill are current as of the skill's revision date; the Telegram Bot API is versioned and updated regularly, so check the official API changelog if a feature behaves differently than documented here
+- **Rate limits**: Telegram enforces three separate limits for bot sends, all per official FAQ at `core.telegram.org/bots/faq`:
+  - **Per chat**: no more than ~1 message per second to the same chat.
+  - **Per group**: no more than 20 messages per minute to the same group.
+  - **Global broadcasts**: a bot can broadcast to roughly 30 different users per second (free tier). Exceed any of these and the API returns HTTP 429.
+  - **Paid broadcasts**: a bot can opt in to pay Telegram for higher throughput (up to 1,000 messages/sec). Costs 0.1 Stars per message above the free 30/sec, and requires the bot to hold ≥100,000 Stars balance and have ≥100,000 monthly active users , practical only for large businesses, not typical Israeli SMBs.
+  - For DM broadcasts to a customer list, add deliberate delays between sends to stay under the limits. For mass announcements, post to a Telegram channel instead , channel posts are a single API call and do not consume the per-second budget.
+  - This rate-limit information and the BotFather command set described in this skill are aligned with Bot API 10.0 (released May 2026); the Bot API is versioned and updated regularly at `core.telegram.org/bots/api`, so check the changelog at the top of that page if a feature behaves differently than documented here.
 
 ### Hebrew Text Display Issues
 
@@ -810,6 +843,11 @@ Official documentation this skill relies on. Verify against these before relying
 | Telegram Bot API | https://core.telegram.org/bots/api | Full API reference: methods, types, rate limits, the changelog at the top |
 | Telegram Bot Features | https://core.telegram.org/bots/features | BotFather setup, commands, inline keyboards, privacy mode |
 | Telegram Payments | https://core.telegram.org/bots/api#payments | Native Payment API, invoices, payment providers, Telegram Stars |
+| Telegram Bot Payments docs | https://core.telegram.org/bots/payments | Provider list, ILS currency limits, deep dive on the native invoice flow |
+| Telegram Mini Apps | https://core.telegram.org/bots/webapps | Mini App (TWA) docs: setup via @BotFather, JS bridge, MainButton, payment sheet |
+| Telegram Bot FAQ - rate limits | https://core.telegram.org/bots/faq | Exact send rate limits (per chat, per group, broadcasts, paid broadcasts) |
+| Israeli Anti-Spam Law (Kol-Zchut) | https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם) | Section 30a obligations and ₪1,000 statutory damages |
+| Bit Developer Portal | https://developer.bitpay.co.il/docs | Bit payment-button integration, merchant caps (₪5K/tx, ₪20K/month) |
 | BotPress docs | https://botpress.com/docs | No-code visual flow builder used in Phase 9 |
 | n8n docs | https://docs.n8n.io | Workflow automation, Telegram trigger node, scheduled messages |
 | ManyChat | https://manychat.com | No-code multi-channel bot platform used in Phase 9 |
