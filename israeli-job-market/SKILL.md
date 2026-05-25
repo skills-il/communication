@@ -2,7 +2,7 @@
 name: israeli-job-market
 description: Aggregate Israeli job market data, optimize Hebrew CVs, benchmark salaries, and track employment trends. Use when user asks about job searching in Israel, Israeli CV writing, Hebrew resume, salary expectations in Israel, AllJobs, Drushim, JobMaster, JobNet, LinkedIn Israel, Israeli job interviews, or Israeli employment benefits. Covers major job platforms, salary data, and Israeli workplace culture. Do NOT use for international job markets outside Israel or immigration/visa work permits (see separate skill).
 license: MIT
-version: 1.1.0
+version: 1.2.0
 allowed-tools: Bash(python:*) WebFetch
 compatibility: Requires network access for job platform data. No API keys needed for public job listings.
 ---
@@ -228,7 +228,7 @@ Result: Contextual salary analysis with negotiation guidance.
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| levels.fyi (Israel filter) | https://www.levels.fyi/?country=120 | FAANG IL + senior tech compensation incl. equity |
+| levels.fyi (Israel filter) | https://www.levels.fyi/?country=105 | FAANG IL + senior tech compensation incl. equity |
 | Geektime | https://www.geektime.co.il | Daily Israeli tech news, hiring/layoff coverage, annual salary surveys |
 | Calcalist Tech | https://www.calcalist.co.il/Tech | Hebrew tech business news, funding rounds, layoff announcements |
 | TheMarker Tech | https://www.themarker.com/technation | Hebrew tech and business news |
@@ -245,6 +245,9 @@ Result: Contextual salary analysis with negotiation guidance.
 - The Israeli tech job market peaks Sunday-Tuesday for job postings. Agents may recommend posting on Mondays (which is already the 3rd day of the Israeli work week).
 - Israeli CVs commonly include a photo, date of birth, and military service section. Agents trained on US resume conventions may flag these as inappropriate when they are standard practice in Israel.
 - "Shotef + 30" payment terms mean net 30 from end of month, not net 30 from invoice date. This is the most common freelancer payment term in Israel and agents frequently misinterpret it.
+- Miluim (reserve duty) days are paid via Bituach Leumi and many employers top them up to full salary, but the top-up is optional and varies by company. Candidates evaluating offers should ask explicitly: "Do you supplement Bituach Leumi reservist pay to my full salary, and is that contractual or at managerial discretion?" Sustained reservist call-ups since October 2023 mean this is a real-money question.
+- The Salary Information Disclosure Law (חוק חובת דיווח על שכר במשרה, in force from 1 April 2025) requires Israeli employers with 25+ employees to disclose a salary range in job postings. Candidates can ask for the range during the screening call if a posting lacks it. Postings still missing this in 2026 are likely non-compliant and worth flagging in candidate research.
+- LinkedIn premium "Salary Insights" for Israel has weak coverage outside the top FAANG/Israeli-unicorn population. For mid-market roles, prefer the AllJobs salary survey, Ethosia annual report, or Geektime surveys.
 
 ## Troubleshooting
 

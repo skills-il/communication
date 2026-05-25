@@ -2,7 +2,7 @@
 name: israeli-job-market
 description: Aggregate Israeli job market data, optimize Hebrew CVs, benchmark salaries, and track employment trends. Use when user asks about job searching in Israel, Israeli CV writing, Hebrew resume, salary expectations in Israel, AllJobs, Drushim, JobMaster, JobNet, LinkedIn Israel, Israeli job interviews, or Israeli employment benefits. Covers major job platforms, salary data, and Israeli workplace culture. Do NOT use for international job markets outside Israel or immigration/visa work permits (see separate skill).
 license: MIT
-version: 1.1.0
+version: 1.2.0
 allowed-tools: Bash(python:*) WebFetch
 compatibility: Requires network access for job platform data. No API keys needed for public job listings.
 ---
@@ -225,7 +225,7 @@ israeli_salary_data = {
 
 | מקור | כתובת | מה לבדוק |
 |------|--------|----------|
-| levels.fyi (סינון לישראל) | https://www.levels.fyi/?country=120 | תגמול ב-FAANG IL ובהייטק בכיר כולל אקוויטי |
+| levels.fyi (סינון לישראל) | https://www.levels.fyi/?country=105 | תגמול ב-FAANG IL ובהייטק בכיר כולל אקוויטי |
 | גיקטיים | https://www.geektime.co.il | חדשות הייטק יומיות בעברית, סיקור גיוסים/קיצוצים, סקרי שכר שנתיים |
 | כלכליסט הייטק | https://www.calcalist.co.il/Tech | חדשות הייטק וביזנס בעברית, סבבי גיוס, הודעות קיצוצים |
 | TheMarker הייטק | https://www.themarker.com/technation | חדשות הייטק וביזנס בעברית |
@@ -242,6 +242,9 @@ israeli_salary_data = {
 - שוק העבודה הטכנולוגי הישראלי מגיע לשיא פרסום משרות בימים ראשון עד שלישי. סוכנים עלולים להמליץ על פרסום ביום שני (שהוא כבר היום השלישי בשבוע העבודה הישראלי).
 - קורות חיים ישראליים כוללים בדרך כלל תמונה, תאריך לידה וסעיף שירות צבאי. סוכנים שאומנו על מוסכמות קו"ח אמריקאיות עלולים לסמן אלה כלא ראויים כשהם פרקטיקה סטנדרטית בישראל.
 - תנאי תשלום "שוטף + 30" מתייחסים ל-30 יום מסוף החודש, לא 30 יום מתאריך החשבונית. זהו תנאי התשלום הנפוץ ביותר לפרילנסרים בישראל וסוכנים מפרשים אותו לעיתים קרובות בטעות.
+- ימי מילואים משולמים דרך ביטוח לאומי, וחלק מהמעסיקים משלימים את התשלום למשכורת המלאה. ההשלמה אופציונלית ומשתנה בין חברות. מומלץ לשאול בריאיון: "האם מטעם החברה יש השלמה של תשלום מילואים מביטוח לאומי לשכר המלא, וזה במסמך עבודה או בשיקול דעת ההנהלה?". מאז אוקטובר 2023 גיוסי מילואים ממושכים הופכים את זה לשאלה כספית אמיתית.
+- חוק חובת דיווח על שכר במשרה (בתוקף מ-1 באפריל 2025) מחייב מעסיקים ישראליים עם 25+ עובדים לחשוף טווח שכר במודעות דרושים. מועמדים יכולים לבקש את הטווח בשיחת סינון אם אין במודעה. מודעות שלא כוללות את זה ב-2026 כנראה לא תקניות, וכדאי לסמן אותן במחקר על העסק.
+- "Salary Insights" של LinkedIn Premium לישראל יש כיסוי חלש מחוץ לאוכלוסיית ה-FAANG והיוניקורנים. לתפקידי mid-market, עדיפים סקרי AllJobs, דוח Ethosia השנתי או סקרי Geektime.
 
 ## פתרון בעיות
 

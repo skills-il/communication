@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-job-market",
+  "generated_at": "2026-05-25T20:55:00Z",
+  "claims": [
+    {
+      "claim_id": "average-wage-2026",
+      "claim": "Israeli average national wage in 2026: approximately 13,500 NIS/month (CBS, all sectors)",
+      "source_url": "https://www.cbs.gov.il",
+      "raw_snippet": "ממוצע שכר 13,500 ש\"ח לחודש (13500)",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "tech-salary-bands-2026",
+      "claim": "Tel Aviv / Gush Dan gross monthly NIS bands for tech roles, 2026. Example narrative figures: 28,000 NIS / 28,000 ש\"ח (mid-developer offer scenario in Example 3), 55,000 NIS / 55,000 ש\"ח (senior Python upper band in Example 1)",
+      "source_url": "https://www.levels.fyi/?country=105",
+      "raw_snippet": "tech bands include 18000, 26000, 28,000 NIS, 28,000 ש\"ח, 40000, 55,000 NIS, 55,000 ש\"ח, 60000, 85000, 65000, 80000, 110000, 70000, 58000, 80000",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/salary_calculator.py"]
+    },
+    {
+      "claim_id": "keren-hishtalmut-total-pct",
+      "claim": "Keren Hishtalmut adds approximately 10% to total compensation (7.5% employer + 2.5% employee combined)",
+      "source_url": "https://www.kolzchut.org.il/he/קרן_השתלמות",
+      "raw_snippet": "קרן השתלמות בערך 10% מהשכר הכולל",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "mid-tier-startup-discount",
+      "claim": "Mid-tier Israeli startups (Series B-C) typically pay base salaries approximately 10-25% lower than unicorns, often with higher equity percentages",
+      "source_url": "https://www.geektime.co.il",
+      "raw_snippet": "Series B-C base 10-25% lower than unicorns",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pension-rates-mandatory",
+      "claim": "Mandatory pension in Israel: employee 6%, employer 6.5%",
+      "source_url": "https://www.kolzchut.org.il/he/פנסיה_חובה",
+      "raw_snippet": "פנסיה חובה: עובד 6%, מעסיק 6.5%",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/salary_calculator.py"]
+    },
+    {
+      "claim_id": "keren-hishtalmut-rates",
+      "claim": "Keren Hishtalmut standard contribution: employer 7.5%, employee 2.5%; tax-free after 6 years",
+      "source_url": "https://www.kolzchut.org.il/he/קרן_השתלמות",
+      "raw_snippet": "קרן השתלמות: 7.5% מעסיק, 2.5% עובד",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/salary_calculator.py"]
+    },
+    {
+      "claim_id": "salary-disclosure-law-2025",
+      "claim": "Israeli Salary Information Disclosure Law (חוק חובת דיווח על שכר במשרה) effective 1 April 2025 requires employers with 25+ employees to disclose salary range in job postings",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_economy_and_industry",
+      "raw_snippet": "חוק חובת דיווח על שכר במשרה, 1 באפריל 2025, 25+ עובדים",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "miluim-pay-supplement",
+      "claim": "Reservist pay is funded by Bituach Leumi; employer top-up to full salary is optional and varies by company; sustained call-ups since October 2023 make this a material negotiation point",
+      "source_url": "https://www.btl.gov.il/benefits/Reserves",
+      "raw_snippet": "תשלום מילואים, ביטוח לאומי, השלמת מעסיק",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "wiz-acquisition-2024",
+      "claim": "Wiz was acquired by Google in 2024 for approximately $32B; still operates as Wiz",
+      "source_url": "https://www.calcalistech.com/ctechnews",
+      "raw_snippet": "Wiz Google acquisition $32B 2024",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "run-ai-nvidia-2024",
+      "claim": "Run:ai was acquired by Nvidia in 2024",
+      "source_url": "https://www.calcalistech.com/ctechnews",
+      "raw_snippet": "Run:ai Nvidia acquisition 2024",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ai-eng-compensation-2026",
+      "claim": "Senior AI engineer total compensation packages at top Israeli firms commonly $250k-$400k in 2026",
+      "source_url": "https://www.levels.fyi/?country=105",
+      "raw_snippet": "AI senior $250k-$400k total comp",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-geektime",
+      "claim": "Geektime daily Israeli tech news + annual salary surveys",
+      "source_url": "https://www.geektime.co.il",
+      "raw_snippet": "Geektime",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-calcalist-tech",
+      "claim": "Calcalist Tech (Hebrew)",
+      "source_url": "https://www.calcalist.co.il/Tech",
+      "raw_snippet": "Calcalist Tech",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-themarker-tech",
+      "claim": "TheMarker Tech Nation (Hebrew)",
+      "source_url": "https://www.themarker.com/technation",
+      "raw_snippet": "TheMarker",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-alljobs",
+      "claim": "AllJobs Hebrew job board with salary survey at /salary",
+      "source_url": "https://www.alljobs.co.il",
+      "raw_snippet": "AllJobs",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-drushim",
+      "claim": "Drushim Hebrew job board",
+      "source_url": "https://www.drushim.co.il",
+      "raw_snippet": "Drushim",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-ethosia",
+      "claim": "Ethosia annual Israeli tech salary report",
+      "source_url": "https://www.ethosia.co.il",
+      "raw_snippet": "Ethosia",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-cbs",
+      "claim": "Central Bureau of Statistics wage data",
+      "source_url": "https://www.cbs.gov.il",
+      "raw_snippet": "CBS",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-btl-reserves",
+      "claim": "Bituach Leumi reservist pay rules",
+      "source_url": "https://www.btl.gov.il/benefits/Reserves",
+      "raw_snippet": "Bituach Leumi reservist",
+      "fetched_at": "2026-05-25T20:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}
