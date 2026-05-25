@@ -27,7 +27,7 @@
     "en": "Israeli Job Market"
   },
   "display_description": {
-    "he": "שוק העבודה הישראלי: חיפוש משרות, אופטימיזציית קורות חיים בעברית, השוואת שכר ומעקב מגמות תעסוקה. השתמשו כשהמשתמש שואל על AllJobs, Drushim, JobMaster, LinkedIn Israel, ציפיות שכר בישראל, קורות חיים לחברות ישראליות, תרבות ראיון ישראלית, או הטבות עובדים. מכסה פלטפורמות גיוס, נתוני שכר 2026, סיגנלים של יחידות צה\"ל בקורות חיים, מסלולי בוטקאמפ, השפעת חרבות ברזל על שוק העבודה והקשר שכר חודשי-ברוטו. אל תשתמשו עבור שווקי עבודה בינלאומיים מחוץ לישראל או אישורי עבודה לעובדים זרים."
+    "he": "שוק העבודה הישראלי: חיפוש משרות, אופטימיזציית קורות חיים בעברית, השוואת שכר ומעקב מגמות תעסוקה. השתמשו כשהמשתמש שואל על AllJobs, Drushim, JobMaster, LinkedIn Israel, ציפיות שכר בישראל, קורות חיים לחברות ישראליות, תרבות ראיון ישראלית, או הטבות עובדים. מכסה פלטפורמות גיוס, נתוני שכר 2026, סיגנלים של יחידות צה\"ל בקורות חיים, מסלולי בוטקאמפ, השפעת חרבות ברזל על שוק העבודה והקשר שכר חודשי-ברוטו. אל תשתמשו עבור שווקי עבודה בינלאומיים מחוץ לישראל או אישורי עבודה לעובדים זרים.",
     "en": "Aggregate Israeli job market data, optimize Hebrew CVs, benchmark salaries, and track employment trends. Use when user asks about job searching in Israel, Israeli CV writing, Hebrew resume, salary expectations in Israel, AllJobs, Drushim, JobMaster, JobNet, LinkedIn Israel, Israeli job interviews, or Israeli employment benefits. Covers major job platforms, salary data, and Israeli workplace culture. Do NOT use for international job markets outside Israel or immigration/visa work permits (see separate skill)."
   },
   "supported_agents": [
