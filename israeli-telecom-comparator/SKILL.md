@@ -2,7 +2,7 @@
 name: israeli-telecom-comparator
 description: Compare cellular plans, internet packages, TV bundles, and triple deals across all Israeli telecom providers including Partner, Cellcom, Pelephone, HOT, Golan Telecom, Bezeq, Yes, and MVNOs. Use when a user needs to find the best telecom deal, switch carriers, compare 5G or fiber plans, evaluate family packages, or understand number portability in Israel. Covers eSIM support, contract vs. no-contract options, international roaming, and negotiation tips. Do NOT use for enterprise or business-grade telecom solutions, VoIP/SIP trunk setup, or network infrastructure engineering.
 license: MIT
-version: 1.1.0
+version: 1.2.0
 ---
 
 
@@ -220,6 +220,9 @@ Result: Recommend Partner, Cellcom, or Pelephone for 5G + eSIM. Check coverage m
 - Israeli telecom contracts distinguish between "commitment" (hitkashrut) and "no-commitment" (lelo hitkashrut) plans. Agents may not flag early termination fees that apply to commitment plans.
 - Triple deals (telecom + internet + TV) in Israel often bundle from different providers (e.g., HOT internet + Partner cellular). Agents may assume all services come from a single provider.
 - Israel finished shutting down 2G and 3G networks in January 2026. Plans that previously worked on legacy phones, alarm panels, GPS trackers, or elevator emergency lines now require 4G/VoLTE-capable devices. Agents trained on pre-2026 data may not flag this when a user describes an old device.
+- 5G Standalone (SA) rollout is ongoing across Partner, Cellcom, and Pelephone through 2026. Older "5G NSA" plans still anchor to 4G control planes and don't deliver the full 5G latency benefit. If a user is specifically chasing low-latency 5G (gaming, AR), ask the carrier whether the plan and coverage area are 5G SA, not just 5G NSA.
+- VoLTE and VoWiFi are now the default voice paths after the 2G/3G shutdown. Some older 4G-only phones (pre-2018 generic Android, pre-iPhone 7) may have spotty VoLTE on certain Israeli carriers; verify on the carrier's compatible-device list before recommending.
+- WhatsApp calling has largely replaced premium international voice minutes for personal use. Carriers still sell international call packages, but for someone calling family abroad in WhatsApp-using countries, the value is mostly mobile-data quality (5G coverage at home and roaming abroad), not voice minutes.
 
 ## Reference Links
 

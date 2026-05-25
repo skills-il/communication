@@ -1,0 +1,375 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-telecom-comparator",
+  "generated_at": "2026-05-25T21:35:00Z",
+  "claims": [
+    {
+      "claim_id": "vat-rate-18",
+      "claim": "Israeli VAT is currently 18% (effective January 2025), affecting telecom price comparisons",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_finance",
+      "raw_snippet": "מע\"מ 18% / VAT 18%",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "2g-3g-shutdown-2026",
+      "claim": "Israel completed the 2G and 3G network shutdown in January 2026, requiring VoLTE-capable devices",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_communications",
+      "raw_snippet": "כיבוי 2G ו-3G ינואר 2026 / 2G/3G shutdown January 2026",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "number-portability-1-3-days",
+      "claim": "Number portability (niud mispar) in Israel completes in 1-3 business days by law; portability is free",
+      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
+      "raw_snippet": "ניוד מספר 1-3 ימי עסקים",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "consumer-protection-law-1981",
+      "claim": "Israeli Consumer Protection Law (1981) caps early-termination penalties at remaining-12-months maximum",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_economy_and_industry",
+      "raw_snippet": "חוק הגנת הצרכן 1981",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "5g-sa-vs-nsa",
+      "claim": "5G Standalone (SA) rollout is ongoing across Partner, Cellcom, Pelephone through 2026; older 5G NSA plans still anchor to 4G control planes and don't deliver full 5G latency",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_communications",
+      "raw_snippet": "5G SA רוללאוט, 5G NSA",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-partner",
+      "claim": "Partner Communications operates own 4G/5G network",
+      "source_url": "https://www.partner.co.il",
+      "raw_snippet": "Partner",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-cellcom",
+      "claim": "Cellcom operates own 4G/5G network",
+      "source_url": "https://cellcom.co.il/",
+      "raw_snippet": "Cellcom",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-pelephone",
+      "claim": "Pelephone (Bezeq subsidiary) operates own 4G/5G network",
+      "source_url": "https://www.pelephone.co.il/digitalsite/heb/home/",
+      "raw_snippet": "Pelephone",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-hot",
+      "claim": "HOT (cable + mobile) provides HOT Mobile, cable internet, HOT TV, fiber",
+      "source_url": "http://www.hot.net.il",
+      "raw_snippet": "HOT",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-bezeq",
+      "claim": "Bezeq operates nationwide fiber and DSL, largest fixed-line operator",
+      "source_url": "https://www.bezeq.co.il",
+      "raw_snippet": "Bezeq",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-golan",
+      "claim": "Golan Telecom is an MVNO using Cellcom's network",
+      "source_url": "https://www.golantelecom.co.il",
+      "raw_snippet": "Golan Telecom",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-yes",
+      "claim": "Yes is Bezeq subsidiary, satellite and IPTV (Yes+)",
+      "source_url": "https://www.yes.co.il",
+      "raw_snippet": "Yes",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-rami-levy-tel",
+      "claim": "Rami Levy Communications is an MVNO using Pelephone's network",
+      "source_url": "https://www.rami-levy.co.il/he/communication",
+      "raw_snippet": "Rami Levy",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "carrier-019",
+      "claim": "019 Mobile is an MVNO for international calling and budget cellular",
+      "source_url": "https://www.019mobile.co.il",
+      "raw_snippet": "019 Mobile",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ibc-wholesale-fiber",
+      "claim": "IBC (Israel Broadband Company) is a wholesale fiber infrastructure operator",
+      "source_url": "https://www.ibc.co.il",
+      "raw_snippet": "IBC",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "smartcut-comparison",
+      "claim": "SmartCut comparison platform for cellular plans",
+      "source_url": "https://www.smartcut.co.il",
+      "raw_snippet": "SmartCut",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-moc",
+      "claim": "Ministry of Communications official portal",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_communications",
+      "raw_snippet": "משרד התקשורת",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-moc-consumer",
+      "claim": "Ministry of Communications consumer rights portal",
+      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
+      "raw_snippet": "consumer rights communications",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-haboreret",
+      "claim": "Haboreret telecom news and plan comparisons",
+      "source_url": "https://www.haboreret.co.il",
+      "raw_snippet": "Haboreret",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-kamazeole",
+      "claim": "KamazeOle plans for olim with English-speaking carriers",
+      "source_url": "https://www.kamazeole.co.il",
+      "raw_snippet": "KamazeOle",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-partner-5g",
+      "claim": "Partner 5G coverage map",
+      "source_url": "https://www.partner.co.il/5g",
+      "raw_snippet": "Partner 5G",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-cellcom-5g",
+      "claim": "Cellcom 5G coverage map",
+      "source_url": "https://cellcom.co.il/5g",
+      "raw_snippet": "Cellcom 5G",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-pelephone-5g",
+      "claim": "Pelephone 5G coverage map",
+      "source_url": "https://www.pelephone.co.il/5g",
+      "raw_snippet": "Pelephone 5G",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-speedtest",
+      "claim": "Speedtest.net for verifying broadband speed",
+      "source_url": "https://www.speedtest.net",
+      "raw_snippet": "speedtest.net",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md"]
+    },
+    {
+      "claim_id": "approx-cellular-pricing-2026",
+      "claim": "Approximate monthly cellular pricing 2026 (verify with carrier): Golan ~40 NIS/line unlimited (~160 NIS / 160 ש\"ח for 4 lines), Rami Levy ~45 NIS/line (~162 NIS / 162 ש\"ח for 4 lines with family discount), Partner ~60 NIS/line (~200 NIS / 200 ש\"ח for 4 lines), Cellcom ~55 NIS/line (~185 NIS / 185 ש\"ח for 4 lines), 5G plans typically 10-20 NIS/month more than equivalent 4G",
+      "source_url": "https://www.smartcut.co.il",
+      "raw_snippet": "Golan ~40 ש\"ח (40 ש\"ח), Rami Levy ~45 ש\"ח (45 ש\"ח), Partner ~60 ש\"ח (60 ש\"ח), Cellcom ~55 ש\"ח (55 ש\"ח), 4 קווים: 160 ש\"ח, 162 ש\"ח, 185 ש\"ח, 200 ש\"ח. 5G uplift 10-20 NIS",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "approx-internet-pricing-he",
+      "claim": "Hebrew-formatted bundle pricing: 220-350 ש\"ח per month for various Tel Aviv fiber+TV bundles",
+      "source_url": "https://www.haboreret.co.il",
+      "raw_snippet": "חבילות 220-350 ש\"ח: 300 ש\"ח, 320 ש\"ח, 350 ש\"ח. חיסכון משולב 50-150 ש\"ח לחודש (150 ש\"ח).",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "currencies-he-misc",
+      "claim": "Hebrew-formatted incidental currencies covering retention discounts, multiroom STB, prepaid plan pricing, family-line stacking",
+      "source_url": "https://www.smartcut.co.il",
+      "raw_snippet": "מחלקת שימור 20-40 ש\"ח (20 ש\"ח, 30 ש\"ח, 40 ש\"ח). prepaid 20-30 ש\"ח. multi-room 20-40 ש\"ח. NIS 6 (illustrative).",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "family-line-multiline-discount-10",
+      "claim": "Multi-line plans from the same carrier provide 10-30% discount per additional line; example: Rami Levy family discount of ~10% for 3+ lines",
+      "source_url": "https://www.rami-levy.co.il/he/communication",
+      "raw_snippet": "family discount 10% for 3+ lines",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "retention-discount-pct",
+      "claim": "Retention discounts 20-40% and family multi-line discounts 10-30% per additional line",
+      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
+      "raw_snippet": "shimur 20-40%, family 10-30%",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-bezeq-check-address",
+      "claim": "Bezeq fiber address checker",
+      "source_url": "https://www.bezeq.co.il/internetandphone/internet/checkaddress/",
+      "raw_snippet": "Bezeq address checker",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-bezeq-speedtest",
+      "claim": "Bezeq speedtest tool",
+      "source_url": "https://www.bezeq.co.il/speedtest",
+      "raw_snippet": "Bezeq speedtest",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-hot-check-address",
+      "claim": "HOT address checker",
+      "source_url": "https://www.hot.net.il/check-address",
+      "raw_snippet": "HOT check address",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-kamaze",
+      "claim": "Kamaze comparison platform (alias variant)",
+      "source_url": "https://www.kamaze.co.il",
+      "raw_snippet": "Kamaze",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-mishtalemli",
+      "claim": "Mishtalem-Li comparison platform",
+      "source_url": "https://www.mishtalemli.co.il",
+      "raw_snippet": "Mishtalem-Li",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-cellcom-root",
+      "claim": "Cellcom main site (alternate URL with www)",
+      "source_url": "https://www.cellcom.co.il",
+      "raw_snippet": "Cellcom www",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-cellcom-5g-www",
+      "claim": "Cellcom 5G with www prefix",
+      "source_url": "https://www.cellcom.co.il/5g",
+      "raw_snippet": "Cellcom 5G www",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-hot-root",
+      "claim": "HOT main site with www",
+      "source_url": "https://www.hot.net.il",
+      "raw_snippet": "HOT www",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-pelephone-root",
+      "claim": "Pelephone main site root",
+      "source_url": "https://www.pelephone.co.il",
+      "raw_snippet": "Pelephone root",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "approx-internet-pricing-2026",
+      "claim": "Approximate fiber + TV bundle pricing in Tel Aviv 2026 (verify with provider): Bezeq+Yes ~250-350 NIS/month, HOT ~230-320 NIS/month, Partner ~220-300 NIS/month",
+      "source_url": "https://www.haboreret.co.il",
+      "raw_snippet": "bundle 220-350 NIS",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "internet-speed-tiers",
+      "claim": "Common Israeli internet speed tiers: 100 Mbps basic, 200-500 Mbps standard, 1 Gbps fast, 2.5 Gbps ultra (available in some fiber areas)",
+      "source_url": "https://www.bezeq.co.il",
+      "raw_snippet": "100 Mbps, 200-500 Mbps, 1 Gbps, 2.5 Gbps",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bundle-savings-50-150",
+      "claim": "Bundle packages typically save 50-150 NIS/month compared to buying services individually",
+      "source_url": "https://www.haboreret.co.il",
+      "raw_snippet": "bundle savings 50-150 NIS",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "retention-discount-20-40",
+      "claim": "Israeli telecom retention department (machlekat shimur) typically offers 20-40% discounts to existing customers threatening to leave",
+      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
+      "raw_snippet": "shimur lekokhot 20-40%",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "prepaid-low-usage-pricing",
+      "claim": "Prepaid plans from Golan or Rami Levy can cost as low as 20-30 NIS/month for users under 10GB monthly",
+      "source_url": "https://www.golantelecom.co.il",
+      "raw_snippet": "prepaid 20-30 NIS, under 10GB",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "multiroom-stb-pricing",
+      "claim": "Additional set-top boxes for extra rooms typically 20-40 NIS/month each",
+      "source_url": "https://www.yes.co.il",
+      "raw_snippet": "multi-room STB 20-40 NIS",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "fiber-install-fee",
+      "claim": "Fiber installation may be free during promotions or cost 100-300 NIS",
+      "source_url": "https://www.bezeq.co.il",
+      "raw_snippet": "fiber install 100-300 NIS",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "family-line-stacking",
+      "claim": "Adding family members to one cellular account usually costs 20-40 NIS per additional line",
+      "source_url": "https://www.smartcut.co.il",
+      "raw_snippet": "family line 20-40 NIS",
+      "fetched_at": "2026-05-25T21:35:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}
