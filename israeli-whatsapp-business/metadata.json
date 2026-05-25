@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "category": "communication",
   "tags": {
     "he": [
@@ -27,7 +27,7 @@
     "en": "Israeli Whatsapp Business"
   },
   "display_description": {
-    "he": "ממשק WhatsApp Business API להודעות עסקיות בעברית",
+    "he": "אינטגרציה של WhatsApp Business Cloud API לשוק הישראלי: תבניות הודעות בעברית, אישור הזמנות, OTP, תזכורות תור ושיווק. השתמשו כשמדברים על שליחת WhatsApp עסקי בישראל, יצירת תבניות עבריות, אינטגרציה ל-Monday.com או Priority, חימום מספר חדש, או עמידה בחוק הספאם ובתיקון 13 לחוק הגנת הפרטיות. מכסה Cloud API, BSPs פעילים בישראל, תמחור לפי תבנית, חלון 72 שעות אחרי CTWA, ופיצ'רים חדשים (Flows, שיחות קוליות, קטלוג). אל תשתמשו לשימוש פרטי ב-WhatsApp או לשווקים מחוץ לישראל.",
     "en": "Integrate WhatsApp Business API for the Israeli market with Hebrew message templates, customer communication, and CRM integration. Use when user asks about WhatsApp Business in Israel, Hebrew WhatsApp templates, WhatsApp marketing to Israeli customers, business messaging via WhatsApp, or integrating WhatsApp with Israeli CRM tools (Monday.com, Priority, etc.). Covers Cloud API setup, template creation, compliance with Israeli anti-spam law, and Israeli consumer communication preferences. Do NOT use for personal WhatsApp or non-Israeli WhatsApp markets."
   },
   "supported_agents": [

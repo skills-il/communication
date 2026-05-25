@@ -39,7 +39,7 @@ except ImportError:
     HAS_PYTZ = False
 
 
-API_VERSION = "v18.0"
+API_VERSION = "v25.0"
 BASE_URL = f"https://graph.facebook.com/{API_VERSION}"
 
 
@@ -64,8 +64,8 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
     else:
         return False, "Number must start with 0, +972, or 972"
 
-    # Validate mobile
-    if re.match(r'^05[0-8]\d{7}$', local):
+    # Validate mobile (Israeli mobile prefixes: 050, 051, 052, 053, 054, 055, 058)
+    if re.match(r'^05[0-58]\d{7}$', local):
         return True, '972' + local[1:]
 
     # Validate landline

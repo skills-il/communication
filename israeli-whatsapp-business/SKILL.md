@@ -4,7 +4,7 @@ description: Integrate WhatsApp Business API for the Israeli market with Hebrew 
 license: MIT
 allowed-tools: Bash(python:*) Bash(curl:*) WebFetch
 compatibility: Requires Meta Business Account and WhatsApp Business API access. Network access required.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Israeli WhatsApp Business
@@ -15,7 +15,7 @@ version: 1.1.0
 Ensure the user has:
 1. Meta Business Account (`business.facebook.com`)
 2. WhatsApp Business Account (WABA) linked to that Meta Business
-3. A registered phone number with Israeli prefix (`+972`), either the official Cloud API hosted by Meta, or via a Business Solution Provider (BSP) like 360dialog, MessageBird/Bird, Twilio, Infobip, Vonage, or local Israeli BSPs (Cellact, GetWApp, Coral.cx)
+3. A registered phone number with Israeli prefix (`+972`), either the official Cloud API hosted by Meta, or via a Business Solution Provider (BSP). Currently active BSPs serving Israeli accounts: 360dialog, MessageBird/Bird, Twilio, Infobip, Vonage, Gupshup, AiSensy, Sinch
 4. System User Access Token with `whatsapp_business_messaging` permission (and `whatsapp_business_management` for template ops)
 
 ```python
@@ -25,7 +25,7 @@ def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
     """Verify WhatsApp Business API access against the Cloud API."""
     # Use the latest stable Graph API version. Check
     # https://developers.facebook.com/docs/graph-api/changelog for current.
-    url = f"https://graph.facebook.com/v23.0/{phone_number_id}"
+    url = f"https://graph.facebook.com/v25.0/{phone_number_id}"
     headers = {"Authorization": f"Bearer {access_token}"}
     response = requests.get(url, headers=headers)
     return response.json()
@@ -33,7 +33,7 @@ def verify_whatsapp_setup(access_token: str, phone_number_id: str) -> dict:
 
 ### Step 2: Create Hebrew Message Templates
 
-**Conversation categories (Meta pricing model, in force since 1 July 2024 and updated through 2025-26):**
+**Conversation categories (Meta pricing model, per-template billing in force since 1 July 2025, replacing the older 24h conversation-based model):**
 WhatsApp now bills per **template message** in three paid categories plus one free category:
 
 | Category | When to use | Billing |
@@ -43,7 +43,13 @@ WhatsApp now bills per **template message** in three paid categories plus one fr
 | Marketing | Promotions, offers, newsletters, re-engagement | Billed per marketing template message (typically the most expensive tier) |
 | Service | Free-form replies inside the 24h customer service window | Free; counts as a service conversation |
 
-The legacy "conversation-based" pricing (24h window per category) was retired on 1 July 2024 and replaced with per-template-message pricing for utility, authentication and marketing templates, plus a free-tier allowance per WABA. Confirm current Israel-specific rates on the Meta pricing page before quoting numbers to a customer; rates vary by country and are revised periodically.
+The legacy "conversation-based" pricing (24h window per category) was retired on 1 July 2025 and replaced with per-template-message pricing for utility, authentication and marketing templates, plus a free-tier allowance per WABA. Confirm current Israel-specific rates on the Meta pricing page before quoting numbers to a customer; rates vary by country and are revised periodically.
+
+**Free messaging windows beyond the default 24h CSW:**
+- **24h Customer Service Window (CSW)**: opens when the user sends an inbound message. Free-form replies, free utility templates, free service messages.
+- **72h Click-to-WhatsApp (CTWA) free window**: opens when the user clicks a CTWA ad on Facebook/Instagram. Free messages in any category for 72 hours, very common Israeli acquisition pattern.
+- **Authentication templates are billed even inside the CSW** (unlike utility, which is free in window). Trap that catches Israeli OTP-heavy products (banks, fintech).
+- **Free-tier allowance**: 1,000 free service conversations per WABA per month at time of writing. Re-check current numbers on the Meta pricing page.
 
 **Template categories for Israeli businesses:**
 
@@ -61,7 +67,7 @@ The legacy "conversation-based" pricing (24h window per category) was retired on
 ```python
 def create_template(waba_id: str, access_token: str, template: dict):
     """Create a WhatsApp message template."""
-    url = f"https://graph.facebook.com/v23.0/{waba_id}/message_templates"
+    url = f"https://graph.facebook.com/v25.0/{waba_id}/message_templates"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json",
@@ -95,6 +101,15 @@ appointment_template = {
 
 Template approval typically takes minutes to a few hours when content is clean; rejections are most often caused by promotional language in a UTILITY template, missing variable examples, or formatting issues with mixed-direction text.
 
+**Concrete rejection patterns we've seen on Hebrew templates:**
+
+| Rejected text | Why | Fixed version |
+|---|---|---|
+| "מבצע!! 20% הנחה רק היום, מהרו!" (in UTILITY) | Promotional copy + urgency markers in UTILITY category | Move to MARKETING, or rewrite as transactional: "ההנחה שלך {{1}}% פעילה עד {{2}}." |
+| "תזכורת: יש לך תור ב-{{1}}" with example `["מחר"]` | Vague placeholder, not a realistic value | Use a real example like `["מרפאת השיניים ד\"ר כהן, 15.06.2026 בשעה 10:00"]` |
+| Body with 6+ variables and 30 chars of literal text | Spam-like ratio of variables to text | Reduce to ≤3 variables, add more natural sentence connectives |
+| "{{1}}{{2}}" with no separator and no language code | Missing footer + unclear language | Add explicit `language: "he"` plus a footer line like "להסרה השיבו 'הסר'" |
+
 ### Step 3: Send Messages
 
 **Send a template message:**
@@ -103,7 +118,7 @@ def send_template_message(phone_number_id: str, access_token: str,
                           to: str, template_name: str, language: str,
                           parameters: list):
     """Send a WhatsApp template message."""
-    url = f"https://graph.facebook.com/v23.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json",
@@ -134,7 +149,7 @@ def send_template_message(phone_number_id: str, access_token: str,
 def send_interactive_list(phone_number_id: str, access_token: str,
                           to: str, body_text: str, sections: list):
     """Send an interactive list message in Hebrew."""
-    url = f"https://graph.facebook.com/v23.0/{phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v25.0/{phone_number_id}/messages"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json",
@@ -153,11 +168,26 @@ def send_interactive_list(phone_number_id: str, access_token: str,
     return response.json()
 ```
 
+### Step 3.5: Quality Rating and Number Warming
+
+WhatsApp assigns every business phone number a quality tier (Green, Yellow, Red). Meta evaluates the tier every 6 hours based on user-reported spam, block rate, and template rejection ratio. A Yellow or Red tier limits how many users you can message per 24h, and a sustained Red tier can pause sending entirely.
+
+**Warming a new Israeli number (the first 30 days are critical):**
+
+1. **Days 1-7**: send only UTILITY templates to opted-in customers who actively expect them (order confirmations, OTP). No marketing.
+2. **Days 7-14**: introduce small marketing batches (50-200 recipients), only to users who opted in within the last 30 days.
+3. **Days 14-30**: scale gradually. Stop immediately if quality drops to Yellow.
+4. **Always**: include a clear opt-out line in marketing templates ("להסרה השיבו 'הסר'"), and act on opt-outs within minutes (block the wa_id from your sending list).
+
+**If quality drops to Yellow**: pause marketing for 48h, send only UTILITY to engaged users, review recent template content for promotional drift, and audit the opt-in source for the affected segment.
+
+**Messaging limits since October 2025 apply per Business Portfolio, not per phone number**, which means moving a campaign to a fresh number does NOT reset your limit if the new number is under the same portfolio. New portfolios start at a low default daily cap (~250 marketing conversations to unique users at time of writing) and advance based on Meta's portfolio-level evaluation of utilization and quality. Treat the historical per-phone-number tier table (1k → 10k → 100k → unlimited) as legacy; verify your current cap in Business Manager → WhatsApp Manager → Insights.
+
 ### Step 4: Israeli Timing and Compliance
 
 Israeli commercial WhatsApp messaging is governed by Amendment 40 to the Communications (Bezeq and Broadcasts) Law (Chok HaSpam) and, since 14 August 2025, by Amendment 13 to the Privacy Protection Law, which significantly tightened obligations on processors of personal data and aligned Israeli rules more closely with the EU GDPR. WhatsApp marketing requires explicit prior opt-in just like SMS, and unlawful processing of phone numbers can now also trigger administrative fines from the Privacy Protection Authority.
 
-**Sending schedule for Israeli market:**
+**Sending schedule for Israeli market** (the Friday-14:00 / Saturday-20:00 cutoffs below are conservative heuristics; real Shabbat times vary by ~30-60 minutes by season and city. For production use, derive entry/exit from a Hebcal-style API for the user's location):
 ```python
 from datetime import datetime, time
 import pytz
@@ -202,6 +232,19 @@ def compliance_checklist(message_type: str) -> list:
         ])
     return checks
 ```
+
+### Step 4.5: Beyond Templates (Flows, Calls, Catalog, CTWA)
+
+Common 2025-2026 features Israeli businesses ask about, in priority order:
+
+- **WhatsApp Flows**: native multi-step forms (lead capture, booking, surveys) rendered inside the chat. Cloud API only. Replaces many "external Google Form linked from WhatsApp" patterns. Useful for kupot/clinic intake, real-estate lead capture, restaurant reservations.
+- **Click-to-WhatsApp ads (CTWA)**: Facebook/Instagram ads that open a chat with your business. Opens the 72h free messaging window described above. Israel's dominant paid acquisition channel for WhatsApp.
+- **WhatsApp Business Calling API**: voice calling from a verified business number. Announced July 2025, with SMB-tier rollout phased through BSPs across 2026. Country and BSP coverage is uneven; check the official calling-API docs and your BSP for current Israeli availability before designing a calling-dependent flow. Pricing is separate from messaging (Meta business calling rates).
+- **Catalog and Commerce**: product catalogs and in-chat product cards. Note: WhatsApp Pay is NOT available in Israel (the in-chat payment product launched only in Brazil, India and Singapore); checkout must redirect to your own payment page (Cardcom, Tranzila, Pelecard, Bit, Apple/Google Pay, etc.).
+- **Phone-number migration between BSPs**: 2-step verification PIN must be removed before migration. Plan a maintenance window because messages in flight can be dropped. Document the source phone-number ID before initiating.
+- **On-Premises API has reached end of support (final version expired 23 October 2025).** Migrate any legacy On-Prem deployments to Cloud API or to a BSP-hosted gateway. Do NOT recommend the On-Prem path to new users.
+
+**General-purpose AI assistant restriction (effective 15 January 2026):** Meta no longer permits general-purpose AI chatbots on WhatsApp Business. Purpose-specific bots (customer support, bookings, product Q&A, order status) remain allowed. This affects the local ChatGPT-style WhatsApp wrapper market.
 
 ### Step 5: CRM Integration Guidance
 
@@ -278,8 +321,14 @@ Result: a compliant promotional campaign with Israeli timing and per-message mar
 - MessageBird/Bird (BSP): https://bird.com/
 - Twilio WhatsApp Business: https://www.twilio.com/en-us/messaging/channels/whatsapp
 - Infobip WhatsApp: https://www.infobip.com/whatsapp-business
-- Vonage WhatsApp: https://developer.vonage.com/en/messaging/sms/overview
+- Vonage WhatsApp: https://developer.vonage.com/en/messages/concepts/whatsapp
+- Gupshup WhatsApp: https://www.gupshup.io/channels/whatsapp
+- AiSensy (BSP, popular with SMBs): https://www.aisensy.com/
+- Sinch WhatsApp: https://www.sinch.com/products/messaging/whatsapp/
 - Monday.com automations: https://support.monday.com/hc/en-us/categories/115000091445
+- WhatsApp Flows overview: https://developers.facebook.com/docs/whatsapp/flows
+- WhatsApp Business Calling API: https://developers.facebook.com/docs/whatsapp/cloud-api/guides/calling
+- On-Premises API sunset notice (final version expired 23 October 2025): https://developers.facebook.com/docs/whatsapp/on-premises/sunset
 
 ## Gotchas
 
@@ -288,7 +337,11 @@ Result: a compliant promotional campaign with Israeli timing and per-message mar
 - Israeli businesses sending WhatsApp marketing must comply with Communications Law Amendment 40 (Chok HaSpam) and, since August 2025, Privacy Protection Law Amendment 13. Prior explicit opt-in is required, not an "existing business relationship".
 - WhatsApp Business has a 24-hour customer service window. After 24 hours since the user's last inbound message, only pre-approved template messages can be sent, and (depending on category) they will be billed per template message under the post-July-2024 pricing model.
 - Hebrew text in template variables can break formatting when mixed with numbers or English. Use Unicode isolate characters (U+2066 to U+2069) around mixed-direction content, or design templates so variables don't contain mixed-direction substrings.
-- Template-based pricing (since 1 July 2024): utility/authentication/marketing categories are billed per template message, not per 24h conversation. Free-tier allowances apply per WABA. Always re-check the Meta pricing page before quoting Israeli rates to a customer; rates change.
+- Template-based pricing (since 1 July 2025): utility/authentication/marketing categories are billed per template message, not per 24h conversation. Free-tier allowances apply per WABA. Always re-check the Meta pricing page before quoting Israeli rates to a customer; rates change.
+- **Per-user marketing frequency cap (rollout in progress)**: Meta is rolling out per-user marketing-template frequency caps to reduce spam in selected markets. At time of writing the cap is enforced for users with India (+91) country codes; Meta has signalled expansion but Israeli (+972) recipients are NOT subject to a documented hard cap as of this update. Check the current scope on the Meta pricing/policy pages before assuming the cap is in force for your Israeli campaign, and design your opt-in flow as if a cap is coming.
+- **Messaging limits are per Business Portfolio since October 2025**, not per phone number. Adding a second number under the same portfolio will NOT double your daily cap.
+- **Authentication templates are billed even inside the 24h Customer Service Window**, unlike utility templates which are free in window. Israeli OTP-heavy products (banks, e-wallets, identity verification) frequently overlook this.
+- **Israeli mobile prefixes accepted by WhatsApp**: 050 (Pelephone), 051 (We4G), 052 (Cellcom), 053 (HOT Mobile), 054 (Partner), 055 (MVNOs), 058 (Golan Telecom). Validation regex that excludes 051 will reject real subscribers.
 
 ## Troubleshooting
 
@@ -298,7 +351,7 @@ Solution: ensure Hebrew text is properly formatted, no prohibited content (gambl
 
 ### Error: "Message failed to send"
 Cause: invalid number, recipient not on WhatsApp, rate limit, or out-of-window free-form attempt.
-Solution: verify `+972` format without leading zero, confirm recipient has WhatsApp, respect rate limits (Cloud API supports up to ~80 messages/second per phone number, with quality-tier-based scaling). If outside the 24h window, switch to an approved template message.
+Solution: verify `+972` format without leading zero, confirm recipient has WhatsApp, respect rate limits (Cloud API default ~80 messages/second per business phone number, scaling up to ~1,000 MPS for unlimited-tier accounts; daily-conversation limits apply per Business Portfolio since October 2025). If outside the 24h window, switch to an approved template message. If the failure is on a marketing template and the recipient has been opted-in correctly, suspect the 7-day rolling per-user marketing cap.
 
 ### Error: "Webhook not receiving messages"
 Cause: webhook URL not verified, Meta App not subscribed to `messages` field, or signature validation failing.
