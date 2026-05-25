@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "category": "communication",
   "tags": {
     "he": [
@@ -25,7 +25,7 @@
     "en": "Israeli Sms Gateway"
   },
   "display_description": {
-    "he": "שליחת SMS דרך ספקים ישראליים עם תמיכה בעברית ומספרים מקומיים",
+    "he": "אינטגרציה לספקי שערי SMS ישראליים להודעות עסקיות, OTP והתראות. השתמשו כששואלים על שליחת SMS בישראל, ספקי SMS ישראליים (019 SMS, InforUMobile, Cellact, ActiveTrail, SMS4Free), אימות מספרי טלפון ישראליים, מימוש OTP, SMS המוני, או עמידה בחוק הספאם (תיקון 40) ובתיקון 13 לחוק הגנת הפרטיות. מכסה גם ספקים בינלאומיים (Twilio, Vonage, Bird), מגבלות תווים בעברית (UCS-2), ורישום זיהוי שולח. אל תשתמשו עבור WhatsApp Business API (יש סקיל נפרד) או טלקום מחוץ לישראל.",
     "en": "Integrate with Israeli SMS gateway providers for business messaging, OTP, and notifications. Use when user asks about sending SMS in Israel, Israeli SMS providers, phone number validation (Israeli format), OTP implementation, bulk SMS, or SMS marketing compliance. Covers SMS4Free, InforUMobile, and international providers with Israeli support. Do NOT use for WhatsApp Business API (see separate skill) or non-Israeli telecom."
   },
   "supported_agents": [

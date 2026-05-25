@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-sms-gateway",
+  "generated_at": "2026-05-25T19:30:00Z",
+  "claims": [
+    {
+      "claim_id": "chok-haspam-1000-nis",
+      "claim": "Chok HaSpam (Amendment 40 to Communications Law) civil penalty: up to 1,000 NIS per unsolicited message without proof of damages",
+      "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
+      "raw_snippet": "פיצוי של עד 1,000 ש\"ח / 1,000 NIS לכל פרסומת שנשלחה, בלי צורך להוכיח שנגרם נזק",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "amendment-13-in-force",
+      "claim": "Privacy Protection Law Amendment 13 in force 14 August 2025",
+      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
+      "raw_snippet": "תיקון 13 בתוקף 14 באוגוסט 2025",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "amendment-40-chok-haspam",
+      "claim": "Amendment 40 to the Communications (Bezeq and Broadcasts) Law governs commercial SMS in Israel (Chok HaSpam)",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_communications",
+      "raw_snippet": "תיקון 40 לחוק התקשורת (בזק ושידורים)",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "hebrew-sms-ucs2-limits",
+      "claim": "Hebrew SMS uses UCS-2 encoding: 70 characters per single segment, 67 characters per segment in multi-part SMS due to UDH overhead",
+      "source_url": "https://en.wikipedia.org/wiki/GSM_03.38",
+      "raw_snippet": "70 ucs-2, 67 per segment multi-part",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "twilio-il-price-2026",
+      "claim": "Twilio outbound SMS to Israel mobile is approximately $0.26 USD per message (May 2026 published rate)",
+      "source_url": "https://www.twilio.com/en-us/sms/pricing/il",
+      "raw_snippet": "$0.26",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "inforu-xml-endpoint",
+      "claim": "InforU canonical XML-over-HTTP endpoint is https://api.inforu.co.il/SendMessageXml.ashx; accepts XML body via InforuXML query param, not JSON",
+      "source_url": "https://apidoc.inforu.co.il/",
+      "raw_snippet": "api.inforu.co.il/SendMessageXml.ashx InforuXML",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "twilio-il-sender-id-pre-reg",
+      "claim": "Israel requires domestic pre-registration of alphanumeric sender IDs, taking approximately 1 week; local non-real numbers are not allowed as sender IDs",
+      "source_url": "https://www.twilio.com/en-us/guidelines/il/sms",
+      "raw_snippet": "Domestic pre-registration ~1 week",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "twilio-il-palestine-split",
+      "claim": "Twilio routes +97256 and +97259 (Jawwal/Wataniya) through Palestine geo-permission rather than Israel; affects validation regex that broadens beyond 050-058",
+      "source_url": "https://www.twilio.com/en-us/changelog/programmable-sms-geo-permissions-israel-and-palestine-prefix-update",
+      "raw_snippet": "+97256 +97259 Palestine geo",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "israeli-mobile-prefixes",
+      "claim": "Israeli mobile prefixes are 050, 051, 052, 053, 054, 055, 056 (not Israeli), 057 (deprecated), 058 (Golan); validation regex 05[0-9] is broad but catches all current Israeli mobile",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "05X mobile prefixes",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bsp-019sms",
+      "claim": "019 SMS (019 Telecom) operates Israeli business messaging platform",
+      "source_url": "https://019sms.co.il/",
+      "raw_snippet": "019 SMS",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bsp-sms4free",
+      "claim": "SMS4Free operates SMS API portal at sms4free.co.il",
+      "source_url": "https://www.sms4free.co.il/",
+      "raw_snippet": "SMS4Free",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bsp-cellact",
+      "claim": "Cellact provides Israeli business SMS, USSD, and voice products",
+      "source_url": "https://www.cellact.com/",
+      "raw_snippet": "Cellact",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bsp-activetrail",
+      "claim": "ActiveTrail offers SMS bundled with marketing automation plans",
+      "source_url": "https://www.activetrail.co.il/",
+      "raw_snippet": "ActiveTrail",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bsp-twilio-sms",
+      "claim": "Twilio Programmable Messaging supports Israeli SMS",
+      "source_url": "https://www.twilio.com/en-us/messaging/channels/sms",
+      "raw_snippet": "Twilio",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bsp-vonage-sms",
+      "claim": "Vonage SMS API for multi-region apps",
+      "source_url": "https://developer.vonage.com/en/messaging/sms/overview",
+      "raw_snippet": "Vonage",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "sms4free-legacy-endpoint",
+      "claim": "Legacy SMS4Free endpoint documented as https://api.sms4free.co.il/ApiSMS/v2/SendSMS; current endpoint may differ, verify at sms4free.co.il",
+      "source_url": "https://api.sms4free.co.il/ApiSMS/v2/SendSMS",
+      "raw_snippet": "api.sms4free.co.il/ApiSMS/v2/SendSMS",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "sms4free-alt-endpoint",
+      "claim": "Alternative SMS4Free endpoint (older script reference): https://www.sms4free.co.il/ApiSMS/SendSMS",
+      "source_url": "https://www.sms4free.co.il/ApiSMS/SendSMS",
+      "raw_snippet": "sms4free.co.il/ApiSMS/SendSMS",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["scripts/send_sms.py"]
+    },
+    {
+      "claim_id": "inforu-json-rest",
+      "claim": "InforU JSON REST product endpoint pattern (account-tier specific): https://api.inforu.co.il/SendSMS/SendSMS",
+      "source_url": "https://api.inforu.co.il/SendSMS/SendSMS",
+      "raw_snippet": "api.inforu.co.il/SendSMS/SendSMS",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["scripts/send_sms.py"]
+    },
+    {
+      "claim_id": "twilio-rest-messages-endpoint",
+      "claim": "Twilio REST endpoint for sending messages: POST https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json",
+      "source_url": "https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json",
+      "raw_snippet": "api.twilio.com/2010-04-01/Accounts",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["scripts/send_sms.py"]
+    },
+    {
+      "claim_id": "inforu-xml-endpoint-script",
+      "claim": "InforU XML endpoint used in script and SKILL.md code sample",
+      "source_url": "https://api.inforu.co.il/SendMessageXml.ashx",
+      "raw_snippet": "api.inforu.co.il/SendMessageXml.ashx",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/send_sms.py"]
+    },
+    {
+      "claim_id": "inforu-pricing-2026",
+      "claim": "InforU SMS approximate package pricing 2026: 0.07-0.12 NIS per SMS (package-based; verify on provider quote)",
+      "source_url": "https://apidoc.inforu.co.il/",
+      "raw_snippet": "0.07-0.12 ש\"ח להודעה",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "019sms-pricing-2026",
+      "claim": "019 SMS approximate package pricing 2026: 0.06-0.10 NIS per SMS (package-based; verify on provider quote)",
+      "source_url": "https://019sms.co.il/",
+      "raw_snippet": "0.06-0.10 ש\"ח להודעה",
+      "fetched_at": "2026-05-25T19:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}

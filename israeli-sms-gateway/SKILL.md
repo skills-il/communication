@@ -4,7 +4,7 @@ description: Integrate with Israeli SMS gateway providers for business messaging
 license: MIT
 allowed-tools: Bash(python:*) WebFetch
 compatibility: Requires API key from chosen SMS provider. Network access required.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Israeli SMS Gateway
@@ -48,7 +48,7 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
 | SMS4Free | Startups, dev/test | REST | Pay per message, free tier deprecated |
 | ActiveTrail | Marketing automation | REST | Bundled with email plans |
 | Cellact | Enterprise, OTP | REST | Volume pricing |
-| Twilio | Global apps targeting +972 | REST | ~$0.04-0.05 USD/SMS to Israel |
+| Twilio | Global apps targeting +972 | REST | ~$0.26 USD/SMS to Israel mobile (May 2026 published rate; verify on twilio.com/en-us/sms/pricing/il) |
 | Vonage | Multi-region apps | REST | Volume pricing |
 | MessageBird/Bird | Multi-channel | REST | Volume pricing |
 
@@ -56,35 +56,45 @@ Israeli providers (019, InforU, Cellact, ActiveTrail) generally offer cheaper lo
 
 ### Step 3: Send SMS
 
-**InforUMobile example (REST):**
+**InforUMobile example (XML-over-HTTP, the canonical InforU contract):**
+
+InforU's canonical endpoint accepts XML (NOT JSON). A POST to `SendMessageXml.ashx` with a JSON body is silently rejected. Build the XML body explicitly, or use InforU's separate JSON REST product if your account has it provisioned (the JSON endpoint URL and field names vary by account tier, so verify against your dashboard at https://apidoc.inforu.co.il/ before coding against it).
+
 ```python
 import os
 import requests
+from xml.etree.ElementTree import Element, SubElement, tostring
 
-def send_sms_inforu(to: str, message: str, sender: str) -> dict:
-    """Send SMS via InforUMobile REST API.
+def send_sms_inforu_xml(to: str, message: str, sender: str) -> str:
+    """Send SMS via InforU XML-over-HTTP endpoint.
 
     Credentials are read from env vars (INFORU_USER, INFORU_PASS).
-    Endpoints and exact field names should be confirmed against current
-    InforU documentation, which evolves between API versions.
+    Returns the raw response body for the caller to parse. Verify the
+    exact field set against https://apidoc.inforu.co.il/ . InforU adds
+    optional fields (DLR callbacks, campaign tagging) without bumping
+    the wire version.
     """
     user = os.environ["INFORU_USER"]
     password = os.environ["INFORU_PASS"]
 
-    payload = {
-        "Data": {
-            "Message": message,
-            "Recipients": [{"Phone": to}],
-            "Settings": {"Sender": sender},
-        },
-        "User": {"Username": user, "Password": password},
-    }
+    root = Element("Inforu")
+    user_el = SubElement(root, "User")
+    SubElement(user_el, "Username").text = user
+    SubElement(user_el, "Password").text = password
+    content = SubElement(root, "Content", {"Type": "sms"})
+    SubElement(content, "Message").text = message
+    recipients = SubElement(root, "Recipients")
+    SubElement(recipients, "PhoneNumber").text = to
+    settings = SubElement(root, "Settings")
+    SubElement(settings, "Sender").text = sender
+
+    xml_body = tostring(root, encoding="utf-8")
     response = requests.post(
-        "https://uapi.inforu.co.il/SendMessageXml.ashx",
-        json=payload,
+        "https://api.inforu.co.il/SendMessageXml.ashx",
+        params={"InforuXML": xml_body.decode("utf-8")},
         timeout=15,
     )
-    return response.json()
+    return response.text
 ```
 
 **Twilio example (international):**
@@ -156,7 +166,7 @@ Result: a Chok HaSpam + Amendment 13 compliant bulk SMS campaign with delivery r
 - Communications Law Amendment 40 (Chok HaSpam) overview, Ministry of Communications: https://www.gov.il/he/departments/ministry_of_communications
 - Privacy Protection Law Amendment 13 (in force 14 August 2025), Privacy Protection Authority: https://www.gov.il/he/departments/the_privacy_protection_authority
 - 019 SMS (019 Telecom) business messaging: https://019sms.co.il/
-- InforUMobile developer docs: https://www.inforu.co.il/en/api/
+- InforUMobile developer docs: https://apidoc.inforu.co.il/
 - SMS4Free API portal: https://www.sms4free.co.il/
 - Cellact business SMS: https://www.cellact.com/
 - ActiveTrail SMS: https://www.activetrail.co.il/
@@ -171,7 +181,9 @@ Result: a Chok HaSpam + Amendment 13 compliant bulk SMS campaign with delivery r
 - Israeli SMS providers (019, InforU, Cellact, ActiveTrail, SMS4Free) use different request shapes from international providers like Twilio. Code generated against Twilio docs will not work against InforU and vice versa.
 - Hebrew SMS messages are limited to 70 characters per segment (vs 160 for GSM-7 Latin). Multi-part Hebrew SMS uses 67 characters per segment due to UDH overhead. Agents that ignore this produce surprise multi-part costs.
 - Sending SMS on Shabbat (Friday evening to Saturday evening) is poor B2C practice in Israel and a frequent source of complaints to the Privacy Protection Authority.
-- Sender ID registration in Israel: alphanumeric sender IDs must be pre-registered with the provider and, in practice, tied to a verified Israeli business. Unregistered IDs fall back to a generic provider number, which hurts open rates.
+- Sender ID registration in Israel: alphanumeric sender IDs must be pre-registered with the provider and, in practice, tied to a verified Israeli business. Domestic pre-registration takes ~1 week (Twilio's published timeline as of May 2026). Local non-real numbers as sender IDs are not allowed in Israel. Unregistered IDs fall back to a generic provider number, which hurts open rates.
+- Phone-prefix routing: international providers like Twilio split +972 traffic so that +97256 and +97259 (Jawwal / Wataniya) route through the Palestine geo-permission rather than Israel. The numeric ranges 050-058 used by Israeli carriers are unaffected, but watch out if your validation regex ever broadens to "+972 any-prefix-starts-with-5", since you may inadvertently target Palestinian mobile networks under a different rate card and policy.
+- InforU JSON vs XML endpoints are different products on different hosts. Posting JSON to `SendMessageXml.ashx` silently fails. Use the XML endpoint with an XML body, or switch entirely to InforU's JSON REST product (`https://apidoc.inforu.co.il/`) and confirm your account has it enabled.
 
 ## Troubleshooting
 

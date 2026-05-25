@@ -4,7 +4,7 @@ description: Integrate with Israeli SMS gateway providers for business messaging
 license: MIT
 allowed-tools: Bash(python:*) WebFetch
 compatibility: Requires API key from chosen SMS provider. Network access required.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # שער SMS ישראלי
@@ -48,7 +48,7 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
 | SMS4Free | סטארטאפים, פיתוח | REST | תשלום לפי הודעה, מסלול חינמי הוצא משימוש |
 | ActiveTrail | אוטומציות שיווק | REST | בחבילה עם מסלולי דוא"ל |
 | Cellact | ארגונים, OTP | REST | תמחור לפי נפח |
-| Twilio | אפליקציות גלובליות שמכוונות ל-+972 | REST | כ-$0.04-0.05 דולר להודעה לישראל |
+| Twilio | אפליקציות גלובליות שמכוונות ל-+972 | REST | כ-$0.26 דולר להודעה לסלולר בישראל (תעריף Twilio מאי 2026, יש לאמת ב-twilio.com/en-us/sms/pricing/il) |
 | Vonage | אפליקציות מולטי-אזוריות | REST | תמחור לפי נפח |
 | MessageBird/Bird | רב-ערוצי | REST | תמחור לפי נפח |
 
@@ -56,35 +56,45 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
 
 ### שלב 3: שליחת SMS
 
-**דוגמה עם InforUMobile (REST):**
+**דוגמה עם InforUMobile (XML-over-HTTP, ההסכם הקנוני של InforU):**
+
+נקודת הקצה הקנונית של InforU מקבלת XML (לא JSON). POST של JSON ל-`SendMessageXml.ashx` נדחה בשקט. תבנו XML, או תשתמשו במוצר ה-JSON REST הנפרד של InforU אם החשבון שלכם הוקצה לו (כתובת ה-JSON ושמות השדות משתנים לפי תיקוף החשבון, יש לאמת מול הדאשבורד ב-https://apidoc.inforu.co.il/ לפני קוד פרודקשן).
+
 ```python
 import os
 import requests
+from xml.etree.ElementTree import Element, SubElement, tostring
 
-def send_sms_inforu(to: str, message: str, sender: str) -> dict:
-    """Send SMS via InforUMobile REST API.
+def send_sms_inforu_xml(to: str, message: str, sender: str) -> str:
+    """Send SMS via InforU XML-over-HTTP endpoint.
 
     Credentials are read from env vars (INFORU_USER, INFORU_PASS).
-    Endpoints and exact field names should be confirmed against current
-    InforU documentation, which evolves between API versions.
+    Returns the raw response body for the caller to parse. Verify the
+    exact field set against https://apidoc.inforu.co.il/ . InforU adds
+    optional fields (DLR callbacks, campaign tagging) without bumping
+    the wire version.
     """
     user = os.environ["INFORU_USER"]
     password = os.environ["INFORU_PASS"]
 
-    payload = {
-        "Data": {
-            "Message": message,
-            "Recipients": [{"Phone": to}],
-            "Settings": {"Sender": sender},
-        },
-        "User": {"Username": user, "Password": password},
-    }
+    root = Element("Inforu")
+    user_el = SubElement(root, "User")
+    SubElement(user_el, "Username").text = user
+    SubElement(user_el, "Password").text = password
+    content = SubElement(root, "Content", {"Type": "sms"})
+    SubElement(content, "Message").text = message
+    recipients = SubElement(root, "Recipients")
+    SubElement(recipients, "PhoneNumber").text = to
+    settings = SubElement(root, "Settings")
+    SubElement(settings, "Sender").text = sender
+
+    xml_body = tostring(root, encoding="utf-8")
     response = requests.post(
-        "https://uapi.inforu.co.il/SendMessageXml.ashx",
-        json=payload,
+        "https://api.inforu.co.il/SendMessageXml.ashx",
+        params={"InforuXML": xml_body.decode("utf-8")},
         timeout=15,
     )
-    return response.json()
+    return response.text
 ```
 
 **דוגמה עם Twilio (בינלאומי):**
@@ -156,7 +166,7 @@ def send_sms_twilio(to: str, message: str) -> str:
 - חוק התקשורת תיקון 40 (חוק הספאם), משרד התקשורת: https://www.gov.il/he/departments/ministry_of_communications
 - חוק הגנת הפרטיות תיקון 13 (בתוקף 14 באוגוסט 2025), הרשות להגנת הפרטיות: https://www.gov.il/he/departments/the_privacy_protection_authority
 - 019 SMS (019 טלקום), הודעות עסקיות: https://019sms.co.il/
-- InforUMobile, תיעוד מפתחים: https://www.inforu.co.il/en/api/
+- InforUMobile, תיעוד מפתחים: https://apidoc.inforu.co.il/
 - SMS4Free, פורטל API: https://www.sms4free.co.il/
 - Cellact, SMS עסקי: https://www.cellact.com/
 - ActiveTrail SMS: https://www.activetrail.co.il/
@@ -171,7 +181,9 @@ def send_sms_twilio(to: str, message: str) -> str:
 - ספקי SMS ישראליים (019, InforU, Cellact, ActiveTrail, SMS4Free) משתמשים במבני בקשה שונים מספקים בינלאומיים כמו Twilio. קוד שנוצר לפי תיעוד של Twilio לא יעבוד מול InforU ולהפך.
 - הודעות SMS בעברית מוגבלות ל-70 תווים לסגמנט (לעומת 160 ב-GSM-7 לטיני). SMS עברי רב-חלקי משתמש ב-67 תווים לסגמנט בגלל overhead של UDH. סוכנים שמתעלמים מזה יוצרים עלויות הפתעה.
 - שליחת SMS בשבת (משישי בערב עד מוצאי שבת) היא פרקטיקה גרועה ל-B2C בישראל ומקור תכוף לתלונות לרשות להגנת הפרטיות.
-- רישום זיהוי שולח בישראל: זיהוי שולח אלפא-נומרי חייב להירשם מראש אצל הספק וקשור בפועל לישות עסקית ישראלית מאומתת. זיהוי לא רשום ייפול חזרה למספר גנרי של הספק, מה שפוגע באחוזי הפתיחה.
+- רישום זיהוי שולח בישראל: זיהוי שולח אלפא-נומרי חייב להירשם מראש אצל הספק וקשור בפועל לישות עסקית ישראלית מאומתת. רישום דומסטי לוקח כשבוע (לוח הזמנים של Twilio נכון למאי 2026). מספרים מקומיים שלא ממופים למפעיל אמיתי לא מאושרים כזיהוי שולח. זיהוי לא רשום ייפול חזרה למספר גנרי של הספק, מה שפוגע באחוזי הפתיחה.
+- ניתוב לפי קידומת: ספקים בינלאומיים כמו Twilio מחלקים את התעבורה ב-+972 כך ש-+97256 ו-+97259 (Jawwal ו-Wataniya) מנותבות דרך הרשאת ה-geo של פלסטין ולא דרך ישראל. הטווחים 050-058 של מפעילים ישראליים לא מושפעים, אבל אם ה-regex של האימות מתרחב ל"+972 כל קידומת שמתחילה ב-5", אתם עלולים להגיע לרשתות פלסטיניות תחת תעריף ומדיניות שונים.
+- נקודות הקצה JSON ו-XML של InforU הן מוצרים שונים על hosts שונים. POST של JSON ל-`SendMessageXml.ashx` נכשל בשקט. תשתמשו ב-XML endpoint עם XML body, או תעברו למוצר REST-JSON של InforU (`https://apidoc.inforu.co.il/`) ותוודאו שהחשבון שלכם הוקצה לו.
 
 ## פתרון בעיות
 
