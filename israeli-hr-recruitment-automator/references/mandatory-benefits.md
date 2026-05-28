@@ -22,7 +22,7 @@
 | Employee contribution | 2.5% of gross salary | Standard rate |
 | Employer contribution | 7.5% of gross salary | Standard rate |
 | Mandatory? | No | Not legally required, but considered standard in most sectors |
-| Tax benefit (employee) | Contributions tax-exempt up to salary ceiling | Ceiling: approximately NIS 15,712/month (2025), updated annually |
+| Tax benefit (employee) | Contributions tax-exempt up to salary ceiling | Ceiling: NIS 15,712/month (2026), updated annually |
 | Tax benefit (employer) | Contributions tax-exempt up to same ceiling | Same ceiling |
 | Withdrawal period | After 6 years (tax-free) or 3 years (taxable) | 6-year lock-in for tax exemption |
 | Common in | Tech, finance, professional services | Almost universal in Israeli tech sector |
@@ -46,8 +46,7 @@
 
 | Years of Service | Calendar Days | Workdays (5-day week) | Workdays (6-day week) |
 |---|---|---|---|
-| 1-4 | 14 | 10 | 12 |
-| 5 | 16 | 11 | 13 |
+| 1-5 | 16 | 11 | 13 |
 | 6 | 18 | 13 | 15 |
 | 7 | 21 | 15 | 17 |
 | 8 | 22 | 16 | 18 |
@@ -60,7 +59,7 @@
 
 **Notes:**
 - "Calendar days" include Saturdays but not official rest days
-- Minimum is per the Annual Leave Law 1951 (chok chufsha shnati)
+- Minimum is per the Annual Leave Law 1951 (chok chufsha shnati); years 1-4 were raised from 14 to 16 calendar days by Amendment 15 (in force since 2017)
 - Many tech companies offer 20-25 workdays from day 1, exceeding the legal minimum
 - Unused vacation days can be accumulated for up to 2 years (beyond that, employer can require usage)
 
@@ -78,7 +77,7 @@
 
 ## Convalescence Pay (dmei havra'a)
 
-| Years of Service | Days per Year | Approximate Annual Amount (2025 rates) |
+| Years of Service | Days per Year | Approximate Annual Amount (2026 rates, NIS 418/day) |
 |---|---|---|
 | 1 | 5 | NIS 2,090 |
 | 2-3 | 6 | NIS 2,508 |
@@ -88,7 +87,7 @@
 | 20+ | 10 | NIS 4,180 |
 
 **Notes:**
-- Daily rate: NIS 418 per day (as of 2025; updated annually by extension order)
+- Daily rate: NIS 418 per day (2026, frozen from 2024-2025; updated annually by extension order)
 - Typically paid as lump sum in June-September
 - Paid to all employees after completing their first year
 - Pro-rated for part-time employees based on scope of position (heikef misra)

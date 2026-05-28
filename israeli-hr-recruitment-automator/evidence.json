@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-hr-recruitment-automator",
+  "generated_at": "2026-05-29T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "minimum-wage-2026",
+      "claim": "Israeli minimum wage effective 1 April 2026 is NIS 6,443.85 / 6,443.85 ש\"ח per month and NIS 35.40 / 35.40 ש\"ח per hour, raised from NIS 6,247.67 / 6,247.67 ש\"ח.",
+      "source_url": "https://www.kolzchut.org.il/he/שכר_מינימום",
+      "raw_snippet": "החל מיום 01.04.2026 שכר המינימום הוא 6,443.85 ₪ לחודש למשרה מלאה ו-35.40 ₪ לשעה",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+    },
+    {
+      "claim_id": "pension-severance",
+      "claim": "Mandatory pension: employee 6.0% / 6%, employer 6.5% (of which about 0.5% disability insurance), plus a severance component. Severance (pitzuim) equals one month per year of service, about 8.33%. Section 14 (סעיף 14, Section 14) lets pension contributions count toward severance. Tech sector commonly offers 7% / 7.5% / 8%.",
+      "source_url": "https://www.kolzchut.org.il/he/צו_הרחבה_לביטוח_פנסיוני_מקיף_במשק",
+      "raw_snippet": "הפרשות העובד 6%, הפרשות המעסיק לתגמולים 6.5%, ולרכיב פיצויים לא פחות מ-6%",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+    },
+    {
+      "claim_id": "keren-hishtalmut",
+      "claim": "Keren Hishtalmut: employee 2.5%, employer 7.5%; 2026 tax-exempt monthly determining-salary ceiling NIS 15,712 / 15,712 ש\"ח.",
+      "source_url": "https://www.fnx.co.il/ishtalmutfund/taxbenefits/",
+      "raw_snippet": "התקרה של משכורת חודשית קובעת היא 15,712 ₪ לשנת 2026, המעסיק עד 7.5% והעובד עד 2.5%",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+    },
+    {
+      "claim_id": "convalescence-2026",
+      "claim": "Convalescence pay (dmei havra'a) 2026 private-sector rate NIS 418 / 418 ש\"ח per day (frozen from 2024-2025), public-sector about NIS 471.4 / 471.4 ש\"ח per day. Sample annual amounts at 418: 5 days NIS 2,090 / 2,090 ש\"ח, 6 days NIS 2,508 / 2,508 ש\"ח, 7 days NIS 2,926 / 2,926 ש\"ח, 8 days NIS 3,344, 9 days NIS 3,762, 10 days NIS 4,180.",
+      "source_url": "https://www.kolzchut.org.il/he/דמי_הבראה",
+      "raw_snippet": "ערך יום 2026: פרטי 418 ₪, ציבורי 471.40 ₪",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+    },
+    {
+      "claim_id": "overtime-sick-travel",
+      "claim": "Overtime: 125% for the first 2 hours, 150% thereafter; Shabbat/holiday work 150%. Sick pay: day 1 unpaid, days 2-3 at 50%, day 4 onward 100%; accrual 1.5 days/month up to 90 days. Travel expenses about NIS 22.60 / 22.60 ש\"ח per day.",
+      "source_url": "https://www.kolzchut.org.il/he/גמול_שעות_נוספות",
+      "raw_snippet": "שעתיים ראשונות 125%, מעל השעתיים הראשונות 150%",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "appears_in": ["SKILL.md", "references/mandatory-benefits.md"]
+    },
+    {
+      "claim_id": "offer-example-and-discrimination",
+      "claim": "Worked example: a QA engineer at 18,000 NIS / NIS 18,000 / 18,000 ש\"ח gross yields pension of 6% = 1,080 NIS / NIS 1,080 / 1,080 ש\"ח (employee) and 6.5% = 1,170 NIS / NIS 1,170 / 1,170 ש\"ח (employer). The Equal Employment Opportunities Law 1988 (Section 2 / סעיף 2 protected characteristics; Section 9 burden of proof) allows punitive damages up to NIS 120,000 without proof of harm.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72482.htm",
+      "raw_snippet": "פיצויים ללא הוכחת נזק עד 120,000 ש\"ח, חוק שוויון ההזדמנויות בעבודה, התשמ\"ח-1988, סעיף 2",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/anti-discrimination-law.md"]
+    },
+    {
+      "claim_id": "reference-urls",
+      "claim": "Reference URLs used by the skill.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72482.htm",
+      "raw_snippet": "URLs: https://www.nevo.co.il/law_html/law00/72482.htm https://www.kolzchut.org.il/he/חוק_שוויון_ההזדמנויות_בעבודה https://www.gov.il/he/departments/ministry_of_economy_and_industry https://www.gov.il/he/departments/equal_employment_opportunities_commission https://www.alljobs.co.il https://www.drushim.co.il",
+      "fetched_at": "2026-05-29T00:00:00Z",
+      "appears_in": ["SKILL.md"]
+    }
+  ]
+}
