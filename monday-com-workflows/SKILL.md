@@ -4,7 +4,6 @@ description: Optimize Monday.com workflows for Israeli teams with board manageme
 license: MIT
 allowed-tools: Bash(python:*) Bash(curl:*) WebFetch
 compatibility: Best with mondaycom/mcp MCP server. Works standalone for guidance. Requires Monday.com API token.
-version: 1.2.0
 ---
 
 # Monday.com Workflows
@@ -122,9 +121,10 @@ Notification: Send sprint summary to team lead
 ```python
 # Israeli holidays that affect sprint planning
 israeli_holidays_2026 = [
-    # Yom Tov + chol hamoed; first/last days are observed as full holidays
+    # Israel schedule (one-day Yom Tov). Verify a new year via hebcal.com/holidays/<year>?i=on
+    # NOT the Diaspora two-day-Yom-Tov dates, which would false-freeze a working day.
     ("2026-03-03", "2026-03-03", "Purim"),
-    ("2026-04-01", "2026-04-09", "Pesach"),  # Yom Tov Apr 2-3 + Apr 8-9; chol hamoed Apr 4-7
+    ("2026-04-02", "2026-04-08", "Pesach"),  # Israel: Yom Tov Apr 2 + Apr 8; chol hamoed Apr 3-7. Apr 9 is a workday.
     ("2026-04-14", "2026-04-14", "Yom HaShoah"),
     ("2026-04-21", "2026-04-21", "Yom HaZikaron"),  # eve Apr 20
     ("2026-04-22", "2026-04-22", "Yom Ha'Atzmaut"),  # eve Apr 21
@@ -167,13 +167,20 @@ def search_items(api_token: str, board_id: int, column_id: str, value: str):
         "Authorization": api_token,
         "Content-Type": "application/json"
     }
+    # items_page_by_column_values pages exactly like items_page: it returns a
+    # `cursor`. With limit:50 you only get the first 50 matches, so for "all
+    # overdue items" you must loop, passing the cursor back via next_items_page
+    # until cursor is null. The `complexity` block shows how to read your
+    # remaining rate-limit budget on the same call.
     query = '''
     {
+      complexity { before after query }
       items_page_by_column_values(
         board_id: %d,
         columns: [{column_id: "%s", column_values: ["%s"]}],
         limit: 50
       ) {
+        cursor
         items {
           id
           name
@@ -307,7 +314,7 @@ When building anything not covered by static tools (validation rules, projects/p
 
 ## API Versioning
 
-Monday.com versions its API by month. As of 2026-04 the **default version is `2026-04`**, with `2026-07` in release-candidate and `2026-10` rolling out. Versions `2024-10` and `2025-01` were **deprecated 2026-02-15**.
+Monday.com versions its API by month. As of mid-2026 the **default version is `2026-04`**, with `2026-07` in release-candidate (next quarterly RC due 2026-07-01). Versions `2024-10` and `2025-01` were **deprecated 2026-02-15**. Note `2026-04` enters maintenance on 2026-07-01 when `2026-07` becomes the default, so plan to bump your pin to `2026-07` around then.
 
 Pin your version explicitly on every request:
 
@@ -319,12 +326,14 @@ headers = {
 }
 ```
 
-**Breaking changes since 2025-04 to be aware of:**
+**Breaking changes to be aware of (current `2026-04`, plus what lands in `2026-07`):**
 - Variables in queries must be JSON objects, not strings
 - `column_type` casing changed (e.g., `StatusColumn` → `status`)
 - `ColumnValueException` is now strictly thrown on bad column JSON
 - `value` for connect-boards / dependency / subtasks columns now returns `null`; query `linked_items` / `linked_item_ids` instead
-- Queries on `users` without an explicit limit default to 200 (was unbounded)
+- (`2026-04`) `AggregateGroupByResult` returns a single `value: JSON` field instead of `value_string` / `value_int` / `value_float` / `value_boolean`
+- (`2026-04`) multi-level (sub-item) boards are now included by default in the `boards` query
+- (lands `2026-07`, not active yet on `2026-04`) queries on `users` without an explicit limit default to 200 (was unbounded), and the user entity is overhauled: `Query.users` args `kind` / `newest_first` / `non_active` are deprecated in favor of `user_kind` / `sort` / `status`, and the max limit is capped at 1000
 
 ## Gotchas
 
@@ -342,7 +351,7 @@ headers = {
 | Monday.com Rate Limits | https://developer.monday.com/api-reference/docs/rate-limits | Complexity budget (10M points/min per user), reset interval |
 | Monday.com GraphQL Overview | https://developer.monday.com/api-reference/docs/introduction-to-graphql | Query structure, default complexities, `complexity` field |
 | Monday.com Items API | https://developer.monday.com/api-reference/docs/items | `items_page`, cursor pagination, column values |
-| Monday.com Automations | https://developer.monday.com/api-reference/reference/automations | Trigger/action recipes, automation API surface |
+| Monday.com Apps Framework | https://developer.monday.com/apps/docs/api-reference | Custom automation triggers/actions are built via the apps framework, monday has no queryable core-API "automations" endpoint |
 | Monday.com API Versioning | https://developer.monday.com/api-reference/docs/api-versioning | Current / RC / deprecated versions, migration guides |
 
 ## Troubleshooting

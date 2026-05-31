@@ -1,0 +1,17 @@
+{
+  "cycles": [
+    {
+      "version": "1.4.0",
+      "date": "2026-05-31",
+      "lessons": [
+        "CRITICAL fixed: israeli_holidays_2026 hardcoded Pesach as Diaspora dates (Apr 1-9); Apr 9 is an Israeli workday, so the freeze function false-froze it. Corrected to Israel one-day-Yom-Tov schedule (Apr 2-8) and added a hebcal ?i=on note so future-year refreshes don't re-introduce the Diaspora bug.",
+        "Fixed dead link: Reference Links pointed at developer.monday.com/api-reference/reference/automations (404). monday has no queryable core-API automations endpoint; repointed to the apps-framework API reference and corrected the description.",
+        "Fixed stale/misdated breaking-changes list: the 'users default limit 200' change is a 2026-07 change, not active on the current 2026-04 default; re-labelled it and added the real 2026-04 changes (AggregateGroupByResult value:JSON, multi-level boards in boards query) plus the 2026-07 user-entity overhaul.",
+        "Fixed version section: removed false '2026-10 rolling out' claim (no 2026-10 RC exists yet) and added the 2026-07 default-switch / 2026-04-maintenance note.",
+        "Removed fabricated X-Complexity-Points response header from references/graphql-patterns.md; replaced with the real complexity{} field + Retry-After on 429. Also removed stale version:1.2.0 from SKILL.md frontmatter (convention: version lives only in metadata.json).",
+        "Expert MAJORs fixed this cycle: items_page_by_column_values examples now include `cursor` + a pagination note (were silently truncating 'all overdue items' at limit:50); the search example now demonstrates the `complexity { before after query }` field (previously told-but-never-shown).",
+        "Deferred (revisit next cycle): SKILL_HE.md heading structure has diverged from SKILL.md (## 8 vs 6, ### 13 vs 15) pre-existing; restructure HE to parity. Also: half-day erev-chag reality (Purim eve, seder day, Tisha B'Av) can't be expressed by the binary holiday function; app-token rate-limit (5M reads + 5M writes each) vs personal-token (10M combined) distinction not spelled out."
+      ]
+    }
+  ]
+}

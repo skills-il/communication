@@ -112,9 +112,11 @@ def create_israeli_sprint_board(api_token: str, workspace_id: int,
 **מתכון 3: הקפאת חגים**
 ```python
 # Israeli holidays that affect sprint planning
+# Israel schedule (one-day Yom Tov). Verify a new year via hebcal.com/holidays/<year>?i=on
+# NOT the Diaspora two-day-Yom-Tov dates, which would false-freeze a working day.
 israeli_holidays_2026 = [
     ("2026-03-03", "2026-03-03", "Purim"),
-    ("2026-04-01", "2026-04-09", "Pesach"),
+    ("2026-04-02", "2026-04-08", "Pesach"),  # Israel: Yom Tov Apr 2 + Apr 8; chol hamoed Apr 3-7. Apr 9 is a workday.
     ("2026-04-14", "2026-04-14", "Yom HaShoah"),
     ("2026-04-21", "2026-04-21", "Yom HaZikaron"),
     ("2026-04-22", "2026-04-22", "Yom Ha'Atzmaut"),
@@ -157,13 +159,19 @@ def search_items(api_token: str, board_id: int, column_id: str, value: str):
         "Authorization": api_token,
         "Content-Type": "application/json"
     }
+    # items_page_by_column_values מתחלק לעמודים בדיוק כמו items_page: הוא מחזיר `cursor`.
+    # עם limit:50 מקבלים רק 50 התאמות ראשונות, אז כדי לקבל "את כל הפריטים שעברו את הזמן"
+    # צריך ללולאה ולהעביר את ה-cursor חזרה דרך next_items_page עד ש-cursor הוא null.
+    # בלוק `complexity` מראה איך לקרוא את תקציב הקצב שנותר באותה בקשה.
     query = '''
     {
+      complexity { before after query }
       items_page_by_column_values(
         board_id: %d,
         columns: [{column_id: "%s", column_values: ["%s"]}],
         limit: 50
       ) {
+        cursor
         items {
           id
           name
@@ -294,7 +302,7 @@ def create_hebrew_item(api_token: str, board_id: int, group_id: str,
 
 ### גרסאות API
 
-Monday.com מנהלת גרסאות API לפי חודש. נכון ל-2026-04 **גרסת ברירת המחדל היא `2026-04`**, עם `2026-07` כ-RC ו-`2026-10` בהפצה. גרסאות `2024-10` ו-`2025-01` **הוצאו משימוש ב-2026-02-15**.
+Monday.com מנהלת גרסאות API לפי חודש. נכון לאמצע 2026 **גרסת ברירת המחדל היא `2026-04`**, עם `2026-07` כ-RC (ה-RC הרבעוני הבא צפוי ב-2026-07-01). גרסאות `2024-10` ו-`2025-01` **הוצאו משימוש ב-2026-02-15**. שימו לב: `2026-04` עוברת ל-maintenance ב-2026-07-01 כש-`2026-07` הופכת לברירת המחדל, אז כדאי לתכנן לעדכן את הגרסה ל-`2026-07` סביב המועד הזה.
 
 קבעו גרסה במפורש בכל בקשה:
 
@@ -306,12 +314,14 @@ headers = {
 }
 ```
 
-**שינויים שוברים מאז 2025-04:**
+**שינויים שוברים שכדאי להכיר (`2026-04` הנוכחית, ומה שמגיע ב-`2026-07`):**
 - משתנים בשאילתות חייבים להיות JSON, לא string
 - `column_type` באותיות שונות (למשל `StatusColumn` → `status`)
 - `ColumnValueException` נזרק במחמירות על JSON שגוי בעמודה
 - `value` בעמודות connect-boards / dependency / subtasks מחזיר עכשיו `null`; השתמשו ב-`linked_items` / `linked_item_ids`
-- שאילתות על `users` בלי הגבלה מפורשת מקבלות 200 כברירת מחדל (היה ללא הגבלה)
+- (`2026-04`) `AggregateGroupByResult` מחזיר שדה יחיד `value: JSON` במקום `value_string` / `value_int` / `value_float` / `value_boolean`
+- (`2026-04`) לוחות עם תת-פריטים (multi-level) נכללים כעת כברירת מחדל בשאילתת `boards`
+- (מגיע ב-`2026-07`, עדיין לא פעיל ב-`2026-04`) שאילתות על `users` בלי הגבלה מפורשת מקבלות 200 כברירת מחדל (היה ללא הגבלה), וישנו שדרוג של ישות המשתמש: הארגומנטים `kind` / `newest_first` / `non_active` ב-`Query.users` יוצאים משימוש לטובת `user_kind` / `sort` / `status`, וההגבלה המקסימלית נחסמת ל-1000
 
 ### קובצי עזר
 - `references/graphql-patterns.md` -- תבניות שאילתות ומוטציות GraphQL ל-Monday.com API שכוללות אימות, CRUD של לוחות/פריטים, עדכוני ערכי עמודות, ניהול קבוצות, עימוד והגדרת webhooks. תסתכלו על הקובץ הזה כשאתם בונים שאילתות API לאוטומציית לוחות, פעולות פריטים בכמות, או אינטגרציות מותאמות מעבר למה ששרת ה-MCP מספק.
@@ -332,7 +342,7 @@ headers = {
 | מגבלות קצב ב-Monday.com | https://developer.monday.com/api-reference/docs/rate-limits | תקציב מורכבות (10 מיליון נקודות לדקה למשתמש), איפוס |
 | סקירת GraphQL של Monday.com | https://developer.monday.com/api-reference/docs/introduction-to-graphql | מבנה שאילתות, מורכבויות ברירת מחדל, שדה `complexity` |
 | תיעוד Items API | https://developer.monday.com/api-reference/docs/items | `items_page`, עימוד עם cursor, ערכי עמודות |
-| אוטומציות ב-Monday.com | https://developer.monday.com/api-reference/reference/automations | מתכוני טריגר/פעולה, ממשק API לאוטומציות |
+| מסגרת האפליקציות של Monday.com | https://developer.monday.com/apps/docs/api-reference | טריגרים/פעולות אוטומציה מותאמים נבנים דרך מסגרת האפליקציות, אין ל-monday endpoint API ליבה לאוטומציות שאפשר לתשאל |
 | גרסאות API של Monday.com | https://developer.monday.com/api-reference/docs/api-versioning | גרסה נוכחית / RC / מיושנת, מדריכי מיגרציה |
 
 ## פתרון בעיות

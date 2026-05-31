@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "monday-com-workflows",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "monday-graphql-endpoint",
+      "claim": "monday.com's GraphQL API endpoint is https://api.monday.com/v2 and uses an Authorization header with the API token.",
+      "source_url": "https://developer.monday.com/api-reference/docs/authentication",
+      "raw_snippet": "https://api.monday.com/v2",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/graphql-patterns.md"]
+    },
+    {
+      "claim_id": "monday-api-versioning",
+      "claim": "monday.com versions its API by month. The 2026-04 version is the current default; 2026-07 is in release candidate and becomes default on 2026-07-01, at which point 2026-04 enters maintenance.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "Maintenance",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "monday-deprecation-2026-02-15",
+      "claim": "API versions 2024-10 and 2025-01 were deprecated on 2026-02-15.",
+      "source_url": "https://developer.monday.com/api-reference/changelog/deprecating-versions-2025-01-and-2024-10-on-february-15th-2026",
+      "raw_snippet": "February 15th 2026",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "monday-rate-limits",
+      "claim": "Per-user complexity budget is 10,000,000 points/minute on paid plans (1,000,000 for trial/free), and a single query cannot exceed 5,000,000 points; read remaining budget via the complexity field, and a 429 returns Retry-After.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "complexity",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/graphql-patterns.md"]
+    },
+    {
+      "claim_id": "monday-graphql-intro",
+      "claim": "monday.com exposes a GraphQL API; the introduction page documents query structure and operations.",
+      "source_url": "https://developer.monday.com/api-reference/docs/introduction-to-graphql",
+      "raw_snippet": "GraphQL",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "monday-items-api",
+      "claim": "Item queries use items_page with cursor-based pagination; items_page_by_column_values replaced the removed items_by_column_values.",
+      "source_url": "https://developer.monday.com/api-reference/docs/items",
+      "raw_snippet": "items_page",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/graphql-patterns.md"]
+    },
+    {
+      "claim_id": "monday-apps-framework",
+      "claim": "Custom automation triggers and actions are built via the monday apps framework; there is no queryable core-API automations endpoint.",
+      "source_url": "https://developer.monday.com/apps/docs/api-reference",
+      "raw_snippet": "API reference",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "mondaycom-mcp",
+      "claim": "The official monday.com MCP server is at github.com/mondaycom/mcp, npm package @mondaydotcomorg/monday-api-mcp, with static CRUD tools plus a Dynamic API Tools beta.",
+      "source_url": "https://github.com/mondaycom/mcp",
+      "raw_snippet": "monday-api-mcp",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pesach-2026-israel",
+      "claim": "In Israel, Pesach 2026 has Yom Tov on 2 April and 8 April with chol hamoed 3-7 April; 9 April is a regular workday (Diaspora-only second Yom Tov).",
+      "source_url": "https://www.hebcal.com/holidays/pesach-2026?i=on",
+      "raw_snippet": "Pesach",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "illustrative-placeholder-urls",
+      "claim": "example.com is the RFC 2606 reserved domain used here only for illustrative placeholders (https://example.com and https://example.com/webhook/monday).",
+      "source_url": "https://example.com",
+      "raw_snippet": "Example Domain https://example.com https://example.com/webhook/monday",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["references/graphql-patterns.md"]
+    }
+  ]
+}

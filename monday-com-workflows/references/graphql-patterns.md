@@ -101,6 +101,7 @@ Content-Type: application/json
     ]
     limit: 50
   ) {
+    cursor
     items {
       id
       name
@@ -113,6 +114,7 @@ Content-Type: application/json
   }
 }
 ```
+`items_page_by_column_values` returns a `cursor`, exactly like `items_page`. With `limit: 50` you only get the first page, so to fetch every match keep calling `next_items_page(cursor: ...)` until the returned `cursor` is `null`. Omitting the cursor loop silently truncates the result set at the limit.
 
 ---
 
@@ -284,7 +286,7 @@ Different column types require specific JSON formats:
 - **Single-query cap:** 5,000,000 complexity points (one operation cannot exceed this)
 - **App reads/writes:** 5,000,000 complexity points per minute
 - **Trial / free plan:** 1,000,000 complexity points per minute
-- **Rate-limit header:** Check `X-Complexity-Points` in response
+- **Remaining budget:** add a `complexity { before, after, query }` field to your query to read how many points it cost and how many remain. On a 429 (limit hit), monday returns a `Retry-After` header with the seconds to wait.
 
 ### Complexity Estimation
 - Simple query (1 board, few columns): ~100 points
@@ -307,7 +309,7 @@ Different column types require specific JSON formats:
 mutation {
   create_webhook(
     board_id: BOARD_ID
-    url: "https://your-server.com/webhook/monday"
+    url: "https://example.com/webhook/monday"
     event: change_column_value
   ) {
     id
