@@ -88,8 +88,8 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 |---------|-----------|-----------------|
 | Pesach - Eve (ערב פסח) | Apr 1, 2026 | Short day (closes early) |
 | Pesach - First day | Apr 2, 2026 | Full shutdown |
-| Pesach - Chol HaMoed | Apr 3-8, 2026 | Partial; many on vacation. Apr 8 is the eve of the last day (short day) |
-| Pesach - Last day | Apr 9, 2026 | Full shutdown |
+| Pesach - Chol HaMoed | Apr 3-7, 2026 | Partial; many on vacation. Apr 7 is the eve of the last day (short day) |
+| Pesach - Last day (Shvi'i shel Pesach) | Apr 8, 2026 | Full shutdown (the single closing yom tov in Israel; Apr 9 is Isru Chag, a normal workday) |
 | Yom HaShoah (יום השואה) | Apr 14, 2026 | Business operates but culturally solemn. Siren at 10:00 |
 | Yom HaZikaron (יום הזיכרון) | Apr 21, 2026 | Business operates but solemn. Sirens at 20:00 (Apr 20) and 11:00 (Apr 21). Avoid entertainment/events |
 | Yom HaAtzmaut (יום העצמאות) | Apr 22, 2026 | National holiday. Full shutdown for most businesses |
@@ -115,7 +115,7 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 
 **Pace:** Very disrupted. Pesach dominates April.
 
-- April: Pesach effectively halves the month. Full shutdown on Apr 2 (first day) and Apr 9 (last day); Chol HaMoed runs Apr 3-8 with low productivity
+- April: Pesach effectively halves the month. Full shutdown on Apr 2 (first day) and Apr 8 (last day, Shvi'i shel Pesach); Chol HaMoed runs Apr 3-7 with low productivity (Apr 9 is Isru Chag, a normal workday)
 - May: Yom HaZikaron/Yom HaAtzmaut back-to-back (Apr 21-22) creates a mini-holiday period. Yom Yerushalayim May 15 mostly affects Jerusalem. Shavuot May 22 is a single-day shutdown in Israel
 - June: Strong productivity month. Good for closing deals and launching projects
 - **Annual tax return season.** Self-employed freelancers and businesses submit annual reports

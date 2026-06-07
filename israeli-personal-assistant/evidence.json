@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-personal-assistant",
+  "generated_at": "2026-06-07T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "vat-rate-2026",
+      "claim": "Israel's standard VAT rate is 18% in 2026 (raised from 17% on 1 January 2025; a proposed bump to 19% was rejected and it stayed at 18%).",
+      "source_url": "https://www.gov.il/he/departments/topics/value_added_tax",
+      "raw_snippet": "שיעור המע\"מ הסטנדרטי הוא 18% (עלה מ-17% ב-1 בינואר 2025); הצעה להעלאה ל-19% נדחתה.",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+    },
+    {
+      "claim_id": "vat-cycle-threshold",
+      "claim": "VAT reporting is bi-monthly for businesses with annual turnover up to ₪1,775,000 (the threshold updated 1 January 2026, indexed annually and published by the Tax Authority) and monthly above it. Reports/payments are due within 15 days of the end of the reporting period.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "עסקים שמחזור עסקאותיהם בשנה הקובעת הוא עד 1,775,000 ש\"ח (נכון ל-01.01.2026) יגישו דוח אחת לחודשיים; מעל הסף - דיווח חודשי. עד 15 ימים אחרי תום תקופת הדיווח.",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+    },
+    {
+      "claim_id": "allocation-number-2026",
+      "claim": "The חשבוניות ישראל allocation-number (מספר הקצאה) regime requires an allocation number for tax-deductible business invoices above ₪10,000 (ex-VAT) from 1 January 2026, dropping to ₪5,000 from 1 June 2026, or the buyer cannot reclaim the VAT input. The threshold stepped down from ₪25,000 (2024) and ₪20,000 (2025).",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "חוק חשבוניות ישראל: מ-1.1.2026 נדרש מספר הקצאה לחשבונית מעל 10,000 ש\"ח (לפני מע\"מ), ומ-1.6.2026 הסף יורד ל-5,000 ש\"ח.",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+    },
+    {
+      "claim_id": "monthly-deadlines",
+      "claim": "Bituach Leumi advance payments and income-tax advances (mikdamot) for the self-employed are due the 15th of each month. Employer annual 102 reports are filed in February.",
+      "source_url": "https://www.btl.gov.il",
+      "raw_snippet": "מקדמות ביטוח לאומי ומקדמות מס הכנסה לעצמאים משולמות עד ה-15 בכל חודש.",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+    },
+    {
+      "claim_id": "holiday-dates-5786",
+      "claim": "Israeli 5786/2026 holiday dates (one yom tov per holiday in Israel): Purim 3 March 2026 (Jerusalem 4 March); Pesach eve 1 April, first day (15 Nisan) 2 April, Chol HaMoed 3-7 April (7 April is the eve of the last day, a short day), last day (Shvi'i shel Pesach, 21 Nisan) 8 April, with 9 April being Isru Chag (a normal workday in Israel; the 22 Nisan diaspora-only eighth day); Yom HaShoah 14 April; Yom HaZikaron 21 April; Yom HaAtzmaut 22 April; Lag BaOmer 5 May; Yom Yerushalayim 15 May (28 Iyar); Shavuot 22 May; Tu BiShvat 2 February. Iron Swords Memorial Day is fixed at 24 Tishrei (e.g., 5 October 2026), moved to Sunday 25 Tishrei if it falls on Shabbat.",
+      "source_url": "https://www.hebcal.com/holidays/2026?i=on",
+      "raw_snippet": "Israel holidays 2026 (i=on): Purim Mar 3; Pesach I Apr 2, Pesach VII (last yom tov in Israel) Apr 8, Apr 9 = Isru Chag (workday); Yom HaShoah Apr 14; Yom HaZikaron Apr 21; Yom HaAtzmaut Apr 22; Lag BaOmer May 5; Yom Yerushalayim May 15; Shavuot May 22.",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+    },
+    {
+      "claim_id": "iron-swords-memorial-day",
+      "claim": "Iron Swords Memorial Day (יום הזיכרון לחללי מלחמת חרבות ברזל) was established by Knesset/government decision in 2024 and is fixed at 24 Tishrei.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%9D_%D7%94%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F_%D7%9C%D7%97%D7%9C%D7%9C%D7%99_%D7%9E%D7%9C%D7%97%D7%9E%D7%AA_%D7%97%D7%A8%D7%91%D7%95%D7%AA_%D7%91%D7%A8%D7%96%D7%9C",
+      "raw_snippet": "יום הזיכרון לחללי מלחמת חרבות ברזל נקבע בכ\"ד בתשרי בהחלטת ממשלה משנת 2024.",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "references/israeli-business-calendar.md"]
+    },
+    {
+      "claim_id": "reference-urls",
+      "claim": "Resource/reference URLs cited in the skill and reference files for calendar and statistics lookups.",
+      "source_url": "https://www.hebcal.com/home/195/jewish-calendar-rest-api",
+      "raw_snippet": "Reference URLs: https://www.boi.org.il https://www.cbs.gov.il https://www.hebcal.com https://www.hebcal.com/?i=on https://www.hebcal.com/converter https://www.hebcal.com/hebcal https://www.hebcal.com/home/195/jewish-calendar-rest-api",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "references/israeli-business-calendar.md", "scripts/morning-brief.py"]
+    },
+    {
+      "claim_id": "formatting-and-illustrative",
+      "claim": "Israeli formatting conventions and illustrative figures: currency written symbol-first (e.g. ₪1,234.56); Chol HaMoed and August slowdowns of roughly 30-50% and businesses at 50-70% capacity are illustrative estimates, not measured statistics; ID/business numbers are 9 digits; postcodes 7 digits.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "Illustrative: currency format ₪1,234.56 (symbol before amount); response-rate slowdowns of 30-50% during Chol HaMoed and businesses at 50-70% capacity in August are rules-of-thumb, not statistics.",
+      "fetched_at": "2026-06-07T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}

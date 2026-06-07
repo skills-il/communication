@@ -65,10 +65,10 @@ Israel observes a single day of yom tov per holiday side, not the diaspora two-d
 | Yom Kippur | 1 day | Complete shutdown. Even secular Israelis don't work |
 | Rosh Hashana | 2 days | Full shutdown, most take additional days |
 | Sukkot | 1 day yom tov + 5 days Chol HaMoed + 1 day Shmini Atzeret/Simchat Torah (combined) | Full shutdown on first day and on Shmini Atzeret; Chol HaMoed is partial |
-| Pesach | 1 day yom tov + 6 days Chol HaMoed + 1 day yom tov | Full shutdown on first and last days; Chol HaMoed is partial |
+| Pesach | 1 day yom tov + 5 days Chol HaMoed + 1 day yom tov (7 days total in Israel) | Full shutdown on first and last days; Chol HaMoed is partial |
 | Shavuot | 1 day | Full shutdown |
 | Purim | 1 day (Mar 3, 2026; Mar 4 in Jerusalem) | Many take the day off; expect slow responses |
-| Iron Swords Memorial Day (יום הזיכרון לחללי מלחמת חרבות ברזל) | 1 day (24 Tishrei, e.g., Oct 16, 2025) | National observance with siren and ceremonies. Avoid entertainment events. Established by Knesset law in 2024 |
+| Iron Swords Memorial Day (יום הזיכרון לחללי מלחמת חרבות ברזל) | 1 day (fixed at 24 Tishrei; e.g., Oct 5, 2026, moved to Sunday 25 Tishrei if it falls on Shabbat) | National observance with siren and ceremonies. Avoid entertainment events. Established by Knesset law in 2024 |
 
 **Chol HaMoed note:** Businesses technically operate during Chol HaMoed (intermediate days of Sukkot and Pesach), but many employees are on vacation. Expect 30-50% slower response times and limited availability.
 
@@ -82,6 +82,7 @@ These are working days, but communication tone and event scheduling should respe
 |------------|-----------|---------------|
 | Yom HaShoah (יום השואה) | Apr 14 | Entertainment, sales pitches, jokes. Siren at 10:00 |
 | Yom HaZikaron (יום הזיכרון) | Apr 21 | Entertainment, parties, ad campaigns. Sirens at 20:00 (Apr 20) and 11:00 (Apr 21) |
+| Yom HaAtzmaut (יום העצמאות) | Apr 22 | NOT a working day: a full national holiday, most businesses closed. The somber Yom HaZikaron flips to celebration at sunset on Apr 21. Do not schedule client work or deadlines on Apr 22 |
 | Yom Yerushalayim (יום ירושלים) | May 15 (28 Iyar) | Mostly Jerusalem-focused; expect road closures and parade in the city |
 
 ### Key Business Obligation Dates
@@ -130,7 +131,7 @@ Open tasks:
 - Send invoice #87 to client ABC Ltd.
 
 Upcoming deadlines:
-- Pesach last days: April 8-9 (full shutdown, plan ahead)
+- Pesach last day (Shvi'i, yom tov): April 8 (full shutdown); April 7 is erev (short day). April 9 is Isru Chag, a normal workday in Israel
 - Bituach Leumi advance payment due April 15
 
 Reminders:
@@ -151,7 +152,7 @@ Reminders:
 - לשלוח חשבונית מספר 87 ללקוח ABC בע"מ
 
 דדליינים קרובים:
-- ימי פסח אחרונים: 8-9 באפריל (סגירה מוחלטת, לתכנן מראש)
+- יום פסח אחרון (שביעי של פסח, יום טוב): 8 באפריל (סגירה מוחלטת); 7 באפריל ערב החג (יום קצר). 9 באפריל הוא איסרו חג, יום עבודה רגיל בישראל
 - תשלום מקדמה לביטוח לאומי עד 15 באפריל
 
 תזכורות:
