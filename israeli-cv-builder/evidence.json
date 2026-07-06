@@ -5,11 +5,15 @@
   "claims": [
     {
       "claim_id": "eeo-law-5748-1988",
-      "claim": "Employment (Equal Opportunities) Law 5748-1988 prohibits Israeli employers from discriminating in hiring based on age, gender, race, religion, marital status, parental status, sexual orientation, political affiliation, or reserve duty.",
+      "claim": "Employment (Equal Opportunities) Law 5748-1988 prohibits Israeli employers from discriminating in hiring based on age, gender, race, religion, marital status, parental status, sexual orientation, political affiliation, or reserve duty. The protected grounds are enumerated in Section 2 (סעיף 2) of the law, expanded by amendments to include place of residence (מקום מגורים, Amendment 22, 2014), country of origin, nationality, pregnancy, and fertility treatments.",
       "source_url": "https://en.wikipedia.org/wiki/Employment_(Equal_Opportunities)_Law,_1988",
       "raw_snippet": "https://en.wikipedia.org/wiki/Employment_(Equal_Opportunities)_Law,_1988 Employment (Equal Opportunities) Law, 1988 prohibits discrimination in employment based on sex, sexual orientation, personal status, pregnancy, fertility treatments, parenthood, age, race, religion, nationality, country of origin, place of residence, worldview, political party affiliation, or duration of reserve service",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/eeo-compliance-checklist.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
     },
     {
       "claim_id": "eeo-amendments-orientation-fertility",
@@ -17,7 +21,9 @@
       "source_url": "https://en.wikipedia.org/wiki/Employment_(Equal_Opportunities)_Law,_1988",
       "raw_snippet": "fertility treatments",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["references/eeo-compliance-checklist.md"]
+      "appears_in": [
+        "references/eeo-compliance-checklist.md"
+      ]
     },
     {
       "claim_id": "eeo-bfoq-exception",
@@ -25,7 +31,9 @@
       "source_url": "https://www.icj.org/wp-content/uploads/2013/05/Israel-Employment-Equal-Opportunities-Law-5748-1988-eng.pdf",
       "raw_snippet": "Differential treatment necessitated by the character or nature of the assignment or post shall not be regarded as discrimination",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["references/eeo-compliance-checklist.md"]
+      "appears_in": [
+        "references/eeo-compliance-checklist.md"
+      ]
     },
     {
       "claim_id": "eeo-law-icj-pdf",
@@ -33,7 +41,11 @@
       "source_url": "https://www.icj.org/wp-content/uploads/2013/05/Israel-Employment-Equal-Opportunities-Law-5748-1988-eng.pdf",
       "raw_snippet": "Employment (Equal Opportunities) Law 5748-1988",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/eeo-compliance-checklist.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
     },
     {
       "claim_id": "eeo-law-nevo-hebrew",
@@ -41,7 +53,11 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
       "raw_snippet": "חוק שוויון ההזדמנויות בעבודה, תשמ\"ח-1988",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/eeo-compliance-checklist.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
     },
     {
       "claim_id": "nbn-resume-guide",
@@ -49,7 +65,10 @@
       "source_url": "https://www.nbn.org.il/aliyah-inspiration/nbn-blogger-network/nbn-employment-blog/writing-your-israeli-resume-the-dos-and-donts/",
       "raw_snippet": "Israeli resume",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "jobmob-cv-translation",
@@ -57,7 +76,10 @@
       "source_url": "https://jobmob.co.il/blog/israeli-cv-translation-tips/",
       "raw_snippet": "Israeli CV translation",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "anglo-list-resume",
@@ -65,7 +87,10 @@
       "source_url": "https://anglo-list.com/your-israel-resume/",
       "raw_snippet": "your israel resume",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "israeli-phone-format",
@@ -73,7 +98,11 @@
       "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
       "raw_snippet": "country calling code +972",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-cv-structure.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-cv-structure.md"
+      ]
     },
     {
       "claim_id": "unit-8200",
@@ -81,7 +110,11 @@
       "source_url": "https://en.wikipedia.org/wiki/Unit_8200",
       "raw_snippet": "Unit 8200 ... Intelligence Corps of the Israel Defense Forces",
       "fetched_at": "2026-05-20T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-cv-structure.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-cv-structure.md"
+      ]
     }
   ]
 }

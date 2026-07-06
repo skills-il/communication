@@ -33,7 +33,7 @@ Ask the user for the minimum viable inputs. Do not require everything up front, 
 
 ### Step 2: Enforce Equal Employment Law Compliance
 
-Under Employment (Equal Opportunities) Law 5748-1988, Israeli employers cannot make hiring decisions based on age, gender, race, religion, marital status, parental status, sexual orientation, political affiliation, or reserve duty. Asking for these on a CV exposes the employer to discrimination claims.
+Under Employment (Equal Opportunities) Law 5748-1988, Israeli employers cannot make hiring decisions based on §2's protected grounds: age, gender, race, religion, nationality, country of origin (ארץ מוצא), place of residence (מקום מגורים, added by Amendment 22, 2014), marital status, parental status, pregnancy, fertility (IVF) treatments, sexual orientation, political affiliation, or reserve duty. Asking for these on a CV exposes the employer to discrimination claims. (This is why the CV drops the street address and any country-of-origin marker, not just age and marital status.)
 
 **NEVER include any of these on an Israeli CV, even if the user provides them:**
 
@@ -45,8 +45,8 @@ Under Employment (Equal Opportunities) Law 5748-1988, Israeli employers cannot m
 | Number of children / parental status | Protected | Omit |
 | Religion | Protected | Omit |
 | Teudat Zehut (ID number) | Privacy risk, no legitimate reason on a CV | Omit |
-| Home address | City only is sufficient for commute signaling | Keep city, drop street |
-| Nationality / citizenship | Only include if role requires work permit clarification | Default off |
+| Home address | Place of residence is a protected ground (Law 5748-1988, Amendment 22); city only is sufficient for commute signaling | Keep city, drop street |
+| Nationality / country of origin | Both are protected grounds; only include if the role genuinely requires work-permit clarification | Default off |
 
 If the user insists on including one of these (e.g., "I want a photo"), warn them once with the reason, then respect their choice for the Hebrew version only. Never add a photo to the English version.
 
