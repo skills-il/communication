@@ -1,133 +1,167 @@
 {
+  "schemaVersion": "1.0",
   "skill": "israeli-telegram-business-bot",
-  "version": "1.2.0",
-  "audit_date": "2026-05-20",
-  "auditor": "update-skill Phase 3 subagent",
+  "generated_at": "2026-08-08",
   "claims": [
     {
-      "id": "bot-api-version",
-      "claim": "Bot API 10.0 is the current Telegram Bot API version (released May 8, 2026), with 9.6 and 9.5 as the prior two minor versions.",
-      "source": "https://core.telegram.org/bots/api",
-      "verified": true,
-      "notes": "Top-of-page changelog lists Bot API 10.0 (May 8, 2026), 9.6 (April 3, 2026), 9.5 (March 1, 2026)."
+      "claim_id": "bot-api-version",
+      "claim": "Bot API 10.2 is the current Telegram Bot API version, released July 14, 2026. The two prior minor versions are 10.1 (June 11, 2026) and 10.0 (May 8, 2026).",
+      "source_url": "https://core.telegram.org/bots/api",
+      "raw_snippet": "July 14, 2026 ... Bot API 10.2",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "rate-limit-per-chat",
-      "claim": "In a single chat, a bot should not send more than ~1 message per second.",
-      "source": "https://core.telegram.org/bots/faq",
-      "verified": true,
-      "quote": "In a single chat, avoid sending more than one message per second."
+      "claim_id": "telegram-business-connected-bot",
+      "claim": "Since Bot API 7.2 a bot can be connected to a Telegram Business account: it receives business_message and edited_business_message updates and passes business_connection_id on its send methods.",
+      "source_url": "https://core.telegram.org/bots/api-changelog",
+      "raw_snippet": "Bot API 7.2 ... Added updates about new messages in a business account connected to the bot, represented by the field business_message in the class Update ... Added the parameter business_connection_id to the methods sendMessage",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "rate-limit-per-group",
+      "claim_id": "bots-cannot-initiate",
+      "claim": "A Telegram bot cannot start a conversation with a user; the user must message the bot or add it to a group first. There is no phone-list import.",
+      "source_url": "https://core.telegram.org/bots",
+      "raw_snippet": "start conversations with users. A user must either add them to a group or send them a message first.",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "deep-link-start-parameter",
+      "claim": "A start deep link of the form t.me/<bot>?start=<payload> passes an arbitrary payload to the bot, which arrives as the /start command with that payload, so the signup source can be attributed.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "you can use the start parameter to automatically pass any value to your bot whenever a user presses the link ... https://t.me/your_bot?start=airplane ... When someone opens a chat with your bot via this link, you will receive:",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "botfather-commands",
+      "claim": "BotFather exposes the bot-configuration commands /newbot, /mybots, /revoke, /setdescription, /setabouttext, /setuserpic, /setcommands and /setprivacy, and /start is the command a user sends to open a chat with a bot.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "/setcommands ... change the list of commands supported by your bot",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "rate-limit-per-chat",
+      "claim": "In a single chat, a bot should not send more than about one message per second.",
+      "source_url": "https://core.telegram.org/bots/faq",
+      "raw_snippet": "In a single chat, avoid sending more than one message per second.",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "rate-limit-per-group",
       "claim": "In a group, a bot cannot send more than 20 messages per minute.",
-      "source": "https://core.telegram.org/bots/faq",
-      "verified": true,
-      "quote": "In a group, bots are not be able to send more than 20 messages per minute."
+      "source_url": "https://core.telegram.org/bots/faq",
+      "raw_snippet": "In a group, bots are not be able to send more than 20 messages per minute.",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "rate-limit-broadcast",
-      "claim": "For bulk notifications a bot cannot broadcast more than ~30 messages per second unless paid broadcasts are enabled. 429 errors result from exceeding the limit.",
-      "source": "https://core.telegram.org/bots/faq",
-      "verified": true,
-      "quote": "For bulk notifications, bots are not able to broadcast more than about 30 messages per second, unless they enable paid broadcasts."
+      "claim_id": "rate-limit-broadcast",
+      "claim": "For bulk notifications a bot cannot broadcast more than about 30 messages per second unless paid broadcasts are enabled; exceeding the limits returns HTTP 429.",
+      "source_url": "https://core.telegram.org/bots/faq",
+      "raw_snippet": "For bulk notifications, bots are not able to broadcast more than about 30 messages per second, unless they enable paid broadcasts to increase the limit.",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "paid-broadcasts",
-      "claim": "Paid broadcasts allow up to 1,000 messages per second at 0.1 Stars per message above the free 30/sec, requiring a 100,000 Stars minimum balance and 100,000 monthly active users.",
-      "source": "https://core.telegram.org/bots/faq",
-      "verified": true,
-      "quote": "Enabling paid broadcasts allows bots to send up to 1000 messages per second... costs 0.1 Stars per message... minimum bot balance of 100,000 Stars and 100,000 monthly active users."
+      "claim_id": "paid-broadcasts",
+      "claim": "Paid broadcasts allow up to 1000 messages per second at 0.1 Stars per message above the free 30 per second, and require at least 100,000 Stars on the bot balance and at least 100,000 monthly active users.",
+      "source_url": "https://core.telegram.org/bots/faq",
+      "raw_snippet": "Enabling paid broadcasts in @BotFather allows a bot to broadcast up to 1000 messages per second ... a cost of 0.1 Stars per message ... at least 100,000 Stars on its balance and at least 100,000 monthly active users",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "payments-ils-supported",
-      "claim": "ILS is a supported currency in the Bot Payments API with a minimum of ₪3.68 and maximum of ₪36,788.20 per invoice.",
-      "source": "https://core.telegram.org/bots/payments",
-      "verified": true,
-      "quote": "Code: ILS, Title: Israeli New Sheqel, Min amount: ₪ 3.68, Max amount: ₪ 36,788.20"
+      "claim_id": "channel-vs-dm-broadcast",
+      "claim": "Telegram's documented send-rate limits govern bot sendMessage calls, so a per-user DM broadcast consumes the per-second budget while a single channel post is one API call.",
+      "source_url": "https://core.telegram.org/bots/faq",
+      "raw_snippet": "If you do not wish to enable paid broadcasts, consider spreading them over longer intervals",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "israeli-soleks-not-on-telegram-list",
-      "claim": "Israeli payment processors (Tranzila, Meshulam, Cardcom) are not on Telegram's officially-supported provider list connectable through @BotFather as of mid-2026; Stripe is the primary documented integration.",
-      "source": "https://core.telegram.org/bots/payments",
-      "verified": true,
-      "notes": "WebFetch of the official docs confirms no Israeli solek is listed by name as a Telegram-integrated provider; only Stripe (TEST/LIVE modes) is identified explicitly."
+      "claim_id": "payments-ils-supported",
+      "claim": "ILS is a supported currency in the Bot Payments API, with a minimum of ₪3.68 and a maximum of ₪36,788.20 per invoice.",
+      "source_url": "https://core.telegram.org/bots/payments",
+      "raw_snippet": "Israeli New Sheqel ... 3.68 ... 36,788.20",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "anti-spam-section-30a",
-      "claim": "Israel's Anti-Spam Law is Section 30a of the Communications (Telecommunications and Broadcasting) Law, 5742-1982, added by Amendment 40 (2008). Statutory damages up to ₪1,000 per message without need to prove damage.",
-      "source": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
-      "verified": true,
-      "notes": "Kol-Zchut summary of Section 30a(i): פיצויים שאינם תלויים בנזק, בסכום שלא יעלה על 1,000 ₪ בגין כל הודעה."
+      "claim_id": "israeli-soleks-not-on-telegram-list",
+      "claim": "Telegram does not process payments itself and integrates third-party providers; as of August 2026 the Israeli soleks (Tranzila, Meshulam, Cardcom) are not named on the official Bot Payments provider documentation, where Stripe is the documented integration.",
+      "source_url": "https://core.telegram.org/bots/payments",
+      "raw_snippet": "Telegram does not process payments from users and instead allows developers to integrate directly with different third-party payment providers around the world.",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "anti-spam-criminal-penalty",
-      "claim": "Knowingly sending unsolicited commercial messages is a criminal offense; the corporate fine ceiling as of 2026 is approximately ₪226,000 (updated annually).",
-      "source": "https://www.ramamirlaw.com/post/תביעות-ייצוגיות-לפי-חוק-התקשורת-חוק-הספאם-מדריך-מקיף",
-      "verified": true,
-      "notes": "Search result attributed to Israeli legal commentary; figure is updated periodically. Hedged in skill text as approximate."
+      "claim_id": "mini-apps-botfather-setup",
+      "claim": "A Mini App is a web interface launched inside Telegram and is configured per bot through @BotFather under Bot Settings, Configure Mini App.",
+      "source_url": "https://core.telegram.org/bots/webapps",
+      "raw_snippet": "With Mini Apps developers can use JavaScript to create infinitely flexible interfaces that can be launched right inside Telegram ... Configure Mini App",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mini-apps-implementation.md"]
     },
     {
-      "id": "anti-spam-class-action",
-      "claim": "Section 30a violations are listed in the Second Schedule of the Class Actions Law, enabling class actions over mass mailings.",
-      "source": "https://he.wikipedia.org/wiki/חוק_הספאם",
-      "verified": true,
-      "notes": "Hebrew Wikipedia: 'התיקון הוסיף את פרט 12 לתוספת השנייה לחוק תובענות ייצוגיות, תשס\"ו-2006'."
+      "claim_id": "spam-law-channel-enumeration",
+      "claim": "Section 30a of the Communications (Telecommunications and Broadcasting) Law, 5742-1982 enumerates four channels only: fax, automated dialing system, electronic message and SMS. Instant-messaging apps such as Telegram are not named in the statutory text. In Hebrew this is סעיף 30א.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "לא ישגר מפרסם דבר פרסומת באמצעות פקסימיליה, מערכת חיוג אוטומטי, הודעה אלקטרונית או הודעת מסר קצר, בלא קבלת הסכמה מפורשת מראש של הנמען",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "bit-developer-portal",
-      "claim": "Bit has a developer portal at developer.bitpay.co.il for merchant integrations.",
-      "source": "https://developer.bitpay.co.il/docs",
-      "verified": true,
-      "notes": "Confirmed via web search; portal exists with sandbox and documentation."
+      "claim_id": "spam-law-mandatory-content",
+      "claim": "Section 30a(e) requires a lawful advertisement to state, prominently and clearly: that it is an advertisement, with the word פרסומת at the start of the message; the advertiser's name, address and ways to make contact; and the recipient's right to send an opt-out notice together with a simple way to send it, including a valid internet address of the advertiser when the advertisement is sent as an electronic message.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "המילים ”פרסומת“, ”בקשת תרומה“ או ”תעמולה“, לפי העניין, יופיעו בתחילת דבר הפרסומת ... שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "bit-merchant-caps",
-      "claim": "Bit caps payments at ₪5,000 per transaction and ₪20,000 per month per merchant, supports ILS only, single-payment only (no installments, no subscriptions).",
-      "source": "https://en.wikipedia.org/wiki/Bit_(payment_application)",
-      "verified": true,
-      "notes": "Confirmed via independent search results citing Bit's merchant terms. Caps are subject to change; skill flags this as the 2026 state."
+      "claim_id": "spam-law-optout-same-medium",
+      "claim": "The opt-out notice may be given in writing or through the same medium the advertisement was sent in, at the recipient's choice, so a Telegram promotion needs a Telegram opt-out route.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "הודעת הסירוב תינתן בכתב או בדרך שבה שוגר דבר הפרסומת, לפי בחירת הנמען.",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "paybox-owner",
-      "claim": "PayBox is owned by Israel Discount Bank, has about 2.5M users, and has no public merchant API as of 2026.",
-      "source": "https://en.wikipedia.org/wiki/PayBox",
-      "verified": true,
-      "notes": "Wikipedia confirms Discount Bank ownership; absence of public merchant API confirmed by lack of any developer portal found in web search."
+      "claim_id": "spam-law-statutory-damages",
+      "claim": "A court may award statutory damages of up to ₪1,000 per advertisement sent in breach of Section 30a, with no need to prove harm.",
+      "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
+      "raw_snippet": "בית המשפט רשאי לפסוק פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "tranzila-vintage",
-      "claim": "Tranzila is an Israeli payment processor operating since 1999 with three integration modes (Iframe, Hosted Fields, API v2).",
-      "source": "https://docs.tranzila.com/docs/payments-billing/795m2yi7q4nmq-iframe-integration",
-      "verified": true,
-      "notes": "Tranzila docs confirm the three integration modes and PCI scope (SAQ-A / SAQ-A-EP / SAQ-D)."
+      "claim_id": "spam-law-criminal-offence",
+      "claim": "Sending advertisements in breach of the law is a criminal offence, so knowingly broadcasting without consent carries criminal liability in addition to civil exposure.",
+      "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
+      "raw_snippet": "שליחת דברי פרסומת בניגוד לחוק היא עבירה פלילית",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "tranzila-telegram-make",
-      "claim": "Tranzila has community-built Telegram integrations via Make.com (formerly Integromat) automation workflows.",
-      "source": "https://www.make.com/en/integrations/tranzila/telegram",
-      "verified": true,
-      "notes": "Make.com integrations page confirms a Tranzila + Telegram template exists."
+      "claim_id": "bit-merchant-terms",
+      "claim": "Bit business acceptance is subject to the limits and conditions agreed between the bank and the business, and Bit states the payee must issue a lawful tax invoice, so the per-transaction and monthly ceilings must be confirmed with the provider rather than quoted from a published figure.",
+      "source_url": "https://www.bitpay.co.il/he/",
+      "raw_snippet": "בכפוף למגבלות ולתנאים שנקבעו בין הבנק ובין בית העסק ... על מקבל התשלום באמצעות bit חלה החובה לנהוג לפי דין ובכלל זה להפיק חשבונית מס כחוק",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     },
     {
-      "id": "mini-apps-mainstream-2026",
-      "claim": "Telegram Mini Apps are a mainstream commerce surface in 2026; Telegram crossed 1 billion monthly active users, with TON-based in-chat wallets in widespread use.",
-      "source": "https://core.telegram.org/bots/webapps",
-      "verified": true,
-      "notes": "Official Telegram Mini Apps docs are the canonical reference; user-count claim sourced from Telegram public communications and industry coverage (e.g. omisoft.net 2026 Mini Apps guide)."
-    },
-    {
-      "id": "mini-apps-botfather-setup",
-      "claim": "Mini Apps are configured per-bot through @BotFather (/newapp or /myapps -> Edit Bot -> Configure Mini App), served from the developer's own HTTPS URL.",
-      "source": "https://core.telegram.org/bots/webapps",
-      "verified": true
-    },
-    {
-      "id": "channel-vs-dm-broadcast",
-      "claim": "Posting to a Telegram channel is a single API call regardless of subscriber count and is not subject to the bot send-rate broadcast limit; per-user DM sendMessage calls are.",
-      "source": "https://core.telegram.org/bots/faq",
-      "verified": true,
-      "notes": "FAQ rate limits explicitly govern bot 'sendMessage' calls; a single channel post is one such call. Channels distribute the post to subscribers via Telegram's own infrastructure."
+      "claim_id": "paybox-owner",
+      "claim": "PayBox was acquired by Israel Discount Bank in 2017. Businesses can receive payments online and in physical stores using QR codes or payment links, but there is no public merchant API a bot can drive.",
+      "source_url": "https://en.wikipedia.org/wiki/PayBox",
+      "raw_snippet": "acquired by Israel Discount Bank in 2017 ... Businesses can use PayBox to receive payments from customers, both online and in physical stores, using QR codes or payment links",
+      "fetched_at": "2026-08-08",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
     }
   ]
 }

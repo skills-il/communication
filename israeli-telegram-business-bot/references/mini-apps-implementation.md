@@ -22,7 +22,7 @@ A simple FAQ/booking bot with five inline-keyboard buttons does not need a Mini 
 ## Setup via @BotFather
 
 1. Open a chat with @BotFather.
-2. Send `/newapp` (or `/myapps` -> "Edit Bot" -> "Configure Mini App").
+2. Send `/mybots`, select the bot, then "Bot Settings" -> "Configure Mini App".
 3. Attach a Mini App to your bot by giving it a name, short description, photo, and the public HTTPS URL where the Mini App is hosted.
 4. @BotFather registers the app and exposes a button users can tap to open it.
 
