@@ -7,33 +7,44 @@ All requests use the Monday.com API token in the Authorization header:
 ```
 POST https://api.monday.com/v2
 Authorization: YOUR_API_TOKEN
+API-Version: 2026-07
 Content-Type: application/json
 ```
+
+Pin `API-Version` explicitly. `2026-07` is the default as of August 2026; `2026-10` is the release candidate and `2026-04` is in maintenance.
 
 ---
 
 ## Common Query Patterns
 
 ### Get Current User Info
+
+`account.plan` returns `null` for accounts on the multi-product infrastructure, so do not branch on it. Read `account.tier` and `account.products` and treat `plan` as optional.
+
 ```graphql
 {
   me {
     name
     email
-    account {
-      name
-      plan {
-        max_users
-      }
+  }
+  account {
+    name
+    tier
+    products { kind }
+    plan {
+      max_users
     }
   }
 }
 ```
 
 ### List All Boards
+
+`hierarchy_type` must be passed to see sub-item (multi-level) boards. Omit it and only `classic` boards come back, unless you supplied explicit board IDs.
+
 ```graphql
 {
-  boards(limit: 50) {
+  boards(limit: 50, hierarchy_type: [classic, multi_level]) {
     id
     name
     state
@@ -270,7 +281,7 @@ Different column types require specific JSON formats:
 
 ### Link
 ```json
-{"url": "https://example.com", "text": "Example Site"}
+{"url": "YOUR_LINK_URL", "text": "Example Site"}
 ```
 
 ### Long Text
@@ -278,15 +289,40 @@ Different column types require specific JSON formats:
 {"text": "This is a longer description with details."}
 ```
 
+### Connect Boards (write)
+```json
+{"connect_boards": {"item_ids": [1122334455, 5544332211]}}
+```
+Pass `{"connect_boards": null}` to clear it. On read, both `text` and `value` return `null` on this column; use `display_value`, `linked_item_ids`, or `linked_items`.
+
+### Mirror (read only)
+Mirror columns cannot be updated or cleared through the API; they reflect the source column on the connected board. Both `text` and `value` return `null`; use `display_value` or `mirrored_items`. Filtering on mirrored content is not supported.
+
 ---
 
 ## Rate Limiting
 
-- **Paid plans:** 10,000,000 complexity points per minute
+- **Personal API token:** reads and writes share a combined budget of 10,000,000 complexity points per minute
+- **App token:** reads and writes are limited to 5,000,000 complexity points per minute *each* (a separate ceiling per direction, not a shared pool)
+- **Trial / NGO / free plan:** 1,000,000 complexity points per minute
 - **Single-query cap:** 5,000,000 complexity points (one operation cannot exceed this)
-- **App reads/writes:** 5,000,000 complexity points per minute
-- **Trial / free plan:** 1,000,000 complexity points per minute
-- **Remaining budget:** add a `complexity { before, after, query }` field to your query to read how many points it cost and how many remain. On a 429 (limit hit), monday returns a `Retry-After` header with the seconds to wait.
+- **Remaining budget:** add a `complexity { before after query }` field to your query to read how many points it cost and how many remain. Every response also carries `RateLimit-Policy` and `RateLimit` headers reporting the policy and the current remaining quota.
+- **On an error:** every rate limit error returns a `retry_in_seconds` field, and 429 responses also carry a `Retry-After` header.
+
+### Plan-Level API Call Allowance
+
+Separate from complexity, the account's plan caps daily API calls: 1,000/day on Standard, 10,000/day on Pro, 25,000/day on Enterprise. On Standard this binds long before complexity does; a once-a-minute poll needs 1,440 calls/day and cannot work.
+
+### 429 Error Codes
+
+| Code | Meaning |
+|------|---------|
+| `Rate Limit Exceeded` | More than 5,000 requests in one minute |
+| `maxConcurrencyExceeded` | Too many queries running at once |
+| `COMPLEXITY_BUDGET_EXHAUSTED` | The complexity limit was reached |
+| `IP_RATE_LIMIT_EXCEEDED` | The per-IP limit was reached |
+
+`ColumnValueException` is different: it is returned with HTTP **200**, so check the `errors` array rather than the HTTP status.
 
 ### Complexity Estimation
 - Simple query (1 board, few columns): ~100 points
@@ -309,7 +345,7 @@ Different column types require specific JSON formats:
 mutation {
   create_webhook(
     board_id: BOARD_ID
-    url: "https://example.com/webhook/monday"
+    url: "YOUR_WEBHOOK_URL"
     event: change_column_value
   ) {
     id
@@ -318,12 +354,18 @@ mutation {
 }
 ```
 
+### Subscription Handshake
+
+On creation monday POSTs a JSON body containing a randomly generated token in a `challenge` field. Your endpoint must echo that token back as a `challenge` field in its own JSON response body, or registration fails.
+
+### Retry Semantics
+
+Failed deliveries retry once a minute for 30 minutes, then stop. The event is not replayable afterwards, so pair any webhook consumer with a low-frequency reconciliation pass. Delivery order is not guaranteed: treat each payload as a signal to re-read the item, not as authoritative state.
+
 ### Available Webhook Events
-- `change_column_value` -- Column value changed
-- `create_item` -- New item created
-- `create_update` -- New update/comment added
-- `change_status_column_value` -- Status specifically changed
-- `change_subitem_column_value` -- Sub-item column changed
+`change_column_value`, `change_status_column_value`, `change_subitem_column_value`, `change_specific_column_value`, `change_name`, `create_item`, `item_archived`, `item_deleted`, `item_moved_to_any_group`, `item_moved_to_specific_group`, `item_restored`, `create_subitem`, `change_subitem_name`, `move_subitem`, `subitem_archived`, `subitem_deleted`, `create_column`, `create_update`, `edit_update`, `delete_update`, `create_subitem_update`.
+
+Subitem events are separate: a `change_column_value` subscription on the parent board does not deliver subitem changes.
 
 ### Webhook Payload Structure
 ```json
@@ -358,6 +400,7 @@ class MondayClient:
         self.url = "https://api.monday.com/v2"
         self.headers = {
             "Authorization": api_token,
+            "API-Version": "2026-07",
             "Content-Type": "application/json"
         }
 

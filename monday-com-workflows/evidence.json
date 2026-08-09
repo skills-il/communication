@@ -1,87 +1,327 @@
 {
   "schemaVersion": "1.0",
   "skill": "monday-com-workflows",
-  "generated_at": "2026-05-31T00:00:00Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "monday-graphql-endpoint",
-      "claim": "monday.com's GraphQL API endpoint is https://api.monday.com/v2 and uses an Authorization header with the API token.",
+      "claim": "monday.com's GraphQL API endpoint is https://api.monday.com/v2 and uses an Authorization header carrying the API token.",
       "source_url": "https://developer.monday.com/api-reference/docs/authentication",
       "raw_snippet": "https://api.monday.com/v2",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/graphql-patterns.md"]
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
     },
     {
-      "claim_id": "monday-api-versioning",
-      "claim": "monday.com versions its API by month. The 2026-04 version is the current default; 2026-07 is in release candidate and becomes default on 2026-07-01, at which point 2026-04 enters maintenance.",
+      "claim_id": "monday-api-default-version-2026-07",
+      "claim": "As of August 2026 the default monday.com API version is 2026-07, used whenever no API-Version header is passed.",
       "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
-      "raw_snippet": "Maintenance",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "Used as the default version when no header is passed",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "monday-api-version-cadence",
+      "claim": "monday.com guarantees at least three parallel API versions and ships a new version every quarter, which is why 2026-10 is the release candidate while 2026-04 is in maintenance.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "We guarantee at least three different versions of the API in parallel and release a new version every quarter.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "monday-deprecation-2026-02-15",
-      "claim": "API versions 2024-10 and 2025-01 were deprecated on 2026-02-15.",
-      "source_url": "https://developer.monday.com/api-reference/changelog/deprecating-versions-2025-01-and-2024-10-on-february-15th-2026",
-      "raw_snippet": "February 15th 2026",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim": "API versions 2024-10 and 2025-01 were deprecated on February 15th, 2026.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "January 15th, 2025 February 15th, 2026",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "monday-rate-limits",
-      "claim": "Per-user complexity budget is 10,000,000 points/minute on paid plans (1,000,000 for trial/free), and a single query cannot exceed 5,000,000 points; read remaining budget via the complexity field, and a 429 returns Retry-After.",
+      "claim_id": "monday-boards-hierarchy-type",
+      "claim": "The boards query returns only classic boards unless hierarchy_type is passed or explicit board IDs are supplied, so multi-level (sub-item) boards are excluded by default rather than included.",
+      "source_url": "https://developer.monday.com/api-reference/reference/boards",
+      "raw_snippet": "If omitted, only `classic` boards will be returned unless specific board IDs are provided.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "monday-account-plan-null",
+      "claim": "account.plan returns null for accounts on monday's multi-product infrastructure, so a verify step must not branch on plan; account.tier and account.products are the reliable fields.",
+      "source_url": "https://developer.monday.com/api-reference/reference/account",
+      "raw_snippet": "The account's payment plan. Returns `null` for accounts with the multi-product infrastructure.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "monday-rate-limit-personal-token",
+      "claim": "A personal API token gets a combined read plus write budget of 10M complexity points per minute.",
       "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
-      "raw_snippet": "complexity",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/graphql-patterns.md"]
+      "raw_snippet": "Reads and writes have a combined budget of 10M points per minute",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
     },
     {
-      "claim_id": "monday-graphql-intro",
-      "claim": "monday.com exposes a GraphQL API; the introduction page documents query structure and operations.",
-      "source_url": "https://developer.monday.com/api-reference/docs/introduction-to-graphql",
-      "raw_snippet": "GraphQL",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "monday-rate-limit-app-token",
+      "claim": "An app token is limited to 5M complexity points per minute for reads and 5M for writes separately, a different shape from the personal token's shared 10M pool.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "Read and writes are limited to 5M complexity points per minute",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
     },
     {
-      "claim_id": "monday-items-api",
-      "claim": "Item queries use items_page with cursor-based pagination; items_page_by_column_values replaced the removed items_by_column_values.",
-      "source_url": "https://developer.monday.com/api-reference/docs/items",
-      "raw_snippet": "items_page",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/graphql-patterns.md"]
+      "claim_id": "monday-retry-in-seconds",
+      "claim": "Rate limit errors carry a retry_in_seconds field, and responses carry RateLimit-Policy and RateLimit headers.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "Every rate limit error returns a `retry_in_seconds` field",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-429-request-count",
+      "claim": "The Rate Limit Exceeded error is a distinct 429 condition triggered by more than 5,000 requests in one minute, separate from the complexity budget.",
+      "source_url": "https://developer.monday.com/api-reference/docs/errors",
+      "raw_snippet": "You made more than 5,000 requests in one minute",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-column-value-exception-200",
+      "claim": "ColumnValueException is returned with HTTP status 200, so a failed column write looks like a successful request unless the errors array is inspected.",
+      "source_url": "https://developer.monday.com/api-reference/docs/errors",
+      "raw_snippet": "Incorrect column value formatting",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-connect-boards-null",
+      "claim": "On a connect boards column the value field always returns null; read display_value, linked_item_ids or linked_items instead.",
+      "source_url": "https://developer.monday.com/api-reference/docs/connect",
+      "raw_snippet": "Always returns `null` for this column. Use `linked_items` and `linked_item_ids` instead.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-connect-boards-write-format",
+      "claim": "Connect boards columns are written with an item_ids array, not a connection identifier argument.",
+      "source_url": "https://developer.monday.com/api-reference/docs/connect",
+      "raw_snippet": "item_ids",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-mirror-read-only",
+      "claim": "Mirror column values cannot be updated or cleared through the API because they reflect the source column on the connected board.",
+      "source_url": "https://developer.monday.com/api-reference/docs/mirror",
+      "raw_snippet": "Mirror column values cannot be updated or cleared directly",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-webhook-challenge",
+      "claim": "Webhook registration requires echoing back a randomly generated token that monday sends in a challenge field.",
+      "source_url": "https://developer.monday.com/api-reference/docs/webhooks",
+      "raw_snippet": "sending a JSON POST body containing a randomly generated token as a `challenge` field",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-webhook-retry-window",
+      "claim": "Failed webhook deliveries retry once a minute for 30 minutes and are then abandoned, so a reconciliation pass is still needed.",
+      "source_url": "https://developer.monday.com/api-reference/docs/webhooks",
+      "raw_snippet": "Requests sent through our webhook integration will retry once a minute for 30 minutes.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-user-entity-2026-07",
+      "claim": "In API version 2026-07 the Query.users arguments kind, newest_first and non_active are deprecated in favour of user_kind, sort and status, an unlimited users query now returns 200 users, and the maximum limit is 1000; legacy User photo and boolean flag fields are removed in 2026-10.",
+      "source_url": "https://developer.monday.com/api-reference/changelog/major-user-entity-update",
+      "raw_snippet": "user_kind",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-products-and-tiers",
+      "claim": "monday.com sells four products with separate plan ladders: work management (Free, Basic, Standard, Pro, Enterprise), CRM (Basic through Ultimate), Dev and Service; Free exists only on work management.",
+      "source_url": "https://monday.com/pricing",
+      "raw_snippet": "Ultimate",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "monday-automation-quota-standard",
+      "claim": "Standard is the first tier with automations and integrations, and it allows 250 actions per month; Pro allows 25,000 and Enterprise up to 250,000.",
+      "source_url": "https://monday.com/pricing",
+      "raw_snippet": "250 actions / month",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "monday-api-call-allowance",
+      "claim": "The plan caps daily API calls: 1,000 per day on Standard, 10,000 on Pro and 25,000 on Enterprise, which binds a polling integration long before the complexity budget does.",
+      "source_url": "https://monday.com/pricing",
+      "raw_snippet": "1,000 / day",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "monday-marketplace",
+      "claim": "The monday.com marketplace is the authoritative place to check whether an integration app exists for a given Israeli accounting or ERP system before promising one.",
+      "source_url": "https://monday.com/marketplace",
+      "raw_snippet": "marketplace",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "monday-apps-framework",
       "claim": "Custom automation triggers and actions are built via the monday apps framework; there is no queryable core-API automations endpoint.",
       "source_url": "https://developer.monday.com/apps/docs/api-reference",
       "raw_snippet": "API reference",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-items-api",
+      "claim": "Item queries use items_page with cursor-based pagination; items_page_by_column_values pages the same way and truncates silently at the limit if the cursor loop is omitted.",
+      "source_url": "https://developer.monday.com/api-reference/docs/items",
+      "raw_snippet": "items_page",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
     },
     {
       "claim_id": "mondaycom-mcp",
-      "claim": "The official monday.com MCP server is at github.com/mondaycom/mcp, npm package @mondaydotcomorg/monday-api-mcp, with static CRUD tools plus a Dynamic API Tools beta.",
-      "source_url": "https://github.com/mondaycom/mcp",
-      "raw_snippet": "monday-api-mcp",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim": "The official monday.com MCP server is github.com/mondaycom/mcp, published to npm as @mondaydotcomorg/monday-api-mcp, latest version 3.3.0.",
+      "source_url": "https://registry.npmjs.org/@mondaydotcomorg/monday-api-mcp/latest",
+      "raw_snippet": "3.3.0",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pesach-2026-israel",
-      "claim": "In Israel, Pesach 2026 has Yom Tov on 2 April and 8 April with chol hamoed 3-7 April; 9 April is a regular workday (Diaspora-only second Yom Tov).",
+      "claim": "In Israel, Pesach 2026 has Yom Tov on 2 April and 8 April with chol hamoed 3-7 April; 9 April is a regular workday (the second Yom Tov is Diaspora-only).",
       "source_url": "https://www.hebcal.com/holidays/pesach-2026?i=on",
       "raw_snippet": "Pesach",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "illustrative-placeholder-urls",
-      "claim": "example.com is the RFC 2606 reserved domain used here only for illustrative placeholders (https://example.com and https://example.com/webhook/monday).",
-      "source_url": "https://example.com",
-      "raw_snippet": "Example Domain https://example.com https://example.com/webhook/monday",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["references/graphql-patterns.md"]
+      "claim_id": "mondaycom-mcp-repo",
+      "claim": "The official monday.com MCP server repository is https://github.com/mondaycom/mcp.",
+      "source_url": "https://github.com/mondaycom/mcp",
+      "raw_snippet": "Enable AI agents to operate reliably within real workflows.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-webhook-events",
+      "claim": "The webhook event list includes separate subitem events, so a parent-board change_column_value subscription does not deliver subitem changes.",
+      "source_url": "https://developer.monday.com/api-reference/docs/webhooks",
+      "raw_snippet": "change_subitem_column_value",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/graphql-patterns.md"
+      ]
     }
   ]
 }
