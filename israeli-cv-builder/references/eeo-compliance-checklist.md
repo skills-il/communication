@@ -76,5 +76,5 @@ The Equal Employment Opportunities Commission (נציבות שוויון הזד�
 ## Sources
 
 - [Official English text of Law 5748-1988 (ICJ)](https://www.icj.org/wp-content/uploads/2013/05/Israel-Employment-Equal-Opportunities-Law-5748-1988-eng.pdf)
-- [Wikipedia summary of the law and amendments](https://en.wikipedia.org/wiki/Employment_(Equal_Opportunities)_Law,_1988)
+- [Employment (Equal Opportunities) Law, 5748-1988 - full statutory text (Nevo)](https://www.nevo.co.il/law_html/law01/p214m1_001.htm)
 - [Nevo legal database (Hebrew text)](https://www.nevo.co.il/law_html/law01/p214m1_001.htm)

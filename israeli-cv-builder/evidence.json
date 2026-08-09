@@ -17,11 +17,13 @@
     },
     {
       "claim_id": "eeo-amendments-orientation-fertility",
-      "claim": "The Employment (Equal Opportunities) Law has been amended multiple times since 1988, expanding the list of protected characteristics to include sexual orientation, fertility treatments, and parenthood among others.",
-      "source_url": "https://en.wikipedia.org/wiki/Employment_(Equal_Opportunities)_Law,_1988",
-      "raw_snippet": "fertility treatments",
-      "fetched_at": "2026-05-20T00:00:00Z",
+      "claim": "Section 2(a) of the Employment (Equal Opportunities) Law, 5748-1988 forbids an employer from discriminating between employees or job applicants on grounds including sex, sexual orientation, personal status, pregnancy, fertility treatments, IVF treatments, parenthood, age, race, religion, nationality, country of origin, place of residence, outlook, party affiliation and reserve service. (סעיף 2 לחוק שוויון ההזדמנויות בעבודה).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "לא יפלה מעסיק בין עובדיו או בין דורשי עבודה מחמת מינם, נטייתם המינית, מעמדם האישי, הריון, טיפולי פוריות, טיפולי הפריה חוץ-גופית, היותם הורים, גילם, גזעם, דתם, לאומיותם, ארץ מוצאם, מקום מגוריהם, השקפתם, מפלגתם או שירות במילואים שלהם",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
         "references/eeo-compliance-checklist.md"
       ]
     },
@@ -85,8 +87,8 @@
       "claim_id": "anglo-list-resume",
       "claim": "Anglo-List publishes Israeli resume guidance on tone, length, and section order for English-speaking olim.",
       "source_url": "https://anglo-list.com/your-israel-resume/",
-      "raw_snippet": "your israel resume",
-      "fetched_at": "2026-05-20T00:00:00Z",
+      "raw_snippet": "Israel has its own resume rules and it is a good idea to implement them wherever possible.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -106,10 +108,10 @@
     },
     {
       "claim_id": "unit-8200",
-      "claim": "Unit 8200 is the Israel Defense Forces Intelligence Corps signals-intelligence unit.",
+      "claim": "Unit 8200 is an Israeli Intelligence Corps unit of the Israel Defense Forces responsible for signals intelligence.",
       "source_url": "https://en.wikipedia.org/wiki/Unit_8200",
-      "raw_snippet": "Unit 8200 ... Intelligence Corps of the Israel Defense Forces",
-      "fetched_at": "2026-05-20T00:00:00Z",
+      "raw_snippet": "Unit 8200 is an Israeli Intelligence Corps unit of the Israel Defense Forces responsible for clandestine operation, collecting signal intelligence (SIGINT) and code decryption",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
