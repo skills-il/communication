@@ -71,7 +71,7 @@ This is the most frequently referenced section in customer support operations.
 | Consumer Category | Cooling-off Period |
 |---|---|
 | Standard consumer | 14 days |
-| New immigrant (oleh chadash, within 2 years) | 4 months |
+| New immigrant (oleh chadash, within 5 years of receiving the immigrant certificate) | 4 months |
 | Person with disability | 4 months |
 | Senior citizen (65+) | 4 months |
 

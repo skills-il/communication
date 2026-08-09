@@ -39,10 +39,10 @@
     },
     {
       "claim_id": "protected-groups-4months",
-      "claim": "Persons with disability, senior citizens (65+), or new immigrants (within 2 years) get 4 months to cancel a remote-purchase transaction, provided the transaction involved phone call or electronic correspondence.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94_%D7%A9%D7%A0%D7%A2%D7%A9%D7%AA%D7%94_%D7%91%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98_%D7%90%D7%95_%D7%91%D7%98%D7%9C%D7%A4%D7%95%D7%9F",
-      "raw_snippet": "אנשים עם מוגבלות, אזרחים ותיקים או עולים חדשים יכולים לבטל עסקת מכר מרחוק תוך ארבעה חודשים מיום ביצוע העסקה, קבלת המוצר או חוזה עסקה, לפי המאוחר מביניהם, בתנאי שבעת ביצוע העסקה התקיימה שיחה בין המוכר לצרכן בטלפון או בהתכתבות אלקטרונית.",
-      "fetched_at": "2026-05-20",
+      "claim": "Persons with disability, senior citizens (65+), or new immigrants (within 5 years of receiving an immigrant certificate) get 4 months to cancel a remote-purchase transaction, provided the transaction involved a conversation with the dealer.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "בעסקת מכר מרחוק שנערכה עם צרכן שהוא אדם עם מוגבלות, אזרח ותיק או עולה חדש, רשאי הצרכן לבטל את העסקה בתוך ארבעה חודשים מיום עשיית העסקה",
+      "fetched_at": "2026-08-09",
       "appears_in": [
         "SKILL.md Step 2 extended cooling-off",
         "SKILL_HE.md שלב 2 תקופת צינון מורחבת",
@@ -245,6 +245,18 @@
       "appears_in": [
         "SKILL.md resources table",
         "SKILL_HE.md טבלת מקורות"
+      ]
+    },
+    {
+      "claim_id": "oleh-chadash-definition",
+      "claim": "Consumer Protection Law sec 14G1(a) defines oleh chadash as someone within five years of receiving an immigrant certificate, and senior citizen as age 65 and over.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "\" עולה חדש \" – מי שטרם חלפו חמש שנים מיום שניתנה לו תעודת עולה או תעודת זכאות כעולה ממשרד העלייה והקליטה;",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
       ]
     }
   ]
