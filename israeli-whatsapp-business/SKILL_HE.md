@@ -393,7 +393,7 @@ def webhook_handler(event: dict) -> dict:
 - חוק הספאם, פיצוי וחריגים (כל-זכות): https://www.kolzchut.org.il/he/index.php?curid=14302
 - מידע למקבלי דואר זבל, איגוד האינטרנט הישראלי: https://www.isoc.org.il/freedom-of-internet/spam/information-to-recipients-of-spam
 - הרשות להגנת הפרטיות (תיקון 13): https://www.gov.il/he/departments/the_privacy_protection_authority
-- 360dialog (BSP): https://www.360dialog.com/
+- 360dialog (BSP): https://www.360dialog.com/whatsapp-business-api
 - MessageBird/Bird (BSP): https://bird.com/
 - Twilio WhatsApp Business: https://www.twilio.com/en-us/messaging/channels/whatsapp
 - Infobip WhatsApp: https://www.infobip.com/whatsapp-business

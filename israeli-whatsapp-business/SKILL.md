@@ -394,7 +394,7 @@ Result: a compliant promotional campaign with Israeli timing and per-message mar
 - Israeli anti-spam law, compensation and the exemptions (Kol-Zchut): https://www.kolzchut.org.il/he/index.php?curid=14302
 - Information for recipients of spam, Israel Internet Association: https://www.isoc.org.il/freedom-of-internet/spam/information-to-recipients-of-spam
 - Privacy Protection Authority (Amendment 13): https://www.gov.il/he/departments/the_privacy_protection_authority
-- 360dialog (BSP): https://www.360dialog.com/
+- 360dialog (BSP): https://www.360dialog.com/whatsapp-business-api
 - MessageBird/Bird (BSP): https://bird.com/
 - Twilio WhatsApp Business: https://www.twilio.com/en-us/messaging/channels/whatsapp
 - Infobip WhatsApp: https://www.infobip.com/whatsapp-business

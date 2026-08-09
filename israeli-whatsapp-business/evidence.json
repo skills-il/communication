@@ -72,7 +72,7 @@
       "claim_id": "error-130429",
       "claim": "Error 130429 is a rate limit error",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
-      "raw_snippet": "Rate limit hit",
+      "raw_snippet": "Combination of the error code and its title. For example: (#130429) Rate limit hit.",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -471,9 +471,9 @@
     },
     {
       "claim_id": "bsp-360dialog",
-      "claim": "360dialog operates as an active WhatsApp BSP",
-      "source_url": "https://www.360dialog.com/",
-      "raw_snippet": "360dialog",
+      "claim": "360dialog operates as an active WhatsApp Business API provider and Meta Partner.",
+      "source_url": "https://www.360dialog.com/whatsapp-business-api",
+      "raw_snippet": "Trusted by 100,000+ businesses • Meta Partner",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -563,7 +563,7 @@
       "claim_id": "example-discount-percentage",
       "claim": "20% is a generic illustrative discount used only in the Hebrew template-rejection example and in the compliant MARKETING body sample; it is not a regulatory or pricing claim",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits",
-      "raw_snippet": "marketing template message",
+      "raw_snippet": "Per-user marketing template message limits",
       "fetched_at": "2026-08-09T00:00:00Z",
       "verified_via": "browser",
       "verified_at": "2026-08-09T00:00:00Z",
