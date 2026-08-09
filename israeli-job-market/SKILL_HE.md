@@ -94,7 +94,7 @@ compatibility: Requires network access for job platform data. No API keys needed
 israeli_salary_data = {
     "currency": "NIS (New Israeli Shekel)",
     "pay_frequency": "Monthly gross (bruto)",
-    "average_national": 13500,  # NIS/month average wage (CBS, all sectors, 2026)
+    "average_national": 13770,  # NIS/month average wage (Bituach Leumi, from 01.01.2026)
     "tech_ranges": {  # Tel Aviv / Gush Dan, gross monthly NIS, 2026 bands
         "junior_developer": (18000, 26000),
         "mid_developer": (26000, 40000),
@@ -139,7 +139,7 @@ israeli_salary_data = {
 | מרכזי פיתוח של FAANG בישראל | Google IL, Meta IL, Amazon IL (כולל AWS), Apple IL, Microsoft IL, Nvidia IL, Intel IL | בסיס + RSU הכי גבוה. הגיוס התהדק אחרי 2023 ובסוף 2025 חזר, בעיקר ל-AI ותשתית. אינטל ישראל קיצצה ב-2024-2025; אנבידיה ומיקרוסופט מתרחבות. |
 | חדי-קרן וסקייל-אפ ישראליים | Wiz, Mobileye, Wix, monday.com, Lemonade, Riskified, Rapyd, Lightricks, Fiverr, Gong, JFrog, Cellebrite, Verbit, Tipalti, Snyk, Trax, Pagaya | Wiz נרכשה ע"י גוגל ב-2024 בכ-$32 מיליארד (ממשיכה לפעול כ-Wiz). באמצע 2026 Wix ו-Lemonade יציבות; Riskified ו-Lightricks עברו מספר סבבי קיצוצים ב-2024-2025 ואז חזרו לגיוס סלקטיבי. |
 | AI-native (גל פוסט-2023) | AI21 Labs, Run:ai (נרכשה ע"י Nvidia ב-2024), Pinecone IL, Aporia, Hour One, D-ID | תגמול פרימיום למומחיות LLM/agents. רבים מהמייסדים בוגרי 8200/תלפיות. |
-| סטארטאפים ב-mid-tier | Series B-C ב-SaaS, פינטק, סייבר | בסיס נמוך ב-10-25% מחדי-קרן, לפעמים אקוויטי גבוה יותר באחוזים. |
+| סטארטאפים ב-mid-tier | Series B-C ב-SaaS, פינטק, סייבר | בסיס נמוך יותר מחדי-קרן, לרוב בתמורה לאחוז אקוויטי גבוה יותר. כדאי להשוות כל הצעה ספציפית. |
 | בנקים וביטוח | פועלים, לאומי, דיסקונט, מזרחי-טפחות, מגדל, הראל, הפניקס, כלל | יציב, סולמות מוגדרים, בסיס נמוך יותר להייטק אבל פנסיה נדיבה. דומיננטיות ב-Java/.NET בצד-שרת. |
 | ממשלה וביטחון | ממר"ם של צה"ל, רפא"ל, התעשייה האווירית, אלביט, מוסד/שב"כ (סיווג), משטרה, אגף מערכות מידע בביטוח לאומי | בסיס נמוך אבל פנסיה + פרמיית "תפקיד בסיווג" (תפקידים בסיווג יכולים אחר כך לעבור לחדי-קרן ביטחוניים). |
 

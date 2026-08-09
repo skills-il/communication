@@ -94,7 +94,7 @@ Determine which job market service the user needs:
 israeli_salary_data = {
     "currency": "NIS (New Israeli Shekel)",
     "pay_frequency": "Monthly gross (bruto)",
-    "average_national": 13500,  # NIS/month average wage (CBS, all sectors, 2026)
+    "average_national": 13770,  # NIS/month average wage (Bituach Leumi, from 01.01.2026)
     "tech_ranges": {  # Tel Aviv / Gush Dan, gross monthly NIS, 2026 bands
         "junior_developer": (18000, 26000),
         "mid_developer": (26000, 40000),
@@ -139,7 +139,7 @@ israeli_salary_data = {
 | FAANG IL R&D | Google IL, Meta IL, Amazon IL (incl. AWS), Apple IL, Microsoft IL, Nvidia IL, Intel IL | Highest base + RSUs. Hiring tightened post-2023 but bouncing back, esp. AI/infra. Intel IL trimmed in 2024-2025; Nvidia and Microsoft expanding. |
 | Israeli unicorns + scaleups | Wiz, Mobileye, Wix, monday.com, Lemonade, Riskified, Rapyd, Lightricks, Fiverr, Gong, JFrog, Cellebrite, Verbit, Tipalti, Snyk, Trax, Pagaya | Wiz acquired by Google in 2024 for ~$32B (still operates as Wiz). Mid-2026 Wix and Lemonade are stable; Riskified and Lightricks did rounds of layoffs in 2024-2025 then resumed selective hiring. |
 | AI-native (post-2023 wave) | AI21 Labs, Run:ai (acquired by Nvidia 2024), Pinecone IL ops, Aporia, Hour One, D-ID | Premium pay for LLM/agent expertise. Many founded by 8200/Talpiot alumni. |
-| Mid-tier startups | Series B-C SaaS, fintech, cybersec | Expect 10-25% lower base than unicorns, often higher equity %. |
+| Mid-tier startups | Series B-C SaaS, fintech, cybersec | Typically lower base than unicorns, often traded off against a higher equity percentage. Ask the candidate to benchmark the specific offer. |
 | Banks + insurance | Bank Hapoalim, Bank Leumi, Discount, Mizrahi-Tefahot, Migdal, Harel, Phoenix, Clal | Stable, structured ladders, lower base for tech but pension generous. Backend Java/.NET dominant. |
 | Government + defense | IDF MAMRAM, Rafael, IAI, Elbit, Mossad/Shabak (cleared), Israel Police, Bituach Leumi tech | Lower base but pension + cleared-job premium (cleared roles can switch to defense unicorns). |
 

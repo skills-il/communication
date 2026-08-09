@@ -5,11 +5,14 @@
   "claims": [
     {
       "claim_id": "average-wage-2026",
-      "claim": "Israeli average national wage in 2026: approximately 13,500 NIS/month (CBS, all sectors)",
-      "source_url": "https://www.cbs.gov.il",
-      "raw_snippet": "ממוצע שכר 13,500 ש\"ח לחודש (13500)",
-      "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim": "The Israeli average wage (השכר הממוצע) used by Bituach Leumi from 01.01.2026 is 13,770 NIS/month; half of it is 6,885 NIS.",
+      "source_url": "https://www.btl.gov.il/Insurance/National%20Insurance/type_list/Self_employed/Pages/default.aspx",
+      "raw_snippet": "הכנסתו החודשית הממוצעת ממשלח ידו שווה או עולה על 50% מהשכר הממוצע - 6,885  (החל ב- 01.01.2026)",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "tech-salary-bands-2026",
@@ -17,7 +20,11 @@
       "source_url": "https://www.levels.fyi/?country=105",
       "raw_snippet": "tech bands include 18000, 26000, 28,000 NIS, 28,000 ש\"ח, 40000, 55,000 NIS, 55,000 ש\"ח, 60000, 85000, 65000, 80000, 110000, 70000, 58000, 80000",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/salary_calculator.py"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/salary_calculator.py"
+      ]
     },
     {
       "claim_id": "keren-hishtalmut-total-pct",
@@ -25,15 +32,10 @@
       "source_url": "https://www.kolzchut.org.il/he/קרן_השתלמות",
       "raw_snippet": "קרן השתלמות בערך 10% מהשכר הכולל",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
-    },
-    {
-      "claim_id": "mid-tier-startup-discount",
-      "claim": "Mid-tier Israeli startups (Series B-C) typically pay base salaries approximately 10-25% lower than unicorns, often with higher equity percentages",
-      "source_url": "https://www.geektime.co.il",
-      "raw_snippet": "Series B-C base 10-25% lower than unicorns",
-      "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pension-rates-mandatory",
@@ -41,7 +43,11 @@
       "source_url": "https://www.kolzchut.org.il/he/פנסיה_חובה",
       "raw_snippet": "פנסיה חובה: עובד 6%, מעסיק 6.5%",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/salary_calculator.py"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/salary_calculator.py"
+      ]
     },
     {
       "claim_id": "keren-hishtalmut-rates",
@@ -49,7 +55,11 @@
       "source_url": "https://www.kolzchut.org.il/he/קרן_השתלמות",
       "raw_snippet": "קרן השתלמות: 7.5% מעסיק, 2.5% עובד",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/salary_calculator.py"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/salary_calculator.py"
+      ]
     },
     {
       "claim_id": "salary-disclosure-law-2025",
@@ -57,7 +67,10 @@
       "source_url": "https://www.gov.il/he/departments/ministry_of_economy_and_industry",
       "raw_snippet": "חוק חובת דיווח על שכר במשרה, 1 באפריל 2025, 25+ עובדים",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "miluim-pay-supplement",
@@ -65,7 +78,10 @@
       "source_url": "https://www.btl.gov.il/benefits/Reserves",
       "raw_snippet": "תשלום מילואים, ביטוח לאומי, השלמת מעסיק",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "wiz-acquisition-2024",
@@ -73,7 +89,10 @@
       "source_url": "https://www.calcalistech.com/ctechnews",
       "raw_snippet": "Wiz Google acquisition $32B 2024",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "run-ai-nvidia-2024",
@@ -81,7 +100,10 @@
       "source_url": "https://www.calcalistech.com/ctechnews",
       "raw_snippet": "Run:ai Nvidia acquisition 2024",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ai-eng-compensation-2026",
@@ -89,7 +111,10 @@
       "source_url": "https://www.levels.fyi/?country=105",
       "raw_snippet": "AI senior $250k-$400k total comp",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-geektime",
@@ -97,7 +122,10 @@
       "source_url": "https://www.geektime.co.il",
       "raw_snippet": "Geektime",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-calcalist-tech",
@@ -105,7 +133,10 @@
       "source_url": "https://www.calcalist.co.il/Tech",
       "raw_snippet": "Calcalist Tech",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-themarker-tech",
@@ -113,7 +144,10 @@
       "source_url": "https://www.themarker.com/technation",
       "raw_snippet": "TheMarker",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-alljobs",
@@ -121,7 +155,10 @@
       "source_url": "https://www.alljobs.co.il",
       "raw_snippet": "AllJobs",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-drushim",
@@ -129,7 +166,10 @@
       "source_url": "https://www.drushim.co.il",
       "raw_snippet": "Drushim",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-ethosia",
@@ -137,7 +177,10 @@
       "source_url": "https://www.ethosia.co.il",
       "raw_snippet": "Ethosia",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-cbs",
@@ -145,7 +188,10 @@
       "source_url": "https://www.cbs.gov.il",
       "raw_snippet": "CBS",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-btl-reserves",
@@ -153,7 +199,10 @@
       "source_url": "https://www.btl.gov.il/benefits/Reserves",
       "raw_snippet": "Bituach Leumi reservist",
       "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
