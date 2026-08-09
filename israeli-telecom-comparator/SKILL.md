@@ -73,9 +73,7 @@ Direct the user to Israeli telecom comparison platforms for up-to-date pricing:
 - **KamazeOle** (https://www.kamazeole.co.il) - focused on new immigrant (oleh) plans and English-language carriers
 
 Also reference official provider websites for the most current offers:
-- Partner: https://www.partner.co.il
-- Cellcom: https://cellcom.co.il/
-- Pelephone: https://www.pelephone.co.il/digitalsite/heb/home/
+- Partner, Cellcom and Pelephone each publish their own coverage map; reach it from the operator's own site rather than a saved deep link, since these operators run single-page sites whose URLs change
 - HOT: http://www.hot.net.il
 - Golan Telecom: https://www.golantelecom.co.il
 - Bezeq: https://www.bezeq.co.il
@@ -88,9 +86,7 @@ When comparing cellular plans, evaluate these dimensions:
 2. **Data allowance** - Most Israeli plans offer unlimited data, but throttling thresholds differ (e.g., full speed up to 50GB, then throttled)
 3. **Network quality** - Full operators (Partner, Cellcom, Pelephone, HOT Mobile) generally have better coverage than MVNOs; 5G availability varies by area
 4. **5G access** - Offered by Partner, Cellcom, Pelephone, and HOT Mobile; coverage now reaches most major cities and many peripheral areas. Check coverage maps for the user's area:
-   - Partner 5G: https://www.partner.co.il/5g
-   - Cellcom 5G: https://cellcom.co.il/5g
-   - Pelephone 5G: https://www.pelephone.co.il/5g
+   - Each of the three facilities-based operators publishes its own 5G coverage map; find it from the operator's site navigation
 5. **2G/3G shutdown** - Israel completed the 2G/3G network shutdown in January 2026. Older feature phones, alarm panels, elevator emergency phones, and some IoT devices that relied on 2G/3G may no longer connect. Confirm the user's device supports VoLTE (4G voice) before recommending a SIM-only plan.
 6. **eSIM support** - Available from Partner, Cellcom, Pelephone, and HOT Mobile; activation is typically through the carrier's app
 7. **Contract terms** - Budget carriers (Golan, 012, Rami Levy) typically offer no-contract plans; major carriers may require 12-36 month commitments for subsidized devices
@@ -102,17 +98,13 @@ When comparing cellular plans, evaluate these dimensions:
 For home internet comparisons:
 
 1. **Check infrastructure availability** - Fiber (FTTH) is not available everywhere; use the provider's address checker when available
-2. **Speed tiers** - Common Israeli internet speeds:
-   - Basic: 100 Mbps
-   - Standard: 200-500 Mbps
-   - Fast: 1 Gbps (1000 Mbps)
-   - Ultra: 2.5 Gbps (available in some fiber areas)
+2. **Speed tiers** - Providers publish a ladder of speeds from a basic tier up to multi-gigabit fiber. Read the current tier list off each provider's own package page rather than assuming a fixed ladder; the tiers are renamed and re-priced often.
 3. **Technology type matters**:
    - FTTH (Fiber to the Home): lowest latency, highest reliability, symmetric upload/download available
-   - VDSL2 (Bezeq copper): up to 100 Mbps, distance-dependent
-   - DOCSIS 3.1 (HOT cable): up to 1 Gbps download, lower upload speeds
+   - VDSL2 (Bezeq copper): the slowest of the three, and distance-dependent, so the speed sold is not always the speed delivered
+   - DOCSIS 3.1 (HOT cable): the standard itself supports far more downstream than upstream, so cable plans are asymmetric; the ceiling actually sold is set by the operator's package, not by the standard
 4. **Router/equipment fees** - Some providers charge monthly router rental; others include it
-5. **Installation fees** - Fiber installation may be free during promotions or cost 100-300 NIS
+5. **Installation fees** - Fiber installation is sometimes waived during promotions and sometimes charged; ask for the installation fee in writing before signing
 6. **Contract length** - Typical 12-month commitment; early exit fees apply
 
 ### Step 7: Compare TV Packages
@@ -121,7 +113,7 @@ For TV package comparisons:
 
 1. **Channel lineup** - Compare the specific channels included (sport channels like Sport1-5 are a key differentiator)
 2. **DVR/recording** - Cloud DVR capacity varies; Yes+ and HOT both offer cloud recording
-3. **Multi-room** - Additional set-top boxes for extra rooms (usually 20-40 NIS/month each)
+3. **Multi-room** - Additional set-top boxes for extra rooms carry a separate monthly fee per box; ask for the per-box price
 4. **Streaming integration** - Some providers bundle Netflix, Disney+, or Apple TV+ at a discount
 5. **4K/HDR content** - Available from Yes and HOT on supported devices
 6. **On-demand library** - Size and freshness of VOD catalog differs significantly
@@ -135,7 +127,7 @@ Bundled packages are often the best value in Israel:
 3. **Partner bundle** - Internet (Partner fiber) + TV (Partner TV) + cellular; good for all-in-one with cellular discount
 4. **Cellcom bundle** - Internet (Cellcom fiber) + TV (Cellcom TV) + cellular; similar all-in-one approach
 
-Compare the total bundle price against buying services separately. Bundles typically save 50-150 NIS/month compared to individual services.
+Compare the total bundle price against buying the same services separately. Bundles are usually cheaper than the sum of their parts, but only the two quotes side by side will tell you by how much.
 
 ### Step 9: Advise on Number Portability (Switching Carriers)
 
@@ -155,10 +147,10 @@ Help the user maximize savings:
 1. **Call the retention department (machlekat shimur)** - Existing customers can often get 20-40% discounts by threatening to leave; ask for "shimur lekokhot" (customer retention)
 2. **Time purchases around holidays** - Major sales happen before Rosh Hashana, Passover, and Black Friday
 3. **Check employer/organization discounts** - Many Israeli employers, unions (histadrut), and organizations have group deals with carriers
-4. **Consider prepaid for low usage** - If using under 10GB/month, prepaid plans from Golan or Rami Levy can cost as low as 20-30 NIS/month
+4. **Consider prepaid for low usage** - Light users are often better off on a prepaid or small-data plan from a budget operator than on an unlimited plan
 5. **Negotiate device separately** - Buying a phone separately and choosing a SIM-only plan is often cheaper than carrier-subsidized devices
 6. **Review bills quarterly** - Israeli carriers frequently change plan structures; your plan may become outdated
-7. **Stack family lines** - Adding family members to one account usually costs 20-40 NIS per additional line
+7. **Stack family lines** - Adding family members to one account is normally cheaper per line than separate accounts; ask for the per-additional-line price
 
 ## Examples
 
@@ -169,10 +161,9 @@ User says: "I need a family plan for 4 lines with unlimited data. What are the b
 Actions:
 1. Identify the requirement: 4 cellular lines, unlimited data, family pricing
 2. Compare multi-line pricing across carriers:
-   - Golan Telecom: ~40 NIS/line for unlimited (no family discount, but already cheapest base price), total ~160 NIS/month
-   - Rami Levy Telecom: ~45 NIS/line, family discount of ~10% for 3+ lines, total ~162 NIS/month
-   - Partner family plan: ~60 NIS/line with family discount, total ~200 NIS/month, but includes 5G access
-   - Cellcom family: ~55 NIS/line, total ~185 NIS/month with 5G
+   - Budget virtual operators (Golan Telecom, Rami Levy Telecom): cheapest per-line base price, sometimes with a small multi-line discount
+   - Full operators (Partner, Cellcom, Pelephone): higher per-line price, own network and 5G access
+   - Pull the current per-line price for each from the operator's own page or a comparison platform on the day you advise; cellular pricing in Israel changes month to month
 3. Note that Golan Telecom is cheapest but uses Cellcom's network as an MVNO, so coverage in remote areas may differ from a full operator
 4. Recommend checking comparison platforms with the "family plan" filter for the most current pricing
 
@@ -185,9 +176,10 @@ User says: "I'm moving to a new apartment in Tel Aviv. I need internet and TV. W
 Actions:
 1. Check fiber availability at the user's address using provider address checkers when available
 2. Since Tel Aviv has extensive fiber coverage, present fiber-based options:
-   - Bezeq fiber (1 Gbps) + Yes IPTV: ~250-350 NIS/month for internet + premium TV with sport channels
-   - HOT fiber (1 Gbps) + HOT TV: ~230-320 NIS/month, cable infrastructure with IPTV option
-   - Partner fiber (1 Gbps) + Partner TV: ~220-300 NIS/month, newer TV service with streaming focus
+   - Bezeq fiber + Yes IPTV: typically the most comprehensive TV channel selection, including sport
+   - HOT fiber + HOT TV: cable infrastructure with an IPTV option
+   - Partner fiber + Partner TV: newer TV service with a streaming focus
+   - Quote all three at the user's exact address on the day; bundle prices are promotional and negotiable
 3. Compare channel lineups, especially sport channels (Sport1-5), movie channels, and international content
 4. Ask if the user also wants to bundle cellular service for additional savings
 5. Recommend calling each provider for a quote, as actual prices are heavily negotiable and promotional
@@ -206,7 +198,7 @@ Actions:
    - HOT Mobile: eSIM supported, 4G/5G available
    - Golan Telecom: No eSIM support as of current date
 2. Check 5G coverage at the user's location using carrier coverage maps
-3. Compare 5G plan pricing (typically 10-20 NIS/month more than equivalent 4G plans)
+3. Compare 5G plan pricing against the equivalent 4G plan from the same operator; the 5G premium varies by operator and by promotion
 4. Walk through eSIM activation: download carrier app, request eSIM, scan QR code, activate
 5. Explain that the user can keep their physical SIM from one carrier and add an eSIM from another (dual SIM capability)
 
@@ -230,15 +222,15 @@ Result: Recommend Partner, Cellcom, or Pelephone for 5G + eSIM. Check coverage m
 |--------|-----|---------------|
 | Ministry of Communications (משרד התקשורת) | https://www.gov.il/he/departments/ministry_of_communications | Official rules on number portability, complaints, 5G policy, 2G/3G shutdown announcements |
 | MoC consumer rights portal | https://www.gov.il/he/departments/topics/communication_consumer_rights | Consumer protection rules for telecom contracts and exit fees |
-| Partner | https://www.partner.co.il | Cellular plans, fiber, TV, 5G coverage map |
-| Cellcom | https://cellcom.co.il/ | Cellular plans, Cellcom Fiber, Cellcom TV, 5G coverage map |
-| Pelephone | https://www.pelephone.co.il/digitalsite/heb/home/ | Cellular plans, 5G coverage map |
+| Partner | Operator's own site | Cellular plans, fiber, TV, 5G coverage map |
+| Cellcom | Operator's own site | Cellular plans, Cellcom Fiber, Cellcom TV, 5G coverage map |
+| Pelephone | Operator's own site | Cellular plans, 5G coverage map |
 | HOT (cable + mobile) | https://www.hot.net.il | HOT Mobile plans, cable internet, HOT TV, fiber checker |
 | Bezeq | https://www.bezeq.co.il | Fiber/DSL home internet, address fiber checker |
 | Yes (satellite/IPTV) | https://www.yes.co.il | TV channel lineup, Yes+ streaming |
 | Golan Telecom (MVNO on Cellcom) | https://www.golantelecom.co.il | Low-cost no-contract plans |
 | Rami Levy Communications (MVNO on Pelephone) | https://www.rami-levy.co.il/he/communication | Budget cellular plans |
-| 019 Mobile (MVNO) | https://www.019mobile.co.il | International calling and budget cellular |
+| 019 Mobile (MVNO) | Operator's own site | International calling and budget cellular |
 | IBC (Israel Broadband Company) | https://www.ibc.co.il | Wholesale fiber availability map |
 | SmartCut comparison | https://www.smartcut.co.il | Crowd-sourced cellular plan comparisons and reviews |
 
