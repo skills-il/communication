@@ -1,183 +1,350 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-sms-gateway",
-  "generated_at": "2026-05-25T19:30:00Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
-      "claim_id": "chok-haspam-1000-nis",
-      "claim": "Chok HaSpam (Amendment 40 to Communications Law) civil penalty: up to 1,000 NIS per unsolicited message without proof of damages",
-      "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
-      "raw_snippet": "פיצוי של עד 1,000 ש\"ח / 1,000 NIS לכל פרסומת שנשלחה, בלי צורך להוכיח שנגרם נזק",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "spam-law-30a-definition",
+      "claim": "Chok HaSpam is Section 30A (סעיף 30א) of the Communications (Bezeq and Broadcasts) Law. A דבר פרסומת is defined by the PURPOSE of the message: a message distributed commercially whose purpose is to encourage the purchase of a product or service, or to encourage spending money in another way. There is no express service-message or OTP carve-out anywhere in the section. Statute text at https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "מסר המופץ באופן מסחרי, שמטרתו לעודד רכישת מוצר או שירות או לעודד הוצאת כספים בדרך אחרת",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "amendment-13-in-force",
-      "claim": "Privacy Protection Law Amendment 13 in force 14 August 2025",
+      "claim_id": "spam-law-30a-b-prior-optin",
+      "claim": "Section 30A(b): an advertiser may not send an advertisement by fax, auto-dialler, electronic message, or SMS without the recipient's explicit prior written consent.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "בלא קבלת הסכמה מפורשת מראש של הנמען, בכתב",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-c-existing-customer",
+      "claim": "Section 30A(c): the existing-customer route permits advertising without fresh consent only when all conditions hold together: the recipient gave their details during a purchase or during negotiations toward one AND the advertiser told them the details would be used for advertising; the advertiser gave an opportunity to refuse and the recipient did not refuse; and the advertisement concerns a product or service of a similar kind.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "הנמען מסר את פרטיו למפרסם במהלך רכישה של מוצר או שירות, או במהלך משא ומתן לרכישה כאמור ... דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-d-optout-same-channel",
+      "claim": "Section 30A(d): a refusal notice must not carry a charge beyond the cost of sending it, and is given in writing OR by the channel the advertisement was sent, at the recipient's choice. Ending an ongoing subscription is itself treated as a refusal notice.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "הודעת הסירוב לא תהיה כרוכה בתשלום, למעט עלות משלוח ההודעה; הודעת הסירוב תינתן בכתב או בדרך שבה שוגר דבר הפרסומת, לפי בחירת הנמען",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-e1-general-content",
+      "claim": "Section 30A(e)(1): the general mandatory content set is the word פרסומת at the start of the advertisement, the advertiser's name, address and contact details, and the recipient's right to send a refusal notice with a simple and reasonable way to do so.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "המילים ”פרסומת“, ”בקשת תרומה“ או ”תעמולה“, לפי העניין, יופיעו בתחילת דבר הפרסומת ... שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-e2-sms-reduced-content",
+      "claim": "Section 30A(e)(2) is an SMS-specific carve-out that REDUCES the (e)(1) list: an advertiser sending by short message states ONLY its name and the contact details for giving a refusal notice. Writing the full (e)(1) list as if it applied to SMS overstates the statute.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "מפרסם המשגר דבר פרסומת באמצעות הודעת מסר קצר יציין בדבר הפרסומת רק את שמו ואת דרכי יצירת הקשר עמו לצורך מתן הודעת סירוב",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-i1-damages-knowingly",
+      "claim": "Section 30A(i)(1): the up-to-1,000 NIS damages figure applies only where the advertisement was sent KNOWINGLY (ביודעין), and it is a discretionary ceiling the court MAY award, not an automatic per-message tariff. 1,000 שקלים חדשים is the statutory cap.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "שוגר דבר פרסומת ביודעין בניגוד להוראות סעיף זה, רשאי בית המשפט לפסוק בשל הפרה זו פיצויים שאינם תלויים בנזק ... בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-i5-knowingly-presumption",
+      "claim": "Section 30A(i)(5): an advertiser is PRESUMED to have acted knowingly unless it proves otherwise, and no defence is available at all where the message was sent after a refusal notice, or where the number came from a randomly generated list.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
+      "raw_snippet": "חזקה על מפרסם ששיגר דבר פרסומת בניגוד להוראות סעיף זה, שעשה כך ביודעין כאמור בפסקה (1), אלא אם כן הוכיח אחרת",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-compensation-kolzchut",
+      "claim": "Kol Zchut summary of the Chok HaSpam civil remedy: a court may award up to 1,000 NIS per advertisement sent, without the recipient proving damage. Page at https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_%28%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D%29 (the closing parenthesis is part of the URL and must be percent-encoded, otherwise the link 404s)",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_%28%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D%29",
+      "raw_snippet": "פיצוי של עד 1,000",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-amendment-13-authority",
+      "claim": "Privacy Protection Law Amendment 13 (in force 14 August 2025) is administered by the Privacy Protection Authority, whose department page is the cited landing page. The page is served behind a bot filter that returns HTTP 403 to plain fetches, so it was confirmed by loading it in a real browser.",
       "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
-      "raw_snippet": "תיקון 13 בתוקף 14 באוגוסט 2025",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "הרשות להגנת הפרטיות",
+      "verified_via": "browser",
+      "verified_at": "2026-08-09",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "amendment-40-chok-haspam",
-      "claim": "Amendment 40 to the Communications (Bezeq and Broadcasts) Law governs commercial SMS in Israel (Chok HaSpam)",
-      "source_url": "https://www.gov.il/he/departments/ministry_of_communications",
-      "raw_snippet": "תיקון 40 לחוק התקשורת (בזק ושידורים)",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "sender-id-regulation-3-1-2021",
+      "claim": "Sender ID in Israel is governed by a Ministry of Communications regulation effective 3.1.2021 aimed at preventing sender spoofing. The duty runs through the provider, not through any government registry: a sender ID that is a real mobile or landline number requires a one-time ownership verification before the first send.",
+      "source_url": "https://www.sms4free.co.il/Regulation.html",
+      "raw_snippet": "משרד התקשורת קבע רגולציה חדשה בנושא זיהוי השולח, אשר צפויה להיכנס לתוקף בתאריך 3.1.2021",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "hebrew-sms-ucs2-limits",
-      "claim": "Hebrew SMS uses UCS-2 encoding: 70 characters per single segment, 67 characters per segment in multi-part SMS due to UDH overhead",
-      "source_url": "https://en.wikipedia.org/wiki/GSM_03.38",
-      "raw_snippet": "70 ucs-2, 67 per segment multi-part",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "sender-id-no-verification-cases",
+      "claim": "Alphanumeric (Latin-text) sender IDs, withheld senders, and provider-supplied virtual numbers do NOT require the ownership verification step. Numeric mobile senders are verified via a link sent to that handset; numeric landline senders by calling from that line.",
+      "source_url": "https://www.sms4free.co.il/Regulation.html",
+      "raw_snippet": "זיהוי שולח שמי (טקסט באנגלית)",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "twilio-il-price-2026",
-      "claim": "Twilio outbound SMS to Israel mobile is approximately $0.26 USD per message (May 2026 published rate)",
+      "claim_id": "twilio-il-pricing-2026",
+      "claim": "Twilio published Israel SMS pricing: outbound $0.2575 and inbound $0.0075, quoted per message SEGMENT rather than per message.",
       "source_url": "https://www.twilio.com/en-us/sms/pricing/il",
-      "raw_snippet": "$0.26",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "$0.2575 $0.0075",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "inforu-xml-endpoint",
-      "claim": "InforU canonical XML-over-HTTP endpoint is https://api.inforu.co.il/SendMessageXml.ashx; accepts XML body via InforuXML query param, not JSON",
-      "source_url": "https://apidoc.inforu.co.il/",
-      "raw_snippet": "api.inforu.co.il/SendMessageXml.ashx InforuXML",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
-    },
-    {
-      "claim_id": "twilio-il-sender-id-pre-reg",
-      "claim": "Israel requires domestic pre-registration of alphanumeric sender IDs, taking approximately 1 week; local non-real numbers are not allowed as sender IDs",
+      "claim_id": "twilio-il-longcode-blocked",
+      "claim": "Twilio Israel guidelines: international traffic sent over local long codes is actively blocked by the Israeli operators.",
       "source_url": "https://www.twilio.com/en-us/guidelines/il/sms",
-      "raw_snippet": "Domestic pre-registration ~1 week",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "International traffic submitted over local long codes is actively blocked by the operators",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "twilio-il-palestine-split",
-      "claim": "Twilio routes +97256 and +97259 (Jawwal/Wataniya) through Palestine geo-permission rather than Israel; affects validation regex that broadens beyond 050-058",
+      "claim_id": "twilio-il-golan-azi-sender-swap",
+      "claim": "Twilio Israel guidelines: on the Golan and Azi Communications networks, numeric sender IDs are replaced by generic alphanumeric sender IDs outside Twilio's platform.",
+      "source_url": "https://www.twilio.com/en-us/guidelines/il/sms",
+      "raw_snippet": "Numeric Sender IDs are replaced by generic Alphanumeric Sender IDs",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "twilio-il-shortcode-and-prereg",
+      "claim": "Twilio Israel guidelines: short codes are listed as not supported in Israel, and alphanumeric sender IDs require domestic pre-registration with a provisioning time of about one week.",
+      "source_url": "https://www.twilio.com/en-us/guidelines/il/sms",
+      "raw_snippet": "Short code ... Pre-registration ... Alphanumeric Sender ID",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "twilio-geo-palestine-prefixes",
+      "claim": "Twilio routes the +97256 and +97259 prefixes under the Palestine geo-permission rather than Israel.",
       "source_url": "https://www.twilio.com/en-us/changelog/programmable-sms-geo-permissions-israel-and-palestine-prefix-update",
-      "raw_snippet": "+97256 +97259 Palestine geo",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "Palestine",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "israeli-mobile-prefixes",
-      "claim": "Israeli mobile prefixes are 050, 051, 052, 053, 054, 055, 056 (not Israeli), 057 (deprecated), 058 (Golan); validation regex 05[0-9] is broad but catches all current Israeli mobile",
+      "claim_id": "twilio-rest-messages-base",
+      "claim": "Twilio REST base for sending messages is https://api.twilio.com/2010-04-01 with the Accounts/{sid}/Messages.json resource appended.",
+      "source_url": "https://www.twilio.com/docs/messaging/api/message-resource",
+      "raw_snippet": "https://api.twilio.com/2010-04-01/Accounts",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "inforu-sendsms-v2-endpoint",
+      "claim": "InforU's current SMS send endpoint is POST https://capi.inforu.co.il/api/v2/SMS/SendSms, per InforU's own published API collection. The body is envelope-wrapped under a top-level Data key with Message, Recipients[].Phone, and Settings.Sender. Confirmed additionally by live probe: the endpoint answers with a StatusId / StatusDescription JSON envelope, returning StatusId -1 'Authorization empty or not exist' with no header and StatusId -2 'Authentication failed or illegal IP address' with dummy credentials.",
+      "source_url": "https://apidoc.inforu.co.il/api/collections/15332030/TzeWFTF1?segregateAuth=true&versionTag=latest",
+      "raw_snippet": "https://capi.inforu.co.il/api/v2/SMS/SendSms",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "inforu-auth-basic-base64",
+      "claim": "InforU authenticates with an HTTP Basic header built from username and API TOKEN (not the account password), base64-encoded.",
+      "source_url": "https://apidoc.inforu.co.il/api/collections/15332030/TzeWFTF1?segregateAuth=true&versionTag=latest",
+      "raw_snippet": "Basic USER:TOKEN (Encode Base64)",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "inforu-pulldata-dlr",
+      "claim": "InforU delivery reports are pulled from https://capi.inforu.co.il/api/v2/PullData with a Data.Type of DeliveryNotificationSMS and a BatchSize.",
+      "source_url": "https://apidoc.inforu.co.il/api/collections/15332030/TzeWFTF1?segregateAuth=true&versionTag=latest",
+      "raw_snippet": "https://capi.inforu.co.il/api/v2/PullData ... DeliveryNotificationSMS",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "inforu-apidoc-portal",
+      "claim": "InforUMobile publishes its API documentation portal at https://apidoc.inforu.co.il/ Page is a client-side rendered documentation app, so it was confirmed by loading it in a real browser.",
+      "source_url": "https://apidoc.inforu.co.il/",
+      "raw_snippet": "API InforUMobile",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-09"
+    },
+    {
+      "claim_id": "sms4free-v2-endpoint-and-envelope",
+      "claim": "SMS4Free live send endpoint is https://api.sms4free.co.il/ApiSMS/v2/SendSMS. Established by live HTTP probe on 2026-08-09, since the vendor's API page renders its details client-side: v2 answered HTTP 400 with the JSON envelope {\"status\":-1,\"message\":\"Incorrect key, username or password\"}, while the v1 path /ApiSMS/SendSMS answered HTTP 200 with the bare body -1, and the legacy host path www.sms4free.co.il/ApiSMS/SendSMS answered HTTP 302 redirecting to the site homepage. This is the sole basis for the claim that -1 means authentication failure and that v1 and v2 return different response types; no other status code is asserted.",
+      "source_url": "https://www.sms4free.co.il/SMSByAPI.html",
+      "raw_snippet": "https://api.sms4free.co.il/ApiSMS/v2/SendSMS",
+      "verified_via": "browser",
+      "verified_at": "2026-08-09",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "sms4free-credentials",
+      "claim": "SMS4Free authenticates with three body fields: user (the mobile number used at signup), pass (the account password), and key (a personal API key from the account's API page).",
+      "source_url": "https://www.sms4free.co.il/SMSByAPI.html",
+      "raw_snippet": "מפתח API אישי",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "019sms-api-base-and-sandbox",
+      "claim": "019 SMS documents an API base of https://019sms.co.il/api with XML or JSON payloads and token authentication, plus a sandbox at https://019sms.co.il/api/test that mirrors a real request without performing the action. Page is a client-side rendered documentation app, so it was confirmed by loading it in a real browser.",
+      "source_url": "https://docs.019sms.co.il/sms/",
+      "raw_snippet": "https://019sms.co.il/api ... https://019sms.co.il/api/test",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-09"
+    },
+    {
+      "claim_id": "israeli-mobile-prefix-allocation",
+      "claim": "Israeli mobile prefixes are 050, 051, 052, 053, 054, 055 and 058. 056 is Ooredoo Palestine and 059 is Jawwal, both Palestinian territories only, so neither is an Israeli mobile prefix. 057 is not a current mobile allocation: Hot mobile used it until November 2014. Geographic landline area codes are 02, 03, 04, 08, 09 with 9 local digits, and 07N is the non-geographic landline and VoIP range with 10 local digits.",
       "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
-      "raw_snippet": "05X mobile prefixes",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "Ooredoo Palestine ... Jawwal ... Operator was using the area code 057 until November 2014",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/validate_phone.py",
+        "scripts/send_sms.py"
+      ]
     },
     {
-      "claim_id": "bsp-019sms",
-      "claim": "019 SMS (019 Telecom) operates Israeli business messaging platform",
-      "source_url": "https://019sms.co.il/",
-      "raw_snippet": "019 SMS",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "gsm7-ucs2-segment-limits",
+      "claim": "GSM-7 carries 160 characters in a single segment and 153 per segment once concatenated; UCS-2, which Hebrew requires, carries 70 in a single segment and 67 per segment once concatenated, the difference being the user data header on concatenated messages.",
+      "source_url": "https://en.wikipedia.org/wiki/GSM_03.38",
+      "raw_snippet": "UCS-2",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
     },
     {
-      "claim_id": "bsp-sms4free",
-      "claim": "SMS4Free operates SMS API portal at sms4free.co.il",
-      "source_url": "https://www.sms4free.co.il/",
-      "raw_snippet": "SMS4Free",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "bird-formerly-messagebird",
+      "claim": "Bird is the vendor formerly named MessageBird; the site now brands as Bird while still referencing the MessageBird name.",
+      "source_url": "https://bird.com/",
+      "raw_snippet": "MessageBird",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "bsp-cellact",
-      "claim": "Cellact provides Israeli business SMS, USSD, and voice products",
-      "source_url": "https://www.cellact.com/",
-      "raw_snippet": "Cellact",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "vonage-sms-api",
+      "claim": "Vonage documents an SMS API for multi-region applications.",
+      "source_url": "https://developer.vonage.com/en/messaging/sms/overview",
+      "raw_snippet": "SMS API",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "bsp-activetrail",
-      "claim": "ActiveTrail offers SMS bundled with marketing automation plans",
+      "claim_id": "activetrail-sms",
+      "claim": "ActiveTrail offers SMS bundled with its marketing automation plans.",
       "source_url": "https://www.activetrail.co.il/",
       "raw_snippet": "ActiveTrail",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
-    },
-    {
-      "claim_id": "bsp-twilio-sms",
-      "claim": "Twilio Programmable Messaging supports Israeli SMS",
-      "source_url": "https://www.twilio.com/en-us/messaging/channels/sms",
-      "raw_snippet": "Twilio",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
-    },
-    {
-      "claim_id": "bsp-vonage-sms",
-      "claim": "Vonage SMS API for multi-region apps",
-      "source_url": "https://developer.vonage.com/en/messaging/sms/overview",
-      "raw_snippet": "Vonage",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
-    },
-    {
-      "claim_id": "sms4free-legacy-endpoint",
-      "claim": "Legacy SMS4Free endpoint documented as https://api.sms4free.co.il/ApiSMS/v2/SendSMS; current endpoint may differ, verify at sms4free.co.il",
-      "source_url": "https://api.sms4free.co.il/ApiSMS/v2/SendSMS",
-      "raw_snippet": "api.sms4free.co.il/ApiSMS/v2/SendSMS",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
-    },
-    {
-      "claim_id": "sms4free-alt-endpoint",
-      "claim": "Alternative SMS4Free endpoint (older script reference): https://www.sms4free.co.il/ApiSMS/SendSMS",
-      "source_url": "https://www.sms4free.co.il/ApiSMS/SendSMS",
-      "raw_snippet": "sms4free.co.il/ApiSMS/SendSMS",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["scripts/send_sms.py"]
-    },
-    {
-      "claim_id": "inforu-json-rest",
-      "claim": "InforU JSON REST product endpoint pattern (account-tier specific): https://api.inforu.co.il/SendSMS/SendSMS",
-      "source_url": "https://api.inforu.co.il/SendSMS/SendSMS",
-      "raw_snippet": "api.inforu.co.il/SendSMS/SendSMS",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["scripts/send_sms.py"]
-    },
-    {
-      "claim_id": "twilio-rest-messages-endpoint",
-      "claim": "Twilio REST endpoint for sending messages: POST https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json",
-      "source_url": "https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json",
-      "raw_snippet": "api.twilio.com/2010-04-01/Accounts",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["scripts/send_sms.py"]
-    },
-    {
-      "claim_id": "inforu-xml-endpoint-script",
-      "claim": "InforU XML endpoint used in script and SKILL.md code sample",
-      "source_url": "https://api.inforu.co.il/SendMessageXml.ashx",
-      "raw_snippet": "api.inforu.co.il/SendMessageXml.ashx",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/send_sms.py"]
-    },
-    {
-      "claim_id": "inforu-pricing-2026",
-      "claim": "InforU SMS approximate package pricing 2026: 0.07-0.12 NIS per SMS (package-based; verify on provider quote)",
-      "source_url": "https://apidoc.inforu.co.il/",
-      "raw_snippet": "0.07-0.12 ש\"ח להודעה",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
-    },
-    {
-      "claim_id": "019sms-pricing-2026",
-      "claim": "019 SMS approximate package pricing 2026: 0.06-0.10 NIS per SMS (package-based; verify on provider quote)",
-      "source_url": "https://019sms.co.il/",
-      "raw_snippet": "0.06-0.10 ש\"ח להודעה",
-      "fetched_at": "2026-05-25T19:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
