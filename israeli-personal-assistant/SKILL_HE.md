@@ -324,6 +324,6 @@ license: MIT
 |------|-------|----------|
 | HebCal API לוח שנה עברי | https://www.hebcal.com/home/195/jewish-calendar-rest-api | המרת תאריכים עבריים, תאריכי חגים, פרמטרים של ה-API |
 | רשות המיסים בישראל | https://www.gov.il/he/departments/israel_tax_authority | מועדי דיווח מע"מ, מועדי הגשת דוח שנתי |
-| המוסד לביטוח לאומי | https://www.btl.gov.il | מועדי תשלום מקדמות, חובות עצמאים |
+| המוסד לביטוח לאומי | https://www.btl.gov.il/pages/benefitspaymentdates.aspx | מועדי תשלום מקדמות, חובות עצמאים |
 | `references/hebrew-communication-templates.md` | מצורף | ספריית תבניות הודעות עברית מלאה |
 | `references/israeli-business-calendar.md` | מצורף | תאריכי חגים (מחזור תשפ"ו), דפוסים עונתיים |

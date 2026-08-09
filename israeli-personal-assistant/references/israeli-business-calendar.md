@@ -11,7 +11,7 @@ These deadlines repeat every month or every two months throughout the year.
 | Date | Obligation | Who It Applies To |
 |------|-----------|-------------------|
 | 15th of each month | VAT (מע"מ) payment and reporting | Businesses on monthly VAT cycle (turnover above threshold) |
-| 15th of each month | Bituach Leumi (ביטוח לאומי) advance payment | Self-employed (עצמאים) |
+| Per the payment voucher schedule sent by Bituach Leumi (standing-order bank debits are taken on the 22nd, for the previous month) | Bituach Leumi (ביטוח לאומי) advance payment | Self-employed (עצמאים) |
 | 15th of each month | Income tax advance (מקדמת מס הכנסה) | Self-employed with advance payment obligation |
 | 15th of every odd month | VAT reporting - bi-monthly cycle | Businesses on bi-monthly VAT cycle (annual turnover up to ₪1,775,000 in 2026) |
 
@@ -160,6 +160,6 @@ Note: Hebrew calendar dates shift each Gregorian year. The dates below are for t
 
 - HebCal (Hebrew calendar, holiday dates, candle lighting times): https://www.hebcal.com
 - Israel Tax Authority - VAT information: https://www.gov.il/he/departments/israel_tax_authority
-- Bituach Leumi payment deadlines: https://www.btl.gov.il
+- Bituach Leumi payment deadlines: https://www.btl.gov.il/pages/benefitspaymentdates.aspx
 - Israeli Bank holiday schedule: https://www.boi.org.il
 - Central Bureau of Statistics (ל"מס) business reports: https://www.cbs.gov.il

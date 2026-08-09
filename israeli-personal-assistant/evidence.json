@@ -9,7 +9,11 @@
       "source_url": "https://www.gov.il/he/departments/topics/value_added_tax",
       "raw_snippet": "שיעור המע\"מ הסטנדרטי הוא 18% (עלה מ-17% ב-1 בינואר 2025); הצעה להעלאה ל-19% נדחתה.",
       "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
     },
     {
       "claim_id": "vat-cycle-threshold",
@@ -17,7 +21,11 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
       "raw_snippet": "עסקים שמחזור עסקאותיהם בשנה הקובעת הוא עד 1,775,000 ש\"ח (נכון ל-01.01.2026) יגישו דוח אחת לחודשיים; מעל הסף - דיווח חודשי. עד 15 ימים אחרי תום תקופת הדיווח.",
       "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
     },
     {
       "claim_id": "allocation-number-2026",
@@ -25,15 +33,33 @@
       "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
       "raw_snippet": "חוק חשבוניות ישראל: מ-1.1.2026 נדרש מספר הקצאה לחשבונית מעל 10,000 ש\"ח (לפני מע\"מ), ומ-1.6.2026 הסף יורד ל-5,000 ש\"ח.",
       "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
     },
     {
-      "claim_id": "monthly-deadlines",
-      "claim": "Bituach Leumi advance payments and income-tax advances (mikdamot) for the self-employed are due the 15th of each month. Employer annual 102 reports are filed in February.",
-      "source_url": "https://www.btl.gov.il",
-      "raw_snippet": "מקדמות ביטוח לאומי ומקדמות מס הכנסה לעצמאים משולמות עד ה-15 בכל חודש.",
-      "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+      "claim_id": "monthly-deadlines-income-tax",
+      "claim": "Income-tax advances (mikdamot) for the self-employed are, by law, paid and reported by the 15th of each month for the previous month.",
+      "source_url": "https://www.kolzchut.org.il/he/תשלומי_מס_הכנסה_המוטלים_על_עסק_עצמאי_שאינו_חברה",
+      "raw_snippet": "לפי החוק יש לשלם את המקדמות ולדווח על מחזור העסקאות בכל 15 בחודש עבור הכנסות של החודש הקודם.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
+    },
+    {
+      "claim_id": "monthly-deadlines-bituach-leumi",
+      "claim": "Bituach Leumi insurance contributions for the self-employed are paid each month according to the reporting-and-payment schedule Bituach Leumi sends; a bank standing order is debited on the 22nd for the previous month.",
+      "source_url": "https://www.kolzchut.org.il/he/דמי_ביטוח_לאומי_לעצמאי",
+      "raw_snippet": "התשלום יתבצע ב-22 בחודש עבור החודש הקודם (התאריך עשוי להשתנות בהתאם לשבתות וחגים).",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "references/israeli-business-calendar.md"
+      ]
     },
     {
       "claim_id": "holiday-dates-5786",
@@ -41,7 +67,11 @@
       "source_url": "https://www.hebcal.com/holidays/2026?i=on",
       "raw_snippet": "Israel holidays 2026 (i=on): Purim Mar 3; Pesach I Apr 2, Pesach VII (last yom tov in Israel) Apr 8, Apr 9 = Isru Chag (workday); Yom HaShoah Apr 14; Yom HaZikaron Apr 21; Yom HaAtzmaut Apr 22; Lag BaOmer May 5; Yom Yerushalayim May 15; Shavuot May 22.",
       "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-business-calendar.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
     },
     {
       "claim_id": "iron-swords-memorial-day",
@@ -49,7 +79,10 @@
       "source_url": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%9D_%D7%94%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F_%D7%9C%D7%97%D7%9C%D7%9C%D7%99_%D7%9E%D7%9C%D7%97%D7%9E%D7%AA_%D7%97%D7%A8%D7%91%D7%95%D7%AA_%D7%91%D7%A8%D7%96%D7%9C",
       "raw_snippet": "יום הזיכרון לחללי מלחמת חרבות ברזל נקבע בכ\"ד בתשרי בהחלטת ממשלה משנת 2024.",
       "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "references/israeli-business-calendar.md"]
+      "appears_in": [
+        "SKILL.md",
+        "references/israeli-business-calendar.md"
+      ]
     },
     {
       "claim_id": "reference-urls",
@@ -57,7 +90,11 @@
       "source_url": "https://www.hebcal.com/home/195/jewish-calendar-rest-api",
       "raw_snippet": "Reference URLs: https://www.boi.org.il https://www.cbs.gov.il https://www.hebcal.com https://www.hebcal.com/?i=on https://www.hebcal.com/converter https://www.hebcal.com/hebcal https://www.hebcal.com/home/195/jewish-calendar-rest-api",
       "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "references/israeli-business-calendar.md", "scripts/morning-brief.py"]
+      "appears_in": [
+        "SKILL.md",
+        "references/israeli-business-calendar.md",
+        "scripts/morning-brief.py"
+      ]
     },
     {
       "claim_id": "formatting-and-illustrative",
@@ -65,7 +102,22 @@
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "Illustrative: currency format ₪1,234.56 (symbol before amount); response-rate slowdowns of 30-50% during Chol HaMoed and businesses at 50-70% capacity in August are rules-of-thumb, not statistics.",
       "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "btl-payment-dates-page",
+      "claim": "Bituach Leumi publishes the benefit-payment and insurance-contribution reporting/payment calendar at btl.gov.il/pages/benefitspaymentdates.aspx.",
+      "source_url": "https://www.btl.gov.il/pages/benefitspaymentdates.aspx",
+      "raw_snippet": "לוח תשלומי קצבאות ומועדי דיווח ותשלום דמי ביטוח",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
     }
   ]
 }

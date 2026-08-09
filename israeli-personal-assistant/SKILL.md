@@ -348,6 +348,6 @@ Jewish holiday dates shift every year based on the Hebrew calendar. Ask your age
 |--------|-----|---------------|
 | HebCal Hebrew Calendar API | https://www.hebcal.com/home/195/jewish-calendar-rest-api | Hebrew date conversion, holiday dates, API parameters |
 | Israel Tax Authority (רשות המיסים) | https://www.gov.il/he/departments/israel_tax_authority | VAT reporting deadlines, tax return filing dates |
-| National Insurance Institute (ביטוח לאומי) | https://www.btl.gov.il | Bituach Leumi advance payment dates, self-employed obligations |
+| National Insurance Institute (ביטוח לאומי) | https://www.btl.gov.il/pages/benefitspaymentdates.aspx | Bituach Leumi advance payment dates, self-employed obligations |
 | `references/hebrew-communication-templates.md` | Bundled | Full Hebrew message template library |
 | `references/israeli-business-calendar.md` | Bundled | Holiday dates (5786 cycle), seasonal business patterns |
