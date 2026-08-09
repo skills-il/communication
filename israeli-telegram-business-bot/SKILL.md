@@ -538,7 +538,7 @@ Open @BotFather, send `/revoke`, pick the bot, update the new token in your plat
 | Telegram Bot Payments docs | https://core.telegram.org/bots/payments | Provider list, ILS currency limits, deep dive on the native invoice flow |
 | Telegram Mini Apps | https://core.telegram.org/bots/webapps | Mini App (TWA) docs: setup via @BotFather, JS bridge, MainButton, payment sheet |
 | Telegram Bot FAQ - rate limits | https://core.telegram.org/bots/faq | Exact send rate limits (per chat, per group, broadcasts, paid broadcasts) |
-| Communications Law, statutory text | `he.wikisource.org/wiki/חוק_התקשורת_(בזק_ושידורים)` | The literal wording of Section 30a, including the mandatory-content list |
+| Communications Law, statutory text | `nevo.co.il/law_html/law01/032_002.htm` | The literal wording of Section 30a, including the mandatory-content list |
 | Israeli Anti-Spam Law (Kol-Zchut) | `kolzchut.org.il`, page פיצוי בגין משלוח דברי פרסומת ללא הסכמה של הנמען | Section 30a obligations and ₪1,000 statutory damages |
 
 ---

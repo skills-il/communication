@@ -7,17 +7,34 @@
       "claim_id": "bot-api-version",
       "claim": "Bot API 10.2 is the current Telegram Bot API version, released July 14, 2026. The two prior minor versions are 10.1 (June 11, 2026) and 10.0 (May 8, 2026).",
       "source_url": "https://core.telegram.org/bots/api",
-      "raw_snippet": "July 14, 2026 ... Bot API 10.2",
-      "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "July 14, 2026 Bot API 10.2 Rich Messages",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "telegram-business-connected-bot",
-      "claim": "Since Bot API 7.2 a bot can be connected to a Telegram Business account: it receives business_message and edited_business_message updates and passes business_connection_id on its send methods.",
+      "claim_id": "telegram-business-connected-bot-a",
+      "claim": "Bot API 7.2 (March 31, 2024) added updates about new messages in a business account connected to the bot, in the field business_message of the class Update.",
       "source_url": "https://core.telegram.org/bots/api-changelog",
-      "raw_snippet": "Bot API 7.2 ... Added updates about new messages in a business account connected to the bot, represented by the field business_message in the class Update ... Added the parameter business_connection_id to the methods sendMessage",
-      "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "March 31, 2024 Bot API 7.2 Integration with Business Accounts Added the class BusinessConnection and updates about the connection or disconnection of the bot to a business account, represented by the field business_connection in the class Update .",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "telegram-business-connected-bot-b",
+      "claim": "Bot API 7.2 added the business_message and edited_business_message update fields and the business_connection_id parameter on send methods.",
+      "source_url": "https://core.telegram.org/bots/api-changelog",
+      "raw_snippet": "Added updates about new messages in a business account connected to the bot, represented by the field business_message in the class Update .",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "bots-cannot-initiate",
@@ -25,7 +42,10 @@
       "source_url": "https://core.telegram.org/bots",
       "raw_snippet": "start conversations with users. A user must either add them to a group or send them a message first.",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "deep-link-start-parameter",
@@ -33,7 +53,10 @@
       "source_url": "https://core.telegram.org/bots/features",
       "raw_snippet": "you can use the start parameter to automatically pass any value to your bot whenever a user presses the link ... https://t.me/your_bot?start=airplane ... When someone opens a chat with your bot via this link, you will receive:",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "botfather-commands",
@@ -41,7 +64,10 @@
       "source_url": "https://core.telegram.org/bots/features",
       "raw_snippet": "/setcommands ... change the list of commands supported by your bot",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "rate-limit-per-chat",
@@ -49,7 +75,10 @@
       "source_url": "https://core.telegram.org/bots/faq",
       "raw_snippet": "In a single chat, avoid sending more than one message per second.",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "rate-limit-per-group",
@@ -57,7 +86,10 @@
       "source_url": "https://core.telegram.org/bots/faq",
       "raw_snippet": "In a group, bots are not be able to send more than 20 messages per minute.",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "rate-limit-broadcast",
@@ -65,15 +97,32 @@
       "source_url": "https://core.telegram.org/bots/faq",
       "raw_snippet": "For bulk notifications, bots are not able to broadcast more than about 30 messages per second, unless they enable paid broadcasts to increase the limit.",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "paid-broadcasts",
-      "claim": "Paid broadcasts allow up to 1000 messages per second at 0.1 Stars per message above the free 30 per second, and require at least 100,000 Stars on the bot balance and at least 100,000 monthly active users.",
+      "claim_id": "paid-broadcasts-a",
+      "claim": "Paid broadcasts let a bot broadcast up to 1000 messages per second; messages above the free 30 per second cost 0.1 Stars each.",
       "source_url": "https://core.telegram.org/bots/faq",
-      "raw_snippet": "Enabling paid broadcasts in @BotFather allows a bot to broadcast up to 1000 messages per second ... a cost of 0.1 Stars per message ... at least 100,000 Stars on its balance and at least 100,000 monthly active users",
-      "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "Enabling paid broadcasts in @BotFather allows a bot to broadcast up to 1000 messages per second . Each message broadcasted over the free amount of 30 per second incurs a cost of 0.1 Stars per message , paid with Telegram Stars from the bot's balance.",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "paid-broadcasts-b",
+      "claim": "Enabling paid broadcasts requires at least 100,000 Stars on the bot balance and at least 100,000 monthly active users.",
+      "source_url": "https://core.telegram.org/bots/faq",
+      "raw_snippet": "In order to enable this feature, a bot must have at least 100,000 Stars on its balance and at least 100,000 monthly active ",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "channel-vs-dm-broadcast",
@@ -81,15 +130,21 @@
       "source_url": "https://core.telegram.org/bots/faq",
       "raw_snippet": "If you do not wish to enable paid broadcasts, consider spreading them over longer intervals",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "payments-ils-supported",
       "claim": "ILS is a supported currency in the Bot Payments API, with a minimum of ₪3.68 and a maximum of ₪36,788.20 per invoice.",
       "source_url": "https://core.telegram.org/bots/payments",
-      "raw_snippet": "Israeli New Sheqel ... 3.68 ... 36,788.20",
-      "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "ILS Israeli New Sheqel ₪ 3.68 ₪ 36,788.20",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "israeli-soleks-not-on-telegram-list",
@@ -97,7 +152,10 @@
       "source_url": "https://core.telegram.org/bots/payments",
       "raw_snippet": "Telegram does not process payments from users and instead allows developers to integrate directly with different third-party payment providers around the world.",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "mini-apps-botfather-setup",
@@ -105,7 +163,11 @@
       "source_url": "https://core.telegram.org/bots/webapps",
       "raw_snippet": "With Mini Apps developers can use JavaScript to create infinitely flexible interfaces that can be launched right inside Telegram ... Configure Mini App",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mini-apps-implementation.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mini-apps-implementation.md"
+      ]
     },
     {
       "claim_id": "spam-law-channel-enumeration",
@@ -113,15 +175,43 @@
       "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
       "raw_snippet": "לא ישגר מפרסם דבר פרסומת באמצעות פקסימיליה, מערכת חיוג אוטומטי, הודעה אלקטרונית או הודעת מסר קצר, בלא קבלת הסכמה מפורשת מראש של הנמען",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "spam-law-mandatory-content",
-      "claim": "Section 30a(e) requires a lawful advertisement to state, prominently and clearly: that it is an advertisement, with the word פרסומת at the start of the message; the advertiser's name, address and ways to make contact; and the recipient's right to send an opt-out notice together with a simple way to send it, including a valid internet address of the advertiser when the advertisement is sent as an electronic message.",
-      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
-      "raw_snippet": "המילים ”פרסומת“, ”בקשת תרומה“ או ”תעמולה“, לפי העניין, יופיעו בתחילת דבר הפרסומת ... שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו",
-      "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim_id": "spam-law-mandatory-content-a",
+      "claim": "Section 30a(e)(1) requires an advertiser sending an advertisement to state the required particulars prominently and clearly, in a way that is not misleading.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "מפרסם המשגר דבר פרסומת בהתאם להוראות סעיף זה יציין בו את הפרטים האלה באופן בולט וברור, שאין בו כדי להטעות:",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-mandatory-content-b",
+      "claim": "The word פרסומת (or בקשת תרומה / תעמולה) must appear at the start of the advertisement, and in the subject line when it is sent as an electronic message.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "היותו דבר פרסומת; המילים \"פרסומת\", \"בקשת תרומה\" או \"תעמולה\", לפי העניין, יופיעו בתחילת דבר הפרסומת, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית – בכותרת ההודעה;",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-mandatory-content-c",
+      "claim": "The advertisement must also state the advertiser's name, address and ways to make contact.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו;",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "spam-law-optout-same-medium",
@@ -129,7 +219,10 @@
       "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
       "raw_snippet": "הודעת הסירוב תינתן בכתב או בדרך שבה שוגר דבר הפרסומת, לפי בחירת הנמען.",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "spam-law-statutory-damages",
@@ -137,7 +230,10 @@
       "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
       "raw_snippet": "בית המשפט רשאי לפסוק פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "spam-law-criminal-offence",
@@ -145,7 +241,10 @@
       "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
       "raw_snippet": "שליחת דברי פרסומת בניגוד לחוק היא עבירה פלילית",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "bit-merchant-terms",
@@ -153,15 +252,32 @@
       "source_url": "https://www.bitpay.co.il/he/",
       "raw_snippet": "בכפוף למגבלות ולתנאים שנקבעו בין הבנק ובין בית העסק ... על מקבל התשלום באמצעות bit חלה החובה לנהוג לפי דין ובכלל זה להפיק חשבונית מס כחוק",
       "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "paybox-owner",
-      "claim": "PayBox was acquired by Israel Discount Bank in 2017. Businesses can receive payments online and in physical stores using QR codes or payment links, but there is no public merchant API a bot can drive.",
+      "claim_id": "paybox-owner-a",
+      "claim": "PayBox was acquired by Israel Discount Bank in 2017 and operates as part of the Discount Group.",
       "source_url": "https://en.wikipedia.org/wiki/PayBox",
-      "raw_snippet": "acquired by Israel Discount Bank in 2017 ... Businesses can use PayBox to receive payments from customers, both online and in physical stores, using QR codes or payment links",
-      "fetched_at": "2026-08-08",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "Launched in 2014 by PayBox Ltd, the app was acquired by Israel Discount Bank in 2017 and has since operated as part of the Discount Group.",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "paybox-owner-b",
+      "claim": "Businesses can use PayBox to receive payments online and in physical stores using QR codes or payment links.",
+      "source_url": "https://en.wikipedia.org/wiki/PayBox",
+      "raw_snippet": "Businesses can use PayBox to receive payments from customers, both online and in physical stores, using QR codes or payment links.",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
