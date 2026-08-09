@@ -26,10 +26,32 @@
       ]
     },
     {
-      "claim_id": "spam-law-30a-c-existing-customer",
-      "claim": "Section 30A(c): the existing-customer route permits advertising without fresh consent only when all conditions hold together: the recipient gave their details during a purchase or during negotiations toward one AND the advertiser told them the details would be used for advertising; the advertiser gave an opportunity to refuse and the recipient did not refuse; and the advertisement concerns a product or service of a similar kind.",
-      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
-      "raw_snippet": "הנמען מסר את פרטיו למפרסם במהלך רכישה של מוצר או שירות, או במהלך משא ומתן לרכישה כאמור ... דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה",
+      "claim_id": "spam-law-30a-c-existing-customer-a",
+      "claim": "Section 30A(c)(1): the existing-customer route requires that the recipient gave their details to the advertiser during a purchase or negotiations toward one, and that the advertiser told them the details would be used to send advertisements.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "הנמען מסר את פרטיו למפרסם במהלך רכישה של מוצר או שירות, או במהלך משא ומתן לרכישה כאמור, והמפרסם הודיע לו כי הפרטים שמסר ישמשו לצורך משלוח דבר פרסומת מטעמו, באחת הדרכים האמורות בסעיף קטן (ב);",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-c-existing-customer-b",
+      "claim": "Section 30A(c)(2): the advertiser must have given the recipient an opportunity to refuse, and the recipient did not.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "המפרסם נתן לנמען הזדמנות להודיע לו כי הוא מסרב לקבל דברי פרסומת כאמור, דרך כלל או מסוג מסוים, והנמען לא עשה כן;",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-c-existing-customer-c",
+      "claim": "Section 30A(c)(3): the advertisement must concern a product or service of a similar kind.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה למוצר או לשירות האמורים בפסקה (1).",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -48,10 +70,32 @@
       ]
     },
     {
-      "claim_id": "spam-law-30a-e1-general-content",
-      "claim": "Section 30A(e)(1): the general mandatory content set is the word פרסומת at the start of the advertisement, the advertiser's name, address and contact details, and the recipient's right to send a refusal notice with a simple and reasonable way to do so.",
-      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
-      "raw_snippet": "המילים ”פרסומת“, ”בקשת תרומה“ או ”תעמולה“, לפי העניין, יופיעו בתחילת דבר הפרסומת ... שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו",
+      "claim_id": "spam-law-30a-e1-general-content-a",
+      "claim": "Section 30A(e)(1)(a): the word פרסומת (or בקשת תרומה / תעמולה) must appear at the start of the advertisement, and in the subject line of an electronic message.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "היותו דבר פרסומת; המילים \"פרסומת\", \"בקשת תרומה\" או \"תעמולה\", לפי העניין, יופיעו בתחילת דבר הפרסומת, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית – בכותרת ההודעה;",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-e1-general-content-b",
+      "claim": "Section 30A(e)(1)(b): the advertisement must state the advertiser's name, address and ways to make contact.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו;",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-e1-general-content-c",
+      "claim": "Section 30A(e)(1)(c): the advertisement must state the recipient's right to send a refusal notice at any time, and a simple and reasonable way to send it; for an electronic message, a valid internet address of the advertiser.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "זכותו של הנמען לשלוח, בכל עת, הודעת סירוב כאמור בסעיף קטן (ד), ודרך אפשרית למשלוח הודעה כאמור שהיא פשוטה וסבירה בנסיבות העניין, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית – כתובת תקפה של המפרסם ברשת האינטרנט לצורך מתן הודעת סירוב;",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -72,8 +116,8 @@
     {
       "claim_id": "spam-law-30a-i1-damages-knowingly",
       "claim": "Section 30A(i)(1): the up-to-1,000 NIS damages figure applies only where the advertisement was sent KNOWINGLY (ביודעין), and it is a discretionary ceiling the court MAY award, not an automatic per-message tariff. 1,000 שקלים חדשים is the statutory cap.",
-      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
-      "raw_snippet": "שוגר דבר פרסומת ביודעין בניגוד להוראות סעיף זה, רשאי בית המשפט לפסוק בשל הפרה זו פיצויים שאינם תלויים בנזק ... בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "ביודעין בניגוד להוראות סעיף זה, רשאי בית המשפט לפסוק בשל הפרה זו פיצויים שאינם תלויים בנזק (בסעיף זה – פיצויים לדוגמה), בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען בניגוד להוראות סעיף זה;",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -106,7 +150,7 @@
       "claim_id": "privacy-amendment-13-authority",
       "claim": "Privacy Protection Law Amendment 13 (in force 14 August 2025) is administered by the Privacy Protection Authority, whose department page is the cited landing page. The page is served behind a bot filter that returns HTTP 403 to plain fetches, so it was confirmed by loading it in a real browser.",
       "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
-      "raw_snippet": "הרשות להגנת הפרטיות",
+      "raw_snippet": "שירות זה מאפשר לרשום מאגר מידע, כהגדרתו בחוק הגנת הפרטיות, במרשם מאגרי המידע",
       "verified_via": "browser",
       "verified_at": "2026-08-09",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -185,7 +229,7 @@
       "claim_id": "twilio-geo-palestine-prefixes",
       "claim": "Twilio routes the +97256 and +97259 prefixes under the Palestine geo-permission rather than Israel.",
       "source_url": "https://www.twilio.com/en-us/changelog/programmable-sms-geo-permissions-israel-and-palestine-prefix-update",
-      "raw_snippet": "Palestine",
+      "raw_snippet": "Israel will no longer send traffic to +97256 and +97259 since these two prefixes are associated with Palestinian Jawwal and Wataniya cellular communication company.",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -230,7 +274,7 @@
       "claim_id": "inforu-pulldata-dlr",
       "claim": "InforU delivery reports are pulled from https://capi.inforu.co.il/api/v2/PullData with a Data.Type of DeliveryNotificationSMS and a BatchSize.",
       "source_url": "https://apidoc.inforu.co.il/api/collections/15332030/TzeWFTF1?segregateAuth=true&versionTag=latest",
-      "raw_snippet": "https://capi.inforu.co.il/api/v2/PullData ... DeliveryNotificationSMS",
+      "raw_snippet": "\"raw\":\"{\\r\\n\\\"Data\\\": {\\r\\n        \\\"Type\\\": \\\"DeliveryNotificationSMS\\\",\\r\\n        \\\"BatchSize\\\": 500\\r\\n}\\r\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":\"https://capi.inforu.co.il/api/v2/PullData\"",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -268,7 +312,7 @@
       "claim_id": "sms4free-credentials",
       "claim": "SMS4Free authenticates with three body fields: user (the mobile number used at signup), pass (the account password), and key (a personal API key from the account's API page).",
       "source_url": "https://www.sms4free.co.il/SMSByAPI.html",
-      "raw_snippet": "מפתח API אישי",
+      "raw_snippet": "לכל חשבון יש שלושה פרטי הזדהות פשוטים שעוברים בגוף הבקשה: user – מספר הנייד איתו נרשמתם (שם המשתמש). pass – סיסמת החשבון שלכם (המערכת שלנו מייצרת אוטומטית ושולחת לכם בעת ההרשמה). key – מפתח API אישי שנוצר אוטומטית ומחכה לכם ממש עכשיו בדף API באתר.",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -276,23 +320,43 @@
       ]
     },
     {
-      "claim_id": "019sms-api-base-and-sandbox",
-      "claim": "019 SMS documents an API base of https://019sms.co.il/api with XML or JSON payloads and token authentication, plus a sandbox at https://019sms.co.il/api/test that mirrors a real request without performing the action. Page is a client-side rendered documentation app, so it was confirmed by loading it in a real browser.",
+      "claim_id": "019sms-api-base-and-sandbox-a",
+      "claim": "019 SMS documents an API base of https://019sms.co.il/api, with XML/JSON payloads sent by HTTP POST.",
       "source_url": "https://docs.019sms.co.il/sms/",
-      "raw_snippet": "https://019sms.co.il/api ... https://019sms.co.il/api/test",
+      "raw_snippet": "All requests must be sent to : https://019sms.co.il/api",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09"
+      ]
     },
     {
-      "claim_id": "israeli-mobile-prefix-allocation",
-      "claim": "Israeli mobile prefixes are 050, 051, 052, 053, 054, 055 and 058. 056 is Ooredoo Palestine and 059 is Jawwal, both Palestinian territories only, so neither is an Israeli mobile prefix. 057 is not a current mobile allocation: Hot mobile used it until November 2014. Geographic landline area codes are 02, 03, 04, 08, 09 with 9 local digits, and 07N is the non-geographic landline and VoIP range with 10 local digits.",
+      "claim_id": "019sms-api-base-and-sandbox-b",
+      "claim": "019 SMS provides a sandbox at https://019sms.co.il/api/test that looks the same as a real request but does not submit the actions.",
+      "source_url": "https://docs.019sms.co.il/sms/",
+      "raw_snippet": "During development you may send requests to : https://019sms.co.il/api/test this will\nlook the same as the real request but won’t submit the actions.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "019sms-api-base-and-sandbox-c",
+      "claim": "019 SMS requests must be sent with an API token.",
+      "source_url": "https://docs.019sms.co.il/sms/",
+      "raw_snippet": "Requests must be sent with an API token - if you do not have one, follow this",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "israeli-mobile-prefix-allocation-a",
+      "claim": "056 is Ooredoo Palestine and 059 is Jawwal, both Palestinian territories only; 058 is Golan Telecom.",
       "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
-      "raw_snippet": "Ooredoo Palestine ... Jawwal ... Operator was using the area code 057 until November 2014",
+      "raw_snippet": "056 XXX-XXXX +972 56 XXX-XXXX Ooredoo Palestine Palestinian territories only 058 XXX-XXXX +972 58 XXX-XXXX Golan Telecom 059 XXX-XXXX +972 59 XXX-XXXX Jawwal Palestinian territories only",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -302,10 +366,47 @@
       ]
     },
     {
-      "claim_id": "gsm7-ucs2-segment-limits",
-      "claim": "GSM-7 carries 160 characters in a single segment and 153 per segment once concatenated; UCS-2, which Hebrew requires, carries 70 in a single segment and 67 per segment once concatenated, the difference being the user data header on concatenated messages.",
+      "claim_id": "israeli-mobile-prefix-allocation-b",
+      "claim": "057 is not a current mobile allocation: Hot mobile (Altice) used the area code 057 until November 2014 and now uses 053.",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "053 XXX-XXXX +972 53 XXX-XXXX Hot mobile ( Altice ) [ 6 ] Operator was using the area code 057 until November 2014.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/validate_phone.py",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "gsm7-ucs2-segment-limits-a",
+      "claim": "GSM-7 carries up to 160 characters (140 octets) in a single SMS message.",
       "source_url": "https://en.wikipedia.org/wiki/GSM_03.38",
-      "raw_snippet": "UCS-2",
+      "raw_snippet": "SMS: using this encoding, it is possible to send up to 160 characters (packed in up to 140 octets) in one SMS message in the GSM network.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "gsm7-ucs2-segment-limits-b",
+      "claim": "UCS-2, which Hebrew requires, carries at most 70 characters (140 octets) in a single SMS message.",
+      "source_url": "https://en.wikipedia.org/wiki/GSM_03.38",
+      "raw_snippet": "A single SMS GSM message using this encoding can have at most 70 characters (140 octets).",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "gsm7-ucs2-segment-limits-c",
+      "claim": "Concatenated SMS splits the message into 153 7-bit character parts (134 octets) plus a User Data Header, which is why a concatenated UCS-2 segment carries 67 characters (134 octets / 2).",
+      "source_url": "https://en.wikipedia.org/wiki/Concatenated_SMS",
+      "raw_snippet": "One way of sending concatenated SMS (CSMS) is to split the message into 153 7-bit character parts (134 octets), and sending each part with a User Data Header (UDH) tacked onto the beginning.",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",

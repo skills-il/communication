@@ -219,7 +219,7 @@ Result: a Chok HaSpam and Amendment 13 compliant campaign with a cost figure tha
 
 ## Reference Links
 
-- Communications (Bezeq and Broadcasts) Law, full text including Section 30A: https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29
+- Communications (Bezeq and Broadcasts) Law, full text including Section 30A: https://www.nevo.co.il/law_html/law01/032_002.htm
 - Compensation for advertising sent without consent, Kol Zchut: https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_%28%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D%29
 - Privacy Protection Law Amendment 13, Privacy Protection Authority: https://www.gov.il/he/departments/the_privacy_protection_authority
 - Sender ID verification regulation effective 3.1.2021, explained by a provider: https://www.sms4free.co.il/Regulation.html
