@@ -23,7 +23,10 @@ A business shall not mislead a consumer regarding any material aspect of a trans
 
 **Liability:** A business that misleads a consumer is liable for any damage caused, including compensatory and punitive damages.
 
-### Section 10: Warranty (achrayut)
+### Warranty (achrayut)
+
+Warranty duties for consumer goods come from the Sale Law and sector-specific regulations rather than from a single numbered section of the Consumer Protection Law; verify the governing provision before citing a section number to a customer.
+
 
 | Warranty Type | Description | Duration |
 |---|---|---|
@@ -37,7 +40,7 @@ A business shall not mislead a consumer regarding any material aspect of a trans
 - Must honor warranty regardless of where the product was purchased (within Israel)
 - Warranty service must be available within a reasonable geographic area
 
-### Section 14A: Door-to-Door Sales (iskai rechov)
+### Door-to-Door Sales (rochlut) - Section 14
 
 | Provision | Requirement |
 |---|---|
@@ -91,12 +94,14 @@ This is the most frequently referenced section in customer support operations.
 | Defective product (any time) | Full refund, or repair, or replacement (consumer's choice) | Reasonable timeframe |
 | Product not as described | Full refund | Reasonable timeframe |
 
-### Section 14B: Receipt Requirements
+### Receipt Requirements
 
 | Transaction Amount | Receipt Required? | Details |
 |---|---|---|
-| Over NIS 24 | Yes (mandatory) | Must include: business name, date, item description, price, VAT amount |
-| Under NIS 24 | Upon consumer request | Same details as above |
+| Above the statutory threshold | Yes (mandatory) | Must include: business name, date, item description, price, VAT amount |
+| Below the statutory threshold | Upon consumer request | Same details as above |
+
+The shekel threshold is set outside the Consumer Protection Law and is updated periodically; look up the current figure before quoting it.
 
 ### Section 17A: Price Display
 
@@ -116,20 +121,20 @@ This is the most frequently referenced section in customer support operations.
 | Website | gov.il (search: Rashut Haganat HaTzarchan) |
 | Filing complaints | Online portal, by phone, or in writing |
 | Investigation | Can investigate businesses, issue fines, and initiate criminal proceedings |
-| Penalties | Administrative fines up to NIS 226,000 per violation (2025 rates, CPI-adjusted annually; verify current amount via gov.il) |
+| Penalties | Administrative fines per violation, CPI-adjusted annually; look up the current ceiling on gov.il before quoting it |
 
 ### Small Claims Court (Beit Mishpat leTvi'ot Ktanot)
 
 | Parameter | Value |
 |---|---|
-| Maximum claim amount | NIS 38,900 (as of 1.1.2025, CPI-adjusted annually; verify current amount via court.gov.il) |
+| Maximum claim amount | CPI-adjusted annually; look up the current ceiling on court.gov.il before quoting it |
 | Legal representation | Not permitted (consumer and business represent themselves) |
-| Filing fee | Approximately NIS 1% of claim amount |
+| Filing fee | A small percentage of the claim amount; check the current rate on court.gov.il |
 | Timeline | Typically 2-6 months from filing to hearing |
 
 ### Civil Courts
 
-For claims exceeding small claims court limits, consumers can file in Magistrate Court (Beit Mishpat Shalom) for claims up to NIS 2.5 million, or District Court (Beit Mishpat Mechozi) for larger amounts.
+For claims exceeding small claims court limits, consumers can file in Magistrate Court (Beit Mishpat Shalom), or District Court (Beit Mishpat Mechozi) for larger amounts; the jurisdictional ceiling is set by statute and updated periodically, so verify it before relying on it.
 
 ## Practical Guidelines for Customer Support Teams
 

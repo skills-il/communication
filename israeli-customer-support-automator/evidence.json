@@ -9,7 +9,11 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
       "raw_snippet": "משך ההמתנה לקבלת מענה אנושי מקצועי בנושאי טיפול בתקלה, בירור חשבון וסיום התקשרות לא יעלה על 6 דקות מתחילת השיחה. ניתן לחרוג בשיעור של עד 15% מהשיחות במשך שבועיים רצופים.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 3 telephone wait-time obligation", "SKILL_HE.md שלב 3 חובת זמן המתנה", "Gotchas section"]
+      "appears_in": [
+        "SKILL.md Step 3 telephone wait-time obligation",
+        "SKILL_HE.md שלב 3 חובת זמן המתנה",
+        "Gotchas section"
+      ]
     },
     {
       "claim_id": "phone-wait-3min-callback",
@@ -17,7 +21,10 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
       "raw_snippet": "במקרה שזמן ההמתנה הצפוי למענה האנושי עולה על שלוש דקות, אזי בתוך שתי דקות מתחילת השיחה על העוסק להודיע לצרכן את זמן ההמתנה המשוער וליתן לו אפשרות להשארת הודעה בעקבותיה חייב העוסק לחזור לצרכן באמצעות מענה אנושי בתוך 3 שעות.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 3", "SKILL_HE.md שלב 3"]
+      "appears_in": [
+        "SKILL.md Step 3",
+        "SKILL_HE.md שלב 3"
+      ]
     },
     {
       "claim_id": "phone-wait-license-4.5min",
@@ -25,7 +32,10 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
       "raw_snippet": "בעל רישיון יעמוד במשך המתנה ממוצע שאינו עולה על 4.5 דקות באותן פניות בתקופה של שבועיים רצופים - יעד מחמיר יותר.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 3", "SKILL_HE.md שלב 3"]
+      "appears_in": [
+        "SKILL.md Step 3",
+        "SKILL_HE.md שלב 3"
+      ]
     },
     {
       "claim_id": "protected-groups-4months",
@@ -33,7 +43,11 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94_%D7%A9%D7%A0%D7%A2%D7%A9%D7%AA%D7%94_%D7%91%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98_%D7%90%D7%95_%D7%91%D7%98%D7%9C%D7%A4%D7%95%D7%9F",
       "raw_snippet": "אנשים עם מוגבלות, אזרחים ותיקים או עולים חדשים יכולים לבטל עסקת מכר מרחוק תוך ארבעה חודשים מיום ביצוע העסקה, קבלת המוצר או חוזה עסקה, לפי המאוחר מביניהם, בתנאי שבעת ביצוע העסקה התקיימה שיחה בין המוכר לצרכן בטלפון או בהתכתבות אלקטרונית.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 2 extended cooling-off", "SKILL_HE.md שלב 2 תקופת צינון מורחבת", "Gotchas section"]
+      "appears_in": [
+        "SKILL.md Step 2 extended cooling-off",
+        "SKILL_HE.md שלב 2 תקופת צינון מורחבת",
+        "Gotchas section"
+      ]
     },
     {
       "claim_id": "cooling-off-14days",
@@ -41,7 +55,11 @@
       "source_url": "https://www.gov.il/he/pages/returns",
       "raw_snippet": "ניתן לבטל עסקה שנעשתה מרחוק תוך 14 ימים. דמי ביטול בגובה של 5% מהמחיר או 100 ש\"ח, לפי הנמוך מביניהם. בעל העסק צריך להחזיר את הכסף תוך 14 ימים מקבלת הודעת הביטול.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 2 table", "SKILL_HE.md שלב 2 table", "references/consumer-protection-law.md"]
+      "appears_in": [
+        "SKILL.md Step 2 table",
+        "SKILL_HE.md שלב 2 table",
+        "references/consumer-protection-law.md"
+      ]
     },
     {
       "claim_id": "amendment-13-effective",
@@ -49,7 +67,10 @@
       "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
       "raw_snippet": "Amendment 13 to the Protection of Privacy Law took effect on August 14, 2025... The Privacy Protection Authority (PPA) will gain expanded enforcement powers, including the ability to issue administrative orders, levy significant monetary penalties.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 2 Privacy Protection block", "SKILL_HE.md שלב 2 privacy block"]
+      "appears_in": [
+        "SKILL.md Step 2 Privacy Protection block",
+        "SKILL_HE.md שלב 2 privacy block"
+      ]
     },
     {
       "claim_id": "amendment-13-ai-guidelines",
@@ -57,7 +78,10 @@
       "source_url": "https://www.gornitzky.com/privacy-in-artificial-intelligence-systems-guidelines-of-the-israeli-privacy-protection-authority/",
       "raw_snippet": "Amendment 13 is one of the first data protection laws to explicitly cover AI, requiring the same rigor as other data use: informed consent, clear disclosures, and accountability. Data subject rights — access, correction, and deletion — will be strictly enforced for AI systems. Organizations should conduct Data Protection Impact Assessments (DPIAs)... Privacy notices should consider including disclosures in AI tools that interact directly with data subjects (e.g., chatbots).",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 2 PPA AI guidelines bullet", "SKILL_HE.md שלב 2 הנחיות AI"]
+      "appears_in": [
+        "SKILL.md Step 2 PPA AI guidelines bullet",
+        "SKILL_HE.md שלב 2 הנחיות AI"
+      ]
     },
     {
       "claim_id": "whatsapp-per-message-2026",
@@ -65,7 +89,10 @@
       "source_url": "https://whatsappbusiness.com/products/platform-pricing/",
       "raw_snippet": "Meta has officially announced a new global pricing structure for the WhatsApp Business API, effective January 1, 2026, introducing per-message pricing for template messages, replacing the existing conversation-based billing system.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 6 WhatsApp per-message bullet", "SKILL_HE.md שלב 6 תמחור פר-הודעה"]
+      "appears_in": [
+        "SKILL.md Step 6 WhatsApp per-message bullet",
+        "SKILL_HE.md שלב 6 תמחור פר-הודעה"
+      ]
     },
     {
       "claim_id": "whatsapp-bsp-markup",
@@ -73,7 +100,10 @@
       "source_url": "https://whapi.cloud/blog/whatsapp-bsp-pricing-hidden-costs-2026",
       "raw_snippet": "BSP markups (15-20%) apply on top of every Meta charge; template reclassification silently converts utility rates to marketing rates overnight.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 6 WhatsApp bullet", "SKILL_HE.md שלב 6"]
+      "appears_in": [
+        "SKILL.md Step 6 WhatsApp bullet",
+        "SKILL_HE.md שלב 6"
+      ]
     },
     {
       "claim_id": "spam-section-30a",
@@ -81,7 +111,11 @@
       "source_url": "https://www.gov.il/en/pages/17052018_7",
       "raw_snippet": "Section 30 of the Communications Broadcasting Law prohibits sending advertisements by message, email, facsimile and automatic dialing system without the prior consent of the recipient. Recipients of spam email may seek damages in civil court of as much as ILS 1,000 per message sent by the advertiser to the recipient.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 6 SMS auto-reply consent block", "SKILL_HE.md שלב 6 הסכמה ל-SMS שיווקי", "Gotchas"]
+      "appears_in": [
+        "SKILL.md Step 6 SMS auto-reply consent block",
+        "SKILL_HE.md שלב 6 הסכמה ל-SMS שיווקי",
+        "Gotchas"
+      ]
     },
     {
       "claim_id": "zendesk-pricing-2026",
@@ -89,7 +123,10 @@
       "source_url": "https://corepiper.com/blog/zendesk-ai-agent-pricing-2026/",
       "raw_snippet": "Zendesk AI agent pricing in 2026 charges $1.50-$2.00 per automated resolution plus a $50/agent/month Advanced AI add-on. $1.50/automated resolution committed, $2.00 PAYG. Per-resolution fees auto-bill for overages since January 2026, with no prior warning.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 7 Hebrew-NLU helpdesk table", "SKILL_HE.md שלב 7 table"]
+      "appears_in": [
+        "SKILL.md Step 7 Hebrew-NLU helpdesk table",
+        "SKILL_HE.md שלב 7 table"
+      ]
     },
     {
       "claim_id": "intercom-fin-pricing-2026",
@@ -97,7 +134,118 @@
       "source_url": "https://www.intercom.com/pricing",
       "raw_snippet": "Fin is priced at $0.99 per outcome. Intercom's seat-based plans start at $29/seat/month on annual billing (Essential)... Advanced plan runs $85 annual or $99 monthly per seat, and Expert runs $132 annual or $139 monthly per seat. Intercom Fin AI Agent operates on a resolution-based pricing model at $0.99 per successful resolution, with a mandatory minimum of 50 resolutions per month.",
       "fetched_at": "2026-05-20",
-      "appears_in": ["SKILL.md Step 7 helpdesk table", "SKILL_HE.md שלב 7 table"]
+      "appears_in": [
+        "SKILL.md Step 7 helpdesk table",
+        "SKILL_HE.md שלב 7 table"
+      ]
+    },
+    {
+      "claim_id": "spam-30a-consent",
+      "claim": "Section 30A of the Communications Law requires prior explicit written consent before sending advertising by fax, automated dialing system, email or SMS. (סעיף 30א לחוק התקשורת)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "לא ישגר מפרסם דבר פרסומת באמצעות פקסימיליה, מערכת חיוג אוטומטי, הודעה אלקטרונית או הודעת מסר קצר, בלא קבלת הסכמה מפורשת מראש של הנמען, בכתב, לרבות בהודעה אלקטרונית או בשיחה מוקלטת",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md Section 30A consent",
+        "SKILL_HE.md סעיף 30א"
+      ]
+    },
+    {
+      "claim_id": "spam-30a-statutory-damages",
+      "claim": "Section 30A(i)(1) allows courts to award damages not dependent on proof of harm of up to NIS 1,000 per advertising message. עד 1,000 ש\"ח לכל הודעה (סעיף 30א).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "שוגר דבר פרסומת ביודעין בניגוד להוראות סעיף זה, רשאי בית המשפט לפסוק בשל הפרה זו פיצויים שאינם תלויים בנזק (בסעיף זה – פיצויים לדוגמה), בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען בניגוד להוראות סעיף זה",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md Section 30A penalty",
+        "SKILL_HE.md 1,000 ש\"ח"
+      ]
+    },
+    {
+      "claim_id": "cpl-section-2-misleading",
+      "claim": "Section 2 of the Consumer Protection Law prohibits a dealer from doing anything, by act or omission, liable to mislead a consumer on any material matter in a transaction. (סעיף 2 לחוק הגנת הצרכן)",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "לא יעשה עוסק דבר – במעשה או במחדל, בכתב או בעל פה או בכל דרך אחרת, לרבות לאחר מועד ההתקשרות בעסקה – העלול להטעות צרכן בכל ענין מהותי בעסקה",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md consumer law table Section 2",
+        "SKILL_HE.md סעיף 2"
+      ]
+    },
+    {
+      "claim_id": "cpl-section-14g-remote-disclosure",
+      "claim": "Section 14G obliges a dealer in distance marketing to disclose a defined list of details to the consumer. (סעיף 14ג)",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "בשיווק מרחוק חייב העוסק לגלות לצרכן פרטים אלה לפחות",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md Section 14G rows",
+        "SKILL_HE.md סעיף 14ג"
+      ]
+    },
+    {
+      "claim_id": "cpl-section-14e-cancellation-fee",
+      "claim": "Section 14E(b)(1): on cancellation the dealer refunds within 14 days and may charge a cancellation fee of no more than 5% of the price or NIS 100, whichever is lower. (סעיף 14ה) - maximum cancellation fee 5% or 100 NIS, whichever is lower.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "יחזיר העוסק לצרכן, בתוך 14 ימים מיום קבלת ההודעה על הביטול, את אותו חלק ממחיר העסקה ששולם על ידי הצרכן, יבטל את חיובו של הצרכן בשל העסקה וימסור לו עותק מהודעת ביטול החיוב כאמור ולא יגבה מהצרכן סכום כלשהו, זולת דמי ביטול בשיעור שלא יעלה על 5% ממחיר הנכס נושא החוזה או העסקה, או 100 שקלים חדשים, לפי הנמוך מביניהם",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md cancellation fee row",
+        "SKILL_HE.md דמי ביטול"
+      ]
+    },
+    {
+      "claim_id": "cpl-section-14-door-to-door",
+      "claim": "Section 14 gives a consumer in a door-to-door (rochlut) transaction the right to cancel within 14 days of delivery or of receiving the prescribed details, whichever is later.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "בעסקה ברוכלות רשאי הצרכן לבטל את ההסכם",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md door-to-door row"
+      ]
+    },
+    {
+      "claim_id": "cpl-full-text-source",
+      "claim": "The full current text of the Consumer Protection Law 5741-1981 is published at this nevo.co.il URL.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "חוק הגנת הצרכן, תשמ\"א-1981",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md resources table",
+        "SKILL_HE.md טבלת מקורות"
+      ]
+    },
+    {
+      "claim_id": "kolzchut-remote-cancellation-page",
+      "claim": "Kol-Zchut publishes a rights page on cancelling a transaction made online or by phone at this URL.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94_%D7%A9%D7%A0%D7%A2%D7%A9%D7%AA%D7%94_%D7%91%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98_%D7%90%D7%95_%D7%91%D7%98%D7%9C%D7%A4%D7%95%D7%9F",
+      "raw_snippet": "ביטול עסקה שנעשתה באינטרנט או בטלפון (זכות) – כל-זכות",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md resources table"
+      ]
+    },
+    {
+      "claim_id": "kolzchut-remote-cancellation-page-he-url",
+      "claim": "Kol-Zchut rights page on cancelling an online or telephone transaction (Hebrew-slug URL form as linked in the skill).",
+      "source_url": "https://www.kolzchut.org.il/he/ביטול_עסקה_שנעשתה_באינטרנט_או_בטלפון",
+      "raw_snippet": "ביטול עסקה שנעשתה באינטרנט או בטלפון (זכות) – כל-זכות",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md resources table",
+        "SKILL_HE.md טבלת מקורות"
+      ]
+    },
+    {
+      "claim_id": "kolzchut-free-phone-page-he-url",
+      "claim": "Kol-Zchut rights page on free telephone response from service providers (Hebrew-slug URL form as linked in the skill).",
+      "source_url": "https://www.kolzchut.org.il/he/מענה_טלפוני_חינם_לצרכן_מאת_ספקי_שירותים",
+      "raw_snippet": "מענה טלפוני חינם לצרכן מאת ספקי שירותים (זכות) – כל-זכות",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md resources table",
+        "SKILL_HE.md טבלת מקורות"
+      ]
     }
   ]
 }

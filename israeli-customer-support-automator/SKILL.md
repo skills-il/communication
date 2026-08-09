@@ -61,14 +61,11 @@ When handling complaints and return requests, ensure full compliance with the Is
 | Provision | Requirement | Law Section |
 |---|---|---|
 | Remote purchase returns | 14 days cooling-off period from delivery or contract signing (whichever is later) | Section 14G |
-| Cancellation of transaction | Consumer can cancel within 14 days; business must refund within 14 days of receiving cancellation notice | Section 14G |
-| Cancellation fee | Maximum 5% of transaction price or NIS 100, whichever is lower | Section 14G |
-| Defective product | Right to repair, replacement, or refund; no time limit for manufacturing defects | Section 11 |
+| Cancellation of transaction | Consumer can cancel within 14 days; business must refund within 14 days of receiving cancellation notice | Section 14E |
+| Cancellation fee | Maximum 5% of transaction price or NIS 100, whichever is lower | Section 14E |
 | Misleading advertising | Business liable for damage caused by misleading claims | Section 2 |
-| Receipt requirement | Must provide receipt for every transaction over NIS 24 | Section 14B |
 | Price display | Must display prices including VAT | Section 17A |
-| Warranty | Must honor written warranty terms; minimum periods vary by product type | Section 10 |
-| Door-to-door sales | Extended cooling-off period; customer can cancel even after 14 days in some cases | Section 14A |
+| Door-to-door sales (rochlut) | Consumer may cancel within 14 days of delivery or of receiving the required details, whichever is later | Section 14 |
 
 **Cooling-off period exceptions (Section 14G(d)):**
 - Perishable goods
@@ -108,7 +105,7 @@ Consult `references/consumer-protection-law.md` for the full legal reference.
 - Limit ticket-payload retention to what's needed for the purpose. Default retention guidance: 12 months for resolved billing/return tickets, 7 years only when needed for accounting/tax compliance, then auto-delete.
 - Honor data-subject access (zechut iyun) and deletion (zechut limchikat meida) requests within 30 days. Build a tag in the helpdesk ("DSAR") to track them.
 - Sub-processors (Zendesk, Intercom, transcription vendors) must appear in your privacy notice and have a signed data-processing addendum.
-- The Privacy Protection Authority (PPA) gained direct fining power in this amendment; non-compliance fines start at NIS 25,000 and scale to several percent of turnover for serious cases.
+- The Privacy Protection Authority (PPA) gained direct fining power in this amendment; the PPA can now impose financial sanctions directly, scaled to the severity of the breach and the size of the database. Check the PPA's current published sanction schedule before quoting a figure to a customer.
 - The PPA's AI-systems guidelines (published 2024, in force alongside Amendment 13) explicitly cover chatbots. If your chat widget makes automated decisions or routes tickets via an AI agent (Fin, Zendesk AI Agents, Freddy), disclose that the conversation is handled by AI, run a Data Protection Impact Assessment (DPIA) before launch, and document safeguards. Bot transcripts are personal information once linked to a customer identifier.
 
 **Extended cooling-off for protected groups (Section 14G).** Standard consumers get 14 days; consumers who are persons with a disability, senior citizens (65+), or new immigrants (within 2 years) get **4 months** to cancel a remote-purchase transaction, provided the transaction involved a phone call or electronic correspondence with the seller. Your auto-categorizer should NOT auto-reject return requests beyond day 14 without checking the customer's protected-group status first.
@@ -165,7 +162,7 @@ Configure a multi-level escalation system for support tickets.
 | Level | Role | Handles | Authority | Response Time |
 |---|---|---|---|---|
 | L1 | Auto-response / Junior agent | Simple inquiries, password resets, status checks | Send canned responses, basic troubleshooting | Immediate (auto) or 4 hours |
-| L2 | Senior agent | Complex issues, billing disputes, returns processing | Issue refunds up to NIS 500, override policies | 8 hours from escalation |
+| L2 | Senior agent | Complex issues, billing disputes, returns processing | Issue refunds up to the L2 cap set in your own refund policy, override policies | 8 hours from escalation |
 | L3 | Supervisor / Team lead | Legal complaints, high-value disputes, VIP customers | Full refund authority, compensation offers | 4 hours from escalation |
 | L4 | Management | Regulatory complaints, PR-sensitive issues, legal threats | Policy changes, legal consultation | 2 hours from escalation |
 
@@ -287,7 +284,7 @@ Set up support across multiple channels common in the Israeli market.
 
 | Channel | Popularity in Israel | Best For | Response Format |
 |---|---|---|---|
-| WhatsApp Business | Very high (90%+ adoption) | Quick questions, order updates, personal service | Short, conversational Hebrew |
+| WhatsApp Business | The dominant messaging channel in Israel | Quick questions, order updates, personal service | Short, conversational Hebrew |
 | Email | High | Formal complaints, documentation, detailed issues | Structured, formal Hebrew |
 | Phone | High | Urgent issues, elderly customers, complex problems | Script-guided conversation |
 | Website chat | Medium | Browser-based inquiries, guided troubleshooting | Chatbot + agent handoff |
@@ -398,7 +395,7 @@ Periodic survey (Hebrew):
 | NPS | > 30 | % Promoters (9-10) minus % Detractors (0-6) |
 | First Response Time | Per SLA tier | Time from ticket creation to first agent response |
 | Resolution Time | Per SLA tier | Time from ticket creation to resolution |
-| First Contact Resolution (FCR) | > 60% | % of tickets resolved in first interaction |
+| First Contact Resolution (FCR) | Above your own measured baseline | % of tickets resolved in first interaction |
 | Ticket Volume | Trend analysis | Total tickets per day/week/month |
 | Escalation Rate | < 15% | % of tickets escalated beyond L1 |
 | Customer Effort Score (CES) | > 4.0 / 5.0 | "How easy was it to resolve your issue?" |
@@ -461,7 +458,7 @@ Actions:
 1. Create Hebrew CSAT survey template (5-point scale)
 2. Configure auto-send after ticket resolution
 3. Set up NPS survey for monthly distribution
-4. Build metrics dashboard with targets (CSAT > 4.0, NPS > 30, FCR > 60%)
+4. Build metrics dashboard with targets you set from your own baseline (CSAT, NPS, FCR)
 5. Define reporting cadence (daily, weekly, monthly, quarterly)
 6. Integrate with Monday.com for real-time visibility
 
@@ -491,18 +488,17 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 | Kolzchut - Remote Purchase Cancellation | https://www.kolzchut.org.il/he/ביטול_עסקה_שנעשתה_באינטרנט_או_בטלפון | Cooling-off periods, cancellation fees, extended rights for protected groups |
 | Kolzchut - Free Telephone Service Right | https://www.kolzchut.org.il/he/מענה_טלפוני_חינם_לצרכן_מאת_ספקי_שירותים | 6-minute human-agent wait cap, 3-hour callback rule, sectors covered |
 | Consumer Protection Law (Full Text) | https://www.nevo.co.il/law_html/law00/70305.htm | Full text of the law with all amendments |
-| Privacy Protection Authority - AI Guidelines | https://www.gov.il/he/departments/the_privacy_protection_authority | AI/chatbot disclosure obligations under Amendment 13 |
+| Privacy Protection Authority - AI Guidelines | (search gov.il for "Privacy Protection Authority") | AI/chatbot disclosure obligations under Amendment 13 |
 | Section 30A Communications Law (Spam) | https://www.gov.il/en/pages/17052018_7 | Marketing SMS/email consent rules, NIS 1,000 per-message statutory damages |
-| Small Claims Court Guide | https://www.gov.il/en/service/filing_a_small_claim | Current maximum claim amount and filing procedures |
-| Israel Consumer Council | https://www.consumers.org.il | Consumer advocacy, complaint filing guidance |
+| Small Claims Court Guide | (search gov.il for "small claims court") | Current maximum claim amount and filing procedures |
 
 ## Gotchas
 
 - The 14-day cooling-off period in Israel starts from the delivery date or the date the consumer received the contract terms, whichever is later. Agents may calculate it from the purchase date.
 - SLA timers must account for the Israeli work week (Sunday-Thursday). A ticket opened on Friday afternoon should not start its SLA clock until Sunday 08:30.
 - The Hebrew word for "complaint" (תלונה) and "query" (שאילתה) are often confused by text classifiers. Auto-categorization should weight escalation keywords like "עורך דין" (lawyer) and "בית משפט" (court) heavily.
-- Israeli Consumer Protection Law allows a maximum cancellation fee of 5% or 100 NIS, whichever is lower. Agents may use 5% without the 100 NIS cap, overcharging on small transactions.
-- WhatsApp has over 90% adoption in Israel and is the preferred support channel. Agents may default to email-first support strategies that don't match Israeli consumer expectations.
+- Israeli Consumer Protection Law allows a maximum cancellation fee of 5% of the price or NIS 100, whichever is lower. Agents may use 5% without the 100 NIS cap, overcharging on small transactions.
+- WhatsApp is the dominant consumer messaging channel in Israel and the preferred support channel. Agents may default to email-first support strategies that don't match Israeli consumer expectations.
 - Protected groups (people with disabilities, citizens 65+, new immigrants within 2 years) get a 4-month cooling-off period on remote purchases, not 14 days. A naive 14-day calculator will wrongly reject these returns. Add a customer-profile check before any auto-rejection.
 - The 6-minute phone wait cap is per-call from the moment the customer enters the human-agent queue, not call-center average. A long IVR menu does not stop the clock if the customer is waiting to speak to a person.
 - Marketing SMS without prior opt-in carries up to NIS 1,000 in statutory damages per message (Section 30A Communications Law). Transactional support messages (order updates, ticket replies, password resets) are exempt; marketing blasts are not. Agents may treat all outbound SMS the same.
