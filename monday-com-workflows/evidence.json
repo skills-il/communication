@@ -197,10 +197,32 @@
       ]
     },
     {
-      "claim_id": "monday-user-entity-2026-07",
-      "claim": "In API version 2026-07 the Query.users arguments kind, newest_first and non_active are deprecated in favour of user_kind, sort and status, an unlimited users query now returns 200 users, and the maximum limit is 1000; legacy User photo and boolean flag fields are removed in 2026-10.",
+      "claim_id": "monday-user-entity-2026-07-a",
+      "claim": "In monday.com API version 2026-07 the Query.users arguments kind, newest_first and non_active are deprecated (replaced by user_kind, sort and status).",
       "source_url": "https://developer.monday.com/api-reference/changelog/major-user-entity-update",
-      "raw_snippet": "user_kind",
+      "raw_snippet": "are **deprecated** on `Query.users` starting in `2026-07` and marked with `@deprecated` in the schema.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-user-entity-2026-07-b",
+      "claim": "From API version 2026-07 an unlimited Query.users query returns 200 users and the maximum limit is 1000.",
+      "source_url": "https://developer.monday.com/api-reference/changelog/major-user-entity-update",
+      "raw_snippet": "| No `limit` | All matching users returned | **200** users returned |",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-user-entity-2026-07-c",
+      "claim": "The maximum limit on Query.users is 1000; higher values error.",
+      "source_url": "https://developer.monday.com/api-reference/changelog/major-user-entity-update",
+      "raw_snippet": "| Maximum `limit` | Unbounded | **1000** (higher values error) |",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -281,8 +303,8 @@
     {
       "claim_id": "mondaycom-mcp",
       "claim": "The official monday.com MCP server is github.com/mondaycom/mcp, published to npm as @mondaydotcomorg/monday-api-mcp, latest version 3.3.0.",
-      "source_url": "https://registry.npmjs.org/@mondaydotcomorg/monday-api-mcp/latest",
-      "raw_snippet": "3.3.0",
+      "source_url": "https://raw.githubusercontent.com/mondaycom/mcp/master/packages/monday-api-mcp/package.json",
+      "raw_snippet": "\"name\": \"@mondaydotcomorg/monday-api-mcp\",\n  \"version\": \"3.3.0\",\n  \"description\": \"MCP server for using the monday.com API\",",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
@@ -290,10 +312,21 @@
       ]
     },
     {
-      "claim_id": "pesach-2026-israel",
-      "claim": "In Israel, Pesach 2026 has Yom Tov on 2 April and 8 April with chol hamoed 3-7 April; 9 April is a regular workday (the second Yom Tov is Diaspora-only).",
-      "source_url": "https://www.hebcal.com/holidays/pesach-2026?i=on",
-      "raw_snippet": "Pesach",
+      "claim_id": "pesach-2026-israel-a",
+      "claim": "In Israel, the first day of Pesach 2026 (Pesach I, yom tov) falls on 2 April 2026.",
+      "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2026&month=4&maj=on&i=on",
+      "raw_snippet": "{\"title\":\"Pesach I\",\"date\":\"2026-04-02\",\"hdate\":\"15 Nisan 5786\",\"category\":\"holiday\",\"subcat\":\"major\",\"yomtov\":true",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pesach-2026-israel-b",
+      "claim": "In Israel, the final yom tov of Pesach 2026 (Pesach VII) falls on 8 April 2026, so 3-7 April are chol hamoed and 9 April is a regular workday.",
+      "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2026&month=4&maj=on&i=on",
+      "raw_snippet": "{\"title\":\"Pesach VII\",\"date\":\"2026-04-08\",\"hdate\":\"21 Nisan 5786\",\"category\":\"holiday\",\"subcat\":\"major\",\"yomtov\":true",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
