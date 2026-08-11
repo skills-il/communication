@@ -184,14 +184,16 @@
     },
     {
       "claim_id": "ref-cbs",
-      "claim": "Central Bureau of Statistics wage data",
-      "source_url": "https://www.cbs.gov.il",
-      "raw_snippet": "CBS",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "claim": "The Central Bureau of Statistics (https://www.cbs.gov.il) publishes Israeli wage data; its headline indicator is the average monthly wage (14,263 NIS for May 2026 as published on the CBS home page).",
+      "source_url": "https://www.cbs.gov.il/he/pages/default.aspx",
+      "raw_snippet": "שכר חודשי ממוצע 14,263 ש\"ח מאי 2026",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser-playwright",
+      "verified_at": "2026-08-11"
     },
     {
       "claim_id": "ref-btl-reserves",

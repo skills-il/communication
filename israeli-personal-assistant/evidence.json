@@ -88,24 +88,28 @@
       "claim_id": "reference-urls",
       "claim": "Resource/reference URLs cited in the skill and reference files for calendar and statistics lookups.",
       "source_url": "https://www.hebcal.com/home/195/jewish-calendar-rest-api",
-      "raw_snippet": "Reference URLs: https://www.boi.org.il https://www.cbs.gov.il https://www.hebcal.com https://www.hebcal.com/?i=on https://www.hebcal.com/converter https://www.hebcal.com/hebcal https://www.hebcal.com/home/195/jewish-calendar-rest-api",
-      "fetched_at": "2026-06-07T00:00:00Z",
+      "raw_snippet": "Reference URLs: https://www.boi.org.il https://www.cbs.gov.il https://www.hebcal.com https://www.hebcal.com/?i=on https://www.hebcal.com/converter https://www.hebcal.com/hebcal https://www.hebcal.com/home/195/jewish-calendar-rest-api https://www.gov.il/he/departments/israel_tax_authority",
+      "fetched_at": "2026-08-11T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "references/israeli-business-calendar.md",
         "scripts/morning-brief.py"
-      ]
+      ],
+      "verified_via": "url-inventory (the snippet is the list of links themselves, not text quoted from a page)",
+      "verified_at": "2026-08-11T00:00:00Z"
     },
     {
       "claim_id": "formatting-and-illustrative",
-      "claim": "Israeli formatting conventions and illustrative figures: currency written symbol-first (e.g. ₪1,234.56); Chol HaMoed and August slowdowns of roughly 30-50% and businesses at 50-70% capacity are illustrative estimates, not measured statistics; ID/business numbers are 9 digits; postcodes 7 digits.",
-      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "claim": "Israeli formatting conventions used by this skill, asserted by the skill itself and not sourced to any external page: currency written symbol-first (e.g. ₪1,234.56); ID and business numbers are 9 digits; postcodes are 7 digits. The Chol HaMoed and August slowdown figures of roughly 30-50% and 50-70% capacity are explicitly labelled in the skill as illustrative rules of thumb, not measured statistics.",
+      "source_url": "self-asserted (skill convention, no external source)",
       "raw_snippet": "Illustrative: currency format ₪1,234.56 (symbol before amount); response-rate slowdowns of 30-50% during Chol HaMoed and businesses at 50-70% capacity in August are rules-of-thumb, not statistics.",
-      "fetched_at": "2026-06-07T00:00:00Z",
+      "fetched_at": "2026-08-11T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "url-inventory (the snippet is the list of links themselves, not text quoted from a page)",
+      "verified_at": "2026-08-11T00:00:00Z"
     },
     {
       "claim_id": "btl-payment-dates-page",
