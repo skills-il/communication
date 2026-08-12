@@ -393,6 +393,32 @@
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "2g3g-first-stage-only",
+      "claim": "Only the FIRST stage of the 2G/3G wind-down is complete: the first-GHz bands were vacated on 1 February 2026 for 4G/5G use, and the legacy networks continue to operate in reduced form on other frequencies.",
+      "source_url": "https://www.gov.il/he/pages/10022026",
+      "raw_snippet": "תדרי הג'יגה הראשון ששימשו את רשתות הדור השני והשלישי (2G/3G) פונו ביום 1.2.2026 לטובת שימוש ברשתות המתקדמות של הדור הרביעי והחמישי (4G/5G). הרשתות הישנות ממשיכות לפעול בינתיים במתכונת מצומצמת יותר",
+      "fetched_at": "2026-08-12",
+      "verified_via": "gov.il content API",
+      "verified_at": "2026-08-12",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "emergency-dialling-until-2028",
+      "claim": "Dialling the emergency centres (100, 101, 102) from old handsets remains available until the end of 2028, and the Ministry of Communications intends to require infrastructure owners to operate a dedicated 2G network for emergency calls until then.",
+      "source_url": "https://www.gov.il/he/pages/10022026",
+      "raw_snippet": "כדי לשמור על בטיחות האזרחים, האפשרות לחייג למוקדי החירום (100, 101, 102) מהמכשירים הישנים תישאר זמינה עד סוף שנת 2028.",
+      "fetched_at": "2026-08-12",
+      "verified_via": "gov.il content API",
+      "verified_at": "2026-08-12",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
