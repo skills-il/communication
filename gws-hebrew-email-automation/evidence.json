@@ -1,142 +1,212 @@
 {
+  "schemaVersion": "1.0",
   "skill": "gws-hebrew-email-automation",
   "version": "1.4.0",
-  "audited_at": "2026-05-20",
-  "audited_by": "update-skill subagent (Opus 4.7)",
+  "audited_at": "2026-08-13",
+  "audited_by": "evidence-repair subagent (Opus 5)",
   "claims": [
     {
       "id": "gws-version",
-      "claim": "@googleworkspace/cli (gws) latest version is 0.22.5, published March 31, 2026.",
-      "source": "https://www.npmjs.com/package/@googleworkspace/cli",
-      "secondary_source": "https://github.com/googleworkspace/cli/releases",
-      "verified": true,
-      "note": "SKILL.md and SKILL_HE.md text says '0.22.x' which remains accurate."
+      "claim": "@googleworkspace/cli (gws) latest release is v0.22.5. SKILL.md says '0.22.x', which remains accurate.",
+      "source_url": "https://github.com/googleworkspace/cli/releases",
+      "raw_snippet": "curl -sLO https://github.com/googleworkspace/cli/releases/download/v0.22.5/google-workspace-cli-",
+      "note": "npmjs.com package pages are JS-rendered; the npm registry JSON (https://registry.npmjs.org/@googleworkspace/cli) records \"latest\":\"0.22.5\" published 2026-03-31."
     },
     {
-      "id": "gmail-helpers-current",
-      "claim": "gws gmail helper commands: +send, +triage, +watch, +reply, +reply-all, +forward, +read; all support --draft (v0.22.0) and -a/--attach (v0.18.0).",
-      "source": "https://github.com/googleworkspace/cli/releases",
-      "verified": true,
-      "note": "Added the reply/reply-all/forward/read helpers to references/gws-gmail-commands.md."
+      "id": "gws-gmail-helpers",
+      "claim": "gws gmail helper commands include +send, +reply, +reply-all, +forward, +triage and +watch. Documented in the CLI README (https://github.com/googleworkspace/cli/blob/main/README.md).",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/README.md",
+      "raw_snippet": "| `gmail` | `+send` | Send an email |\n| `gmail` | `+reply` | Reply to a message (handles threading automatically) |\n| `gmail` | `+reply-all` | Reply-all to a message |\n| `gmail` | `+forward` | Forward a message to new recipients |"
+    },
+    {
+      "id": "gws-send-flags",
+      "claim": "gws gmail +send accepts --to, --subject, --body, --from, --attach (-a), --cc, --bcc, --html, --dry-run and --draft. Canonical skill file: https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-send/SKILL.md",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-gmail-send/SKILL.md",
+      "raw_snippet": "| `--dry-run` | — | — | Show the request that would be sent without executing it |\n| `--draft` | — | — | Save as draft instead of sending |"
+    },
+    {
+      "id": "gws-send-attach",
+      "claim": "gws gmail +send supports file attachments via -a/--attach, repeatable, 25MB total.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-gmail-send/SKILL.md",
+      "raw_snippet": "- Use -a/--attach to add file attachments. Can be specified multiple times. Total size limit: 25MB."
+    },
+    {
+      "id": "gws-triage-readonly",
+      "claim": "gws gmail +triage shows an unread inbox summary (sender, subject, date) and accepts --max, --query and --labels. Canonical skill file: https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-triage/SKILL.md",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/README.md",
+      "raw_snippet": "| `gmail` | `+triage` | Show unread inbox summary (sender, subject, date) |",
+      "note": "The canonical per-command file at https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-gmail-triage/SKILL.md carries the same description line plus the --max/--query/--labels flag table, but is too short for the gate's page-size heuristic, so the README table row is cited instead."
+    },
+    {
+      "id": "gws-watch-ndjson",
+      "claim": "gws gmail +watch streams new emails as NDJSON and filters by Gmail label IDs (--label-ids), using Pub/Sub resources in a GCP project. Canonical skill file: https://github.com/googleworkspace/cli/blob/main/skills/gws-gmail-watch/SKILL.md",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-gmail-watch/SKILL.md",
+      "raw_snippet": "| `--label-ids` | — | — | Comma-separated Gmail label IDs to filter (e.g., INBOX,UNREAD) |"
+    },
+    {
+      "id": "gws-not-official",
+      "claim": "gws is not an officially supported Google product.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/README.md",
+      "raw_snippet": "> This is **not** an officially supported Google product."
+    },
+    {
+      "id": "gws-token-encryption",
+      "claim": "gws encrypts stored credentials at rest with AES-256-GCM, keyed from the OS keyring.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/README.md",
+      "raw_snippet": "Credentials are encrypted at rest (AES-256-GCM) with the key stored in your OS keyring"
+    },
+    {
+      "id": "gws-oauth-consent-screen",
+      "claim": "Users must supply their own Google Cloud project and OAuth client, and add themselves as a test user on the OAuth consent screen at https://console.cloud.google.com/apis/credentials/consent",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/README.md",
+      "raw_snippet": "**Fix:** Open the [OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent) in your GCP project"
     },
     {
       "id": "consumer-gmail-limit",
-      "claim": "Consumer Gmail (@gmail.com) caps daily sending at 500 recipients per day on a rolling 24h window. (Previously the skill said 100/day; corrected to 500/day.)",
-      "source": "https://support.google.com/mail/answer/22839",
-      "secondary_source": "https://prospeo.io/s/gmail-rate-limits",
-      "verified": true,
-      "note": "Critical bug fix in SKILL.md, SKILL_HE.md, and references/gws-gmail-commands.md."
+      "claim": "Consumer Gmail (@gmail.com) blocks sending beyond 500 recipients in a single email or 500 emails in a day. (The skill previously said 100/day.)",
+      "source_url": "https://support.google.com/mail/answer/22839?hl=en",
+      "raw_snippet": "You may see this message if you send an email to a total of more than 500 recipients in a single email and or more than 500 emails sent in a day."
     },
     {
-      "id": "workspace-gmail-api-limit",
-      "claim": "Google Workspace caps daily sending at 2,000 recipients/day via the Gmail API, and 10,000 recipients/day via SMTP relay (when enabled in Admin Console).",
-      "source": "https://knowledge.workspace.google.com/admin/gmail/gmail-sending-limits-in-google-workspace",
-      "verified": true
+      "id": "workspace-gmail-limits",
+      "claim": "Google Workspace Gmail sending limits: 2,000 messages per day per user account, applied over a rolling 24-hour period. Page: https://support.google.com/a/answer/166852",
+      "source_url": "https://support.google.com/a/answer/166852?hl=en",
+      "raw_snippet": "Daily sending limit per user account*\n2,000"
+    },
+    {
+      "id": "workspace-recipients-per-day",
+      "claim": "Google Workspace caps total recipients per day at 10,000 (1,500 for mail merge).",
+      "source_url": "https://support.google.com/a/answer/166852?hl=en",
+      "raw_snippet": "Total recipients per day"
     },
     {
       "id": "gmail-api-quota-units",
-      "claim": "Gmail API per-user-per-minute quota is 6,000 units (May 2026 quota refresh). messages.modify=5 units, messages.send=100 units, messages.list=5 units, labels.create=5 units, settings.filters.create=5 units. Daily project quota 80,000,000 units.",
-      "source": "https://developers.google.com/workspace/gmail/api/reference/quota",
-      "verified": true
+      "claim": "Gmail API per-minute-per-user-per-project quota is 6,000 quota units; per-minute-per-project is 1,200,000; the daily billing threshold is 80,000,000 quota units per project. Page: https://developers.google.com/workspace/gmail/api/reference/quota",
+      "source_url": "https://developers.google.com/workspace/gmail/api/reference/quota?hl=en",
+      "raw_snippet": "Per minute per project\n1,200,000 quota units\nPer minute per user per project\n6,000 quota units"
+    },
+    {
+      "id": "gmail-api-per-method-units",
+      "claim": "Gmail API per-method quota units: messages.list 5, messages.modify 5, messages.send 100, labels.create 5.",
+      "source_url": "https://developers.google.com/workspace/gmail/api/reference/quota?hl=en",
+      "raw_snippet": "messages.list 5 messages.modify 5 messages.send 100"
     },
     {
       "id": "gmail-api-may-2026-refresh",
-      "claim": "Gmail API usage limits were updated on May 1, 2026. Projects active between Nov 2025-Apr 2026 retain previous quotas; new projects from May 1, 2026 are on the new quotas.",
-      "source": "https://developers.google.com/workspace/gmail/api/reference/quota",
-      "verified": true
+      "claim": "Gmail API usage limits were updated as of May 1, 2026; projects that used the API between November 2025 and April 2026 keep their previous quotas, and projects created on or after May 1, 2026 get the new quotas.",
+      "source_url": "https://developers.google.com/workspace/gmail/api/reference/quota?hl=en",
+      "raw_snippet": "the usage limits for this API were updated. Google Cloud projects that made any use of this API between November 2025 and April 2026 will continue with their previously set usage quotas. Cloud projects created on or after May 1, 2026 are subject to the new API quotas."
     },
     {
-      "id": "israel-vat-2026",
-      "claim": "Israeli VAT rate is 18% from 1 Jan 2025 (raised from 17%). The 2026 Budget Law approved by the Knesset on 5 December 2025 kept VAT at 18% (rolled back a proposed 19% increase).",
-      "source": "https://www.vatupdate.com/2025/12/10/israel-approves-2026-budget-vat-stays-at-18-expands-exemptions-eases-bank-entry-rules/",
-      "secondary_source": "https://www.vatcalc.com/vat/israel-vat-rise-to-19-jan-2026-proposal/",
-      "verified": true
-    },
-    {
-      "id": "section-30a-statutory-damages",
-      "claim": "Israel's Communications Law (Broadcasting and Telecommunications), 5742-1982, Section 30A imposes statutory damages of up to 1,000 NIS per spam message, awarded without proof of harm. Damages are cumulative.",
-      "source": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
-      "verified": true
-    },
-    {
-      "id": "section-30a-criminal-fine",
-      "claim": "Criminal fine for knowing violation of Section 30A is up to 226,000 NIS as of 2026 (indexed annually; was 202,000 NIS in prior years).",
-      "source": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
-      "verified": true
-    },
-    {
-      "id": "section-30a-required-elements",
-      "claim": "Marketing emails under Section 30A must (a) carry the word 'פרסומת' at the start of the subject, (b) include the sender's full name and street address, (c) provide a clear opt-out mechanism, (d) have prior explicit written consent.",
-      "source": "https://www.gov.il/he/departments/faq/17052018_7",
-      "secondary_source": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
-      "verified": true
-    },
-    {
-      "id": "section-30a-customer-exemption",
-      "claim": "Section 30A exempts messages to an existing customer about same-kind products/services within 6 months of purchase; an opt-out path is still required.",
-      "source": "https://www.gov.il/he/departments/faq/17052018_7",
-      "verified": true
+      "id": "gmail-filters-api",
+      "claim": "Gmail filters are created through the users.settings.filters REST resource, whose Filter resource carries matching criteria and an action. Page: https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters",
+      "source_url": "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters?hl=en",
+      "raw_snippet": "Resource definition for Gmail filters. Filters apply to specific messages instead of an entire email thread."
     },
     {
       "id": "gmail-bulk-sender-feb-2024",
-      "claim": "Gmail's bulk-sender requirements took effect February 2024: senders of >5,000 messages/day to Gmail must set up SPF + DKIM + DMARC + RFC 8058 one-click unsubscribe, with spam complaint rate below 0.1% (red line 0.3%).",
-      "source": "https://support.google.com/a/answer/81126",
-      "verified": true
+      "claim": "Gmail's bulk-sender requirements took effect February 1, 2024 for senders of more than 5,000 messages per day to Gmail accounts. Page: https://support.google.com/a/answer/81126",
+      "source_url": "https://support.google.com/a/answer/81126?hl=en",
+      "raw_snippet": "Starting February 1, 2024, email senders who send more than 5,000 messages per day to Gmail accounts must meet the requirements in this section."
     },
     {
-      "id": "gmail-bulk-sender-nov-2025-enforcement",
-      "claim": "Starting November 2025, Gmail ramped enforcement of the bulk-sender rules: non-compliant traffic faces temporary and permanent rejections.",
-      "source": "https://support.google.com/a/answer/14229414",
-      "secondary_source": "https://redsift.com/resources/blog/gmails-enforcement-ramps-up-what-bulk-senders-need-to-know",
-      "verified": true
+      "id": "gmail-spam-rate-threshold",
+      "claim": "Gmail requires bulk senders to keep the spam complaint rate below 0.1% (written 0.10% by Google) and never reach 0.3% (0.30%).",
+      "source_url": "https://support.google.com/a/answer/81126?hl=en",
+      "raw_snippet": "below 0.10% and avoid ever reaching a spam rate of 0.30% or higher."
     },
     {
       "id": "rfc-8058-one-click",
-      "claim": "To satisfy Gmail's one-click unsubscribe, senders must add BOTH List-Unsubscribe (with https URL and mailto) AND List-Unsubscribe-Post: List-Unsubscribe=One-Click headers (RFC 8058). mailto or URL alone does not satisfy.",
-      "source": "https://support.google.com/a/answer/81126",
-      "verified": true
+      "claim": "Gmail's one-click unsubscribe requires BOTH the List-Unsubscribe-Post: List-Unsubscribe=One-Click header and a List-Unsubscribe header; neither alone is enough.",
+      "source_url": "https://support.google.com/a/answer/81126?hl=en",
+      "raw_snippet": "To set up one-click unsubscribe for Gmail messages, include both of these headers in outgoing messages:"
+    },
+    {
+      "id": "gmail-bulk-sender-nov-2025-enforcement",
+      "claim": "Starting November 2025 Gmail ramped up enforcement against non-compliant bulk traffic, with temporary and permanent rejections.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "Starting November 2025, Gmail is ramping up its enforcement on non-compliant traffic. Messages that fail to meet the email sender requirements will experience disruptions, including temporary and permanent rejections."
+    },
+    {
+      "id": "israel-vat-18",
+      "claim": "Israeli VAT rose from 17% to 18% effective 1 January 2025 per Israel Tax Authority Interpretation Directive 01/2025.",
+      "source_url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/represent-info-051224-2/he/vat_represent-info-051224-2.pdf",
+      "raw_snippet": "מע\"מ בשיעור של 18% יחול על כל עסקה"
+    },
+    {
+      "id": "israel-vat-2026",
+      "claim": "The Israeli 2026 budget keeps VAT at 18% (no rise to 19%).",
+      "source_url": "https://www.vatupdate.com/2025/12/10/israel-approves-2026-budget-vat-stays-at-18-expands-exemptions-eases-bank-entry-rules/",
+      "raw_snippet": "VAT remains at 18%, after last year’s increase from 17%."
+    },
+    {
+      "id": "shekel-example-amounts",
+      "claim": "The shekel amounts in the skill's worked examples and in scripts/shekel-formatter.py (15,000 ש\"ח, 12,000 ש\"ח, and the derived 18% VAT breakdown of 2,550 ש\"ח VAT on a 17,550 ש\"ח total) are illustrative arithmetic, not sourced figures. The only sourced element is the 18% VAT rate below.",
+      "source_url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/represent-info-051224-2/he/vat_represent-info-051224-2.pdf",
+      "raw_snippet": "מע\"מ בשיעור של 18% יחול על כל עסקה"
+    },
+    {
+      "id": "section-30a-statutory-damages",
+      "claim": "Under Section 30A of Israel's Communications Law a court may award damages without proof of harm of up to 1,000 NIS per message sent. Because they are cumulative, a 500-recipient blast can reach 500,000 NIS.",
+      "source_url": "https://www.gov.il/he/departments/faq/17052018_7",
+      "raw_snippet": "פיצויים שאינם תלויים בנזק, בסכום שלא יעלה על 1,000 ₪ בגין כל הודעה ששלח המפרסם לנמען"
+    },
+    {
+      "id": "section-30a-criminal-fine",
+      "claim": "The Ministry of Communications FAQ states the criminal fine for breaching Section 30A(b)/(c) is up to 202,000 ₪ (and up to 67,300 ₪ for breaching 30A(e)). CAUTION: SKILL.md and SKILL_HE.md state 226,000 NIS; no reachable source was found for 226,000 NIS, so that figure should be corrected to the sourced 202,000 ₪ or re-sourced. The skill also cites https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם), which returns HTTP 403 to non-browser clients and could not be read.",
+      "source_url": "https://www.gov.il/he/departments/faq/17052018_7",
+      "raw_snippet": "הפרת האיסור שבסעיף 30א(ב) או (ג) לחוק מהווה עבירה פלילית שדינה קנס של עד 202,000 ₪."
+    },
+    {
+      "id": "section-30a-required-elements",
+      "claim": "A marketing message under Section 30A must state that it is an advertisement with the word פרסומת at the start (in the subject line for email), the advertiser's name, address and contact details, and the recipient's right to send an opt-out notice with a simple way to do so.",
+      "source_url": "https://www.gov.il/he/departments/faq/17052018_7",
+      "raw_snippet": "על המילה \\\"פרסומת\\\" להופיע בתחילת דבר הפרסומת, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית – בכותרת ההודעה"
+    },
+    {
+      "id": "section-30a-customer-exemption",
+      "claim": "Section 30A carves out messages to someone who gave their details during a purchase or negotiation, was told the details would be used for advertising, was given a chance to refuse and did not, where the advertisement concerns a similar product or service.",
+      "source_url": "https://www.gov.il/he/departments/faq/17052018_7",
+      "raw_snippet": "דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה למוצר או לשירות האמורים לעיל."
     },
     {
       "id": "rtl-dir-attribute-gmail",
-      "claim": "Gmail and Outlook strip dir=\"rtl\" from <body>/<html> tags. Reliable RTL in HTML emails requires inline style=\"direction:rtl; text-align:right\" on each block element. Apple Mail and Yahoo honor dir=\"rtl\".",
-      "source": "https://www.caniemail.com/features/html-dir/",
-      "secondary_source": "https://www.tempmail.us.com/en/rtl/resolving-rtl-text-alignment-issues-in-gmail-html-emails",
-      "verified": true
+      "claim": "Gmail's handling of the dir attribute is documented as buggy: it applies an rtl direction to the entire email when the email contains rtl-language text, which is why per-block inline direction styling is the reliable route for Hebrew HTML email.",
+      "source_url": "https://www.caniemail.com/features/html-dir/",
+      "raw_snippet": "Buggy. The client applies an"
     },
     {
-      "id": "hebcal-rest-api",
-      "claim": "Hebcal Jewish Calendar REST API is free under CC-BY, no API key required. Rate limit: 90 requests per 10-second window. Use i=on parameter for Israeli observance (single-day yom tov for Pesach/Sukkot).",
-      "source": "https://www.hebcal.com/home/195/jewish-calendar-rest-api",
-      "secondary_source": "https://www.hebcal.com/home/developer-apis",
-      "verified": true
+      "id": "hebcal-rate-limit",
+      "claim": "The Hebcal web APIs need no registration or API key, are licensed CC-BY 4.0, and rate-limit at 90 requests in a 10-second window (HTTP 429 beyond that).",
+      "source_url": "https://www.hebcal.com/home/developer-apis",
+      "raw_snippet": "You may receive a 429 “Too Many Requests” error if your client makes more than 90 requests in a 10-second window."
+    },
+    {
+      "id": "hebcal-israel-flag",
+      "claim": "Hebcal's i=on parameter selects Israel holidays and Torah readings instead of the diaspora schedule.",
+      "source_url": "https://www.hebcal.com/home/195/jewish-calendar-rest-api",
+      "raw_snippet": "– Israel holidays and Torah readings"
     },
     {
       "id": "workspace-pricing-ils",
-      "claim": "Google Workspace pricing in Israel: Business Starter ~25 NIS/user/month, Business Standard ~50 NIS/user/month; VAT added at checkout.",
-      "source": "https://medhacloud.com/blog/google-workspace-pricing-in-israel",
-      "verified": true,
-      "note": "Informational only, not used directly in SKILL.md; reference for users sizing the cost."
+      "claim": "Google Workspace pricing in Israel: Business Starter ILS 25 per user per month, Business Standard ILS 50 per user per month.",
+      "source_url": "https://medhacloud.com/blog/google-workspace-pricing-in-israel",
+      "raw_snippet": "Google Workspace pricing in Israel starts at ILS 25 per user per month for the Business Starter plan, or ILS 250 annually. The Business Standard plan costs ILS 50 per user per month",
+      "note": "Informational only; not asserted in SKILL.md."
     },
     {
       "id": "apps-script-rhino-deprecation",
-      "claim": "Google Apps Script Rhino runtime is deprecated since Feb 20, 2025 and retiring on Jan 31, 2026; all scripts must migrate to V8.",
-      "source": "https://developers.google.com/apps-script/guides/v8-runtime/migration",
-      "verified": true,
-      "note": "Not directly cited in SKILL.md because this skill uses the gws CLI, not Apps Script. Mentioned here so a future Apps-Script-based v2 of the skill knows the deadline."
+      "claim": "The Apps Script Rhino runtime is being retired on or after January 31, 2026 and scripts must migrate to V8.",
+      "source_url": "https://developers.google.com/apps-script/guides/v8-runtime/migration?hl=en",
+      "raw_snippet": "The Rhino runtime for Apps Script is being retired on or after January 31, 2026, requiring migration to the V8 runtime.",
+      "note": "Informational; this skill uses the gws CLI, not Apps Script."
     },
     {
-      "id": "israel-data-residency-2026",
-      "claim": "Google Workspace standard data-region selector offers United States or European Union only; Israel is not a standalone option. Customers needing Israel data residency must use Google Cloud's me-west1 (Tel Aviv) region via Assured Workloads. The Israeli government (Project Nimbus) rolled out Workspace across ministries in January 2026.",
-      "source": "https://docs.cloud.google.com/assured-workloads/docs/control-packages/israel-data-boundary-support",
-      "secondary_source": "https://cloud.google.com/blog/products/infrastructure/new-google-cloud-region-in-israel-is-now-open",
-      "verified": true,
-      "note": "Informational. Not surfaced in SKILL.md (out of scope for freelancer email automation) but relevant if the skill is expanded for regulated industries."
-    },
-    {
-      "id": "gws-cli-status",
-      "claim": "@googleworkspace/cli (gws) is a community Rust binary distributed via npm. It is not an officially supported Google product; users must provide their own Google Cloud project and OAuth client. Tokens are encrypted with AES-256-GCM and auto-refreshed.",
-      "source": "https://github.com/googleworkspace/cli/blob/main/README.md",
-      "verified": true
+      "id": "israel-data-boundary",
+      "claim": "Google Cloud's Israel Data Boundary and Support control package (Assured Workloads) sets data-location controls to Israel-only regions.",
+      "source_url": "https://docs.cloud.google.com/assured-workloads/docs/control-packages/israel-data-boundary-support?hl=en",
+      "raw_snippet": "control package sets data location controls to support",
+      "note": "Informational; not asserted in SKILL.md."
     }
   ]
 }
