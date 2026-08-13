@@ -40,14 +40,16 @@
     {
       "claim_id": "pension-rates-mandatory",
       "claim": "Mandatory pension in Israel: employee 6%, employer 6.5%",
-      "source_url": "https://www.kolzchut.org.il/he/פנסיה_חובה",
-      "raw_snippet": "פנסיה חובה: עובד 6%, מעסיק 6.5%",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "שיעור ההפרשות הוא 18.5% מהשכר, מתוכם 6% על חשבון העובד והיתר (12.5%) על חשבון המעסיק (6.5% הפרשות מעסיק לרכיב תגמולים ו-6% הפרשות מעסיק לרכיב פיצויים).",
+      "fetched_at": "2026-08-13",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/salary_calculator.py"
-      ]
+      ],
+      "verified_via": "browser-playwright (same-origin fetch)",
+      "verified_at": "2026-08-13"
     },
     {
       "claim_id": "keren-hishtalmut-rates",
