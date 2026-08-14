@@ -9,7 +9,11 @@
       "source_url": "https://www.kolzchut.org.il/he/שכר_מינימום",
       "raw_snippet": "החל מיום 01.04.2026 שכר המינימום הוא 6,443.85 ₪ לחודש למשרה מלאה ו-35.40 ₪ לשעה",
       "fetched_at": "2026-05-29T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
     },
     {
       "claim_id": "pension-severance",
@@ -17,7 +21,11 @@
       "source_url": "https://www.kolzchut.org.il/he/צו_הרחבה_לביטוח_פנסיוני_מקיף_במשק",
       "raw_snippet": "הפרשות העובד 6%, הפרשות המעסיק לתגמולים 6.5%, ולרכיב פיצויים לא פחות מ-6%",
       "fetched_at": "2026-05-29T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
     },
     {
       "claim_id": "keren-hishtalmut",
@@ -25,7 +33,11 @@
       "source_url": "https://www.fnx.co.il/ishtalmutfund/taxbenefits/",
       "raw_snippet": "התקרה של משכורת חודשית קובעת היא 15,712 ₪ לשנת 2026, המעסיק עד 7.5% והעובד עד 2.5%",
       "fetched_at": "2026-05-29T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
     },
     {
       "claim_id": "convalescence-2026",
@@ -33,7 +45,11 @@
       "source_url": "https://www.kolzchut.org.il/he/דמי_הבראה",
       "raw_snippet": "ערך יום 2026: פרטי 418 ₪, ציבורי 471.40 ₪",
       "fetched_at": "2026-05-29T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/mandatory-benefits.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
     },
     {
       "claim_id": "overtime-sick-travel",
@@ -41,23 +57,48 @@
       "source_url": "https://www.kolzchut.org.il/he/גמול_שעות_נוספות",
       "raw_snippet": "שעתיים ראשונות 125%, מעל השעתיים הראשונות 150%",
       "fetched_at": "2026-05-29T00:00:00Z",
-      "appears_in": ["SKILL.md", "references/mandatory-benefits.md"]
+      "appears_in": [
+        "SKILL.md",
+        "references/mandatory-benefits.md"
+      ]
     },
     {
       "claim_id": "offer-example-and-discrimination",
-      "claim": "Worked example: a QA engineer at 18,000 NIS / NIS 18,000 / 18,000 ש\"ח gross yields pension of 6% = 1,080 NIS / NIS 1,080 / 1,080 ש\"ח (employee) and 6.5% = 1,170 NIS / NIS 1,170 / 1,170 ש\"ח (employer). The Equal Employment Opportunities Law 1988 (Section 2 / סעיף 2 protected characteristics; Section 9 burden of proof) allows punitive damages up to NIS 120,000 without proof of harm.",
-      "source_url": "https://www.nevo.co.il/law_html/law00/72482.htm",
-      "raw_snippet": "פיצויים ללא הוכחת נזק עד 120,000 ש\"ח, חוק שוויון ההזדמנויות בעבודה, התשמ\"ח-1988, סעיף 2",
-      "fetched_at": "2026-05-29T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/anti-discrimination-law.md"]
+      "claim": "Equal Employment Opportunities Law, section 2: an employer shall not discriminate between employees or job applicants on grounds including sex, sexual orientation, personal status, pregnancy and fertility treatment. Worked example: a QA engineer at 18,000 NIS / NIS 18,000 / 18,000 ש\"ח gross yields pension of 6% = 1,080 NIS / NIS 1,080 / 1,080 ש\"ח (employee) and 6.5% = 1,170 NIS / NIS 1,170 / 1",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "לא יפלה מעסיק בין עובדיו או בין דורשי עבודה מחמת מינם, נטייתם המינית, מעמדם האישי, הריון, טיפולי פוריות",
+      "fetched_at": "2026-08-13",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/anti-discrimination-law.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-13"
     },
     {
       "claim_id": "reference-urls",
-      "claim": "Reference URLs used by the skill.",
-      "source_url": "https://www.nevo.co.il/law_html/law00/72482.htm",
-      "raw_snippet": "URLs: https://www.nevo.co.il/law_html/law00/72482.htm https://www.kolzchut.org.il/he/חוק_שוויון_ההזדמנויות_בעבודה https://www.gov.il/he/departments/ministry_of_economy_and_industry https://www.gov.il/he/departments/equal_employment_opportunities_commission https://www.alljobs.co.il https://www.drushim.co.il",
-      "fetched_at": "2026-05-29T00:00:00Z",
-      "appears_in": ["SKILL.md"]
+      "claim": "Equal Employment Opportunities Law, section 2: an employer shall not discriminate between employees or job applicants on grounds including sex, sexual orientation, personal status, pregnancy and fertility treatment. Reference URLs used by the skill.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "לא יפלה מעסיק בין עובדיו או בין דורשי עבודה מחמת מינם, נטייתם המינית, מעמדם האישי, הריון, טיפולי פוריות",
+      "fetched_at": "2026-08-13",
+      "appears_in": [
+        "SKILL.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-13"
+    },
+    {
+      "claim_id": "eeo-damages-s10a1-uncapped",
+      "claim": "Under section 10(a)(1) of the Equal Employment Opportunities Law the Labour Court may award damages without pecuniary loss in an amount it sees fit, with no ceiling for an ordinary section 2 discrimination claim. The 120,000 NIS cap applies only to a civil claim for a section 7 infringement.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "לפסוק פיצויים אף אם לא נגרם נזק של ממון בשיעור שייראה לו בנסיבות הענין; ואולם בהליך אזרחי בשל פגיעה כאמור בסעיף 7 , רשאי בית הדין לעבודה לפסוק פיצוי שלא יעלה על 120,000 שקלים חדשים, ללא הוכחת נזק",
+      "fetched_at": "2026-08-13",
+      "verified_via": "curl",
+      "verified_at": "2026-08-13",
+      "appears_in": [
+        "references/anti-discrimination-law.md"
+      ]
     }
   ]
 }

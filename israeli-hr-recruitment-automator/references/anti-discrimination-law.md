@@ -67,7 +67,7 @@ Under Section 9, if an employee establishes a prima facie case of discrimination
 
 **Penalties:**
 - Compensatory damages (pitzuim): No cap on actual damages
-- Punitive damages (pitzuim le'lo hocahat nezek): Up to NIS 120,000 without proof of actual damage (as of 2025 rates, adjusted periodically)
+- Damages without proof of loss (pitzuim le'lo hochachat nezek): under section 10(a)(1) the Labour Court may award damages even where no pecuniary loss was caused, **in an amount it sees fit** ("בשיעור שייראה לו"). There is NO statutory ceiling for an ordinary discrimination claim under section 2. The NIS 120,000 cap applies only to a civil claim for a section 7 infringement (retaliation/victimisation): "ואולם בהליך אזרחי בשל פגיעה כאמור בסעיף 7, רשאי בית הדין לעבודה לפסוק פיצוי שלא יעלה על 120,000 שקלים חדשים, ללא הוכחת נזק". Quoting 120,000 as the discrimination ceiling understates an employer's exposure.
 - Criminal penalties: In cases of willful and repeated discrimination
 - Injunctive relief: Court orders to cease discriminatory practices
 

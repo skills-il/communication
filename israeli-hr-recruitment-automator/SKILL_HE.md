@@ -276,7 +276,7 @@ python scripts/job-description-generator.py --validate --input job_description.t
 
 | מקור | כתובת | מה לבדוק |
 |------|-------|----------|
-| חוק שוויון ההזדמנויות בעבודה (נבו) | https://www.nevo.co.il/law_html/law00/72482.htm | טקסט מלא של החוק עם כל התיקונים עד 2025 |
+| חוק שוויון ההזדמנויות בעבודה (נבו) | https://he.wikisource.org/wiki/חוק_שוויון_ההזדמנויות_בעבודה | טקסט מלא של החוק עם כל התיקונים עד 2025 |
 | כל זכות, חובות מעסיק | https://www.kolzchut.org.il/he/חוק_שוויון_ההזדמנויות_בעבודה | חובות המעסיק, הודעה לעובד על תנאי עבודה, תיקונים אחרונים |
 | משרד הכלכלה והתעשייה | https://www.gov.il/he/departments/ministry_of_economy_and_industry | שכר מינימום, זכויות חובה, שכר שווה |
 | נציבות שוויון הזדמנויות בעבודה | https://www.gov.il/he/departments/equal_employment_opportunities_commission | סטטיסטיקות תלונות, הנחיות, אכיפה |

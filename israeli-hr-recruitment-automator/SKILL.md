@@ -340,7 +340,7 @@ Result: Job posted on both platforms with tracking details.
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| Equal Employment Opportunities Law (Nevo) | https://www.nevo.co.il/law_html/law00/72482.htm | Full text of Law 1988 with all amendments through 2025 |
+| Equal Employment Opportunities Law (Nevo) | https://he.wikisource.org/wiki/חוק_שוויון_ההזדמנויות_בעבודה | Full text of Law 1988 with all amendments through 2025 |
 | Kol Zchut, hiring obligations | https://www.kolzchut.org.il/he/חוק_שוויון_ההזדמנויות_בעבודה | Employer duties, mandatory notice to employee, recent amendments |
 | Israel Ministry of Economy and Industry | https://www.gov.il/he/departments/ministry_of_economy_and_industry | Minimum wage, mandatory benefits, equal pay |
 | Israel Equal Employment Opportunities Commission | https://www.gov.il/he/departments/equal_employment_opportunities_commission | EEOC complaint statistics, guidance, enforcement |
