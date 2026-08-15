@@ -54,13 +54,15 @@
     {
       "claim_id": "overtime-sick-travel",
       "claim": "Overtime: 125% for the first 2 hours, 150% thereafter; Shabbat/holiday work 150%. Sick pay: day 1 unpaid, days 2-3 at 50%, day 4 onward 100%; accrual 1.5 days/month up to 90 days. Travel expenses about NIS 22.60 / 22.60 ש\"ח per day.",
-      "source_url": "https://www.kolzchut.org.il/he/גמול_שעות_נוספות",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%92%D7%9E%D7%95%D7%9C_%D7%A2%D7%91%D7%95%D7%A8_%D7%A9%D7%A2%D7%95%D7%AA_%D7%A0%D7%95%D7%A1%D7%A4%D7%95%D7%AA",
       "raw_snippet": "שעתיים ראשונות 125%, מעל השעתיים הראשונות 150%",
       "fetched_at": "2026-05-29T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "references/mandatory-benefits.md"
-      ]
+      ],
+      "verified_via": "Kol Zchut renamed this page; the cited title no longer exists; successor located via the Kol Zchut search API and existence-confirmed",
+      "verified_at": "2026-08-15"
     },
     {
       "claim_id": "offer-example-and-discrimination",
@@ -98,6 +100,97 @@
       "verified_at": "2026-08-13",
       "appears_in": [
         "references/anti-discrimination-law.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-section-2-grounds",
+      "claim": "Section 2(a) (סעיף 2) of the Equal Employment Opportunities Law lists the prohibited grounds of discrimination, including sex, sexual orientation, personal status, pregnancy, fertility treatment, parenthood, age, race, religion, nationality, country of origin, place of residence, outlook, party, and reserve service, across hiring, terms, promotion, training and dismissal.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/5016.htm",
+      "raw_snippet": "2. (א) לא יפלה מעסיק בין עובדיו או בין דורשי עבודה מחמת מינם, נטייתם המינית, מעמדם האישי, הריון, טיפולי פוריות, טיפולי הפריה חוץ-גופית, היותם הורים, גילם, גזעם, דתם, לאומיותם, ארץ מוצאם, מקום מגוריהם, השקפתם, מפלגתם או שירות במילואים שלהם, של בני זוגם או של הורהו האחר של ילדם, ובכלל זה קריאתם לשירות מילואים או השירות הצפוי בשירות מילואים, לרבות מחמת תדירותו או משכו, בכל אחד מאלה: (1) קבלה לעבודה; (2) תנאי עבודה; (3) קידום בעבו",
+      "fetched_at": "2026-08-15",
+      "verified_via": "Equal Employment Opportunities Law read directly on nevo (title confirmed)",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-section-9-burden",
+      "claim": "Section 9 (סעיף 9) places the burden of proof on the employer to show it did not act contrary to section 2, once the applicant or employee has shown they met the stated conditions, or in dismissal that there was no cause in their conduct.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/5016.htm",
+      "raw_snippet": "נטל ההוכחה 9. (א) בתובענה של דורש עבודה או של עובד בשל הפרת הוראות סעיף 2, תהא חובת ההוכחה על המעסיק כי פעל שלא בניגוד להוראות סעיף 2 – (1) לענין קבלה לעבודה, קידום בעבודה, תנאי עבודה, שליחה להכשרה או השתלמות מקצועית, או תשלום פיצויי פיטורים – אם קבע המעסיק לגביהם תנאים או כישורים, ודורש העבודה או ה",
+      "fetched_at": "2026-08-15",
+      "verified_via": "Equal Employment Opportunities Law read directly on nevo",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ref-link-equal-opportunities-unit",
+      "claim": "The Equal Employment Opportunities Commission unit page on gov.il, replacing a department URL that now 404s.",
+      "source_url": "https://www.gov.il/he/departments/units/equal-opportunities-at-work-unit",
+      "raw_snippet": "נציבות שוויון הזדמנויות בעבודה | משרד הכלכלה והתעשייה",
+      "fetched_at": "2026-08-15",
+      "verified_via": "playwright navigation (page load and title read)",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ref-link-ministry-of-economy",
+      "claim": "The Ministry of Economy and Industry page on gov.il; the previously cited ministry_of_economy_and_industry slug 404s.",
+      "source_url": "https://www.gov.il/he/departments/ministry_of_economy",
+      "raw_snippet": "משרד הכלכלה והתעשייה שירותים ומידע מדיניות ונהלים פרסומים חדשות חנות התשלומים מכרזים הוראות מנכ\"ל",
+      "fetched_at": "2026-08-15",
+      "verified_via": "playwright navigation (page load and title read)",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ref-link-alljobs",
+      "claim": "The page at https://www.alljobs.co.il is served under the title 'אתר הדרושים הגדול בישראל | חיפוש עבודה בחינם וגיוס עובדים :AllJobs'. Cited only as a navigational pointer, not as the source of any figure.",
+      "source_url": "https://www.alljobs.co.il",
+      "raw_snippet": "אתר הדרושים הגדול בישראל | חיפוש עבודה בחינם וגיוס עובדים :AllJobs",
+      "fetched_at": "2026-08-15",
+      "verified_via": "curl with a browser user agent",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ref-link-drushim",
+      "claim": "The page at https://www.drushim.co.il is served under the title 'דרושים IL- חיפוש עבודה בחינם, גיוס עובדים'. Cited only as a navigational pointer, not as the source of any figure.",
+      "source_url": "https://www.drushim.co.il",
+      "raw_snippet": "דרושים IL- חיפוש עבודה בחינם, גיוס עובדים",
+      "fetched_at": "2026-08-15",
+      "verified_via": "curl with a browser user agent",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ref-link-kolzchut-eeo-law",
+      "claim": "The page at https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94 is served under the title 'חוק שוויון ההזדמנויות בעבודה'. Cited only as a navigational pointer, not as the source of any figure.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "חוק שוויון ההזדמנויות בעבודה",
+      "fetched_at": "2026-08-15",
+      "verified_via": "Kol Zchut MediaWiki API existence check from inside a loaded page",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
       ]
     }
   ]
