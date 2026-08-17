@@ -91,7 +91,7 @@ When comparing cellular plans, evaluate these dimensions:
 6. **eSIM support** - Available from Partner, Cellcom, Pelephone, and HOT Mobile; activation is typically through the carrier's app
 7. **Contract terms** - Budget carriers (Golan, 012, Rami Levy) typically offer no-contract plans; major carriers may require 12-36 month commitments for subsidized devices
 8. **International roaming** - Compare roaming packages for frequent travelers; some plans include specific country bundles
-9. **Family discounts** - Multi-line plans from the same carrier often provide 10-30% discount per additional line
+9. **Family discounts** - Multi-line plans from the same carrier are usually cheaper per line than the same number of separate plans; get the per-line price in writing rather than the headline bundle price
 
 ### Step 6: Compare Internet Packages
 
@@ -144,7 +144,7 @@ If the user wants to switch cellular carriers while keeping their number:
 
 Help the user maximize savings:
 
-1. **Call the retention department (machlekat shimur)** - Existing customers can often get 20-40% discounts by threatening to leave; ask for "shimur lekokhot" (customer retention)
+1. **Call the retention department (machlekat shimur)** - Existing customers can often get a better rate by saying they intend to leave; ask for "shimur lekokhot" (customer retention). How much is on offer varies by carrier, tenure and the competing quote you can name, so bring one
 2. **Time purchases around holidays** - Major sales happen before Rosh Hashana, Passover, and Black Friday
 3. **Check employer/organization discounts** - Many Israeli employers, unions (histadrut), and organizations have group deals with carriers
 4. **Consider prepaid for low usage** - Light users are often better off on a prepaid or small-data plan from a budget operator than on an unlimited plan
@@ -221,7 +221,7 @@ Result: Recommend Partner, Cellcom, or Pelephone for 5G + eSIM. Check coverage m
 | Source | URL | What to Check |
 |--------|-----|---------------|
 | Ministry of Communications (משרד התקשורת) | https://www.gov.il/he/departments/ministry_of_communications | Official rules on number portability, complaints, 5G policy, 2G/3G shutdown announcements |
-| MoC consumer rights portal | https://www.gov.il/he/departments/topics/communication_consumer_rights | Consumer protection rules for telecom contracts and exit fees |
+| Consumer Protection Authority, telecom guidance | https://www.gov.il/he/pages/cpfta_consumers_communication | What a provider must disclose at the point of sale, and how to complain |
 | Partner | Operator's own site | Cellular plans, fiber, TV, 5G coverage map |
 | Cellcom | Operator's own site | Cellular plans, Cellcom Fiber, Cellcom TV, 5G coverage map |
 | Pelephone | Operator's own site | Cellular plans, 5G coverage map |
@@ -229,9 +229,8 @@ Result: Recommend Partner, Cellcom, or Pelephone for 5G + eSIM. Check coverage m
 | Bezeq | https://www.bezeq.co.il | Fiber/DSL home internet, address fiber checker |
 | Yes (satellite/IPTV) | https://www.yes.co.il | TV channel lineup, Yes+ streaming |
 | Golan Telecom (MVNO on Cellcom) | https://www.golantelecom.co.il | Low-cost no-contract plans |
-| Rami Levy Communications (MVNO on Pelephone) | https://www.rami-levy.co.il/he/communication | Budget cellular plans |
+| Rami Levy Communications (MVNO on Pelephone) | https://mobile.rami-levy.co.il/ | Budget cellular plans |
 | 019 Mobile (MVNO) | Operator's own site | International calling and budget cellular |
-| IBC (Israel Broadband Company) | https://www.ibc.co.il | Wholesale fiber availability map |
 | SmartCut comparison | https://www.smartcut.co.il | Crowd-sourced cellular plan comparisons and reviews |
 
 ## Troubleshooting

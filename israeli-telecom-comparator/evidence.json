@@ -258,39 +258,6 @@
       ]
     },
     {
-      "claim_id": "currencies-he-misc",
-      "claim": "Hebrew-formatted incidental currencies covering retention discounts, multiroom STB, prepaid plan pricing, family-line stacking",
-      "source_url": "https://www.smartcut.co.il",
-      "raw_snippet": "מחלקת שימור 20-40 ש\"ח (20 ש\"ח, 30 ש\"ח, 40 ש\"ח). prepaid 20-30 ש\"ח. multi-room 20-40 ש\"ח. NIS 6 (illustrative).",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "family-line-multiline-discount-10",
-      "claim": "Multi-line plans from the same carrier provide 10-30% discount per additional line; example: Rami Levy family discount of ~10% for 3+ lines",
-      "source_url": "https://www.rami-levy.co.il/he/communication",
-      "raw_snippet": "family discount 10% for 3+ lines",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "retention-discount-pct",
-      "claim": "Retention discounts 20-40% and family multi-line discounts 10-30% per additional line",
-      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
-      "raw_snippet": "shimur 20-40%, family 10-30%",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "ref-bezeq-check-address",
       "claim": "Bezeq fiber address checker",
       "source_url": "https://www.bezeq.co.il/internetandphone/internet/checkaddress/",
@@ -384,17 +351,6 @@
       ]
     },
     {
-      "claim_id": "retention-discount-20-40",
-      "claim": "Israeli telecom retention department (machlekat shimur) typically offers 20-40% discounts to existing customers threatening to leave",
-      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
-      "raw_snippet": "shimur lekokhot 20-40%",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "2g3g-first-stage-only",
       "claim": "Only the FIRST stage of the 2G/3G wind-down is complete: the first-GHz bands were vacated on 1 February 2026 for 4G/5G use, and the legacy networks continue to operate in reduced form on other frequencies.",
       "source_url": "https://www.gov.il/he/pages/10022026",
@@ -415,6 +371,32 @@
       "fetched_at": "2026-08-12",
       "verified_via": "gov.il content API",
       "verified_at": "2026-08-12",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "moc-consumer-telecom-guidance",
+      "claim": "הרשות להגנת הצרכן ולסחר הוגן מפרסמת מה חייב עוסק להציג בעסקת תקשורת. העמוד אינו נוקב בשיעורי הנחה כלשהם, ומכאן שהאחוזים שהופיעו בסקיל להנחות שימור ולהנחות משפחתיות הוסרו ולא הוחלפו במקור אחר.",
+      "source_url": "https://www.gov.il/he/pages/cpfta_consumers_communication",
+      "raw_snippet": "תחום התקשורת כולל בין היתר – שירותי טלפון נייד, שירותי טלפון נייח, שירותי אינטרנט כולל תשתית, שירותי כבלים ולווין.",
+      "verified_via": "gov.il consumer-protection page read in a browser; searched for שימור and found none",
+      "verified_at": "2026-08-17",
+      "fetched_at": "2026-08-17",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ref-rami-levy-mobile",
+      "claim": "דף התוכניות של רמי לוי תקשורת (MVNO על רשת פלאפון) ממחיש שחבילה מרובת קווים זולה יותר לקו: שישה קווים ב-99 ש\"ח מול 31.9 ש\"ח לחודש לקו בודד, נכון ל-17.8.2026. המחירים משתנים ולכן הם משמשים כאן להמחשת המבנה בלבד ואינם מצוטטים בגוף הסקיל.",
+      "source_url": "https://mobile.rami-levy.co.il/Home/Packages",
+      "raw_snippet": "6 קווים ב 99 ₪ 31.9 ₪ לחודש 5 קווים ב- 99 ₪ - קו שישי חינם!",
+      "verified_via": "Rami Levy packages page read in a browser; the plan grid renders client-side and is empty to curl",
+      "verified_at": "2026-08-17",
+      "fetched_at": "2026-08-17",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
