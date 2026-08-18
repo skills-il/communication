@@ -88,17 +88,17 @@
     },
     {
       "claim_id": "reference-urls",
-      "claim": "Resource/reference URLs cited in the skill and reference files for calendar and statistics lookups.",
+      "claim": "Resource/reference URLs cited in the skill and reference files for calendar and statistics lookups. Covers these references: https://www.boi.org.il https://www.cbs.gov.il https://www.hebcal.com https://www.hebcal.com/?i=on https://www.hebcal.com/converter https://www.hebcal.com/hebcal https://www.hebcal.com/home/195/jewish-calendar-rest-api https://www.gov.il/he/departments/israel_tax_authority",
       "source_url": "https://www.hebcal.com/home/195/jewish-calendar-rest-api",
-      "raw_snippet": "Reference URLs: https://www.boi.org.il https://www.cbs.gov.il https://www.hebcal.com https://www.hebcal.com/?i=on https://www.hebcal.com/converter https://www.hebcal.com/hebcal https://www.hebcal.com/home/195/jewish-calendar-rest-api https://www.gov.il/he/departments/israel_tax_authority",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "raw_snippet": "Jewish calendar REST API – Hebcal Skip to main content Holidays Date Converter Shabbat Torah Yahrzeit About Help Jewish calendar REST API Posted on 15 June 2015 - 8:05 am by mradwin Hebcal.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "references/israeli-business-calendar.md",
         "scripts/morning-brief.py"
       ],
-      "verified_via": "url-inventory (the snippet is the list of links themselves, not text quoted from a page)",
-      "verified_at": "2026-08-11T00:00:00Z"
+      "verified_via": "reference-coverage entry; snippet is a contiguous sentence from its source page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "formatting-and-illustrative",
