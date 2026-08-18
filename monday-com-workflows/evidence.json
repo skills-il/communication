@@ -69,7 +69,7 @@
       "claim_id": "monday-account-plan-null",
       "claim": "account.plan returns null for accounts on monday's multi-product infrastructure, so a verify step must not branch on plan; account.tier and account.products are the reliable fields.",
       "source_url": "https://developer.monday.com/api-reference/reference/account",
-      "raw_snippet": "logo String The account's logo. name String! The account's name. plan Plan The account's payment plan. Returns null for accounts with the multi-product infrastructure. products [AccountProduct] The account's active products. show_timeline_weekends Boolean! Returns true if weekends appear in the timeline. sign_up_product_kind String The product the account first signed up for. slug String! The account's slug. tier String The account's tier.",
+      "raw_snippet": "String The account's logo. name String! The account's name. plan Plan The account's payment plan. Returns null for accounts with the multi-product infrastructure. products [AccountProduct] The account's active products. show_timeline_weekends Boolean! Returns true if weekends appear in the timeline. sign_up_product_kind String The product the account first signed up for. slug String! The account's slug. tier String The account's tier.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",

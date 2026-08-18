@@ -51,15 +51,17 @@
     },
     {
       "claim_id": "cooling-off-14days",
-      "claim": "14-day cooling-off period for remote purchases; cancellation fee max 5% of transaction price or NIS 100, whichever is lower; business must refund within 14 days of cancellation notice.",
-      "source_url": "https://www.gov.il/he/pages/returns",
-      "raw_snippet": "ניתן לבטל עסקה שנעשתה מרחוק תוך 14 ימים. דמי ביטול בגובה של 5% מהמחיר או 100 ש\"ח, לפי הנמוך מביניהם. בעל העסק צריך להחזיר את הכסף תוך 14 ימים מקבלת הודעת הביטול.",
-      "fetched_at": "2026-05-20",
+      "claim": "חוק הגנת הצרכן, סעיף 14ג(ג): בעסקת מכר מרחוק רשאי הצרכן לבטל בתוך ארבעה עשר ימים מקבלת הנכס או מקבלת מסמך הפרטים, לפי המאוחר. דמי הביטול לא יעלו על 5% ממחיר הנכס או 100 שקלים חדשים, לפי הנמוך מביניהם. Also covers https://www.gov.il/he/pages/returns.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "בעסקת מכר מרחוק רשאי הצרכן לבטל את העסקה – (1) בנכס – מיום עשיית העסקה ועד ארבעה עשר ימים מיום קבלת הנכס או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף קטן (ב), לפי המאוחר מביניהם; (2) בשירות – בתוך ארבעה עשר ימים מיום עשיית העסקה או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף קטן (ב), לפי המאוח זולת דמי ביטול בשיעור שלא יעלה על 5% ממחיר הנכס נושא החוזה או העסקה, או 100 שקלים חדשים, לפי הנמוך מביניהם; (2) קיבל הצרכן את הנכס נושא העסקה או החוזה, יחזירו לעוסק במקום עסקו, והוא הדין לגב",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md Step 2 table",
         "SKILL_HE.md שלב 2 table",
         "references/consumer-protection-law.md"
-      ]
+      ],
+      "verified_via": "Consumer Protection Law read on nevo",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "amendment-13-effective",
