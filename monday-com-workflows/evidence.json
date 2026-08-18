@@ -54,14 +54,16 @@
       "claim_id": "monday-boards-hierarchy-type",
       "claim": "The boards query returns only classic boards unless hierarchy_type is passed or explicit board IDs are supplied, so multi-level (sub-item) boards are excluded by default rather than included.",
       "source_url": "https://developer.monday.com/api-reference/reference/boards",
-      "raw_snippet": "If omitted, only `classic` boards will be returned unless specific board IDs are provided.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "private public share hierarchy_type [BoardHierarchy!] The board hierarchy type to filter by. If omitted, only classic boards will be returned unless specific board IDs are provided. classic multi_level ids [ID!] The specific board IDs to return. limit Int The number of boards to return. The default is 25. order_by BoardsOrderBy The order in which to retrieve your boards. created_at (desc.) used_at (desc.) page Int The page number to return. Starts at 1. state State The state of the board to return.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md",
         "references/domain-checklist.md"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-account-plan-null",
@@ -176,13 +178,15 @@
       "claim_id": "monday-webhook-challenge",
       "claim": "Webhook registration requires echoing back a randomly generated token that monday sends in a challenge field.",
       "source_url": "https://developer.monday.com/api-reference/docs/webhooks",
-      "raw_snippet": "sending a JSON POST body containing a randomly generated token as a `challenge` field",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "URL Verification Your app should control the URL you specified. Our platform checks this by sending a JSON POST body containing a randomly generated token as a challenge field. We expect you to return the token as a challenge field of your response JSON body to that request. The challenge will look something like this, and the response body should be an identical JSON POST body.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-webhook-retry-window",
@@ -211,23 +215,27 @@
       "claim_id": "monday-user-entity-2026-07-b",
       "claim": "From API version 2026-07 an unlimited Query.users query returns 200 users and the maximum limit is 1000.",
       "source_url": "https://developer.monday.com/api-reference/changelog/major-user-entity-update",
-      "raw_snippet": "| No `limit` | All matching users returned | **200** users returned |",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Pagination on Query.users (breaking) Situation Before 2026-07 2026-07 and later No limit All matching users returned 200 users returned Maximum limit Unbounded 1000 (higher values error) Integrations that omitted limit may see fewer results. Use limit with page (and sort as needed) to paginate explicitly. Query.users(emails:",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"200\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-user-entity-2026-07-c",
       "claim": "The maximum limit on Query.users is 1000; higher values error.",
       "source_url": "https://developer.monday.com/api-reference/changelog/major-user-entity-update",
-      "raw_snippet": "| Maximum `limit` | Unbounded | **1000** (higher values error) |",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "breaking) Situation Before 2026-07 2026-07 and later No limit All matching users returned 200 users returned Maximum limit Unbounded 1000 (higher values error) Integrations that omitted limit may see fewer results. Use limit with page (and sort as needed) to paginate explicitly. Query.users(emails:",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"1000\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-products-and-tiers",

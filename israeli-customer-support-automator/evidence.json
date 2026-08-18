@@ -65,23 +65,27 @@
       "claim_id": "amendment-13-effective",
       "claim": "Privacy Protection Law Amendment 13 entered into force on August 14, 2025; PPA gained expanded enforcement and direct fining power.",
       "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
-      "raw_snippet": "Amendment 13 to the Protection of Privacy Law took effect on August 14, 2025... The Privacy Protection Authority (PPA) will gain expanded enforcement powers, including the ability to issue administrative orders, levy significant monetary penalties.",
-      "fetched_at": "2026-05-20",
+      "raw_snippet": "On 14 Aug., Israel enters a new chapter in its data protection regime. With the enactment of Amendment 13 to the Protection of Privacy Law, 5741-1981, the country has introduced a comprehensive overhaul of its privacy framework. This reform not only modernizes statutory obligations but also significantly expands the enforcement powers of the Protection of Privacy Authority, signaling a decisive shift toward proactive governance and regulatory assertiveness.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md Step 2 Privacy Protection block",
         "SKILL_HE.md שלב 2 privacy block"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "amendment-13-ai-guidelines",
       "claim": "Amendment 13 (with PPA AI guidelines) explicitly covers AI/chatbots: informed consent, disclosure, DPIA requirements, and data subject rights apply.",
       "source_url": "https://www.gornitzky.com/privacy-in-artificial-intelligence-systems-guidelines-of-the-israeli-privacy-protection-authority/",
-      "raw_snippet": "Amendment 13 is one of the first data protection laws to explicitly cover AI, requiring the same rigor as other data use: informed consent, clear disclosures, and accountability. Data subject rights — access, correction, and deletion — will be strictly enforced for AI systems. Organizations should conduct Data Protection Impact Assessments (DPIAs)... Privacy notices should consider including disclosures in AI tools that interact directly with data subjects (e.g., chatbots).",
-      "fetched_at": "2026-05-20",
+      "raw_snippet": "Consider including disclosures in AI tools that interact directly with data subjects (e.g., chatbots). Conduct DPIAs : Carry out DPIAs for any AI systems that process personal data, and address identified privacy risks. Develop a Policy on External AI Services : Define rules for using services like ChatGPT, specify data types that must not be entered into such services, and train employees accordingly.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md Step 2 PPA AI guidelines bullet",
         "SKILL_HE.md שלב 2 הנחיות AI"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "whatsapp-per-message-2026",
@@ -98,12 +102,14 @@
       "claim_id": "whatsapp-bsp-markup",
       "claim": "BSPs typically add 15-20% markup on top of Meta's WhatsApp Business API rates.",
       "source_url": "https://whapi.cloud/blog/whatsapp-bsp-pricing-hidden-costs-2026",
-      "raw_snippet": "BSP markups (15-20%) apply on top of every Meta charge; template reclassification silently converts utility rates to marketing rates overnight.",
-      "fetched_at": "2026-05-20",
+      "raw_snippet": "BSP markups (15–20%) apply on top of every Meta charge; template reclassification silently converts utility rates to marketing rates overnight; per-country pricing means the same message costs 3x more in Brazil than in India. Use this analysis to build a realistic cost model before committing to a BSP integration; the $50→$385 case study shows the math. TL;DR: This pricing checklist from Whapi.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md Step 6 WhatsApp bullet",
         "SKILL_HE.md שלב 6"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "spam-section-30a",
@@ -121,23 +127,27 @@
       "claim_id": "zendesk-pricing-2026",
       "claim": "Zendesk AI Agents 2026 pricing: $1.50 per resolution committed, $2.00 PAYG, plus $50/agent/month Advanced AI add-on.",
       "source_url": "https://corepiper.com/blog/zendesk-ai-agent-pricing-2026/",
-      "raw_snippet": "Zendesk AI agent pricing in 2026 charges $1.50-$2.00 per automated resolution plus a $50/agent/month Advanced AI add-on. $1.50/automated resolution committed, $2.00 PAYG. Per-resolution fees auto-bill for overages since January 2026, with no prior warning.",
-      "fetched_at": "2026-05-20",
+      "raw_snippet": "A 20-agent team resolving 3,000 conversations per month all-in pays approximately $80,000 per year. Per-resolution fees auto-bill for overages since January 2026, with no prior warning. TL;DR: Zendesk AI Pricing Snapshot Cost Component Rate Notes Per-resolution (committed) $1.50 Drops to $1.00 at 5,001+/month Per-resolution (PAYG) $2.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md Step 7 Hebrew-NLU helpdesk table",
         "SKILL_HE.md שלב 7 table"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "intercom-fin-pricing-2026",
       "claim": "Intercom Fin AI Agent: $0.99 per successful resolution, minimum 50 resolutions/month, on top of seat fees ($29-$132/seat/month).",
       "source_url": "https://www.intercom.com/pricing",
-      "raw_snippet": "Fin is priced at $0.99 per outcome. Intercom's seat-based plans start at $29/seat/month on annual billing (Essential)... Advanced plan runs $85 annual or $99 monthly per seat, and Expert runs $132 annual or $139 monthly per seat. Intercom Fin AI Agent operates on a resolution-based pricing model at $0.99 per successful resolution, with a mandatory minimum of 50 resolutions per month.",
-      "fetched_at": "2026-05-20",
+      "raw_snippet": "From $0.99 per Fin outcome $132 per seat/mo Start free trial Get a demo Every Advanced feature, plus SSO & identity management HIPAA support Service level agreements (SLAs) Multibrand Messenger / Help Center Includes 50 free Lite seats View all features All plans include free, unlimited live chat, support email, in-app chats, banners, and tooltips. Pay-as-you-go for email campaigns, SMS, WhatsApp, and Phone.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md Step 7 helpdesk table",
         "SKILL_HE.md שלב 7 table"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"132\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "spam-30a-consent",

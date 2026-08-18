@@ -196,12 +196,14 @@
       "claim_id": "ref-haboreret",
       "claim": "Haboreret telecom news and plan comparisons",
       "source_url": "https://www.haboreret.co.il",
-      "raw_snippet": "Haboreret",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "raw_snippet": "הבוררת - השוואת מחירים לסלולר, אינטרנט, חשמל וטלוויזיה internet cellular tv electricity water הבוררת - השוואת מחירים לסלולר, אינטרנט, טלוויזיה, חשמל ומים בישראל חתכתי, חסכתי!",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ref-kamazeole",
@@ -259,25 +261,29 @@
     },
     {
       "claim_id": "ref-bezeq-check-address",
-      "claim": "Bezeq fiber address checker",
+      "claim": "Bezeq fiber address checker. Covered references: Bezeq address checker",
       "source_url": "https://www.bezeq.co.il/internetandphone/internet/checkaddress/",
-      "raw_snippet": "Bezeq address checker",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "raw_snippet": "בדיקת סיבים אופטיים לפי כתובת – האם אתם על מפת הסיבים? -בזק סגור X באתר זה נעשה שימוש בקבצי Cookies ואמצעים נוספים, לרבות של צדדים שלישיים, על מנת לאפשר חווית גלישה טובה ומותאמת אישית, וכן לצורך סטטיסטיקה, ניתוח מאפייני גלישה ושיווק.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ref-bezeq-speedtest",
       "claim": "Bezeq speedtest tool",
       "source_url": "https://www.bezeq.co.il/speedtest",
-      "raw_snippet": "Bezeq speedtest",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "raw_snippet": "בדיקת מהירות גלישה עם מבחן ה-Speed Test של בזק -בזק סגור X באתר זה נעשה שימוש בקבצי Cookies ואמצעים נוספים, לרבות של צדדים שלישיים, על מנת לאפשר חווית גלישה טובה ומותאמת אישית, וכן לצורך סטטיסטיקה, ניתוח מאפייני גלישה ושיווק.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ref-hot-check-address",
@@ -294,21 +300,25 @@
       "claim_id": "ref-kamaze",
       "claim": "Kamaze comparison platform (alias variant)",
       "source_url": "https://www.kamaze.co.il",
-      "raw_snippet": "Kamaze",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "raw_snippet": "השוואת מחירים: חבילות סלולר, אינטרנט, טלוויזיה וטריפל - כמהזה דלג לתוכן שלום אורח, התחברות > סלולר חבילות סלולר חבילות eSIM מכשירי סלולר מודם סלולרי חבילות 5G חברות סלולר סלקום פלאפון פרטנר הוט מובייל גולן טלקום 019 מובי",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ref-mishtalemli",
       "claim": "Mishtalem-Li comparison platform",
       "source_url": "https://www.mishtalemli.co.il",
-      "raw_snippet": "Mishtalem-Li",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "raw_snippet": "השוואת מחירים: משתלם לי השוואת מחירי תקשורת, ברי מים, חשמל ועוד.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ref-cellcom-root",
@@ -332,23 +342,27 @@
     },
     {
       "claim_id": "ref-hot-root",
-      "claim": "HOT main site with www",
+      "claim": "HOT main site with www. Covered references: HOT www",
       "source_url": "https://www.hot.net.il",
-      "raw_snippet": "HOT www",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "raw_snippet": "חברת HOT הוט תקשורת - שירותי טלוויזיה, אינטרנט מהיר וחזק, וטלפון במחירים משתלמים דלג לתוכן נגישות HOT business קריירה ב-HOT שירות ותמיכה שירות ותמיכה ראשי תמיכה בשירותי האינטרנט תמיכה בשירותי הטלוויזיה מעבר דירה שינוי /",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ref-pelephone-root",
-      "claim": "Pelephone main site root",
+      "claim": "Pelephone main site root. Covered references: Pelephone root",
       "source_url": "https://www.pelephone.co.il",
-      "raw_snippet": "Pelephone root",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "raw_snippet": "פלאפון – תקשורת סלולרית בישראל ובחו\"ל קפיצה לאיזור התפריט קפיצה לאיזור המרכזי קפיצה לפוטר קפיצה לאזור האישי עסקי פרטי {{cartItemsCount}} 0\" alt=\"מעבר להודעות\" /> 0\">{{messagesCount}} לאיזור האישי שלום {{ user.fullName }}",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "2g3g-first-stage-only",
