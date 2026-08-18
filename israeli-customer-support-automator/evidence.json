@@ -91,12 +91,14 @@
       "claim_id": "whatsapp-per-message-2026",
       "claim": "Meta switched WhatsApp Business Platform pricing from conversation-based (24-hour window) to per-template-message effective January 1, 2026.",
       "source_url": "https://whatsappbusiness.com/products/platform-pricing/",
-      "raw_snippet": "Meta has officially announced a new global pricing structure for the WhatsApp Business API, effective January 1, 2026, introducing per-message pricing for template messages, replacing the existing conversation-based billing system.",
-      "fetched_at": "2026-05-20",
+      "raw_snippet": "WhatsApp Business Platform Pricing | WhatsApp API Pricing",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md Step 6 WhatsApp per-message bullet",
         "SKILL_HE.md שלב 6 תמחור פר-הודעה"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "whatsapp-bsp-markup",

@@ -440,12 +440,14 @@
       "claim_id": "activetrail-sms",
       "claim": "ActiveTrail offers SMS bundled with its marketing automation plans.",
       "source_url": "https://www.activetrail.co.il/",
-      "raw_snippet": "ActiveTrail",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "מערכת דיוור: אוטומציות ומסעות לקוח באקטיב טרייל",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     }
   ]
 }
