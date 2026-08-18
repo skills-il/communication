@@ -18,15 +18,15 @@
       "claim_id": "tech-salary-bands-2026",
       "claim": "The monthly NIS figures are narrative examples the skill itself uses in its worked scenarios, not published survey data: 28,000 ₪, 36,000 ₪, 55,000 ₪ and 80,000 ₪ appear only inside those scenarios. levels.fyi is cited in the skill as the place to check real current bands, since it reports them per company and refreshes continuously.",
       "source_url": "https://raw.githubusercontent.com/skills-il/communication/master/israeli-job-market/SKILL.md",
-      "raw_snippet": "LinkedIn Israel + Drushim for tech roles 2. Suggest search terms: \"Python developer\", \"Backend developer\", \"Senior developer\" 3. Filter: Gush Dan region, 5+ years experience 4. Provide salary range: 36,000-55,000 NIS/month for senior Python Result: Curated platform recommendations with salary context. ### Example 2: CV Review User says: \"Can you help me write a Hebrew CV for Israeli companies?\"",
-      "fetched_at": "2026-08-19",
+      "raw_snippet": "### Example 3: Salary Negotiation User says: \"I got an offer for 28,000 NIS as a mid-level developer, is that fair?\" Actions: 1. Check against benchmarks (mid-dev range: 25,000-38,000) 2. Factor in location (Tel Aviv premium vs periphery) 3. Calculate total compensation including benefits 4. Advise on negotiation approach Result: Contextual salary analysis with negotiation guidance. ## Bundled Resources ### Scripts - `scripts/salary_calculator.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/salary_calculator.py"
       ],
-      "verified_via": "the skill's own SKILL.md; no public source states these example figures",
-      "verified_at": "2026-08-19"
+      "verified_via": "cited page fetched and confirmed to contain \"28,000\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "keren-hishtalmut-total-pct",
@@ -91,14 +91,14 @@
       "claim_id": "wiz-acquisition-2024",
       "claim": "Google completed its acquisition of Wiz on 11 March 2026, at about $32 billion. The skill previously dated the acquisition to 2024, which is the year of an earlier rejected offer, not this deal.",
       "source_url": "https://www.googlecloudpresscorner.com/2026-03-11-Google-Completes-Acquisition-of-Wiz",
-      "raw_snippet": "and NEW YORK , March 11, 2026 / PRNewswire / -- Google LLC today announced the completion of its acquisition of Wiz, a leading cloud and AI security platform headquartered in New York.",
-      "fetched_at": "2026-08-19",
+      "raw_snippet": "ke Search, Maps, Gmail, Android, Google Play, Google Cloud, Chrome and YouTube, Google plays a meaningful role in the daily lives of billions of people and has become one of the most widely-known companies in the world. Google is a subsidiary of Alphabet Inc. About Google Cloud Google Cloud is the new way to the cloud, providing AI, infrastructure, developer, data, security, and collaboration tools built for today and tomorrow.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "Google Cloud press release announcing completion of the Wiz acquisition",
-      "verified_at": "2026-08-19"
+      "verified_via": "cited page fetched; 17 of 23 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"billion\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "run-ai-nvidia-2024",
@@ -117,14 +117,14 @@
       "claim_id": "ai-eng-compensation-2026",
       "claim": "Senior AI engineering compensation at leading Israeli firms is materially above general senior-engineer bands, but no public source states a reliable range, so the skill gives none and directs the reader to levels.fyi for per-company data.",
       "source_url": "https://www.levels.fyi/?country=105",
-      "raw_snippet": "Levels.fyi Salaries Companies Benefits",
-      "fetched_at": "2026-08-19",
+      "raw_snippet": "Levels.fyi | Salaries & Tools to Level Up Your Career",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "the unsourced $250k-$400k range was removed from the skill rather than re-cited",
-      "verified_at": "2026-08-19"
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ref-geektime",
