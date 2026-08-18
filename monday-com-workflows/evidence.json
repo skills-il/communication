@@ -69,14 +69,16 @@
       "claim_id": "monday-account-plan-null",
       "claim": "account.plan returns null for accounts on monday's multi-product infrastructure, so a verify step must not branch on plan; account.tier and account.products are the reliable fields.",
       "source_url": "https://developer.monday.com/api-reference/reference/account",
-      "raw_snippet": "The account's payment plan. Returns `null` for accounts with the multi-product infrastructure.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "logo String The account's logo. name String! The account's name. plan Plan The account's payment plan. Returns null for accounts with the multi-product infrastructure. products [AccountProduct] The account's active products. show_timeline_weekends Boolean! Returns true if weekends appear in the timeline. sign_up_product_kind String The product the account first signed up for. slug String! The account's slug. tier String The account's tier.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md",
         "references/domain-checklist.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 12 of 17 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"null\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-rate-limit-personal-token",
@@ -106,13 +108,15 @@
       "claim_id": "monday-retry-in-seconds",
       "claim": "Rate limit errors carry a retry_in_seconds field, and responses carry RateLimit-Policy and RateLimit headers.",
       "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
-      "raw_snippet": "Every rate limit error returns a `retry_in_seconds` field",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "The API SDK respects the rate-limited responses and waits the appropriate amount of time before automatically retrying the request, up to a configurable maximum number of retries. Unless otherwise noted, limits are measured per account, per app. Usage through a personal token counts toward the same limit. Updated 23 days ago Versioning Idempotency Did this page help you?",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 12 of 14 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"responses\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-429-request-count",
@@ -142,13 +146,15 @@
       "claim_id": "monday-connect-boards-null",
       "claim": "On a connect boards column the value field always returns null; read display_value, linked_item_ids or linked_items instead.",
       "source_url": "https://developer.monday.com/api-reference/docs/connect",
-      "raw_snippet": "Always returns `null` for this column. Use `linked_items` and `linked_item_ids` instead.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "linked_items [Item!]! The linked items. You can query any Item field on the linked items. text String Always returns null for this column. Use display_value instead. type ColumnType! The column's type ( board_relation ). updated_at Date The column's last updated date. value JSON Always returns null for this column. Use linked_items and linked_item_ids instead. 📘 The text and value fields always return null for connect boards columns.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 14 of 14 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"always\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-connect-boards-write-format",
@@ -204,12 +210,14 @@
       "claim_id": "monday-user-entity-2026-07-a",
       "claim": "In monday.com API version 2026-07 the Query.users arguments kind, newest_first and non_active are deprecated (replaced by user_kind, sort and status).",
       "source_url": "https://developer.monday.com/api-reference/changelog/major-user-entity-update",
-      "raw_snippet": "are **deprecated** on `Query.users` starting in `2026-07` and marked with `@deprecated` in the schema.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Deprecated Query.users arguments ( 2026-07 ) kind , newest_first , and non_active are deprecated on Query.users starting in 2026-07 and marked with @deprecated in the schema. They still work at runtime in 2026-07 and 2026-10 , but clients that introspect with includeDeprecated: true will see the deprecation reasons below: Argument Deprecation reason kind Use user_kind instead. newest_first Use sort instead. non_active Use status instead. Update integrations and codegen to the new arguments above.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 16 of 17 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"starting\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "monday-user-entity-2026-07-b",

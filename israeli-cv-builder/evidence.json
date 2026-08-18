@@ -76,12 +76,14 @@
       "claim_id": "jobmob-cv-translation",
       "claim": "JobMob blog hosts a guide on translating foreign resumes to the Israeli CV format.",
       "source_url": "https://jobmob.co.il/blog/israeli-cv-translation-tips/",
-      "raw_snippet": "Israeli CV translation",
-      "fetched_at": "2026-05-20T00:00:00Z",
+      "raw_snippet": "Menu Close Blog Contact Subscribe Toggle website search Search this website A Complete Guide: How To Make An Israeli CV Out Of Your Resume Post author: Jacob Share Post published: November 2, 2009 Post comments: 24 Comments 13 Shares Tweet 11 Pin 2 Share Share Immigrating to Israel or making aliya? Here's what you'll need to prepare your resume for the Israeli job market. This is a guest post by Leah Aharoni.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 7 of 10 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"guide\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "anglo-list-resume",
