@@ -16,15 +16,17 @@
     },
     {
       "claim_id": "tech-salary-bands-2026",
-      "claim": "Tel Aviv / Gush Dan gross monthly NIS bands for tech roles, 2026. Example narrative figures: 28,000 NIS / 28,000 ש\"ח (mid-developer offer scenario in Example 3), 55,000 NIS / 55,000 ש\"ח (senior Python upper band in Example 1)",
-      "source_url": "https://www.levels.fyi/?country=105",
-      "raw_snippet": "tech bands include 18000, 26000, 28,000 NIS, 28,000 ש\"ח, 40000, 55,000 NIS, 55,000 ש\"ח, 60000, 85000, 65000, 80000, 110000, 70000, 58000, 80000",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "claim": "The monthly NIS figures are narrative examples the skill itself uses in its worked scenarios, not published survey data: 28,000 ₪, 36,000 ₪, 55,000 ₪ and 80,000 ₪ appear only inside those scenarios. levels.fyi is cited in the skill as the place to check real current bands, since it reports them per company and refreshes continuously.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/communication/master/israeli-job-market/SKILL.md",
+      "raw_snippet": "LinkedIn Israel + Drushim for tech roles 2. Suggest search terms: \"Python developer\", \"Backend developer\", \"Senior developer\" 3. Filter: Gush Dan region, 5+ years experience 4. Provide salary range: 36,000-55,000 NIS/month for senior Python Result: Curated platform recommendations with salary context. ### Example 2: CV Review User says: \"Can you help me write a Hebrew CV for Israeli companies?\"",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/salary_calculator.py"
-      ]
+      ],
+      "verified_via": "the skill's own SKILL.md; no public source states these example figures",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "keren-hishtalmut-total-pct",
@@ -87,14 +89,16 @@
     },
     {
       "claim_id": "wiz-acquisition-2024",
-      "claim": "Wiz was acquired by Google in 2024 for approximately $32B; still operates as Wiz",
-      "source_url": "https://www.calcalistech.com/ctechnews",
-      "raw_snippet": "Wiz Google acquisition $32B 2024",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "claim": "Google completed its acquisition of Wiz on 11 March 2026, at about $32 billion. The skill previously dated the acquisition to 2024, which is the year of an earlier rejected offer, not this deal.",
+      "source_url": "https://www.googlecloudpresscorner.com/2026-03-11-Google-Completes-Acquisition-of-Wiz",
+      "raw_snippet": "and NEW YORK , March 11, 2026 / PRNewswire / -- Google LLC today announced the completion of its acquisition of Wiz, a leading cloud and AI security platform headquartered in New York.",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "Google Cloud press release announcing completion of the Wiz acquisition",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "run-ai-nvidia-2024",
@@ -111,14 +115,16 @@
     },
     {
       "claim_id": "ai-eng-compensation-2026",
-      "claim": "Senior AI engineer total compensation packages at top Israeli firms commonly $250k-$400k in 2026",
+      "claim": "Senior AI engineering compensation at leading Israeli firms is materially above general senior-engineer bands, but no public source states a reliable range, so the skill gives none and directs the reader to levels.fyi for per-company data.",
       "source_url": "https://www.levels.fyi/?country=105",
-      "raw_snippet": "AI senior $250k-$400k total comp",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "raw_snippet": "Levels.fyi Salaries Companies Benefits",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "the unsourced $250k-$400k range was removed from the skill rather than re-cited",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "ref-geektime",

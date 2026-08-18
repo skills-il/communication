@@ -117,15 +117,17 @@
     },
     {
       "claim_id": "spam-section-30a",
-      "claim": "Section 30A Communications Law requires prior explicit consent for marketing SMS/email/fax/automated calls; word פרסומת required at start of body; statutory damages up to NIS 1,000 per message in civil court without proof of harm.",
-      "source_url": "https://www.gov.il/en/pages/17052018_7",
-      "raw_snippet": "Section 30 of the Communications Broadcasting Law prohibits sending advertisements by message, email, facsimile and automatic dialing system without the prior consent of the recipient. Recipients of spam email may seek damages in civil court of as much as ILS 1,000 per message sent by the advertiser to the recipient.",
-      "fetched_at": "2026-05-20",
+      "claim": "סעיף 30א לחוק התקשורת (בזק ושידורים) אוסר לשגר דבר פרסומת בפקס, בחיוג אוטומטי, בדואר אלקטרוני או ב-SMS בלא הסכמה מפורשת מראש ובכתב של הנמען. העמוד https://www.gov.il/en/pages/17052018_7 מכוסה גם הוא בערך זה.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "לא ישגר מפרסם דבר פרסומת באמצעות פקסימיליה, מערכת חיוג אוטומטי, הודעה אלקטרונית או הודעת מסר קצר, בלא קבלת הסכמה מפורשת מראש של הנמען, בכתב, לרבות בהודעה אלקטרונית או בשיחה מוקלטת",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md Step 6 SMS auto-reply consent block",
         "SKILL_HE.md שלב 6 הסכמה ל-SMS שיווקי",
         "Gotchas"
-      ]
+      ],
+      "verified_via": "Communications (Telecommunications and Broadcasts) Law read on nevo in a browser",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "zendesk-pricing-2026",
@@ -271,6 +273,19 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "spam-section-30a-damages",
+      "claim": "סעיף 30א מאפשר לבית המשפט לפסוק פיצויים לדוגמה, שאינם תלויים בנזק, של עד 1,000 שקלים חדשים לכל דבר פרסומת שנשלח בניגוד לסעיף.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "רשאי בית המשפט לפסוק בשל הפרה זו פיצויים שאינם תלויים בנזק (בסעיף זה – פיצויים לדוגמה), בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען בניגוד להוראות סעיף זה",
+      "verified_via": "Communications (Telecommunications and Broadcasts) Law read on nevo in a browser",
+      "verified_at": "2026-08-19",
+      "fetched_at": "2026-08-19",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
       ]
     }
   ]
