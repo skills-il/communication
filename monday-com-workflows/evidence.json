@@ -77,7 +77,7 @@
         "references/graphql-patterns.md",
         "references/domain-checklist.md"
       ],
-      "verified_via": "cited page fetched; 12 of 17 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"null\"",
+      "verified_via": "cited page fetched; 29 of 34 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"null\"",
       "verified_at": "2026-08-18"
     },
     {
@@ -115,7 +115,7 @@
         "SKILL_HE.md",
         "references/graphql-patterns.md"
       ],
-      "verified_via": "cited page fetched; 12 of 14 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"responses\"",
+      "verified_via": "cited page fetched; 40 of 42 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"responses\"",
       "verified_at": "2026-08-18"
     },
     {
@@ -146,14 +146,14 @@
       "claim_id": "monday-connect-boards-null",
       "claim": "On a connect boards column the value field always returns null; read display_value, linked_item_ids or linked_items instead.",
       "source_url": "https://developer.monday.com/api-reference/docs/connect",
-      "raw_snippet": "linked_items [Item!]! The linked items. You can query any Item field on the linked items. text String Always returns null for this column. Use display_value instead. type ColumnType! The column's type ( board_relation ). updated_at Date The column's last updated date. value JSON Always returns null for this column. Use linked_items and linked_item_ids instead. 📘 The text and value fields always return null for connect boards columns.",
+      "raw_snippet": "You can query any Item field on the linked items. text String Always returns null for this column. Use display_value instead. type ColumnType! The column's type ( board_relation ). updated_at Date The column's last updated date. value JSON Always returns null for this column. Use linked_items and linked_item_ids instead. 📘 The text and value fields always return null for connect boards columns.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md"
       ],
-      "verified_via": "cited page fetched; 14 of 14 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"always\"",
+      "verified_via": "cited page fetched; 29 of 29 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"columntype\"",
       "verified_at": "2026-08-18"
     },
     {
@@ -216,7 +216,7 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 16 of 17 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"starting\"",
+      "verified_via": "cited page fetched; 34 of 35 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"starting\"",
       "verified_at": "2026-08-18"
     },
     {

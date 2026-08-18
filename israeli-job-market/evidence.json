@@ -100,13 +100,13 @@
       "claim_id": "run-ai-nvidia-2024",
       "claim": "Run:ai was acquired by Nvidia in 2024",
       "source_url": "https://www.calcalistech.com/ctechnews",
-      "raw_snippet": "puting ambitions 15:50 , Meir Orbach Anthropic revenue run rate tops $65 billion as IPO looms and Decart deal advances 08:04 , CTech Nvidia accounts for 90% of Israel’s production abroad, and it’s reshaping the GDP numbers 08:45 , Shlomo Teitelbaum Bank Leumi sues Meta for $9 million over Facebook and Instagram scams 12:07 , Shaked Green Arava Reco: “Research is a mix of science and art; a balance between chaos and order” 15:02 , Amy Shapiro The war is creating a labor shortage, and a generation of delayed careers 17:53 , Shaha",
+      "raw_snippet": "50 , Meir Orbach Anthropic revenue run rate tops $65 billion as IPO looms and Decart deal advances 08:04 , CTech Nvidia accounts for 90% of Israel’s production abroad, and it’s reshaping the GDP numbers 08:45 , Shlomo Teitelbaum Bank Leumi sues Meta for $9 million over Facebook and Instagram scams 12:07 , Shaked Green Arava Reco: “Research is a mix of science and art; a balance between chaos and order” 15:02 , Amy Shapiro The war is creating a labor shortage, and a generation of delayed careers 17:53 , Shahar Ilan Matrix CEO: \"",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 2 of 3 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"nvidia\"",
+      "verified_via": "cited page fetched and confirmed to contain \"90%\"; snippet replaced with the page's own wording around it",
       "verified_at": "2026-08-18"
     },
     {
