@@ -1,0 +1,42 @@
+{
+  "display_name": {
+    "he": "מדריך יומי ישראלי",
+    "en": "Israeli Daily Reference Guide"
+  },
+  "display_description": {
+    "he": "מדריך עזר להקשר היומיומי הישראלי: שבוע עבודה (ראשון-חמישי), חגים ומועדים, תזכורות לחובות עסקיות (מע״מ, ביטוח לאומי), נורמות תקשורת מקומיות וטיפים לניסוח בעברית רשמית. מרכז ידע לתכנון יום, ניסוח הודעות מקצועיות והתמצאות בלוח השנה הישראלי.",
+    "en": "Reference guide for Israeli daily context: work week (Sunday-Thursday), holidays and observances, business obligation reminders (VAT, Bituach Leumi), local communication norms, and tips for formal Hebrew writing. Use when you need context on the Israeli calendar, professional message drafting conventions, scheduling around Shabbat and holidays, or formal Hebrew email structure. Do NOT use for calendar API integration (use shabbat-aware-scheduler), automated email sending (use gws-hebrew-email-automation), or accounting calculations (use accounting skills)."
+  },
+  "tags": {
+    "he": [
+      "עוזר-אישי",
+      "תכנון-יום",
+      "עברית",
+      "תקשורת",
+      "פרילנסר",
+      "עסק-קטן"
+    ],
+    "en": [
+      "personal-assistant",
+      "daily-planning",
+      "hebrew",
+      "communication",
+      "freelancer",
+      "small-business"
+    ]
+  },
+  "author": "skills-il",
+  "version": "1.4.2",
+  "category": "communication",
+  "supported_agents": [
+    "claude-desktop",
+    "claude-ai",
+    "claude-code",
+    "chatgpt",
+    "cursor",
+    "windsurf",
+    "openclaw",
+    "gemini-cli"
+  ],
+  "openclaw": true
+}

@@ -1,0 +1,41 @@
+{
+  "author": "skills-il",
+  "version": "1.3.1",
+  "category": "communication",
+  "tags": {
+    "he": [
+      "הודעות-טקסט",
+      "הודעות",
+      "OTP",
+      "טלקום",
+      "התראות",
+      "ישראל"
+    ],
+    "en": [
+      "sms",
+      "messaging",
+      "otp",
+      "telecom",
+      "notifications",
+      "israel"
+    ]
+  },
+  "display_name": {
+    "he": "שער SMS ישראלי",
+    "en": "Israeli Sms Gateway"
+  },
+  "display_description": {
+    "he": "אינטגרציה לספקי שערי SMS ישראליים להודעות עסקיות, OTP והתראות. השתמשו כששואלים על שליחת SMS בישראל, ספקי SMS ישראליים (019 SMS, InforUMobile, ActiveTrail, SMS4Free), אימות מספרי טלפון ישראליים, מימוש OTP, SMS המוני, עלות סגמנטים בעברית, או עמידה בחוק הספאם (סעיף 30א) ובתיקון 13 לחוק הגנת הפרטיות. מכסה גם ספקים בינלאומיים (Twilio, Vonage, Bird), מגבלות תווים בעברית (UCS-2), וכללי זיהוי שולח. אל תשתמשו עבור WhatsApp Business API (יש סקיל נפרד) או טלקום מחוץ לישראל.",
+    "en": "Integrate with Israeli SMS gateway providers for business messaging, OTP, and notifications. Use when user asks about sending SMS in Israel, Israeli SMS providers, phone number validation (Israeli format), Hebrew SMS segment cost, OTP implementation, bulk SMS, sender ID rules, or SMS marketing compliance. Covers 019 SMS, SMS4Free, InforUMobile, and international providers with Israeli support. Do NOT use for WhatsApp Business API (see separate skill) or non-Israeli telecom."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "antigravity",
+    "gemini-cli"
+  ]
+}

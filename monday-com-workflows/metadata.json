@@ -1,0 +1,42 @@
+{
+  "author": "skills-il",
+  "version": "1.5.0",
+  "category": "communication",
+  "tags": {
+    "he": [
+      "Monday",
+      "ניהול-פרויקטים",
+      "תהליך-עבודה",
+      "אוטומציה",
+      "צוותים",
+      "ישראל"
+    ],
+    "en": [
+      "monday",
+      "project-management",
+      "workflow",
+      "automation",
+      "teams",
+      "israel"
+    ]
+  },
+  "mcp-server": "mondaycom/mcp",
+  "display_name": {
+    "he": "תהליכי עבודה ב-Monday",
+    "en": "Monday Com Workflows"
+  },
+  "display_description": {
+    "he": "תהליכי עבודה, אוטומציות ואינטגרציית API ב-Monday.com לצוותים ישראליים, כולל ניהול לוחות, תכנון ספרינט לשבוע עבודה ראשון-חמישי, תוכן בעברית בלוחות (לממשק עצמו אין עברית) ותזמון מודע לחגי ישראל. השתמשו כשצריך להגדיר לוח חדש, ליצור אוטומציות, לבדוק אילו מכסות התוכנית חוסמת, או לבצע שאילתות GraphQL מול ה-API של Monday.com. משלים את שרת ה-MCP הרשמי mondaycom/mcp עם הקשר ישראלי. אל תשתמשו בכלים אחרים לניהול פרויקטים כמו Jira או Asana.",
+    "en": "Optimize Monday.com workflows for Israeli teams with board management, automation recipes, and API integration. Use when user asks about Monday.com boards, Monday.com automations, \"monday.com API\", work management, sprint planning with Israeli calendar, or team workflow optimization on Monday.com. Enhances the official mondaycom/mcp server with Israeli team practice: Sunday-Thursday work week, Hebrew content on boards whose interface has no Hebrew option, plan and automation quota ceilings, and holiday-aware scheduling. Do NOT use for other project management tools (Jira, Asana, etc.)."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "antigravity",
+    "gemini-cli"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "cycles": [
+    {
+      "version": "1.0.2",
+      "date": "2026-07-06",
+      "lessons": [
+        "MAJOR fixed: Step 2's §2 protected-grounds list was incomplete (9 items). Completed it to match the law and the skill's own eeo-compliance-checklist.md: added place of residence (מקום מגורים, Amendment 22, 2014), country of origin (ארץ מוצא), nationality, pregnancy, and fertility (IVF) treatments. Place-of-residence and country-of-origin are the exact grounds that justify the skill's own 'no street address / no origin marker' advice.",
+        "Verified current (no change): the Employment (Equal Opportunities) Law 5748-1988 name/year is correct and still governing; all 6 reference links are live; all 4 job boards (AllJobs, Drushim, JobMaster, LinkedIn) still active; no-photo / 1-page / military-section conventions still standard.",
+        "[CARRY] MINOR: 'no date of birth' is a modern/tech-sector norm, not universal (older aliyah-oriented CVs still include DOB/place of birth/date of aliyah). The skill's omit-DOB advice is correct and protective; left as-is. Could add a one-line 'tech norm' caveat next cycle if desired."
+      ]
+    }
+  ]
+}

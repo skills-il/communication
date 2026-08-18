@@ -1,0 +1,13 @@
+{
+  "cycles": [
+    {
+      "version": "1.4.1",
+      "date": "2026-06-07",
+      "lessons": [
+        "Reference/calendar facts all verified correct (VAT 18%, the bi-monthly VAT threshold, allocation-number 10,000 Jan->5,000 Jun 2026, all 5786/2026 holiday dates). Fixed two items: Iron Swords Memorial Day example date (2026 occurrence is 5 Oct 2026 / 24 Tishrei 5787, not the 16 Oct 2025 sample) plus its Shabbat-postponement rule; and the morning-brief example's imprecise 'Pesach last days April 8-9 full shutdown' (April 9 is the single yom tov; April 8 is erev/short-day).",
+        "Built evidence.json from scratch (legacy skill). Skill was already em-dash clean.",
+        "Next cycle: the israeli-business-calendar.md reference is a 5786/2025-2026 table; when 5787 dates are needed, regenerate it from HebCal i=on."
+      ]
+    }
+  ]
+}
