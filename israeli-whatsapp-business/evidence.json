@@ -306,16 +306,16 @@
     {
       "claim_id": "graph-api-endpoints",
       "claim": "Graph API endpoint shapes used in the code samples and in scripts/send_whatsapp.py, on host graph.facebook.com at version v26.0: https://graph.facebook.com/v26.0/{phone_number_id} , https://graph.facebook.com/v26.0/{phone_number_id}/messages , https://graph.facebook.com/v26.0/{waba_id}/message_templates , https://graph.facebook.com/{API_VERSION}",
-      "source_url": "https://developers.facebook.com/docs/graph-api/changelog",
-      "raw_snippet": "https://graph.facebook.com/v26.0/{phone_number_id} https://graph.facebook.com/v26.0/{phone_number_id}/messages https://graph.facebook.com/v26.0/{waba_id}/message_templates https://graph.facebook.com/{API_VERSION}",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "source_url": "https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages",
+      "raw_snippet": "Object with ID 'phone_number_id' does not exist, cannot be loaded due to missing permissions, or does not support this operation.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/send_whatsapp.py"
       ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      "verified_via": "reference-coverage entry; snippet quoted from one of the covered sources",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "on-prem-sunset",
