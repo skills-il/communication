@@ -196,24 +196,24 @@ gws gmail users messages list --params '{"userId":"me","q":"is:unread"}' | jq -r
 
 | Account type | Daily send limit (Gmail API / SMTP) | Note |
 |--------------|-----------------|------|
-| Consumer Gmail (`@gmail.com`) | 500 recipients/day | Rolling 24h; recipients (not messages) counted; a 10-recipient email = 10 units |
-| Google Workspace via Gmail API | 2,000 recipients/day | Business/Enterprise tiers |
+| Consumer Gmail (`@gmail.com`) | 500 | Two separate caps: no more than 500 recipients in a single email, and no more than 500 emails sent in a day |
+| Google Workspace via Gmail API | 2,000 messages/day | Per user account. Total recipients per day is a separate, higher cap; trial accounts are limited to 500/day |
 | Google Workspace via SMTP relay | 10,000 recipients/day | Requires the SMTP relay service to be enabled in Admin Console |
 
 Gmail API also applies per-user per-minute quota units (6,000 units/user/project/minute per the May 2026 quota refresh). `users.messages.modify` costs 5 units, `users.messages.send` costs 100 units, `users.messages.list` costs 5 units. For bulk `users messages modify` loops, add a small `sleep` between calls or process in batches.
 
-## Additional Gmail helpers (v0.18.0+, v0.20.0+, v0.22.0+)
+## Additional Gmail helpers
 
 Beyond `+send`, `+triage`, `+watch`, recent `gws` versions ship more helpers:
 
-| Helper | Added | Purpose |
+| Helper | Purpose |
 |--------|-------|---------|
-| `+reply` | v0.20.0 | Reply to a message by ID, preserving inline images and threading |
-| `+reply-all` | v0.20.0 | Same as `+reply` but Cc's all original recipients |
-| `+forward` | v0.20.0 | Forward a message, including original attachments by default |
-| `+read` | v0.18.0 | Print the rendered content of a message (subject, body, headers) |
+| `+reply` | Reply to a message by ID, preserving inline images and threading |
+| `+reply-all` | Same as `+reply` but Cc's all original recipients |
+| `+forward` | Forward a message, including original attachments by default |
+| `+read` | Print the rendered content of a message (subject, body, headers) |
 
-All four accept `--draft` (v0.22.0) and `--dry-run`. The `-a`/`--attach` flag (v0.18.0) lets `+send`/`+reply`/`+forward` attach files (25 MB total per message).
+All four accept `--draft` and `--dry-run`. The `-a`/`--attach` flag lets `+send`/`+reply`/`+forward` attach files (25 MB total per message).
 
 ## Common error patterns
 

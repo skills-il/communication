@@ -1,0 +1,18 @@
+{
+  "cycles": [
+    {
+      "version": "1.5.0",
+      "date": "2026-08-19",
+      "lessons": [
+        "Section 30A(c) has NO time window. A prior cycle invented a six-month existing-customer grace period; it is not in the statute. Re-check any future wording implying consent expires.",
+        "Hebcal parameter traps, all confirmed live 2026-08-19: fasts need mf=on or a subcat=='fast' branch is dead code; mod=on returns subcat 'modern' mixing Yom HaZikaron/Yom HaAtzma'ut with four ordinary working days; nx=on adds roshchodesh entries with no subcat. Re-verify against the live feed on any future edit to Step 6.",
+        "Expert MAJOR deferred: wire +reply into the Step 3 reminder ladder so reminders thread onto the original invoice instead of opening new threads.",
+        "Expert MAJOR deferred: non-interactive auth (GOOGLE_WORKSPACE_CLI_TOKEN, GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE) for headless/sandboxed hosts such as Copilot's coding agent and Codex cloud mode.",
+        "Expert MAJOR deferred: Drive-link fallback above the 25MB attachment cap; send-as alias and bilingual signature setup; Workspace trial-account 500/day cap; Gmail API 80,000,000 units/day project threshold and the May 2026 grandfathering split.",
+        "Expert MAJOR deferred and recorded as out-of-scope-with-reason in references/domain-checklist.md: non-Jewish Israeli calendars (Eid, Ramadan, Christmas). Hebcal cannot supply them and no free equivalent API was found.",
+        "Legal gate note: verify_legal.py returns REVIEW/level=3 on this slug at HEAD and after this cycle, via the documented ניסוח / מספר הקצאה / פטור מ false-positive families. The legal-review subagent verdict for v1.5.0 was Tier C, PASS, no notice required. Do not add a notice without re-running the gate.",
+        "evidence.json note: support.google.com serves Hebrew when fetched with Accept-Language: he, which the verifier sends. Google support URLs must carry ?hl=en or --check-sources fails on an English snippet."
+      ]
+    }
+  ]
+}
