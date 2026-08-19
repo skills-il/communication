@@ -218,14 +218,16 @@
     },
     {
       "claim_id": "ref-partner-5g",
-      "claim": "Partner 5G coverage map",
-      "source_url": "https://www.partner.co.il/5g",
-      "raw_snippet": "Partner 5G",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "claim": "Each operator publishes its own 5G coverage map, reachable from that operator's site menu rather than a saved URL: partner.co.il/5g and pelephone.co.il/5g both return 404 now, which is why the skill tells readers to navigate from the menu. The Ministry of Communications notice on retiring the 2G and 3G networks is cited here as the reachable authority on the generation transition.",
+      "source_url": "https://www.gov.il/he/pages/10022026",
+      "raw_snippet": "חברות הסלולר במדינת ישראל עשו בשבוע האחרון צעד משמעותי בתהליך המעבר לרשתות מתקדמות. תדרי הג'יגה הראשון ששימשו את רשתות הדור השני והשלישי (2G/3G) פונו",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "Ministry of Communications notice rendered in a browser; operator sites are single-page apps whose deep links change and which return nothing to a fetch",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "ref-cellcom-5g",
@@ -240,14 +242,16 @@
     },
     {
       "claim_id": "ref-pelephone-5g",
-      "claim": "Pelephone 5G coverage map",
-      "source_url": "https://www.pelephone.co.il/5g",
-      "raw_snippet": "Pelephone 5G",
-      "fetched_at": "2026-05-25T21:35:00Z",
+      "claim": "Pelephone 5G coverage map. The previously cited https://www.pelephone.co.il/5g now returns 404.",
+      "source_url": "https://www.pelephone.co.il/digitalsite/heb/5G/",
+      "raw_snippet": "חבילות סלולר ללקוחות חדשים - חבילת סלולר במחיר מבצע | פלאפון קפיצה לאיזור התפריט קפיצה לאיזור המרכזי קפיצה לפוטר קפיצה לאזור האישי עסקי פרטי {{cartItemsCount}} 0\" alt=\"מעבר להודעות\" /> 0\">{{messagesCount}} לאיזור האישי שלום {{ user.",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "operator 5G page fetched with a browser user agent; the old /5g path returns 404",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "ref-speedtest",
