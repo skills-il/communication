@@ -20,7 +20,7 @@
         "Expert MAJOR deferred: classifier keyword collisions ('refund' in both billing and returns; 'חשבון' substring-matching inside 'חשבונית'), naive substring matching with no word boundaries, and a priority table with no 'medium-high' tier though Step 1 documents one.",
         "Expert MAJOR deferred: s.18ג agent self-identification and dial-back-able outbound caller ID belong in the phone scripts; s.14ה charge-cancellation-copy duty belongs in the refund templates.",
         "Expert MAJOR deferred: service-accessibility regulations (תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע\"ג-2013) govern how the channels this skill designs must be reachable; currently absent.",
-        "Could not source the Amendment 74 publication date of 22 July 2026 from the consolidated text, so it was dropped; the 22 March 2027 in-force date carries the operational meaning and IS sourced."
+        "The Amendment 74 publication date of 22 July 2026 could not be sourced from the consolidated text and was removed from SKILL.md, SKILL_HE.md AND references/consumer-protection-law.md. The 22 March 2027 in-force date carries the operational meaning and IS sourced. Round-3 review caught that the first attempt at this removal had missed the reference file, which is the general lesson: when a fact is corrected in the SKILL files, grep the references for it before claiming it is done."
       ]
     }
   ]

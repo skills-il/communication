@@ -140,10 +140,10 @@
     },
     {
       "claim_id": "oleh-chadash-definition",
-      "claim": "Consumer Protection Law sec 14G1(a) defines oleh chadash as someone within five years of receiving an immigrant certificate, and senior citizen as age 65 and over.",
-      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
-      "raw_snippet": "\" עולה חדש \" – מי שטרם חלפו חמש שנים מיום שניתנה לו תעודת עולה או תעודת זכאות כעולה ממשרד העלייה והקליטה;",
-      "fetched_at": "2026-08-09",
+      "claim": "Consumer Protection Law Section 14C1(a) (14ג1(א)) defines oleh chadash as someone within five years of receiving an immigrant certificate, and senior citizen as age 65 and over.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "”עולה חדש“ – מי שטרם חלפו חמש שנים מיום שניתנה לו תעודת עולה או תעודת זכאות כעולה ממשרד העלייה והקליטה",
+      "fetched_at": "2026-08-19T15:50:13Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -191,7 +191,7 @@
       "claim_id": "cpl-14e-no-fee-for-cause",
       "claim": "Where the consumer cancels for cause (defect, non-conformity, late delivery or any other breach by the dealer) the dealer refunds within 14 days and may charge NO cancellation fee at all; the 5% or NIS 100 lower-of fee applies only to a no-fault cancellation.",
       "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
-      "raw_snippet": "יחזיר העוסק לצרכן בתוך 14 ימים מיום קבלת ההודעה על הביטול, את אותו חלק ממחיר העסקה ששולם על ידי הצרכן",
+      "raw_snippet": "ולא יגבה מהצרכן דמי ביטול כלשהם",
       "fetched_at": "2026-08-19T15:24:58Z",
       "appears_in": [
         "SKILL.md",
@@ -280,7 +280,7 @@
       "claim_id": "cpl-16d-call-recording",
       "claim": "Consumer Protection Law Section 16D, added by Amendment 74 and in force from 22 March 2027, requires recording every voice call with the consumer for the transaction types in the Ninth Schedule at a total price of NIS 750 or more, telling the consumer at the start of each call, and retaining the recording for two years if a transaction was concluded or six months if not. Hebrew: סעיף 16ד.",
       "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
-      "raw_snippet": "16ד. חובת הקלטת שיחות, שמירתן ומסירתן לצרכן",
+      "raw_snippet": "ואם לא נכרתה – למשך שישה חודשים לפחות מיום ביצועה",
       "fetched_at": "2026-08-19T15:24:58Z",
       "appears_in": [
         "SKILL.md",
@@ -507,8 +507,10 @@
       "raw_snippet": "קיבל הצרכן את הנכס נושא העסקה או החוזה, יעמידו לרשות העוסק במקום שבו נמסר לו הנכס ויודיע על כך לעוסק",
       "fetched_at": "2026-08-19T15:41:44Z",
       "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
         "references/hebrew-response-templates.md",
-        "SKILL.md"
+        "references/consumer-protection-law.md"
       ]
     },
     {

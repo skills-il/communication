@@ -46,9 +46,9 @@ Section 18A (18א) of the Consumer Protection Law is the warranty provision, but
 |---|---|
 | Written contract | Must provide a signed written contract |
 | Cooling-off period | Consumer can cancel within 14 days from contract or receipt of goods |
-| Cancellation method | Written notice to the business |
-| Refund | Full refund within 14 days of cancellation |
-| Exceptions | Limited (fewer than remote purchases) |
+| Cancellation method | Any of the Section 14I (14ט) routes, including orally by phone or in person. NOT writing-only. |
+| Refund | Per Section 14E: within 14 days of receipt of the cancellation notice |
+| Exceptions | Section 14(c) lists one: perishable goods |
 
 ### Section 14C (14ג): Remote Purchases (iskat mechira merachok)
 
@@ -193,17 +193,17 @@ For claims exceeding small claims court limits, consumers can file in Magistrate
 
 If you route phone tickets through an IVR, the six-minute clock runs from the start of the call, after language and region selection, not from the moment the caller picks "speak to an agent".
 
-## Mandatory call recording, Section 16D (in force 22 March 2027)
+## Mandatory call recording, Section 16D (16ד), in force 22 March 2027
 
-**Mandatory call recording from 22 March 2027 (Consumer Protection Law Section 16D, 16ד, added by Amendment 74, published 22 July 2026).** This lands inside the planning horizon of any support system built now, and it constrains call-handling architecture and retention directly:
-- It applies to the transaction types listed in the Ninth Schedule (התוספת התשיעית) where the transaction's total price is **at least NIS 750**, whether or not a contract was concluded. Where the amount is unknown at the time of the call, the transaction is treated as being at or above the threshold.
+Added by Amendment 74. Applies to the transaction types listed in the **Ninth Schedule** (התוספת התשיעית) where the transaction's total price is **at least NIS 750**, whether or not a contract was concluded; where the amount is unknown at the time of the call, the transaction is treated as being at or above the threshold.
+
 - Every voice call with the consumer must be recorded, including calls over electronic communication, and in both directions.
 - The consumer must be told **at the start of every call** that it is recorded and that they may request a copy.
 - Retention: **two years** from the call if a transaction was concluded, **six months** if it was not, and longer where a delivery request is still outstanding.
-- The sanction is evidential rather than a fine: in a civil proceeding a dealer who failed to comply is treated as having admitted the consumer's version.
+- On request the dealer must hand over the recording, or a written schedule of call times, within **ten business days**, free of charge for the first request.
+- The sanction attaches to **failure to deliver**, not to failure to record: in a civil proceeding a dealer who did not deliver is treated as having admitted the consumer's version, and cannot itself adduce the recording.
 
-Design the phone channel for this now: start-of-call announcement, per-call retention clocks, and a request-and-deliver path for the recording.
-
+Design implications: a start-of-call announcement in every phone script, per-call retention clocks, a ticket category with its own ten-business-day SLA for recording requests, and awareness that the two-year floor overrides any shorter default retention policy.
 
 ## Cooling-off exceptions, Section 14C(d) (detail)
 
@@ -280,3 +280,26 @@ A dealer's representative must identify themselves in every call with a consumer
 | HelpScout | Partial | Limited | AI Assist + AI Drafts (per-seat) | Hebrew works in tickets/macros, but autoresponder language detection is weaker than Zendesk. |
 | Freshdesk | Yes | Yes (Freddy AI) | Freddy Self-Service / Freddy Copilot (per agent or per resolution) | Common with Israeli SMB; good Hebrew classification. |
 | Front | Yes | Partial (English-leaning AI) | AI Drafts (per seat) | Hebrew works in conversations but AI suggestions are weaker. |
+
+
+## Hebrew CSAT and NPS survey wording
+
+**CSAT (Customer Satisfaction Score):**
+
+Post-resolution survey (Hebrew):
+```
+מה מידת שביעות הרצון שלך מהטיפול בפנייה?
+1 - לא מרוצה כלל
+2 - לא מרוצה
+3 - ניטרלי
+4 - מרוצה
+5 - מרוצה מאוד
+```
+
+**NPS (Net Promoter Score):**
+
+Periodic survey (Hebrew):
+```
+בסולם של 0 עד 10, עד כמה סביר שתמליץ/י על {company_name} לחבר/ה או עמית/ה?
+0 (לא סביר כלל) -------- 10 (סביר מאוד)
+```

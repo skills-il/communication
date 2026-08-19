@@ -175,18 +175,7 @@ Configure a multi-level escalation system for support tickets.
 | Ticket involves amount > NIS 1,000 | L2 | High-value transaction |
 | Social media complaint (public) | L3 | PR sensitivity |
 
-**Escalation notification template (Hebrew):**
-
-```
-[הסלמת כרטיס]
-מספר כרטיס: {ticket_id}
-לקוח: {customer_name}
-סיבת הסלמה: {reason}
-רמה נוכחית: L{current} -> L{next}
-תיאור: {description}
-היסטוריה: {interaction_count} אינטראקציות
-SLA נותר: {sla_remaining}
-```
+The Hebrew escalation-notification template is in `references/hebrew-response-templates.md`.
 
 ### Step 5: Create Hebrew Canned Response Templates
 
@@ -240,6 +229,9 @@ Build a library of canned responses (tshuvot mugdarot meirosh) in Hebrew for com
 צוות {company_name}
 ```
 
+**Branch this template on the reason for cancellation before sending it.** The version above fits a **no-fault** cancellation (Section 14E(b)): the consumer returns the goods to the place of business and a fee of up to 5% or NIS 100, whichever is lower, may be charged. If the cancellation is **for cause** (defect, non-conformity, late delivery, or any other breach by the dealer) Section 14E(a) reverses both: the consumer only places the goods at the dealer's disposal **at the place they were delivered** and notifies the dealer, who collects at their own cost, and **no cancellation fee of any kind** may be charged. Section 14E(d) defines cancellation fees as including shipping and packing, so billing return carriage to a for-cause canceller is itself a prohibited fee. Delete the fee line and the shipping instructions in that case. In both branches Section 14E also requires handing the consumer a **copy of the charge-cancellation notice**, not just issuing the refund.
+
+
 **Issue resolved (ba'aya nitpera):**
 ```
 שלום {customer_name},
@@ -252,19 +244,6 @@ Build a library of canned responses (tshuvot mugdarot meirosh) in Hebrew for com
 
 נשמח אם תוכל/י לדרג את חוויית השירות:
 {satisfaction_survey_link}
-
-בברכה,
-צוות {company_name}
-```
-
-**Escalation notice to customer (hodaat haslama):**
-```
-שלום {customer_name},
-
-פנייתך (כרטיס {ticket_id}) הועברה לטיפול מנהל/ת צוות שלנו
-שיצור/תיצור איתך קשר בהקדם.
-
-אנו מתייחסים לפנייתך ברצינות ונעשה כל שביכולתנו לפתור את העניין.
 
 בברכה,
 צוות {company_name}
@@ -353,25 +332,7 @@ Pick one tier above your team's volume: agent-assist (drafts, summaries, sentime
 
 Set up customer satisfaction measurement (medidat sipuk lakokhot) with Hebrew-localized surveys.
 
-**CSAT (Customer Satisfaction Score):**
-
-Post-resolution survey (Hebrew):
-```
-מה מידת שביעות הרצון שלך מהטיפול בפנייה?
-1 - לא מרוצה כלל
-2 - לא מרוצה
-3 - ניטרלי
-4 - מרוצה
-5 - מרוצה מאוד
-```
-
-**NPS (Net Promoter Score):**
-
-Periodic survey (Hebrew):
-```
-בסולם של 0 עד 10, עד כמה סביר שתמליץ/י על {company_name} לחבר/ה או עמית/ה?
-0 (לא סביר כלל) -------- 10 (סביר מאוד)
-```
+**CSAT and NPS.** Send a 5-point Hebrew CSAT after resolution and a periodic NPS. Before you wire either up, classify the send: a survey carrying any promotional content, discount or repurchase prompt is advertising and needs Section 30A opt-in, while a plain post-resolution rating is transactional. The Hebrew survey wording is in `references/consumer-protection-law.md`.
 
 **Key metrics dashboard:**
 
@@ -500,7 +461,7 @@ Cause: Business hours configuration does not account for Shabbat (Saturday) and 
 Solution: Verify the business hours config in Step 3. Ensure Friday is set to close at 13:00 (or fully closed) and Saturday is marked as non-business. Check that the timezone is set to Asia/Jerusalem.
 
 ### Error: "Return request rejected but customer is within 14-day period"
-Cause: The 14-day period was calculated from the order date instead of the delivery date (or contract signing, whichever is later)
+Cause: The 14-day period was calculated from the order date instead of from receipt of the goods or receipt of the Section 14C(b) disclosure document, whichever is later. Note that contract signature is NOT a trigger
 Solution: Per Consumer Protection Law Section 14C (14ג), the cooling-off period starts from the later of: (1) delivery date, or (2) the date the consumer received the contract terms and cancellation details. Recalculate accordingly.
 
 ### Error: "Escalation notification not reaching supervisor"

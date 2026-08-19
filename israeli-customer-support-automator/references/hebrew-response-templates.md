@@ -406,3 +406,35 @@ __________________
 {agent_name}
 צוות שירות הלקוחות, {company_name}
 ```
+
+
+## Internal escalation notification
+
+**Escalation notification template (Hebrew):**
+
+```
+[הסלמת כרטיס]
+מספר כרטיס: {ticket_id}
+לקוח: {customer_name}
+סיבת הסלמה: {reason}
+רמה נוכחית: L{current} -> L{next}
+תיאור: {description}
+היסטוריה: {interaction_count} אינטראקציות
+SLA נותר: {sla_remaining}
+```
+
+
+## Escalation notice to the customer
+
+**Escalation notice to customer (hodaat haslama):**
+```
+שלום {customer_name},
+
+פנייתך (כרטיס {ticket_id}) הועברה לטיפול מנהל/ת צוות שלנו
+שיצור/תיצור איתך קשר בהקדם.
+
+אנו מתייחסים לפנייתך ברצינות ונעשה כל שביכולתנו לפתור את העניין.
+
+בברכה,
+צוות {company_name}
+```
