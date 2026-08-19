@@ -60,18 +60,16 @@ When handling complaints and return requests, ensure full compliance with the Is
 
 | Provision | Requirement | Law Section |
 |---|---|---|
-| Remote purchase returns | 14 days cooling-off period from delivery or contract signing (whichever is later) | Section 14G |
-| Cancellation of transaction | Consumer can cancel within 14 days; business must refund within 14 days of receiving cancellation notice | Section 14E |
-| Cancellation fee | Maximum 5% of transaction price or NIS 100, whichever is lower | Section 14E |
+| Remote purchase returns | 14 days cooling-off period from delivery or from receipt of the disclosure document, whichever is later | Section 14C (14ג) |
+| Cancellation of transaction | Consumer can cancel within 14 days; business must refund within 14 days of receiving cancellation notice | Section 14E (14ה) |
+| Cancellation fee | Maximum 5% of transaction price or NIS 100, whichever is lower. **No fee at all** when the consumer cancels for cause (defect, non-conformity, late delivery, or any other breach by the dealer) | Section 14E(a)-(b) (14ה) |
 | Misleading advertising | Business liable for damage caused by misleading claims | Section 2 |
-| Price display | Must display prices including VAT | Section 17A |
+| Price display | Must display the total price including VAT, in shekels only. 17A (17א) merely DEFINES "total price"; the operative duties are the display duty on goods and the advertising duty | Sections 17B and 17D (17ב, 17ד) |
 | Door-to-door sales (rochlut) | Consumer may cancel within 14 days of delivery or of receiving the required details, whichever is later | Section 14 |
 
-**Cooling-off period exceptions (Section 14G(d)):**
-- Perishable goods
-- Goods produced or altered specifically for the consumer
-- Information products that have been opened (software, recordings)
-- Accommodation, travel, or entertainment services for a specific date
+**Watch the Hebrew letters.** ג is the THIRD Hebrew letter, so 14ג transliterates to 14C, not 14G. 14ז (14G) is a different section entirely (credit vouchers). Citing "14G" for the remote-purchase cooling-off period sends a customer or a colleague to the wrong provision.
+
+**Cooling-off period exceptions (Section 14C(d), 14ג(ד)).** Five statutory exceptions, and two are routinely misstated: travel and leisure services are excluded only when cancellation falls **within seven non-rest-days before the service date** (a window, not a "specific date"), and "information" under the Computers Law is excluded outright, which is a separate item from recordable goods whose original packaging was opened. Full list in `references/consumer-protection-law.md`.
 
 **Complaint handling workflow:**
 
@@ -106,9 +104,11 @@ Consult `references/consumer-protection-law.md` for the full legal reference.
 - Honor data-subject access (zechut iyun) and deletion (zechut limchikat meida) requests within 30 days. Build a tag in the helpdesk ("DSAR") to track them.
 - Sub-processors (Zendesk, Intercom, transcription vendors) must appear in your privacy notice and have a signed data-processing addendum.
 - The Privacy Protection Authority (PPA) gained direct fining power in this amendment; the PPA can now impose financial sanctions directly, scaled to the severity of the breach and the size of the database. Check the PPA's current published sanction schedule before quoting a figure to a customer.
-- The PPA's AI-systems guidelines (published 2024, in force alongside Amendment 13) explicitly cover chatbots. If your chat widget makes automated decisions or routes tickets via an AI agent (Fin, Zendesk AI Agents, Freddy), disclose that the conversation is handled by AI, run a Data Protection Impact Assessment (DPIA) before launch, and document safeguards. Bot transcripts are personal information once linked to a customer identifier.
+- The PPA's guidance on applying the Privacy Protection Law to AI systems was published on 28 April 2025 and is **still a draft for public comment**, so it has no binding force. Read it as the regulator's stated position rather than as a rule. Two points are commonly overstated: it says explicitly that **Israeli law imposes no duty to conduct a Data Protection Impact Assessment**, and that a DPIA is the PPA's recommended best practice; and the bot-disclosure point is **conditional**, requiring that the user be told they are interacting with a bot where that fact could materially affect their consent, not as a flat rule in every conversation. Bot transcripts are personal information once linked to a customer identifier. There is no Israeli statutory bot-disclosure duty; the blanket "you must be told you are talking to AI" rule people cite is the EU AI Act, not Israeli law.
 
-**Extended cooling-off for protected groups (Section 14G).** Standard consumers get 14 days; consumers who are persons with a disability, senior citizens (65+), or new immigrants (within 5 years of receiving their immigrant certificate) get **4 months** to cancel a remote-purchase transaction, provided the transaction involved a phone call or electronic correspondence with the seller. Your auto-categorizer should NOT auto-reject return requests beyond day 14 without checking the customer's protected-group status first.
+**Mandatory call recording from 22 March 2027** (Consumer Protection Law Section 16D, added by Amendment 74, published 22 July 2026). For the transaction types in the Ninth Schedule at a total price of **NIS 750 or more**, every voice call with the consumer must be recorded in both directions, the consumer must be told at the **start of every call** that it is recorded and that they may request a copy, and the recording must be kept **two years** if a transaction was concluded or **six months** if it was not. The sanction is evidential: a non-complying dealer is treated in civil proceedings as having admitted the consumer's version. Design the phone channel for this now. Detail in `references/consumer-protection-law.md`.
+
+**Extended cooling-off for protected groups (Section 14C1, 14ג1).** Standard consumers get 14 days; consumers who are persons with a disability, senior citizens (65+), or new immigrants (within 5 years of receiving their immigrant certificate) get **4 months** to cancel a remote-purchase transaction, provided the transaction involved a conversation between the dealer and the consumer, including a conversation by electronic communication. That conversation condition applies to REMOTE sales (14ג1(ג)) only; for a door-to-door transaction (14ג1(ב)) the four months apply with no such condition. The dealer may demand one document proving the status and no more (14ג1(ד)). Your auto-categorizer should NOT auto-reject return requests beyond day 14 without checking the customer's protected-group status first.
 
 ### Step 3: Configure SLA Management with Israeli Business Hours
 
@@ -145,13 +145,7 @@ Set up SLA timers that respect Israeli business hours and holidays.
 - Rosh Hashana, Yom Kippur, Sukkot, Pesach (multi-day holidays with reduced staffing)
 - Days between holidays when many employees take vacation (gashranim)
 
-**Telephone wait-time obligation (Consumer Protection Regulations on Telephone Service, 2012, in force).** This is a hard regulatory cap for any business with a phone support channel:
-- Maximum wait time for a human agent on tickets relating to fault repair, billing dispute, or contract termination: **6 minutes from start of call**. Up to 15% of calls may exceed the cap over a 2-week rolling window.
-- If expected wait time exceeds **3 minutes**, the business must announce the estimated wait time within the first 2 minutes of the call AND offer a callback option. If the customer leaves a callback request, the business must call back within **3 hours** with a human agent.
-- License-holders (telecom and similar regulated sectors) have a stricter average-wait obligation of **4.5 minutes** over a 2-week rolling window.
-- The Ministry of Communications publishes quarterly compliance reports; carriers that miss the cap have been fined. Build wait-time reporting into your phone-channel dashboard from day 1.
-
-If you route phone tickets to an IVR + automated triage, the 6-minute clock starts when the customer picks the "speak to an agent" option, not at the start of the IVR menu.
+**Telephone wait-time obligations. Check first whether they apply to you at all.** The 6-minute human-answer rule is in **Consumer Protection Law Section 18B(a1)** (not in the 2012 regulations), and it binds only a dealer listed in the **Second Schedule**: telephony, internet access, cable and satellite, gas, electricity, water, and ongoing medical-services transactions. There is no employee-count threshold and an ordinary Israeli SME is not covered; banks and insurers are covered by their own statutes. The **2012 Telephone Service Regulations** carry the separate 3-minute announcement (delivered within two minutes of call start) and the 3-hour callback duty, and contain no 6-minute rule. The often-quoted "15% may exceed" and "4.5-minute average" figures are Ministry of Communications supervision metrics for telecom licensees, not statutory consumer caps. They are revised periodically, so read the current figures off the ministry's own page before quoting one to anybody. Full detail, including the systemic-outage carve-out and the callback exceptions, is in `references/consumer-protection-law.md`.
 
 ### Step 4: Build Escalation Workflows
 
@@ -300,13 +294,11 @@ Set up support across multiple channels common in the Israeli market.
 - Support Hebrew text direction (RTL)
 - Send order updates and tracking proactively
 - Business hours auto-reply for after-hours messages
-- **Per-message pricing (effective 1 January 2026):** Meta switched the WhatsApp Business Platform from conversation-based billing (24-hour windows) to per-template-message pricing. Marketing, utility, authentication, and service templates each have their own rate per country. Israel rates are mid-tier; budget on a per-message basis when forecasting WhatsApp support costs, and audit template categories monthly because Meta auto-reclassifies templates (utility -> marketing is the most common silent reclassification, and marketing is ~3-5x the price). Most Israeli operations go through a Business Solution Provider (BSP); BSPs typically add 15-20% markup on top of Meta rates.
+- **Per-message pricing (effective 1 July 2025).** Meta switched the WhatsApp Business Platform from conversation-based billing (24-hour windows) to per-message pricing on 1 July 2025. Marketing templates are charged on delivery; utility and authentication templates are charged outside the customer service window. Rates are per country and Meta publishes a downloadable rate card, so read the current Israel row rather than assuming a ratio between categories.
+- **Service messages are free today and stop being free on 1 October 2026.** They have not been charged since 1 November 2024. From 1 October 2026 Meta charges per message for all service messages, and also for utility messages sent in response to a user inside an open 24-hour service window. A support operation costed on today's "service is free" assumption will see a new line item from that date. There is also a new Meta Business Agent category, billed per token from 1 August 2026.
+- Audit template categories regularly: Meta reclassifies templates (utility to marketing is the common direction, and marketing is the more expensive category), and the business is charged at the category applied at time of use. Most Israeli operations go through a Business Solution Provider, which adds its own markup on top of Meta's rates; confirm that markup with your BSP rather than assuming a figure.
 
-**SMS auto-reply consent (Section 30A Communications Law, "chok haspam", as amended).** Sending marketing or promotional SMS to a customer requires **prior explicit opt-in consent** ("Hasakama meforeshet mukdemet"); transactional support replies (order status, ticket updates, password resets) are exempt. Every marketing SMS must include:
-- The Hebrew word "פרסומת" or "מסחרי" at the start of the message body so the recipient can identify it as an ad before opening.
-- Sender name and contact details.
-- A clear, free, one-step unsubscribe path ("הסר" reply or unsubscribe link).
-Penalty: up to **NIS 1,000 statutory damages per message** in civil court, no proof of harm required. The same rule applies to email, WhatsApp marketing (not 1:1 transactional), and automated phone calls. Tag every outbound channel in your helpdesk as "transactional" or "marketing" and gate marketing on a verified opt-in flag.
+**SMS and WhatsApp marketing consent (Section 30A Communications Law, "chok haspam").** Marketing or promotional messages need **prior explicit written opt-in**; transactional support replies (order status, ticket updates, password resets) are outside the section entirely because they are not a "davar pirsomet" as the statute defines it. The permitted labels are **"פרסומת", "בקשת תרומה" or "תעמולה"**; **"מסחרי" is not in the statute**. An SMS must carry only the advertiser's name and opt-out contact details (Section 30A(e)(2) overrides the general list); an email must carry the word in the **subject line** plus name, address, contact details and a live opt-out URL. A court may award up to **NIS 1,000 per message** without proof of harm. WhatsApp marketing is inside the statute's definition of an electronic message. Tag every outbound channel as "transactional" or "marketing" and gate marketing on a verified opt-in flag. Full detail, including the Section 30A(c) existing-customer route and why it is not the same as the transactional exclusion, is in `references/consumer-protection-law.md`.
 
 **Email:**
 - Use professional Hebrew templates
@@ -355,8 +347,8 @@ Connect support workflows with CRM and ERP systems commonly used by Israeli busi
 
 | Platform | Hebrew UI | Hebrew AI/NLU | 2026 AI agent (autonomous) | Notes |
 |---|---|---|---|---|
-| Zendesk | Yes | Yes (multilingual GPT-4-class models in "Advanced AI") | Zendesk AI Agents (formerly Ultimate.ai), per-resolution pricing: $1.50 per resolution committed, $2.00 PAYG (2026 rates), plus $50/agent/month Advanced AI add-on | Best-supported Hebrew tier; macros, triggers, and intent classification all support Hebrew. Per-resolution fees auto-bill for overages with no prior warning since Jan 2026. |
-| Intercom | Yes | Yes (Fin AI Agent) | Fin, $0.99 per successful resolution, minimum 50 resolutions/month, on top of seat fees ($29-$132 per seat per month depending on plan) | Fin handles Hebrew tickets; verify tone with sample conversations before going live. |
+| Zendesk | Yes | Yes (multilingual LLM-backed intent classification) | Zendesk AI Agents, billed per automated resolution. Zendesk does not publish a per-resolution price, and it restructured its resolution tiers in May 2026 so that some outcome types no longer count against the allowance. Get a written quote; do not budget from a third-party blog figure | Best-supported Hebrew tier; macros, triggers, and intent classification all support Hebrew. |
+| Intercom | Yes | Yes (Fin AI Agent) | Fin, $0.99 per outcome (resolution, procedure handoff or disqualification), on top of seat fees of roughly $29-$132 per seat per month depending on plan. The 50-outcome monthly minimum applies to Fin running on a third-party helpdesk; on Intercom plans the stated minimum is one full seat | Fin handles Hebrew tickets; verify tone with sample conversations before going live. |
 | HelpScout | Partial | Limited | AI Assist + AI Drafts (per-seat) | Hebrew works in tickets/macros, but autoresponder language detection is weaker than Zendesk. |
 | Freshdesk | Yes | Yes (Freddy AI) | Freddy Self-Service / Freddy Copilot (per agent or per resolution) | Common with Israeli SMB; good Hebrew classification. |
 | Front | Yes | Partial (English-leaning AI) | AI Drafts (per seat) | Hebrew works in conversations but AI suggestions are weaker. |
@@ -434,7 +426,7 @@ Actions:
 5. Issue refund within 14 days of receiving cancellation notice
 6. Document the interaction for compliance records
 
-Result: Return processed in full compliance with Consumer Protection Law 1981, Section 14G.
+Result: Return processed in full compliance with Consumer Protection Law 1981, Section 14C (14ג).
 
 ### Example 3: Create an Escalation Workflow
 
@@ -515,7 +507,7 @@ Solution: Verify the business hours config in Step 3. Ensure Friday is set to cl
 
 ### Error: "Return request rejected but customer is within 14-day period"
 Cause: The 14-day period was calculated from the order date instead of the delivery date (or contract signing, whichever is later)
-Solution: Per Consumer Protection Law Section 14G, the cooling-off period starts from the later of: (1) delivery date, or (2) the date the consumer received the contract terms and cancellation details. Recalculate accordingly.
+Solution: Per Consumer Protection Law Section 14C (14ג), the cooling-off period starts from the later of: (1) delivery date, or (2) the date the consumer received the contract terms and cancellation details. Recalculate accordingly.
 
 ### Error: "Escalation notification not reaching supervisor"
 Cause: Notification channel is misconfigured or supervisor assignment rules are not matching

@@ -1,42 +1,8 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-customer-support-automator",
-  "generated_at": "2026-05-20",
+  "generated_at": "2026-08-19T15:24:58Z",
   "claims": [
-    {
-      "claim_id": "phone-wait-6min",
-      "claim": "Maximum wait time for human agent on fault/billing/termination calls is 6 minutes from start of call; up to 15% of calls may exceed in a 2-week window.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
-      "raw_snippet": "משך ההמתנה לקבלת מענה אנושי מקצועי בנושאי טיפול בתקלה, בירור חשבון וסיום התקשרות לא יעלה על 6 דקות מתחילת השיחה. ניתן לחרוג בשיעור של עד 15% מהשיחות במשך שבועיים רצופים.",
-      "fetched_at": "2026-05-20",
-      "appears_in": [
-        "SKILL.md Step 3 telephone wait-time obligation",
-        "SKILL_HE.md שלב 3 חובת זמן המתנה",
-        "Gotchas section"
-      ]
-    },
-    {
-      "claim_id": "phone-wait-3min-callback",
-      "claim": "If expected wait exceeds 3 minutes, business must announce estimated wait within first 2 minutes and offer callback; callback must occur within 3 hours with a human agent.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
-      "raw_snippet": "במקרה שזמן ההמתנה הצפוי למענה האנושי עולה על שלוש דקות, אזי בתוך שתי דקות מתחילת השיחה על העוסק להודיע לצרכן את זמן ההמתנה המשוער וליתן לו אפשרות להשארת הודעה בעקבותיה חייב העוסק לחזור לצרכן באמצעות מענה אנושי בתוך 3 שעות.",
-      "fetched_at": "2026-05-20",
-      "appears_in": [
-        "SKILL.md Step 3",
-        "SKILL_HE.md שלב 3"
-      ]
-    },
-    {
-      "claim_id": "phone-wait-license-4.5min",
-      "claim": "License-holders (telecom and similar regulated sectors) have a stricter obligation of 4.5 minutes average wait over a 2-week rolling window.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A2%D7%A0%D7%94_%D7%98%D7%9C%D7%A4%D7%95%D7%A0%D7%99_%D7%97%D7%99%D7%A0%D7%9D_%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F_%D7%9E%D7%90%D7%AA_%D7%A1%D7%A4%D7%A7%D7%99_%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
-      "raw_snippet": "בעל רישיון יעמוד במשך המתנה ממוצע שאינו עולה על 4.5 דקות באותן פניות בתקופה של שבועיים רצופים - יעד מחמיר יותר.",
-      "fetched_at": "2026-05-20",
-      "appears_in": [
-        "SKILL.md Step 3",
-        "SKILL_HE.md שלב 3"
-      ]
-    },
     {
       "claim_id": "protected-groups-4months",
       "claim": "Persons with disability, senior citizens (65+), or new immigrants (within 5 years of receiving an immigrant certificate) get 4 months to cancel a remote-purchase transaction, provided the transaction involved a conversation with the dealer.",
@@ -77,45 +43,6 @@
       "verified_at": "2026-08-18"
     },
     {
-      "claim_id": "amendment-13-ai-guidelines",
-      "claim": "Amendment 13 (with PPA AI guidelines) explicitly covers AI/chatbots: informed consent, disclosure, DPIA requirements, and data subject rights apply.",
-      "source_url": "https://www.gornitzky.com/privacy-in-artificial-intelligence-systems-guidelines-of-the-israeli-privacy-protection-authority/",
-      "raw_snippet": "Consider including disclosures in AI tools that interact directly with data subjects (e.g., chatbots). Conduct DPIAs : Carry out DPIAs for any AI systems that process personal data, and address identified privacy risks. Develop a Policy on External AI Services : Define rules for using services like ChatGPT, specify data types that must not be entered into such services, and train employees accordingly.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md Step 2 PPA AI guidelines bullet",
-        "SKILL_HE.md שלב 2 הנחיות AI"
-      ],
-      "verified_via": "source fetched and the passage copied verbatim from the cited page",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "whatsapp-per-message-2026",
-      "claim": "Meta switched WhatsApp Business Platform pricing from conversation-based (24-hour window) to per-template-message effective January 1, 2026.",
-      "source_url": "https://whatsappbusiness.com/products/platform-pricing/",
-      "raw_snippet": "WhatsApp Business Platform Pricing | WhatsApp API Pricing",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md Step 6 WhatsApp per-message bullet",
-        "SKILL_HE.md שלב 6 תמחור פר-הודעה"
-      ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "whatsapp-bsp-markup",
-      "claim": "BSPs typically add 15-20% markup on top of Meta's WhatsApp Business API rates.",
-      "source_url": "https://whapi.cloud/blog/whatsapp-bsp-pricing-hidden-costs-2026",
-      "raw_snippet": "BSP markups (15–20%) apply on top of every Meta charge; template reclassification silently converts utility rates to marketing rates overnight; per-country pricing means the same message costs 3x more in Brazil than in India. Use this analysis to build a realistic cost model before committing to a BSP integration; the $50→$385 case study shows the math. TL;DR: This pricing checklist from Whapi.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md Step 6 WhatsApp bullet",
-        "SKILL_HE.md שלב 6"
-      ],
-      "verified_via": "source fetched and the passage copied verbatim from the cited page",
-      "verified_at": "2026-08-18"
-    },
-    {
       "claim_id": "spam-section-30a",
       "claim": "סעיף 30א לחוק התקשורת (בזק ושידורים) אוסר לשגר דבר פרסומת בפקס, בחיוג אוטומטי, בדואר אלקטרוני או ב-SMS בלא הסכמה מפורשת מראש ובכתב של הנמען. העמוד https://www.gov.il/en/pages/17052018_7 מכוסה גם הוא בערך זה.",
       "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
@@ -127,19 +54,6 @@
         "Gotchas"
       ],
       "verified_via": "cited page fetched and confirmed to contain \"סעיף 30א\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "zendesk-pricing-2026",
-      "claim": "Zendesk AI Agents 2026 pricing: $1.50 per resolution committed, $2.00 PAYG, plus $50/agent/month Advanced AI add-on.",
-      "source_url": "https://corepiper.com/blog/zendesk-ai-agent-pricing-2026/",
-      "raw_snippet": "A 20-agent team resolving 3,000 conversations per month all-in pays approximately $80,000 per year. Per-resolution fees auto-bill for overages since January 2026, with no prior warning. TL;DR: Zendesk AI Pricing Snapshot Cost Component Rate Notes Per-resolution (committed) $1.50 Drops to $1.00 at 5,001+/month Per-resolution (PAYG) $2.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md Step 7 Hebrew-NLU helpdesk table",
-        "SKILL_HE.md שלב 7 table"
-      ],
-      "verified_via": "source fetched and the passage copied verbatim from the cited page",
       "verified_at": "2026-08-18"
     },
     {
@@ -186,17 +100,6 @@
       "appears_in": [
         "SKILL.md consumer law table Section 2",
         "SKILL_HE.md סעיף 2"
-      ]
-    },
-    {
-      "claim_id": "cpl-section-14g-remote-disclosure",
-      "claim": "Section 14G obliges a dealer in distance marketing to disclose a defined list of details to the consumer. (סעיף 14ג)",
-      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
-      "raw_snippet": "בשיווק מרחוק חייב העוסק לגלות לצרכן פרטים אלה לפחות",
-      "fetched_at": "2026-08-09",
-      "appears_in": [
-        "SKILL.md Section 14G rows",
-        "SKILL_HE.md סעיף 14ג"
       ]
     },
     {
@@ -283,6 +186,251 @@
       "verified_via": "Communications (Telecommunications and Broadcasts) Law read on nevo in a browser",
       "verified_at": "2026-08-19",
       "fetched_at": "2026-08-19",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14c-remote-cooling-off",
+      "claim": "The remote-purchase 14-day cooling-off right is in Consumer Protection Law Section 14C (14ג(ג)), not 14G.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "14ג. עסקת מכר מרחוק",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14c-d-exceptions",
+      "claim": "Section 14C(d) lists five cooling-off exceptions; travel and leisure services are excluded only where cancellation falls within seven non-rest-days before the service date, and \"information\" under the Computers Law is excluded separately from opened recordable goods.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "(2) שירותי הארחה, נסיעה, חופש או בילוי, אם מועד ביטול העסקה חל בתוך שבעה ימים שאינם ימי מנוחה, קודם למועד שבו אמור השירות להינתן",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14e-no-fee-for-cause",
+      "claim": "Where the consumer cancels for cause (defect, non-conformity, late delivery or any other breach by the dealer) the dealer refunds within 14 days and may charge NO cancellation fee at all; the 5% or NIS 100 lower-of fee applies only to a no-fault cancellation.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "יחזיר העוסק לצרכן בתוך 14 ימים מיום קבלת ההודעה על הביטול, את אותו חלק ממחיר העסקה ששולם על ידי הצרכן",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14c1-protected-groups",
+      "claim": "Section 14C1 (14ג1) gives a person with a disability, a senior citizen aged 65+, or a new immigrant within five years of their immigrant certificate four months to cancel; the conversation condition applies to remote sales only, and the dealer may demand one proof document and no more.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "רשאי הצרכן לבטל את העסקה בתוך ארבעה חודשים מיום עשיית העסקה, מיום קבלת הנכס או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף 14ג(ב) , לפי העניין, לפי המאוחר, ובלבד שההתקשרות בעסקה כללה שיחה בין העוסק לצרכן",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-17a-definitions-only",
+      "claim": "Section 17A only defines \"the total price\"; the operative price-display duty is in Section 17B and the advertising duty in Section 17D.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "17א. הגדרות לענין פרק ד׳",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-17b-display-duty",
+      "claim": "Section 17B(a) requires a dealer offering, displaying or selling goods to display the total price on them or their packaging.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "עוסק המציע, המציג או המוכר טובין לצרכן יציג על גביהם או על גבי אריזתם את מחירם הכולל",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-18b-six-minutes",
+      "claim": "The six-minute human-answer rule is in Consumer Protection Law Section 18B(a1)(3), binds only a dealer listed in the Second Schedule, applies only where the phone service includes an automatic call-routing system, and is measured from the start of the call after language and region selection. Hebrew: סעיף 18ב(א1)(3).",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "משך ההמתנה לקבלת מענה אנושי מקצועי בסוגי השירותים המפורטים בפסקה (1) לא יעלה על שש דקות מתחילת השיחה, והצרכן לא יופנה לשירות השארת הודעה, אלא אם כן בחר בכך",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-18b-second-schedule-scope",
+      "claim": "Section 18B applies only to a dealer listed in the Second Schedule (עוסק המנוי בתוספת השניה); there is no employee-count or revenue threshold.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "עוסק המנוי בתוספת השניה",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-18b-deviation-approval",
+      "claim": "The \"15% of calls may exceed\" figure is not a statutory allowance: Section 18B(a1)(4) lets the sector regulator issue a deviation approval setting a permitted share of calls.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "רשאי שר הממונה על הסדרת הענף שבו פועל העוסק, או גוף אחר שנתונות לו סמכויות להסדרת הענף שבו פועל העוסק, להורות כי עוסק כאמור רשאי לחרוג ממשך ההמתנה הקבוע בפסקה (3)",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-18b-outage-carveout",
+      "claim": "Section 18B(a1)(5) suspends the duty during a general systemic outage affecting at least a regional area, provided a recorded message names the affected area.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "הוראות סעיף קטן זה לא יחולו במקרה של תקלה מערכתית כללית בהספקת הטובין או השירותים על ידי העוסק",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-16d-call-recording",
+      "claim": "Consumer Protection Law Section 16D, added by Amendment 74 and in force from 22 March 2027, requires recording every voice call with the consumer for the transaction types in the Ninth Schedule at a total price of NIS 750 or more, telling the consumer at the start of each call, and retaining the recording for two years if a transaction was concluded or six months if not. Hebrew: סעיף 16ד.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "16ד. חובת הקלטת שיחות, שמירתן ומסירתן לצרכן",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-16d-750-threshold",
+      "claim": "The Section 16D recording duty attaches to a transaction whose total price is at least NIS 750, whether or not a contract was concluded.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "החובה לפי סעיף קטן (א) תחול על כל שיחה לעניין עסקה שמחירה הכולל הוא 750 שקלים חדשים לפחות, בין שנכרתה העסקה ובין שלא",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "spam-30a-permitted-words",
+      "claim": "The words Section 30A(e)(1)(a) requires at the start of an advertisement are \"פרסומת\", \"בקשת תרומה\" or \"תעמולה\"; \"מסחרי\" does not appear in the section. For an electronic message the word goes in the message header (subject line).",
+      "source_url": "https://he.wikisource.org/wiki/חוק_התקשורת_(בזק_ושידורים)",
+      "raw_snippet": "היותו דבר פרסומת; המילים ”פרסומת“, ”בקשת תרומה“ או ”תעמולה“, לפי העניין, יופיעו בתחילת דבר הפרסומת, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית – בכותרת ההודעה;",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "spam-30a-sms-carveout",
+      "claim": "Section 30A(e)(2) overrides the general list for an SMS: the advertiser states ONLY its name and the contact details for sending a refusal notice.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_התקשורת_(בזק_ושידורים)",
+      "raw_snippet": "על אף הוראות פסקה (1), מפרסם המשגר דבר פרסומת באמצעות הודעת מסר קצר יציין בדבר הפרסומת רק את שמו ואת דרכי יצירת הקשר עמו לצורך מתן הודעת סירוב",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "spam-30a-electronic-message-def",
+      "claim": "\"Electronic message\" is defined as a coded telecommunications message carried over the internet to a recipient or group of recipients and capable of being stored and retrieved by computer, which covers WhatsApp.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_התקשורת_(בזק_ושידורים)",
+      "raw_snippet": "”הודעה אלקטרונית“ – מסר בזק מקודד המועבר ברשת האינטרנט אל נמען או קבוצה של נמענים, וניתן לשמירה ולאחזור בדרך ממוחשבת;",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-30a-davar-pirsomet-def",
+      "claim": "A \"davar pirsomet\" is a commercially distributed message whose purpose is to encourage a purchase or other spending, so a transactional support message falls outside Section 30A by definition rather than by exemption.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_התקשורת_(בזק_ושידורים)",
+      "raw_snippet": "מסר המופץ באופן מסחרי, שמטרתו לעודד רכישת מוצר או שירות או לעודד הוצאת כספים בדרך אחרת;",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-30a-c-three-conditions",
+      "claim": "Section 30A(c) permits advertising to an existing customer without prior consent only when all three of its conditions hold, and imposes no time window.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_התקשורת_(בזק_ושידורים)",
+      "raw_snippet": "(3) דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה למוצר או לשירות האמורים בפסקה (1).",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "whatsapp-per-message-july-2025",
+      "claim": "Meta switched the WhatsApp Business Platform from conversation-based to per-message pricing effective 1 July 2025.",
+      "source_url": "https://developers.facebook.com/docs/whatsapp/pricing",
+      "raw_snippet": "Effective July 1, 2025, Meta charges on a per-message basis",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-19T15:26:44Z",
+      "note": "developers.facebook.com returns HTTP 400 to the gate fetcher (it sends Accept-Language: he,en). Fetched directly on 2026-08-19 with curl -sL -A \"Mozilla/5.0\" and the snippet read out of the rendered page text."
+    },
+    {
+      "claim_id": "whatsapp-service-free-until-oct-2026",
+      "claim": "WhatsApp service messages have not been charged since 1 November 2024 and become chargeable per message on 1 October 2026, along with utility messages sent in response to users inside an open 24-hour service window. Meta Business Agent messages are charged per token from 1 August 2026.",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "Effective October 1, 2026 - Meta will charge on a per-message basis for all service messages , consistent with how Meta charges for template messages. These messages have not been charged since November 1, 2024.",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-19T15:26:44Z",
+      "note": "developers.facebook.com returns HTTP 400 to the gate fetcher (it sends Accept-Language: he,en). Fetched directly on 2026-08-19 with curl -sL -A \"Mozilla/5.0\" and the snippet read out of the rendered page text."
+    },
+    {
+      "claim_id": "ppa-ai-guidance-draft",
+      "claim": "The Privacy Protection Authority's guidance on applying the Privacy Protection Law to AI systems is dated 28 April 2025 and was published as a draft for public comment, so it is not binding.",
+      "source_url": "https://www.gov.il/BlobFolder/rfp/ai_reg/he/ai_regu_draft.pdf",
+      "raw_snippet": "הדין בישראל לא כולל אמנם חובה לעריכת תסקיר השפעה על הפרטיות בטרם עיבוד מידע אישי",
+      "fetched_at": "2026-08-19T15:24:58Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "note": "PDF header is dated 28 April 2025 and titled \"טיוטת הנחיית הרשות להגנת הפרטיות: תחולת הוראות חוק הגנת הפרטיות על מערכות בינה מלאכותית\", i.e. a draft."
+    },
+    {
+      "claim_id": "ppa-ai-bot-disclosure-conditional",
+      "claim": "The PPA draft makes bot disclosure conditional: the data subject should be informed that the party they are interacting with is not a human but an AI-based automated system, insofar as that fact could materially affect the giving of consent.",
+      "source_url": "https://www.gov.il/BlobFolder/rfp/ai_reg/he/ai_regu_draft.pdf",
+      "raw_snippet": "יש ליידע את נושא המידע לגביה ,ככל שעשויה להיות לעובדה זו השפעה מהותית על מתן ההסכמה",
+      "fetched_at": "2026-08-19T15:25:57Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"

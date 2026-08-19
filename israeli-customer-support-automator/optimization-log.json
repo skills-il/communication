@@ -1,0 +1,18 @@
+{
+  "cycles": [
+    {
+      "version": "1.4.0",
+      "date": "2026-08-19",
+      "lessons": [
+        "The English file cited 'Section 14G' for the remote-purchase cooling-off period while the Hebrew file already said 14ג. Transliteration trap: ג is the third letter, so 14ג is 14C; 14ז (14G) is credit vouchers. Check both language files independently when auditing section numbers.",
+        "The 6-minute phone rule is in the Consumer Protection LAW (s.18B(a1)), not in the 2012 Telephone Service Regulations, and the two files named two DIFFERENT wrong instruments. It binds only Second-Schedule sectors, so most Israeli SMEs are not covered at all.",
+        "Could not source the Ministry of Communications 4.5-minute / 15% / 8-minute / 20% supervision figures from a primary page (gov.il Cloudflare-blocks this network), so the specific numbers were removed and the text routes to the ministry page instead. Recover them next cycle from a browser session.",
+        "Could not fetch Meta's per-country WhatsApp rate CSV (hash-signed URLs return 'Bad URL hash'), so the 'marketing is 3-5x utility' ratio was removed rather than restated. Retrieve the Israel row next cycle and reinstate a sourced figure.",
+        "Zendesk publishes no per-resolution price and no 'Advanced AI' add-on; the $1.50 / $2.00 / $50 figures came from a third-party blog and were removed. Do not reinstate vendor pricing without the vendor's own page.",
+        "Deferred: Consumer Protection Law s.14C2 (tourism abroad, in force 2019) lets a dealer substitute the foreign supplier's cancellation policy subject to disclosure, with the burden on the dealer. Relevant to travel-sector support desks.",
+        "Deferred: the first Amendment-13-era monetary sanction (reported mid-2026) and the PPA's final consent opinion of 25.02.2026 are both press- or secondary-sourced only; verify against a PPA primary page before adding.",
+        "evidence.json note: developers.facebook.com returns HTTP 400 to the gate fetcher because it sends Accept-Language: he,en. Fetch with a plain Mozilla UA instead."
+      ]
+    }
+  ]
+}

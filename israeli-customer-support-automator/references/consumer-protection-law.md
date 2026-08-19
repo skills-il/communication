@@ -50,7 +50,9 @@ Warranty duties for consumer goods come from the Sale Law and sector-specific re
 | Refund | Full refund within 14 days of cancellation |
 | Exceptions | Limited (fewer than remote purchases) |
 
-### Section 14G: Remote Purchases (iskat mechira merachok)
+### Section 14C (14ג): Remote Purchases (iskat mechira merachok)
+
+> Note on transliteration: ג is the third Hebrew letter, so 14ג is 14C. 14ז (14G) is a different section, on credit vouchers. Earlier versions of this file cited "14G" for the remote-purchase rules; that was wrong.
 
 This is the most frequently referenced section in customer support operations.
 
@@ -103,7 +105,9 @@ This is the most frequently referenced section in customer support operations.
 
 The shekel threshold is set outside the Consumer Protection Law and is updated periodically; look up the current figure before quoting it.
 
-### Section 17A: Price Display
+### Sections 17A-17D (17א-17ד): Price Display
+
+> 17א only DEFINES "the total price" (המחיר הכולל), including VAT, fees and compulsory payments. The operative duties are 17ב (display the total price on goods or their packaging, in shekels only, legibly and visibly) and 17ד (never advertise or quote anything but the total price, and only in Israeli currency).
 
 | Requirement | Details |
 |---|---|
@@ -160,9 +164,61 @@ For claims exceeding small claims court limits, consumers can file in Magistrate
 
 | Mistake | Legal Risk |
 |---|---|
-| Refusing returns within 14-day cooling-off period | Direct violation of Section 14G; administrative fine + civil liability |
-| Charging more than the maximum cancellation fee | Violation of Section 14G; refund of excess amount required |
-| Not honoring displayed price | Violation of Section 17A; must sell at displayed price |
+| Refusing returns within 14-day cooling-off period | Direct violation of Section 14C (14ג); administrative fine + civil liability |
+| Charging more than the maximum cancellation fee | Violation of Section 14E (14ה); refund of excess amount required |
+| Not honoring displayed price | Violation of Sections 17B/17D (17ב, 17ד); must sell at displayed price |
 | Making customers pay return shipping for defective products | Business bears shipping cost for defective products |
 | Requiring original packaging for defective product returns | No legal basis; product can be returned in any reasonable condition |
 | Ignoring complaints from consumers with extended cooling-off rights | Extended periods for seniors, new immigrants, and people with disabilities must be honored |
+
+
+## Telephone service obligations (detail)
+
+**Telephone wait-time obligations. Check first whether they apply to you at all.** Two different instruments are involved, and they are routinely conflated:
+
+**Consumer Protection Law, Section 18B(a1) (סעיף 18ב(א1), added 2018).** This is where the 6-minute rule lives, and it is a statute, not the 2012 regulations.
+- It binds only a dealer **listed in the Second Schedule** (התוספת השנייה): fixed and mobile telephony, internet access, cable and satellite broadcasting, gas, electricity, water, and a dealer in an ongoing transaction for medical services. **There is no employee-count or revenue threshold**, and an ordinary Israeli SME is not covered. Banks, insurers and provident funds are covered by their own statutes, not by this one.
+- It applies only where the telephone service **includes an automatic call-routing system**.
+- Where it applies: the wait for a qualified human agent on fault repair, account inquiry, or contract termination must not exceed **six minutes from the start of the call**, measured after any language and region selection, and the consumer must not be diverted to voicemail unless they chose it.
+- The duty is suspended during a **general systemic outage** affecting at least a regional area, provided a recorded message names the area.
+- The often-quoted "15% of calls may exceed" is not a general allowance. Section 18B(a1)(4) lets the regulator of a given sector issue a deviation approval (אישור חריגה) setting a permitted share; the figures below are those approvals, not the statute.
+
+**Consumer Protection (Telephone Service) Regulations, 2012.** These contain the announcement and callback duties, and **no** 6-minute rule.
+- If the expected wait exceeds **3 minutes**, a recorded message must say so **no later than two minutes from the start of the call** and offer a callback.
+- A callback must reach the consumer with a human agent within **3 hours** of the message being left, with carve-outs: a message left under 2 hours before the end of the workday rolls to the next workday, and after a second failed callback attempt the duty ends.
+
+**Ministry of Communications metrics for telecom licensees.** The ministry publishes wait-time supervision targets for licence holders and for general-permit holders, expressed as an average wait plus a permitted share of calls exceeding six minutes. The figures are revised periodically and are sector supervision targets, not consumer-facing statutory caps, so read the current ones off the ministry page rather than quoting a remembered number.
+
+If you route phone tickets through an IVR, the six-minute clock runs from the start of the call, after language and region selection, not from the moment the caller picks "speak to an agent".
+
+## Mandatory call recording, Section 16D (in force 22 March 2027)
+
+**Mandatory call recording from 22 March 2027 (Consumer Protection Law Section 16D, 16ד, added by Amendment 74, published 22 July 2026).** This lands inside the planning horizon of any support system built now, and it constrains call-handling architecture and retention directly:
+- It applies to the transaction types listed in the Ninth Schedule (התוספת התשיעית) where the transaction's total price is **at least NIS 750**, whether or not a contract was concluded. Where the amount is unknown at the time of the call, the transaction is treated as being at or above the threshold.
+- Every voice call with the consumer must be recorded, including calls over electronic communication, and in both directions.
+- The consumer must be told **at the start of every call** that it is recorded and that they may request a copy.
+- Retention: **two years** from the call if a transaction was concluded, **six months** if it was not, and longer where a delivery request is still outstanding.
+- The sanction is evidential rather than a fine: in a civil proceeding a dealer who failed to comply is treated as having admitted the consumer's version.
+
+Design the phone channel for this now: start-of-call announcement, per-call retention clocks, and a request-and-deliver path for the recording.
+
+
+## Cooling-off exceptions, Section 14C(d) (detail)
+
+**Cooling-off period exceptions (Section 14C(d), 14ג(ד)).** The statute lists five, and two are routinely misstated:
+- Perishable goods (טובין פסידים)
+- Accommodation, travel, leisure or entertainment services, **but only if the cancellation date falls within seven non-rest-days before the date the service is to be provided**. This is a window, not a "specific date" concept: a trip booked three weeks out is still cancellable.
+- Information as defined in the Computers Law, 1995. This is excluded outright, regardless of whether anything was opened.
+- Goods produced specially for the consumer as a result of the transaction
+- Goods capable of being recorded, reproduced or duplicated **whose original packaging the consumer opened**. This is a separate item from the one above, and it turns on the packaging, not on the content type.
+
+
+## Section 30A Communications Law: marketing message consent (detail)
+
+**SMS auto-reply consent (Section 30A Communications Law, "chok haspam", as amended).** Sending marketing or promotional SMS to a customer requires **prior explicit opt-in consent** ("Hasakama meforeshet mukdemet"); transactional support replies (order status, ticket updates, password resets) are exempt. Every marketing SMS must include:
+- The statutory words are **"פרסומת", "בקשת תרומה" or "תעמולה"**, whichever applies. **"מסחרי" is not in the statute** and does not satisfy the requirement.
+- For an SMS specifically, Section 30A(e)(2) overrides the general list and requires **only** the advertiser's name and contact details for sending a refusal notice. For an **email** the fuller Section 30A(e)(1) list applies: the word in the **subject line** (not the body), the advertiser's name, address and contact details, the right to opt out, and a valid live internet address for submitting the opt-out.
+- A clear, free unsubscribe path, which must be honored.
+Penalty: a court **may** award up to **NIS 1,000 statutory damages per message**, no proof of harm required, where the advertisement was sent knowingly (and the advertiser is presumed to have known unless it proves otherwise). The same rule applies to email, WhatsApp marketing, and automated phone calls: WhatsApp falls inside the statutory definition of "electronic message" (a coded telecommunications message carried over the internet to a recipient and capable of being stored and retrieved).
+
+Note the mechanism for transactional messages. They are outside Section 30A because they are not a "davar pirsomet" at all, which the statute defines as a commercially distributed message whose purpose is to encourage a purchase or other spending. That is a definitional exclusion. It is NOT the same as the Section 30A(c) existing-customer route, which permits sending real advertising without prior consent only when all three of its conditions hold: the customer gave their details during a purchase or negotiations for one AND was told they would be used for advertising, they were given an opportunity to refuse and did not, and the advertisement relates to a product or service of a similar kind. There is no time window in that route. Tag every outbound channel in your helpdesk as "transactional" or "marketing" and gate marketing on a verified opt-in flag.
