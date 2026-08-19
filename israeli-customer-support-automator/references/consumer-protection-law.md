@@ -25,7 +25,7 @@ A business shall not mislead a consumer regarding any material aspect of a trans
 
 ### Warranty (achrayut)
 
-Warranty duties for consumer goods come from the Sale Law and sector-specific regulations rather than from a single numbered section of the Consumer Protection Law; verify the governing provision before citing a section number to a customer.
+Section 18A (18א) of the Consumer Protection Law is the warranty provision, but read it carefully before citing it: 18א(a) is an ENABLING provision empowering the Minister to impose post-sale service duties by regulation (free repair of faults and replacement for a prescribed period, service at the consumer's address, service stations, and warranty certificates). The operative duties therefore live in **תקנות הגנת הצרכן (אחריות ושירות לאחר מכירה), התשס"ו-2006**, made under it, alongside the Sale Law and sector-specific rules. 18א(a1) separately requires a dealer who hands over a warranty certificate to affix or hand over a warranty sticker. Cite the regulations for a duty and 18א for the source of authority; do not quote 18א at a customer as if it stated the repair period itself.
 
 
 | Warranty Type | Description | Duration |
@@ -79,13 +79,15 @@ This is the most frequently referenced section in customer support operations.
 
 **Exceptions to cooling-off period (consumer CANNOT cancel):**
 
-| Exception | Reason |
+Section 14C(d) lists exactly FIVE, and no others. "Newspapers and magazines" is NOT one of them.
+
+| Exception (14ג(ד)) | Precise scope |
 |---|---|
-| Perishable goods | Cannot be resold after return |
-| Custom-made or altered products | Made specifically for the consumer |
-| Opened information products | Software, recordings, digital content once unsealed |
-| Accommodation/travel/entertainment for specific date | Time-bound services |
-| Newspapers and magazines | Subscription-based periodicals |
+| Perishable goods (טובין פסידים) | (1) |
+| Accommodation, travel, leisure or entertainment services | (2), and ONLY where the cancellation date falls within seven non-rest-days before the date the service is to be provided. A booking made three weeks out is still cancellable. |
+| Information as defined in the Computers Law, 1995 | (3), excluded outright, regardless of whether anything was opened |
+| Goods produced specially for the consumer as a result of the transaction | (4) |
+| Goods capable of being recorded, reproduced or duplicated whose original packaging the consumer opened | (5). This is a separate item from (3) and turns on the packaging, not on the content type. |
 
 **Refund rules:**
 
@@ -222,3 +224,59 @@ Design the phone channel for this now: start-of-call announcement, per-call rete
 Penalty: a court **may** award up to **NIS 1,000 statutory damages per message**, no proof of harm required, where the advertisement was sent knowingly (and the advertiser is presumed to have known unless it proves otherwise). The same rule applies to email, WhatsApp marketing, and automated phone calls: WhatsApp falls inside the statutory definition of "electronic message" (a coded telecommunications message carried over the internet to a recipient and capable of being stored and retrieved).
 
 Note the mechanism for transactional messages. They are outside Section 30A because they are not a "davar pirsomet" at all, which the statute defines as a commercially distributed message whose purpose is to encourage a purchase or other spending. That is a definitional exclusion. It is NOT the same as the Section 30A(c) existing-customer route, which permits sending real advertising without prior consent only when all three of its conditions hold: the customer gave their details during a purchase or negotiations for one AND was told they would be used for advertising, they were given an opportunity to refuse and did not, and the advertisement relates to a product or service of a similar kind. There is no time window in that route. Tag every outbound channel in your helpdesk as "transactional" or "marketing" and gate marketing on a verified opt-in flag.
+
+## Regimes a support desk touches that the remote-sale rules do NOT cover
+
+The 14ג remote-sale branch is one branch of Israeli returns law, not the whole of it. Each of the following governs a workflow a real Israeli support desk runs weekly, and each is a separate enforcement item.
+
+### Section 14I (14ט): how a cancellation notice must be receivable, and the homepage link
+
+Where the consumer has a right to cancel, 14ט(א) obliges the dealer to allow the notice to be given by **any** of: orally by phone or in person at the place of business (unless the law requires writing), registered mail, email, fax if the dealer has one, over the internet for any transaction that can be concluded online, and any further route the Minister prescribes. 14ט(ב) requires a **dedicated cancellation link on the homepage**, placed prominently and clearly. 14ט(ג) sets what the consumer must supply (name and ID number, plus an agreed further identifier for an oral notice). 14ט(ד)-(ה) require the routes, the contact details for each, and the required particulars to be disclosed in writing no later than delivery, and again on every invoice, receipt or payment notice.
+
+Practical effect: you do not get to pick the cancellation channel. Routing cancellations to a web form only, or refusing a phone cancellation, breaches this.
+
+### Section 4C (4ג): returns NOT due to a defect, in store
+
+A dealer offering or selling goods must post a visible, legible notice stating its policy on returns not due to a defect. If the dealer does not honour the posted policy, 4ג(ב) gives the consumer seven days from the refusal to return the goods, and the dealer must refund the **full** price in the original payment method, provided the goods have not deteriorated, with **opening the packaging expressly not counting as deterioration**. If no notice is posted at all, 4ג(ג) creates a presumption that returns ARE permitted and applies 4ג(ב) accordingly. The general in-store cancellation right and its own fee cap sit in **תקנות הגנת הצרכן (ביטול עסקה), התשע"א-2010**, made under Section 14F (14ו); the posting duty has its own regulations from 2005.
+
+Do not apply the 14ג remote-sale model to a walk-in return.
+
+### Section 13D (13ד): cancelling an ongoing transaction (עסקה מתמשכת)
+
+A contract in an ongoing transaction ends **within three business days** of a cancellation notice given under 14ט, or six business days if the notice went by registered mail, unless the consumer named a later date. At that moment the dealer must stop supply and **must not charge for anything supplied afterwards**. 13ד1 governs refunds of over-charges. Subscription cancellation is one of the highest-volume support workflows in Israel, and it is governed here rather than by 14ג.
+
+### Section 16C (16ג): the do-not-call registry, for marketing CALLS
+
+Section 30A of the Communications Law governs marketing *messages*. Marketing *voice calls* are governed here: a dealer or anyone on its behalf must not make a marketing approach to a number listed in the registry, must **verify the number against the registry before calling**, and registration raises a presumption that the consumer refused. Where a third party dials on a dealer's behalf, the approach is treated as made by that dealer too. Exceptions are in the Sixth Schedule. A retention or win-back calling campaign designed without this check is unlawful by default.
+
+### Section 18B(a) (18ב(א)): the free-service and disclosure duties
+
+For Second-Schedule dealers the six-minute rule is not the only duty. 18ב(א)(1) requires a **free** telephone service that includes a human answer, and 18ב(א)(2) requires the number and the service hours to be disclosed clearly and prominently in the contract, on **every invoice**, and on the website.
+
+### Section 18C (18ג): agent identification
+
+A dealer's representative must identify themselves in every call with a consumer, by full name or by first name plus a further identifying detail. An outbound call must come from an identified, dial-back-able number. Its scope is wider than 18ב: it also binds any dealer owing post-sale service under 18א and any repair-service provider. This belongs in the phone scripts.
+
+
+## Privacy: Amendment 13 and the PPA AI guidance (detail)
+
+**Privacy Protection Law Amendment 13 (in force August 14, 2025).** Customer-support data is "personal information" under the law. Practical implications for support automation:
+- Every form, chat widget, or auto-reply that collects PII must show a clear purpose statement and a link to your privacy policy at the point of collection (chova ledayikan).
+- Limit ticket-payload retention to what's needed for the purpose. Default retention guidance: 12 months for resolved billing/return tickets, 7 years only when needed for accounting/tax compliance, then auto-delete.
+- Honor data-subject access (zechut iyun) and deletion (zechut limchikat meida) requests within 30 days. Build a tag in the helpdesk ("DSAR") to track them.
+- Sub-processors (Zendesk, Intercom, transcription vendors) must appear in your privacy notice and have a signed data-processing addendum.
+- The Privacy Protection Authority (PPA) gained direct fining power in this amendment; the PPA can now impose financial sanctions directly, scaled to the severity of the breach and the size of the database. Check the PPA's current published sanction schedule before quoting a figure to a customer.
+- The PPA's guidance on applying the Privacy Protection Law to AI systems was published on 28 April 2025 and is **still a draft for public comment**, so it has no binding force. Read it as the regulator's stated position rather than as a rule. Two points are commonly overstated: it says explicitly that **Israeli law imposes no duty to conduct a Data Protection Impact Assessment**, and that a DPIA is the PPA's recommended best practice; and the bot-disclosure point is **conditional**, requiring that the user be told they are interacting with a bot where that fact could materially affect their consent, not as a flat rule in every conversation. Bot transcripts are personal information once linked to a customer identifier. There is no Israeli statutory bot-disclosure duty; the blanket "you must be told you are talking to AI" rule people cite is the EU AI Act, not Israeli law.
+
+
+## Helpdesk platform Hebrew support and AI-tier pricing
+
+**Hebrew-NLU support on major helpdesk platforms (as of 2026):**
+
+| Platform | Hebrew UI | Hebrew AI/NLU | 2026 AI agent (autonomous) | Notes |
+|---|---|---|---|---|
+| Zendesk | Yes | Yes (multilingual LLM-backed intent classification) | Zendesk AI Agents, billed per automated resolution. Zendesk does not publish a per-resolution price, and it restructured its resolution tiers in May 2026 so that some outcome types no longer count against the allowance. Get a written quote; do not budget from a third-party blog figure | Best-supported Hebrew tier; macros, triggers, and intent classification all support Hebrew. |
+| Intercom | Yes | Yes (Fin AI Agent) | Fin, $0.99 per outcome (resolution, procedure handoff or disqualification), on top of seat fees of roughly $29-$132 per seat per month depending on plan. The 50-outcome monthly minimum applies to Fin running on a third-party helpdesk; on Intercom plans the stated minimum is one full seat | Fin handles Hebrew tickets; verify tone with sample conversations before going live. |
+| HelpScout | Partial | Limited | AI Assist + AI Drafts (per-seat) | Hebrew works in tickets/macros, but autoresponder language detection is weaker than Zendesk. |
+| Freshdesk | Yes | Yes (Freddy AI) | Freddy Self-Service / Freddy Copilot (per agent or per resolution) | Common with Israeli SMB; good Hebrew classification. |
+| Front | Yes | Partial (English-leaning AI) | AI Drafts (per seat) | Hebrew works in conversations but AI suggestions are weaker. |

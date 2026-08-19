@@ -11,7 +11,16 @@
         "Zendesk publishes no per-resolution price and no 'Advanced AI' add-on; the $1.50 / $2.00 / $50 figures came from a third-party blog and were removed. Do not reinstate vendor pricing without the vendor's own page.",
         "Deferred: Consumer Protection Law s.14C2 (tourism abroad, in force 2019) lets a dealer substitute the foreign supplier's cancellation policy subject to disclosure, with the burden on the dealer. Relevant to travel-sector support desks.",
         "Deferred: the first Amendment-13-era monetary sanction (reported mid-2026) and the PPA's final consent opinion of 25.02.2026 are both press- or secondary-sourced only; verify against a PPA primary page before adding.",
-        "evidence.json note: developers.facebook.com returns HTTP 400 to the gate fetcher because it sends Accept-Language: he,en. Fetch with a plain Mozilla UA instead."
+        "evidence.json note: developers.facebook.com returns HTTP 400 to the gate fetcher because it sends Accept-Language: he,en. Fetch with a plain Mozilla UA instead.",
+        "Round-2 review found the cycle's corrections had NOT been propagated into references/hebrew-response-templates.md, the reference's own exception table, the Hebrew Step-2 table or the Gotchas. The customer-facing template is the artefact that actually reaches consumers; fix it FIRST, not last.",
+        "The reference's exception table carried an invented sixth exception ('newspapers and magazines') that is nowhere in 14ג(ד). Enumerate the statutory list rather than trusting an existing table.",
+        "Expert MAJOR deferred: s.31א example damages (up to NIS 10,000 without proof of damage, NIS 50,000 aggravated, with a prior written request as a precondition to suit) are not quantified anywhere, though the escalation ladder treats legal threats as a PR issue.",
+        "Expert MAJOR deferred: no Arabic-language support lane; the classifier ships he/en keyword sets only. Note 14ג(ב) requires the disclosure document in Hebrew or the language the marketing approach was made in.",
+        "Expert MAJOR deferred: the classifier has no keyword set for protected-group status, DSAR requests, subscription cancellation as distinct from generic ביטול, or recording requests, so every statutory clock the skill introduces is invisible to the only automation it ships.",
+        "Expert MAJOR deferred: classifier keyword collisions ('refund' in both billing and returns; 'חשבון' substring-matching inside 'חשבונית'), naive substring matching with no word boundaries, and a priority table with no 'medium-high' tier though Step 1 documents one.",
+        "Expert MAJOR deferred: s.18ג agent self-identification and dial-back-able outbound caller ID belong in the phone scripts; s.14ה charge-cancellation-copy duty belongs in the refund templates.",
+        "Expert MAJOR deferred: service-accessibility regulations (תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע\"ג-2013) govern how the channels this skill designs must be reachable; currently absent.",
+        "Could not source the Amendment 74 publication date of 22 July 2026 from the consolidated text, so it was dropped; the 22 March 2027 in-force date carries the operational meaning and IS sourced."
       ]
     }
   ]

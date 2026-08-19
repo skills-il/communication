@@ -2,8 +2,8 @@
 name: israeli-customer-support-automator
 description: Deploy and configure customer support automation for Israeli businesses. Categorizes Hebrew support tickets, manages complaints per Consumer Protection Law 1981 (14-day returns, cooling-off periods), configures SLA with Israeli hours (Sunday-Thursday), and generates Hebrew canned responses for multi-channel support. Use when user asks to "set up customer support", "automate ticket routing", "sherut lakokhot", "handle complaints", or configure helpdesk for Israeli companies. Integrates with Monday.com and Priority ERP. Do NOT use for building chatbots (use hebrew-chatbot-builder), WhatsApp API (use israeli-whatsapp-business), or non-Israeli consumer protection.
 license: MIT
-allowed-tools: Bash(python:*)
-compatibility: No network required for ticket classification and template generation. Python 3.9+ required for the classifier script. Works with Claude Code, Claude.ai, Cursor.
+allowed-tools: Bash(python3:*)
+compatibility: No network required. Python 3.9+ and a shell are needed for scripts/ticket-classifier.py, invoked as python3 (plain "python" does not resolve on current macOS or most Linux images). Hosts that cannot run a shell command can still use every other part of this skill by applying the Step 1 keyword tables by hand instead of running the classifier. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex, Gemini CLI.
 ---
 
 # Israeli Customer Support Automator
@@ -49,7 +49,7 @@ Set up ticket categorization (miyun krartisim) to classify incoming Hebrew suppo
 
 Run the classifier script for automated ticket categorization:
 ```bash
-python scripts/ticket-classifier.py --text "הכרטיס שלי חויב פעמיים, מבקש זיכוי" --lang he
+python3 scripts/ticket-classifier.py --text "הכרטיס שלי חויב פעמיים, מבקש זיכוי" --lang he
 ```
 
 ### Step 2: Comply with Israeli Consumer Protection Law
@@ -60,7 +60,8 @@ When handling complaints and return requests, ensure full compliance with the Is
 
 | Provision | Requirement | Law Section |
 |---|---|---|
-| Remote purchase returns | 14 days cooling-off period from delivery or from receipt of the disclosure document, whichever is later | Section 14C (14ג) |
+| Remote purchase returns, goods | 14 days from receipt of the goods or from receipt of the Section 14C(b) disclosure document, whichever is later. **Not** from contract signature | Section 14C(c)(1) |
+| Remote purchase returns, services | 14 days from the day the transaction was made or from receipt of that document, whichever is later. For a service that is NOT an ongoing transaction the cancellation must be made **at least two non-rest days before** the service date | Section 14C(c)(2) |
 | Cancellation of transaction | Consumer can cancel within 14 days; business must refund within 14 days of receiving cancellation notice | Section 14E (14ה) |
 | Cancellation fee | Maximum 5% of transaction price or NIS 100, whichever is lower. **No fee at all** when the consumer cancels for cause (defect, non-conformity, late delivery, or any other breach by the dealer) | Section 14E(a)-(b) (14ה) |
 | Misleading advertising | Business liable for damage caused by misleading claims | Section 2 |
@@ -96,17 +97,18 @@ Check if within 14-day cooling-off period
                        Escalate if unresolved within SLA
 ```
 
+**The remote-sale branch above is not the whole of Israeli returns law.** Five further regimes govern workflows a real support desk runs weekly, and each is a separate enforcement item. They are set out in `references/consumer-protection-law.md`; read that section before configuring intake or an outbound campaign:
+- **Section 14I (14ט)**: a cancellation notice must be receivable by phone, in person, registered mail, email, fax and over the internet, and the homepage needs a prominent dedicated cancellation link. You do not get to pick the channel.
+- **Section 4C (4ג) and the 2010 Cancellation Regulations**: in-store and non-defect returns, including the presumption that returns are permitted if no policy notice is posted.
+- **Section 13D (13ד)**: an ongoing transaction ends within three business days of the cancellation notice, and nothing supplied after that may be charged.
+- **Section 16C (16ג)**: the do-not-call registry, which governs marketing CALLS. Section 30A governs messages; a retention calling campaign must check the registry first.
+- **Sections 18B(a) and 18C (18ב(א), 18ג)**: free telephone service, publication of the number and hours on every invoice, and agent self-identification on every call.
+
 Consult `references/consumer-protection-law.md` for the full legal reference.
 
-**Privacy Protection Law Amendment 13 (in force August 14, 2025).** Customer-support data is "personal information" under the law. Practical implications for support automation:
-- Every form, chat widget, or auto-reply that collects PII must show a clear purpose statement and a link to your privacy policy at the point of collection (chova ledayikan).
-- Limit ticket-payload retention to what's needed for the purpose. Default retention guidance: 12 months for resolved billing/return tickets, 7 years only when needed for accounting/tax compliance, then auto-delete.
-- Honor data-subject access (zechut iyun) and deletion (zechut limchikat meida) requests within 30 days. Build a tag in the helpdesk ("DSAR") to track them.
-- Sub-processors (Zendesk, Intercom, transcription vendors) must appear in your privacy notice and have a signed data-processing addendum.
-- The Privacy Protection Authority (PPA) gained direct fining power in this amendment; the PPA can now impose financial sanctions directly, scaled to the severity of the breach and the size of the database. Check the PPA's current published sanction schedule before quoting a figure to a customer.
-- The PPA's guidance on applying the Privacy Protection Law to AI systems was published on 28 April 2025 and is **still a draft for public comment**, so it has no binding force. Read it as the regulator's stated position rather than as a rule. Two points are commonly overstated: it says explicitly that **Israeli law imposes no duty to conduct a Data Protection Impact Assessment**, and that a DPIA is the PPA's recommended best practice; and the bot-disclosure point is **conditional**, requiring that the user be told they are interacting with a bot where that fact could materially affect their consent, not as a flat rule in every conversation. Bot transcripts are personal information once linked to a customer identifier. There is no Israeli statutory bot-disclosure duty; the blanket "you must be told you are talking to AI" rule people cite is the EU AI Act, not Israeli law.
+**Privacy Protection Law Amendment 13 (in force 14 August 2025).** Customer-support data is personal information, and a ticket or CRM database is a regulated database. Core duties: a purpose statement and privacy-policy link at every point of collection; retention limited to the purpose; data-subject access and deletion requests answered within 30 days (build a "DSAR" tag to track the clock); sub-processors named in the notice with a signed data-processing addendum; and note that the Privacy Protection Authority now has direct power to impose financial sanctions, calculated by formula rather than capped at a single headline figure, so check the current schedule before quoting a number. Two duties commonly missed: appointing a Privacy Protection Officer where the organisation's profile triggers it, and notifying the Authority of a security incident. The Information Security Regulations, 2017 add a database definition document, access control and logging, and a periodic risk survey. Detail, including the PPA's AI guidance, is in `references/consumer-protection-law.md`.
 
-**Mandatory call recording from 22 March 2027** (Consumer Protection Law Section 16D, added by Amendment 74, published 22 July 2026). For the transaction types in the Ninth Schedule at a total price of **NIS 750 or more**, every voice call with the consumer must be recorded in both directions, the consumer must be told at the **start of every call** that it is recorded and that they may request a copy, and the recording must be kept **two years** if a transaction was concluded or **six months** if it was not. The sanction is evidential: a non-complying dealer is treated in civil proceedings as having admitted the consumer's version. Design the phone channel for this now. Detail in `references/consumer-protection-law.md`.
+**Mandatory call recording from 22 March 2027** (Consumer Protection Law Section 16D, 16ד, added by Amendment 74). For the transaction types in the Ninth Schedule at a total price of **NIS 750 or more**, every voice call with the consumer must be recorded in both directions, the consumer must be told at the **start of every call** that it is recorded and that they may request a copy, and the recording must be kept **two years** if a transaction was concluded or **six months** if it was not. On request the dealer must hand over the recording, or a written schedule of call times, within **ten business days**, free of charge for the first request. Note where the sanction attaches: it is failure to DELIVER, not failure to record, that makes the dealer be treated in civil proceedings as having admitted the consumer's version. Three things to design now: a start-of-call announcement in every phone script, a per-call retention clock, and a ticket category with its own ten-business-day SLA for recording requests. This two-year floor also overrides the shorter default retention suggested below. Detail in `references/consumer-protection-law.md`.
 
 **Extended cooling-off for protected groups (Section 14C1, 14ג1).** Standard consumers get 14 days; consumers who are persons with a disability, senior citizens (65+), or new immigrants (within 5 years of receiving their immigrant certificate) get **4 months** to cancel a remote-purchase transaction, provided the transaction involved a conversation between the dealer and the consumer, including a conversation by electronic communication. That conversation condition applies to REMOTE sales (14ג1(ג)) only; for a door-to-door transaction (14ג1(ב)) the four months apply with no such condition. The dealer may demand one document proving the status and no more (14ג1(ד)). Your auto-categorizer should NOT auto-reject return requests beyond day 14 without checking the customer's protected-group status first.
 
@@ -229,10 +231,10 @@ Build a library of canned responses (tshuvot mugdarot meirosh) in Hebrew for com
 3. שלחו לכתובת: {return_address}
    או הביאו לסניף הקרוב: {branch_address}
 
-שימו לב: ההחזרה חייבת להתבצע תוך 14 ימים ממועד קבלת המוצר,
-בהתאם לחוק הגנת הצרכן.
+שימו לב: 14 הימים שבחוק הם המועד למסירת הודעת הביטול,
+לא למשלוח הפיזי של המוצר.
 
-לאחר קבלת המוצר, הזיכוי יבוצע תוך 14 ימים.
+הזיכוי יבוצע תוך 14 ימים ממועד קבלת הודעת הביטול.
 
 בברכה,
 צוות {company_name}
@@ -343,15 +345,7 @@ Connect support workflows with CRM and ERP systems commonly used by Israeli busi
 | Slack / Teams | Internal notifications | Webhook, bot |
 | Twilio | SMS/WhatsApp | API |
 
-**Hebrew-NLU support on major helpdesk platforms (as of 2026):**
-
-| Platform | Hebrew UI | Hebrew AI/NLU | 2026 AI agent (autonomous) | Notes |
-|---|---|---|---|---|
-| Zendesk | Yes | Yes (multilingual LLM-backed intent classification) | Zendesk AI Agents, billed per automated resolution. Zendesk does not publish a per-resolution price, and it restructured its resolution tiers in May 2026 so that some outcome types no longer count against the allowance. Get a written quote; do not budget from a third-party blog figure | Best-supported Hebrew tier; macros, triggers, and intent classification all support Hebrew. |
-| Intercom | Yes | Yes (Fin AI Agent) | Fin, $0.99 per outcome (resolution, procedure handoff or disqualification), on top of seat fees of roughly $29-$132 per seat per month depending on plan. The 50-outcome monthly minimum applies to Fin running on a third-party helpdesk; on Intercom plans the stated minimum is one full seat | Fin handles Hebrew tickets; verify tone with sample conversations before going live. |
-| HelpScout | Partial | Limited | AI Assist + AI Drafts (per-seat) | Hebrew works in tickets/macros, but autoresponder language detection is weaker than Zendesk. |
-| Freshdesk | Yes | Yes (Freddy AI) | Freddy Self-Service / Freddy Copilot (per agent or per resolution) | Common with Israeli SMB; good Hebrew classification. |
-| Front | Yes | Partial (English-leaning AI) | AI Drafts (per seat) | Hebrew works in conversations but AI suggestions are weaker. |
+**Hebrew-NLU support on major helpdesk platforms.** Zendesk and Freshdesk have the most mature Hebrew handling (macros, triggers and intent classification all work in Hebrew); Intercom's Fin handles Hebrew tickets; HelpScout and Front are weaker on Hebrew AI suggestions than on Hebrew tickets. Pricing for the autonomous-agent tiers moves fast and is quoted per resolution or per outcome rather than per seat, so get a written quote from the vendor rather than budgeting from a blog. The per-platform table is in `references/consumer-protection-law.md`.
 
 Pick one tier above your team's volume: agent-assist (drafts, summaries, sentiment) is cheaper and lower-risk; autonomous AI agent (Fin, Zendesk AI Agents) replaces L1 entirely but needs Hebrew QA on a 100-ticket sample before launch.
 
@@ -459,7 +453,7 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 ## Bundled Resources
 
 ### Scripts
-- `scripts/ticket-classifier.py` -- Classify Hebrew support tickets by category and priority based on keyword analysis. Supports batch processing from CSV files. Run: `python scripts/ticket-classifier.py --help`
+- `scripts/ticket-classifier.py` -- Classify Hebrew support tickets by category and priority based on keyword analysis. Supports batch processing from CSV files. Run: `python3 scripts/ticket-classifier.py --help`
 
 ### References
 - `references/consumer-protection-law.md` -- Key provisions of the Israeli Consumer Protection Law 1981. Covers cooling-off periods, return policies, cancellation fees, warranty obligations, and complaint handling requirements. Consult when handling returns, complaints, or any dispute involving consumer rights.
@@ -492,14 +486,14 @@ Result: Complete satisfaction measurement system with Hebrew surveys and actiona
 - Israeli Consumer Protection Law allows a maximum cancellation fee of 5% of the price or NIS 100, whichever is lower. Agents may use 5% without the 100 NIS cap, overcharging on small transactions.
 - WhatsApp is the dominant consumer messaging channel in Israel and the preferred support channel. Agents may default to email-first support strategies that don't match Israeli consumer expectations.
 - Protected groups (people with disabilities, citizens 65+, new immigrants within 5 years of receiving their immigrant certificate) get a 4-month cooling-off period on remote purchases, not 14 days. A naive 14-day calculator will wrongly reject these returns. Add a customer-profile check before any auto-rejection.
-- The 6-minute phone wait cap is per-call from the moment the customer enters the human-agent queue, not call-center average. A long IVR menu does not stop the clock if the customer is waiting to speak to a person.
+- The 6-minute phone wait cap runs **from the start of the call** (measured only after any language and region selection), not from the moment the caller reaches the human queue, and it is per call rather than a call-centre average. A long IVR menu does NOT buy you time. It also binds only Second-Schedule sectors, so check applicability before promising it to anyone.
 - Marketing SMS without prior opt-in carries up to NIS 1,000 in statutory damages per message (Section 30A Communications Law). Transactional support messages (order updates, ticket replies, password resets) are exempt; marketing blasts are not. Agents may treat all outbound SMS the same.
 
 ## Troubleshooting
 
 ### Error: "Ticket categorized incorrectly"
 Cause: Hebrew keyword detection matched the wrong category (e.g., "payment" matched billing instead of returns)
-Solution: Review the keyword detection table in Step 1. Add more specific subcategory keywords. Use the classifier script with `--verbose` flag to see matching details: `python scripts/ticket-classifier.py --text "..." --verbose`
+Solution: Review the keyword detection table in Step 1. Add more specific subcategory keywords. Use the classifier script with `--verbose` flag to see matching details: `python3 scripts/ticket-classifier.py --text "..." --verbose`
 
 ### Error: "SLA timer not pausing on weekends"
 Cause: Business hours configuration does not account for Shabbat (Saturday) and the Israeli work week

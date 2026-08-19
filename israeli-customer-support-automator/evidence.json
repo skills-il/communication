@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-customer-support-automator",
-  "generated_at": "2026-08-19T15:24:58Z",
+  "generated_at": "2026-08-19T15:41:44Z",
   "claims": [
     {
       "claim_id": "protected-groups-4months",
@@ -16,20 +16,6 @@
       ]
     },
     {
-      "claim_id": "cooling-off-14days",
-      "claim": "חוק הגנת הצרכן, סעיף 14ג(ג): בעסקת מכר מרחוק רשאי הצרכן לבטל בתוך ארבעה עשר ימים מקבלת הנכס או מקבלת מסמך הפרטים, לפי המאוחר. דמי הביטול לא יעלו על 5% ממחיר הנכס או 100 שקלים חדשים, לפי הנמוך מביניהם. Also covers https://www.gov.il/he/pages/returns.",
-      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
-      "raw_snippet": "בתקופת ההודעה, על מועד סיום העסקה או ההתחייבות; המועד האמור יצוין גם בכל אחד מאלה: (1) בחוזה, אם קיים חוזה בכתב, או במסמך לפי הוראות סעיף 14ג(ב); (2) בכל חשבונית, או קבלה או הודעת תשלום, הנשלחת לצרכן בתקופה שתחילתה שלושה חודשים לפני מועד סיום העסקה או ההתחייבות, ובלבד שאם נשלחת לצרכן אחת מאלה יותר מאשר פעם בחודש, תחול הוראה זו אחת לחודש בלבד; המועד האמור יצוין בהבלטה מיוחדת ובאותיות ברורות וקריאות; (3) במסרון למספר הטלפון הנייד שמסר הצרכן לעוסק, אם מסר – 21 ימים לפני מועד סיום העסקה או ההתחייבות, ואם חל מועד מסירת ההודעה לפי פס",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md Step 2 table",
-        "SKILL_HE.md שלב 2 table",
-        "references/consumer-protection-law.md"
-      ],
-      "verified_via": "cited page fetched and confirmed to contain \"סעיף 14ג\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
-    },
-    {
       "claim_id": "amendment-13-effective",
       "claim": "Privacy Protection Law Amendment 13 entered into force on August 14, 2025; PPA gained expanded enforcement and direct fining power.",
       "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
@@ -40,20 +26,6 @@
         "SKILL_HE.md שלב 2 privacy block"
       ],
       "verified_via": "source fetched and the passage copied verbatim from the cited page",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "spam-section-30a",
-      "claim": "סעיף 30א לחוק התקשורת (בזק ושידורים) אוסר לשגר דבר פרסומת בפקס, בחיוג אוטומטי, בדואר אלקטרוני או ב-SMS בלא הסכמה מפורשת מראש ובכתב של הנמען. העמוד https://www.gov.il/en/pages/17052018_7 מכוסה גם הוא בערך זה.",
-      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
-      "raw_snippet": "אות Go 80 סעיף 28ג הפרת הוראות לפי סעיף 13 Go 81 סעיף 28ד אחריות נושאי משרה Go 81 סעיף 29 פגיעה במיתקן בזק Go 81 סעיף 30 הטרדה Go 81 סעיף 30א שיגור דבר פרסומת באמצעות מיתקן בזק או ציוד קצה Go 81 סעיף 31 מרמה ותחבולה Go 84 סעיף 32 חובת שמירת סודיות Go 85 סעיף 33 הפרעה בעבודה Go 85 סעיף 34 צמחיה המפריעה למיתקן בזק Go 85 סעיף 35 פגיעה חמורה במיתקן בזק או ציוד קצה ברשלנות Go 85 סעיף 36א ציוד קצה שלא אושר Go 85 סעיף 37 צו איסור וצו עשה Go 85 פרק ז1: עיצומים כספיים Go 85 סימן א': הטלת עיצום כספי בתחום הבזק ועל מי שפועל בלי רישום במרש",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md Step 6 SMS auto-reply consent block",
-        "SKILL_HE.md שלב 6 הסכמה ל-SMS שיווקי",
-        "Gotchas"
-      ],
-      "verified_via": "cited page fetched and confirmed to contain \"סעיף 30א\"; snippet replaced with the page's own wording around it",
       "verified_at": "2026-08-18"
     },
     {
@@ -125,7 +97,7 @@
     },
     {
       "claim_id": "cpl-full-text-source",
-      "claim": "The full current text of the Consumer Protection Law 5741-1981 is published at this nevo.co.il URL.",
+      "claim": "The full current text of the Consumer Protection Law 5741-1981 is published at this nevo.co.il URL. The Consumer Protection Authority publishes returns guidance at https://www.gov.il/he/pages/returns and the Ministry of Communications publishes a Section 30A FAQ at https://www.gov.il/en/pages/17052018_7 .",
       "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
       "raw_snippet": "חוק הגנת הצרכן, תשמ\"א-1981",
       "fetched_at": "2026-08-09",
@@ -434,6 +406,119 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14c-c2-services",
+      "claim": "Section 14C(c)(2) governs services: 14 days from the day the transaction was made or from receipt of the disclosure document, whichever is later, and for a service that is not an ongoing transaction the cancellation must be made at least two non-rest days before the service date.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "(2) בשירות – בתוך ארבעה עשר ימים מיום עשיית העסקה או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף קטן (ב), לפי המאוחר",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14c-c1-trigger",
+      "claim": "For goods the cooling-off clock runs from receipt of the goods or from receipt of the Section 14C(b) disclosure document, whichever is later. Contract signature is not the trigger.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "בנכס – מיום עשיית העסקה ועד ארבעה עשר ימים מיום קבלת הנכס או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף קטן (ב), לפי המאוחר מביניהם",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14i-cancellation-channels",
+      "claim": "Section 14I (14ט) requires the dealer to accept a cancellation notice orally by phone or at the place of business, by registered mail, by email, by fax if it has one, and over the internet for transactions concluded online, and to place a prominent dedicated cancellation link on the homepage.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "ייצור עוסק בדף הראשי של אתר האינטרנט שלו קישור ייעודי שבאמצעותו ניתן לשלוח הודעת ביטול בהתאם להוראות סעיף קטן (א)(5), שימוקם באופן מובלט וברור",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-4c-instore-returns",
+      "claim": "Section 4C requires a posted notice of the returns policy for returns not due to a defect; if the dealer does not honour it the consumer has seven days from the refusal to return the goods for a full refund in the original payment method, and opening the packaging does not itself count as deterioration. If no notice is posted, a presumption arises that returns are permitted. Hebrew: סעיף 4ג.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "רשאי הצרכן להחזירם לעוסק בתוך שבעה ימים מיום שסורב, והעוסק יהיה חייב להשיב לו את מלוא התמורה שקיבל באופן שבו שילם הצרכן, ובלבד שלא חלה הרעה במצב הטובין; לענין זה, פתיחת האריזה כשלעצמה לא תיחשב כהרעה במצב הטובין",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "references/consumer-protection-law.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-13d-ongoing-cancellation",
+      "claim": "Section 13D(c) ends an ongoing-transaction contract within three business days of a cancellation notice given under Section 14I (six if by registered mail), at which point the dealer must stop supply and may not charge for anything supplied afterwards. Hebrew: סעיף 13ד.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "חוזה בעסקה מתמשכת יסתיים בתוך שלושה ימי עסקים מיום שנמסרה הודעת ביטול לפי הוראות סעיף 14ט , ואם נמסרה הודעת הביטול באמצעות דואר רשום – בתוך שישה ימי עסקים",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "references/consumer-protection-law.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-16c-do-not-call",
+      "claim": "Section 16C prohibits a marketing approach to a phone number listed in the national registry, requires the dealer to verify the number against the registry before calling, raises a presumption of refusal from registration, and treats an approach made on another dealer's behalf as made by that dealer too. Exceptions are in the Sixth Schedule. Hebrew: סעיף 16ג.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "ביקש עוסק לפנות לצרכן בפנייה שיווקית, יוודא שמספר הטלפון שאליו הוא מבקש לפנות אינו רשום במאגר",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "references/consumer-protection-law.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-18b-a-free-service",
+      "claim": "Section 18B(a)(1) requires a Second-Schedule dealer to provide a free telephone service including a human answer, and 18B(a)(2) requires the number and service hours to be disclosed in the contract, on every invoice and on the website.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "יספק שירות טלפוני חינם לשם מתן מענה לכל פניה של צרכן (בסעיף זה – שירות טלפוני); השירות הטלפוני יכלול גם מענה אנושי",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "references/consumer-protection-law.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-18a-warranty-enabling",
+      "claim": "Section 18A is an enabling provision: it empowers the Minister to impose post-sale service duties by regulation, including free repair of faults for a prescribed period and warranty certificates. The operative duties live in the Consumer Protection (Warranty and Post-Sale Service) Regulations, 2006.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "רשאי בתקנות, לחייב יצרן, יבואן, סיטונאי או קמעונאי של טובין או שירותים, לתת שירות לצרכן לאחר מכירה",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "references/consumer-protection-law.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14e-a2-place-of-delivery",
+      "claim": "On a cancellation for cause under Section 14E(a)(2) the consumer only places the goods at the dealer's disposal at the place they were delivered and notifies the dealer; the dealer collects. Section 14E(d) defines cancellation fees as including shipping and packing costs.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "קיבל הצרכן את הנכס נושא העסקה או החוזה, יעמידו לרשות העוסק במקום שבו נמסר לו הנכס ויודיע על כך לעוסק",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "references/hebrew-response-templates.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "cpl-14e-charge-cancellation-copy",
+      "claim": "Section 14E requires the dealer, in addition to refunding, to cancel the charge and deliver to the consumer a copy of the charge-cancellation notice.",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_הצרכן",
+      "raw_snippet": "יבטל את חיובו של הצרכן בשל העסקה וימסור לו עותק מהודעת ביטול החיוב כאמור",
+      "fetched_at": "2026-08-19T15:41:44Z",
+      "appears_in": [
+        "references/hebrew-response-templates.md"
       ]
     }
   ]
