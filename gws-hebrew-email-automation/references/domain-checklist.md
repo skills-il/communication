@@ -11,14 +11,14 @@ Anchor for the Phase 3b.5 / 5.8 expert review. Bootstrapped 2026-08-19 (v1.5.0 c
 | No scheduled-send flag exists; `--draft` is the deferral route | Step 6, Gotchas | Agents hallucinate `--schedule`. |
 | Bilingual Hebrew/English business email structure | Step 2 | The skill's headline capability. |
 | RTL rendering in HTML mail and in plain text | Gotchas | caniemail records Gmail's `dir` handling as buggy; plain-text bidi has no markup at all. |
-| Shekel formatting, VAT rate, עוסק מורשה vs עוסק פטור branch | Step 2, scripts/shekel-formatter.py | An עוסק פטור may not charge VAT; the script assumes מורשה. |
+| Shekel formatting, VAT rate, עוסק מורשה vs עוסק פטור branch | Step 2, and `--vat` / `--patur` in scripts/shekel-formatter.py | An עוסק פטור may not charge VAT or issue a tax invoice. The two flags are mutually exclusive in the script. |
 | The email is transport, not the tax invoice (Invoices Model, מספר הקצאה) | Step 2 | A חשבונית מס above the threshold needs an ITA allocation number from approved software. |
 | שוטף + N computed as end-of-invoice-month plus N days | Step 3, Gotchas | Drives the escalation stage; the previous cycle had it arithmetically wrong. |
 | Payment-reminder escalation ladder | Step 3 | Headline capability. |
 | Rule out ניכוי מס במקור before escalating | Step 3 | A client who paid net of withholding has fully performed. |
 | Hebrew labelling via `users messages list` + `modify`, with `--page-all` | Step 4, Example 2 | Without pagination the job silently truncates and reports success. |
 | Persistent Gmail filters via `users.settings.filters` | Step 5 | There is no `+filter` helper. |
-| Israeli business days, erev Shabbat, chag detection | Step 6 | Sunday-Thursday, and the Hebcal parameter traps are non-obvious. |
+| Israeli business days, erev Shabbat, chag detection | Step 6 | Sunday-Thursday. The Hebcal query is an allowlist minus a Chanukah / Chol HaMoed exclusion, derived by enumerating the full 2026 feed; no single flag or subcat means "Israeli day off". Re-verify against the live feed on any edit. |
 | Section 30א consent, required elements, damages, fine tiers, the three 30א(ג) conditions and the absence of any time window | Step 7, references/israeli-email-compliance.md | Direct class-action exposure. |
 | Gmail sender requirements: SPF/DKIM baseline for all senders, bulk tier above 5,000/day | Step 7, references/israeli-email-compliance.md | Unauthenticated custom-domain sending is why invoices land in spam. |
 | Prompt-injection boundary when the agent both reads inbox and holds send rights | Step 7.5 | Step 8 pipes attacker-controlled text into a send-capable agent. |
@@ -50,7 +50,7 @@ Anchor for the Phase 3b.5 / 5.8 expert review. Bootstrapped 2026-08-19 (v1.5.0 c
 ## Authoritative sources
 
 - `https://github.com/googleworkspace/cli` README and `skills/gws-gmail-*/SKILL.md` (command surface)
-- `https://support.google.com/a/answer/81126`, `/14229414`, `/166852`, `/176600` (sender requirements and limits)
+- `https://support.google.com/a/answer/81126` and `https://support.google.com/a/answer/14229414` (sender requirements), `https://support.google.com/a/answer/166852` and `https://support.google.com/a/answer/176600` (sending limits)
 - `https://developers.google.com/workspace/gmail/api/reference/quota` (quota units)
 - `https://he.wikisource.org/wiki/חוק_התקשורת_(בזק_ושידורים)` (Section 30א consolidated text)
 - `https://www.hebcal.com/home/developer-apis` and the live REST endpoint (calendar)

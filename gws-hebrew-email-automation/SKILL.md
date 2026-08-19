@@ -2,7 +2,7 @@
 name: gws-hebrew-email-automation
 description: Gmail automation for Israeli freelancers using the Google Workspace CLI (gws). Use when user asks to draft Hebrew client emails, send payment reminders in Shekels, triage inbox with Hebrew labels, set up Gmail filters for Israeli services, or save drafts for later send that respect Israeli business hours. Key capabilities include bilingual email drafting via gws gmail +send, payment reminder sequences with ILS amounts, Hebrew-aware inbox labeling, and draft-then-send workflows for Shabbat-aware delivery. Do NOT use for non-Gmail email providers, Microsoft Outlook automation, or CRM-level contact management.
 license: MIT
-allowed-tools: Bash(gws:*) Bash(npx:*) Bash(npm:*) Bash(jq:*) Bash(curl:*) Bash(date:*) Bash(python3:*) WebFetch Read Write Edit
+allowed-tools: Bash(gws:*), Bash(npx:*), Bash(npm:*), Bash(jq:*), Bash(curl:*), Bash(date:*), Bash(TZ=*), Bash(wc:*), Bash(sleep:*), Bash(python3:*), WebFetch, Read, Write, Edit
 compatibility: Requires Node.js 18+, a Google Cloud project with the Gmail API enabled, and the Google Workspace CLI (npm install -g @googleworkspace/cli). User must run gws auth setup once (to create OAuth credentials) and gws auth login to grant Gmail scopes. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex, Gemini CLI.
 ---
 
@@ -76,7 +76,7 @@ gws gmail +send \
 
 **Important:** Always run with `--dry-run` first to preview the full request. Remove the flag only after the user confirms the content. For user review before commit, use `--draft` to save the message as a Gmail draft instead of sending.
 
-**Before quoting VAT, establish the sender's VAT status.** Ask once and remember it. An **עוסק מורשה** charges VAT and issues a חשבונית מס. An **עוסק פטור** (turnover under the annual ceiling) is barred from charging VAT or issuing a tax invoice at all and issues a קבלה instead. `scripts/shekel-formatter.py` assumes עוסק מורשה, so do not run it in `--vat` mode for an עוסק פטור, and never append a VAT line to their quote. Getting this backwards makes the user collect a tax they may not collect.
+**Before quoting VAT, establish the sender's VAT status.** Ask once and remember it. An **עוסק מורשה** charges VAT and issues a חשבונית מס. An **עוסק פטור** (turnover under the annual ceiling) is barred from charging VAT or issuing a tax invoice at all and issues a קבלה instead. `scripts/shekel-formatter.py --vat` is the עוסק מורשה path; `--patur` is the עוסק פטור path, and it suppresses VAT and prints the קבלה note (the two flags are mutually exclusive and the script errors if both are given). Never append a VAT line to an עוסק פטור quote. Getting this backwards makes the user collect a tax they may not collect.
 
 **The email is not the invoice.** Under the Israel Tax Authority's Invoices Model (מודל חשבוניות ישראל), a חשבונית מס issued to a business customer above the current annual threshold needs a real-time allocation number (מספר הקצאה) pulled from the ITA by approved invoicing software. The threshold steps down year to year, so verify the current figure rather than quoting one. Treat `gws gmail +send` purely as the transport for a document produced elsewhere, and attach the real invoice or quote with `-a`.
 
@@ -261,9 +261,9 @@ gws gmail +send \
 ```bash
 # Is today a major Israeli holiday (yom tov, chol ha-mo'ed, or fast day)?
 TODAY=$(TZ=Asia/Jerusalem date +%Y-%m-%d)
-HOLIDAY=$(curl -s "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&mf=on&mod=on&i=on&start=${TODAY}&end=${TODAY}" \
+HOLIDAY=$(curl -s "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&mod=on&i=on&start=${TODAY}&end=${TODAY}" \
   | jq -r '.items[]?
-      | select(.subcat=="major" or .subcat=="fast"
+      | select((.subcat=="major" and (.title|test("Chanukah|\\(CH")|not))
                or (.subcat=="modern" and (.title|test("Yom HaZikaron|Yom HaAtzma"))))
       | .title' | head -1)
 
@@ -274,13 +274,15 @@ fi
 
 The `i=on` flag scopes results to Israeli observance (one day of yom tov for Pesach/Sukkot, etc., versus diaspora). Pass `cfg=json` for the JSON shape.
 
-**Filter on `subcat`, not on `category`, and get the parameters right.** Three things break a naive version of this query, and all three were confirmed against the live API for the whole of 2026:
+**No single flag or `subcat` value means "Israeli day off", so the query above is an allowlist minus an exclusion.** Each of the following was confirmed by enumerating the full 2026 feed, not by reading the docs:
 
-- **`category=="holiday"` over-blocks.** With `min=on`, 2 February 2026 comes back as `{"category":"holiday","subcat":"minor","title":"Tu BiShvat"}`, an ordinary Israeli working day, as do Lag BaOmer and Tu B'Av. Drop `min=on` and select on `subcat`.
-- **Fast days need `mf=on`.** Without it the feed contains no fast items at all, so a `subcat=="fast"` branch is dead code. With `mf=on` the 2026 feed returns exactly five: Ta'anit Esther, Ta'anit Bechorot, Tzom Tammuz, Tzom Gedaliah, Asara B'Tevet, each as `category: "holiday"` with `subcat: "fast"`.
-- **`mod=on` mixes days off with working days.** Modern holidays arrive as `subcat: "modern"`, and the 14 entries in 2026 include Yom HaZikaron and Yom HaAtzma'ut (genuine days off) alongside Hebrew Language Day, Family Day, Yom HaAliyah and Yom HaShoah (working days). Selecting all of `modern` blocks four ordinary working days; selecting none of it green-lights Independence Day. Match the two by title, as above.
+- **`category` is useless as a filter.** With `min=on`, 2 February 2026 comes back as `{"category":"holiday","subcat":"minor","title":"Tu BiShvat"}`, an ordinary working day, as do Lag BaOmer and Tu B'Av. Drop `min=on` entirely.
+- **`subcat: "major"` is necessary but far too broad.** It carries the real chagim and their erevs, but the 2026 feed also files all nine Chanukah days and all ten Chol HaMoed days (`Pesach II (CH''M)` and friends) under it. Chanukah and Chol HaMoed are working days in Israel, with reduced hours at most. Selecting `major` wholesale suppresses business mail for nine consecutive days in December, which is the same defect as the Tu BiShvat case one bullet up. Hence the title exclusion.
+- **Do NOT add `mf=on`.** It adds exactly five fast days for 2026 and four of them (Ta'anit Esther, Ta'anit Bechorot, Tzom Tammuz, Tzom Gedaliah, Asara B'Tevet minus Yom Kippur) are ordinary working days. The two fasts that actually stop work, Yom Kippur and Tish'a B'Av, already arrive under `major`. A `subcat=="fast"` branch is either dead code without the flag or actively wrong with it.
+- **`mod=on` mixes days off with working days.** Modern holidays arrive as `subcat: "modern"`, and the 14 entries in 2026 include Yom HaZikaron and Yom HaAtzma'ut (genuine days off) alongside Hebrew Language Day, Family Day, Yom HaAliyah, Yom HaShoah, Herzl Day and Sigd (working days). Match the two by title.
+- `nx=on` adds Rosh Chodesh under `category: "roshchodesh"` with no `subcat` at all. Working days, so the flag is omitted.
 
-Erev chag arrives as `subcat: "major"` (2 March 2026 returns "Erev Purim"); treat it like Friday and do not send after ~14:00 Israel time. Note that `nx=on` adds Rosh Chodesh entries under `category: "roshchodesh"` with no `subcat` at all; they are working days, so the query above simply omits the flag.
+With those choices the 2026 feed yields exactly 20 blocking dates: the erev and day of Purim, Pesach I and VII, Shavuot, Tish'a B'Av, Rosh Hashana, Yom Kippur, Sukkot I, Hoshana Raba and Shmini Atzeret, plus Yom HaZikaron and Yom HaAtzma'ut. Erev chag arrives as `subcat: "major"`; treat it like Friday and do not send after ~14:00 Israel time. Hebcal titles use a curly apostrophe (U+2019), so match on prefixes rather than typing a full title with an ASCII quote.
 
 **The 14:00 Friday cutoff is a rough proxy, not Shabbat.** Shabbat starts at candle-lighting, which across Israeli cities runs from about 15:55 in December to about 19:30 in July, and ends at havdalah. The same Hebcal endpoint returns both when called with `c=on&geo=geoname&geonameid=<city>` (Jerusalem is 281184, Tel Aviv 293397). Use those timestamps when the exact boundary matters; the flat 14:00 rule errs safe in winter but blocks legitimate summer sends.
 
@@ -426,7 +428,7 @@ Result: Draft saved. User informed that Friday-afternoon sends are deferred, ope
 ## Bundled Resources
 
 ### Scripts
-- `scripts/shekel-formatter.py`: Format currency amounts to Israeli Shekel (ILS) standard with proper notation and optional 18% VAT breakdown. Run: `python scripts/shekel-formatter.py --help`
+- `scripts/shekel-formatter.py`: Format currency amounts to Israeli Shekel (ILS) standard with proper notation. `--vat` adds the 18% breakdown for an עוסק מורשה; `--patur` suppresses VAT and prints the קבלה note for an עוסק פטור. Run: `python3 scripts/shekel-formatter.py --help`
 
 ### References
 - `references/israeli-business-email-templates.md`: Collection of Hebrew email templates for common freelancer scenarios: quotes, invoices, follow-ups, project updates. Consult when drafting professional Hebrew emails for Israeli clients.

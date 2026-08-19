@@ -362,7 +362,7 @@
     },
     {
       "claim_id": "gmail-unsubscribe-48h",
-      "claim": "Gmail requires bulk senders to honor unsubscribe requests within 48 hours.",
+      "claim": "Gmail requires bulk senders to honor unsubscribe requests within 48 hours. Documented at https://support.google.com/a/answer/14229414 .",
       "source_url": "https://support.google.com/a/answer/14229414?hl=en",
       "raw_snippet": "Unsubscribe requests aren’t honored within 48 hours",
       "fetched_at": "2026-08-19T14:30:03Z",
@@ -417,7 +417,7 @@
     },
     {
       "claim_id": "hebcal-minor-holiday-subcat",
-      "claim": "The Hebcal REST API returns minor holidays as category \"holiday\" with subcat \"minor\"; fast days appear only when mf=on is passed and come back with subcat \"fast\"; modern holidays come back with subcat \"modern\" and mix days off (Yom HaZikaron, Yom HaAtzma'ut) with working days; and nx=on adds Rosh Chodesh under category \"roshchodesh\" with no subcat.",
+      "claim": "The Hebcal REST API gives no single flag or subcat meaning \"Israeli day off\": minor holidays come back as subcat \"minor\"; subcat \"major\" also carries all nine Chanukah days and all ten Chol HaMoed days, which are Israeli working days; fast days appear only with mf=on and four of the five 2026 fasts are working days; modern holidays come back as subcat \"modern\" mixing Yom HaZikaron and Yom HaAtzma'ut with six working days; and nx=on adds Rosh Chodesh under category \"roshchodesh\" with no subcat.",
       "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&mod=on&nx=on&i=on&start=2026-02-02&end=2026-02-02",
       "raw_snippet": "{\"title\":\"Tu BiShvat\",\"date\":\"2026-02-02\",\"category\":\"holiday\",\"subcat\":\"minor\"",
       "fetched_at": "2026-08-19T14:49:36Z",
@@ -425,7 +425,7 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "note": "Live API calls on 2026-08-19. Single-day query for 2026-02-02 returned Tu BiShvat as holiday/minor and 2026-03-02 returned Erev Purim as holiday/major. A full-year 2026 query with maj+mod+nx returned 37 holiday/major, 14 holiday/modern and 18 roshchodesh with no subcat, and zero fast items; adding mf=on returned exactly five holiday/fast items (Ta'anit Esther, Ta'anit Bechorot, Tzom Tammuz, Tzom Gedaliah, Asara B'Tevet). The 14 modern entries include Yom HaZikaron and Yom HaAtzma'ut alongside Hebrew Language Day, Family Day, Yom HaAliyah and Yom HaShoah.",
+      "note": "Full 2026 feed enumerated live on 2026-08-19 with maj=on&mf=on&mod=on&i=on: 37 holiday/major (including Chanukah: 1 Candle through Chanukah: 8th Day on 2026-12-04 to 2026-12-12, and ten CH''M entries across Pesach and Sukkot), 5 holiday/fast (Ta'anit Esther, Ta'anit Bechorot, Tzom Tammuz, Tzom Gedaliah, Asara B'Tevet, all working days; Yom Kippur and Tish'a B'Av arrive as major), and 14 holiday/modern (Yom HaZikaron and Yom HaAtzma'ut alongside Hebrew Language Day, Family Day, Yom HaAliyah, Yom HaShoah, Herzl Day, Sigd and others). Separately, 2026-02-02 returns Tu BiShvat as holiday/minor. The documented query yields exactly 20 blocking dates for 2026.",
       "verified_via": "browser",
       "verified_at": "2026-08-19T14:59:12Z"
     },
