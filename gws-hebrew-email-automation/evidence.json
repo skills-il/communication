@@ -455,6 +455,20 @@
         "SKILL_HE.md"
       ],
       "note": "Live c=on queries on 2026-08-19. Jerusalem (geonameid 281184) 2026-12-04 returns candle lighting 15:54; Tel Aviv (293397) 2026-07-03 returns 19:31. December across the two cities spans 15:54 to 16:22 and July spans 19:01 to 19:31."
+    },
+    {
+      "claim_id": "hebcal-query-20-blocking-dates-2026",
+      "claim": "The Hebcal query documented in Step 6 (maj=on&mod=on&i=on, subcat major minus a Chanukah / CH''M title exclusion, plus Yom HaZikaron and Yom HaAtzma'ut from subcat modern) yields exactly 20 blocking dates for 2026 and misses no statutory Israeli rest day.",
+      "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&mod=on&i=on&start=2026-01-01&end=2026-12-31",
+      "raw_snippet": "\"title\": \"Chanukah: 1 Candle\"",
+      "verified_via": "browser",
+      "verified_at": "2026-08-19T15:14:27Z",
+      "fetched_at": "2026-08-19T15:14:27Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "note": "Full-year 2026 feed enumerated live on 2026-08-19 and the documented jq filter applied to it. The 20 dates are Erev Purim, Purim, Erev Pesach, Pesach I, Pesach VII, Yom HaZikaron, Yom HaAtzma'ut, Erev Shavuot, Shavuot, Erev Tish'a B'Av, Tish'a B'Av, Erev Rosh Hashana, Rosh Hashana, Rosh Hashana II, Erev Yom Kippur, Yom Kippur, Erev Sukkot, Sukkot I, Sukkot VII (Hoshana Raba) and Shmini Atzeret. The raw feed files all nine Chanukah entries and all ten CH''M entries under subcat major, which is what the title exclusion removes."
     }
   ]
 }

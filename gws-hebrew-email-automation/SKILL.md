@@ -2,7 +2,7 @@
 name: gws-hebrew-email-automation
 description: Gmail automation for Israeli freelancers using the Google Workspace CLI (gws). Use when user asks to draft Hebrew client emails, send payment reminders in Shekels, triage inbox with Hebrew labels, set up Gmail filters for Israeli services, or save drafts for later send that respect Israeli business hours. Key capabilities include bilingual email drafting via gws gmail +send, payment reminder sequences with ILS amounts, Hebrew-aware inbox labeling, and draft-then-send workflows for Shabbat-aware delivery. Do NOT use for non-Gmail email providers, Microsoft Outlook automation, or CRM-level contact management.
 license: MIT
-allowed-tools: Bash(gws:*), Bash(npx:*), Bash(npm:*), Bash(jq:*), Bash(curl:*), Bash(date:*), Bash(TZ=*), Bash(wc:*), Bash(sleep:*), Bash(python3:*), WebFetch, Read, Write, Edit
+allowed-tools: Bash(gws:*), Bash(npx:*), Bash(npm:*), Bash(jq:*), Bash(curl:*), Bash(date:*), Bash(TZ=*), Bash(wc:*), Bash(head:*), Bash(sleep:*), Bash(python3:*), WebFetch, Read, Write, Edit
 compatibility: Requires Node.js 18+, a Google Cloud project with the Gmail API enabled, and the Google Workspace CLI (npm install -g @googleworkspace/cli). User must run gws auth setup once (to create OAuth credentials) and gws auth login to grant Gmail scopes. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex, Gemini CLI.
 ---
 
@@ -169,11 +169,9 @@ gws gmail users messages list \
   | jq -r '.messages[]?.id' > /tmp/bank-msg-ids.txt
 
 # Apply the label to each matched message.
-# Two things silently go wrong without the flags above: `maxResults` caps a single
-# page, so a mailbox with 900 matches labels only the first page and still reports
-# success (`--page-all` auto-paginates as NDJSON); and on zero results
-# `jq '.messages[].id'` errors with "Cannot iterate over null" instead of yielding
-# nothing, so use `.messages[]?.id`.
+# `--page-all` is required: maxResults caps a single page, so a mailbox with 900
+# matches would label only the first page and still report success. `.messages[]?.id`
+# is required: on zero results the unguarded form errors with "Cannot iterate over null".
 while read -r msg_id; do
   gws gmail users messages modify \
     --params "{\"userId\": \"me\", \"id\": \"$msg_id\"}" \
@@ -259,7 +257,8 @@ gws gmail +send \
 **Auto-detect Jewish holidays via the Hebcal API** (free, CC-BY, no key required, rate-limited to 90 requests / 10 seconds):
 
 ```bash
-# Is today a major Israeli holiday (yom tov, chol ha-mo'ed, or fast day)?
+# Is today an Israeli non-working day (yom tov, its erev, or a national day off)?
+# Chol HaMoed, Chanukah and the minor fasts are working days and are excluded.
 TODAY=$(TZ=Asia/Jerusalem date +%Y-%m-%d)
 HOLIDAY=$(curl -s "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&mod=on&i=on&start=${TODAY}&end=${TODAY}" \
   | jq -r '.items[]?
@@ -274,15 +273,7 @@ fi
 
 The `i=on` flag scopes results to Israeli observance (one day of yom tov for Pesach/Sukkot, etc., versus diaspora). Pass `cfg=json` for the JSON shape.
 
-**No single flag or `subcat` value means "Israeli day off", so the query above is an allowlist minus an exclusion.** Each of the following was confirmed by enumerating the full 2026 feed, not by reading the docs:
-
-- **`category` is useless as a filter.** With `min=on`, 2 February 2026 comes back as `{"category":"holiday","subcat":"minor","title":"Tu BiShvat"}`, an ordinary working day, as do Lag BaOmer and Tu B'Av. Drop `min=on` entirely.
-- **`subcat: "major"` is necessary but far too broad.** It carries the real chagim and their erevs, but the 2026 feed also files all nine Chanukah days and all ten Chol HaMoed days (`Pesach II (CH''M)` and friends) under it. Chanukah and Chol HaMoed are working days in Israel, with reduced hours at most. Selecting `major` wholesale suppresses business mail for nine consecutive days in December, which is the same defect as the Tu BiShvat case one bullet up. Hence the title exclusion.
-- **Do NOT add `mf=on`.** It adds exactly five fast days for 2026 and four of them (Ta'anit Esther, Ta'anit Bechorot, Tzom Tammuz, Tzom Gedaliah, Asara B'Tevet minus Yom Kippur) are ordinary working days. The two fasts that actually stop work, Yom Kippur and Tish'a B'Av, already arrive under `major`. A `subcat=="fast"` branch is either dead code without the flag or actively wrong with it.
-- **`mod=on` mixes days off with working days.** Modern holidays arrive as `subcat: "modern"`, and the 14 entries in 2026 include Yom HaZikaron and Yom HaAtzma'ut (genuine days off) alongside Hebrew Language Day, Family Day, Yom HaAliyah, Yom HaShoah, Herzl Day and Sigd (working days). Match the two by title.
-- `nx=on` adds Rosh Chodesh under `category: "roshchodesh"` with no `subcat` at all. Working days, so the flag is omitted.
-
-With those choices the 2026 feed yields exactly 20 blocking dates: the erev and day of Purim, Pesach I and VII, Shavuot, Tish'a B'Av, Rosh Hashana, Yom Kippur, Sukkot I, Hoshana Raba and Shmini Atzeret, plus Yom HaZikaron and Yom HaAtzma'ut. Erev chag arrives as `subcat: "major"`; treat it like Friday and do not send after ~14:00 Israel time. Hebcal titles use a curly apostrophe (U+2019), so match on prefixes rather than typing a full title with an ASCII quote.
+**No single flag or `subcat` value means "Israeli day off", so the query above is an allowlist minus an exclusion**, derived by enumerating the full 2026 feed rather than from the docs. `subcat: "major"` is necessary but also carries all nine Chanukah days and all ten Chol HaMoed days, which are Israeli working days, hence the title exclusion. Do NOT add `mf=on`: all five 2026 fast days it adds are working days, and the two fasts that do stop work (Yom Kippur, Tish'a B'Av) already arrive under `major`. `mod=on` mixes Yom HaZikaron and Yom HaAtzma'ut with six working days, so match those two by title. `min=on` and `nx=on` add only working days. With these choices the 2026 feed yields exactly 20 blocking dates. Full derivation, including the one known miss (Shushan Purim, Jerusalem only), is in `references/israeli-holiday-gate.md`.
 
 **The 14:00 Friday cutoff is a rough proxy, not Shabbat.** Shabbat starts at candle-lighting, which across Israeli cities runs from about 15:55 in December to about 19:30 in July, and ends at havdalah. The same Hebcal endpoint returns both when called with `c=on&geo=geoname&geonameid=<city>` (Jerusalem is 281184, Tel Aviv 293397). Use those timestamps when the exact boundary matters; the flat 14:00 rule errs safe in winter but blocks legitimate summer sends.
 
@@ -432,6 +423,7 @@ Result: Draft saved. User informed that Friday-afternoon sends are deferred, ope
 
 ### References
 - `references/israeli-business-email-templates.md`: Collection of Hebrew email templates for common freelancer scenarios: quotes, invoices, follow-ups, project updates. Consult when drafting professional Hebrew emails for Israeli clients.
+- `references/israeli-holiday-gate.md`: How the Step 6 Hebcal query was derived, with the full 2026 enumeration and the parameter traps. Consult before changing the holiday filter.
 - `references/israeli-email-compliance.md`: The full Section 30A rules and the full Gmail bulk-sender requirement table, including the two criminal-fine tiers. Consult before any send that resembles marketing.
 - `references/gws-gmail-commands.md`: Quick reference for the real `gws gmail` commands used in this skill (`+send`, `+triage`, `+watch`, plus the Discovery-surface `users.labels`, `users.messages.list/modify`, `users.settings.filters`). Consult when constructing or troubleshooting `gws` calls.
 

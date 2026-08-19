@@ -13,8 +13,6 @@
 - היקף: [תיאור מפורט]
 - לוח זמנים: [X] ימי עבודה
 - עלות: [סכום] ש"ח (לא כולל מע"מ 18%)
-
-> עוסק פטור: יש להוריד את שורת המע"מ לגמרי ולכתוב `עלות: [סכום] ש"ח` בלבד. עוסק פטור אינו רשאי לגבות מע"מ או להוציא חשבונית מס, והמסמך שיונפק הוא קבלה.
 - תנאי תשלום: שוטף + 30
 
 ההצעה בתוקף עד [תאריך].
@@ -117,5 +115,5 @@
 - **Business hours**: 09:00-18:00 Sun-Thu, 09:00-13:00 Fri
 - **Avoid sending**: Friday after 14:00, all day Saturday, Jewish holidays
 - **Currency**: Always write amounts with ש"ח after the number
-- **VAT**: Always specify כולל מע"מ (including) or לא כולל מע"מ (excluding)
+- **VAT**: For an עוסק מורשה, always specify כולל מע"מ (including) or לא כולל מע"מ (excluding). For an עוסק פטור, remove the VAT line entirely and write `עלות: [סכום] ש"ח` on its own: an עוסק פטור may not charge VAT or issue a חשבונית מס, and the document issued is a קבלה. Run `python3 scripts/shekel-formatter.py <amount> --patur` for that path.
 - **Date format**: DD.MM.YYYY (Israeli standard)
