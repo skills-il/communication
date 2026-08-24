@@ -1,0 +1,39 @@
+{
+  "cycles": [
+    {
+      "version": "1.3.0",
+      "date": "2026-08-24",
+      "holdout_before": 0.8,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [
+          "אני בהתחייבות ורוצה להתנתק, כמה קנס יציאה אשלם?"
+        ],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "כמה זמן לוקח לנייד מספר טלפון בישראל?",
+          "which network does 019 Mobile actually use?",
+          "compare AWS Direct Connect to Azure ExpressRoute for our datacenter",
+          "I got a huge bill for calls abroad, what are my rights?"
+        ]
+      },
+      "lessons": [
+        "Expert CRITICAL deferred: Expon (Xfone) fibre footprint. Expon is listed only as a mobile brand; whether it owns meaningful FTTH could NOT be verified (a 2021 tender win for 39 localities is an intention, not a build; its own marketing claims no infrastructure ownership; Wikipedia describes it reselling over Bezeq). Omitted deliberately. Re-check next cycle before adding it to the internet-provider list.",
+        "Expert MAJOR deferred: no coverage of disconnection for non-payment, deposits (pikadon) demanded from olim/students/foreign workers with no Israeli credit history, or reduced fixed-line tariffs for National Insurance benefit recipients and accessibility obligations for hearing/vision-impaired subscribers. All plausible and all unverified this cycle.",
+        "Expert MAJOR deferred: complaint routing is still a bare link to the ministry homepage. Should name the public-enquiries route, what to attach, and the split between the Ministry, the Consumer Protection Authority and small claims.",
+        "Research finding not encoded: Consumer Protection Law amendment 73 (phone-sales call recording, transactions over NIS 750, delivered within 10 business days, expressly covering telecom) is published but commences 22.3.2027, and the commencement date rests on a single commercial-law summary. Add when in force and primary-sourced.",
+        "Research finding not encoded: the wholesale fibre tariff cut (Bezeq per-connection 72 to 58 NIS) and the MoC coverage/QoS hearing of 5.8.2026 (dropped-call ceiling 2 percent to 1 percent, RSSI to RSRP). The tariff figures conflict across sources (58 vs 49 vs 50.52) and the hearing is not binding. Do not encode without a gov.il primary source.",
+        "Watch item: the Pelephone-wecom MOU of 14.7.2026 (NIS 265m) and the HOT Mobile closing are both unresolved. The operator list will go stale when either completes.",
+        "Structural: gov.il rate and policy pages 403 to curl AND to WebFetch, but gov.il BlobFolder PDF URLs fetch fine as direct blobs. That is the cheap route to ministry policy documents; use it before reaching for a browser.",
+        "Structural: nevo.co.il carries the current consolidated statute while the gov.il PDF of the same regulations was materially stale (its regs 29 and 33 lacked the default-block and spend-cap structure). Prefer nevo for statute currency and say so in verified_via.",
+        "Expert MAJOR deferred (second cycle running): complaint routing is still a bare link to the ministry homepage. Every right this version adds (no exit fee, no port refusal over debt, six-minute answer, roaming spend cap) is enforceable only through a complaint, so the enforcement path is now the weakest part of the skill. Next cycle: name the public-enquiries route, what to attach, and the split between the Ministry, the Consumer Protection Authority and small claims.",
+        "Expert MAJOR deferred: deposits (pikadon) demanded at point of sale from olim, students and foreign workers with no Israeli credit history, and the disconnection-for-non-payment sequence. Both plausible and both unsourced this cycle; do not write them without a primary source.",
+        "Expert MINOR deferred: Cellcom's TV service was renamed 'Cellcom tv+' (Oct 2025) and Partner's to '+Partner tv' (Sept 2025). The skill still uses the old names. Not defunct, but a superseded product tier.",
+        "Process lesson: the Expert's first-pass CRITICAL that the NIS 5,000 ceiling gates section 51A as well as 51D was WRONG, and the Expert withdrew it on re-review once the statute was read. 51A carries its own definition (up to 100 lines, no bill ceiling, bundle subscribers routed to 51D). Verifying the reviewer before encoding is what saved this; transcribing it would have told small-business cellular subscribers they had no protection when they do.",
+        "Process lesson: the Expert's asserted 'free handset unlock on request' and 'age-65 same-call cancellation' were both refuted, and in both cases the real rule is STRONGER than the reviewer's version (section 51C bans the lock outright; the six-minute human-answer rule is age-neutral and universal). A reviewer finding can understate a right as easily as overstate it.",
+        "Structural: an unsourced negative capability claim about a named commercial provider ('Golan Telecom: no eSIM') survived multiple cycles and steered price-sensitive users off the cheapest carrier. Golan documents eSIM on its own site. Treat every 'operator X does NOT support Y' as a claim needing a dated source, or do not write it."
+      ]
+    }
+  ]
+}

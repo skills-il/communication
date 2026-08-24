@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-telecom-comparator",
-  "generated_at": "2026-05-25T21:35:00Z",
+  "generated_at": "2026-08-24T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -26,28 +26,6 @@
         "SKILL_HE.md"
       ],
       "source_label": "משרד התקשורת - הודעה על פינוי תדרי דור 2 ו-3, פברואר 2026"
-    },
-    {
-      "claim_id": "number-portability-1-3-days",
-      "claim": "Number portability (niud mispar) in Israel completes in 1-3 business days by law; portability is free",
-      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
-      "raw_snippet": "ניוד מספר 1-3 ימי עסקים",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "consumer-protection-law-1981",
-      "claim": "Israeli Consumer Protection Law (1981) caps early-termination penalties at remaining-12-months maximum",
-      "source_url": "https://www.gov.il/he/departments/ministry_of_economy_and_industry",
-      "raw_snippet": "חוק הגנת הצרכן 1981",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
     },
     {
       "claim_id": "carrier-partner",
@@ -84,7 +62,7 @@
     },
     {
       "claim_id": "carrier-hot",
-      "claim": "HOT (cable + mobile) provides HOT Mobile, cable internet, HOT TV, fiber",
+      "claim": "HOT's own site, cited in the skill only as the navigational destination for HOT Mobile, cable internet, HOT TV and the fiber checker. No technology or market-position claim rests on it.",
       "source_url": "http://www.hot.net.il",
       "raw_snippet": "HOT",
       "fetched_at": "2026-05-25T21:35:00Z",
@@ -95,7 +73,7 @@
     },
     {
       "claim_id": "carrier-bezeq",
-      "claim": "Bezeq operates nationwide fiber and DSL, largest fixed-line operator",
+      "claim": "Bezeq's own site, cited in the skill only as the navigational destination for home internet and the fiber address checker. No ranking or market-share claim rests on it.",
       "source_url": "https://www.bezeq.co.il",
       "raw_snippet": "Bezeq",
       "fetched_at": "2026-05-25T21:35:00Z",
@@ -106,7 +84,7 @@
     },
     {
       "claim_id": "carrier-golan",
-      "claim": "Golan Telecom is an MVNO using Cellcom's network",
+      "claim": "Golan Telecom's own site, cited in the skill only as a navigational destination. The host-network fact is sourced separately by golan-rides-cellcom.",
       "source_url": "https://www.golantelecom.co.il",
       "raw_snippet": "Golan Telecom",
       "fetched_at": "2026-05-25T21:35:00Z",
@@ -127,33 +105,11 @@
       ]
     },
     {
-      "claim_id": "carrier-rami-levy-tel",
-      "claim": "Rami Levy Communications is an MVNO using Pelephone's network",
-      "source_url": "https://www.rami-levy.co.il/he/communication",
-      "raw_snippet": "Rami Levy",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "carrier-019",
       "claim": "019 Mobile is a virtual operator (MVNO) riding on the networks of the facilities-based operators. Operator site: https://www.019mobile.co.il.",
       "source_url": "https://www.smartcut.co.il/cellular-antennas-in-israel/",
       "raw_snippet": "מפעילות וירטואליות: גולן טלקום, רמי לוי תקשורת, 019 מובייל, אקספון ונפטוקום רוכבות על רשתות משותפות עם מפעילים עצמאיים, כמו סלקום, פלאפון ופרטנר.",
       "fetched_at": "2026-08-09T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "ibc-wholesale-fiber",
-      "claim": "IBC (Israel Broadband Company) is a wholesale fiber infrastructure operator",
-      "source_url": "https://www.ibc.co.il",
-      "raw_snippet": "IBC",
-      "fetched_at": "2026-05-25T21:35:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -182,17 +138,6 @@
       ]
     },
     {
-      "claim_id": "ref-moc-consumer",
-      "claim": "Ministry of Communications consumer rights portal",
-      "source_url": "https://www.gov.il/he/departments/topics/communication_consumer_rights",
-      "raw_snippet": "consumer rights communications",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "ref-haboreret",
       "claim": "Haboreret telecom news and plan comparisons",
       "source_url": "https://www.haboreret.co.il",
@@ -207,9 +152,9 @@
     },
     {
       "claim_id": "ref-kamazeole",
-      "claim": "KamazeOle plans for olim with English-speaking carriers",
+      "claim": "KamazeOle comparison site, used in the skill only as a navigational link to plan comparisons aimed at olim and English speakers. No figure in the skill rests on it.",
       "source_url": "https://www.kamazeole.co.il",
-      "raw_snippet": "KamazeOle",
+      "raw_snippet": "כמה זה עולה",
       "fetched_at": "2026-05-25T21:35:00Z",
       "appears_in": [
         "SKILL.md",
@@ -288,17 +233,6 @@
       ],
       "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
       "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "ref-hot-check-address",
-      "claim": "HOT address checker",
-      "source_url": "https://www.hot.net.il/check-address",
-      "raw_snippet": "HOT check address",
-      "fetched_at": "2026-05-25T21:35:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
     },
     {
       "claim_id": "ref-kamaze",
@@ -383,7 +317,7 @@
     },
     {
       "claim_id": "emergency-dialling-until-2028",
-      "claim": "Dialling the emergency centres (100, 101, 102) from old handsets remains available until the end of 2028, and the Ministry of Communications intends to require infrastructure owners to operate a dedicated 2G network for emergency calls until then.",
+      "claim": "Dialling the emergency centres (100, 101, 102) from old handsets remains available until the end of 2028. The cited notice does not state what network arrangement will deliver that, and the skill does not assert one.",
       "source_url": "https://www.gov.il/he/pages/10022026",
       "raw_snippet": "כדי לשמור על בטיחות האזרחים, האפשרות לחייג למוקדי החירום (100, 101, 102) מהמכשירים הישנים תישאר זמינה עד סוף שנת 2028.",
       "fetched_at": "2026-08-12",
@@ -415,6 +349,487 @@
       "verified_via": "Rami Levy packages page read in a browser; the plan grid renders client-side and is empty to curl",
       "verified_at": "2026-08-17",
       "fetched_at": "2026-08-17",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "porting-time-half-hour",
+      "claim": "The Ministry of Communications numbering plan caps the service-switch itself at half an hour for a mobile (retan) subscriber and one hour for a fixed-line subscriber, and at three hours where the ported number is part of a whole block.",
+      "source_url": "https://www.gov.il/BlobFolder/policy/05082018_2/en/The_numbering_plan-02-2023-mobility.pdf",
+      "raw_snippet": "פרק הזמן להחלפת ספק שירות, יהיה קצר ככל האפשר, ולא יעלה על מחצית השעה לעניין מנוי לשרות רט\"ן ושעה אצל מנוי לשרות טלפוני נייח",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "Ministry of Communications numbering-plan PDF (mobility, 02-2023)",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "porting-three-hours-block",
+      "claim": "Where the porting request covers one or more numbers that are part of a whole block, the switch window is up to three hours.",
+      "source_url": "https://www.gov.il/BlobFolder/policy/05082018_2/en/The_numbering_plan-02-2023-mobility.pdf",
+      "raw_snippet": "במידה ובקשת הניוד היא עבור מספר אחד או כמה מספרים שהינם חלק מטווח שלם, פרק הזמן להחלפת ספק שירות, יהיה קצר ככל האפשר, ולא יעלה על שלוש שעות.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "Ministry of Communications numbering-plan PDF (mobility, 02-2023)",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "porting-one-business-day-statute",
+      "claim": "Communications Law section 5A(f) sets the statutory outer bound for number portability at one business day, or less if the Minister so determines, and requires it to be performed at no charge to the subscriber. סעיף 5א(ו) לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "ספק מורשה כללי יספק ניידות מספרים לכל מנוי שיבקש זאת, בתוך יום עבודה אחד או בתוך זמן קצר מזה שקבע השר",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "porting-free-by-law",
+      "claim": "Number portability is free: the provider must perform every act required of it without payment from the subscriber or from any other licensed provider. סעיף 5א(ו) לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "ויבצע, בלא תשלום מהמנוי או מספק מורשה אחר כלשהו, את כל הפעולות הנדרשות ממנו לשם כך לפי סעיף זה",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "porting-does-not-clear-obligations",
+      "claim": "Porting does not discharge the subscriber's obligations to the abandoned provider, including outstanding terminal-equipment payments and continued monthly payment for the commitment period.",
+      "source_url": "https://www.gov.il/BlobFolder/policy/05082018_2/en/The_numbering_plan-02-2023-mobility.pdf",
+      "raw_snippet": "אינה פוטרת את המנוי מקיום כל התחייבויותיו כלפי הספק הננטש, ככל שקיימות, לרבות השלמת תשלום בגין ציוד קצה, המשך תשלום חודשי למשך תקופת ההתקשרות",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "Ministry of Communications numbering-plan PDF (mobility, 02-2023)",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "no-exit-fee-51a",
+      "claim": "Communications Law section 51A: where a subscriber of a cellular (retan) operator cancels the engagement, the operator may not charge any payment and may not withhold a benefit the subscriber would have received but for the cancellation; it may collect only the remaining terminal-equipment payments under section 51B and debts the subscriber accrued. סעיף 51א לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "ביטל מנוי של מפעיל רט\"ן את הסכם ההתקשרות עמו, לא יגבה ממנו מפעיל הרט\"ן תשלום, ולא ימנע ממנו הטבה שהיה מקבל אלמלא הביטול; על אף האמור, מפעיל רט\"ן רשאי לגבות את יתרת תשלומי המנוי בעבור ציוד הקצה כאמור בסעיף 51ב, וחובות שצבר המנוי",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "no-acceleration-of-device-51b",
+      "claim": "Communications Law section 51B(a): the operator may not accelerate the remaining terminal-equipment instalments to immediate payment; the subscriber may keep paying them on the original dates and in the original amounts as if there had been no cancellation. סעיף 51ב לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "לא יהיה רשאי מפעיל הרט\"ן להעמיד לפירעון מיידי את יתרת התשלומים של המנוי בעבור ציוד הקצה שרכש כאמור, והמנוי יהיה רשאי להמשיך לשלם את התשלום לשיעורין במועדים ובסכומים כפי שהיה עליו לשלם אלמלא הביטול.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "no-exit-fee-51d-bundles",
+      "claim": "Communications Law section 51D extends the same no-exit-payment rule to a licensed provider and to a broadcasting licensee, including a combined engagement (bundle), for subscribers whose average monthly bills are under NIS 5,000. סעיף 51ד לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "ביטל מנוי את הסכם ההתקשרות, לא יגבה ממנו ספק מורשה או מפעיל רט\"ן, לפי העניין, תשלום, ולא ימנע ממנו הטבה שהיה מקבל אלמלא הביטול; על אף האמור, ספק מורשה או מפעיל רט\"ן כאמור רשאי לגבות את יתרת תשלומי המנוי בעבור ציוד הקצה כאמור בסעיף 51ה, וחובות שצבר המנוי.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "eight-percent-ceiling-repealed",
+      "claim": "The 8 percent exit-fee ceiling ('sechum hatikra') was inserted in 2011 and deleted by amendment 53, in force 2012. Israeli consumer sites still republish the repealed formula.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "\"סכום התקרה\" – (נמחקה)",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo; the repealer marker is attributed to תיקון מס' 53, תשע\"ב-2012",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "cancellation-effective-three-business-days",
+      "claim": "Consumer Protection Law section 13D(c): a continuing-transaction contract ends within three business days of the cancellation notice, or six business days where the notice was sent by registered mail. סעיף 13ד(ג) לחוק הגנת הצרכן.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "חוזה בעסקה מתמשכת יסתיים בתוך שלושה ימי עסקים מיום שנמסרה הודעת ביטול לפי הוראות סעיף 14ט, ואם נמסרה הודעת הביטול באמצעות דואר רשום – בתוך שישה ימי עסקים מיום מסירתה למשלוח",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "distance-sale-fourteen-days",
+      "claim": "Consumer Protection Law section 14C(c)(2): in a distance sale of a service the consumer may cancel within fourteen days, and in a continuing transaction this applies whether or not the service has already begun. סעיף 14ג(ג)(2) לחוק הגנת הצרכן.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "בשירות – בתוך ארבעה עשר ימים מיום עשיית העסקה או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף קטן (ב), לפי המאוחר",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "distance-sale-four-months-65",
+      "claim": "Consumer Protection Law section 14C1: a consumer who is a person with a disability, a senior citizen (defined as aged 65 or over) or a new immigrant may cancel a distance sale within four months, provided the engagement included a conversation with the seller. סעיף 14ג1 לחוק הגנת הצרכן.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "בעסקת מכר מרחוק שנערכה עם צרכן שהוא אדם עם מוגבלות, אזרח ותיק או עולה חדש, רשאי הצרכן לבטל את העסקה בתוך ארבעה חודשים",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute text on nevo; 'אזרח ותיק' is defined in the same section as מי שמלאו לו 65 שנים",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "wecom-mocn-on-cellcom",
+      "claim": "wecom holds its own MNO licence and spectrum but does not run an independent antenna network: it operates an independent core sharing a joint antenna network with Cellcom (MOCN).",
+      "source_url": "https://www.ynet.co.il/economy/article/h1y11l1eege",
+      "raw_snippet": "wecom מפעילה מערכת ליבה עצמאית החולקת רשת אנטנות משותפת עם חברת סלקום",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pelephone-wecom-mou-2026",
+      "claim": "Pelephone announced on 14 July 2026 a non-binding memorandum of understanding to acquire wecom for about NIS 265 million, subject to regulatory approval.",
+      "source_url": "https://www.ynet.co.il/economy/article/h1y11l1eege",
+      "raw_snippet": "פלאפון הודיעה היום (שלישי) לבורסה כי חתמה על מזכר הבנות לא מחייב לרכישת Wecom בסכום של 265 מיליון שקל",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "golan-owned-by-cellcom",
+      "claim": "Golan Telecom was acquired by Cellcom in 2020.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A4%D7%A2%D7%99%D7%9C_%D7%A8%D7%A9%D7%AA_%D7%A1%D7%9C%D7%95%D7%9C%D7%A8%D7%99%D7%AA_%D7%95%D7%99%D7%A8%D7%98%D7%95%D7%90%D7%9C%D7%99%D7%AA",
+      "raw_snippet": "גולן טלקום]], נרכשה על ידי [[סלקום]] ב-2020",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "golan-rides-cellcom",
+      "claim": "Golan Telecom's network infrastructure is shared, riding the Cellcom network.",
+      "source_url": "https://www.smartcut.co.il/golan-telecom/",
+      "raw_snippet": "תשתית: תשתית הרשת: משותפת על גבי רשת סלקום.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "rami-levy-rides-pelephone",
+      "claim": "Rami Levy Communications rides the Pelephone network.",
+      "source_url": "https://www.smartcut.co.il/rami-levi-mobile-5g/",
+      "raw_snippet": "תשתית: תשתית הרשת: משותפת על גבי רשת פלאפון.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "019-rides-partner",
+      "claim": "019 Mobile rides the Partner network.",
+      "source_url": "https://www.smartcut.co.il/019-mobile/",
+      "raw_snippet": "תשתית: תשתית הרשת משותפת על גבי רשת פרטנר.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "expon-rides-partner-hot",
+      "claim": "Expon (Xphone) rides the shared Partner and HOT Mobile radio network.",
+      "source_url": "https://www.smartcut.co.il/018-cellular/",
+      "raw_snippet": "תשתית: תשתית הרשת: רשת הסלולר המשותפת של פרטנר הוט.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "neptucom-rides-pelephone-partner",
+      "claim": "Neptucom rides the Pelephone and Partner networks.",
+      "source_url": "https://www.smartcut.co.il/neptucom-cellular/",
+      "raw_snippet": "נפטוקום מפעילה את שירותיה על גבי רשתות הסלולר של פלאפון ופרטנר.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "walla-mobile-rides-hot",
+      "claim": "Walla Mobile is a currently-sold consumer cellular brand riding the HOT Mobile network.",
+      "source_url": "https://www.smartcut.co.il/walla-mobile/",
+      "raw_snippet": "תשתית: תשתית הרשת: משותפת על גבי רשת הוט מובייל.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "012-absorbed-into-partner",
+      "claim": "012 Mobile was launched in 2012 by Partner via 012 Smile; from March 2024 Partner began absorbing the brand into the Partner network and ending it as a separate brand.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%D7%A1%D7%9C%D7%95%D7%9C%D7%A8%D7%99%D7%AA_%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C",
+      "raw_snippet": "החל ממרץ 2024, התחילה פרטנר להטמיע מותג זה ברשת פרטנר ולסיים את פעילותו כמותג נפרד.",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "hot-mobile-sale-approved-2026",
+      "claim": "The Competition Authority announced on 5 August 2026 that it had approved the merger transaction between Delek Israel and HOT Mobile. The buyers are Delek (retail) 40 percent, Keystone 40 percent and Leumi Partners 20 percent; the enterprise value is NIS 1.8 billion (NIS 1.2 billion cash plus NIS 600 million of assumed liabilities).",
+      "source_url": "https://www.globes.co.il/news/article.aspx?did=1001551472",
+      "raw_snippet": "רשות התחרות הודיעה לפני זמן קצר היום (ד') כי אישרה את עסקת המיזוג בין דלק ישראל להוט מובייל",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "hot-mobile-sale-consideration",
+      "claim": "The consideration for HOT Mobile: NIS 1.8 billion enterprise value, of which NIS 1.2 billion in cash and NIS 600 million in assumed liabilities; Delek retail holds 40 percent of the buying group and Leumi Partners 20 percent.",
+      "source_url": "https://www.ynet.co.il/economy/article/hjcy4ywmfl",
+      "raw_snippet": "התמורה במזומן עומדת על 1.2 מיליארד שקל, והרוכשים ייטלו על עצמם התחייבויות בהיקף של 600 מיליון שקל",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "51a-scope-100-lines",
+      "claim": "Communications Law section 51A defines the protected subscriber for its own purposes as one engaged with a cellular operator for at most one hundred phone lines, excluding a subscriber engaged under a combined engagement as defined in section 51D(a). There is no bill ceiling in section 51A. סעיף 51א לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "\"מנוי\" – מי שהתקשר בהסכם התקשרות עם מפעיל רט\"ן לקבלת שירות רדיו טלפון נייד למאה קווי טלפון לכל היותר למעט מי שהתקשר בהסכם התקשרות משולב כהגדרתו בסעיף 51ד(א)",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "51d-scope-5000",
+      "claim": "Communications Law section 51D defines its protected subscriber as one engaged with a licensed provider whose average monthly bills are under NIS 5,000, or one under a combined engagement including cellular service for at most one hundred phone lines whose average monthly bills are under NIS 5,000. סעיף 51ד לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "\"מנוי\" – אחד מאלה, לפי העניין: (1) מי שהתקשר בהסכם התקשרות עם ספק מורשה, וממוצע החשבונות החודשיים שלו נמוך מ-5,000 שקלים חדשים;",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "51c-no-device-locking",
+      "claim": "Communications Law section 51C forbids a licensed provider or a dealer in mobile terminal equipment from restricting or blocking the subscriber's ability to use terminal equipment on any network of the same type, including by means of setting tariffs. There is no condition that the device first be paid off. סעיף 51ג לחוק התקשורת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "האפשרות הנתונה למנוי לעשות שימוש בציוד קצה או בציוד תקשורת בכל רשת בזק או ברשת המשמשת להפצת שידורים של ספק מורשה",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "port-disconnects-abandoned-provider",
+      "claim": "The abandoned provider continues serving the porting subscriber and disconnects immediately upon receiving the porting notice; the receiving provider must inform the subscriber beforehand that porting means the end of service from the abandoned provider.",
+      "source_url": "https://www.gov.il/BlobFolder/policy/05082018_2/en/The_numbering_plan-02-2023-mobility.pdf",
+      "raw_snippet": "ספק ננטש ימשיך במתן השירות למנוי שביקש להתנייד וינתקו מיד לאחר לקבלת הודעת ניוד",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "Ministry of Communications numbering-plan PDF (mobility, 02-2023), read as a direct blob URL",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "port-debt-not-a-ground-for-refusal",
+      "claim": "A financial debt owed by the porting subscriber to the abandoned provider, or the existence of an engagement agreement between them for any period, is not a ground for rejecting a porting notice or the update.",
+      "source_url": "https://www.gov.il/BlobFolder/policy/05082018_2/en/The_numbering_plan-02-2023-mobility.pdf",
+      "raw_snippet": "לא יהוו עילה לדחיית קבלתה של הודעת ניוד",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "Ministry of Communications numbering-plan PDF (mobility, 02-2023), read as a direct blob URL",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "port-rejection-grounds",
+      "claim": "The permitted grounds for rejecting a porting request are narrow: the subscriber is not held by that provider; the update system is blocked because an earlier porting notice for the same subscriber is being processed; a malformed number pattern; a written request by a business subscriber to block porting of its number; and a prepaid number with cumulative top-ups below NIS 30 including VAT.",
+      "source_url": "https://www.gov.il/BlobFolder/policy/05082018_2/en/The_numbering_plan-02-2023-mobility.pdf",
+      "raw_snippet": "קיימת בקשה בכתב של מנוי עסקי אל מפעיל רט\"ן לחסימת אפשרות ביצוע ניידות למספר הטלפון",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "Ministry of Communications numbering-plan PDF (mobility, 02-2023), read as a direct blob URL",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "roaming-data-blocked-by-default",
+      "claim": "Under regulation 33 of the Communications (General Licence for Provision of Telecom Services) Regulations 5783-2022, international-roaming internet access is blocked to the subscriber unless there is explicit agreement between subscriber and provider setting out the terms of receiving the service; international-roaming telephony is not blocked by default but the subscriber may request it be blocked, in which case regulation 29 applies.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/210485.htm",
+      "raw_snippet": "שירות גישה לאינטרנט במסגרת נדידה בין-לאומית, ייחסם בפני מנוי, למעט אם קיימת הסכמה מפורשת בין המנוי לבין הספק המורשה שבה כלולים תנאי קבלת השירות",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "roaming-spend-cap",
+      "claim": "The provider must let the subscriber set, at any time, a maximum spend after which the service is blocked, and must block as soon as possible after that maximum is reached.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/210485.htm",
+      "raw_snippet": "ספק מורשה יאפשר למנוי לקבוע, בכל עת, סכום מרבי לשימוש במסגרת השירות שלאחריו ייחסם השירות",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "service-block-one-business-day",
+      "claim": "The provider must act on a subscriber's request to block a service within one business day (regulation 29).",
+      "source_url": "https://www.nevo.co.il/law_html/law00/210485.htm",
+      "raw_snippet": "ספק מורשה יפעל בהתאם לבקשת המנוי לחסום שירות כאמור בתקנת משנה (א) בתוך יום עבודה",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "premium-service-not-to-mobile",
+      "claim": "A licensed provider may not supply a premium service via a connection to a mobile destination, and may bill for a premium service only where it is delivered via a connection to a fixed destination (regulation 67).",
+      "source_url": "https://www.nevo.co.il/law_html/law00/210485.htm",
+      "raw_snippet": "ספק מורשה לא יספק שירות פרימיום באמצעות התקשרות ליעד נייד",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "disconnection-next-business-day-free",
+      "claim": "On receiving a cancellation notice under Consumer Protection Law section 14I, the provider must disconnect no later than the business day following the notice, and may not charge the subscriber for the disconnection (regulation 38).",
+      "source_url": "https://www.nevo.co.il/law_html/law00/210485.htm",
+      "raw_snippet": "ספק מורשה לא יגבה מהמנוי תשלום בעד הניתוק",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "online-cancellation-link",
+      "claim": "Consumer Protection Law section 14I(b): for a transaction that can be entered into with a consumer online, the trader must create a dedicated link on the home page of its website for sending a cancellation notice, placed prominently and clearly. סעיף 14ט לחוק הגנת הצרכן.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "ייצור עוסק בדף הראשי של אתר האינטרנט שלו קישור ייעודי שבאמצעותו ניתן לשלוח הודעת ביטול",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "six-minute-human-answer",
+      "claim": "Consumer Protection Law section 18B(a1): the wait for a professional human response on fault handling, bill enquiries and termination of engagement may not exceed six minutes from the start of the call, and the consumer may not be diverted to a message-leaving service unless they chose it. סעיף 18ב לחוק הגנת הצרכן.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "לא יעלה על שש דקות מתחילת השיחה, והצרכן לא יופנה לשירות השארת הודעה, אלא אם כן בחר בכך",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "consolidated statute / regulations text on nevo",
+      "verified_at": "2026-08-24"
+    },
+    {
+      "claim_id": "wholesale-split-vs-single-bill",
+      "claim": "Israeli households buy home internet either as two separate engagements (infrastructure company plus ISP, split billing) or as a single engagement with an access provider that leases the infrastructure under the wholesale-market reform.",
+      "source_url": "https://www.ynet.co.il/articles/0,7340,L-5668316,00.html",
+      "raw_snippet": "מהציבור הרחב רוכש אינטרנט באמצעות חיוב מפוצל - התקשרות נפרדת מול חברת התשתית ומול הספק",
+      "fetched_at": "2026-08-24",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "golan-esim-available",
+      "claim": "Golan Telecom sells and documents eSIM on its own site, so a blanket 'budget brands have no eSIM' negative is false.",
+      "source_url": "https://www.golantelecom.co.il/esim",
+      "raw_snippet": "eSIM הוא SIM דיגיטלי המאפשר לכם להפעיל תוכנית סלולרית של גולן טלקום מבלי להשתמש ב-SIM פיזי",
+      "fetched_at": "2026-08-24",
+      "verified_at": "2026-08-24",
+      "verified_via": "operator's own eSIM page",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
