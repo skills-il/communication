@@ -1,0 +1,26 @@
+{
+  "cycles": [
+    {
+      "version": "1.3.0",
+      "date": "2026-08-24",
+      "lessons": [
+        "Legal gate returned NOTICE REQUIRED (Tier B, S2 x F1, עורך דין under חוק לשכת עורכי הדין s.20). A ## Legal notice / ## הבהרה משפטית section was added immediately after the H1 in both files and a short legal clause now opens both descriptions. optimize-descriptions must never remove, reword, or relocate that opening clause.",
+        "Expert MAJOR deferred: CV guidance still presents photo, date of birth and marital status as instructions with no discrimination counterweight under חוק שוויון הזדמנויות בעבודה; rework Step 3 and references/israeli-cv-template.md next cycle.",
+        "Expert MAJOR deferred: דמי הבראה and travel reimbursement (נסיעות) are missing from the total-compensation model even though both are mandatory extension-order items a user will see on a payslip.",
+        "Expert MAJOR deferred: no coverage of prohibited or restricted screening practices (pregnancy and family questions, criminal-record certificates outside permitted roles, graphology, genetic and medical information).",
+        "Expert MAJOR deferred: Facebook, WhatsApp and Telegram job channels and mandate-holding agencies are absent, despite the skill's own diagnosis that the market is network-driven. JobMaster and JobNet are named in the description but have no Reference Links row.",
+        "Expert MAJOR deferred: the skill is titled for the Israeli job market but is roughly ninety percent tech. Either narrow the description honestly or add per-sector routing for teaching, healthcare and the public sector.",
+        "Expert MAJOR deferred: no olim track (foreign-degree recognition via הגף להערכת תארים, licensing conversion, olim-specific employment services), despite the skill gesturing at olim twice.",
+        "Expert MAJOR deferred: statutory absence of a probation period, and freelancer/עוסק misclassification risk, both belong in the benefits scope and are absent.",
+        "Expert MINOR deferred: references/israeli-cv-template.md suggests putting a teudat zehut number on a public-sector CV; safer to supply it only on the official tender form.",
+        "Expert MINOR deferred: salary bands are base-only with no equity framing; one sentence on RSUs and the Section 102 trustee track would prevent bad apples-to-apples comparison.",
+        "Expert MINOR deferred: the employer-landscape table asserts per-company status with no freshness caveat, unlike the CBS series which now carries one.",
+        "Verified-and-corrected: the Expert reported the statutory rejection notice as 30 days (it is 14 days from the role being filled) and reported the koach-adam nine-month deeming rule without its computing-role exclusion, which is exactly the IT-staffing population the skill sends users to. Both were corrected against the primary sources before writing.",
+        "Removed as unverifiable this cycle: the 62%/69% in-Israel workforce share and the 400,000/11.4% hi-tech headcount figures were not present on the cited Geektime page; re-source them from the Israel Innovation Authority report directly next cycle.",
+        "Discretionary edits deferred over the Phase 4.1 batch cap of 3: none beyond the MAJOR/MINOR items above.",
+        "Phase 5.7: the description changed only by prepending the mandated legal clause; the trigger surface is byte-identical after the prefix, so holdout routing behaviour cannot regress by construction. No separate holdout score was computed and none is claimed.",
+        "Legal gate flagged that enriched DB fields (faq, prompts, best_practices, problem_statement, avoid) are not visible from the worktree and must be re-checked for conclusions phrased as an entitlement ('מגיע לכם X') before publish."
+      ]
+    }
+  ]
+}

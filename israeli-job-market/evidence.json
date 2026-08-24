@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-job-market",
-  "generated_at": "2026-05-25T20:55:00Z",
+  "generated_at": "2026-08-24T00:00:00Z",
   "claims": [
     {
       "claim_id": "average-wage-2026",
-      "claim": "The Israeli average wage (השכר הממוצע) used by Bituach Leumi from 01.01.2026 is 13,770 NIS/month; half of it is 6,885 NIS.",
-      "source_url": "https://www.btl.gov.il/Insurance/National%20Insurance/type_list/Self_employed/Pages/default.aspx",
-      "raw_snippet": "הכנסתו החודשית הממוצעת ממשלח ידו שווה או עולה על 50% מהשכר הממוצע - 6,885  (החל ב- 01.01.2026)",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "claim": "Bituach Leumi average wage from 01.01.2026: 13,769 NIS for benefits (National Insurance Law s.2) and 13,566 NIS for insurance contributions (s.1)",
+      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/%D7%A9%D7%9B%D7%A8%20%D7%9E%D7%9E%D7%95%D7%A6%D7%A2.aspx",
+      "raw_snippet": "לפי סעיף 2 בחוק - קצבאות: 13,769 ש\"ח",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -16,24 +16,24 @@
     },
     {
       "claim_id": "tech-salary-bands-2026",
-      "claim": "The monthly NIS figures are narrative examples the skill itself uses in its worked scenarios, not published survey data: 28,000 ₪, 36,000 ₪, 55,000 ₪ and 80,000 ₪ appear only inside those scenarios. levels.fyi is cited in the skill as the place to check real current bands, since it reports them per company and refreshes continuously.",
+      "claim": "The monthly NIS role bands in the skill's tech_ranges block (junior 18,000-26,000, mid 26,000-40,000, senior 38,000-60,000, staff 55,000-85,000, team lead 45,000-65,000, engineering manager 55,000-80,000, VP eng 65,000-110,000, product manager 28,000-55,000, senior PM 40,000-70,000, data scientist 30,000-58,000, AI engineer 35,000-70,000, ML research engineer 40,000-80,000, devops 30,000-55,000, security 35,000-65,000) are indicative planning ranges compiled by the skill from market reporting, explicitly labelled as not survey data, with an instruction to verify per company on levels.fyi before quoting. The worked examples reuse the same figures: a senior-developer range of 38,000 NIS to 60,000 NIS, and a hypothetical mid-level offer of 28,000 NIS that the example tests against the indicative band.",
       "source_url": "https://raw.githubusercontent.com/skills-il/communication/master/israeli-job-market/SKILL.md",
-      "raw_snippet": "### Example 3: Salary Negotiation User says: \"I got an offer for 28,000 NIS as a mid-level developer, is that fair?\" Actions: 1. Check against benchmarks (mid-dev range: 25,000-38,000) 2. Factor in location (Tel Aviv premium vs periphery) 3. Calculate total compensation including benefits 4. Advise on negotiation approach Result: Contextual salary analysis with negotiation guidance. ## Bundled Resources ### Scripts - `scripts/salary_calculator.",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Indicative planning ranges compiled by this skill from market reporting, NOT survey data.",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/salary_calculator.py"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"28,000\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "self-reference: the bands are the skill's own indicative estimates, not an external source; the raw.githubusercontent URL serves the pushed copy and will match once this version lands on master",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
       "claim_id": "keren-hishtalmut-total-pct",
       "claim": "Keren Hishtalmut adds approximately 10% to total compensation (7.5% employer + 2.5% employee combined)",
       "source_url": "https://www.kolzchut.org.il/he/קרן_השתלמות",
-      "raw_snippet": "קרן השתלמות בערך 10% מהשכר הכולל",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "raw_snippet": "הסכום המקסימלי שהפריש המעסיק אינו עולה על 7.5% מהשכר",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -57,8 +57,8 @@
       "claim_id": "keren-hishtalmut-rates",
       "claim": "Keren Hishtalmut standard contribution: employer 7.5%, employee 2.5%; tax-free after 6 years",
       "source_url": "https://www.kolzchut.org.il/he/קרן_השתלמות",
-      "raw_snippet": "קרן השתלמות: 7.5% מעסיק, 2.5% עובד",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "raw_snippet": "הסכום המקסימלי שהפריש העובד אינו עולה על 2.5% מהשכר ולא יותר מ-4,713.6 ₪ לשנה",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -66,22 +66,11 @@
       ]
     },
     {
-      "claim_id": "salary-disclosure-law-2025",
-      "claim": "Israeli Salary Information Disclosure Law (חוק חובת דיווח על שכר במשרה) effective 1 April 2025 requires employers with 25+ employees to disclose salary range in job postings",
-      "source_url": "https://www.gov.il/he/departments/ministry_of_economy_and_industry",
-      "raw_snippet": "חוק חובת דיווח על שכר במשרה, 1 באפריל 2025, 25+ עובדים",
-      "fetched_at": "2026-05-25T20:55:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "miluim-pay-supplement",
       "claim": "Reservist pay is funded by Bituach Leumi; employer top-up to full salary is optional and varies by company; sustained call-ups since October 2023 make this a material negotiation point",
-      "source_url": "https://www.btl.gov.il/benefits/Reserves",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/default.aspx",
       "raw_snippet": "תשלום מילואים, ביטוח לאומי, השלמת מעסיק",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -89,29 +78,14 @@
     },
     {
       "claim_id": "wiz-acquisition-2024",
-      "claim": "Google completed its acquisition of Wiz on 11 March 2026, at about $32 billion. The skill previously dated the acquisition to 2024, which is the year of an earlier rejected offer, not this deal.",
-      "source_url": "https://www.googlecloudpresscorner.com/2026-03-11-Google-Completes-Acquisition-of-Wiz",
-      "raw_snippet": "ke Search, Maps, Gmail, Android, Google Play, Google Cloud, Chrome and YouTube, Google plays a meaningful role in the daily lives of billions of people and has become one of the most widely-known companies in the world. Google is a subsidiary of Alphabet Inc. About Google Cloud Google Cloud is the new way to the cloud, providing AI, infrastructure, developer, data, security, and collaboration tools built for today and tomorrow.",
-      "fetched_at": "2026-08-18",
+      "claim": "Google completed its acquisition of Wiz on 11 March 2026 for $32 billion in cash; the deal was announced in March 2025",
+      "source_url": "https://techcrunch.com/2026/03/11/google-completes-32b-acquisition-of-wiz/",
+      "raw_snippet": "Google has officially acquired Israeli cybersecurity firm Wiz for $32 billion in cash, a full year after the companies announced the deal",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "cited page fetched; 17 of 23 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"billion\"",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "run-ai-nvidia-2024",
-      "claim": "Run:ai was acquired by Nvidia in 2024",
-      "source_url": "https://www.calcalistech.com/ctechnews",
-      "raw_snippet": "50 , Meir Orbach Anthropic revenue run rate tops $65 billion as IPO looms and Decart deal advances 08:04 , CTech Nvidia accounts for 90% of Israel’s production abroad, and it’s reshaping the GDP numbers 08:45 , Shlomo Teitelbaum Bank Leumi sues Meta for $9 million over Facebook and Instagram scams 12:07 , Shaked Green Arava Reco: “Research is a mix of science and art; a balance between chaos and order” 15:02 , Amy Shapiro The war is creating a labor shortage, and a generation of delayed careers 17:53 , Shahar Ilan Matrix CEO: \"",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "cited page fetched and confirmed to contain \"90%\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      ]
     },
     {
       "claim_id": "ai-eng-compensation-2026",
@@ -194,26 +168,172 @@
     },
     {
       "claim_id": "ref-cbs",
-      "claim": "The Central Bureau of Statistics (https://www.cbs.gov.il) publishes Israeli wage data; its headline indicator is the average monthly wage (14,263 NIS for May 2026 as published on the CBS home page).",
+      "claim": "The Central Bureau of Statistics website is the official source for Israeli wage statistics",
       "source_url": "https://www.cbs.gov.il/he/pages/default.aspx",
-      "raw_snippet": "שכר חודשי ממוצע 14,263 ש\"ח מאי 2026",
-      "fetched_at": "2026-08-11",
+      "raw_snippet": "הלשכה המרכזית לסטטיסטיקה",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "browser-playwright",
-      "verified_at": "2026-08-11"
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
       "claim_id": "ref-btl-reserves",
       "claim": "Bituach Leumi reservist pay rules",
-      "source_url": "https://www.btl.gov.il/benefits/Reserves",
-      "raw_snippet": "Bituach Leumi reservist",
-      "fetched_at": "2026-05-25T20:55:00Z",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/default.aspx",
+      "raw_snippet": "מילואים - קצבאות והטבות",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "equal-pay-law-amendment-6",
+      "claim": "Israel has no salary-range-in-job-posting requirement. Employers of more than 518 employees must produce an annual internal and public report on gender pay gaps and notify each employee of their group's gap.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%9E%D7%A2%D7%A1%D7%99%D7%A7%D7%99%D7%9D_%D7%9C%D7%A4%D7%A8%D7%A1%D7%9D_%D7%9E%D7%99%D7%93%D7%A2_%D7%91%D7%93%D7%91%D7%A8_%D7%A4%D7%A2%D7%A8%D7%99_%D7%94%D7%A9%D7%9B%D7%A8_%D7%91%D7%99%D7%9F_%D7%92%D7%91%D7%A8%D7%99%D7%9D_%D7%9C%D7%A0%D7%A9%D7%99%D7%9D",
+      "raw_snippet": "על מי שמעסיק למעלה מ-518 עובדים חלה חובה להפיק מדי שנה דוחות (פנימי ופומבי) המפרטים את פערי השכר במקום העבודה בין גברים לנשים",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "minimum-wage-2026",
+      "claim": "Israeli minimum wage is 6,443.85 NIS/month for a full-time post and 35.40 NIS/hour, in force from 01.04.2026",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A9%D7%9B%D7%A8_%D7%9E%D7%99%D7%A0%D7%99%D7%9E%D7%95%D7%9D",
+      "raw_snippet": "6,443.85 ₪ לחודש למשרה מלאה",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cbs-avg-wage-per-post-2026",
+      "claim": "CBS gross average wage per employee post for Israeli workers was 14,374 NIS in April 2026, up 3.8% year on year",
+      "source_url": "https://bizzness.net/%D7%94%D7%9C%D7%9E%D7%A1-%D7%94%D7%A9%D7%9B%D7%A8-%D7%94%D7%9E%D7%9E%D7%95%D7%A6%D7%A2-%D7%91%D7%9E%D7%A9%D7%A7-%D7%A2%D7%9C%D7%94-%D7%9C%D6%BE14374-%D7%A9%D7%A7%D7%9C%D7%99%D7%9D/",
+      "raw_snippet": "השכר הממוצע ברוטו למשרת שכיר של עובדים ישראלים עמד בחודש אפריל 2026 על 14,374 שקל",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "miluim-employer-arrangement-2026",
+      "claim": "Under the 2026 arrangement the state indemnifies employers at 20% of a reservist employee's wage on a permanent basis, not conditional on the service being classed as emergency service; dismissal protection is extended to two months for employees who served more than 60 reserve days, and spouses of reservists with children up to 14 get up to 8 paid absence days a year",
+      "source_url": "https://www.histadrut.org.il/news/%D7%94%D7%98%D7%91%D7%95%D7%AA-%D7%94%D7%9E%D7%99%D7%9C%D7%95%D7%90%D7%99%D7%9D-%D7%94%D7%95%D7%A4%D7%9B%D7%95%D7%AA-%D7%9C%D7%A7%D7%91%D7%95%D7%A2%D7%95%D7%AA-%D7%94%D7%92%D7%A0%D7%94-%D7%9E%D7%A4/",
+      "raw_snippet": "המדינה תמשיך לשפות מעסיקים בשיעור של 20% משכרו של עובד המשרת במילואים",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "iia-human-capital-2026",
+      "claim": "Israel Innovation Authority 2026 human-capital survey: firms hired an average of 8% of headcount in H1 2026 against a 2.8% layoff rate, and the share of companies cutting hiring after adopting AI tools tripled in half a year from 3% to 10%",
+      "source_url": "https://www.geektime.co.il/israeli-tech-hiring-trends-2026-split/",
+      "raw_snippet": "במחצית הראשונה של 2026 גייסו החברות בממוצע 8% מכוח האדם שלהן, בעוד ששיעור הפיטורים עמד על 2.8% בלבד.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "unemployment-rate-2026-04",
+      "claim": "Israeli unemployment was 2.9% seasonally adjusted in April 2026, employment rate 60.2%",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/154/20_26_154b.pdf",
+      "raw_snippet": "אחוז הבלתי מועסקים מכוח העבודה",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "verified_via": "pdf",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "average-wage-2026-contributions",
+      "claim": "Bituach Leumi average wage for insurance contributions (National Insurance Law s.1) is 13,566 NIS from 01.01.2026",
+      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/%D7%A9%D7%9B%D7%A8%20%D7%9E%D7%9E%D7%95%D7%A6%D7%A2.aspx",
+      "raw_snippet": "לפי סעיף 1 בחוק - דמי ביטוח: 13,566 ש\"ח",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "mandatory-pension-18-5",
+      "claim": "Mandatory pension from January 2017 is 18.5% of salary: 6% employee, 12.5% employer (6.5% tagmulim plus 6% severance component)",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "שיעור ההפרשות הוא 18.5% מהשכר, מתוכם 6% על חשבון העובד והיתר (12.5%) על חשבון המעסיק (6.5% הפרשות מעסיק לרכיב תגמולים ו-6% הפרשות מעסיק לרכיב פיצויים)",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "advance-notice-ladder",
+      "claim": "A monthly-paid employee owes one day of advance notice for each of the first six months of employment and two and a half days for each further full month, reaching a full month only from the second year",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%95%D7%93%D7%A2%D7%94_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%AA_%D7%9C%D7%94%D7%AA%D7%A4%D7%98%D7%A8%D7%95%D7%AA",
+      "raw_snippet": "בגין כל אחד מ-6 חודשי העבודה הראשונים הוא מחויב למתן יום אחד של הודעה מוקדמת",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "candidate-screening-notice",
+      "claim": "At a workplace with more than 25 employees an employer must give a candidate who sat an interview or screening test written notice of progress at least once every two months, and written notice of rejection within 14 days of another person being hired; catering roles and jobs of 30 days or less are exempt, and the labour court may award compensation without proof of financial loss",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%95%D7%93%D7%A2%D7%94_%D7%9C%D7%9E%D7%95%D7%A2%D7%9E%D7%93_%D7%9C%D7%A2%D7%91%D7%95%D7%93%D7%94_%D7%A2%D7%9C_%D7%AA%D7%95%D7%A6%D7%90%D7%95%D7%AA_%D7%94%D7%9C%D7%99%D7%9A_%D7%94%D7%9E%D7%99%D7%95%D7%9F_%D7%9C%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "על המעסיק למסור למועמד שלא התקבל לעבודה הודעה על אי קבלתו לכל המאוחר בתוך 14 ימים מהיום שבו אדם אחר התקבל לעבודה שלגביה נערכו הליכי המיון",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "koach-adam-nine-months",
+      "claim": "Section 12א (סעיף 12א) of the Manpower Contractors Law: a manpower-agency worker placed with the same end employer for more than nine consecutive months becomes an employee of that end employer, but the rule does not apply to computing roles",
+      "source_url": "https://www.nevo.co.il/law_html/law01/116_001.htm",
+      "raw_snippet": "לא יועסק עובד של קבלן כוח אדם אצל מעסיק בפועל תקופה העולה על תשעה חודשים רצופים",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "civil-service-tenders-portal",
+      "claim": "Israeli civil-service vacancies are published as tenders through the state recruitment system at ejobs.gov.il, not by the Employment Service",
+      "source_url": "https://ejobs.gov.il",
+      "raw_snippet": "מכרזים - מערכת גיוס",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "severance-section-14",
+      "claim": "Under a Section 14 arrangement (סעיף 14 לחוק פיצויי פיטורים) the employer's monthly deposits replace the severance payment at end of employment, and an employee whose full severance was deposited is not entitled to a further severance payment from the employer on leaving",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99%D7%99_%D7%A4%D7%99%D7%98%D7%95%D7%A8%D7%99%D7%9D",
+      "raw_snippet": "הפרשות אלה באות במקום תשלום פיצויי הפיטורים בעת סיום ההעסקה. הסדר זה מבוסס על סעיף 14 לחוק פיצויי פיטורים",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
       ]
     }
   ]
