@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-personal-assistant",
-  "generated_at": "2026-06-07T00:00:00Z",
+  "generated_at": "2026-08-26T19:02:45+00:00",
   "claims": [
     {
       "claim_id": "vat-rate-2026",
       "claim": "Israel's standard VAT rate is 18% in 2026 (raised from 17% on 1 January 2025; a proposed bump to 19% was rejected and it stayed at 18%).",
-      "source_url": "https://www.gov.il/he/departments/topics/value_added_tax",
-      "raw_snippet": "שיעור המע\"מ הסטנדרטי הוא 18% (עלה מ-17% ב-1 בינואר 2025); הצעה להעלאה ל-19% נדחתה.",
-      "fetched_at": "2026-06-07T00:00:00Z",
+      "source_url": "https://www.kolzchut.org.il/he/הגשת_דו%22חות_תקופתיים_ותשלום_מס_ערך_מוסף",
+      "raw_snippet": "סכום המע״מ מחושב בשיעור קבוע ממחיר העסקה, והוא עומד החל מיום 01.01.2025 על 18% ממחיר הרכישה / השירות",
+      "fetched_at": "2026-08-26T19:04:52+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -17,10 +17,10 @@
     },
     {
       "claim_id": "vat-cycle-threshold",
-      "claim": "VAT reporting is bi-monthly for businesses with annual turnover up to ₪1,775,000 (the threshold updated 1 January 2026, indexed annually and published by the Tax Authority) and monthly above it. Reports/payments are due within 15 days of the end of the reporting period.",
+      "claim": "VAT reporting is bi-monthly for businesses with annual turnover up to ₪1,775,000 for the year beginning 01.01.2026, rising to ₪1,805,000 from 01.01.2027, and monthly above the threshold. Reports and payments are due within 15 days of the end of the reporting period.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
-      "raw_snippet": "עסקים שמחזור עסקאותיהם בשנה הקובעת הוא עד 1,775,000 ש\"ח (נכון ל-01.01.2026) יגישו דוח אחת לחודשיים; מעל הסף - דיווח חודשי. עד 15 ימים אחרי תום תקופת הדיווח.",
-      "fetched_at": "2026-06-07T00:00:00Z",
+      "raw_snippet": "הסכום הקובע לשנה שהחלה ביום 01.01.2026 הוא 1,775,000 ₪",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -31,8 +31,8 @@
       "claim_id": "allocation-number-2026",
       "claim": "The חשבוניות ישראל allocation-number (מספר הקצאה) regime requires an allocation number for tax-deductible business invoices above ₪10,000 (ex-VAT) from 1 January 2026, dropping to ₪5,000 from 1 June 2026, or the buyer cannot reclaim the VAT input. The threshold stepped down from ₪25,000 (2024) and ₪20,000 (2025).",
       "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
-      "raw_snippet": "חוק חשבוניות ישראל: מ-1.1.2026 נדרש מספר הקצאה לחשבונית מעל 10,000 ש\"ח (לפני מע\"מ), ומ-1.6.2026 הסף יורד ל-5,000 ש\"ח.",
-      "fetched_at": "2026-06-07T00:00:00Z",
+      "raw_snippet": "חובה לקבל מספר הקצאה על כל חשבונית בסכום גבוה מ-5,000 ש\"ח (החל מיוני 2026)",
+      "fetched_at": "2026-08-26T19:33:15+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -41,10 +41,10 @@
     },
     {
       "claim_id": "monthly-deadlines-income-tax",
-      "claim": "Income-tax advances (mikdamot) for the self-employed are, by law, paid and reported by the 15th of each month for the previous month.",
-      "source_url": "https://www.kolzchut.org.il/he/תשלומי_מס_הכנסה_המוטלים_על_עסק_עצמאי_שאינו_חברה",
+      "claim": "Income-tax advances (mikdamot) are paid and reported by the 15th of each month for the previous month; when the 15th falls on the payer's weekly rest day it shifts to the next business day; and when paying through the Tax Authority website the deadline is the 19th of the month at 18:30.",
+      "source_url": "https://www.kolzchut.org.il/he/תשלום_מקדמות_של_עסק_עצמאי_למס_הכנסה",
       "raw_snippet": "לפי החוק יש לשלם את המקדמות ולדווח על מחזור העסקאות בכל 15 בחודש עבור הכנסות של החודש הקודם.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -53,38 +53,42 @@
     },
     {
       "claim_id": "monthly-deadlines-bituach-leumi",
-      "claim": "Bituach Leumi insurance contributions for the self-employed are paid each month according to the reporting-and-payment schedule Bituach Leumi sends; a bank standing order is debited on the 22nd for the previous month.",
+      "claim": "Bituach Leumi contributions for the self-employed are paid on the schedule of the payment vouchers Bituach Leumi sends; a bank standing order is debited on the 22nd of the month for the previous month, and the date shifts around Shabbat and holidays. It is not the 15th.",
       "source_url": "https://www.kolzchut.org.il/he/דמי_ביטוח_לאומי_לעצמאי",
       "raw_snippet": "התשלום יתבצע ב-22 בחודש עבור החודש הקודם (התאריך עשוי להשתנות בהתאם לשבתות וחגים).",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
       "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md",
+        "scripts/morning-brief.py"
+      ]
+    },
+    {
+      "claim_id": "holiday-dates-5787",
+      "claim": "Israeli 5787 holiday dates (Israel scheme, one yom tov per holiday side): Erev Rosh Hashana 11 Sep 2026, Rosh Hashana 12-13 Sep 2026, Erev Yom Kippur 20 Sep, Yom Kippur 21 Sep, Erev Sukkot 25 Sep, Sukkot I 26 Sep, Chol HaMoed 27 Sep - 2 Oct (2 Oct is Hoshana Raba), Shmini Atzeret 3 Oct 2026; Chanukah 4-12 Dec 2026; Tu BiShvat 23 Jan 2027; Purim 23 Mar 2027 (Shushan Purim 24 Mar); Erev Pesach 21 Apr 2027, Pesach I 22 Apr, Chol HaMoed 23-27 Apr, Pesach VII 28 Apr 2027; Yom HaShoah 4 May 2027; Yom HaZikaron 11 May 2027; Yom HaAtzmaut 12 May 2027; Lag BaOmer 25 May 2027; Yom Yerushalayim 4 Jun 2027; Erev Shavuot 10 Jun 2027; Shavuot 11 Jun 2027. Iron Swords Memorial Day (24 Tishrei 5787) falls on 5 Oct 2026 and Yitzhak Rabin Memorial Day on 22 Oct 2026.",
+      "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&mod=on&i=on&year=2026&month=9",
+      "raw_snippet": "{\"title\":\"Sukkot II (CH’’M)\",\"date\":\"2026-09-27\",\"hdate\":\"16 Tishrei 5787\"",
+      "fetched_at": "2026-08-26T19:04:52+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
         "references/israeli-business-calendar.md"
       ]
     },
     {
-      "claim_id": "holiday-dates-5786",
-      "claim": "Israeli 5786/2026 holiday dates (one yom tov per holiday in Israel): Purim 3 March 2026 (Jerusalem 4 March); Pesach eve 1 April, first day (15 Nisan) 2 April, Chol HaMoed 3-7 April (7 April is the eve of the last day, a short day), last day (Shvi'i shel Pesach, 21 Nisan) 8 April, with 9 April being Isru Chag (a normal workday in Israel; the 22 Nisan diaspora-only eighth day); Yom HaShoah 14 April; Yom HaZikaron 21 April; Yom HaAtzmaut 22 April; Lag BaOmer 5 May; Yom Yerushalayim 15 May (28 Iyar); Shavuot 22 May; Tu BiShvat 2 February. Iron Swords Memorial Day is fixed at 24 Tishrei (e.g., 5 October 2026), moved to Sunday 25 Tishrei if it falls on Shabbat.",
-      "source_url": "https://www.hebcal.com/holidays/2026?i=on",
-      "raw_snippet": "year 2025 2026 2027 2028 Show dates for Diaspora Israel Tu BiShvat 🌳 Sun, 1 February sunset - Mon, 2 February nightfall 15 Sh’vat 5786 New Year for Trees. Tu BiShvat is one of four “New Years” mentioned in the Mishnah. Purim 🎭️📜 Mon, 2 March sunset - Tue, 3 March nightfall 14 Adar 5786 Celebration of Jewish deliverance as told by Megilat Esther. It commemorates a time when the Jewish people living in Persia were saved from extermination.",
-      "fetched_at": "2026-08-18",
+      "claim_id": "iron-swords-memorial-day",
+      "claim": "Iron Swords Memorial Day was approved by the Israeli government on 17 March 2024 (a cabinet decision, not a Knesset law), is marked annually on 24 Tishrei with two state ceremonies at 11:00 and 13:00, and moves to Sunday 25 Tishrei when 24 Tishrei falls on Shabbat. In 2026 it falls on 5 October.",
+      "source_url": "https://www.gov.il/he/pages/spoke-memorial170324",
+      "raw_snippet": "יום הזיכרון יצוין מידי שנה בכ\"ד בתשרי בשני טקסים ממלכתיים: בשעה 11:00 טקס לזכרם של החללים שנפלו במלחמה, ובשעה 13:00 טקס לזכרם של האזרחים נרצחי פעולות האיבה",
+      "fetched_at": "2026-08-26T19:03:52+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-business-calendar.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"5786\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "iron-swords-memorial-day",
-      "claim": "Iron Swords Memorial Day (יום הזיכרון לחללי מלחמת חרבות ברזל) was established by Knesset/government decision in 2024 and is fixed at 24 Tishrei.",
-      "source_url": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%9D_%D7%94%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F_%D7%9C%D7%97%D7%9C%D7%9C%D7%99_%D7%9E%D7%9C%D7%97%D7%9E%D7%AA_%D7%97%D7%A8%D7%91%D7%95%D7%AA_%D7%91%D7%A8%D7%96%D7%9C",
-      "raw_snippet": "יום הזיכרון לחללי מלחמת חרבות ברזל נקבע בכ\"ד בתשרי בהחלטת ממשלה משנת 2024.",
-      "fetched_at": "2026-06-07T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "references/israeli-business-calendar.md"
-      ]
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T19:03:52+00:00"
     },
     {
       "claim_id": "reference-urls",
@@ -124,6 +128,169 @@
         "SKILL_HE.md",
         "references/israeli-business-calendar.md"
       ]
+    },
+    {
+      "claim_id": "online-filing-19th",
+      "claim": "When VAT periodic reports or income-tax advances are filed and paid online through the Israel Tax Authority website, the deadline is the 19th of the month at 18:30, rather than the 15th.",
+      "source_url": "https://www.kolzchut.org.il/he/תשלום_מקדמות_של_עסק_עצמאי_למס_הכנסה",
+      "raw_snippet": "אם תשלום המקדמות נעשה באמצעות אתר רשות המסים, ניתן לשלם את המקדמות עד ה-19 לחודש בשעה 18:30.",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md",
+        "scripts/morning-brief.py"
+      ]
+    },
+    {
+      "claim_id": "rest-day-shift",
+      "claim": "When the 15th falls on the business owner's weekly rest day, the reporting and payment date shifts to the next business day.",
+      "source_url": "https://www.kolzchut.org.il/he/תשלום_מקדמות_של_עסק_עצמאי_למס_הכנסה",
+      "raw_snippet": "כאשר ה-15 בחודש חל ביום המנוחה השבועי של בעל העסק, מועד הדיווח והתשלום יידחה ליום העסקים שבא לאחר יום המנוחה השבועי.",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
+    },
+    {
+      "claim_id": "emergency-deferral-2026",
+      "claim": "The Israel Tax Authority defers filing and payment dates during emergencies. In 2026 the February monthly report and the January-February bi-monthly report were deferred to 26.03.2026, and March reports filed by 29.04.2026 were not charged penalties, linkage differences or interest.",
+      "source_url": "https://www.kolzchut.org.il/he/תשלום_מקדמות_של_עסק_עצמאי_למס_הכנסה",
+      "raw_snippet": "דוחות לחודש מרץ שידווחו עד ליום ד' ה-29.04.2026, לא יחוייבו בקנסות, הפרשי הצמדה וריבית.",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
+    },
+    {
+      "claim_id": "esek-zair-2026",
+      "claim": "Under the עסק זעיר regime the annual turnover ceiling is ₪122,833 for 2026; such a business receives an automatic flat 30% expense deduction and in most cases is not required to pay income-tax advances.",
+      "source_url": "https://www.kolzchut.org.il/he/עסק_זעיר",
+      "raw_snippet": "אסור שמחזור העסקאות השנתי (ולא הרווח!) בעסק יעבור את הסכום של 122,833 ₪ (נכון לשנת 2026)",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "osek-patur-annual-declaration",
+      "claim": "An עוסק פטור may have annual business turnover of no more than ₪122,833 (2026), charges no VAT and cannot reclaim input VAT, has no periodic VAT report, and declares its previous calendar year's turnover by 31 January. The 2025 declaration was deferrable to 30.04.2026.",
+      "source_url": "https://www.kolzchut.org.il/he/עוסק_פטור",
+      "raw_snippet": "רק מי שמחזור ההכנסות השנתי שלו מהעסק (לא הרווח) אינו עולה על 122,833 ₪ (נכון לשנת 2026) רשאי להיות עוסק פטור",
+      "fetched_at": "2026-08-26T19:26:14+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
+    },
+    {
+      "claim_id": "payment-terms-law",
+      "claim": "חוק מוסר תשלומים לספקים, התשע\"ז-2017 sets maximum payment terms for the supply of goods and services, and later payment dates cannot be agreed even with the supplier's consent.",
+      "source_url": "https://www.kolzchut.org.il/he/המועד_האחרון_לתשלום_תמורה_לספקים_עבור_סחורה_או_שירות",
+      "raw_snippet": "לא ניתן לקבוע בהסכם או בכל דרך אחרת מועדי תשלום מאוחרים יותר, אפילו אם הספק הסכים לכך",
+      "fetched_at": "2026-08-26T19:02:45+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "iron-swords-shabbat-postponement",
+      "claim": "When 24 Tishrei falls on Shabbat, Iron Swords Memorial Day is observed the following day, Sunday 25 Tishrei.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%9D_%D7%94%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F_%D7%9C%D7%97%D7%9C%D7%9C%D7%99_%D7%9E%D7%9C%D7%97%D7%9E%D7%AA_%D7%97%D7%A8%D7%91%D7%95%D7%AA_%D7%91%D7%A8%D7%96%D7%9C",
+      "raw_snippet": "כאשר כ\"ד בתשרי חל ב[[שבת]], יחול יום הזיכרון למחרת, ביום ראשון, [[כ\"ה בתשרי]]",
+      "fetched_at": "2026-08-26T19:03:52+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-business-calendar.md"
+      ]
+    },
+    {
+      "claim_id": "vat-reporting-page-url",
+      "claim": "VAT is charged at a fixed rate of the transaction price, standing at 18% from 01.01.2025; the bi-monthly/monthly turnover threshold is ₪1,775,000 for the year beginning 01.01.2026.",
+      "source_url": "https://www.kolzchut.org.il/he/הגשת_דו%22חות_תקופתיים_ותשלום_מס_ערך_מוסף",
+      "raw_snippet": "והוא עומד החל מיום 01.01.2025 על 18% ממחיר הרכישה / השירות",
+      "fetched_at": "2026-08-26T19:04:52+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "osek-patur-excluded-professions",
+      "claim": "Under regulation 13 of תקנות מס ערך מוסף (רישום), a listed set of professions must register as עוסק מורשה regardless of turnover, including עורך דין, רואה חשבון, יועץ מס, מנהל חשבונות, כלכלן, מהנדס, אדריכל, הנדסאי, טכנאי, יועץ לניהול, יועץ לארגון, מודד, שמאי, רופא, רופא שיניים, פסיכולוג, פיזיותרפיסט, וטרינר, מתורגמן, חוקר פרטי and טוען רבני. (תקנה 13).",
+      "source_url": "https://www.kolzchut.org.il/he/עוסק_פטור",
+      "raw_snippet": "וזאת בהתאם לסעיף 13 לתקנות מס ערך מוסף (רישום) : אגרונום, אדריכל, הנדסאי, חוקר פרטי, טוען רבני, טכנאי, טכנאי שיניים, יועץ לארגון, יועץ לניהול, יועץ מדעי, יועץ מס, כלכלן, מהנדס, מודד, מנהל חשבונות, מתורגמן, עורך דין, רואה חשבון או שמאי",
+      "fetched_at": "2026-08-26T19:26:14+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "osek-patur-deferral-2025",
+      "claim": "The עוסק פטור turnover declaration for 2025 could be filed until 30.04.2026 following מבצע שאגת הארי.",
+      "source_url": "https://www.kolzchut.org.il/he/עוסק_פטור",
+      "raw_snippet": "את הדיווח על מחזור העסקאות של שנת 2025 ניתן להגיש עד 30.04.2026",
+      "fetched_at": "2026-08-26T19:26:14+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "esek-zair-independent-axis",
+      "claim": "עסק זעיר is an income-tax status while עוסק פטור is a VAT status; an עסק זעיר is not necessarily an עוסק פטור, and an עוסק מורשה can also be an עסק זעיר.",
+      "source_url": "https://www.kolzchut.org.il/he/עסק_זעיר",
+      "raw_snippet": "עסק זעיר הוא לא בהכרח עוסק פטור, וגם עוסק מורשה יכול להיחשב כבעל עסק זעיר",
+      "fetched_at": "2026-08-26T19:26:14+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "esek-zair-disqualifiers",
+      "claim": "A business cannot be treated as an עסק זעיר, even below the ₪122,833 ceiling, if it employs workers, does not keep acceptable books, had income in the tax year that was not from personal exertion, received part of its income from its own employer, or was attributed income from a תאגיד שקוף.",
+      "source_url": "https://www.kolzchut.org.il/he/עסק_זעיר",
+      "raw_snippet": "הוא מעסיק עובדים; הוא אינו מנהל פנקסים קבילים",
+      "fetched_at": "2026-08-26T19:26:14+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "online-19th-carveout",
+      "claim": "The 19th-of-the-month online filing extension applies to businesses that are not obliged to submit a detailed report (דיווח מפורט) and that file the periodic report online.",
+      "source_url": "https://www.kolzchut.org.il/he/הגשת_דו%22חות_תקופתיים_ותשלום_מס_ערך_מוסף",
+      "raw_snippet": "עוסקים שלא חייבים להגיש דיווח מפורט ומשדרים את הדו\"ח התקופתי באופן מקוון",
+      "fetched_at": "2026-08-26T19:26:14+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "hebcal-converter-endpoint",
+      "claim": "The HebCal converter endpoint converts a Gregorian date to a Hebrew date and returns it in a `hebrew` field.",
+      "source_url": "https://www.hebcal.com/converter?cfg=json&gy=2026&gm=4&gd=5&g2h=1",
+      "raw_snippet": "\"hebrew\":\"י״ח בְּנִיסָן תשפ״ו\"",
+      "fetched_at": "2026-08-26T19:26:30+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/morning-brief.py"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T19:27:05+00:00"
     }
   ]
 }

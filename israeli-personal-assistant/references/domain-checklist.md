@@ -5,9 +5,9 @@ Scope: a judgment/knowledge layer for Israeli daily life and work (calendar, Heb
 ## Must cover (core)
 
 - **Israeli work week** Sunday-Thursday; Friday short day (cutoff ~13:00); Saturday no business; Erev Chag follows the Friday rule.
-- **Jewish holidays in Israel** (one yom tov per holiday, not the diaspora two-day pattern): Yom Kippur, Rosh Hashana, Sukkot + Chol HaMoed + Shmini Atzeret/Simchat Torah (combined), Pesach + Chol HaMoed, Shavuot, Purim. Current-cycle Gregorian dates, with the explicit reminder that dates shift each year (fetch from HebCal).
-- **National observances** (working days, cultural weight): Yom HaShoah, Yom HaZikaron, Yom HaAtzmaut, Yom Yerushalayim, Iron Swords Memorial Day (24 Tishrei, Knesset 2024).
-- **Recurring business obligations**: VAT reporting/payment (15th of following month; bi-monthly up to the turnover threshold, monthly above), Bituach Leumi + income-tax advances (15th monthly), annual return (spring), 102 employer reports (February).
+- **Jewish holidays in Israel** (one yom tov per holiday, not the diaspora two-day pattern): Yom Kippur, Rosh Hashana, Sukkot (6 Chol HaMoed days in Israel) + Shmini Atzeret/Simchat Torah (combined), Pesach (5 Chol HaMoed days), Shavuot, Purim. Current-cycle Gregorian dates, with the explicit reminder that dates shift each year (fetch from HebCal).
+- **National observances** (working days, cultural weight): Yom HaShoah, Yom HaZikaron, Yom HaAtzmaut, Yom Yerushalayim, Iron Swords Memorial Day (24 Tishrei, set by a government decision of 17 March 2024, not a Knesset law; postponed to Sunday 25 Tishrei when it falls on Shabbat).
+- **Recurring business obligations**: VAT reporting/payment (15th of the following month, or the 19th at 18:30 when filing online; bi-monthly up to the turnover threshold, monthly above), income-tax advances (same 15th/19th rule), Bituach Leumi for the self-employed (per the payment-voucher schedule; standing-order debit on the 22nd for the previous month, NOT the 15th), עוסק פטור annual turnover declaration (31 January), annual return (spring), 102 employer reports (February). Must also state that these dates are deferred during emergencies and that עוסק פטור / עסק זעיר are not on the monthly cycle.
 - **Invoicing change (2024-2026)**: חשבוניות ישראל allocation-number regime and its stepping threshold.
 - **VAT rate** current value.
 - **Hebrew communication norms**: directness, anti-patterns (archaic/over-formal/passive), tone per channel, opener conventions.

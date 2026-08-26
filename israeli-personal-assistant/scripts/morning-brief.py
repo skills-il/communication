@@ -18,20 +18,18 @@ Usage:
     python3 morning-brief.py --tasks "Follow up with Rivka, Send invoice 87"
 
 Requirements:
-    pip install requests python-dateutil
+    pip install requests
 
 The script uses only the public HebCal API (https://www.hebcal.com) and
 requires no API key or authentication.
 """
 
 import argparse
-import json
 import sys
 from datetime import date, datetime, timedelta
 
 try:
     import requests
-    from dateutil.parser import parse as parse_date
 except ImportError:
     print("Missing dependencies. Run: pip install requests python-dateutil")
     sys.exit(1)
@@ -57,19 +55,41 @@ ENGLISH_DAYS = {
     6: "Sunday",
 }
 
-# Recurring obligation windows (day of month)
-MONTHLY_OBLIGATIONS = [
-    {
-        "day": 15,
-        "he": "תשלום מקדמה לביטוח לאומי",
-        "en": "Bituach Leumi advance payment due",
-    },
-    {
-        "day": 15,
-        "he": "מקדמת מס הכנסה (אם מחויב)",
-        "en": "Income tax advance payment (if applicable)",
-    },
-]
+# Titles (Israel scheme) whose EVE is a genuine short day. Minor holidays such as
+# Lag BaOmer, Tu BiShvat, Purim and the Chanukah nights are ordinary workdays, and
+# treating their eve as a short day is wrong.
+YOM_TOV_PREFIXES = (
+    "Rosh Hashana",
+    "Yom Kippur",
+    "Sukkot I",
+    "Shmini Atzeret",
+    "Pesach I",
+    "Pesach VII",
+    "Shavuot",
+)
+
+
+# Observances that close Israeli business for the whole day, beyond the yom tov list.
+FULL_SHUTDOWN_PREFIXES = ("Yom HaAtzma", "Yom Kippur")
+
+# Iron Swords Memorial Day is fixed at 24 Tishrei but HebCal does NOT return it in
+# any category, so it has to be carried here or it silently disappears from every
+# brief. Dates are the Gregorian equivalents of 24 Tishrei, moved to Sunday
+# 25 Tishrei when 24 Tishrei falls on Shabbat. Derive further years with the HebCal
+# converter (hy=<year>&hm=Tishrei&hd=24&h2g=1), never by adding days to a prior year.
+IRON_SWORDS_MEMORIAL_DAY = {
+    date(2026, 10, 5): ("יום הזיכרון לחללי מלחמת חרבות ברזל", "Iron Swords Memorial Day"),
+    date(2027, 10, 25): ("יום הזיכרון לחללי מלחמת חרבות ברזל", "Iron Swords Memorial Day"),
+}
+
+
+def is_yom_tov(title: str) -> bool:
+    """True only for a full-shutdown yom tov in the Israeli scheme."""
+    title = (title or "").strip()
+    if "CH''M" in title or "CH’’M" in title or "Chol HaMoed" in title:
+        return False
+    return any(title.startswith(prefix) for prefix in YOM_TOV_PREFIXES)
+
 
 # VAT bi-monthly reporting windows (month pairs and due month)
 VAT_PERIODS = [
@@ -82,49 +102,8 @@ VAT_PERIODS = [
 ]
 
 
-def get_hebcal_data(target_date: date) -> dict:
-    """Fetch Hebrew calendar data for a date range from HebCal API."""
-    params = {
-        "v": 1,
-        "cfg": "json",
-        "maj": "on",       # Major holidays
-        "min": "on",       # Minor holidays
-        "mod": "on",       # Modern holidays
-        "nx": "on",        # Rosh Chodesh
-        "year": target_date.year,
-        "month": target_date.month,
-        "ss": "on",        # Special Shabbatot
-        "mf": "on",        # Molad
-        "c": "off",        # No candle lighting (requires location)
-        "geo": "none",
-        "M": "on",         # Return Hebrew dates
-        "s": "on",         # Sedra (parasha)
-        "gy": "on",        # Gregorian year
-        "lg": "he",        # Hebrew labels
-    }
-    try:
-        response = requests.get(HEBCAL_API, params=params, timeout=10)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        return {"error": str(e), "items": []}
-
-
 def get_hebrew_date_string(target_date: date) -> str:
-    """Fetch the Hebrew date string for a specific date."""
-    params = {
-        "v": 1,
-        "cfg": "json",
-        "maj": "off",
-        "min": "off",
-        "mod": "off",
-        "nx": "off",
-        "year": target_date.year,
-        "month": target_date.month,
-        "yt": "G",
-        "lg": "he",
-        "M": "on",
-    }
+    """Fetch the Hebrew date string for a specific date via the HebCal converter."""
     try:
         response = requests.get(
             "https://www.hebcal.com/converter",
@@ -159,15 +138,17 @@ def get_upcoming_holidays(target_date: date, days_ahead: int = 30) -> list:
         params = {
             "v": 1,
             "cfg": "json",
-            "maj": "on",
-            "min": "on",
-            "mod": "on",
-            "nx": "off",
+            "maj": "on",       # major holidays
+            "min": "on",       # minor holidays
+            "mod": "on",       # modern/national observances
+            "nx": "off",       # no Rosh Chodesh
+            "mf": "on",        # minor fasts (Tzom Gedaliah, Tisha B'Av and the rest)
+            "i": "on",         # ISRAEL scheme: one yom tov per holiday, not the diaspora two
             "year": year,
             "month": month,
-            "lg": "he",
-            "M": "on",
         }
+        # Deliberately no "lg" override: the default response carries an English
+        # "title" AND a Hebrew "hebrew" field, so each brief can use its own language.
         try:
             response = requests.get(HEBCAL_API, params=params, timeout=10)
             response.raise_for_status()
@@ -185,7 +166,7 @@ def get_upcoming_holidays(target_date: date, days_ahead: int = 30) -> list:
                 continue
             if target_date <= item_date <= end_date:
                 category = item.get("category", "")
-                if category in ("holiday", "modern"):
+                if category in ("holiday", "modern", "fast"):
                     holidays.append(
                         {
                             "date": item_date,
@@ -195,7 +176,46 @@ def get_upcoming_holidays(target_date: date, days_ahead: int = 30) -> list:
                         }
                     )
 
+    # HebCal does not carry Iron Swords Memorial Day in any category, so add it here.
+    for observance_date, (title_he, title_en) in IRON_SWORDS_MEMORIAL_DAY.items():
+        if target_date <= observance_date <= end_date:
+            holidays.append(
+                {
+                    "date": observance_date,
+                    "title": title_en,
+                    "hebrew": title_he,
+                    "category": "modern",
+                }
+            )
+
     return sorted(holidays, key=lambda x: x["date"])
+
+
+def check_shutdown_today(target_date: date, holidays: list) -> tuple:
+    """
+    Returns (is_shutdown, reason_he, reason_en) for a day on which Israeli business
+    does not operate at all: Shabbat, a yom tov, Yom Kippur or Yom HaAtzmaut.
+
+    This is separate from check_short_day(), which answers the EVE question. Without
+    it the brief renders Yom Kippur as an ordinary Monday and still prints action
+    reminders on it.
+    """
+    if target_date.weekday() == 5:  # Saturday
+        for holiday in holidays:
+            if holiday["date"] == target_date and is_yom_tov(holiday["title"]):
+                title = holiday.get("hebrew") or holiday["title"]
+                return (True, f"שבת ו{title} (סגירה מוחלטת)", f"Shabbat and {holiday['title']} (full shutdown)")
+        return (True, "שבת (אין פעילות עסקית)", "Shabbat (no business activity)")
+
+    for holiday in holidays:
+        if holiday["date"] != target_date:
+            continue
+        title_en = holiday["title"]
+        if is_yom_tov(title_en) or title_en.startswith(FULL_SHUTDOWN_PREFIXES):
+            title = holiday.get("hebrew") or title_en
+            return (True, f"{title} (סגירה מוחלטת)", f"{title_en} (full shutdown)")
+
+    return (False, "", "")
 
 
 def check_short_day(target_date: date, holidays: list) -> tuple:
@@ -208,10 +228,11 @@ def check_short_day(target_date: date, holidays: list) -> tuple:
     if weekday == 4:  # Friday
         return (True, "יום שישי (יום קצר, עד 13:00 בערך)", "Friday (short day, until ~13:00)")
 
-    # Check if tomorrow is a holiday (Erev Chag)
+    # Check if tomorrow is a full-shutdown yom tov (Erev Chag). Minor holidays do
+    # not shorten the working day, so their eves must not be flagged.
     tomorrow = target_date + timedelta(days=1)
     for holiday in holidays:
-        if holiday["date"] == tomorrow:
+        if holiday["date"] == tomorrow and is_yom_tov(holiday["title"]):
             title_he = holiday.get("hebrew", holiday["title"])
             title_en = holiday["title"]
             return (
@@ -229,22 +250,30 @@ def get_vat_reminder(target_date: date) -> tuple:
     day = target_date.day
 
     for period in VAT_PERIODS:
-        if period["due_month"] == month and 8 <= day <= 15:
+        if period["due_month"] == month and 8 <= day <= 19:
             return (
-                f"חלון דיווח מע\"מ פתוח! {period['he']} - הגשה עד ה-15",
-                f"VAT filing window open! {period['en']} - due by the 15th",
+                f"חלון דיווח מע\"מ פתוח! {period['he']} - עד ה-15, ובדיווח מקוון עד ה-19 בשעה 18:30"
+                " (למדווחים דו-חודשי בלבד; מדווח חודשי מגיש כל חודש, ולעוסק פטור אין דיווח מע\"מ תקופתי)",
+                f"VAT filing window open! {period['en']} - due by the 15th, or the 19th at 18:30 when filing online"
+                " (bi-monthly filers only; monthly filers report every month, and an osek patur has no periodic VAT report)",
             )
 
     return ("", "")
 
 
 def get_bituach_leumi_reminder(target_date: date) -> tuple:
-    """Returns reminder strings if within 7 days of the 15th."""
+    """
+    Returns reminder strings in the run-up to the Bituach Leumi standing-order debit.
+
+    Self-employed contributions are paid on the schedule of the payment vouchers
+    Bituach Leumi sends; a standing-order bank debit is taken on the 22nd for the
+    PREVIOUS month, and the date shifts around Shabbat and holidays. It is not the 15th.
+    """
     day = target_date.day
-    if 8 <= day <= 15:
+    if 15 <= day <= 22:
         return (
-            "תשלום מקדמה לביטוח לאומי - עד ה-15 לחודש",
-            "Bituach Leumi advance payment - due by the 15th",
+            "ביטוח לאומי לעצמאי - חיוב הוראת הקבע ב-22 בחודש, עבור החודש הקודם",
+            "Bituach Leumi (self-employed) - standing-order debit on the 22nd, for the previous month",
         )
     return ("", "")
 
@@ -265,6 +294,8 @@ def build_brief_he(
     target_date: date,
     hebrew_date: str,
     day_name_he: str,
+    is_shutdown: bool,
+    shutdown_reason_he: str,
     is_short_day: bool,
     short_day_reason_he: str,
     holidays: list,
@@ -281,7 +312,11 @@ def build_brief_he(
         lines.append(f"תאריך עברי: {hebrew_date}")
     lines.append("")
 
-    if is_short_day:
+    if is_shutdown:
+        lines.append(f"[!!] {shutdown_reason_he}")
+        lines.append("אין לקבוע פגישות, דדליינים או משלוחים ביום הזה.")
+        lines.append("")
+    elif is_short_day:
         lines.append(f"[!] שים לב: {short_day_reason_he}")
         lines.append("")
 
@@ -293,10 +328,11 @@ def build_brief_he(
         lines.append("")
 
     reminders = []
-    if vat_reminder:
-        reminders.append(vat_reminder)
-    if bl_reminder:
-        reminders.append(bl_reminder)
+    if not is_shutdown:
+        if vat_reminder:
+            reminders.append(vat_reminder)
+        if bl_reminder:
+            reminders.append(bl_reminder)
 
     if reminders:
         lines.append("תזכורות חובה עסקיות:")
@@ -324,6 +360,8 @@ def build_brief_en(
     target_date: date,
     hebrew_date: str,
     day_name_en: str,
+    is_shutdown: bool,
+    shutdown_reason_en: str,
     is_short_day: bool,
     short_day_reason_en: str,
     holidays: list,
@@ -340,7 +378,11 @@ def build_brief_en(
         lines.append(f"Hebrew date: {hebrew_date}")
     lines.append("")
 
-    if is_short_day:
+    if is_shutdown:
+        lines.append(f"[!!] {shutdown_reason_en}")
+        lines.append("Do not schedule meetings, deadlines or deliveries on this day.")
+        lines.append("")
+    elif is_short_day:
         lines.append(f"[!] Note: {short_day_reason_en}")
         lines.append("")
 
@@ -351,10 +393,11 @@ def build_brief_en(
         lines.append("")
 
     reminders = []
-    if vat_reminder:
-        reminders.append(vat_reminder)
-    if bl_reminder:
-        reminders.append(bl_reminder)
+    if not is_shutdown:
+        if vat_reminder:
+            reminders.append(vat_reminder)
+        if bl_reminder:
+            reminders.append(bl_reminder)
 
     if reminders:
         lines.append("Business obligation reminders:")
@@ -422,6 +465,9 @@ def main():
     print("Fetching upcoming holidays...")
     holidays = get_upcoming_holidays(target_date, days_ahead=30)
 
+    is_shutdown, shutdown_reason_he, shutdown_reason_en = check_shutdown_today(
+        target_date, holidays
+    )
     is_short_day, short_day_reason_he, short_day_reason_en = check_short_day(
         target_date, holidays
     )
@@ -439,6 +485,8 @@ def main():
                 target_date,
                 hebrew_date,
                 day_name_he,
+                is_shutdown,
+                shutdown_reason_he,
                 is_short_day,
                 short_day_reason_he,
                 holidays,
@@ -457,6 +505,8 @@ def main():
                 target_date,
                 hebrew_date,
                 day_name_en,
+                is_shutdown,
+                shutdown_reason_en,
                 is_short_day,
                 short_day_reason_en,
                 holidays,

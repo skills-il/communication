@@ -8,6 +8,23 @@
         "Built evidence.json from scratch (legacy skill). Skill was already em-dash clean.",
         "Next cycle: the israeli-business-calendar.md reference is a 5786/2025-2026 table; when 5787 dates are needed, regenerate it from HebCal i=on."
       ]
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-08-26",
+      "lessons": [
+        "CORRECTED: Bituach Leumi for the self-employed is the 22nd standing-order debit, not the 15th. The reference file and evidence.json already said 22nd; SKILL.md, SKILL_HE.md AND the script all still said 15th. An internal contradiction survived a full prior cycle because only the reference was fixed. Next cycle: grep every changed figure across ALL files including scripts/ before declaring done.",
+        "CORRECTED: Iron Swords Memorial Day was attributed to a Knesset law; it is a cabinet decision of 17.03.2024 (PMO page verified in a browser, gov.il blocks curl for real AND fake paths alike so a 403 there proves nothing).",
+        "CORRECTED (script): the brief requested DIASPORA holidays (no i=on) while the prose insisted on the Israeli scheme; the English brief printed nikkud Hebrew titles; eves of MINOR holidays (Lag BaOmer, Chanukah nights) were flagged as short days; and Yom Kippur / a Shabbat yom tov / Yom HaAtzmaut all rendered as ordinary working days with live action reminders. All fixed and verified by running the script.",
+        "ADDED: HebCal returns Iron Swords Memorial Day in NO category, so it is hardcoded in the script. Derive further years with the converter (hy=<y>&hm=Tishrei&hd=24&h2g=1), never by adding 365 days: the 2027 entry was initially wrong by one day for exactly that reason and the Judge caught it.",
+        "RESOLVED the 1.4.1 carry item: the calendar reference was regenerated from 5786 to 5787 with i=on. SKILL.md's own holiday tables were then left behind on stale 2026 dates, so the Gregorian column was removed from SKILL.md entirely and the reference is now the single source. That removes the annual rot from the body.",
+        "Expert MAJOR deferred, M7/M8: the 5787 reference table stops at Shavuot (11 Jun 2027) and carries no fast days, so July-August 2027 (Tzom Tammuz, Tisha B'Av, Tu B'Av) is a blind spot in exactly the month the skill calls Israel's vacation month. The script now fetches fasts via mf=on, but the reference file does not list them. Extend the table to a full cycle next time.",
+        "Expert MAJOR deferred, M11: the skill defines the Israeli work week purely by the Jewish calendar. Roughly a fifth of the population and a proportionate share of any freelancer's suppliers rest on Friday or Sunday and observe Eid al-Fitr, Eid al-Adha, Christmas or Easter. Add a non-Jewish-calendar section.",
+        "Expert MAJOR deferred, M12: references/hebrew-communication-templates.md still ships an 'Invoice Reminder - Final Notice (Pre-legal)' template whose body threatens legal collection, while SKILL.md now instructs the agent NOT to draft a demand letter. Resolve the contradiction next cycle, preferably by deleting the template rather than relaxing the prose.",
+        "Expert MAJOR deferred, M1/M3: the script's VAT reminder is bi-monthly-only and status-blind, so a monthly filer gets no reminder in even months and an osek patur gets a false one. A caveat string was added, but the real fix is a --status flag. Also missing: the cycle is ASSIGNED by pekid shuma from turnover in the shana kovaat (12 months ending 31 August of the preceding year), not chosen from current turnover.",
+        "Expert MINOR deferred: minor-observance noise in the brief (five Chanukah candle-count lines), Asia/Jerusalem timezone handling, gs=on for post-sunset conversion, nikkud mismatch between script output and the documented example.",
+        "NOTE for the owner, not a skill defect: verify_legal.py reports REVIEW level=3 on this skill at HEAD and after this cycle. The fresh-context legal gate returned PASS. The trigger is the phrase 'מכתב דרישה' occurring INSIDE the sentence that forbids drafting one; TRIBUNAL_DOC has no negation awareness and its presence disables the benign-context strip. A general blind spot: any skill that names a reserved instrument in order to refuse it will trip this."
+      ]
     }
   ]
 }
