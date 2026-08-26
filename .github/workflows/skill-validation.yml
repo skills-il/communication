@@ -84,8 +84,12 @@ jobs:
         if: steps.changed.outputs.files != ''
         run: |
           chmod +x scripts/validate-skill.sh
-          # shellcheck disable=SC2086
-          ./scripts/validate-skill.sh ${{ steps.changed.outputs.files }}
+          # The outputs are NEWLINE-separated. Interpolating them bare into the
+          # run block made every path after the first execute as its own command
+          # (exit 126) on any push touching 2+ skills. Feed them through xargs.
+          printf '%s\n' "${{ steps.changed.outputs.files }}" \
+            | sed '/^$/d' \
+            | xargs -r ./scripts/validate-skill.sh
 
       - name: Check evidence.json present for touched skill folders
         if: steps.changed.outputs.files != ''
@@ -96,7 +100,10 @@ jobs:
           # See /he/guides/how-we-validate Layer 2 + .claude/skills/update-skill/SKILL.md.
           set -e
           MISSING=""
-          for dir in ${{ steps.changed.outputs.dirs }}; do
+          # Assign first: a bare multi-line ${{ }} inside `for ... in` is a hard
+          # bash syntax error, which silently skipped this gate on multi-skill pushes.
+          DIRS="${{ steps.changed.outputs.dirs }}"
+          for dir in $DIRS; do
             if [ -f "$dir/SKILL.md" ] && [ ! -f "$dir/evidence.json" ]; then
               MISSING="$MISSING\n  - $dir/evidence.json"
             fi
