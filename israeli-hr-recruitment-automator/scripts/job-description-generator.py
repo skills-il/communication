@@ -2,14 +2,16 @@
 """
 Israeli Job Description Generator
 
-Generate Hebrew job descriptions compliant with the Equal Employment
-Opportunities Law 1988. Validates against anti-discrimination rules
-and outputs formatted markdown.
+Draft Hebrew job descriptions and check them against the published
+requirements of the Equal Employment Opportunities Law 1988. Flags wording
+that matches known discriminatory patterns and outputs formatted markdown.
+A clean run is NOT a compliance result.
 
 Usage:
     python job-description-generator.py --title "מפתח/ת Full-Stack" --company "TechCo" --location "תל אביב"
     python job-description-generator.py --validate --input job_description.txt
-    python job-description-generator.py --template --type tech
+    python job-description-generator.py --template tech --title "מפתח/ת תוכנה" --company "TechCo" --location "תל אביב"
+    python job-description-generator.py --template-list
 """
 
 import argparse
@@ -47,12 +49,26 @@ DISCRIMINATORY_PATTERNS = [
     (r'\bערבים?\s+בלבד\b', 'ethnicity', 'Remove ethnicity/religion restrictions'),
     (r'\bדתיים?\s+בלבד\b', 'religion', 'Remove religion restrictions'),
     (r'\bשומר.?\s+שבת\b', 'religion', 'Remove religious observance requirements unless GOQ'),
-    # Appearance
-    (r'\bמראה\s+(נאה|טוב|מרשים)', 'appearance', 'Remove appearance requirements'),
-    (r'\bגובה\s+מינימל', 'appearance', 'Remove height requirements unless GOQ'),
+    # Place of residence: an enumerated section 2(a) ground and the one Israeli
+    # job ads breach most routinely. No leading \b, Hebrew prefixes glue on.
+    (r'(תושבי|תושב)\s+(המרכז|הצפון|הדרום|האזור)\s*(בלבד)?', 'place_of_residence', 'Place of residence is a protected ground under section 2(a); remove the restriction'),
+    (r'מגורים\s+(באזור|בקרבת|קרוב)', 'place_of_residence', 'Cannot require the candidate to live in a particular area'),
+    (r'(חובה|נדרשת|נדרש)\s+מגורים', 'place_of_residence', 'Cannot require residence in a particular place'),
+    # Appearance: NOT a section 2(a) ground (the word מראה does not appear in the
+    # law). Still flagged as bad practice and as a likely proxy for an enumerated
+    # ground, but the message must not cite section 2(a).
+
+    (r'\bמראה\s+(נאה|טוב|מרשים)', 'appearance_bad_practice', 'Appearance is not an enumerated section 2(a) ground, but it is a likely proxy for one; remove the requirement'),
+    (r'\bגובה\s+מינימל', 'appearance_bad_practice', 'Not a section 2(a) ground; remove height requirements unless a genuine occupational qualification'),
     # Reserve duty
     (r'\bללא\s+מילואים\b', 'reserve_duty', 'Cannot exclude candidates with reserve duty'),
     (r'\bפטור\s+ממילואים\b', 'reserve_duty', 'Cannot require reserve duty exemption'),
+    # No leading \b on these: a Hebrew conjunctive/prepositional prefix (ו, ש, ל)
+    # glues onto the next word, so "ואין מילואים" has no boundary before "אין"
+    # and a \b-anchored pattern silently misses the most common phrasing.
+    (r'(אין|ללא)\s+(חובות|חובת|ימי)?\s*מילואים', 'reserve_duty', 'Cannot exclude candidates with reserve duty obligations'),
+    (r'לא\s+(משרת|משרתת|משרתים)\s+במילואים', 'reserve_duty', 'Cannot require that a candidate does not serve reserve duty'),
+    (r'(שירות|רקע)\s+קרבי\s+(חובה|נדרש|בלבד)', 'military_unit', 'Cannot require a specific type of military service'),
 ]
 
 # Job templates by type
@@ -160,7 +176,7 @@ def generate_job_description(
     benefits: Optional[list[str]] = None,
     template_type: Optional[str] = None,
 ) -> str:
-    """Generate a compliant Hebrew job description."""
+    """Draft a Hebrew job description from structured input."""
 
     # Use template if specified
     if template_type and template_type in TEMPLATES:
@@ -226,7 +242,7 @@ def generate_job_description(
 def print_validation_report(violations: list[dict]) -> None:
     """Print a formatted validation report."""
     if not violations:
-        print('PASS: No anti-discrimination violations found.')
+        print('No matches for the patterns this script checks. This is NOT a compliance result: section 8 and most section 2(a) grounds are not machine-checkable.')
         print()
         print('Note: This automated check covers common patterns but is not')
         print('exhaustive. Manual review is still recommended for compliance')
@@ -255,8 +271,9 @@ def print_validation_report(violations: list[dict]) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Generate and validate Israeli job descriptions compliant '
-                    'with the Equal Employment Opportunities Law 1988.',
+        description='Draft and check Israeli job descriptions against the published '
+                    'requirements of the Equal Employment Opportunities Law 1988. '
+                    'A clean run is not a compliance result.',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

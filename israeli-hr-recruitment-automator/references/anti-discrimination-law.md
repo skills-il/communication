@@ -20,13 +20,19 @@ The law prohibits discrimination based on the following characteristics:
 | 8 | Religion | דת | |
 | 9 | Nationality | לאום | |
 | 10 | Country of origin | ארץ מוצא | |
-| 11 | Ethnicity | עדה | |
+| 11 | Ethnicity | עדה | Not a separate enumerated ground in section 2(a); reached in practice through race (גזע), nationality (לאומיות) and country of origin (ארץ מוצא) |
 | 12 | Place of residence | מקום מגורים | Cannot require specific neighborhood or city |
 | 13 | Political views | השקפה פוליטית | |
 | 14 | Political party affiliation | שייכות מפלגתית | |
 | 15 | Reserve military duty | שירות מילואים | Cannot disadvantage employees due to miluim |
-| 16 | Appearance | מראה חיצוני | Height, weight, attractiveness |
-| 17 | Disability | מוגבלות | Physical or mental; see also Equal Rights for Persons with Disabilities Law 1998 |
+| 16 | Fertility and IVF treatments | טיפולי פוריות, טיפולי הפריה חוץ-גופית | Enumerated in section 2(a) alongside pregnancy |
+
+**Two characteristics people expect to find here and which are NOT in section 2(a):**
+
+| Characteristic | Hebrew | Where it actually sits |
+|---|---|---|
+| Appearance | מראה חיצוני | **Not an enumerated ground.** The word מראה does not appear anywhere in the Equal Employment Opportunities Law. Appearance requirements remain bad practice and can be attacked as a proxy for an enumerated ground (age, gender, ethnicity) or as an unreasonable non-occupational requirement, but do not cite section 2(a) for them. |
+| Disability | מוגבלות | The Equal Rights for Persons with Disabilities Law, 1998, not the Equal Employment Opportunities Law. Cite the correct statute, including for the reasonable-accommodation duty. |
 
 ## Scope of Prohibition
 
@@ -96,15 +102,15 @@ Under Section 9, if an employee establishes a prima facie case of discrimination
 - [ ] Ask all candidates the same core questions
 - [ ] Document interview scores and decision rationale
 
-## Key Amendments
+## Amendment history
 
-| Year | Amendment | Impact |
-|---|---|---|
-| 1995 | Added sexual orientation | Extended protection to LGBTQ+ employees |
-| 1998 | Added parental status | Protected parents and non-parents equally |
-| 2010 | Added appearance | Prohibited discrimination based on physical appearance |
-| 2014 | Strengthened reserve duty protections | Increased penalties for miluim discrimination |
-| 2017 | Added place of residence | Prevented geographic discrimination |
+The law has been amended repeatedly and the enumerated list in section 2(a) has grown over
+time. **Do not state an amendment year or number from memory.** An earlier version of this file
+carried a five-row amendment table whose years were unsourced and one of whose rows described
+an amendment adding "appearance", a ground the law does not contain. Read the consolidated text
+before citing any amendment.
+
+Consolidated text: <https://www.nevo.co.il/law_html/law00/5016.htm>
 
 ## Related Laws
 

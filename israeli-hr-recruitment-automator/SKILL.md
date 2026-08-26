@@ -1,6 +1,6 @@
 ---
 name: israeli-hr-recruitment-automator
-description: Employer-side hiring automation for Israeli companies. Generates Hebrew job descriptions compliant with the Equal Employment Opportunities Law 1988, posts to Israeli job boards (AllJobs, Drushim, JobMaster, LinkedIn Israel), screens resumes with Israeli context (military service, academic institutions, tech bootcamps), schedules interviews around Israeli holidays and Shabbat, and generates offer letters with mandatory Israeli employment clauses. Use when user asks to "write a job description", "post a job in Israel", "screen Israeli resumes", "pirsum misra", "srikat meumadim", "michtav ha'a'sa'a", or automate hiring workflows for Israeli companies. Ensures compliance with Israeli anti-discrimination law and mandatory benefits. Do NOT use for job searching (use israeli-job-market), interview preparation (use israeli-tech-interview-prep), salary negotiation (use israeli-tech-salary-negotiator), employment contracts legal review (use israeli-employment-contracts), or freelancer hiring.
+description: Not legal advice. Employer-side hiring automation for Israeli companies. Drafts Hebrew job descriptions against the published requirements of the Equal Employment Opportunities Law 1988, posts to Israeli job boards (AllJobs, Drushim, JobMaster, LinkedIn Israel), screens resumes with Israeli context (military service, academic institutions, tech bootcamps), schedules interviews around Israeli holidays and Shabbat, and generates offer letters with mandatory Israeli employment clauses. Use when user asks to "write a job description", "post a job in Israel", "screen Israeli resumes", "pirsum misra", "srikat meumadim", "michtav ha'a'sa'a", or automate hiring workflows for Israeli companies. Do NOT use for job searching (use israeli-job-market), interview preparation (use israeli-tech-interview-prep), salary negotiation (use israeli-tech-salary-negotiator), employment contracts legal review (use israeli-employment-contracts), or freelancer hiring.
 license: MIT
 allowed-tools: Bash(python:*)
 compatibility: No network required for job description generation and offer letter drafting. Python 3.9+ required for helper scripts. Works with Claude Code, Claude.ai, Cursor.
@@ -8,11 +8,26 @@ compatibility: No network required for job description generation and offer lett
 
 # Israeli HR Recruitment Automator
 
+## Legal notice
+
+This skill is not legal advice and does not substitute for a licensed Israeli lawyer
+(עורך דין) or a licensed accountant. It explains published employment-law duties and drafts
+document text from employer-supplied inputs. It does not decide whether a specific screening
+question, dismissal, or contract term is lawful in your circumstances, and it does not settle
+a dispute. Anti-discrimination exposure under the Equal Employment Opportunities Law 1988 and
+data-protection exposure under the Privacy Protection Law are fact-specific. Have a lawyer
+review any job advertisement, screening policy, offer letter, or candidate-data policy before
+you rely on it. The model may err, omit data, or state a wrong conclusion. Any text this skill
+drafts, including an offer letter, is an automatic draft for your own organisation only. It is
+not a document drawn by a lawyer, and it is not the statutory notice of employment terms. It
+is not a substitute for advice that takes account of the particular circumstances and needs of
+any individual, and any use of its output is the user's sole responsibility.
+
 ## Instructions
 
-### Step 1: Generate Compliant Hebrew Job Descriptions
+### Step 1: Draft Hebrew Job Descriptions Against the Published Requirements
 
-When the user needs to create a job posting, generate a Hebrew job description (teur misra) that complies with the Equal Employment Opportunities Law 1988 (chok shivyon hizdamnuyot ba'avoda).
+When the user needs to create a job posting, generate a Hebrew job description (teur misra) and check it against the requirements the Equal Employment Opportunities Law 1988 (chok shivyon hizdamnuyot ba'avoda) publishes. Whether a given advertisement is lawful turns on facts this skill does not see.
 
 **Anti-discrimination compliance checklist.** The job description MUST NOT:
 
@@ -26,9 +41,25 @@ When the user needs to create a job posting, generate a Hebrew job description (
 | Ethnicity/nationality | Section 2(a) | "Jewish/Arab candidates only" |
 | Country of origin | Section 2(a) | "Born in Israel" |
 | Religion | Section 2(a) | "Sabbath-observant only" |
-| Political views | Section 2(a) | Any party affiliation requirement |
+| Political views / party | Section 2(a) | Any party affiliation requirement |
+| Place of residence | Section 2(a) | "Central region residents only", "must live near the office" |
 | Reserve duty | Section 2(a) | "No miluim obligations" |
-| Appearance | Section 2(a) | Height, weight, attractiveness requirements |
+| Fertility / IVF treatments | Section 2(a) | "Not planning fertility treatment" |
+
+**Section 8 is a separate offence from section 2.** Section 8(a) requires that a job
+advertisement state the offer **in both masculine and feminine form**, singular or plural
+("לא יפרסם מודעה בדבר הצעת עבודה ... אלא אם כן הצעת העבודה צויינה בלשון זכר ובלשון נקבה").
+This binds the whole ad, not just the job title, so masculine-only verbs, adjectives and
+pronouns in the body breach it even when the title is written "מפתח/ת". The bundled validator
+checks only a handful of common title nouns, so **read the whole draft yourself for gendered
+forms; a PASS from the script is not compliance with section 8.**
+
+**Appearance is NOT an enumerated ground.** The word מראה appears nowhere in the Equal
+Employment Opportunities Law. Height, weight and attractiveness requirements are still bad
+practice and are attackable as a proxy for an enumerated ground or as a non-occupational
+requirement, but do not tell a user they violate section 2(a). Disability sits in a different
+statute, the Equal Rights for Persons with Disabilities Law 1998, and that is the statute to
+cite for the reasonable-accommodation duty.
 
 **Permitted requirements:**
 - Genuine occupational qualifications (e.g., Hebrew fluency for a Hebrew content role)
@@ -76,15 +107,19 @@ After generating the job description, help the user post to Israeli job boards.
 
 **Major Israeli job boards (2026):**
 
-| Platform | URL | API Available | Notes |
+| Platform | URL | Programmatic posting | Notes |
 |---|---|---|---|
-| AllJobs | alljobs.co.il | Yes (employer portal) | Largest Israeli job board, supports Hebrew postings |
-| Drushim | drushim.co.il | Yes (employer API) | Strong in tech and startup roles |
-| JobMaster | jobmaster.co.il | Limited | General job board |
-| LinkedIn Israel | linkedin.com | Yes (LinkedIn API) | International and tech roles, English-friendly |
-| Glassdoor Israel | glassdoor.co.il | Via Indeed API | Review-focused, salary transparency |
-| Comeet | comeet.com | Yes | Israeli ATS with job board distribution |
-| Gethired | gethired.co.il | No | Tech-focused Israeli board |
+| AllJobs | alljobs.co.il | Web employer portal only, no public API documentation | Largest Israeli job board, supports Hebrew postings |
+| Drushim | drushim.co.il | Web employer console only, no public API documentation | Strong in tech and startup roles |
+| JobMaster | jobmaster.co.il | Web employer area | General job board |
+| LinkedIn Israel | linkedin.com | Yes, documented LinkedIn API (partner access) | International and tech roles, English-friendly |
+| Comeet | comeet.com | Yes, documented API | Israeli ATS with job board distribution |
+
+**Do not tell the user an Israeli board has a REST API unless you have opened its
+documentation in this session.** No public API documentation exists for AllJobs, Drushim or
+JobMaster as of August 2026, only human employer portals. An agent that assumes an API will
+invent endpoints and field names. Glassdoor no longer operates a separate Israeli property:
+`glassdoor.co.il` redirects to `glassdoor.com`. `gethired.co.il` no longer resolves at all.
 
 **Posting workflow:**
 1. Adapt the Hebrew job description for each platform's format and character limits
@@ -116,14 +151,10 @@ When screening resumes (korot chaim), apply Israeli-specific context to evaluate
 
 **IMPORTANT:** Never use military service type or unit as a filtering criterion. It is informational context only. Filtering by military unit violates the Equal Employment Opportunities Law.
 
-**Israeli academic institutions ranking context:**
-
-| Tier | Institutions |
-|---|---|
-| Research universities | Technion, Hebrew University, Tel Aviv University, Weizmann Institute, Ben-Gurion University, University of Haifa, Bar-Ilan University |
-| Colleges (accredited) | IDC Herzliya (Reichman University), Academic College of Tel Aviv-Yafo, Sapir College, Shenkar, Bezalel |
-| Tech bootcamps | ITC (Israel Tech Challenge), Coding Academy, Elevation Academy, Masterschool, Appleseeds |
-| International (common) | Online degrees from accredited US/EU universities |
+**Do not rank academic institutions.** Israeli CVs name research universities, accredited
+colleges, tech bootcamps and online degrees, and an agent handed a tier table will rank on it.
+Institution prestige is not a job requirement and ranking on it disadvantages bootcamp
+graduates and candidates who studied abroad. Treat the institution as context only.
 
 **Resume screening best practices:**
 - Focus on skills and experience, not institution prestige
@@ -173,9 +204,15 @@ When generating an offer letter (michtav ha'asa'a), include all mandatory employ
 | Minimum wage (sachar minimum) | N/A | NIS 6,443.85 / month, NIS 35.40 / hour | Effective Apr 1, 2026 (raise from NIS 6,247.67). Offer letter salary must meet or exceed. |
 | Pension (pensia) | 6.0% of salary | 6.5% of salary | Mandatory; retroactive from day 1 after 6 months without prior pension; from day 1 (or 3 months / end of tax year, whichever is first) for employees with prior pension |
 | Keren Hishtalmut | 2.5% of salary | 7.5% of salary | Not mandatory but standard in tech sector; tax-exempt after 6 years. 2026 tax-exempt salary ceiling: NIS 15,712 / month |
-| Severance (pitzuim) | N/A | 8.33% of salary | Can be included in pension via Section 14 waiver |
+| Severance (pitzuim) | N/A | 6% of salary (mandatory) | This is the pension extension order's severance component. Total mandatory contributions are 18.5%: 6% employee + 6.5% employer tagmulim + 6% employer severance. |
+| Severance top-up (optional) | N/A | +2.33%, to 8.33% total | 8.33% is one twelfth of monthly salary, the full statutory severance accrual. An employer may deposit the extra 2.33% into the pension product. Depositing only the mandatory 6% leaves a gap the employer still owes on dismissal. |
 
-**Section 14 waiver (siman 14):** Most employers include a Section 14 waiver (ishur klali le-pi siman 14), which means pension contributions count toward severance. This must be explicitly stated in the offer letter. Without it, the employer may owe full severance on top of pension contributions. **Critical precondition:** Section 14 only takes effect when 100% of pension and severance contributions are deposited from day 1 on the employee's full salary. Partial coverage (e.g., contributions delayed for the 6-month new-employee window, or computed on base salary only) invalidates Section 14, and the employer is then liable for full statutory severance on top of what was deposited.
+**Section 14 waiver (siman 14):** Most employers include a Section 14 waiver (ishur klali le-pi siman 14), which means pension contributions count toward severance. This must be explicitly stated in the offer letter. Without it, the employer may owe full severance on top of pension contributions. **Critical precondition:** Section 14 only releases the employer to the extent actually deposited, from day 1, on the employee's full salary. Two distinct gaps are easy to miss. First, if contributions are delayed (for example through the 6-month new-employee window) or computed on base salary only, the exemption does not cover the uncovered period or the uncovered pay, and the employer stays liable for statutory severance on that part. Second, depositing the mandatory 6% severance component rather than the full 8.33% leaves roughly a quarter of the accrual outside the arrangement, so the employer owes the completion on dismissal. A full release requires depositing 8.33% and saying so in the offer letter.
+
+**Never select the Section 14 arrangement for the employer.** Present the choice, the deposit
+precondition (8.33% from day 1 on full salary) and the consequence of each option, then leave
+the decision to them and their lawyer. Leave line 7 of the offer-letter template unfilled until
+they answer.
 
 **Vacation days (yemei chufsha) minimums by seniority:**
 
@@ -193,8 +230,8 @@ Note: years 1-4 were raised from 14 to 16 calendar days by Amendment 15 to the A
 | Term | Requirement |
 |---|---|
 | Sick days (yemei machala) | 1.5 days per month, up to 90 days accumulated |
-| Convalescence pay (dmei havra'a) | 5-10 days per year depending on seniority. Private-sector rate for 2026: NIS 418 per day (frozen, same as 2025). Public-sector rate is approximately NIS 471.4 per day. Sample annual entitlements at NIS 418: year 1 = 5 days = NIS 2,090; year 2-3 = 6 days = NIS 2,508; year 4-10 = 7 days = NIS 2,926. |
-| Overtime pay (sha'ot nosafot) | 125% for first 2 hours, 150% thereafter |
+| Convalescence pay (dmei havra'a) | 5-10 days per year depending on seniority. Private-sector rate for convalescence year 2026: NIS 451.5 per day, raised from NIS 418 by an extension order published 18 August 2026 covering 1 July 2025 to 30 June 2026. Public-sector rate: NIS 511.6 per day. Sample annual entitlements at NIS 451.5: year 1 = 5 days = NIS 2,257.50; years 2-3 = 6 days = NIS 2,709; years 4-10 = 7 days = NIS 3,160.50. **Employers who already paid the 2026 convalescence year at NIS 418 owe the difference of NIS 33.50 per day.** |
+| Overtime pay (sha'ot nosafot) | On a weekday: 125% for the first 2 overtime hours, 150% from the third. On the weekly rest day or a holiday the rates are higher: ordinary hours 150%, overtime 175% for the first 2 hours and 200% from the third. |
 | Travel expenses (hoza'ot nesi'a) | Public transport reimbursement or set amount |
 | Notice period (hodaa mukdemet) | Varies by seniority (1 day per month for first 6 months, then 2.5 days per month) |
 
@@ -227,7 +264,53 @@ Note: years 1-4 were raised from 14 to 16 calendar days by Amendment 15 to the A
 
 Consult `references/mandatory-benefits.md` for the complete benefits reference table.
 
-### Step 6: Run Compliance Checklist
+### Step 6: Handle Candidate Data Under the Privacy Protection Law
+
+A resume is personal data and a collection of resumes is a database under the Privacy
+Protection Law (חוק הגנת הפרטיות). The Privacy Protection Authority (הרשות להגנת הפרטיות),
+a unit of the Ministry of Justice, administers registration, notification and enforcement.
+Raise the following with the user as employer duties to check; do not deliver a conclusion
+about their specific setup.
+
+| Duty | What it means for hiring |
+|---|---|
+| Notice at collection | Asking a candidate for personal data carries a duty to tell them why it is being collected. A bare "send us your CV" with no stated purpose does not discharge it. Put the notice on the application route itself, not only in a website privacy policy. |
+| Purpose limitation | Hold the CV only while the recruitment purpose lasts. **There is no statutory number of months for CV retention.** The law sets a purpose test, not a clock. If the employer wants to keep CVs for future openings, that is a separate purpose needing its own consent, disclosed at collection. |
+| Database registration | Registration runs through the Authority's own registry services (בקשה לרישום מאגר מידע). Whether a given recruitment database is registrable depends on the employer's circumstances. Check the Authority's current criteria rather than assuming either way. |
+| Notification to the Authority | A separate duty applies to databases holding sensitive personal data at significant scale, under section 8א(ב) of the law. The Authority publishes the reporting instructions and the applicable scale. |
+| Security-incident reporting | A serious security incident in a database is reportable to the Authority immediately, through a dedicated online service. A leaked candidate database is exactly this case. |
+
+**Retention and the section 9 burden of proof pull in opposite directions. Say so.**
+Section 9(a) puts the burden on the employer to prove it did not act contrary to section 2,
+once an applicant shows they met the conditions or qualifications the employer itself set. In
+practice the employer's defence IS its screening record: the published requirements, the
+scoring rubric, the per-candidate scores and the stated reason for rejection. Purpose
+limitation argues for deleting candidate data; section 9 argues for keeping enough of it to
+defend a claim. These are not the same material. Advise keeping the **decision record** (the
+criteria, the scores, the reason) while disposing of the underlying CV once the recruitment
+purpose ends, and tell the user to set the period with their lawyer rather than guessing.
+
+**Practical rules for the agent:**
+- Never propose keeping rejected candidates' CVs indefinitely "just in case".
+- Never advise deleting the screening decision record on privacy grounds alone. That is the employer's evidence under section 9.
+- **Never invent a retention period, a subject-count threshold, an amendment number, or an entry-into-force date.** These are the details agents most reliably fabricate here. Cite the Authority's page or say you do not know.
+- Do not tell an employer they definitely must, or definitely need not, register a database or appoint a privacy protection officer. State that thresholds exist, point at the Authority, and let them check against their own figures.
+- Where the answer turns on the employer's data volumes, systems, or sector, route them to a lawyer practising privacy law rather than concluding.
+
+### Adjacent duties this skill does NOT draft
+
+Hiring triggers duties beyond the ad, the screening and the offer letter. Read
+`references/adjacent-duties.md` and raise the relevant ones with the user. The triggers are:
+every hire (a **written notice of employment terms**, a separate statutory document that an
+offer letter does NOT discharge; sexual-harassment תקנון and ממונה duties), screening
+(demanding a criminal-record extract is itself prohibited), a non-Israeli candidate (employer
+permit and work visa), a candidate under 18, a candidate with a disability, scheduling work on
+the weekly rest day (**prohibited without a permit**; the 150 / 175 / 200 percent rates price
+work that is already permitted and do not authorise it), genetic or medical testing, large
+employers (gender pay-gap reporting), and any sector with a collective agreement or extension
+order. Never state a deadline, percentage or threshold for these from memory.
+
+### Step 7: Run Compliance Checklist
 
 Before finalizing any hiring document, run through this compliance checklist:
 
@@ -236,19 +319,27 @@ Before finalizing any hiring document, run through this compliance checklist:
 - [ ] No age requirements or preferences
 - [ ] No marital/parental status references
 - [ ] No military unit or service type requirements
+- [ ] No place-of-residence requirement or preference
+- [ ] Ad is worded in both masculine and feminine form throughout, not only in the title (section 8)
 - [ ] No ethnicity, religion, or national origin references
 - [ ] Requirements are genuine occupational qualifications
 - [ ] "Requirements" and "nice-to-haves" are clearly separated
 
 **Offer Letter Compliance:**
 - [ ] Pension terms specified (minimum 6% + 6.5%)
-- [ ] Section 14 clause included (if applicable)
+- [ ] Section 14 position stated as the employer decided it, not selected by the agent
 - [ ] Vacation days meet legal minimum for employee's seniority
 - [ ] Sick days referenced per law
 - [ ] Convalescence pay (dmei havra'a) mentioned
 - [ ] Notice period specified
 - [ ] Start date and probation period defined
 - [ ] Salary stated as gross (bruto)
+
+**Candidate Data Compliance:**
+- [ ] Application route carries a collection notice stating the purpose of collection and who is responsible for the data
+- [ ] Retention of rejected candidates' CVs is time-bound and justified by a stated purpose
+- [ ] Separate consent obtained if CVs are kept for future openings
+- [ ] Registration / DPO thresholds checked against the employer's actual figures rather than assumed
 
 **Interview Process Compliance:**
 - [ ] No questions about marital status, children, or pregnancy plans
@@ -276,7 +367,7 @@ Actions:
 5. Separate requirements from nice-to-haves
 6. Include salary range if provided
 
-Result: A compliant Hebrew job description ready for posting on AllJobs and LinkedIn.
+Result: A Hebrew job description drafted against the Step 1 checklist, for the employer to review, and to have reviewed, before posting.
 
 ### Example 2: Screen a Batch of Resumes
 
@@ -298,12 +389,12 @@ User says: "Draft an offer letter for a QA engineer, 18,000 NIS gross, starting 
 Actions:
 1. Generate offer letter with all mandatory clauses
 2. Calculate pension contributions (6% employee = 1,080 NIS, 6.5% employer = 1,170 NIS)
-3. Include Section 14 waiver clause
+3. Ask the employer whether they are granting a Section 14 release and at what deposit rate; do not choose for them
 4. Set vacation days to legal minimum (16 calendar days for years 1-5)
 5. Add sick days, convalescence pay, and travel expense terms
 6. Set notice period per seniority
 
-Result: Complete offer letter in Hebrew with all legally required terms.
+Result: A draft offer letter in Hebrew covering the terms listed in Step 5, for the employer to complete and have reviewed. It is not the statutory notice of employment terms; see Adjacent duties.
 
 ### Example 4: Post to Multiple Job Boards
 
@@ -321,10 +412,12 @@ Result: Job posted on both platforms with tracking details.
 ## Bundled Resources
 
 ### Scripts
-- `scripts/job-description-generator.py` -- Generate compliant Hebrew job descriptions from structured input. Validates against anti-discrimination rules and outputs formatted markdown. Run: `python scripts/job-description-generator.py --help`
+- `scripts/job-description-generator.py` -- Draft Hebrew job descriptions from structured input and flag wording that matches known discriminatory patterns. A clean run is not a compliance result. Run: `python scripts/job-description-generator.py --help`
 
 ### References
 - `references/anti-discrimination-law.md` -- Summary of the Equal Employment Opportunities Law 1988 (chok shivyon hizdamnuyot ba'avoda). Lists all protected characteristics, permitted exceptions, enforcement mechanisms, and penalties. Consult when writing job descriptions or screening criteria.
+- `references/domain-checklist.md` -- The coverage contract for this skill: what a complete Israeli hiring workflow must cover, what it should cover, and what is explicitly out of scope with the reasoning. Internal quality anchor; consult when deciding whether a request falls inside this skill's scope.
+- `references/adjacent-duties.md` -- Statutory duties that hiring triggers but this skill does not draft: the written notice of employment terms, sexual-harassment prevention duties, the criminal-record demand prohibition, foreign-worker permits, minors, disability accommodation, rest-day permits, testing, pay-gap reporting, and collective agreements. Consult before telling a user that hiring is complete.
 - `references/mandatory-benefits.md` -- Complete table of mandatory employment benefits in Israel for 2026. Includes pension rates, keren hishtalmut, vacation days by seniority, sick days, convalescence pay, overtime rules, and notice periods. Consult when drafting offer letters or employment terms.
 
 ## Gotchas
@@ -333,7 +426,9 @@ Result: Job posted on both platforms with tracking details.
 - Military service type and unit (e.g., 8200, Mamram) must never be used as screening criteria, even though they appear on most Israeli resumes. Filtering by unit violates anti-discrimination law.
 - Pension contributions in Israel are mandatory from day 1 (or after 6 months for first-time employees). The minimum is 6% employee + 6.5% employer. Agents may use outdated lower rates from pre-2017 regulations.
 - Section 14 (Siman 14) waiver is standard in Israeli tech but must be explicitly stated in the offer letter. Without it, employers owe full severance on top of pension contributions. Agents may omit this critical clause.
-- Israeli convalescence pay (dmei havra'a) is a mandatory annual benefit with a fixed per-day rate (updated yearly). Agents unfamiliar with Israeli labor law may omit it entirely from offer letters.
+- Israeli convalescence pay (dmei havra'a) has a per-day rate that is re-set by extension order roughly every year, usually mid-year, and the order is often published months after the convalescence year it governs. An agent quoting last cycle's rate will understate the entitlement, and the employer owes the difference retroactively. Re-check the rate rather than trusting a figure in a cached document.
+- The pension extension order's mandatory severance component is 6%, not 8.33%. Agents routinely state 8.33% as the mandatory employer rate because it is the statutory severance accrual. Both numbers are real and they answer different questions, so an agent that conflates them will either overstate the employer's minimum obligation or wrongly report a Section 14 arrangement as complete.
+- A CV is personal data under the Privacy Protection Law. Agents asked to "keep the good ones on file" will happily design indefinite retention, which the purpose-limitation rule does not permit.
 
 
 ## Reference Links
@@ -344,6 +439,9 @@ Result: Job posted on both platforms with tracking details.
 | Kol Zchut, hiring obligations | https://www.kolzchut.org.il/he/חוק_שוויון_ההזדמנויות_בעבודה | Employer duties, mandatory notice to employee, recent amendments |
 | Israel Ministry of Economy and Industry | https://www.gov.il/he/departments/ministry_of_economy | Minimum wage, mandatory benefits, equal pay |
 | Israel Equal Employment Opportunities Commission | https://www.gov.il/he/departments/units/equal-opportunities-at-work-unit | EEOC complaint statistics, guidance, enforcement |
+| Privacy Protection Authority | https://www.gov.il/he/departments/the_privacy_protection_authority | Current registration criteria, the section 8א(ב) notification duty, security-incident reporting, enforcement decisions |
+| Kol Zchut, convalescence pay | https://www.kolzchut.org.il/he/דמי_הבראה | Current private and public sector per-day rate, extension-order date |
+| Kol Zchut, mandatory pension insurance | https://www.kolzchut.org.il/he/חובת_ביטוח_פנסיוני_לעובדים | 18.5% split, severance component, Section 14 completion |
 | AllJobs | https://www.alljobs.co.il | Job posting formats, category structure |
 | Drushim | https://www.drushim.co.il | Alternative job board, posting conventions |
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-hr-recruitment-automator",
-  "generated_at": "2026-05-29T00:00:00Z",
+  "generated_at": "2026-08-26T16:54:43Z",
   "claims": [
     {
       "claim_id": "minimum-wage-2026",
@@ -17,15 +17,17 @@
     },
     {
       "claim_id": "pension-severance",
-      "claim": "Mandatory pension: employee 6.0% / 6%, employer 6.5% (of which about 0.5% disability insurance), plus a severance component. Severance (pitzuim) equals one month per year of service, about 8.33%. Section 14 (סעיף 14, Section 14) lets pension contributions count toward severance. Tech sector commonly offers 7% / 7.5% / 8%.",
-      "source_url": "https://www.kolzchut.org.il/he/צו_הרחבה_לביטוח_פנסיוני_מקיף_במשק",
-      "raw_snippet": "הפרשות העובד 6%, הפרשות המעסיק לתגמולים 6.5%, ולרכיב פיצויים לא פחות מ-6%",
-      "fetched_at": "2026-05-29T00:00:00Z",
+      "claim": "Mandatory pension contributions total 18.5% from January 2017: employee 6%, employer tagmulim 6.5%, employer severance component 6% (not less than 6%). The employer may top the severance component up by 2.33% to 8.33%, which is one twelfth of monthly salary and the full statutory severance accrual, and only then does the Section 14 (סעיף 14) arrangement release the employer in full. Tech sector commonly offers above the minimum. Employee 6.0%. Many tech-sector employers contribute above the minimum, commonly in the 7% to 8% range for the employer side.",
+      "source_url": "https://www.kolzchut.org.il/he/חובת_ביטוח_פנסיוני_לעובדים",
+      "raw_snippet": "שיעור ההפרשות הוא 18.5% מהשכר, מתוכם 6% על חשבון העובד והיתר (12.5%) על חשבון המעסיק (6.5% הפרשות מעסיק לרכיב תגמולים ו-6% הפרשות מעסיק לרכיב פיצויים)",
+      "fetched_at": "2026-08-26T16:28:16Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/mandatory-benefits.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:28:16Z"
     },
     {
       "claim_id": "keren-hishtalmut",
@@ -41,28 +43,31 @@
     },
     {
       "claim_id": "convalescence-2026",
-      "claim": "Convalescence pay (dmei havra'a) 2026 private-sector rate NIS 418 / 418 ש\"ח per day (frozen from 2024-2025), public-sector about NIS 471.4 / 471.4 ש\"ח per day. Sample annual amounts at 418: 5 days NIS 2,090 / 2,090 ש\"ח, 6 days NIS 2,508 / 2,508 ש\"ח, 7 days NIS 2,926 / 2,926 ש\"ח, 8 days NIS 3,344, 9 days NIS 3,762, 10 days NIS 4,180.",
+      "claim": "Convalescence pay (dmei havra'a) for convalescence year 2026 (1 July 2025 to 30 June 2026): private sector NIS 451.5 / 451.5 ש\"ח per day, public sector NIS 511.6 / 511.6 ש\"ח per day. Raised from the previous NIS 418 / 418 ש\"ח private rate by an extension order published 18.08.2026; employers who already paid at 418 owe a completion of NIS 33.50 / 33.50 ש\"ח per day. Annual amounts at 451.5: 5 days 2,257.50, 6 days 2,709, 7 days 3,160.50, 8 days 3,612, 9 days 4,063.50, 10 days 4,515. The previous rate 418 and public 471.4 applied to 2023 - 2025. Annual entitlements are the day count multiplied by the 451.5 daily rate: 5 days = 2257.50 ש\"ח, 6 days = 2709 ש\"ח, 7 days = 3160.50 ש\"ח, 8 days = 3612 ש\"ח, 9 days = 4063.50 ש\"ח, 10 days = 4515 ש\"ח.",
       "source_url": "https://www.kolzchut.org.il/he/דמי_הבראה",
-      "raw_snippet": "ערך יום 2026: פרטי 418 ₪, ציבורי 471.40 ₪",
-      "fetched_at": "2026-05-29T00:00:00Z",
+      "raw_snippet": "דמי ההבראה במגזר הפרטי לשנת ההבראה 2026 עומדים על 451.5 ש\"ח. דמי ההבראה במגזר הציבורי עומדים על 511.6 ש\"ח",
+      "fetched_at": "2026-08-26T16:28:16Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/mandatory-benefits.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:28:16Z"
     },
     {
-      "claim_id": "overtime-sick-travel",
-      "claim": "Overtime: 125% for the first 2 hours, 150% thereafter; Shabbat/holiday work 150%. Sick pay: day 1 unpaid, days 2-3 at 50%, day 4 onward 100%; accrual 1.5 days/month up to 90 days. Travel expenses about NIS 22.60 / 22.60 ש\"ח per day.",
+      "claim_id": "overtime-rates",
+      "claim": "Overtime on a weekday: 125% of the ordinary hourly wage for the first two additional hours, 150% from the third hour on. Overtime during the weekly rest day or a holiday: 175% for the first two additional hours and 200% from the third additional hour on; ordinary hours on the weekly rest day or a holiday carry a 50% supplement, that is 150%.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%92%D7%9E%D7%95%D7%9C_%D7%A2%D7%91%D7%95%D7%A8_%D7%A9%D7%A2%D7%95%D7%AA_%D7%A0%D7%95%D7%A1%D7%A4%D7%95%D7%AA",
-      "raw_snippet": "שעתיים ראשונות 125%, מעל השעתיים הראשונות 150%",
-      "fetched_at": "2026-05-29T00:00:00Z",
+      "raw_snippet": "תשלום של 125% משכר שעת עבודה רגילה (כלומר תוספת של 25% על ערך שעת העבודה רגילה) עבור השעתיים הנוספות הראשונות ביום עבודה. תשלום של 150% (כלומר תוספת של 50% על ערך שעת עבודה רגילה) מהשעה השלישית ואילך.",
+      "fetched_at": "2026-08-26T16:39:34Z",
       "appears_in": [
         "SKILL.md",
+        "SKILL_HE.md",
         "references/mandatory-benefits.md"
       ],
-      "verified_via": "Kol Zchut renamed this page; the cited title no longer exists; successor located via the Kol Zchut search API and existence-confirmed",
-      "verified_at": "2026-08-15"
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:39:34Z"
     },
     {
       "claim_id": "offer-example-and-discrimination",
@@ -191,6 +196,223 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "severance-topup-8-33",
+      "claim": "An employer contributing severance at the rates in the extension order may complete severance up to 8.33% (1/12 of monthly salary) directly into a pension provident fund, that is add 2.33% on top of the 6% it deposits monthly. 8.33% / 8.33 is therefore the optional full-accrual level, not the mandatory rate.",
+      "source_url": "https://www.kolzchut.org.il/he/חובת_ביטוח_פנסיוני_לעובדים",
+      "raw_snippet": "יהיה רשאי לשלם השלמת פיצויי פיטורים עד ל-8.33% (1/12 מהשכר החודשי) ישירות לקופת גמל לקצבה, כלומר: להוסיף 2.33% על 6% שהוא מפריש מדי חודש",
+      "fetched_at": "2026-08-26T16:28:16Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:28:16Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "havraa-extension-order-date",
+      "claim": "The extension order for convalescence year 2026 was published on 18.08.2026 and covers 1.7.2025 to 30.6.2026. Employers who already paid the 2026 convalescence year at the old 418 rate must pay the difference up to 451.5, that is 33.50 per day.",
+      "source_url": "https://www.kolzchut.org.il/he/דמי_הבראה",
+      "raw_snippet": "מעסיקים שכבר שילמו דמי הבראה עבור שנת 2026 לפי התעריף הישן (418 ש\"ח), יצטרכו לשלם הפרשים לסכום העדכני של 451.5 ש\"ח",
+      "fetched_at": "2026-08-26T16:28:16Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:28:16Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "havraa-completion-33-50",
+      "claim": "The per-day completion owed where the 2026 convalescence year was paid at 418 is 33.50.",
+      "source_url": "https://www.kolzchut.org.il/he/דמי_הבראה",
+      "raw_snippet": "התעריף עבור שנת ההבראה 2026 עודכן לסכום של 451.5 ש\"ח. אם דמי ההבראה שולמו לפי התעריף של 418 ש\"ח, העובד זכאי להשלמה של 33.50 ש\"ח עבור כל יום הבראה",
+      "fetched_at": "2026-08-26T16:28:16Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:28:16Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "havraa-prior-rates-2023-2025",
+      "claim": "For convalescence years 2023 - 2025 the private-sector rate was 418 and the public-sector rate 471.4. These are the superseded figures.",
+      "source_url": "https://www.kolzchut.org.il/he/דמי_הבראה",
+      "raw_snippet": "2023 - 2025 418 ₪ 471.4 ₪",
+      "fetched_at": "2026-08-26T16:28:16Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:28:16Z",
+      "appears_in": [
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-authority-notification-8a-b",
+      "claim": "The Privacy Protection Authority (הרשות להגנת הפרטיות) is a unit of the Ministry of Justice. It operates online services for registering a database (בקשה לרישום מאגר מידע), updating a registration, reporting a serious security incident in a database, and a separate notification duty for databases holding sensitive personal data at significant scale under section 8א(ב) of the Privacy Protection Law.",
+      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
+      "raw_snippet": "חובת הודעה לרשות להגנת הפרטיות על מאגר מידע הנחיות והוראות לדיווח על מאגרי מידע בעלי מידע אישי רגיש בהיקפים משמעותיים בהתאם לסעיף 8א(ב) לחוק הגנת הפרטיות",
+      "fetched_at": "2026-08-26T16:30:36Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:30:36Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-authority-incident-reporting",
+      "claim": "A serious security incident in a database is reported to the Privacy Protection Authority immediately, via a dedicated online service.",
+      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
+      "raw_snippet": "דיווח על אירוע אבטחה חמור במאגר מידע שירות זה מאפשר להגיש דיווח מידי על אירוע אבטחה חמור שאירע במאגר מידע",
+      "fetched_at": "2026-08-26T16:30:36Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:30:36Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "overtime-rest-day-175-200",
+      "claim": "Overtime performed during the weekly rest day or on a holiday is paid at 175% for the first two additional hours and 200% from the third additional hour, because the employee is entitled both to the 50% rest-day/holiday supplement and to the overtime supplement.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%92%D7%9E%D7%95%D7%9C_%D7%A2%D7%91%D7%95%D7%A8_%D7%A9%D7%A2%D7%95%D7%AA_%D7%A0%D7%95%D7%A1%D7%A4%D7%95%D7%AA",
+      "raw_snippet": "תשלום של 175% משכר שעת עבודה רגילה עבור השעתיים הנוספות הראשונות",
+      "fetched_at": "2026-08-26T16:39:34Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:39:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "overtime-rest-day-200-third-hour",
+      "claim": "From the third additional hour on the weekly rest day or a holiday the rate is 200%.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%92%D7%9E%D7%95%D7%9C_%D7%A2%D7%91%D7%95%D7%A8_%D7%A9%D7%A2%D7%95%D7%AA_%D7%A0%D7%95%D7%A1%D7%A4%D7%95%D7%AA",
+      "raw_snippet": "תשלום של 200% מהשעה השלישית הנוספת ואילך",
+      "fetched_at": "2026-08-26T16:39:34Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:39:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "sick-pay-schedule",
+      "claim": "Sick pay schedule: the first day of absence is unpaid; the second and third days are paid at 50% of the wage the employee would have received; from the fourth day onward the employee receives 100% of the full wage. Accrual is 1.5 sick days per full month of work (18 per full work year), and the maximum accumulation is 90 days.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%9E%D7%97%D7%9C%D7%94",
+      "raw_snippet": "על יום ההיעדרות הראשון העובדים לא זכאים לתשלום. על כל אחד מימי ההיעדרות השני והשלישי העובדים זכאים לתשלום בגובה 50% מהשכר שהיו אמורים לקבל באותו יום אילו עבדו. מיום ההיעדרות הרביעי והלאה העובדים זכאים לתשלום בגובה השכר המלא",
+      "fetched_at": "2026-08-26T16:40:13Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:40:13Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "sick-accrual-90",
+      "claim": "Sick-day accrual is 1.5 days per full month of work, 18 days in a full work year, with a maximum accumulation of 90 days.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%9E%D7%97%D7%9C%D7%94",
+      "raw_snippet": "העובד צובר 1.5 ימי מחלה (18 ימי מחלה בשנת עבודה מלאה) כך שיהיה אפשר לממש את הימים שנצברו בעתיד",
+      "fetched_at": "2026-08-26T16:40:13Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:40:13Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "sick-max-90-days",
+      "claim": "The maximum number of sick days that can be accumulated is 90.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%9E%D7%97%D7%9C%D7%94",
+      "raw_snippet": "הכמות המקסימלית של ימי מחלה שאפשר לצבור היא 90",
+      "fetched_at": "2026-08-26T16:40:13Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:40:13Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "pension-eligibility-age-21-20",
+      "claim": "Mandatory pension insurance applies to every male employee who has reached 21 and every female employee who has reached 20.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "כל עובד שמלאו לו 21 ועובדת שמלאו לה 20 זכאים להפרשות לביטוח פנסיוני",
+      "fetched_at": "2026-08-26T16:40:52Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:40:52Z",
+      "appears_in": [
+        "references/mandatory-benefits.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-section-8-both-genders-ad",
+      "claim": "Section 8 (סעיף 8) of the Equal Employment Opportunities Law prohibits publishing a job advertisement or a vocational-training placement notice unless the offer is stated in both masculine and feminine form, in the singular or the plural, and prohibits publishing such a notice that discriminates under section 2. This is a separate offence from section 2.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/5016.htm",
+      "raw_snippet": "מעסיק או הזקוק לעובד, לא יפרסם מודעה בדבר הצעת עבודה או שליחה להכשרה מקצועית אלא אם כן הצעת העבודה צויינה בלשון זכר ובלשון נקבה, בין ביחיד ובין ברבים",
+      "fetched_at": "2026-08-26T16:54:43Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:54:43Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-section-2-place-of-residence",
+      "claim": "Place of residence (מקום מגורים / מקום מגוריהם) is one of the grounds enumerated in section 2(a) of the Equal Employment Opportunities Law, alongside sex, sexual orientation, personal status, pregnancy, fertility and IVF treatments, parenthood, age, race, religion, nationality, country of origin, outlook, party, and reserve service.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/5016.htm",
+      "raw_snippet": "לא יפלה מעסיק בין עובדיו או בין דורשי עבודה מחמת מינם, נטייתם המינית, מעמדם האישי, הריון, טיפולי פוריות, טיפולי הפריה חוץ-גופית, היותם הורים, גילם, גזעם, דתם, לאומיותם, ארץ מוצאם, מקום מגוריהם, השקפתם, מפלגתם או שירות במילואים שלהם",
+      "fetched_at": "2026-08-26T16:54:43Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:54:43Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/job-description-generator.py",
+        "references/anti-discrimination-law.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-section-9-burden-record",
+      "claim": "Section 9(a)(1) places the burden of proof on the employer to show it did not act contrary to section 2 in hiring, promotion, terms, training or severance, where the employer set conditions or qualifications and the job applicant or employee proved those conditions or qualifications were met in their case.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/5016.htm",
+      "raw_snippet": "בתובענה של דורש עבודה או של עובד בשל הפרת הוראות סעיף 2, תהא חובת ההוכחה על המעסיק כי פעל שלא בניגוד להוראות סעיף 2",
+      "fetched_at": "2026-08-26T16:54:43Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-26T16:54:43Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/anti-discrimination-law.md"
+      ]
+    },
+    {
+      "claim_id": "ref-link-kolzchut-worker-rights",
+      "claim": "The Kol Zchut worker-rights portal page is live and serves substantive content.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA_%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "זכויות עובדים",
+      "fetched_at": "2026-08-26T16:54:43Z",
+      "verified_via": "curl with a browser user agent, 5534 visible characters",
+      "verified_at": "2026-08-26T16:54:43Z",
+      "appears_in": [
+        "references/domain-checklist.md"
       ]
     }
   ]
