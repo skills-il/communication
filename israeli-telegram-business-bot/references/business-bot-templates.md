@@ -500,13 +500,10 @@ Sample answer:
 ```
 📊 מתי מגישים דוח שנתי?
 
-דוח שנתי לשנת המס הקודמת מגישים בדרך כלל עד:
-- שכירים עם הכנסות נוספות: סוף אפריל בשנה שאחרי
-- עצמאים (בלי רו"ח): סוף אפריל בשנה שאחרי
-- עצמאים (עם רו"ח): סוף יולי בשנה שאחרי
-- חברות: סוף מאי בשנה שאחרי
+המועד תלוי בסוג המדווח, בשאלה אם הדוח מוגש דרך מייצג, ובהסדר האורכות למייצגים,
+שדוחה בפועל את המועד למיוצגים רבים הרבה מעבר למועד הבסיסי.
 
-המועדים המדויקים מתעדכנים כל שנה על ידי רשות המסים, לכן כדאי לוודא את התאריך הנוכחי באתר הרשות.
+אל תשלחו ללקוח תאריך מהזיכרון. בדקו את המועד שחל עליו באתר רשות המסים או מול המייצג שלו.
 💡 הגשה מוקדמת = החזר מוקדם יותר.
 רוצים שנכין את הדוח? פגישת ייעוץ ראשונה חינם.
 
@@ -522,7 +519,7 @@ Sample answer:
 ✅ תלושי שכר - כל 12 החודשים
 ✅ טופס 106 מכל מעסיק
 ✅ אישורי ריבית מהבנק (פיקדונות, משכנתא)
-✅ קבלות על תרומות מעל ₪190
+✅ קבלות על תרומות מוכרות (הסכום המזערי מתעדכן משנה לשנה, בדקו ברשות המסים)
 ✅ אישור ביטוח לאומי
 ✅ אישורי קופות גמל ופנסיה
 ✅ אישור ביטוח חיים (אם רלוונטי)
@@ -668,3 +665,120 @@ Before a holiday, switch the bot to holiday mode:
 
 חג שמח ושמח! 🌸
 ```
+
+
+## Broadcast message shapes
+
+Every PROMOTIONAL broadcast must carry the four Section 30a elements. They are baked into the
+template below; do not strip them. Transactional messages (an order status the customer asked
+for, an appointment reminder they booked) are not advertising and do not need them.
+
+### Promotion (requires prior explicit consent)
+
+```
+פרסומת
+
+🎉 [שם המבצע] ב[שם העסק]
+
+[ההצעה בשורה אחת].
+בתוקף [תאריך] עד [תאריך].
+
+לקביעת תור: @[שם_הבוט]
+
+[שם העסק המלא], [כתובת מלאה]
+[טלפון] | [כתובת מייל]
+
+[🚫 הסירו אותי מרשימת התפוצה]
+```
+
+Four things make this compliant, and each is a separate requirement:
+
+1. **פרסומת** is the first word of the message. This is distinct from identifying the sender and
+   is the element most often missed.
+2. The advertiser's **name, address and ways to make contact**, including a working email address
+   the opt-out can be sent to.
+3. A **working opt-out**, as an inline-keyboard button, or a bot command you define yourself for the purpose (a "stop" command is the usual convention; it is not a Telegram platform command). The recipient may
+   give the opt-out notice in writing or through the medium the advertisement arrived in, at their
+   choice, so a Telegram promotion needs a Telegram opt-out and not only an email link.
+4. It goes only to customers who **actively opted in**. Pressing Start on the bot is not consent.
+
+Store, per customer, the Telegram user id, the exact opt-in text shown, and the timestamp. If
+consent is disputed, the business is the party that has to prove it was given.
+
+### Order status update (transactional, no label needed)
+
+```
+📦 הזמנה #[מספר]
+
+✅ התקבלה
+✅ בהכנה
+🔄 בדרך אליך
+⬜ נמסרה
+
+זמן הגעה משוער: [שעה]
+```
+
+### Holiday greeting
+
+```
+[חג שמח / שבת שלום]! 🕯
+
+[שם העסק] סגור [היום / עד יום X].
+נחזור ביום [יום] בשעה [שעה].
+```
+
+Treat a holiday greeting that also carries an offer as a promotion, and use the promotion
+template instead.
+
+
+## Section 30a requirements in full
+
+Requirements every promotional broadcast must meet:
+
+1. **Prior explicit consent (הסכמה מפורשת מראש)** - The customer must actively opt in. Starting a chat with the bot is NOT consent. Add an inline-keyboard opt-in ("כן, שלחו לי מבצעים ועדכונים"). Transactional messages (order status, appointment reminders the customer requested) do not need this consent.
+2. **Label the message as advertising** - The word **פרסומת** must appear at the head of the message. This is a distinct requirement from identifying the sender, and it is the one most often missed.
+3. **Sender identification (זיהוי השולח)** - The statute requires the advertiser's **name, address, and ways to make contact**. For a promotion sent as an electronic message it also requires a valid internet address of the advertiser for sending the opt-out, so publish a working email address too. No anonymous promotions.
+4. **Opt-out in every message (אפשרות הסרה)** - Include a clear way to stop, e.g. a "הסר אותי מרשימת התפוצה" button, or a stop command you define in your own bot. The recipient must be able to opt out **through the same medium the promotion arrived in**, so a Telegram promotion needs a Telegram opt-out, not only an email link. Honor opt-outs immediately.
+
+**Keep provable consent records.** If consent is ever disputed, the business is the party that has to show it was given. A stored "yes" with no timestamp and no record of what the customer actually agreed to is worth very little. Store, per customer: the Telegram user id, the exact opt-in text that was shown, and the timestamp.
+
+## Deep-link placements
+
+| Placement | Example payload | What it tells you |
+|---|---|---|
+| QR code on the counter or the menu | `qr_counter` | Walk-in signups |
+| Printed on the receipt | `receipt` | Post-purchase signups |
+| Link in an SMS or email footer | `sms_may` | Campaign response |
+| Instagram or Facebook bio | `ig_bio` | Social conversion |
+
+
+## BotFather profile configuration
+
+Send these commands to @BotFather:
+
+- `/setdescription` - the Hebrew text customers see before starting a chat, e.g. "ברוכים הבאים! אני הבוט של [שם העסק]. אפשר לקבוע תור, לראות תפריט, ולקבל מידע על שעות פעילות."
+- `/setabouttext` - a short profile line, e.g. "בוט שירות לקוחות של [שם העסק] - תורים, הזמנות, ומידע"
+- `/setuserpic` - upload the business logo.
+- `/setcommands` - the command menu:
+```
+start - התחל שיחה
+hours - שעות פעילות
+book - קבע תור
+menu - תפריט / שירותים
+contact - צור קשר
+help - עזרה
+```
+
+---
+
+
+## Hebrew greeting conventions
+
+Match the greeting to the moment: "שלום!" or "היי!" generally, "בוקר טוב!" in the morning, "ערב טוב!" in the evening, "שבת שלום!" from Friday afternoon, "שבוע טוב!" after Shabbat, "חג שמח!" on a holiday, and "תודה רבה!" to close.
+
+
+## Tone of voice
+
+Friendly and direct, never corporate. Use plural "אתם/אתן" for a general audience, or "את/ה" for an intimate business. Emojis are welcome, slang is not. Keep it brief: Israelis expect answers, not paragraphs.
+
+---

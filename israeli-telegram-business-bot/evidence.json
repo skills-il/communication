@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-telegram-business-bot",
-  "generated_at": "2026-08-08",
+  "generated_at": "2026-09-01",
   "claims": [
     {
       "claim_id": "bot-api-version",
-      "claim": "Bot API 10.2 is the current Telegram Bot API version, released July 14, 2026. The two prior minor versions are 10.1 (June 11, 2026) and 10.0 (May 8, 2026).",
+      "claim": "Bot API 10.3 is the current Telegram Bot API version, released August 24, 2026. The prior release was 10.2 (July 14, 2026).",
       "source_url": "https://core.telegram.org/bots/api",
-      "raw_snippet": "July 14, 2026 Bot API 10.2 Rich Messages",
-      "fetched_at": "2026-08-09",
+      "raw_snippet": "August 24, 2026 Bot API 10.3",
+      "fetched_at": "2026-09-01T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -60,10 +60,10 @@
     },
     {
       "claim_id": "botfather-commands",
-      "claim": "BotFather exposes the bot-configuration commands /newbot, /mybots, /revoke, /setdescription, /setabouttext, /setuserpic, /setcommands and /setprivacy, and /start is the command a user sends to open a chat with a bot.",
+      "claim": "BotFather exposes the bot-configuration commands /newbot, /mybots, /setdescription, /setabouttext, /setuserpic, /setcommands and /setprivacy, documented on the Telegram bot features page at core.telegram.org/bots/features and the overview page at core.telegram.org/bots.",
       "source_url": "https://core.telegram.org/bots/features",
-      "raw_snippet": "/setcommands ... change the list of commands supported by your bot",
-      "fetched_at": "2026-08-08",
+      "raw_snippet": "/setcommands – change the list of commands supported by your bot.",
+      "fetched_at": "2026-09-01T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -148,10 +148,10 @@
     },
     {
       "claim_id": "israeli-soleks-not-on-telegram-list",
-      "claim": "Telegram does not process payments itself and integrates third-party providers; as of August 2026 the Israeli soleks (Tranzila, Meshulam, Cardcom) are not named on the official Bot Payments provider documentation, where Stripe is the documented integration.",
+      "claim": "Telegram does not process payments itself and integrates third-party providers, and it publishes no public provider list: the payments page states only that bots can accept payments from over 200 countries using more than 20 providers, and the available set is whatever @BotFather offers under Bot Settings > Payments. As of 2026-09-01 no Israeli solek is named anywhere in the payments documentation, and Stripe remains the documented reference provider.",
       "source_url": "https://core.telegram.org/bots/payments",
-      "raw_snippet": "Telegram does not process payments from users and instead allows developers to integrate directly with different third-party payment providers around the world.",
-      "fetched_at": "2026-08-08",
+      "raw_snippet": "Accept payments from over 200 countries using more than 20 providers.",
+      "fetched_at": "2026-09-01T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -277,6 +277,141 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "getupdates-webhook-rule",
+      "claim": "The Bot API documents that getUpdates will not work while an outgoing webhook is set up. The docs do not state an HTTP status code for this condition.",
+      "source_url": "https://core.telegram.org/bots/api",
+      "raw_snippet": "This method will not work if an outgoing webhook is set up.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "deep-link-payload-limits",
+      "claim": "A start deep-link payload may be up to 64 characters long and may contain only A-Z, a-z, 0-9, underscore and hyphen; base64url is recommended for anything else.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "A-Z, a-z, 0-9, _ and - are allowed. We recommend using base64url to encode parameters with binary and other types of content. The parameter can be up to 64 characters long.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "bizchat-manage-deep-link",
+      "claim": "A user who connects a bot to their business account sees a quick action bar at the top of each managed chat; tapping \"Manage Bot\" redirects them to the bot, which receives a deep link message in the format /start bizChat<user_chat_id>.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "tapping on “Manage Bot” will redirect them to your bot, which will receive a deep link message in the format /start bizChat<user_chat_id> .",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "secretary-mode-naming",
+      "claim": "The current Telegram developer features page (core.telegram.org/bots/features) calls the bot-side business toggle Secretary Mode, while the older overview page (core.telegram.org/bots) still calls it Business Mode.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "Bots can enable Secretary Mode , allowing users to connect the bot to their account so it can process incoming messages and, where permitted, respond on their behalf.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "business-premium-vs-connected-bots",
+      "claim": "All Telegram Business features are available free to Premium subscribers, and connected bots are additionally available to non-Premium users. So the native business features require the subscription while connected bots do not.",
+      "source_url": "https://core.telegram.org/api/business",
+      "raw_snippet": "All Telegram Business features are available for free to Premium » subscribers.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "stars-digital-only-xtr",
+      "claim": "A bot selling digital goods and services must carry out all transactions in Telegram Stars with currency tag XTR; the provider_token parameter is only needed for physical goods and services.",
+      "source_url": "https://core.telegram.org/bots/payments-stars",
+      "raw_snippet": "Since your bot sells digital goods and services, all transactions must be carried out in Telegram Stars, with currency tag XTR .",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "stars-paysupport-obligation",
+      "claim": "Bots and mini apps selling with Telegram Stars must be able to respond to the /paysupport command and process user requests regarding payment issues.",
+      "source_url": "https://core.telegram.org/bots/payments-stars",
+      "raw_snippet": "Your bots and mini apps must be able to respond to the command /paysupport and process user requests regarding payment issues , and you must provide customer support in a timely fashion.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "stars-provider-token-physical-only",
+      "claim": "The provider_token parameter in the Payments API methods is only needed for sales of physical goods and services; for digital ones it can be left empty.",
+      "source_url": "https://core.telegram.org/bots/payments-stars",
+      "raw_snippet": "This parameter is only needed for sales of physical goods and services – for digital ones, you can leave it empty.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "botfather-token-regeneration",
+      "claim": "BotFather regenerates a bot's authorization token with the /token command when the existing token is compromised or lost. There is no documented /revoke command.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "If your existing token is compromised or you lost it for some reason, use the /token command to generate a new one.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "payments-currencies-json",
+      "claim": "Telegram publishes the per-currency invoice limits for the Bot Payments API as a machine-readable file at core.telegram.org/bots/payments/currencies.json, which gives ILS an exponent of 2 with a minimum of 368 and a maximum of 3678820 agorot, i.e. 3.68 and 36,788.20 shekels.",
+      "source_url": "https://core.telegram.org/bots/payments/currencies.json",
+      "raw_snippet": "\"code\": \"ILS\",",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "tax-authority-portal",
+      "claim": "The Israel Tax Authority publishes the current חשבוניות ישראל allocation-number rules and threshold on its gov.il department page.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "רשות המסים",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-protection-authority-portal",
+      "claim": "The Privacy Protection Authority, a unit of the Ministry of Justice, publishes its guidance, the Privacy Protection (Data Security) Regulations and its Amendment 13 material on its gov.il department page.",
+      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
+      "raw_snippet": "תקנות הגנת הפרטיות (אבטחת מידע)",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "verified_via": "browser",
+      "verified_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
       ]
     }
   ]

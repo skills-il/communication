@@ -2,8 +2,6 @@
 
 A **Mini App** is a full web page (HTML/CSS/JS) that opens inline inside Telegram, with access to Telegram-specific APIs: user identity, theme, haptics, MainButton, and the native payment sheet. Official documentation: `core.telegram.org/bots/webapps`.
 
-By 2026 Mini Apps have become a mainstream commerce surface globally. Telegram crossed 1 billion monthly active users, and TON-based in-chat wallets are in widespread use.
-
 ## When a Mini App makes sense
 
 For an Israeli SMB, Mini Apps make sense when the bot needs richer UX than inline keyboards can provide:

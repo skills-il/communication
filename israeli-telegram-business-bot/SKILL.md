@@ -10,11 +10,11 @@ Set up a Telegram bot for an Israeli small business. Covers bot creation, Hebrew
 
 ## Problem
 
-Israeli small business owners lose customers because they cannot respond fast enough. Messages arrive during Shabbat, late at night, or while the owner is with another client, and the result is missed bookings and lost revenue.
+Israeli small business owners lose customers because they cannot respond fast enough. Messages arrive during Shabbat, late at night, or while the owner is with another client, and the result is missed bookings.
 
-Most Israeli businesses live on WhatsApp, but Telegram offers bot automation WhatsApp does not: inline keyboards, automatic replies, structured menus, and payment integration, with no code. The gap is that existing guides assume developer knowledge.
+Most Israeli businesses live on WhatsApp, but Telegram offers bot automation WhatsApp does not: inline keyboards, automatic replies, structured menus, and payments, with no code. Existing guides assume developer knowledge.
 
-This skill walks a business owner through a professional Telegram bot that handles the repetitive parts of customer communication in Hebrew, with Israeli business hours and culture built in.
+This skill walks a business owner through a Telegram bot that handles the repetitive parts of customer communication in Hebrew, with Israeli business hours built in.
 
 ## When to Use This Skill
 
@@ -43,7 +43,7 @@ This skill walks a business owner through a professional Telegram bot that handl
 
 Since Bot API 7.2 a bot can be connected to the owner's own personal Telegram account. It replies inside the owner's real DMs, so customers never learn a separate `@..._bot` username. Technically the bot receives `business_message` and `edited_business_message` updates and passes `business_connection_id` on its send methods.
 
-Setup: @BotFather, Bot Settings, Business Mode. Then in Telegram Settings, Telegram Business, Chatbots. Connected bots work for non-Premium users too.
+Setup on the bot side: @BotFather, Bot Settings, then the business toggle. Telegram renamed it, so you may see either name: the current developer page (`core.telegram.org/bots/features`) calls it **Secretary Mode**, while the older overview page (`core.telegram.org/bots`) still calls it **Business Mode**. On the owner side it is then connected from the Telegram client under Settings, Telegram Business, Chatbots (a client UI path, not something the API docs describe). Connected bots work for non-Premium users too.
 
 Choose this when customers already message the owner directly and you only want to automate the repetitive replies.
 
@@ -53,17 +53,11 @@ The architecture the rest of this skill builds. Choose it when you need structur
 
 ### Before building anything: use the native features
 
-Telegram Business ships several features free to Premium subscribers that replace hand-built automation:
+Telegram Business ships several features that replace hand-built automation. Be precise about who gets them: the native features are included in a Telegram Business subscription, currently bundled with Telegram Premium, so the OWNER needs Premium. Connected bots are the exception and work for non-Premium users too.
 
-| Native feature | Replaces |
-|---|---|
-| Opening Hours (with real timezone support) | Phase 4 business-hours logic |
-| Away Messages (offline, outside hours, or a date range) | Phase 4 after-hours auto-reply |
-| Greeting Messages (first contact or after inactivity) | Phase 2 welcome message |
-| Quick Replies | Phase 3 FAQ canned answers |
-| Business Location, Business Intro, Chat Links | Phase 3 location and contact cards |
+Opening Hours (with real timezone support) replaces the Phase 4 business-hours logic, Away Messages replace the after-hours auto-reply, Greeting Messages replace the Phase 2 welcome, Quick Replies replace the Phase 3 canned answers, and Business Location, Business Intro and Chat Links replace the Phase 3 location and contact cards.
 
-Start here. Add a bot only for what the native features cannot do: booking state, orders, and payments. Note that native Opening Hours takes a real timezone identifier, which resolves the Asia/Jerusalem daylight-saving problem in Troubleshooting without any custom logic.
+Start there. Add a bot only for what the native features cannot do: booking state, orders, and payments. Native Opening Hours takes a real timezone identifier, which resolves the Asia/Jerusalem daylight-saving problem in Troubleshooting with no custom logic.
 
 Sources: `core.telegram.org/api/business`, `telegram.org/blog/telegram-business`.
 
@@ -93,22 +87,7 @@ BotFather is Telegram's official tool for creating bots. No coding required.
 
 ### Configure Bot Profile
 
-Send these commands to @BotFather:
-
-- `/setdescription` - the Hebrew text customers see before starting a chat, e.g. "ברוכים הבאים! אני הבוט של [שם העסק]. אפשר לקבוע תור, לראות תפריט, ולקבל מידע על שעות פעילות."
-- `/setabouttext` - a short profile line, e.g. "בוט שירות לקוחות של [שם העסק] - תורים, הזמנות, ומידע"
-- `/setuserpic` - upload the business logo.
-- `/setcommands` - the command menu:
-```
-start - התחל שיחה
-hours - שעות פעילות
-book - קבע תור
-menu - תפריט / שירותים
-contact - צור קשר
-help - עזרה
-```
-
----
+Send @BotFather `/setdescription` (the Hebrew text customers see before starting a chat), `/setabouttext` (a short profile line), `/setuserpic` (the business logo), and `/setcommands` (the command menu: start, hours, book, menu, contact, help). Ready-to-paste Hebrew values for all four are in `references/business-bot-templates.md`.
 
 ## Phase 2: Welcome Message and Auto-Greeting
 
@@ -116,45 +95,17 @@ When a customer opens your bot for the first time and presses "Start", they shou
 
 ### Welcome Message Template
 
-```
-שלום! 👋
-ברוכים הבאים ל[שם העסק].
-
-איך אפשר לעזור?
-```
-
-Pair it with an inline keyboard of two buttons per row: 📅 קביעת תור and 📋 תפריט/שירותים, then 🕐 שעות פעילות and 📍 מיקום, then 📞 דברו איתנו.
-
-### Important Notes for the Welcome Flow
-
-Keep the greeting to three lines at most, default to Hebrew, and add an English button only if you serve tourists. It should read personal rather than corporate: "שלום!" beats "שלום וברוכים הבאים לשירות הלקוחות שלנו".
-
----
+Three lines at most, defaulting to Hebrew: a greeting, "ברוכים הבאים ל[שם העסק]", and "איך אפשר לעזור?". Pair it with an inline keyboard of two buttons per row: 📅 קביעת תור and 📋 תפריט/שירותים, then 🕐 שעות פעילות and 📍 מיקום, then 📞 דברו איתנו. Add an English button only if you serve tourists. Personal beats corporate: "שלום!" beats "שלום וברוכים הבאים לשירות הלקוחות שלנו". Worked flows per business type are in `references/business-bot-templates.md`.
 
 ## Phase 3: FAQ Auto-Replies
 
 Set up automatic answers to the questions you get asked 10 times a day.
 
-### Common FAQ Categories for Israeli Businesses
+### What to automate
 
-**Business Hours:**
-```
-🕐 שעות פעילות:
+Cover the questions you answer ten times a day: **business hours** (the Sunday-Thursday / Friday / Shabbat block), **location** (address, city, a Google Maps link, parking), and **contact** (phone as `050-XXX-XXXX`, a WhatsApp link, an email, and an invitation to write in the bot).
 
-ראשון - חמישי: 09:00 - 18:00
-שישי: 09:00 - 14:00
-שבת: סגור
-```
-
-**Location:** address, city, a Google Maps link, and parking details.
-
-**Contact:** phone in `050-XXX-XXXX` form, a WhatsApp link, an email address, and a closing line inviting the customer to write in the bot.
-
-### Multi-Level FAQ with Inline Keyboards
-
-For businesses with many questions, nest the menu: a main screen with שירותים, מחירים, קביעת תור, and שעות פעילות, where each branch lists its items and ends with "⬅️ חזרה לתפריט". Keep it to two levels; deeper trees lose people.
-
----
+For a business with many questions, nest the menu: a main screen with שירותים, מחירים, קביעת תור and שעות פעילות, where each branch lists its items and ends with "⬅️ חזרה לתפריט". Keep it to two levels; deeper trees lose people. Worked screens are in `references/business-bot-templates.md`.
 
 ## Phase 4: Business Hours Logic
 
@@ -195,6 +146,13 @@ Major Israeli holidays when businesses typically close. **These are Israel day-c
 - **Shavuot** (שבועות) - 1 day
 - **Yom Ha'atzmaut** (יום העצמאות) - 1 day
 
+Two day-types sit between "open" and "closed", and ignoring them sells slots nobody shows up for:
+
+- **Chol HaMoed** (חול המועד), the intermediate days of Sukkot and Pesach, roughly 10 days a year. Schools are closed and much of the workforce is on leave, so most SMBs run reduced hours.
+- **Erev chag** (ערב חג), which is a short day like Friday for every festival above. Yom HaZikaron, the day before Yom Ha'atzmaut, closes places of entertainment and quietens trading generally.
+
+Treat both as owner-configurable short days, not as full working days.
+
 Configure your bot to check a holiday calendar and switch to holiday auto-reply mode. Most no-code platforms support date-based logic or scheduled message changes. Whatever calendar source you use, set it to the Israel schedule (Hebcal exposes this as the `i=on` flag) or you will inherit the diaspora day-counts.
 
 ---
@@ -212,13 +170,9 @@ Four inline-keyboard steps, each with a "⬅️ חזרה" button:
 3. **Time** - "באיזו שעה?" with the free slots for that day.
 4. **Confirmation** - a summary of service, day, and time, plus [✅ אישור] and [❌ ביטול].
 
-### Confirmation Message
+### Confirmation and reminders
 
-After booking, echo back service, date, time, and address, promise a reminder the day before, and give /cancel for changes.
-
-### Reminder Notifications
-
-Send three: a day before ("תזכורת: יש לך תור מחר ב-10:00"), two hours before with a navigation link, and, after a no-show, a short "לא הספקת להגיע?" with a /book link.
+After booking, echo back service, date, time and address, promise a reminder the day before, and give /cancel for changes. Send three reminders: a day before ("תזכורת: יש לך תור מחר ב-10:00"), two hours before with a navigation link, and after a no-show a short "לא הספקת להגיע?" with a /book link.
 
 ### Important: Friday Booking Logic
 
@@ -232,21 +186,13 @@ For businesses that sell products or take food orders.
 
 ### Order Flow
 
-Three screens, all inline keyboards:
-
-1. **Categories** - "🛒 ההזמנה שלך" with a button per category (פיצות, סלטים, שתייה, קינוחים).
-2. **Items in a category** - name and price per line, an "הוסף לסל" button per item, and "⬅️ חזרה לקטגוריות".
-3. **Cart** - "🛒 סיכום ההזמנה" listing quantity, item, and line price, then a "סה"כ" line and [✅ שלח הזמנה] [🗑 נקה סל].
-
-Confirm with an order number, the total, an estimated preparation time, and a /status command for tracking. Full worked screens are in `references/business-bot-templates.md`.
-
----
+Three inline-keyboard screens: **categories** (a button per category), **items in a category** (name and price per line, an "הוסף לסל" button per item, and "⬅️ חזרה לקטגוריות"), and the **cart** (quantity, item and line price, a "סה"כ" line, then [✅ שלח הזמנה] [🗑 נקה סל]). Confirm with an order number, the total, an estimated preparation time, and a /status command for tracking. Full worked screens are in `references/business-bot-templates.md`.
 
 ## Phase 7: Payment Integration
 
 ### Option 1: External Payment Links
 
-The simplest approach for Israeli businesses. Generate a payment link from your existing payment provider and send it in the bot:
+The simplest approach. Generate a payment link from your existing provider and send it in the bot:
 
 ```
 💳 לתשלום:
@@ -259,42 +205,34 @@ The simplest approach for Israeli businesses. Generate a payment link from your 
 [🏦 העברה בנקאית] -> bank details
 ```
 
-**Popular Israeli payment gateways:**
-- **Green Invoice** (חשבונית ירוקה) - payment links with automatic invoice
-- **Rivhit** (רווחית) - payment collection with accounting integration
-- **PayMe** - simple payment pages, also powers Bit acceptance on platforms like Wix
-- **iCount** - invoicing with payment links
-- **Meshulam** - payment clearing for small businesses
-- **Tranzila** (טרנזילה) - veteran Israeli processor (since 1999), ILS, three integration modes (Iframe / Hosted Fields / API v2). Community Telegram integrations via Make.com.
-- **Bit (ביט)** - Israel's leading P2P app (Bank Hapoalim), with a merchant developer portal at `developer.bitpay.co.il`. ILS only and single-payment only, so it suits low-ticket sales (food, beauty) and not recurring billing. Bit's own terms say business acceptance is subject to the limits and conditions agreed between the bank and the business, so get the actual per-transaction and monthly ceilings from the provider rather than assuming a published number. Bit also states that the payee is required to issue a lawful tax invoice.
-- **PayBox** (פייבוקס) - digital wallet acquired by Israel Discount Bank in 2017. Businesses can receive payments online and in store using QR codes or payment links, but there is no public merchant API a bot can drive, so treat it as a manual step.
+**Israeli payment gateways.** Prefer one that issues the payment link AND the compliant invoice in
+one step, currently Green Invoice, iCount or Rivhit. PayMe, Meshulam and Tranzila clear without
+invoicing; Bit is ILS-only and single-payment; PayBox has no public merchant API. **Feature sets
+change without notice, so confirm invoicing and API support with the provider before you build.**
+Comparison table and Bit acceptance terms: `references/israeli-payment-providers.md`.
 
 ### Option 2: Telegram Native Payments (Payment API)
 
-Telegram's built-in Payment API (`core.telegram.org/bots/payments`) lets the bot send native invoice messages that customers pay without leaving Telegram. You connect a provider through @BotFather's `/mybots` -> "Payments" menu.
+Telegram's built-in Payment API lets the bot send native invoice messages customers pay without leaving Telegram. Connect a provider through @BotFather's `/mybots` -> "Payments" menu.
 
-ILS is supported (currency `ILS`, min ₪3.68, max ₪36,788.20 per invoice). However, as of August 2026 the Israeli soleks (Tranzila, Meshulam, Cardcom) are NOT on Telegram's officially-supported provider list. Practical implications:
+ILS is supported (currency `ILS`, min ₪3.68, max ₪36,788.20 per invoice). However, Telegram publishes no public provider list: the payments page states only "more than 20 providers", and the actual set is whatever @BotFather offers your bot under Bot Settings > Payments. As of 2026-09-01 no Israeli solek is named anywhere in the payments documentation, and Stripe remains the documented reference provider. Practical implications:
 
 - Foreign cards cleared in ILS via Stripe: works today through the global Stripe integration.
 - Clearing through an Israeli solek (for tax/reporting): use Option 1 (external link) or Option 4 (Mini App with an Israeli provider iframe). The native Payment API is not the right tool for "pure Israeli" merchant setups.
 
-Check the live provider list under @BotFather's Payments menu before committing; Telegram adds providers over time.
-
 ### Option 3: Telegram Stars (for Digital Goods)
 
-Telegram Stars covers in-app purchases of digital goods: consultations, online courses, downloadable files and templates, premium content. Stars is for digital goods only, so physical products and in-person services need an external payment link or the native Payment API.
+Telegram Stars covers in-app purchases of digital goods: consultations, online courses, downloadable files and templates, premium content. Stars is for digital goods only, so physical products and in-person services need an external payment link or the native Payment API. Two consequences worth knowing before you commit: digital sales must go through Stars (currency tag `XTR`) and not a third-party provider, or Telegram will not show the bot to mobile users at all; and any bot selling with Stars must answer the `/paysupport` command and handle payment complaints. The `provider_token` parameter is only needed for physical goods, so leave it empty for digital ones.
 
 ### Option 4: Telegram Mini Apps (TWA)
 
-A Mini App is a full web page (HTML/CSS/JS) that opens inline inside Telegram, with native APIs for identity, theme, MainButton, and payments. Use one when the bot needs richer UX than inline keyboards (catalog grids, calendar pickers, custom checkout with an Israeli provider iframe). Skip it for simple FAQ/booking bots.
-
-Setup is via @BotFather (`/mybots`, Bot Settings, Configure Mini App), and Israeli payment providers (Tranzila, PayMe) can be embedded directly inside the Mini App without a Telegram-specific integration.
+A Mini App is a web page that opens inline inside Telegram, with native APIs for identity, theme, MainButton and payments. Use one when the bot needs richer UX than inline keyboards (catalog grids, calendar pickers, custom checkout with an Israeli provider iframe). Skip it for simple FAQ/booking bots. Setup is via @BotFather (`/mybots`, Bot Settings, Configure Mini App); Israeli providers embed directly, with no Telegram-specific integration.
 
 See `references/mini-apps-implementation.md` for the full setup guide, payment-embedding patterns, and `initData` validation.
 
 ### You still have to issue a real invoice
 
-Collecting money through the bot does not change the business's tax obligations. An Israeli business must issue a חשבונית מס or a קבלה for the payment, and under the חשבוניות ישראל reform an invoice above the rolling threshold needs an allocation number from the Tax Authority before it can be deducted by the customer.
+Collecting money through the bot does not change the business's tax obligations. An Israeli business must issue a חשבונית מס or a קבלה for the payment, and under the חשבוניות ישראל reform a tax invoice ABOVE the current threshold needs an allocation number from the Tax Authority before the customer can deduct the input VAT. Note the scope before you alarm a business owner: what triggers it is the RECIPIENT being a registered dealer who will deduct input VAT, not the document type or the business type. A cafe or salon selling to private consumers will rarely meet it; the same cafe invoicing a company for a catering order above the threshold does. The threshold falls year on year, so read the current figure off the Tax Authority page rather than quoting one from memory.
 
 This is the reason the Phase 7 shortlist leads with Green Invoice, iCount, and Rivhit: they generate the payment link and the compliant invoice in one step, so the bot never becomes a channel that takes money without paperwork. If the owner uses a bare payment link from a provider that does not invoice, they must still issue the document separately.
 
@@ -315,55 +253,45 @@ Default to channels for promotional content. Reserve DM broadcasts for transacti
 
 ### Getting customers into the bot: deep links
 
-Since a bot cannot start a conversation, growing the reachable audience is its own task. Use start deep links:
+A bot cannot start a conversation, so growing the reachable audience is its own task. Use start deep links:
 
 `t.me/<your_bot>?start=<payload>`
 
-The payload arrives with the `/start` command, so you can attribute the source. Practical placements:
+The payload arrives with the `/start` command, so you can attribute the source. It is capped at **64 characters** and only `A-Z a-z 0-9 _ -` are allowed, so encode anything longer or richer with base64url rather than packing it in raw. Practical placements:
 
-| Placement | Example payload | What it tells you |
-|---|---|---|
-| QR code on the counter or the menu | `qr_counter` | Walk-in signups |
-| Printed on the receipt | `receipt` | Post-purchase signups |
-| Link in an SMS or email footer | `sms_may` | Campaign response |
-| Instagram or Facebook bio | `ig_bio` | Social conversion |
+Attribute the source by placement: a QR code on the counter (`qr_counter`), the receipt (`receipt`), an SMS or email footer (`sms_may`), the Instagram or Facebook bio (`ig_bio`). The full placement table is in `references/business-bot-templates.md`.
 
-Telegram Business Chat Links are the equivalent for Option A in Phase 0: each link carries a preset opening message and its own view counter.
+Telegram Business Chat Links are the Option A equivalent: each carries a preset opening message and a view counter. They are part of the Business subscription and are capped per account.
+
+If you built Option A, handle one more entry point: an owner whose bot is connected sees a "Manage Bot" action at the top of each managed chat, and tapping it sends your bot a deep link in the form `/start bizChat<user_chat_id>`. A bot that only parses its own marketing payloads will silently ignore that.
 
 Source: `core.telegram.org/bots/features#deep-linking`.
 
 ### Telegram Channel for Updates
 
-Create a channel in Telegram, name it `[שם העסק] - עדכונים`, add the bot as an administrator, and share the channel link with customers.
+Create a channel named `[שם העסק] - עדכונים`, add the bot as an administrator, and share the link.
 
-### Types of Broadcasts
-
-**Promotions:** a headline offer, the days it runs, the bot username for booking, and an explicit expiry. Remember the labelling rules in the spam-law section below.
-
-**Status updates (for orders):** a checklist of the order stages with the current one marked, plus an estimated arrival time.
-
-**Holiday greetings:** a short "שבת שלום" or "חג שמח" line naming the return day and hour.
+Three shapes cover almost everything: a **promotion** (headline offer, the days it runs, the bot
+username for booking, an explicit expiry, plus the labelling rules below), an **order status
+update** (the stages with the current one marked, and an ETA), and a **holiday greeting**
+naming the return day and hour. Worked message templates are in
+`references/business-bot-templates.md`.
 
 ### Israeli Spam Law (חוק הספאם) Compliance
 
-Section 30a of the Communications Law (1982, Amendment 40 / 2008) governs unsolicited advertising. **Read the scope question carefully before relying on it either way:** the section as drafted enumerates four channels, fax, automated dialing systems, electronic messages (הודעה אלקטרונית), and SMS (מסרון). Telegram and other instant-messaging apps are **not named in the statute**. Coverage, where asserted, runs through the broad "electronic message" definition rather than explicit statutory text, and Israeli practice is not settled on it.
+Section 30a of the Communications (Telecommunications and Broadcasting) Law, 5742-1982 governs unsolicited advertising. **Read the scope question carefully before relying on it either way:** the section as drafted enumerates four channels, fax, automated dialing systems, electronic messages (הודעה אלקטרונית), and SMS (מסרון). Telegram and other instant-messaging apps are **not named in the statute**. Coverage, where asserted, runs through the broad "electronic message" definition rather than explicit statutory text, and Israeli practice is not settled on it.
 
 The practical conclusion for a business owner is unchanged: assume a promotional Telegram broadcast is covered and comply. The downside of complying unnecessarily is a consent button; the downside of guessing wrong is class-action exposure. Do not, however, tell a client the statute names instant messaging, because it does not.
 
-Requirements every promotional broadcast must meet:
+Four requirements, and each is separate. (1) **Prior explicit consent**: the customer must actively opt in, and pressing Start on the bot is NOT consent. Transactional messages the customer asked for do not need it. (2) **The word פרסומת at the head of the message**, which is distinct from identifying the sender and is the one most often missed. (3) **Sender identification**: the advertiser's name, address and ways to make contact, including a working email address for the opt-out. (4) **A working opt-out in every message**. The recipient may give the opt-out notice in writing or through the medium the advertisement arrived in, at their choice, so a Telegram promotion needs a Telegram opt-out route and not only an email link. Honour opt-outs immediately.
 
-1. **Prior explicit consent (הסכמה מפורשת מראש)** - The customer must actively opt in. Starting a chat with the bot is NOT consent. Add an inline-keyboard opt-in ("כן, שלחו לי מבצעים ועדכונים"). Transactional messages (order status, appointment reminders the customer requested) do not need this consent.
-2. **Label the message as advertising** - The word **פרסומת** must appear at the head of the message. This is a distinct requirement from identifying the sender, and it is the one most often missed.
-3. **Sender identification (זיהוי השולח)** - The statute requires the advertiser's **name, address, and ways to make contact**. For a promotion sent as an electronic message it also requires a valid internet address of the advertiser for sending the opt-out, so publish a working email address too. No anonymous promotions.
-4. **Opt-out in every message (אפשרות הסרה)** - Include a clear way to stop, e.g. a "הסר אותי מרשימת התפוצה" button or a "/stop" instruction. The recipient must be able to opt out **through the same medium the promotion arrived in**, so a Telegram promotion needs a Telegram opt-out, not only an email link. Honor opt-outs immediately.
-
-**Keep provable consent records.** If consent is ever disputed, the business is the party that has to show it was given. A stored "yes" with no timestamp and no record of what the customer actually agreed to is worth very little. Store, per customer: the Telegram user id, the exact opt-in text that was shown, and the timestamp.
+**Keep provable consent records.** If consent is disputed the business has to show it was given. Store, per customer, the Telegram user id, the exact opt-in text shown, and the timestamp. A compliant promotion template is in `references/business-bot-templates.md`.
 
 Penalties: statutory damages up to ₪1,000 per message (no need to prove harm), class-action exposure, and criminal liability for knowingly sending without consent. When in doubt, treat a message as a promotion and get consent first. Consult `kolzchut.org.il` or a lawyer for current obligations.
 
 ### Privacy: the bot's customer list is a database
 
-A bot that stores customer names, phone numbers, appointment histories, and order records is a **מאגר מידע** under Israel's Privacy Protection Law. Amendment 13, in force since August 2025, changed the registration thresholds, the information-security duty, the circumstances requiring a privacy officer (ממונה על הגנת הפרטיות), and the enforcement powers of the Privacy Protection Authority.
+A bot that stores customer names, phone numbers, appointment histories, and order records is a **מאגר מידע** under Israel's Privacy Protection Law. Amendment 13 reshaped the regime and sharpened the Privacy Protection Authority's enforcement powers. Check the Authority's own guidance for the current registration thresholds, the information-security duty and when a privacy officer (ממונה על הגנת הפרטיות) is required, rather than relying on a figure quoted here.
 
 Two practical consequences for a bot built with this skill:
 
@@ -378,23 +306,12 @@ Source: `gov.il/he/departments/the_privacy_protection_authority`. This is a summ
 
 You do NOT need to write code to build a Telegram business bot. These platforms offer visual editors.
 
-### Recommended Platforms
-
-**BotPress** - drag-and-drop flow builder with Hebrew support and a free tier. Best for complex conversation flows and multi-step booking.
-
-**n8n (self-hosted or cloud)** - workflow automation with a built-in Telegram trigger node and a Schedule Trigger for reminders and promotions. Best for wiring Telegram to other business tools (Google Sheets, calendars, CRMs, Monday.com, Green Invoice).
-
-**ManyChat** - native Telegram support with subscriber management and broadcasts, plus Instagram, WhatsApp, and Messenger. Best for businesses already using it elsewhere.
-
-### Platform Comparison
-
-| Feature | BotPress | n8n | ManyChat |
-|---------|----------|-----|----------|
-| Hebrew support | Yes | Yes | Partial |
-| Free tier | Yes | Yes (self-host) | Limited |
-| Appointment booking | With flows | With calendar integration | Basic |
-| Learning curve | Medium | Medium | Low |
-| Israeli platform integrations | Via API | Native nodes for many | Limited |
+Three are worth looking at for an Israeli SMB: **BotPress** (drag-and-drop flows, best for
+multi-step booking), **n8n** (Telegram trigger plus a Schedule Trigger for reminders, best for
+wiring the bot to Google Sheets, calendars, CRMs or Green Invoice), and **ManyChat** (best if the
+business already uses it for Instagram or WhatsApp). **Tiers, Hebrew support and integration
+coverage change without notice, so check the vendor's own pricing page before committing.**
+Comparison in `references/no-code-platforms.md`.
 
 ### Webhook vs Polling (Deployment Note)
 
@@ -406,26 +323,27 @@ Telegram delivers updates by polling (the bot asks repeatedly) or by webhook (Te
 
 ### RTL Considerations
 
-Hebrew displays RTL in Telegram by default, inline keyboard labels take Hebrew, and mixed Hebrew and Latin text usually renders fine. Bot commands such as `/start` stay LTR, which is expected. When a mixed run does come out in the wrong order, see the bidi fix in Troubleshooting.
+Hebrew displays RTL by default, inline keyboard labels take Hebrew, and mixed Hebrew and Latin text usually renders fine. Commands such as `/start` stay LTR, which is expected. For a mixed run in the wrong order, see the bidi fix in Troubleshooting.
 
 ### Hebrew Greeting Conventions
 
-Match the greeting to the moment: "שלום!" or "היי!" generally, "בוקר טוב!" in the morning, "ערב טוב!" in the evening, "שבת שלום!" from Friday afternoon, "שבוע טוב!" after Shabbat, "חג שמח!" on a holiday, and "תודה רבה!" to close.
+Match the greeting to the moment: "שלום!" or "היי!" generally, "בוקר טוב!" / "ערב טוב!" by time of day, "שבת שלום!" from Friday afternoon, "שבוע טוב!" after Shabbat, "חג שמח!" on a holiday, "תודה רבה!" to close.
 
 ### Hebrew Command Aliases
 
-Bot commands must be Latin characters, but customers should never have to type them. Give every command a Hebrew button label instead: 🏠 תפריט ראשי for `/start`, 📅 קביעת תור for /book, 📋 תפריט for /menu, 🕐 שעות פעילות for /hours, 📞 צרו קשר for /contact, ❌ ביטול for /cancel, and 📦 סטטוס הזמנה for /status.
+Bot commands must be Latin characters, but customers should never have to type them. Give every command a Hebrew button label instead: 🏠 תפריט ראשי for `/start`, 📅 קביעת תור for /book, 🕐 שעות פעילות for /hours, 📞 צרו קשר for /contact.
 
 ### Tone of Voice
 
-Friendly and direct, never corporate. Use plural "אתם/אתן" for a general audience, or "את/ה" for an intimate business. Emojis are welcome, slang is not. Keep it brief: Israelis expect answers, not paragraphs.
-
----
+Friendly and direct, never corporate. Plural "אתם/אתן" for a general audience, "את/ה" for an intimate business. Emojis welcome, slang not. Keep it brief: Israelis expect answers, not paragraphs.
 
 ## Bundled Resources
 
 - `references/business-bot-templates.md` - full message flows for restaurant, salon, and freelance service bots
 - `references/mini-apps-implementation.md` - Mini App setup, embedding an Israeli payment provider, and `initData` validation
+- `references/israeli-payment-providers.md` - provider comparison, which ones issue the invoice, Bit acceptance terms
+- `references/no-code-platforms.md` - BotPress, n8n and ManyChat feature comparison
+- `references/domain-checklist.md` - what a complete version of this skill must cover
 
 ---
 
@@ -441,7 +359,7 @@ Common mistakes agents make when helping set up Israeli business bots:
 
 4. **Over-engineering version one** - Ship welcome, hours, FAQ, and one booking or ordering flow. Add the rest once those work.
 
-5. **Leaking the token** - The token is a password. Never post it in group chats, forums, or screenshots. Use BotFather's `/revoke` if it leaks.
+5. **Leaking the token** - The token is a password. Never post it in group chats, forums, or screenshots. If it leaks, send @BotFather `/token` to generate a new one; the old token stops working.
 
 6. **No human handoff** - Include a "דברו עם נציג" option that forwards to the owner's personal Telegram.
 
@@ -459,7 +377,7 @@ Common mistakes agents make when helping set up Israeli business bots:
 
 ### Example 1: Restaurant Bot
 
-**Scenario:** "Cafe Shemesh" in Tel Aviv wants menu viewing, takeout orders, and table booking.
+"Cafe Shemesh", Tel Aviv: menu viewing, takeout orders, table booking.
 
 ```
 שלום! ☀️
@@ -472,21 +390,22 @@ Common mistakes agents make when helping set up Israeli business bots:
 
 ### Example 2: Hair Salon Bot
 
-**Scenario:** "Salon Dana" in Haifa wants appointment booking and a price list, so the first screen is a service picker where each button carries the service name and its starting price.
+"Salon Dana", Haifa: appointment booking and a price list, so the first screen is a service picker where each button carries the service name and its starting price.
 
 ### Example 3: Freelance Accountant Bot
 
-**Scenario:** "Moshe Levi, CPA" wants consultation scheduling, a required-documents checklist, and a tax FAQ.
+"Moshe Levi, CPA": consultation scheduling, a required-documents checklist, and a tax FAQ.
 
-Complete message-flow templates for all three business types, including the menu trees, stylist selection, confirmation messages, and the full document checklist, are in `references/business-bot-templates.md`. Read that file instead of re-deriving the flows.
-
----
+Complete message-flow templates for all three, including menu trees, stylist selection, confirmation messages and the full document checklist, are in `references/business-bot-templates.md`. Read that file instead of re-deriving the flows.
 
 ## Troubleshooting
 
 ### Bot Not Responding
 
-- **A webhook is still registered (the most common cause)**: If a webhook is set, `getUpdates` returns **409 Conflict** and the bot goes silent. This happens the moment the same token is connected to a second platform while the first one still holds the webhook. Fix: call `deleteWebhook`, then reconnect. See `core.telegram.org/bots/api#getupdates`.
+- **`getUpdates` comes back 409 Conflict.** 409 is the symptom, and it has TWO causes. Telegram does not document the status code at all; the docs state only the behavioural rule ("This method will not work if an outgoing webhook is set up"), so diagnose by cause, not by the number.
+  - **A webhook is set.** Long polling cannot run alongside one. Fix: call `deleteWebhook`, then reconnect.
+  - **Two pollers on one token.** BotPress, n8n and ManyChat all long-poll by default, so pasting the same token into a second platform produces 409 with no webhook anywhere. Fix: disconnect the token from the other platform, or create a second bot with `/newbot`. The tell is that `deleteWebhook` returns `true` and nothing changes: that means there was no webhook and you are in this case.
+  See `core.telegram.org/bots/api#getupdates`.
 - **Check the token**: Make sure you copied the full token from BotFather without extra spaces
 - **Bot not connected to platform**: Verify the token is entered correctly in your no-code platform (BotPress, n8n, etc.)
 - **Platform is down**: Check the platform's status page
@@ -502,7 +421,7 @@ Complete message-flow templates for all three business types, including the menu
   - **Global broadcasts**: a bot can broadcast to roughly 30 different users per second (free tier). Exceed any of these and the API returns HTTP 429.
   - **Paid broadcasts**: a bot can opt in to pay Telegram for higher throughput (up to 1,000 messages/sec). Costs 0.1 Stars per message above the free 30/sec, and requires the bot to hold ≥100,000 Stars balance and have ≥100,000 monthly active users , practical only for large businesses, not typical Israeli SMBs.
   - For DM broadcasts to a customer list, add deliberate delays between sends to stay under the limits. For mass announcements, post to a Telegram channel instead , channel posts are a single API call and do not consume the per-second budget.
-  - This rate-limit information and the BotFather command set described in this skill are aligned with Bot API 10.2 (released July 14, 2026); the Bot API is versioned and updated regularly at `core.telegram.org/bots/api`, so check the changelog at the top of that page if a feature behaves differently than documented here.
+  - This rate-limit information and the BotFather command set described in this skill are aligned with Bot API 10.3 (released August 24, 2026); the Bot API is versioned and updated regularly at `core.telegram.org/bots/api`, so check the changelog at the top of that page if a feature behaves differently than documented here.
 
 ### Hebrew Text Display Issues
 
@@ -524,7 +443,7 @@ Complete message-flow templates for all three business types, including the menu
 
 ### Bot Got Compromised
 
-Open @BotFather, send `/revoke`, pick the bot, update the new token in your platform immediately, then review recent bot activity for messages you did not send.
+Open @BotFather and send `/token`, which is the documented way to generate a new authorization token when the existing one is compromised. Pick the bot, update the new token in your platform immediately, then review recent bot activity for messages you did not send.
 
 ---
 
@@ -532,17 +451,17 @@ Open @BotFather, send `/revoke`, pick the bot, update the new token in your plat
 
 | Resource | URL | What it covers |
 |----------|-----|----------------|
-| Telegram Bot API | https://core.telegram.org/bots/api | Full API reference: methods, types, rate limits, the changelog at the top |
-| Telegram Bot Features | https://core.telegram.org/bots/features | BotFather setup, commands, inline keyboards, privacy mode |
+| Telegram Bot API | https://core.telegram.org/bots/api | Methods, types, and the changelog at the top |
+| Telegram Bot Features | https://core.telegram.org/bots/features | BotFather setup, commands, inline keyboards, privacy mode, deep linking |
 | Introduction to Bots | https://core.telegram.org/bots | The rule that a bot cannot start a conversation |
-| Telegram Bot Payments docs | https://core.telegram.org/bots/payments | Provider list, ILS currency limits, deep dive on the native invoice flow |
-| Telegram Mini Apps | https://core.telegram.org/bots/webapps | Mini App (TWA) docs: setup via @BotFather, JS bridge, MainButton, payment sheet |
-| Telegram Bot FAQ - rate limits | https://core.telegram.org/bots/faq | Exact send rate limits (per chat, per group, broadcasts, paid broadcasts) |
-| Communications Law, statutory text | `nevo.co.il/law_html/law01/032_002.htm` | The literal wording of Section 30a, including the mandatory-content list |
+| Telegram Bot Payments docs | https://core.telegram.org/bots/payments | ILS currency limits and the native invoice flow |
+| Telegram Mini Apps | https://core.telegram.org/bots/webapps | Setup via @BotFather, JS bridge, MainButton, `initData` |
+| Telegram Bot FAQ - rate limits | https://core.telegram.org/bots/faq | Send rate limits, including paid broadcasts |
+| Communications Law, statutory text | `nevo.co.il/law_html/law01/032_002.htm` | The wording of Section 30a and its mandatory-content list |
 | Israeli Anti-Spam Law (Kol-Zchut) | `kolzchut.org.il`, page פיצוי בגין משלוח דברי פרסומת ללא הסכמה של הנמען | Section 30a obligations and ₪1,000 statutory damages |
 
 ---
 
 ## Recommended MCP Servers
 
-- **`hebcal`** - Hebrew calendar MCP server. Phase 4 and Gotcha 10 both tell the owner to resolve Israeli holiday dates from a calendar rather than hardcode them. Use this MCP to find when the holidays fall in a given year, to drive holiday auto-reply mode, and to check that booking never offers a slot on a closed day.
+- **`hebcal`** - Hebrew calendar MCP server. Phase 4 and Gotcha 10 both tell the owner to resolve Israeli holiday dates rather than hardcode them. Use this MCP to find when holidays fall in a given year, drive holiday auto-reply mode, and keep booking off closed days.
