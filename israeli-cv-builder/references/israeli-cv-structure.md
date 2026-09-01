@@ -13,9 +13,10 @@ Full section-by-section template for an Israeli CV with field-level notes. Appli
 | LinkedIn | Recommended | Full URL `linkedin.com/in/username`, not just "LinkedIn" |
 | GitHub | Tech roles | Full URL. Only include if the profile is active and presentable |
 | Personal website | Optional | Only if it hosts a portfolio worth seeing |
-| Date of birth | NEVER | Prohibited by EEO Law 1988 |
-| Photo | NEVER in EN | HE: only if user explicitly requests AND role is non-tech |
-| Marital status | NEVER | Prohibited |
+| Date of birth | NEVER | Age is a protected ground under s.2(א). Nothing bans a candidate from stating it, but volunteering it forfeits the s.9(ג) burden shift. See the section 21 applicability limits in `eeo-compliance-checklist.md`: none of this binds an employer of fewer than six employees |
+| Photo | NEVER in EN | Market convention and bias avoidance, not a statutory rule. HE: only if user explicitly requests AND role is non-tech |
+| Marital status | NEVER | Personal status is a protected ground under s.2(א). Same reasoning as date of birth |
+| Military profile | NEVER | The employer may not lawfully demand it, or use it in the matters listed in s.2(א)(1) to (6) (s.2א), subject to the section 21 limits in `eeo-compliance-checklist.md`. Unit, role, rank and dates are fine |
 | ID number | NEVER | Privacy risk |
 
 ## Professional Summary
@@ -50,7 +51,7 @@ Reverse chronological. Most recent on top.
 Built, launched, shipped, migrated, owned, scaled, automated, reduced, improved, led, mentored, architected, designed, debugged, rolled out, open-sourced, integrated, optimized, hardened, ported, refactored
 
 **Action verb bank (Hebrew):**
-בניתי, שחררתי, הובלתי, פיתחתי, העברתי, הקמתי, אוטמתתי, הקטנתי, שיפרתי, ניהלתי, חנכתי, תכננתי, אינטגרציה, ייעלתי, חיזקתי, שיכתבתי
+בניתי, שחררתי, הובלתי, פיתחתי, העברתי, הקמתי, אוטומטתי, הקטנתי, שיפרתי, ניהלתי, חנכתי, תכננתי, שילבתי, ייעלתי, חיזקתי, שיכתבתי
 
 **Rules:**
 - 3-5 bullets per role maximum
@@ -59,7 +60,7 @@ Built, launched, shipped, migrated, owned, scaled, automated, reduced, improved,
 - Quantify at least 2 bullets per role (team size, % improvement, money saved, users affected)
 - Avoid generic bullets ("worked on backend systems") that could apply to any engineer
 
-## Military Service (Israeli citizens)
+## Military / National Service (if the candidate served)
 
 Single block, 4-6 lines total.
 
@@ -71,22 +72,36 @@ Single block, 4-6 lines total.
 - {Leadership or scale data if declassified}
 ```
 
-**Unit name examples:**
-- `8200 Intelligence Unit` / `מודיעין - יחידה 8200`
-- `Sayeret Matkal` / `סיירת מטכ"ל`
+**What may be written is not the candidate's judgment call.** It is governed by the
+confidentiality undertaking (התחייבות לשמירת סודיות) signed at discharge and by the unit's
+security officer (קצין ביטחון). For alumni of intelligence, special-operations and technology
+units the unit name or even the role title can itself be the protected item. The safe default is
+the corps name alone.
+
+**Corps-level names, safe for anyone:**
+- `Intelligence Corps` / `חיל המודיעין`
+- `Armored Corps` / `שריון`
+- `Air Force, technical` / `חיל האוויר - חימוש וטכני`
 - `Golani Brigade` / `חטיבת גולני`
-- `Air Force Ground Crew` / `חיל האוויר - חימוש וטכני`
-- `Armored Corps, 7th Brigade` / `שריון - חטיבה 7`
-- `Intelligence Corps` / `חיל המודיעין` (use when specific unit is classified)
 - `Combat Medic` / `חובש קרבי`
 
+A specific unit, formation or role title may be named only where it already appears in official
+public IDF material and the candidate's own undertaking permits it. When in any doubt, write the
+corps name and tell the candidate to check with their קצין ביטחון.
+
 **NEVER:**
-- Invent unit numbers you did not serve in
-- Include specific classified operations or code names
+- Invent unit numbers, formations or roles the candidate did not serve in
+- Name a unit, system, operation, location or code name on the candidate's say-so alone
 - List casualty counts or sensitive statistics
 
-**If oleh chadash / did not serve:**
-Omit the section entirely. Do not write "Did not serve" or "Exempt". Replace with a "Volunteer / Community Service" section if the candidate has equivalent experience.
+**If the candidate did not serve:**
+Many Israeli citizens do not do military service, including Arab citizens, Haredi candidates,
+and anyone with a medical or other exemption. Some did שירות לאומי or שירות אזרחי instead, which
+is a real credential and belongs in this section under its own name. Otherwise omit the section
+entirely. Never write "Did not serve" or "Exempt", and never explain the gap: the reason is
+almost always a ground protected under s.2(א), and stating it invites exactly the inference the
+section protects against. Replace with a "Volunteer / Community Service" section where the
+candidate has equivalent experience.
 
 ## Education
 
@@ -145,9 +160,9 @@ Only list additional languages (beyond Hebrew and English) if at Professional or
 | 1 | Header | Header | Header |
 | 2 | Summary | Summary | Summary |
 | 3 | Education | Experience | Experience |
-| 4 | Experience (if any) | Education | Military (brief) |
-| 5 | Projects / Open Source | Military | Education |
-| 6 | Military | Skills | Skills |
+| 4 | Experience (if any) | Education | Military / national (brief) |
+| 5 | Projects / Open Source | Military / national | Education |
+| 6 | Military / national | Skills | Skills |
 | 7 | Skills | Languages | Languages |
 | 8 | Languages | | |
 

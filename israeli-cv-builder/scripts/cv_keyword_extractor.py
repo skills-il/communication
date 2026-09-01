@@ -80,9 +80,12 @@ def tokenize(text: str) -> list[str]:
 
 def score_tokens(tokens: list[str]) -> Counter:
     """Score tokens by frequency, with a boost for known tech terms."""
+    # Short tech names present in TECH_BOOST (go, ml, c#) are real keywords and are often the single
+    # most important term in the posting, so the length floor must not drop them.
     filtered = [
         t for t in tokens
-        if t not in EN_STOPWORDS and t not in HE_STOPWORDS and len(t) > 2
+        if t not in EN_STOPWORDS and t not in HE_STOPWORDS
+        and (len(t) > 2 or t.lower() in TECH_BOOST)
     ]
     counts = Counter(filtered)
     scored = Counter()

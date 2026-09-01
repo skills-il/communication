@@ -4,9 +4,45 @@
       "version": "1.0.2",
       "date": "2026-07-06",
       "lessons": [
-        "MAJOR fixed: Step 2's §2 protected-grounds list was incomplete (9 items). Completed it to match the law and the skill's own eeo-compliance-checklist.md: added place of residence (מקום מגורים, Amendment 22, 2014), country of origin (ארץ מוצא), nationality, pregnancy, and fertility (IVF) treatments. Place-of-residence and country-of-origin are the exact grounds that justify the skill's own 'no street address / no origin marker' advice.",
-        "Verified current (no change): the Employment (Equal Opportunities) Law 5748-1988 name/year is correct and still governing; all 6 reference links are live; all 4 job boards (AllJobs, Drushim, JobMaster, LinkedIn) still active; no-photo / 1-page / military-section conventions still standard.",
-        "[CARRY] MINOR: 'no date of birth' is a modern/tech-sector norm, not universal (older aliyah-oriented CVs still include DOB/place of birth/date of aliyah). The skill's omit-DOB advice is correct and protective; left as-is. Could add a one-line 'tech norm' caveat next cycle if desired."
+        "MAJOR fixed: Step 2's s.2 protected-grounds list was incomplete (9 items). Completed it to match the law and the skill's own eeo-compliance-checklist.md.",
+        "Verified current (no change): the Employment (Equal Opportunities) Law 5748-1988 name/year is correct and still governing; all 6 reference links were live; all 4 job boards still active.",
+        "[CARRY] MINOR: 'no date of birth' is a modern/tech-sector norm, not universal. Left as-is."
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-09-01",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "כתוב לי מכתב מקדים למשרה",
+          "bilingual Hebrew English CV for a startup",
+          "review my employment contract before I sign",
+          "how do I list my army service on a resume"
+        ]
+      },
+      "lessons": [
+        "CRITICAL fixed: the skill said 'asking age on a job application is illegal under the EEO Law 1988'. Wrong legal operation. The Law bans DISCRIMINATION; the real mechanism is s.9(ג) (burden shifts once the employer's demand is proved) and s.15(ד) (rebuttable criminal presumption). Rewritten in both languages and in eeo-compliance-checklist.md.",
+        "CRITICAL fixed: s.2א (employer may not demand a candidate's military profile) was entirely absent, despite the skill writing a military section. Added with the Shin Bet/Mossad carve-out and the 2(א)(1)-(6) use-limb.",
+        "CRITICAL fixed: pandoc produced left-to-right Hebrew .docx. Verified empirically on pandoc 3.11: default emits 0 w:bidi, `-V dir=rtl` is byte-identical to default (a silent no-op), `-M dir=rtl` works. Corrected the Step 6 command and added two troubleshooting rows. Tables remain LTR (pandoc #7695, open) so Hebrew CV layout must not use markdown tables.",
+        "CRITICAL fixed: no legal notice existed and verify_legal.py was ALREADY failing at HEAD (pre-existing breach, not introduced this cycle). Added '## Legal notice' / '## הבהרה משפטית' after the H1 in both files and prefixed both descriptions.",
+        "CRITICAL fixed: the military section was framed 'Israeli citizens only' / 'חובה' with the oleh as the only non-server, which encodes an inference about לאום/דת/השקפה. Reframed for Arab citizens, Haredi candidates, exemptions and olim, and שירות לאומי/אזרחי added as a listable credential.",
+        "CRITICAL fixed: references/israeli-cv-structure.md offered 'Sayeret Matkal' as a paste-ready CV string. Replaced with corps-level defaults and a rule that confidentiality is governed by the discharge undertaking and the unit קצין ביטחון.",
+        "Added s.21(ג) (whole Law except s.7 disapplied below six employees, counting manpower-contractor workers) and s.21(ד). Three review rounds were needed to propagate this into every file; the reference files are where applicability limits get forgotten.",
+        "Repair introduced its own defects twice: iteration 2's fix listed a PHOTO among the statutory protected grounds (contradicting the skill's own Gotcha 1), and inverted s.9(ג) by saying volunteering data 'starts the evidential chain' when 9(ג) triggers on the EMPLOYER's demand. Both caught only by re-dispatching the reviewers on the repair.",
+        "Reviewer findings needed verification, not transcription: iteration 1's expert put the disability accommodation duty in s.9 of the 1998 Equal Rights Law. It is s.8(ה); s.9 is ייצוג הולם. Same error shape as a prior batch.",
+        "Corrected statute NAME: the 2019 law is חוק המידע הפלילי ותקנת השבים, not חוק המרשם הפלילי (that is the 1981 law it replaced).",
+        "BROKEN-LINK: jobmob.co.il returns HTTP 522 (origin down). Removed. The ICJ English PDF is current only to ~2004 and omits five protected grounds, so it was relabelled and must never be cited as the list. The duplicated Nevo row was de-duplicated.",
+        "Script rot: scripts/cv_keyword_extractor.py dropped all two-letter tokens, so 'Go' (the example posting's primary language, and its top keyword) could never be extracted. Fixed by exempting TECH_BOOST members from the length floor.",
+        "Could NOT verify from a primary source, so removed rather than asserted: the parenthetical '(מקום מגורים, added by Amendment 22, 2014)'. The consolidated Nevo page carries no amendment footnote table. The ground itself is verified; only the amendment number was unsupported.",
+        "[CARRY] MINOR from 1.0.2: the 'no date of birth' tech-sector-norm caveat is still not written. Unresolved, second cycle.",
+        "Deferred (Expert MAJOR, over the batch-mode discretionary cap): age 45+ guidance (15-year experience truncation); work-authorisation taxonomy for non-citizens (oleh vs A/5 vs היתר העסקה); foreign-degree evaluation (הערכת תואר) on the Education line; reserve-service protections backing the omit rule; a rule against volunteering protected information in the cover letter's gap explanation.",
+        "Deferred (Expert MINOR): Privacy Protection Law grounding for the Teudat Zehut row; recruitment-agency fee rules; the unsourced 'graduation year acceptable under ~35' convention.",
+        "Weak evidence snippets to upgrade opportunistically: israeli-phone-format cites Wikipedia navigation chrome rather than the format rule; eeo-law-icj-pdf matches only case-insensitively."
       ]
     }
   ]

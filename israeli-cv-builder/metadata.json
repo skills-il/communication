@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "category": "communication",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli CV Builder"
   },
   "display_description": {
-    "he": "בונה קורות חיים ישראליים מוכנים למשלוח בעברית ו/או אנגלית לפי הפורמט הישראלי (עמוד אחד, הפוך כרונולוגי, סעיף שירות צבאי, שפה דוגרי, שורות עם מספרים), עם אופציה למכתב מקדים קצר. משתמשים בזה כשצריך לכתוב קו\"ח למשרה ב-AllJobs, דרושים, JobMaster או לינקדאין ישראל, או להכין קו\"ח דו-לשוני להיי-טק. הסקיל משמיט אוטומטית פרטים שאסור לדרוש לפי חוק שוויון הזדמנויות בעבודה 1988 (גיל, תמונה, מצב משפחתי, דת). לא מתאים למחקר שוק עבודה, הכנה לראיונות, משא ומתן על שכר, או ייעוץ על חוזי העסקה.",
-    "en": "Generate a polished Israeli-style CV (korot chayim) in Hebrew and/or English following Israeli conventions: 1 page reverse chronological, mandatory military service section, dugri (direct) language, metrics-driven bullets, plus an optional Israeli cover letter (michtav mukdam). Use when a user needs to write a CV for AllJobs, Drushim, JobMaster, or LinkedIn Israel; prepare a bilingual Hebrew + English tech CV; or draft a cover letter in Israeli style. Automatically omits personal data prohibited by the Equal Employment Opportunities Law 1988 (age, photo, marital status, religion) to protect the candidate from discrimination claims. Do NOT use for job market research, interview preparation, salary negotiation, or employment contract review."
+    "he": "אינו ייעוץ משפטי. בונה קורות חיים ישראליים מוכנים למשלוח בעברית ו/או אנגלית לפי הפורמט הישראלי (עמוד אחד כברירת מחדל, הפוך כרונולוגי, סעיף שירות צבאי או לאומי, שפה דוגרי, שורות עם מספרים), עם אופציה למכתב מקדים קצר. משתמשים בזה כשצריך לכתוב קו\"ח למשרה ב-AllJobs, דרושים, JobMaster, JobNet או לינקדאין ישראל, או להכין קו\"ח דו-לשוני להיי-טק. הסקיל משמיט אוטומטית גיל, מצב משפחתי ודת, שהן עילות שחוק שוויון הזדמנויות בעבודה 1988 אוסר להפלות על בסיסן, ומשמיט תמונה כמוסכמה מקובלת בשוק. לא מתאים למחקר שוק עבודה, הכנה לראיונות, משא ומתן על שכר, או ייעוץ על חוזי העסקה.",
+    "en": "Not legal advice. Generate a polished Israeli-style CV (korot chayim) in Hebrew and/or English following Israeli conventions: one page by default, reverse chronological, a military or national service section, dugri (direct) language, metrics-driven bullets, plus an optional Israeli cover letter (michtav mukdam). Use when a user needs to write a CV for AllJobs, Drushim, JobMaster, JobNet, or LinkedIn Israel; prepare a bilingual Hebrew + English tech CV; or draft a cover letter in Israeli style. Automatically omits age, marital status and religion, grounds on which the Equal Employment Opportunities Law 1988 prohibits discrimination, and omits the photo as market convention. Do NOT use for job market research, interview preparation, salary negotiation, or employment contract review."
   },
   "supported_agents": [
     "claude-code",

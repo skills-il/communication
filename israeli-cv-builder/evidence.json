@@ -1,11 +1,11 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-cv-builder",
-  "generated_at": "2026-05-20T00:00:00Z",
+  "generated_at": "2026-09-01T00:00:00Z",
   "claims": [
     {
       "claim_id": "eeo-law-5748-1988",
-      "claim": "Employment (Equal Opportunities) Law 5748-1988, Section 2(a), prohibits an Israeli employer from discriminating between employees or between job applicants on grounds of sex, sexual orientation, personal status, pregnancy, fertility treatments, IVF treatments, parenthood, age, race, religion, nationality, country of origin, place of residence, worldview, political party, or reserve service, in hiring, terms of employment, promotion, professional training, and dismissal or severance pay.",
+      "claim": "Employment (Equal Opportunities) Law 5748-1988, Section 2(a), prohibits an Israeli employer from discriminating between employees or between job applicants on grounds of sex, sexual orientation, personal status, pregnancy, fertility treatments, IVF treatments, parenthood, age, race, religion, nationality, country of origin, place of residence, worldview (השקפה), political party, or reserve service, in hiring, terms of employment, promotion, professional training, and dismissal or severance pay.",
       "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
       "raw_snippet": "לא יפלה מעסיק בין עובדיו או בין דורשי עבודה מחמת מינם, נטייתם המינית, מעמדם האישי, הריון, טיפולי פוריות, טיפולי הפריה חוץ-גופית, היותם הורים, גילם, גזעם, דתם, לאומיותם, ארץ מוצאם, מקום מגוריהם, השקפתם, מפלגתם או שירות במילואים שלהם",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -29,17 +29,17 @@
     },
     {
       "claim_id": "eeo-bfoq-exception",
-      "claim": "Section 2(c) of Law 5748-1988 permits differential treatment necessitated by the character or nature of the assignment or post (a BFOQ-style carve-out).",
-      "source_url": "https://www.icj.org/wp-content/uploads/2013/05/Israel-Employment-Equal-Opportunities-Law-5748-1988-eng.pdf",
-      "raw_snippet": "Differential treatment necessitated by the character or nature of the assignment or post shall not be regarded as discrimination",
-      "fetched_at": "2026-05-20T00:00:00Z",
+      "claim": "Section 2(c) of Law 5748-1988 permits differential treatment necessitated by the character or nature of the assignment or post (a BFOQ-style carve-out). (סעיף 2(ג) לחוק)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "(ג) אין רואים הפליה לפי סעיף זה כאשר היא מתחייבת מאפיים או ממהותם של התפקיד או המשרה.",
+      "fetched_at": "2026-09-01T00:00:00Z",
       "appears_in": [
         "references/eeo-compliance-checklist.md"
       ]
     },
     {
       "claim_id": "eeo-law-icj-pdf",
-      "claim": "Official English text of Employment (Equal Opportunities) Law 5748-1988 hosted on icj.org.",
+      "claim": "An unofficial English rendering of the Employment (Equal Opportunities) Law 5748-1988 is hosted on icj.org. It is not the authoritative text.",
       "source_url": "https://www.icj.org/wp-content/uploads/2013/05/Israel-Employment-Equal-Opportunities-Law-5748-1988-eng.pdf",
       "raw_snippet": "Employment (Equal Opportunities) Law 5748-1988",
       "fetched_at": "2026-05-20T00:00:00Z",
@@ -73,19 +73,6 @@
       ]
     },
     {
-      "claim_id": "jobmob-cv-translation",
-      "claim": "JobMob blog hosts a guide on translating foreign resumes to the Israeli CV format.",
-      "source_url": "https://jobmob.co.il/blog/israeli-cv-translation-tips/",
-      "raw_snippet": "Menu Close Blog Contact Subscribe Toggle website search Search this website A Complete Guide: How To Make An Israeli CV Out Of Your Resume Post author: Jacob Share Post published: November 2, 2009 Post comments: 24 Comments 13 Shares Tweet 11 Pin 2 Share Share Immigrating to Israel or making aliya? Here's what you'll need to prepare your resume for the Israeli job market. This is a guest post by Leah Aharoni.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "cited page fetched; 39 of 42 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"guide\"",
-      "verified_at": "2026-08-18"
-    },
-    {
       "claim_id": "anglo-list-resume",
       "claim": "Anglo-List publishes Israeli resume guidance on tone, length, and section order for English-speaking olim.",
       "source_url": "https://anglo-list.com/your-israel-resume/",
@@ -114,12 +101,226 @@
       "claim_id": "unit-8200",
       "claim": "Unit 8200 is an Israeli Intelligence Corps unit of the Israel Defense Forces responsible for signals intelligence.",
       "source_url": "https://en.wikipedia.org/wiki/Unit_8200",
-      "raw_snippet": "Unit 8200 is an Israeli Intelligence Corps unit of the Israel Defense Forces responsible for clandestine operation, collecting signal intelligence (SIGINT) and code decryption",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "is an Israeli Intelligence Corps unit of the Israel Defense Forces responsible for clandestine operation, collecting signal intelligence (SIGINT) and code decryption",
+      "fetched_at": "2026-09-01T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-cv-structure.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "claim_id": "eeo-s2a-heads-of-discrimination",
+      "claim": "Section 2(a) of the Employment (Equal Opportunities) Law 5748-1988 applies its non-discrimination duty to six heads: acceptance for employment, terms of employment, promotion, vocational training or supplementary training, dismissal or severance pay, and retirement-related benefits and payments.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "(1) קבלה לעבודה; (2) תנאי עבודה; (3) קידום בעבודה; (4) הכשרה או השתלמות מקצועית; (5) פיטורים או פיצויי פיטורים. (6) הטבות ותשלומים הניתנים לעובד בקשר לפרישה מעבודה.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s2a-reserve-limb",
+      "claim": "The reserve-service ground in section 2(a) covers the reserve service of the person, their spouse, or their child's other parent, including a call-up or expected service, and including its frequency or duration.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "או שירות במילואים שלהם, של בני זוגם או של הורהו האחר של ילדם, ובכלל זה קריאתם לשירות מילואים או השירות הצפוי בשירות מילואים, לרבות מחמת תדירותו או משכו",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s2a-military-profile-prohibition",
+      "claim": "Section 2A of the Employment (Equal Opportunities) Law 5748-1988 prohibits an employer from demanding a job applicant's or employee's military profile, or from using it if it reaches them, in any of the matters listed in section 2(a)(1) to (6). (סעיף 2א לחוק שוויון ההזדמנויות בעבודה)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "2א. (א) מעסיק לא ידרוש מדורש עבודה או מעובד את הפרופיל הצבאי שלו, ולא יעשה שימוש בפרופיל הצבאי שלו, אם הגיע לידיו, בכל ענין המנוי בסעיף 2(א)(1) עד (6).",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s2a-profile-refusal-and-definition",
+      "claim": "Section 2A(b) bars an employer who demanded the military profile from penalising the candidate for refusing to supply it; section 2A(c) carves out the Shin Bet and the Mossad as employers; section 2A(d) defines the military profile as the IDF numeric code for medical fitness. (סעיף 2א)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "(ג) הוראות סעיף זה לא יחולו על שירות הבטחון הכללי והמוסד למודיעין ולתפקידים מיוחדים, כמעסיק",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s9c-burden-shift",
+      "claim": "Section 9(c) of the Law shifts the burden of proof to the defendant, to show it did not act contrary to section 2, once it is proved that it demanded from an employee or job applicant, directly or indirectly, information on a matter on which discrimination is prohibited under section 2(a). (סעיף 9(ג) לחוק)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "תהא חובת ההוכחה על הנתבע כי פעל שלא בניגוד להוראות הסעיף האמור, אם הוכח כי דרש, במישרין או בעקיפין, מעובד או מדורש עבודה, מידע בנושא שהפליה בשלו אסורה מחמת הטעמים המפורטים בסעיף 2(א)",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s15d-criminal-presumption",
+      "claim": "Section 15(d) of the Law creates a rebuttable presumption, in a criminal proceeding for an offence under section 2, that the accused breached the section if it demanded such information directly or indirectly. (סעיף 15(ד) לחוק)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "(ד) בהליך פלילי בשל עבירה על הוראות סעיף 2, חזקה כי הנאשם עבר על הוראות הסעיף האמור, אם דרש, במישרין או בעקיפין, מעובד או מדורש עבודה, מידע בנושא שהפליה בשלו אסורה מחמת הטעמים המפורטים בסעיף 2(א), אלא אם כן הוכיח הנאשם אחרת.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s10-remedies-and-s7-cap",
+      "claim": "Section 10(a) gives the Labour Court exclusive civil jurisdiction and the power to award damages even where no pecuniary loss was caused; the NIS 120,000 statutory ceiling without proof of damage applies only to claims under section 7, which concerns harm arising from sexual harassment and from a complaint about it. The general protection of a complainant is section 6. (סעיף 10 לחוק)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "לפסוק פיצויים אף אם לא נגרם נזק של ממון בשיעור שייראה לו בנסיבות הענין; ואולם בהליך אזרחי בשל פגיעה כאמור בסעיף 7, רשאי בית הדין לעבודה לפסוק פיצוי שלא יעלה על 120,000 שקלים חדשים, ללא הוכחת נזק",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-commission-established",
+      "claim": "Section 18A of the Law requires the Minister to establish an Equal Employment Opportunities Commission, headed by a National Commissioner under section 18B.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "18א. השר יקים במשרדו נציבות שוויון הזדמנויות בעבודה",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-commission-ministry-and-contact",
+      "claim": "The Equal Employment Opportunities Commission operates under the Ministry of Economy and Industry and handles civil enforcement of the equality-at-work laws; its contact address is shivion@economy.gov.il and its national phone line is 074-7696565.",
+      "source_url": "https://www.gov.il/he/departments/units/equal-opportunities-at-work-unit",
+      "raw_snippet": "דואר אלקטרוני: shivion@economy.gov.il טלפון נציבות ארצית: 074-7696565",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "verified_via": "browser",
+      "verified_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-icj-pdf-outdated",
+      "claim": "The ICJ English rendering of the Law is current only to roughly 2004: its section 2(a) omits pregnancy, fertility treatments, IVF treatments, parenthood and place of residence, all of which are in the current Hebrew text.",
+      "source_url": "https://www.icj.org/wp-content/uploads/2013/05/Israel-Employment-Equal-Opportunities-Law-5748-1988-eng.pdf",
+      "raw_snippet": "An employer shall not discriminate among his employees or among persons seeking employment on account of their sex, sexual tendencies, personal status or because of their age, race, religion, nationality, country of origin, views, party or duration of reserve service",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "criminal-information-employer-route",
+      "claim": "Under the Criminal Information and Rehabilitation of Offenders Law an employer obtains criminal information only through a narrow statutory route via the police and with the candidate's prior written consent, not directly from the candidate.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%9E%D7%99%D7%93%D7%A2_%D7%94%D7%A4%D7%9C%D7%99%D7%9C%D7%99_%D7%95%D7%AA%D7%A7%D7%A0%D7%AA_%D7%94%D7%A9%D7%91%D7%99%D7%9D",
+      "raw_snippet": "מעסיק רשאי לבקש מהמשטרה, לשם העסקתו של בגיר, הודעה שבה יצוין אם יש או אין לאותו בגיר פרט רישום פלילי",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/eeo-compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "pandoc-docx-rtl-metadata",
+      "claim": "Pandoc's docx writer determines right-to-left output from the document METADATA key `dir`, not from a template variable. Verified empirically on pandoc 3.11 by generating a Hebrew docx and inspecting word/document.xml: `-M dir=rtl` emits w:bidi and w:rtl, `-V dir=rtl` produces byte-identical output to the default (no effect), and `-M lang=he` alone emits no w:bidi.",
+      "source_url": "https://pandoc.org/MANUAL.html",
+      "raw_snippet": "the base script direction, either rtl (right-to-left) or ltr (left-to-right)",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pandoc-docx-rtl-tables-bug",
+      "claim": "Pandoc's docx writer does not emit w:bidiVisual for tables, so Hebrew table columns are mirrored in Word even with dir=rtl set. Tracked as pandoc issue 7695, still open.",
+      "source_url": "https://github.com/jgm/pandoc/issues/7695",
+      "raw_snippet": "Tables are not set as RTL",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "employment-service-cv-course",
+      "claim": "The Israeli Employment Service (שירות התעסוקה) publishes a free Hebrew course on CV writing on the government campus platform.",
+      "source_url": "https://campus.gov.il/course/taasuka-gov-career-cvbuilding101-he/",
+      "raw_snippet": "קורות חיים",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "disability-s8a-employment-discrimination",
+      "claim": "Section 8(a) of the Equal Rights for Persons with Disabilities Law, 5758-1998 prohibits an employer from discriminating between employees or job applicants on grounds of their disability, provided they are qualified for the post, in acceptance for employment including admission tests, terms of employment, promotion, vocational training, dismissal or severance pay, and retirement-related benefits. (סעיף 8(א) לחוק שוויון זכויות לאנשים עם מוגבלות)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA_%D7%9C%D7%90%D7%A0%D7%A9%D7%99%D7%9D_%D7%A2%D7%9D_%D7%9E%D7%95%D7%92%D7%91%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "לא יפלה מעסיק בין עובדיו או בין דורשי עבודה, מחמת מוגבלותם, ובלבד שהם כשירים לתפקיד או למשרה הנדונים, בכל אחד מאלה: (1) קבלה לעבודה לרבות מבדקי קבלה;",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "disability-s8e-accommodation-duty",
+      "claim": "Section 8(e) of the Equal Rights for Persons with Disabilities Law, 5758-1998 defines discrimination to include failing to make the accommodations required by the special needs of a person with a disability that would enable their employment, and defines accommodations to include the workplace, its equipment, job requirements, working hours, recruitment admission tests, training and work procedures, subject to the limit that it must not impose a disproportionate burden on the employer. There is no employee-count threshold. (סעיף 8(ה) לחוק)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA_%D7%9C%D7%90%D7%A0%D7%A9%D7%99%D7%9D_%D7%A2%D7%9D_%D7%9E%D7%95%D7%92%D7%91%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "”הפליה“ – לרבות אי־ביצוע התאמות הנדרשות מחמת צרכיו המיוחדים של אדם עם מוגבלות אשר יאפשרו את העסקתו; ”התאמה“, ”התאמות“ – לרבות התאמת מקום העבודה, הציוד שבו, דרישות התפקיד, שעות העבודה, מבדקי קבלה לעבודה, הכשרה והדרכה, נוהלי עבודה, והכל מבלי שהדבר יטיל על המעסיק נטל כבד מדי",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s21c-six-employee-carveout",
+      "claim": "Section 21(c) of the Employment (Equal Opportunities) Law 5748-1988 disapplies the whole Law, except section 7, to a person employing fewer than six employees, and provides that the headcount includes a manpower-contractor worker employed with that person. (סעיף 21(ג) לחוק)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "(ג) הוראות חוק זה, למעט סעיף 7 לא יחולו על אדם המעסיק פחות משישה עובדים; לענין מנין העובדים לפי סעיף קטן זה, יימנה גם עובד של קבלן כוח אדם המועסק אצל אותו אדם.",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-s21d-evidential-carveout",
+      "claim": "Section 21(d) of the Employment (Equal Opportunities) Law 5748-1988 disapplies sections 9(c) and 15(d) where the information was demanded in order to comply with Commission directives under sections 18Y and 18YA, with a statutory proper-representation or affirmative-action duty, or with an equality-promotion programme the employer operates or a government ministry approved or funds. (סעיף 21(ד) לחוק)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/p214m1_001.htm",
+      "raw_snippet": "(ד) הוראות סעיפים 9(ג) ו-15(ד) לא יחולו על נתבע או נאשם, לפי העניין, אם המידע נדרש כאמור באותם סעיפים לשם אחד מאלה:",
+      "fetched_at": "2026-09-01T00:00:00Z",
+      "appears_in": [
+        "references/eeo-compliance-checklist.md",
+        "references/domain-checklist.md"
       ]
     }
   ]
