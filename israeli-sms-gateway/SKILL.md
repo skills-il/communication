@@ -112,7 +112,7 @@ import requests
 
 def send_sms_inforu(to: str, message: str, sender: str) -> dict:
     """Send SMS via the InforU v2 JSON endpoint."""
-    creds = f'{os.environ["INFORU_USER"]}:{os.environ["INFORU_API_TOKEN"]}'
+    creds = f'{os.environ.get("INFORU_USER", "")}:{os.environ.get("INFORU_API_TOKEN", "")}'
     token = base64.b64encode(creds.encode("utf-8")).decode("ascii")
 
     response = requests.post(
