@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-whatsapp-business",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-09-13T20:20:00Z",
   "claims": [
     {
       "claim_id": "per-user-marketing-cap-applies-to-israel",
@@ -96,16 +96,16 @@
     },
     {
       "claim_id": "non-template-free-since-nov-2024",
-      "claim": "Since 1 November 2024 Meta does not charge for non-template messages, which can only be sent inside an open customer service window. This retires the old 1,000 free service conversations per WABA per month allowance.",
+      "claim": "Non-template (service) messages sent inside an open customer service window have not been charged since 1 November 2024; this ends on 1 October 2026",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
       "raw_snippet": "As of November 1, 2024 - Meta does not charge for non-template messages",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-09-13T20:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "per-message-pricing-july-2025",
@@ -122,16 +122,16 @@
     },
     {
       "claim_id": "utility-free-in-csw",
-      "claim": "Utility templates sent in response to users inside an open customer service window are free as of 1 July 2025",
+      "claim": "Utility templates sent in response to users inside an open customer service window have not been charged since 1 July 2025; this ends on 1 October 2026",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
       "raw_snippet": "As of July 1, 2025 - Meta does not charge for utility templates in response to users",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-09-13T20:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "free-entry-point-72h",
@@ -305,17 +305,18 @@
     },
     {
       "claim_id": "graph-api-endpoints",
-      "claim": "Graph API endpoint shapes used in the code samples and in scripts/send_whatsapp.py, on host graph.facebook.com at version v26.0: https://graph.facebook.com/v26.0/{phone_number_id} , https://graph.facebook.com/v26.0/{phone_number_id}/messages , https://graph.facebook.com/v26.0/{waba_id}/message_templates , https://graph.facebook.com/{API_VERSION}",
-      "source_url": "https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages",
-      "raw_snippet": "Object with ID 'phone_number_id' does not exist, cannot be loaded due to missing permissions, or does not support this operation.",
-      "fetched_at": "2026-08-18",
+      "claim": "Cloud API sends via POST /{version}/{phone-number-id}/messages and creates templates via /{waba-id}/message_templates",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messages'",
+      "fetched_at": "2026-09-13T20:20:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/send_whatsapp.py"
       ],
-      "verified_via": "reference-coverage entry; snippet quoted from one of the covered sources",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
     },
     {
       "claim_id": "on-prem-sunset",
@@ -333,15 +334,15 @@
     {
       "claim_id": "flows-doc",
       "claim": "WhatsApp Flows builds structured in-chat interactions",
-      "source_url": "https://developers.facebook.com/docs/whatsapp/flows",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/flows",
       "raw_snippet": "WhatsApp Flows is a way to build structured interactions for business messaging.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-09-13T20:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "platform-overview",
@@ -372,79 +373,93 @@
     {
       "claim_id": "spam-law-damages-1000",
       "claim": "Section 30A(i)(1): the court may award compensation of up to NIS 1,000 for each advertisement sent in breach, without proof of damage, and the award accumulates סעיף 30א(י)(1): פיצוי של עד 1,000 ש\"ח לכל דבר פרסומת, ללא הוכחת נזק.",
-      "source_url": "https://www.kolzchut.org.il/he/index.php?curid=14302",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "spam-law-four-channels",
       "claim": "Section 30A applies only to fax, SMS, email and automated dialling systems; WhatsApp is not named in the statute סעיף 30א לחוק התקשורת מונה ארבעה אמצעים בלבד.",
-      "source_url": "https://www.kolzchut.org.il/he/index.php?curid=14302",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "האיסור רלוונטי לשליחת פרסומות באמצעי התקשורת האלה בלבד",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "spam-law-existing-customer-route",
       "claim": "Section 30A(c) existing-customer route: details given during a purchase or negotiation, advertiser notified the details would be used for advertising, a chance to refuse was given and not taken, and the advertising concerns goods or services of a similar kind סעיף 30א(ג): מסלול הלקוח הקיים.",
-      "source_url": "https://www.kolzchut.org.il/he/index.php?curid=14302",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "המפרסם הודיע לו כי הפרטים שמסר ישמשו למשלוח פרסומות",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "spam-law-similar-goods-limb",
       "claim": "The existing-customer route requires the advertising to concern goods or services similar to those purchased or negotiated",
-      "source_url": "https://www.kolzchut.org.il/he/index.php?curid=14302",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "הפרסומות מתייחסות למוצרים או לשירותים דומים",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "spam-law-business-recipient-exemption",
       "claim": "A single one-off approach to a business recipient offering to send it marketing messages is exempt",
-      "source_url": "https://www.kolzchut.org.il/he/index.php?curid=14302",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "בית עסק שמפרסם הציע לו באופן חד פעמי לקבל מסרים שיווקיים",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "spam-law-criminal-fine",
       "claim": "Sending advertisements in breach of the law is also a criminal offence carrying a fine of up to NIS 226,000 (2026) קנס פלילי של עד 226,000 ש\"ח.",
-      "source_url": "https://www.kolzchut.org.il/he/index.php?curid=14302",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "הקנס עליה הוא עד 226,000 ₪",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "spam-law-definition-breadth",
       "claim": "The davar pirsomet definition covers commercial messages encouraging purchase or spending, donation or propaganda solicitations, and messages inviting the recipient to call a number, including the tzintuk callback pattern",
-      "source_url": "https://www.kolzchut.org.il/he/index.php?curid=14302",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "מסר שמופץ לציבור הרחב עם הצעה להתקשר למספר מסוים",
       "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
     },
     {
       "claim_id": "spam-law-mandatory-content",
@@ -571,6 +586,561 @@
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "service-messages-free-tier-oct-2026",
+      "claim": "From 1 October 2026 each business phone number gets 1,000 free service messages a month, and Meta charges from the 1,001st",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Every business phone number will receive 1,000 free service messages per month",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "service-messages-charged-from-1001",
+      "claim": "From 1 October 2026 Meta charges service messages from the 1,001st delivered each month",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Meta will only charge as of the 1,001st service message delivered each month",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "utility-in-csw-charged-oct-2026",
+      "claim": "Utility messages sent in response to users within the customer service window, uncharged since 1 July 2025, are charged from 1 October 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "These messages have not been charged since July 1, 2025",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-webhooks-april-2026",
+      "claim": "Business-scoped user IDs began appearing in webhooks in early April 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "BSUIDs began appearing in webhooks in early April 2026",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-send-july-2026",
+      "claim": "Sending messages to a BSUID is supported from July 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "sending messages to a BSUID is supported starting in July 2026",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-username-hides-phone",
+      "claim": "If a user enables the username feature, their phone number may not be included in webhooks",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "If a WhatsApp user enables the username feature, their phone number will not be included in webhooks",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-user-id-property",
+      "claim": "The BSUID is included in webhooks in a new user_id property",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "assigned to a new user_id property",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-required",
+      "claim": "Supporting BSUIDs is required for all partners and directly-integrated businesses",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "Supporting business-scoped user IDs (BSUID) is required for all partners",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-phone-precedence",
+      "claim": "When both a phone number and a BSUID are sent, the phone number takes precedence",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "phone number takes precedence",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-portfolio-scope",
+      "claim": "BSUIDs are scoped to individual business portfolios",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "BSUIDs are scoped to individual business portfolios",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-regenerated",
+      "claim": "A BSUID is regenerated if the user changes their phone number",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "regenerated if a user changes their phone number",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-failed-status-no-contacts",
+      "claim": "On a failed status webhook the contacts block is omitted entirely",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "the contacts block is omitted entirely",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "user-preferences-webhook",
+      "claim": "The user_preferences webhook fires when a user stops or resumes marketing messages",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/user_preferences",
+      "raw_snippet": "A WhatsApp user stops marketing messages",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "error-131050",
+      "claim": "Error 131050: the recipient has chosen to stop receiving marketing messages from the business",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "This recipient has chosen to stop receiving marketing messages on WhatsApp from your business",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "error-131048",
+      "claim": "Error 131048: sending restricted because too many previous messages were blocked or flagged as spam",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "too many previous messages were blocked or flagged as spam",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "error-131056",
+      "claim": "Error 131056: too many messages from the sender number to the same recipient in a short period",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "Too many messages sent from the sender phone number to the same recipient phone number in a short period of time",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "error-131042",
+      "claim": "Error 131042: an error related to the payment method",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "There was an error related to your payment method",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "template-pausing-durations",
+      "claim": "A low-quality template is paused for 3 hours, then 6 hours, then disabled",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pausing",
+      "raw_snippet": "1st Instance: Paused for 3 hours",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "template-pausing-second",
+      "claim": "Second pausing instance lasts 6 hours",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pausing",
+      "raw_snippet": "2nd Instance: Paused for 6 hours",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "utility-restriction-recategorized",
+      "claim": "Under a utility restriction all approved utility templates on the WABA are recategorized to MARKETING",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
+      "raw_snippet": "All approved utility templates on the WABA are recategorized to",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "utility-restriction-duration",
+      "claim": "A utility restriction lasts 7 days, or 30 days for repeat violations",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
+      "raw_snippet": "7 days (30 days for repeat violations)",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "webhook-retries-7-days",
+      "claim": "Meta retries failed webhook deliveries for up to 7 days",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview",
+      "raw_snippet": "for up to 7 days",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "webhook-retries-duplicates",
+      "claim": "Webhook retries can result in duplicate notifications",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview",
+      "raw_snippet": "These retries can result in duplicate webhook notifications",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "coexistence-history-sync",
+      "claim": "A number onboarded from the WhatsApp Business app keeps message history in sync between the app and the Platform",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users",
+      "raw_snippet": "WhatsApp keeps messaging history between both apps in sync",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "limit-increase-6-hours",
+      "claim": "When the criteria are met, a portfolio's messaging limit increases by one level within 6 hours",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits",
+      "raw_snippet": "your portfolio's limit increases by one level within 6 hours",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "payments-brazil-doc",
+      "claim": "Meta's Payments API documentation covers Brazil (and India)",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/overview",
+      "raw_snippet": "One-click offsite card payment",
+      "fetched_at": "2026-09-13T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "no-payment-method-stops-at-1001",
+      "claim": "The pricing page says an account without a payment method has its first 1,000 service messages a month delivered and not beyond",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "deliver your first 1,000 service messages each month but",
+      "fetched_at": "2026-09-13T20:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "status-pricing-type-changes",
+      "claim": "The pricing page webhook table shows the status pricing type for service messages changing from 1 October 2026 (free_customer_service to regular from the 1,001st)",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Starting with the 1,001st service message each month, per business phone number",
+      "fetched_at": "2026-09-13T20:10:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "status-webhook-shape",
+      "claim": "Status webhooks carry id, status, timestamp, recipient_id and recipient_user_id",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "\"recipient_user_id\": \"<BSUID>\"",
+      "fetched_at": "2026-09-13T20:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "auth-always-charged",
+      "claim": "Meta's category table shows authentication templates as charged, with no in-window exception",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "Does Meta charge? Yes Yes Yes",
+      "fetched_at": "2026-09-13T20:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "graph-api-message-templates-endpoint",
+      "claim": "Templates are created on the WABA message_templates edge",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates'",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "ai-providers-general-purpose-jan-2026",
+      "claim": "From 15 January 2026 AI Providers may offer general-purpose AI assistants only where Meta is legally required to permit it",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers",
+      "raw_snippet": "are only permitted to offer general-purpose AI assistants on the WhatsApp Business Platform where Meta is legally required to permit this use case",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "amuta-carveout-email-only",
+      "claim": "The donation and propaganda exemption for non-profits and public-benefit companies applies only to email, until the recipient opts out",
+      "source_url": "https://www.isoc.org.il/freedom-of-internet/spam/information-to-recipients-of-spam",
+      "raw_snippet": "ובלבד שאלו יישלחו בדוא\"ל בלבד, על-ידי עמותות או חברות לתועלת הציבור בלבד",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "service-free-tier-no-rollover",
+      "claim": "Unused free service messages do not roll over",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Service messages in the free tier do not roll over if not used in a specific month",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "bsuid-send-recipient-field",
+      "claim": "Sending to a BSUID uses the recipient field",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "\"recipient\": \"<BSUID>\"",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "bsuid-auth-template-exception",
+      "claim": "BSUIDs cannot be used for one-tap, zero-tap and copy code authentication templates",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "except for one-tap, zero-tap, and copy code",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "bsuid-contacts-user-id",
+      "claim": "The contacts block carries the BSUID in user_id",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "\"user_id\": \"<BSUID>\"",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "error-131049-wait-24h",
+      "claim": "On 131049, wait at least 24 hours before resending the template",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "wait at least 24 hours before resending the template message",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "limit-increase-half-used-7-days",
+      "claim": "Limit scaling requires having used at least half of the current limit in the last 7 days",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits",
+      "raw_snippet": "your business has utilized at least half of your current messaging limit",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "utility-restriction-creation-disabled",
+      "claim": "Under a utility restriction new utility template creation is disabled",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
+      "raw_snippet": "New utility template creation and",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+    },
+    {
+      "claim_id": "coexistence-share-chat-history",
+      "claim": "The business is given the option to share its chat history when onboarding an app number",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users",
+      "raw_snippet": "the option to share their chat history with you",
+      "fetched_at": "2026-09-13T20:20:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13"
+    },
+    {
+      "claim_id": "no-payment-method-stop-service-oct-2026",
+      "claim": "The non-template messages page says businesses without a payment method on file by 30 September 2026 stop having service messages delivered from 1 October 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "have a payment method on file by September 30, 2026, Meta will",
+      "fetched_at": "2026-09-13T20:40:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-13",
+      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "cycles": [
+    {
+      "version": "1.4.0",
+      "date": "2026-09-13",
+      "lessons": [
+        "Deferred MAJOR: scripts/send_whatsapp.py and the SKILL.md send_template_message example send by phone number and positional body parameters only. Add BSUID sending via the `recipient` field, named template parameters (parameter_format), header and button parameters (dynamic tracking URL for Example 2), and a map from error code to action.",
+        "Deferred MAJOR: Marketing Messages API (/marketing_messages), optimization_spec replacing bid_spec, and max price still in Limited Beta. Verify against the marketing-messages overview and the WhatsApp changelog before writing.",
+        "Deferred MINOR: error codes 130472 (experiment) and the blocked-user case; utility restriction escalation to the whole business portfolio.",
+        "Deferred MINOR: SKILL.md frontmatter description still says 'conversation pricing' (the model is per-message). Changing it needs the Phase 5.7 routing eval and overlap re-check, so it was left for a cycle that runs that gate.",
+        "Deferred MINOR: metadata.json display_description.he still highlights per-template pricing and omits the 1 October 2026 service-message charging.",
+        "Deferred MINOR: the script validates Israeli numbers only, so an Israeli store cannot send an order update to a customer abroad.",
+        "Deferred MINOR: Groups API for Official Business Accounts, Embedded Signup v2 deprecation (8 October 2026) and v4 migration, messaging_account_id, contact book and REQUEST_CONTACT_INFO, parent BSUIDs. None were browser-verified this cycle.",
+        "Deferred MINOR: is_valid_sending_time checks Friday and Saturday only, so a B2C promotion can go out on a chag. Add a holiday source.",
+        "Carry: after 1 October 2026, re-read the pricing page, confirm the service free tier, the no-payment-method delivery stop and the status webhook pricing type values shipped as announced, then remove the 'until 30 September 2026' wording.",
+        "Carry: the statutory list in section 30A(e) (whether the message must be labelled as advertising, and any heading rule) could not be sourced this cycle; the skill now hedges it. Source the statute text (Nevo or the Knesset) and restore a firm statement if confirmed. Amendment 13 effective date and officer categories were removed for the same reason.",
+        "Fixed this cycle: the non-profit donation/propaganda carve-out was stated without its email-only limit, implying it covered WhatsApp. ISOC's page limits it to email.",
+        "Tooling note: verify-evidence.py --check-sources gets HTTP 400 from developers.facebook.com with its desktop Chrome UA plus Accept-Language header, and Meta rate-limits (HTTP 429) after a burst of fetches from one machine, so Meta claims must be browser-verified in a spaced run. The shared Playwright MCP browser was hijacked by other agents three times this cycle; a private headless Playwright script from the frontend workspace was reliable.",
+        "Tooling note: kolzchut.org.il index.php?curid= links now 404 site-wide. Cite Kol-Zchut by article title URL.",
+        "Held out: 'phone-number migration is not supported on the new WhatsApp account model' (WhatsApp changelog, 18 August 2026). Read by curl early in the cycle, but Meta then rate-limited this machine and no second reachable source was found, so the claim was removed. Re-verify and restore next cycle (expert flagged it CRITICAL)."
+      ],
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          8,
+          9,
+          10
+        ]
+      }
+    }
+  ]
+}
