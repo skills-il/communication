@@ -11,7 +11,7 @@ API-Version: 2026-07
 Content-Type: application/json
 ```
 
-Pin `API-Version` explicitly. `2026-07` is the default as of August 2026; `2026-10` is the release candidate and `2026-04` is in maintenance.
+Pin `API-Version` explicitly. `2026-07` is the default until 1 October 2026, when `2026-10` becomes the default and `2026-07` moves to maintenance; `2027-01` becomes the release candidate on the same day. See the schedule table in SKILL.md.
 
 ---
 
@@ -130,6 +130,8 @@ Pin `API-Version` explicitly. `2026-07` is the default as of August 2026; `2026-
 ---
 
 ## Common Mutation Patterns
+
+The literal values below show the shape of each mutation. In code, pass every value (especially Hebrew names and labels) as a GraphQL variable, as the `MondayClient` helper at the end of this file does: an ASCII double quote inside a Hebrew acronym ends a literal string and breaks the query. When a mutation may be retried, send an `Idempotency-Key` header with the same value on each attempt; monday caches the first response for 30 minutes, and a concurrent duplicate gets `409 Conflict` with `Retry-After`.
 
 ### Create a Board
 ```graphql
@@ -307,20 +309,21 @@ Mirror columns cannot be updated or cleared through the API; they reflect the so
 - **Trial / NGO / free plan:** 1,000,000 complexity points per minute
 - **Single-query cap:** 5,000,000 complexity points (one operation cannot exceed this)
 - **Remaining budget:** add a `complexity { before after query }` field to your query to read how many points it cost and how many remain. Every response also carries `RateLimit-Policy` and `RateLimit` headers reporting the policy and the current remaining quota.
-- **On an error:** every rate limit error returns a `retry_in_seconds` field, and 429 responses also carry a `Retry-After` header.
+- **On an error:** every rate limit error returns a `retry_in_seconds` field. When the per-minute request limit is hit, the `Retry-After` header says when to retry.
 
 ### Plan-Level API Call Allowance
 
-Separate from complexity, the account's plan caps daily API calls: 1,000/day on Standard, 10,000/day on Pro, 25,000/day on Enterprise. On Standard this binds long before complexity does; a once-a-minute poll needs 1,440 calls/day and cannot work.
+Separate from complexity, the account's plan caps daily API calls: 1,000/day on Standard, 10,000/day on Pro, 25,000/day on Enterprise (resets at midnight UTC). On Standard this binds long before complexity does; a once-a-minute poll needs 1,440 calls/day and cannot work. Calls made through the hosted monday MCP server count toward the same daily limit.
 
-### 429 Error Codes
+### Plan-Dependent Limits
 
-| Code | Meaning |
-|------|---------|
-| `Rate Limit Exceeded` | More than 5,000 requests in one minute |
-| `maxConcurrencyExceeded` | Too many queries running at once |
-| `COMPLEXITY_BUDGET_EXHAUSTED` | The complexity limit was reached |
-| `IP_RATE_LIMIT_EXCEEDED` | The per-IP limit was reached |
+| Limit | Enterprise | Pro | Other plans |
+|-------|------------|-----|-------------|
+| Requests per minute ("Minute limit rate exceeded") | 5,000 | 2,500 | 1,000 |
+| Concurrent requests | 250 | 100 | 40 |
+| Daily API calls (`DAILY_LIMIT_EXCEEDED`) | 25,000 | 10,000 | 1,000 |
+
+`IP_RATE_LIMIT_EXCEEDED` is a separate cap of 5,000 requests per 10 seconds from one IP address.
 
 `ColumnValueException` is different: it is returned with HTTP **200**, so check the `errors` array rather than the HTTP status.
 
@@ -394,7 +397,8 @@ import requests
 import json
 
 class MondayClient:
-    """Simple Monday.com API client."""
+    """Simple Monday.com API client. All user text goes through GraphQL
+    variables: Hebrew text with an ASCII quote breaks a formatted query."""
 
     def __init__(self, api_token: str):
         self.url = "https://api.monday.com/v2"
@@ -405,63 +409,45 @@ class MondayClient:
         }
 
     def query(self, graphql_query: str, variables: dict = None) -> dict:
-        """Execute a GraphQL query."""
-        payload = {"query": graphql_query}
-        if variables:
-            payload["variables"] = variables
-        response = requests.post(self.url, headers=self.headers,
-                                 json=payload, timeout=30)
-        return response.json()
+        """Execute a GraphQL operation and return `data`. Raises on an
+        `errors` array, because monday returns many errors with HTTP 200."""
+        response = requests.post(self.url, headers=self.headers, timeout=30,
+                                 json={"query": graphql_query,
+                                       "variables": variables or {}})
+        result = response.json()
+        if result.get("errors"):
+            raise RuntimeError(f"monday API error: {result['errors']}")
+        return result["data"]
 
     def get_board_items(self, board_id: int, limit: int = 100) -> list:
-        """Get all items from a board with pagination."""
-        items = []
-        query = '''
-        { boards(ids: [%d]) {
-            items_page(limit: %d) {
-              cursor
-              items { id name group { title }
-                column_values { id text } } } } }
-        ''' % (board_id, limit)
-
-        result = self.query(query)
-        page = result["data"]["boards"][0]["items_page"]
-        items.extend(page["items"])
-
+        """Get all items from a board with cursor pagination."""
+        fields = "cursor items { id name group { title } column_values { id text } }"
+        page = self.query(
+            "query ($ids: [ID!], $limit: Int!) { boards(ids: $ids) { items_page(limit: $limit) { %s } } }" % fields,
+            {"ids": [board_id], "limit": limit})["boards"][0]["items_page"]
+        items = list(page["items"])
         while page.get("cursor"):
-            next_query = '''
-            { next_items_page(cursor: "%s", limit: %d) {
-                cursor
-                items { id name group { title }
-                  column_values { id text } } } }
-            ''' % (page["cursor"], limit)
-            result = self.query(next_query)
-            page = result["data"]["next_items_page"]
+            page = self.query(
+                "query ($c: String!, $limit: Int!) { next_items_page(cursor: $c, limit: $limit) { %s } }" % fields,
+                {"c": page["cursor"], "limit": limit})["next_items_page"]
             items.extend(page["items"])
-
         return items
 
     def create_item(self, board_id: int, group_id: str,
                     item_name: str, column_values: dict = None) -> dict:
         """Create a new item."""
-        values = json.dumps(json.dumps(column_values)) if column_values else '"{}"'
-        mutation = '''
-        mutation {
-          create_item(board_id: %d, group_id: "%s",
-                      item_name: "%s", column_values: %s) { id }
-        }
-        ''' % (board_id, group_id, item_name, values)
-        return self.query(mutation)
+        return self.query("""
+        mutation ($b: ID!, $g: String, $n: String!, $v: JSON) {
+          create_item(board_id: $b, group_id: $g, item_name: $n, column_values: $v) { id }
+        }""", {"b": board_id, "g": group_id, "n": item_name,
+               "v": json.dumps(column_values or {}, ensure_ascii=False)})
 
     def update_status(self, board_id: int, item_id: int,
                       column_id: str, label: str) -> dict:
-        """Update a status column."""
-        value = json.dumps(json.dumps({"label": label}))
-        mutation = '''
-        mutation {
-          change_column_value(board_id: %d, item_id: %d,
-                              column_id: "%s", value: %s) { id }
-        }
-        ''' % (board_id, item_id, column_id, value)
-        return self.query(mutation)
+        """Update a status column. The label must already exist on the board."""
+        return self.query("""
+        mutation ($b: ID!, $i: ID!, $c: String!, $v: JSON!) {
+          change_column_value(board_id: $b, item_id: $i, column_id: $c, value: $v) { id }
+        }""", {"b": board_id, "i": item_id, "c": column_id,
+               "v": json.dumps({"label": label}, ensure_ascii=False)})
 ```

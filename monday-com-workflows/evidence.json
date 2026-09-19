@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "monday-com-workflows",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-09-19T21:10:00Z",
   "claims": [
     {
       "claim_id": "monday-graphql-endpoint",
       "claim": "monday.com's GraphQL API endpoint is https://api.monday.com/v2 and uses an Authorization header carrying the API token.",
       "source_url": "https://developer.monday.com/api-reference/docs/authentication",
-      "raw_snippet": "https://api.monday.com/v2",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "you can make requests with the API by passing the token in the Authorization header",
+      "fetched_at": "2026-09-19T21:10:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -17,10 +17,10 @@
     },
     {
       "claim_id": "monday-api-default-version-2026-07",
-      "claim": "As of August 2026 the default monday.com API version is 2026-07, used whenever no API-Version header is passed.",
+      "claim": "2026-07 is the default API version (used when no header is passed) until 1 October 2026, when 2026-10 becomes current and 2026-07 moves to maintenance.",
       "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
       "raw_snippet": "Used as the default version when no header is passed",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-09-19T20:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -108,26 +108,25 @@
       "claim_id": "monday-retry-in-seconds",
       "claim": "Rate limit errors carry a retry_in_seconds field, and responses carry RateLimit-Policy and RateLimit headers.",
       "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
-      "raw_snippet": "The API SDK respects the rate-limited responses and waits the appropriate amount of time before automatically retrying the request, up to a configurable maximum number of retries. Unless otherwise noted, limits are measured per account, per app. Usage through a personal token counts toward the same limit. Updated 23 days ago Versioning Idempotency Did this page help you?",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Every rate limit error returns a retry_in_seconds field",
+      "fetched_at": "2026-09-19T21:10:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md"
-      ],
-      "verified_via": "cited page fetched; 40 of 42 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"responses\"",
-      "verified_at": "2026-08-18"
+      ]
     },
     {
       "claim_id": "monday-429-request-count",
-      "claim": "The Rate Limit Exceeded error is a distinct 429 condition triggered by more than 5,000 requests in one minute, separate from the complexity budget.",
-      "source_url": "https://developer.monday.com/api-reference/docs/errors",
-      "raw_snippet": "You made more than 5,000 requests in one minute",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "claim": "The per-minute request limit depends on the plan: 5,000 requests per minute on Enterprise, 2,500 on Pro and 1,000 on other plans; exceeding it returns 'Minute limit rate exceeded'.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "Tier Queries per minute Enterprise 5,000 Pro 2,500 Other 1,000",
+      "fetched_at": "2026-09-19T20:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
-        "references/graphql-patterns.md"
+        "references/graphql-patterns.md",
+        "references/domain-checklist.md"
       ]
     },
     {
@@ -160,8 +159,8 @@
       "claim_id": "monday-connect-boards-write-format",
       "claim": "Connect boards columns are written with an item_ids array, not a connection identifier argument.",
       "source_url": "https://developer.monday.com/api-reference/docs/connect",
-      "raw_snippet": "item_ids",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "column_values: \"{\\\"connect_boards\\\": {\\\"item_ids\\\": [1122334455, 5544332211]}}\"",
+      "fetched_at": "2026-09-19T21:10:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -247,10 +246,10 @@
     },
     {
       "claim_id": "monday-products-and-tiers",
-      "claim": "monday.com sells four products with separate plan ladders: work management (Free, Basic, Standard, Pro, Enterprise), CRM (Basic through Ultimate), Dev and Service; Free exists only on work management.",
+      "claim": "monday.com sells several products (work management, CRM, Campaigns, Dev, Service); work management Free covers up to 2 seats; CRM's top tier is Ultimate.",
       "source_url": "https://monday.com/pricing",
-      "raw_snippet": "Ultimate",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Products Work management CRM Campaigns Dev Service",
+      "fetched_at": "2026-09-19T21:10:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -286,19 +285,21 @@
       "claim_id": "monday-marketplace",
       "claim": "The monday.com marketplace is the authoritative place to check whether an integration app exists for a given Israeli accounting or ERP system before promising one.",
       "source_url": "https://monday.com/marketplace",
-      "raw_snippet": "marketplace",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Explore powerful tools built for your needs",
+      "fetched_at": "2026-09-19T21:10:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-19"
     },
     {
       "claim_id": "monday-apps-framework",
-      "claim": "Custom automation triggers and actions are built via the monday apps framework; there is no queryable core-API automations endpoint.",
-      "source_url": "https://developer.monday.com/apps/docs/api-reference",
-      "raw_snippet": "API reference",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "claim": "Custom automation triggers and actions are built as monday apps (apps framework); board automations can also be created through the Platform MCP create_automation tool.",
+      "source_url": "https://developer.monday.com/api-reference/docs/create-automation",
+      "raw_snippet": "Creates an automation on a monday.com board from a structured natural-language description using the Platform MCP",
+      "fetched_at": "2026-09-19T21:10:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -307,9 +308,9 @@
     {
       "claim_id": "monday-items-api",
       "claim": "Item queries use items_page with cursor-based pagination; items_page_by_column_values pages the same way and truncates silently at the limit if the cursor loop is omitted.",
-      "source_url": "https://developer.monday.com/api-reference/docs/items",
-      "raw_snippet": "items_page",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "source_url": "https://developer.monday.com/api-reference/reference/items-page-by-column-values",
+      "raw_snippet": "The query will also return a cursor value that represents the position in the data set",
+      "fetched_at": "2026-09-19T21:10:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -370,6 +371,418 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/graphql-patterns.md"
+      ]
+    },
+    {
+      "claim_id": "monday-version-schedule-2026-10",
+      "claim": "The version schedule lists 2026-10 as RC on 1 July 2026, current on 1 October 2026 and maintenance on 15 January 2027; 2027-01 becomes RC on 1 October 2026.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "2026-10 July 1st, 2026 October 1st, 2026 January 15th, 2027",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-version-schedule-2027-01",
+      "claim": "2027-01 becomes the release candidate on 1 October 2026, current on 15 January 2027 and maintenance on 1 April 2027.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "2027-01 October 1st, 2026 January 15th, 2027 April 1st, 2027",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-version-schedule-2026-07",
+      "claim": "2026-07 was RC on 1 April 2026, current on 1 July 2026, and enters maintenance on 1 October 2026.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "2026-07 April 1st, 2026 July 1st, 2026 October 1st, 2026",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-version-schedule-2026-04",
+      "claim": "2026-04 was RC on 15 January 2026, current on 1 April 2026 and maintenance on 1 July 2026, with no deprecation date announced.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "2026-04 January 15th, 2026 April 1st, 2026 July 1st, 2026 Not yet announced*",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-deprecation-notice",
+      "claim": "Each version deprecation is announced at least six months in advance; none is announced for 2026-04 or later.",
+      "source_url": "https://developer.monday.com/api-reference/docs/api-versioning",
+      "raw_snippet": "Each version deprecation will be announced at least six months in advance",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-concurrency-tiers",
+      "claim": "Maximum concurrent requests: 250 on Enterprise, 100 on Pro, 40 on other plans.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "Tier Maximum concurrent requests Enterprise 250 Pro 100 Other 40",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-ip-limit",
+      "claim": "The IP limit is 5,000 requests per 10 seconds from one IP address (IP_RATE_LIMIT_EXCEEDED).",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "Individual IP address 5,000 requests per 10 seconds",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-daily-limit-reset",
+      "claim": "Daily API call limits reset at midnight UTC: 1,000 on Free/Standard/Basic, 10,000 on Pro, 25,000 on Enterprise.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "Tier Daily call limit (resets at midnight UTC) Free/Standard/Basic 1,000 Pro 10,000 Enterprise 25,000",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-mcp-counts-daily",
+      "claim": "Calls made through the hosted Platform MCP server count toward the daily API-call limit.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "Calls made through the hosted Platform MCP server also count toward this daily limit, since each MCP tool call is executed as a GraphQL API request.",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-retry-after-minute",
+      "claim": "The Retry-After header indicates when to retry after the per-minute limit.",
+      "source_url": "https://developer.monday.com/api-reference/docs/rate-limits",
+      "raw_snippet": "You can use the Retry-After header to determine when you can retry the request.",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-idempotency-key",
+      "claim": "Sending an Idempotency-Key header on a mutation caches the first response for 30 minutes; a retry with the same key returns the cached response with Idempotency-Replayed: true.",
+      "source_url": "https://developer.monday.com/api-reference/docs/idempotency",
+      "raw_snippet": "Retry with same key : Returns the cached response with an",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-workflows-distinct",
+      "claim": "Workflows are cross-board, workspace-level objects distinct from per-board automations, built via the Platform MCP against the dev (preview) API schema, starting as drafts that must be published.",
+      "source_url": "https://developer.monday.com/api-reference/docs/create-workflow",
+      "raw_snippet": "Workflows are cross-board, workspace-level objects",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-workflows-per-tier",
+      "claim": "The pricing page lists 3 workflows on Standard and 20 on Pro.",
+      "source_url": "https://monday.com/pricing",
+      "raw_snippet": "20 workflows Build and run workflows to connect work across your boards.",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-integration-actions-standard",
+      "claim": "Integrations on Standard are limited to 250 actions a month.",
+      "source_url": "https://monday.com/pricing",
+      "raw_snippet": "Integrations (250 actions / month)",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-date-today-filter",
+      "claim": "The date column filter supports the dynamic compare value TODAY; lower_than returns dates before today, resolved by the profile time zone and first day of the week of the calling user.",
+      "source_url": "https://developer.monday.com/api-reference/reference/date",
+      "raw_snippet": "depend on the time, time zone, date format, and first day of the week of the user making the API call",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-next-items-page-cursor",
+      "claim": "next_items_page takes a cursor argument of type String! and a limit up to 500.",
+      "source_url": "https://developer.monday.com/api-reference/reference/next-items-page",
+      "raw_snippet": "The number of items to return. The maximum is 500.",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "israel-rest-days-18a",
+      "claim": "Statutory rest days: both days of Rosh Hashana, Yom Kippur, the first day of Sukkot and Shemini Atzeret, the first and seventh days of Pesach, and Shavuot (Law and Administration Ordinance s.18A).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%A1%D7%93%D7%A8%D7%99_%D7%94%D7%A9%D7%9C%D7%98%D7%95%D7%9F_%D7%95%D7%94%D7%9E%D7%A9%D7%A4%D7%98",
+      "raw_snippet": "שני ימי ראש השנה, יום הכפורים, ראשון ושמיני עצרת של סוכות, ראשון ושביעי של פסח וחג השבועות",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "references/israeli-holidays.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "israel-independence-day-shabbaton",
+      "claim": "Yom Ha'Atzmaut is a statutory day of rest (Independence Day Law s.1(c)).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%99%D7%95%D7%9D_%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA",
+      "raw_snippet": "יום העצמאות יהיה יום שבתון",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "references/israeli-holidays.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "hebcal-2027-israel",
+      "claim": "Israel-schedule 2027 dates: Purim 23 March, Pesach I 22 April, Pesach VII 28 April, Yom HaShoah 4 May, Yom HaZikaron 11 May, Yom Ha'Atzmaut 12 May, Shavuot 11 June, Tisha B'Av 12 August, Rosh Hashana 2-3 October, Yom Kippur 11 October, Sukkot I 16 October, Shemini Atzeret 23 October, Hanukkah 25 December 2027 to 1 January 2028, with each erev the day before.",
+      "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2027&i=on&maj=on&min=on&mod=on",
+      "raw_snippet": "\"title\":\"Erev Yom Kippur\",\"date\":\"2027-10-10\"",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "references/israeli-holidays.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "hebcal-2026-israel",
+      "claim": "Israel-schedule 2026 dates including erev days: Erev Pesach 1 April, Erev Shavuot 21 May, Erev Rosh Hashana 11 September, Erev Yom Kippur 20 September, Erev Sukkot 25 September, Hanukkah days 5-12 December.",
+      "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2026&i=on&maj=on&min=on&mod=on",
+      "raw_snippet": "\"title\":\"Erev Yom Kippur\",\"date\":\"2026-09-20\"",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "references/israeli-holidays.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "slack-incoming-webhook",
+      "claim": "A Slack incoming webhook accepts an HTTP POST with Content-type application/json and a body like {\"text\": \"Hello, world.\"}.",
+      "source_url": "https://docs.slack.dev/messaging/sending-messages-using-incoming-webhooks",
+      "raw_snippet": "Content-type: application/json",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "hebcal-holidays-page",
+      "claim": "hebcal.com/holidays lists Jewish holiday dates by year, with an Israel schedule option.",
+      "source_url": "https://www.hebcal.com/holidays/",
+      "raw_snippet": "Israel",
+      "fetched_at": "2026-09-19T20:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-create-automation-clarify",
+      "claim": "create_automation returns status needs_clarification when details are missing; present the unresolved fields to the user.",
+      "source_url": "https://developer.monday.com/api-reference/docs/create-automation",
+      "raw_snippet": "If the tool returns status: \"needs_clarification\" , present the unresolved fields to the user",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-interface-languages",
+      "claim": "monday.com offers 15 interface languages, none of them Hebrew or Arabic (support article last modified 31 August 2026).",
+      "source_url": "https://support.monday.com/hc/en-us/articles/360003503760-Available-languages-for-monday-com",
+      "raw_snippet": "You can choose from 15 languages to change your monday.com account into",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-19"
+    },
+    {
+      "claim_id": "monday-formula-display-value",
+      "claim": "The formula column supports read and create; the computed result is in display_value, and text and value are not populated.",
+      "source_url": "https://developer.monday.com/api-reference/reference/formula",
+      "raw_snippet": "The text and value fields are not populated for formula columns.",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-user-fields-removed-2026-10",
+      "claim": "The 2026-10 release notes list legacy User fields as removed, including photo_original, photo_thumb, photo_thumb_small, photo_tiny, photo_small, is_guest, is_admin, is_pending and enabled.",
+      "source_url": "https://developer.monday.com/api-reference/docs/release-notes",
+      "raw_snippet": "The following legacy User fields are removed",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-free-2-seats",
+      "claim": "The Free work-management plan covers up to 2 seats.",
+      "source_url": "https://monday.com/pricing",
+      "raw_snippet": "free forever Up to 2 seats",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-arg-create-board",
+      "claim": "create_board takes board_name String! and workspace_id ID.",
+      "source_url": "https://developer.monday.com/api-reference/reference/boards",
+      "raw_snippet": "board_name String!",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-arg-create-item",
+      "claim": "create_item takes board_id ID!, group_id String, item_name String! and column_values JSON.",
+      "source_url": "https://developer.monday.com/api-reference/reference/items",
+      "raw_snippet": "group_id String The group's unique identifier. item_name String!",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-arg-create-group",
+      "claim": "create_group takes board_id ID! and group_name String!.",
+      "source_url": "https://developer.monday.com/api-reference/reference/groups",
+      "raw_snippet": "group_name String!",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-arg-items-page-by-column-values",
+      "claim": "items_page_by_column_values takes board_id ID! and columns [ItemsPageByColumnValuesQuery!].",
+      "source_url": "https://developer.monday.com/api-reference/reference/items-page-by-column-values",
+      "raw_snippet": "[ItemsPageByColumnValuesQuery!]",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-arg-items-page-query-params",
+      "claim": "items_page takes query_params of type ItemsQuery.",
+      "source_url": "https://developer.monday.com/api-reference/reference/items-page",
+      "raw_snippet": "query_params ItemsQuery",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-arg-change-multiple",
+      "claim": "change_multiple_column_values takes board_id ID!, item_id ID and column_values JSON!; change_column_value additionally takes column_id String! and value JSON!. Passing an ID! variable to the nullable item_id argument is valid.",
+      "source_url": "https://developer.monday.com/api-reference/reference/columns",
+      "raw_snippet": "item_id ID The unique identifier of the item to change.",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-idempotency-409",
+      "claim": "A concurrent duplicate request with the same Idempotency-Key returns 409 Conflict with a Retry-After header.",
+      "source_url": "https://developer.monday.com/api-reference/docs/idempotency",
+      "raw_snippet": "Returns 409 Conflict with a Retry-After header",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "hebcal-2028-israel",
+      "claim": "Israel-schedule 2028 dates: Hanukkah 8th day 1 January, Purim 12 March, Pesach I 11 April, Pesach VII 17 April, Yom HaShoah 24 April, Yom HaZikaron 1 May, Yom Ha'Atzmaut 2 May, Shavuot 31 May, Tisha B'Av 1 August, Rosh Hashana 21-22 September, Yom Kippur 30 September, Sukkot I 5 October, Shemini Atzeret 12 October, Hanukkah 13-20 December, with each erev the day before.",
+      "source_url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2028&i=on&maj=on&min=on&mod=on",
+      "raw_snippet": "\"title\":\"Erev Yom Kippur\",\"date\":\"2028-09-29\"",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "references/israeli-holidays.md"
+      ]
+    },
+    {
+      "claim_id": "monday-apps-api-reference",
+      "claim": "The monday apps framework API reference documents building custom monday apps.",
+      "source_url": "https://developer.monday.com/apps/docs/api-reference",
+      "raw_snippet": "For AI agents: visit https://developer.monday.com/apps/llms.txt",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "monday-items-docs",
+      "claim": "The items docs direct readers to items_page to read all items on a board.",
+      "source_url": "https://developer.monday.com/api-reference/docs/items",
+      "raw_snippet": "If you want to read all items on a board, use the items_page object instead!",
+      "fetched_at": "2026-09-19T21:10:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
       ]
     }
   ]

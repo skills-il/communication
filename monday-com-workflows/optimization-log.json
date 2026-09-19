@@ -29,6 +29,20 @@
         "NOT WRITTEN, source blocked: support.monday.com returns 403 to both curl and WebFetch and its supported-languages article now 404s, so the '15 supported languages' count and the WorkForms-only RTL toggle could not be sourced. The Hebrew-UI gotcha was kept but rewritten to assert only the negative (Hebrew and Arabic are not interface languages, no board or account RTL setting) and to tell the reader to confirm the current list in profile settings. If a fetchable source appears, restore the specifics.",
         "The connect_boards `value` to null change could not be dated. The brief called it a 2025-04 change; the live column docs present it as current behaviour with no version attached, and no dated release-notes page was reachable. It was therefore moved out of the breaking-changes list into a 'standing behaviour, not news' paragraph plus the new Column Type Quirks section, which achieves the goal (stop it occupying migration attention) without asserting a date that could not be confirmed."
       ]
+    },
+    {
+      "version": "1.6.0",
+      "date": "2026-09-19",
+      "lessons": [
+        "CARRY RESOLVED (third cycle): erev-chag half days. The binary is_israeli_holiday was replaced by a three-state table (off/half/policy) in references/israeli-holidays.md, with 'off' anchored to Law and Administration Ordinance s.18A plus the Independence Day Law. The out-of-scope row was re-litigated and closed.",
+        "CRITICAL fixed: the holiday list was 2026-only and silently answered 'not a holiday' for every later date. Table now covers 2026-2028 and holiday_state() raises on an uncovered year. Next cycle: add 2029 before mid-2028.",
+        "CRITICAL fixed: every API sample built GraphQL by %s string formatting, which breaks on Hebrew acronyms typed with an ASCII double quote. All samples now go through gql() with variables, errors-array checks, Idempotency-Key and retry_in_seconds backoff.",
+        "Arithmetic reviewer found a fourth defect in the repaired holiday code: sprint_capacity counted Friday and Saturday as workdays for any non-Sunday or multi-week sprint. Lesson: a date-range helper needs its weekend rule tested with a mid-week start and a two-week span, not only the Sunday case the author had in mind.",
+        "WRONG claims fixed: the minute request limit was stated as a flat 5,000 (it is 5,000/2,500/1,000 by plan, so Standard users were overstated 5x); '2026-04 deprecation July 2027' had no source (docs say not yet announced); the formula column advice said the API does not return the computed value (it does, in display_value); 'automations have no API' is stale now that the Platform MCP has create_automation; 'four products' is now five (Campaigns).",
+        "Removed as unsourceable: 'no board-level or account-level RTL setting', 'RTL is WorkForms-only', '3-seat minimum'. The Hebrew-UI claim itself is now sourced (support article 360003503760, 15 languages, needs a real browser, curl gets 403).",
+        "Deferred over the batch discretionary cap: redesigning the sprint board (weekday groups are not how monday dev sprints work; Recipe 1 'move Backlog items into day groups' is not a native automation); aliased batch mutations for bulk updates (no documented pattern found); an overdue filter rule that excludes Done at the query level; DST note for external crons.",
+        "2026-10 becomes the default API version on 2026-10-01. Next cycle: move every sample's API-Version pin to 2026-10 and re-check the User-entity removals against the migration guide (which 404'd this cycle)."
+      ]
     }
   ]
 }
