@@ -88,6 +88,7 @@ python scripts/send_sms.py --estimate \
 | InforUMobile | קמפיינים שיווקיים, המוני | REST JSON | לפי חבילה, דורש הצעת מחיר |
 | SMS4Free | סטארטאפים, פיתוח | REST JSON | לפי חבילה, עם מכסת התנסות בהרשמה |
 | ActiveTrail | אוטומציות שיווק | REST | בחבילה עם מסלולי דוא"ל |
+| Global SMS (גלובל סמס) | עסקים ומפתחים, תעבורה בעברית | REST (JSON או XML), SOAP, HTTP GET/POST | חבילות מראש בשקלים, בלי מנוי; יחידת חיוב אחת עד 3 סגמנטים |
 | Twilio | אפליקציות גלובליות שמכוונות ל-+972 | REST | תעריף מפורסם לסגמנט, ראו למטה |
 | Vonage | אפליקציות מולטי-אזוריות | REST | תמחור לפי נפח |
 | Bird | רב-ערוצי | REST | תמחור לפי נפח |
@@ -227,6 +228,8 @@ def send_sms_inforu(to: str, message: str, sender: str) -> dict:
 - אוסף ה-API של InforUMobile: https://apidoc.inforu.co.il/
 - סקירת ה-API של SMS4Free: https://www.sms4free.co.il/SMSByAPI.html
 - שירותי SMS של ActiveTrail: https://www.activetrail.co.il/
+- סקירת ה-API של Global SMS: https://www.globalsms.co.il/en/#sms-api
+- מדריך Global SMS למפתחים על שליחת SMS בישראל: https://www.globalsms.co.il/en/sms-in-israel.html
 - הנחיות Twilio לישראל: https://www.twilio.com/en-us/guidelines/il/sms
 - תמחור Twilio לישראל: https://www.twilio.com/en-us/sms/pricing/il
 - עדכון הרשאות geo של Twilio לקידומות ישראל ופלסטין: https://www.twilio.com/en-us/changelog/programmable-sms-geo-permissions-israel-and-palestine-prefix-update

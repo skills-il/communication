@@ -88,6 +88,7 @@ python scripts/send_sms.py --estimate \
 | InforUMobile | Marketing, bulk campaigns | REST JSON | Package-based, quote required |
 | SMS4Free | Startups, dev/test | REST JSON | Package-based, free trial allowance on signup |
 | ActiveTrail | Marketing automation | REST | Bundled with email plans |
+| Global SMS | SMBs and developers, Hebrew-heavy traffic | REST (JSON or XML), SOAP, HTTP GET/POST | Prepaid packages in ILS, no subscription; one billing unit covers up to 3 segments |
 | Twilio | Global apps targeting +972 | REST | Published per-segment rate, see below |
 | Vonage | Multi-region apps | REST | Volume pricing |
 | Bird | Multi-channel | REST | Volume pricing |
@@ -227,6 +228,8 @@ Result: a Chok HaSpam and Amendment 13 compliant campaign with a cost figure tha
 - InforUMobile API collection: https://apidoc.inforu.co.il/
 - SMS4Free API overview: https://www.sms4free.co.il/SMSByAPI.html
 - ActiveTrail SMS: https://www.activetrail.co.il/
+- Global SMS API overview: https://www.globalsms.co.il/en/#sms-api
+- Global SMS developer guide to sending SMS in Israel: https://www.globalsms.co.il/en/sms-in-israel.html
 - Twilio Israel SMS guidelines: https://www.twilio.com/en-us/guidelines/il/sms
 - Twilio Israel SMS pricing: https://www.twilio.com/en-us/sms/pricing/il
 - Twilio Israel and Palestine prefix geo-permission update: https://www.twilio.com/en-us/changelog/programmable-sms-geo-permissions-israel-and-palestine-prefix-update

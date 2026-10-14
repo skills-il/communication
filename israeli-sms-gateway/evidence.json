@@ -448,6 +448,39 @@
       ],
       "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
       "verified_at": "2026-08-18"
+    },
+    {
+      "claim_id": "globalsms-api-types",
+      "claim": "Global SMS offers a REST API (JSON and XML), a SOAP web service (WSDL) and an HTTP GET/POST interface.",
+      "source_url": "https://www.globalsms.co.il/en/",
+      "raw_snippet": "Global SMS provides a REST API (JSON and XML), a SOAP web service (WSDL) and a simple HTTP GET/POST interface for sending SMS and OTP codes",
+      "fetched_at": "2026-09-27",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "globalsms-billing-unit",
+      "claim": "On Global SMS one billing unit covers up to 3 segments: 201 Hebrew or 459 Latin characters.",
+      "source_url": "https://www.globalsms.co.il/en/sms-in-israel.html",
+      "raw_snippet": "one message unit covers up to three segments – 201 characters in Hebrew or 459 in English",
+      "fetched_at": "2026-09-27",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "globalsms-prepaid-ils",
+      "claim": "Global SMS sells prepaid packages priced in Israeli shekels, with no monthly subscription.",
+      "source_url": "https://www.globalsms.co.il/en/",
+      "raw_snippet": "Prepaid SMS packages of 500, 1,000, 2,500 and 5,000 messages, priced in Israeli shekels.",
+      "fetched_at": "2026-09-27",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
