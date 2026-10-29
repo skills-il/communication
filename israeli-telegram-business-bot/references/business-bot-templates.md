@@ -2,6 +2,12 @@
 
 Complete message flow templates for common Israeli business types. Copy and adapt these for your Telegram bot.
 
+**Three screens in every booking flow are mandatory, not decorative:** the privacy notice before
+the first name is taken (`references/compliance-and-security.md` section 4), the price and
+cancellation terms shown BEFORE the customer confirms, and a confirmation that carries the business
+details and cancellation terms in writing (section 2). Template 2 shows all three; add the same to
+the other templates.
+
 ## Template 1: Restaurant / Cafe Bot
 
 ### Welcome Flow
@@ -57,6 +63,8 @@ Complete message flow templates for common Israeli business types. Copy and adap
 ```
 
 ### Table Reservation Flow
+
+Insert before the name is asked: [מסך הודעת פרטיות, `references/compliance-and-security.md` section 4]. Insert before the customer confirms: [סיכום מחיר, פרטי העסק ותנאי ביטול, כמו ב-Template 2]. The confirmation must repeat the business details and the cancellation terms.
 
 ```
 📅 הזמנת שולחן
@@ -291,6 +299,33 @@ Friday afternoon:
 [⬅️ חזרה לבחירת יום]
 ```
 
+### Before Confirming: Price, Deposit and Cancellation Terms
+
+Shown after the time is picked and before the slot is held. The privacy notice from
+`references/compliance-and-security.md` section 4 comes before the name is asked.
+
+```
+סיכום לפני אישור:
+[שם העסק], ח.פ./ע.מ. [מספר], [כתובת]
+תספורת נשים עם דנה, יום שני 3/4 ב-10:00
+מחיר: ₪[מחיר], מקדמה: ₪[סכום] (מקוזזת מהמחיר)
+השמירה בתוקף ל-[X] דקות עד לתשלום המקדמה.
+
+תנאי ביטול:
+- ביטול תוך 14 יום מקביעת התור ולפחות יומיים שאינם ימי מנוחה לפני התור: החזר המקדמה בניכוי דמי ביטול של עד 5% מהמחיר או ₪100, הנמוך מביניהם.
+  [לטיפולי קוסמטיקה ואסתטיקה (פנים, הסרת שיער, ציפורניים) במקום השורה הזאת: ביטול תוך 14 יום מקביעת התור, גם סמוך לתור: החזר המקדמה בניכוי דמי ביטול של עד 5% מהמחיר או ₪100, הנמוך מביניהם.]
+- [מדיניות הביטול המאוחר שלכם, לדוגמה: ביטול עד 4 שעות לפני בלי חיוב. לטיפולי קוסמטיקה: בתוך 14 יום מקביעת התור, לא יותר מהתקרה שלמעלה.]
+- אם אנחנו מבטלים או מזיזים: החזר מלא.
+
+[💳 לתשלום המקדמה] [⬅️ חזרה]
+```
+
+The slot is held only once the deposit is paid. For cosmetic and aesthetic treatments use the
+bracketed variant: the 2010 Cancellation Regulations give no two-day condition for them. Count rest
+days conservatively in the bot logic, not only Shabbat and holidays. Do not word the
+late-cancellation line until you have read section 2: a forfeit that ignores the statutory right is
+unlawful.
+
 ### Booking Confirmation
 
 ```
@@ -301,8 +336,12 @@ Friday afternoon:
 תאריך: יום שני, 3 באפריל
 שעה: 10:00
 משך משוער: 45 דקות
+מחיר: ₪[מחיר] | מקדמה ששולמה: ₪[סכום]
 
-📍 [שם הסלון], [כתובת], [עיר]
+תנאי ביטול: [כמו במסך הקודם]. לביטול: /cancel או הכפתור למטה.
+
+[שם העסק], ח.פ./ע.מ. [מספר]
+📍 [כתובת], [עיר]
 🅿️ חניה חינם ברחוב / חניון [שם]
 
 💡 טיפים:
@@ -314,6 +353,9 @@ Friday afternoon:
 ```
 
 ### Reminder Messages
+
+These need a standalone bot (SKILL.md Phase 0, Option B). A connected Business bot can only write
+into chats that had an incoming message in the last 24 hours, so it cannot send them.
 
 24 hours before:
 ```
@@ -338,14 +380,28 @@ Friday afternoon:
 
 ### No-Show Follow-Up
 
+This is a promotion, not a reminder (it invites a new booking). Send it only to customers who
+may lawfully receive promotions, with the פרסומת label, sender details and an opt-out, as in
+"Broadcast message shapes" below.
+
 ```
+פרסומת
 היי, לא הספקת להגיע היום?
 
 אין בעיה, אפשר לקבוע תור חדש:
 [📅 קביעת תור חדש]
 
 (ביטולים עד 4 שעות לפני בלי חיוב)
+
+[שם הסלון], [כתובת] | [טלפון] | [מייל]
+אפשר להסיר את עצמך מרשימת התפוצה בכל עת, בכפתור כאן או במייל.
+[🚫 הסירו אותי מרשימת התפוצה]
 ```
+
+A late-cancellation charge must be disclosed before the booking, and that alone does not make it
+lawful: a customer who cancels within 14 days of booking and at least two non-rest days ahead keeps
+the statutory refund right. See `references/compliance-and-security.md` section 2 before wording any
+charge.
 
 ### After-Hours
 
@@ -415,6 +471,8 @@ Suitable for accountants, lawyers, consultants, tutors, therapists, personal tra
 ```
 
 ### Consultation Booking Flow
+
+Insert before the name is asked: [מסך הודעת פרטיות, `references/compliance-and-security.md` section 4]. Insert before the customer confirms: [סיכום מחיר, פרטי העסק ותנאי ביטול, כמו ב-Template 2]. The confirmation must repeat the business details and the cancellation terms.
 
 ```
 📅 קביעת פגישה
@@ -605,7 +663,7 @@ After service completion:
 [⭐ מצוין!] [👍 טוב] [👎 יש מה לשפר]
 ```
 
-If positive:
+If positive (keep the review request free of any offer or discount, which would turn it into a promotion):
 ```
 שמחים לשמוע! 🎉
 אם תרצו, תשאירו לנו ביקורת ב-Google:
@@ -688,6 +746,7 @@ for, an appointment reminder they booked) are not advertising and do not need th
 [שם העסק המלא], [כתובת מלאה]
 [טלפון] | [כתובת מייל]
 
+אפשר להסיר את עצמך מרשימת התפוצה בכל עת, בכפתור כאן או במייל [כתובת].
 [🚫 הסירו אותי מרשימת התפוצה]
 ```
 
@@ -735,7 +794,7 @@ template instead.
 
 Requirements every promotional broadcast must meet:
 
-1. **Prior explicit consent (הסכמה מפורשת מראש)** - The customer must actively opt in. Starting a chat with the bot is NOT consent. Add an inline-keyboard opt-in ("כן, שלחו לי מבצעים ועדכונים"). Transactional messages (order status, appointment reminders the customer requested) do not need this consent.
+1. **Prior explicit consent (הסכמה מפורשת מראש)** - The customer must actively opt in. Starting a chat with the bot is NOT consent. Add an inline-keyboard opt-in ("כן, שלחו לי מבצעים ועדכונים"). Transactional messages (order status, appointment reminders the customer requested) do not need this consent. The one alternative is the existing-customer route in s.30a(ג): details given during a purchase, a notice at that time that offers will follow, a chance to refuse that was not taken, and offers for a similar service only. See `references/compliance-and-security.md` section 3.
 2. **Label the message as advertising** - The word **פרסומת** must appear at the head of the message. This is a distinct requirement from identifying the sender, and it is the one most often missed.
 3. **Sender identification (זיהוי השולח)** - The statute requires the advertiser's **name, address, and ways to make contact**. For a promotion sent as an electronic message it also requires a valid internet address of the advertiser for sending the opt-out, so publish a working email address too. No anonymous promotions.
 4. **Opt-out in every message (אפשרות הסרה)** - Include a clear way to stop, e.g. a "הסר אותי מרשימת התפוצה" button, or a stop command you define in your own bot. The recipient must be able to opt out **through the same medium the promotion arrived in**, so a Telegram promotion needs a Telegram opt-out, not only an email link. Honor opt-outs immediately.
@@ -750,6 +809,16 @@ Requirements every promotional broadcast must meet:
 | Printed on the receipt | `receipt` | Post-purchase signups |
 | Link in an SMS or email footer | `sms_may` | Campaign response |
 | Instagram or Facebook bio | `ig_bio` | Social conversion |
+
+Rules for the payload: up to 64 characters, only `A-Z a-z 0-9 _ -`. Encode anything longer or
+richer with base64url rather than packing it in raw.
+
+**Option A (connected bot) entry points.** Telegram Business Chat Links are the Option A
+equivalent of a deep link: each carries a preset opening message and a view counter, and they are
+part of the Business subscription and capped per account. An owner whose bot is connected also sees
+a "Manage Bot" action at the top of each managed chat; tapping it sends your bot a deep link in the
+form `/start bizChat<user_chat_id>`. A bot that only parses its own marketing payloads will
+silently ignore that.
 
 
 ## BotFather profile configuration
@@ -766,8 +835,15 @@ hours - שעות פעילות
 book - קבע תור
 menu - תפריט / שירותים
 contact - צור קשר
+cancel - ביטול תור
+status - סטטוס הזמנה
+mydata - הפרטים שלי
 help - עזרה
 ```
+
+Only list commands the bot actually handles. /cancel and /status are used by the booking and
+order flows; /mydata is the access-and-correction route from
+`references/compliance-and-security.md` section 4.
 
 ---
 

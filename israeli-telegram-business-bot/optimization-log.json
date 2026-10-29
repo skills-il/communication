@@ -23,6 +23,30 @@
         "Deferred (expert MINOR): the 'bot blocked' troubleshooting row omits the observable signal (HTTP 403 'Forbidden: bot was blocked by the user'); the Stars mobile-visibility claim is phrased harder than the source; small EN/HE drifts from editing the two files independently.",
         "Structural note for next cycle: SKILL.md sits within a few dozen words of the 5,000-word body cap after seven sections were moved to references. Measure with the category validator before adding anything, and budget a matching removal. The Hebrew file has more headroom."
       ]
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-10-29",
+      "value_add": {
+        "with": 0.82,
+        "without": 0.42,
+        "delta": 0.4,
+        "verdict": "PASS"
+      },
+      "lessons": [
+        "Drift type B: Bot API still 10.3 (Aug 24 2026) on 2026-10-29. Used from 10.2/10.3: disabled inline buttons, Mini App origin lock (default on, owner can opt out). Nothing deprecated affects the skill.",
+        "CRITICAL fixed: connected (Option A) bots can_reply only in chats with an incoming message in the last 24 hours (BusinessBotRights), so the recommended architecture silently could not send reminders. Reminders and broadcasts now route to Option B.",
+        "CRITICAL fixed: deposits were not covered. Added s.14ג/14ה distance-transaction rule (14 days from the later of booking or written details AND two non-rest days before; fee max min(5% of FULL price, 100 NIS)), with exclusions: leisure s.14ג(ד)(2), packages s.14ה(ב1), business fault s.14ה(א), seniors s.14ג1, and the 2010 Cancellation Regulations cosmetics item (no two-day condition, 7 business days). Arithmetic reviewer needed 3 rounds; first draft computed the fee on the deposit and dropped the 14-day limit.",
+        "CRITICAL fixed: Shabbat-closed was hardcoded. The weekly closed day is now an owner setting; non-Jewish holidays entered by hand (Hebcal is a Jewish calendar).",
+        "BUG fixed: 409 row claimed BotPress, n8n and ManyChat all long-poll. n8n's Telegram Trigger registers a webhook; a second webhook platform silently takes over. The 409 code is not in Telegram's docs, now hedged. The old diagnostic tell (deleteWebhook returns true) required exposing the token.",
+        "BUG fixed: Meshulam listed as not issuing invoices; it is Grow and issues documents automatically. Green Invoice is now Morning. Cardcom added.",
+        "Token handling: no example ever wrote or logged the token, but nothing told the owner not to paste it into an AI chat or a browser address bar. Added, plus webhook secret_token and a full post-/token checklist.",
+        "Privacy (Amendment 13) operationalised from statute text on he.wikisource (gov.il and kolzchut Cloudflare-block every automated fetch, so two portal evidence entries were dropped rather than kept as unverifiable): s.11 notice template, s.8א registration and s.17ב1 officer scope, Third Schedule security levels and fines, s.15א exemplary damages, s.17ו direct mail, transfer-abroad regs incl. reg 3.",
+        "s.30a(ג) existing-customer route added; a post-no-show 'book again' nudge is a promotion, not a reminder.",
+        "Unsourced comparisons with WhatsApp and a Stripe-availability claim removed (judge r3).",
+        "Deferred: expert r2-m3 depth (Templates 1 and 3 have placeholders, not full screens); 403 'bot was blocked' string (not in Telegram docs); iCount/Rivhit/PayMe/Tranzila rows unevidenced; s.30a case law on instant messaging; enriched FAQ refreshed in DB but not reviewed by the panel.",
+        "Structural: SKILL.md body at about 4,980 words. Any addition needs a matching move to references/compliance-and-security.md."
+      ]
     }
   ]
 }

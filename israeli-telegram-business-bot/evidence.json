@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-telegram-business-bot",
-  "generated_at": "2026-09-01",
+  "generated_at": "2026-10-29T15:00:00Z",
   "claims": [
     {
       "claim_id": "bot-api-version",
-      "claim": "Bot API 10.3 is the current Telegram Bot API version, released August 24, 2026. The prior release was 10.2 (July 14, 2026).",
+      "claim": "The current Bot API version is 10.3, released August 24, 2026.",
       "source_url": "https://core.telegram.org/bots/api",
       "raw_snippet": "August 24, 2026 Bot API 10.3",
-      "fetched_at": "2026-09-01T00:00:00Z",
+      "fetched_at": "2026-10-29T19:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -16,10 +16,10 @@
     },
     {
       "claim_id": "telegram-business-connected-bot-a",
-      "claim": "Bot API 7.2 (March 31, 2024) added updates about new messages in a business account connected to the bot, in the field business_message of the class Update.",
+      "claim": "Bot API 7.2 (March 31, 2024) introduced integration with business accounts.",
       "source_url": "https://core.telegram.org/bots/api-changelog",
-      "raw_snippet": "March 31, 2024 Bot API 7.2 Integration with Business Accounts Added the class BusinessConnection and updates about the connection or disconnection of the bot to a business account, represented by the field business_connection in the class Update .",
-      "fetched_at": "2026-08-09",
+      "raw_snippet": "March 31, 2024 Bot API 7.2 Integration with Business Accounts",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -27,10 +27,10 @@
     },
     {
       "claim_id": "telegram-business-connected-bot-b",
-      "claim": "Bot API 7.2 added the business_message and edited_business_message update fields and the business_connection_id parameter on send methods.",
+      "claim": "Bot API 7.2 added the business_message update field for messages in a connected business account.",
       "source_url": "https://core.telegram.org/bots/api-changelog",
-      "raw_snippet": "Added updates about new messages in a business account connected to the bot, represented by the field business_message in the class Update .",
-      "fetched_at": "2026-08-09",
+      "raw_snippet": "Added updates about new messages in a business account connected to the bot, represented by the field business_message in the class Update",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -38,7 +38,7 @@
     },
     {
       "claim_id": "bots-cannot-initiate",
-      "claim": "A Telegram bot cannot start a conversation with a user; the user must message the bot or add it to a group first. There is no phone-list import.",
+      "claim": "A Telegram bot cannot start a conversation with a user; the user must message the bot or add it to a group first.",
       "source_url": "https://core.telegram.org/bots",
       "raw_snippet": "start conversations with users. A user must either add them to a group or send them a message first.",
       "fetched_at": "2026-08-08",
@@ -60,10 +60,10 @@
     },
     {
       "claim_id": "botfather-commands",
-      "claim": "BotFather exposes the bot-configuration commands /newbot, /mybots, /setdescription, /setabouttext, /setuserpic, /setcommands and /setprivacy, documented on the Telegram bot features page at core.telegram.org/bots/features and the overview page at core.telegram.org/bots.",
+      "claim": "@BotFather documents /setdescription for the bot description.",
       "source_url": "https://core.telegram.org/bots/features",
-      "raw_snippet": "/setcommands – change the list of commands supported by your bot.",
-      "fetched_at": "2026-09-01T00:00:00Z",
+      "raw_snippet": "/setdescription – change the bot's description",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -93,10 +93,10 @@
     },
     {
       "claim_id": "rate-limit-broadcast",
-      "claim": "For bulk notifications a bot cannot broadcast more than about 30 messages per second unless paid broadcasts are enabled; exceeding the limits returns HTTP 429.",
+      "claim": "For bulk notifications a bot cannot broadcast more than about 30 messages per second unless paid broadcasts are enabled.",
       "source_url": "https://core.telegram.org/bots/faq",
       "raw_snippet": "For bulk notifications, bots are not able to broadcast more than about 30 messages per second, unless they enable paid broadcasts to increase the limit.",
-      "fetched_at": "2026-08-08",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -126,10 +126,10 @@
     },
     {
       "claim_id": "channel-vs-dm-broadcast",
-      "claim": "Telegram's documented send-rate limits govern bot sendMessage calls, so a per-user DM broadcast consumes the per-second budget while a single channel post is one API call.",
+      "claim": "To avoid the broadcast limit without paid broadcasts, spread bulk notifications over longer intervals.",
       "source_url": "https://core.telegram.org/bots/faq",
       "raw_snippet": "If you do not wish to enable paid broadcasts, consider spreading them over longer intervals",
-      "fetched_at": "2026-08-08",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -226,10 +226,10 @@
     },
     {
       "claim_id": "spam-law-statutory-damages",
-      "claim": "A court may award statutory damages of up to ₪1,000 per advertisement sent in breach of Section 30a, with no need to prove harm.",
-      "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
-      "raw_snippet": "בית המשפט רשאי לפסוק פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה",
-      "fetched_at": "2026-08-08",
+      "claim": "A court may award statutory damages of up to ₪1,000 per advertisement received in breach of Section 30a, with no need to prove harm.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "פיצויים שאינם תלויים בנזק (בסעיף זה – פיצויים לדוגמה), בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען",
+      "fetched_at": "2026-10-29T19:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -237,10 +237,10 @@
     },
     {
       "claim_id": "spam-law-criminal-offence",
-      "claim": "Sending advertisements in breach of the law is a criminal offence, so knowingly broadcasting without consent carries criminal liability in addition to civil exposure.",
-      "source_url": "https://www.kolzchut.org.il/he/פיצוי_בגין_משלוח_דברי_פרסומת_ללא_הסכמה_של_הנמען_(חוק_הספאם)",
-      "raw_snippet": "שליחת דברי פרסומת בניגוד לחוק היא עבירה פלילית",
-      "fetched_at": "2026-08-08",
+      "claim": "Sending an advertisement in breach of s.30a(ב) or (ג) is a criminal offence punishable by a fine, in addition to civil exposure.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "מפרסם המשגר דבר פרסומת בניגוד להוראות סעיפים קטנים (ב) או (ג), דינו",
+      "fetched_at": "2026-10-29T15:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -251,11 +251,13 @@
       "claim": "Bit business acceptance is subject to the limits and conditions agreed between the bank and the business, and Bit states the payee must issue a lawful tax invoice, so the per-transaction and monthly ceilings must be confirmed with the provider rather than quoted from a published figure.",
       "source_url": "https://www.bitpay.co.il/he/",
       "raw_snippet": "בכפוף למגבלות ולתנאים שנקבעו בין הבנק ובין בית העסק ... על מקבל התשלום באמצעות bit חלה החובה לנהוג לפי דין ובכלל זה להפיק חשבונית מס כחוק",
-      "fetched_at": "2026-08-08",
+      "fetched_at": "2026-10-29T15:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29"
     },
     {
       "claim_id": "paybox-owner-a",
@@ -314,10 +316,10 @@
     },
     {
       "claim_id": "secretary-mode-naming",
-      "claim": "The current Telegram developer features page (core.telegram.org/bots/features) calls the bot-side business toggle Secretary Mode, while the older overview page (core.telegram.org/bots) still calls it Business Mode.",
+      "claim": "The current features page (core.telegram.org/bots/features) calls the bot-side business toggle Secretary Mode.",
       "source_url": "https://core.telegram.org/bots/features",
       "raw_snippet": "Bots can enable Secretary Mode , allowing users to connect the bot to their account so it can process incoming messages and, where permitted, respond on their behalf.",
-      "fetched_at": "2026-09-01T00:00:00Z",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -325,10 +327,10 @@
     },
     {
       "claim_id": "business-premium-vs-connected-bots",
-      "claim": "All Telegram Business features are available free to Premium subscribers, and connected bots are additionally available to non-Premium users. So the native business features require the subscription while connected bots do not.",
+      "claim": "All Telegram Business features are available free to Premium subscribers.",
       "source_url": "https://core.telegram.org/api/business",
       "raw_snippet": "All Telegram Business features are available for free to Premium » subscribers.",
-      "fetched_at": "2026-09-01T00:00:00Z",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -336,10 +338,10 @@
     },
     {
       "claim_id": "stars-digital-only-xtr",
-      "claim": "A bot selling digital goods and services must carry out all transactions in Telegram Stars with currency tag XTR; the provider_token parameter is only needed for physical goods and services.",
+      "claim": "A bot selling digital goods and services must carry out all transactions in Telegram Stars with currency tag XTR.",
       "source_url": "https://core.telegram.org/bots/payments-stars",
       "raw_snippet": "Since your bot sells digital goods and services, all transactions must be carried out in Telegram Stars, with currency tag XTR .",
-      "fetched_at": "2026-09-01T00:00:00Z",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -380,20 +382,20 @@
     },
     {
       "claim_id": "payments-currencies-json",
-      "claim": "Telegram publishes the per-currency invoice limits for the Bot Payments API as a machine-readable file at core.telegram.org/bots/payments/currencies.json, which gives ILS an exponent of 2 with a minimum of 368 and a maximum of 3678820 agorot, i.e. 3.68 and 36,788.20 shekels.",
+      "claim": "currencies.json lists ILS; its exp 2, min_amount 368 and max_amount 3678820 give ₪3.68 to ₪36,788.20 (see payments-ils-supported for the min/max quoted on the payments page).",
       "source_url": "https://core.telegram.org/bots/payments/currencies.json",
-      "raw_snippet": "\"code\": \"ILS\",",
-      "fetched_at": "2026-09-01T00:00:00Z",
+      "raw_snippet": "\"code\":\"ILS\",\"title\":\"Israeli New Sheqel\",\"symbol\":\"₪\",\"native\":\"₪\",\"thousands_sep\":\",\",\"decimal_sep\":\".\",\"symbol_left\":true,\"space_between\":true,\"drop_zeros\":false,\"exp\":2,\"min_amount\":\"368\",\"max_amount\":\"3678820\"",
+      "fetched_at": "2026-10-29T19:00:00Z",
       "appears_in": [
         "references/domain-checklist.md"
       ]
     },
     {
-      "claim_id": "tax-authority-portal",
-      "claim": "The Israel Tax Authority publishes the current חשבוניות ישראל allocation-number rules and threshold on its gov.il department page.",
-      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "רשות המסים",
-      "fetched_at": "2026-09-01T00:00:00Z",
+      "claim_id": "vat-allocation-number-input-deduction",
+      "claim": "Under s.38(א1) of the VAT Law, input VAT on a tax invoice above the threshold cannot be deducted unless the invoice carries a number allocated by the Director, so the allocation requirement bites on the recipient who deducts input VAT; the threshold has been lowered over time. (סעיף 38(א1) לחוק מס ערך מוסף)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים",
+      "fetched_at": "2026-10-29T17:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -401,17 +403,852 @@
       ]
     },
     {
-      "claim_id": "privacy-protection-authority-portal",
-      "claim": "The Privacy Protection Authority, a unit of the Ministry of Justice, publishes its guidance, the Privacy Protection (Data Security) Regulations and its Amendment 13 material on its gov.il department page.",
-      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
-      "raw_snippet": "תקנות הגנת הפרטיות (אבטחת מידע)",
-      "fetched_at": "2026-09-01T00:00:00Z",
-      "verified_via": "browser",
-      "verified_at": "2026-09-01T00:00:00Z",
+      "claim_id": "business-bot-rights-24h",
+      "claim": "A connected business bot's can_reply right covers only private chats that had an incoming message in the last 24 hours",
+      "source_url": "https://core.telegram.org/bots/api",
+      "raw_snippet": "the bot can send and edit messages in the private chats that had incoming messages in the last 24 hours",
+      "fetched_at": "2026-10-29T15:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
+        "references/business-bot-templates.md",
         "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "business-bot-owner-chooses-chats",
+      "claim": "The account owner chooses which chats a connected bot may access",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "The account owner can specify which chats your bot can access",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "disabled-inline-button-10-3",
+      "claim": "Bot API 10.3 added a disabled state for inline keyboard buttons",
+      "source_url": "https://core.telegram.org/bots/api-changelog",
+      "raw_snippet": "Added the class DisabledButton and the field disabled to the class InlineKeyboardButton.",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "mini-app-origin-lock-10-2",
+      "claim": "Since Bot API 10.2 Mini App methods are by default disallowed from other origins, enabled for all Mini Apps on July 20, 2026; owners can opt out through @BotFather.",
+      "source_url": "https://core.telegram.org/bots/api-changelog",
+      "raw_snippet": "disallowing the usage of Mini App methods from origins different from the original Mini App domain. The protection will be automatically enabled for all Mini Apps on July 20, 2026. You can opt-out from the protection through the @BotFather Mini App.",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/mini-apps-implementation.md"
+      ]
+    },
+    {
+      "claim_id": "webhook-secret-token",
+      "claim": "setWebhook accepts a secret_token that Telegram sends back in the X-Telegram-Bot-Api-Secret-Token header",
+      "source_url": "https://core.telegram.org/bots/api",
+      "raw_snippet": "you can specify secret data in the parameter secret_token. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token”",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "my-chat-member-blocked",
+      "claim": "In private chats the my_chat_member update is received only when the bot is blocked or unblocked by the user",
+      "source_url": "https://core.telegram.org/bots/api",
+      "raw_snippet": "For private chats, this update is received only when the bot is blocked or unblocked by the user.",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "stars-mobile-visibility-verbatim",
+      "claim": "Telegram cannot display a bot to mobile users if it sells digital goods via other currencies or third-party providers",
+      "source_url": "https://core.telegram.org/bots/payments-stars",
+      "raw_snippet": "Telegram cannot display your bot or mini-app to mobile users if you attempt to sell digital goods and services via other currencies or through third-party payment providers",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "stars-refund-method",
+      "claim": "Stars refunds are issued via refundStarPayment",
+      "source_url": "https://core.telegram.org/bots/payments-stars",
+      "raw_snippet": "Refunds for digital goods and services can be issued via the refundStarPayment method",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "stars-convert-to-reward",
+      "claim": "Stars are an in-app virtual item that can later be converted to a reward",
+      "source_url": "https://core.telegram.org/bots/payments-stars",
+      "raw_snippet": "an in-app virtual item that you can later convert to a reward",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "distance-transaction-definition",
+      "claim": "A distance transaction is a sale of goods or a service following distance marketing, without both parties present (סעיף 14ג לחוק הגנת הצרכן)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "”עסקת מכר מרחוק“ – התקשרות בעסקה של מכר נכס או של מתן שירות, כאשר ההתקשרות נעשית בעקבות שיווק מרחוק, ללא נוכחות משותפת של הצדדים לעסקה",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-marketing-electronic",
+      "claim": "Distance marketing includes electronic communication of any kind",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "תקשורת אלקטרונית מכל סוג שהוא",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-service-cancel-14-days-two-days",
+      "claim": "For a non-continuing service the consumer may cancel within 14 days, if at least two non-rest days before the service (s.14ג(ג)(2))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "בעסקה שאינה עסקה מתמשכת – בתנאי שביטול כאמור ייעשה לפחות שני ימים, שאינם ימי מנוחה, קודם למועד שבו אמור השירות להינתן",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/business-bot-templates.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-cancel-14-days",
+      "claim": "The cancellation window for a service is fourteen days from the transaction or the disclosure document",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "בתוך ארבעה עשר ימים מיום עשיית העסקה או מיום קבלת המסמך",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-fee-cap-5pct-100",
+      "claim": "On such a cancellation the business refunds within 14 days and may keep at most 5% of the price or NIS 100, whichever is lower (s.14ה(ב)(1))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "זולת דמי ביטול בשיעור שלא יעלה על 5% ממחיר הנכס נושא החוזה או העסקה, או 100 שקלים חדשים, לפי הנמוך מביניהם",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-refund-14-days",
+      "claim": "The business refunds within 14 days of the cancellation notice",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "יחזיר העוסק לצרכן, בתוך 14 ימים מיום קבלת ההודעה על הביטול",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-disclosure-duty",
+      "claim": "In distance marketing the business must disclose its name, ID and address, the service, price, and cancellation right (s.14ג(א))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "בשיווק מרחוק חייב העוסק לגלות לצרכן פרטים אלה לפחות",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-written-document",
+      "claim": "The written disclosure document must be provided no later than the service (s.14ג(ב))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "לא יאוחר ממועד הספקת הנכס או השירות, מסמך הכולל פרטים אלה",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "spam-existing-customer-exception",
+      "claim": "s.30a(ג) allows advertising without consent where details were given during a purchase with notice, a chance to refuse was given, and the ad is for a similar product",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "הנמען מסר את פרטיו למפרסם במהלך רכישה של מוצר או שירות",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md",
+        "references/business-bot-templates.md"
+      ]
+    },
+    {
+      "claim_id": "spam-existing-customer-similar",
+      "claim": "The existing-customer route covers only similar products or services",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "spam-knowingly-presumption",
+      "claim": "The damages clause presumes a sender in breach did so knowingly",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "חזקה על מפרסם ששיגר דבר פרסומת בניגוד להוראות סעיף זה, שעשה כך ביודעין",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "spam-criminal-fine",
+      "claim": "The criminal sanction is a fine under the Penal Law",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "דינו – קנס כאמור בסעיף 61(א)(4) לחוק העונשין",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-db-definition-carveout",
+      "claim": "A collection of only names, addresses and contact details for 100,000 people or fewer is excluded from the database definition",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "אוסף הכולל רק שם, מען ודרכי התקשרות, לגבי 100,000 בני אדם או פחות",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-registration-scope",
+      "claim": "Registration applies to databases mainly for passing data to others (including direct mail services) with over 10,000 people, or public bodies (s.8א)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "מטרתו העיקרית היא איסוף מידע אישי לשם מסירתו לאחר כדרך עיסוק או בתמורה, לרבות שירותי דיוור ישיר, ויש במאגר מידע אישי על יותר מ־10,000 בני אדם",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-officer-duty",
+      "claim": "s.17ב1 lists the bodies that must appoint a privacy officer",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "הגופים המפורטים להלן חייבים במינוי ממונה על הגנת הפרטיות",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-notice-s11",
+      "claim": "A request for personal data must be accompanied by a notice (s.11) (סעיף 11 לחוק הגנת הפרטיות)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "פניה לאדם לקבלת מידע אישי לשם עיבודו במאגר מידע תלווה בהודעה שיצויינו בה",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-notice-owner-contact",
+      "claim": "The notice must name the database owner and contact details",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "שמו של בעל השליטה במאגר המידע, ודרכי ההתקשרות עימו",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-notice-access-correction",
+      "claim": "The notice must state the access (s.13) and correction (s.14) rights",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "קיומן של זכות עיון במידע האישי לפי סעיף 13 ושל זכות לבקש תיקון של המידע האישי לפי סעיף 14",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "direct-mail-definition",
+      "claim": "Direct mail is a personal approach based on membership of a group characterised from a database",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "”דיוור ישיר“ – פנייה אישית לאדם, בהתבסס על השתייכותו לקבוצת אוכלוסין",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "direct-mail-17f-content",
+      "claim": "Every direct-mail approach must clearly contain the 17ו elements (סעיף 17ו לחוק הגנת הפרטיות)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "כל פניה בדיוור ישיר תכיל באופן ברור ובולט",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "direct-mail-deletion-right",
+      "claim": "Recipients must be told of their right to be deleted",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "הודעה על זכותו של מקבל הפניה להימחק מן המאגר",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "direct-mail-30-days",
+      "claim": "If the owner does not confirm within 30 days the person may apply to the Magistrates' Court",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "תוך 30 ימים מיום קבלת הדרישה, רשאי האדם שהמידע מתייחס אליו לפנות לבית משפט השלום",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "direct-mail-17c-repealed",
+      "claim": "s.17ג is repealed, the operative provisions are 17ד-17ו",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "17ג. [תיקון: תשנ״ו, תשפ״ד] (בוטל)",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "data-security-encryption",
+      "claim": "Data Security Regulations 2017: transfer over the internet must use accepted encryption",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%90%D7%91%D7%98%D7%97%D7%AA_%D7%9E%D7%99%D7%93%D7%A2)",
+      "raw_snippet": "העברת מידע ממאגר המידע, ברשת ציבורית או באינטרנט, תיעשה תוך שימוש בשיטות הצפנה מקובלות",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "data-security-basic-tier",
+      "claim": "The Regulations define a basic security level",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%90%D7%91%D7%98%D7%97%D7%AA_%D7%9E%D7%99%D7%93%D7%A2)",
+      "raw_snippet": "”מאגרים שחלה עליהם רמת האבטחה הבסיסית“",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "data-security-individual-db",
+      "claim": "An individually-managed database is run by an individual or a company they own, used by at most two other authorised people",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%90%D7%91%D7%98%D7%97%D7%AA_%D7%9E%D7%99%D7%93%D7%A2)",
+      "raw_snippet": "ואשר רק היחיד ולכל היותר שני בעלי הרשאה נוספים רשאים לעשות בו שימוש",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "data-security-individual-10000",
+      "claim": "The individually-managed regime excludes a database with information on 10,000 people or more",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%90%D7%91%D7%98%D7%97%D7%AA_%D7%9E%D7%99%D7%93%D7%A2)",
+      "raw_snippet": "מאגר מידע שיש בו מידע על אודות 10,000 אנשים ומעלה",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "grow-issues-documents",
+      "claim": "Grow issues the document to the customer automatically after payment.",
+      "source_url": "https://grow.business/invoice-page/",
+      "raw_snippet": "לאחר ביצוע התשלום, המערכת תפיק ותשלח ללקוח את המסמך המתאים באופן אוטומטי",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-payment-providers.md"
+      ]
+    },
+    {
+      "claim_id": "morning-formerly-green-invoice",
+      "claim": "Green Invoice now trades as Morning and issues an automatic invoice with each clearing",
+      "source_url": "https://www.greeninvoice.co.il/",
+      "raw_snippet": "כולל חשבוניות אוטומטיות בכל עסקה",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-payment-providers.md"
+      ]
+    },
+    {
+      "claim_id": "morning-brand",
+      "claim": "The Green Invoice site is branded Morning",
+      "source_url": "https://www.greeninvoice.co.il/",
+      "raw_snippet": "מורנינג של חשבונית ירוקה",
+      "fetched_at": "2026-10-29T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-payment-providers.md"
+      ]
+    },
+    {
+      "claim_id": "cardcom-lowprofile-documents",
+      "claim": "Cardcom's API has a document-creation endpoint associated with a deal.",
+      "source_url": "https://secure.cardcom.solutions/swagger/v11/swagger.json",
+      "raw_snippet": "Create a document associated to a deal",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-payment-providers.md"
+      ]
+    },
+    {
+      "claim_id": "telegram-business-edited-message",
+      "claim": "Bot API 7.2 added the edited_business_message update field.",
+      "source_url": "https://core.telegram.org/bots/api-changelog",
+      "raw_snippet": "Added updates about message edits in a business account connected to the bot, represented by the field edited_business_message in the class Update",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "telegram-business-connection-id-send",
+      "claim": "Bot API 7.2 added business_connection_id to send methods such as sendMessage.",
+      "source_url": "https://core.telegram.org/bots/api-changelog",
+      "raw_snippet": "Added the parameter business_connection_id to the methods sendMessage, sendPhoto",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "botfather-newbot",
+      "claim": "A new bot is created with the /newbot command in @BotFather.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "Use the /newbot command to create a new bot.",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "botfather-setabouttext",
+      "claim": "/setabouttext changes the bot about info.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "/setabouttext – change the bot's about info",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "botfather-setuserpic",
+      "claim": "/setuserpic changes the bot profile picture.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "/setuserpic – change the bot's profile picture.",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "botfather-setcommands",
+      "claim": "/setcommands changes the list of commands.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "/setcommands – change the list of commands supported by your bot.",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "botfather-setprivacy",
+      "claim": "/setprivacy sets which group messages the bot receives.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "/setprivacy – set which messages your bot will receive when added to a group.",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "botfather-mybots",
+      "claim": "/mybots, Bot Settings, Configure Mini App is the BotFather path.",
+      "source_url": "https://core.telegram.org/bots/features",
+      "raw_snippet": "@Botfather > /mybots > Select bot > Bot Settings > Configure Mini App",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "rate-limit-429",
+      "claim": "Exceeding the send limits returns 429 errors.",
+      "source_url": "https://core.telegram.org/bots/faq",
+      "raw_snippet": "if you go over that, you'll start getting 429 errors",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "business-mode-old-name",
+      "claim": "The older overview page (core.telegram.org/bots) still calls the toggle Business Mode.",
+      "source_url": "https://core.telegram.org/bots",
+      "raw_snippet": "Developers can turn on Business Mode in @BotFather if their bot supports integration with Telegram Business accounts.",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "connected-bots-non-premium",
+      "claim": "Connected bots are also available to non-Premium users.",
+      "source_url": "https://core.telegram.org/api/business",
+      "raw_snippet": "Additionally, connected bots » are also available to non-Premium users.",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "n8n-telegram-single-webhook",
+      "claim": "n8n's Telegram Trigger registers a webhook, and Telegram keeps a single webhook per bot, so a second registration overwrites the first.",
+      "source_url": "https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger/common-issues/",
+      "raw_snippet": "Telegram only allows you to register a single webhook per app.",
+      "fetched_at": "2026-10-29T17:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "distance-14-days-later-of",
+      "claim": "The 14 days run from the transaction or from receiving the s.14ג(ב) document, whichever is later",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "בתוך ארבעה עשר ימים מיום עשיית העסקה או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף קטן (ב), לפי המאוחר",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-continuing-any-time",
+      "claim": "In a continuing transaction the service may be cancelled whether or not it has begun",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "בעסקה מתמשכת – בין אם הוחל במתן השירות ובין אם לאו",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-leisure-seven-days",
+      "claim": "The distance-cancellation right does not apply to leisure/hospitality services cancelled within seven non-rest days before the service (s.14ג(ד)(2))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "שירותי הארחה, נסיעה, חופש או בילוי, אם מועד ביטול העסקה חל בתוך שבעה ימים שאינם ימי מנוחה",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-business-fault-no-fee",
+      "claim": "Where the cancellation is due to the business (non-supply, mismatch, breach) the refund carries no cancellation fee (s.14ה(א))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "ולא יגבה מהצרכן דמי ביטול כלשהם",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-continuing-proportional",
+      "claim": "In a continuing transaction that has begun, the consumer pays the proportional price (s.14ה(ב1))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "ישלם הצרכן את התמורה היחסית בעד השירות שניתן לו",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-seniors-four-months",
+      "claim": "Seniors, people with disabilities and new immigrants get four months if the transaction included a conversation, including electronically (s.14ג1(ג))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "ובלבד שההתקשרות בעסקה כללה שיחה בין העוסק לצרכן, ובכלל זה שיחה באמצעות תקשורת אלקטרונית",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "distance-seniors-four-months-b",
+      "claim": "The extended period is four months",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "רשאי הצרכן לבטל את העסקה בתוך ארבעה חודשים מיום עשיית העסקה",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "regs-2010-cosmetics-item",
+      "claim": "Cosmetic and aesthetic services, including hair removal, are listed in the 2010 Cancellation Regulations schedule",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F_(%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94)",
+      "raw_snippet": "שירותי קוסמטיקה ואסתטיקה, לרבות טיפולי הסרת שיער",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "regs-2010-cosmetics-window",
+      "claim": "For listed services such as cosmetics, cancellation is within 14 days of the transaction or the written contract, whether or not the service began (reg 2(4))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F_(%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94)",
+      "raw_snippet": "בתוך 14 ימים מיום עשיית העסקה או מיום מסירת חוזה בכתב או מסמך בכתב כאמור בסעיף 13ג(ג) לחוק , לפי המאוחר, בין אם הוחל במתן השירות ובין אם לא",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "regs-2010-fee-cap",
+      "claim": "The regulations cap the cancellation fee at 5% of the price or service value or NIS 100, whichever is lower (reg 5(א))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F_(%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94)",
+      "raw_snippet": "רשאי העוסק לגבות מהצרכן דמי ביטול בשיעור של 5% ממחיר הטובין או מערך השירות או 100 שקלים חדשים לפי הנמוך מביניהם",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "spam-refuse-any-time",
+      "claim": "The recipient may refuse further advertising at any time (s.30a(ד)(1))",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "רשאי הוא, בכל עת, להודיע למפרסם על סירובו לקבל דברי פרסומת",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-third-schedule-fines",
+      "claim": "Amendment 13 attached administrative fines to Data Security Regulations breaches, scaled by security level (Privacy Law, Third Schedule)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "עיצום כספי על הפרת תקנות אבטחת מידע",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-individual-db-secrecy",
+      "claim": "The individually-managed regime covers an individual or a company owned by one or two individuals, and excludes databases with professional-secrecy information",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "מאגר מידע הכולל מידע אישי שבעל המאגר כפוף בשלו לחובת סודיות מקצועית",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-individual-db-owners",
+      "claim": "An individually-managed database may be held by a company owned by one or two individuals",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "תאגיד בבעלות יחיד או תאגיד בבעלות שני יחידים",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-basic-sensitive-ten",
+      "claim": "A basic-level database holding especially sensitive data stays basic only if at most ten people have access",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "מספר בעלי ההרשאה למאגר אצל בעל השליטה אינו עולה על עשרה",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "transfer-abroad-consent",
+      "claim": "A transfer abroad is allowed where the data subject consented",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%94%D7%A2%D7%91%D7%A8%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%90%D7%9C_%D7%9E%D7%90%D7%92%D7%A8%D7%99_%D7%9E%D7%99%D7%93%D7%A2_%D7%A9%D7%9E%D7%97%D7%95%D7%A5_%D7%9C%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
+      "raw_snippet": "האדם שעליו המידע הסכים להעברה",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "transfer-abroad-contract",
+      "claim": "A transfer abroad is allowed to a recipient who undertook by contract to keep Israeli conditions",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%94%D7%A2%D7%91%D7%A8%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%90%D7%9C_%D7%9E%D7%90%D7%92%D7%A8%D7%99_%D7%9E%D7%99%D7%93%D7%A2_%D7%A9%D7%9E%D7%97%D7%95%D7%A5_%D7%9C%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
+      "raw_snippet": "המידע מועבר למי שהתחייב בהסכם עם בעל מאגר המידע",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "transfer-abroad-written-undertaking",
+      "claim": "The owner must secure a written undertaking from the recipient (reg 3)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%94%D7%A2%D7%91%D7%A8%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%90%D7%9C_%D7%9E%D7%90%D7%92%D7%A8%D7%99_%D7%9E%D7%99%D7%93%D7%A2_%D7%A9%D7%9E%D7%97%D7%95%D7%A5_%D7%9C%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
+      "raw_snippet": "יבטיח בעל מאגר המידע, בהתחייבות בכתב של מקבל המידע",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "deposit-worked-examples",
+      "claim": "Worked examples of the s.14ה(ב)(1) cap, computed on the full price: haircut ₪120 with ₪50 deposit, keep min(5% x 120 = ₪6, ₪100) = ₪6, refund ₪44; colour ₪2,500 with ₪500 deposit, keep min(₪125, ₪100) = ₪100, refund ₪400.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F",
+      "raw_snippet": "זולת דמי ביטול בשיעור שלא יעלה על 5% ממחיר הנכס נושא החוזה או העסקה, או 100 שקלים חדשים, לפי הנמוך מביניהם",
+      "fetched_at": "2026-10-29T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-and-security.md"
+      ]
+    },
+    {
+      "claim_id": "cardcom-lowprofile-page",
+      "claim": "Cardcom's API creates a hosted iframe or redirect payment page (LowProfile).",
+      "source_url": "https://secure.cardcom.solutions/swagger/v11/swagger.json",
+      "raw_snippet": "Create iframe redirect page to charge the customer",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md",
+        "references/israeli-payment-providers.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "meshulam-redirects-to-grow",
+      "claim": "meshulam.co.il now redirects to Grow, so Meshulam operates as Grow.",
+      "source_url": "https://www.meshulam.co.il/",
+      "raw_snippet": "סליקה וקבלת תשלומים | בנקאות חדשה לאנשים עם עסקים - Grow",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md",
+        "references/israeli-payment-providers.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "regs-2010-refund-7-business-days",
+      "claim": "Under the 2010 Regulations the refund is due no later than seven business days (reg 4)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F_(%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94)",
+      "raw_snippet": "ולא מאוחר משבעה ימי עסקים",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md",
+        "references/israeli-payment-providers.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "regs-2010-card-fee",
+      "claim": "The business may also charge a proven card-clearing fee (reg 5(ב))",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A6%D7%A8%D7%9B%D7%9F_(%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94)",
+      "raw_snippet": "רשאי העוסק לחייב את הצרכן גם בתשלום שנגבה ממנו",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md",
+        "references/israeli-payment-providers.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-exemplary-damages-15a",
+      "claim": "Since Amendment 13 a court may award exemplary damages up to NIS 10,000 without proof of harm for listed breaches, including the s.11 notice and access refusal (s.15א)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "פיצויים שאינם תלויים בנזק (בסעיף זה – פיצויים לדוגמה), בסכום שלא יעלה על 10,000 שקלים חדשים",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md",
+        "references/israeli-payment-providers.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-15a-notice-30-days",
+      "claim": "The notice breach counts after a demand and 30 days",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "בלי שמסר הודעה כדרישת אותו סעיף , ובלבד שאדם כאמור פנה לבעל השליטה בדרישה להודיע לו כאמור, וחלפו 30 ימים מיום פנייתו",
+      "fetched_at": "2026-10-29T19:00:00Z",
+      "appears_in": [
+        "references/compliance-and-security.md",
+        "references/israeli-payment-providers.md",
+        "SKILL.md",
+        "SKILL_HE.md"
       ]
     }
   ]

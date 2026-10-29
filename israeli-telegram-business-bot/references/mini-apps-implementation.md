@@ -30,7 +30,9 @@ The page itself is served from your own HTTPS URL. @BotFather does not host the 
 
 Israeli payment providers do not need a Telegram-specific integration to work inside a Mini App. You can embed the same Tranzila iframe, PayMe payment page, or Green Invoice payment link you would use on a regular website. The Mini App is just a web page, so any HTTPS-embeddable Israeli checkout works.
 
-This is the practical workaround for the "Telegram native Payment API does not support Israeli soleks" limitation: build a thin Mini App, embed the Israeli provider iframe, settle through your existing merchant account.
+This is the practical route when no Israeli solek appears among the providers @BotFather offers for the native Payment API (Telegram publishes no provider list): build a thin Mini App, embed the Israeli provider iframe, settle through your existing merchant account.
+
+Since Bot API 10.2, Mini App methods can by default only be used from the Mini App's own domain (enabled for all Mini Apps on July 20, 2026; an owner can opt out in @BotFather and then carries the risk). The provider's iframe is a different origin, so it cannot call Telegram methods; the Mini App page itself must handle the result (for example by listening for the provider's redirect or callback).
 
 ## Cost and maintenance considerations
 
