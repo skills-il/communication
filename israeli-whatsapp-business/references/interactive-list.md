@@ -1,6 +1,6 @@
 # Sending an interactive list message
 
-Interactive messages are non-template messages, so they can only be sent inside an open customer service window. From 1 October 2026 they count as billable service messages after the monthly free tier.
+Interactive messages are non-template messages, so they can only be sent inside an open customer service window. Since 1 October 2026 they count as billable service messages after the monthly free tier.
 
 ```python
 import requests

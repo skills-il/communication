@@ -31,6 +31,34 @@
           10
         ]
       }
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-11-04",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          3,
+          5,
+          7,
+          9
+        ]
+      },
+      "value_add": "PASS: with 1.00, without 0.06, delta +0.94 (4 cases)",
+      "lessons": [
+        "Resolved carries: 1 October 2026 charging confirmed shipped (wording now past tense); s.30A(e) sourced from the statute text (the word פרסומת at the start is statutory, plus a web/email refusal address for an electronic message); Amendment 13 commencement 14.8.2025 sourced; partner-to-partner number migration not supported in the new account model (sourced); Marketing Messages API and the Cloud API marketing sunset added; BSUID recipient, named parameters, URL button and media header added to the script; non-Israeli recipients supported.",
+        "Eval ceiling effect: this is the only WhatsApp Business API skill and siblings route WhatsApp to it, so the frozen set cannot separate description versions. Next cycle add harder negatives (non-Israeli WhatsApp, WhatsApp personal automation in Hebrew).",
+        "Next cycle (expert r2 minors, deferred by lead): --transactional is honour-system, consider checking the template's latest category via the Message Templates API before skipping the Shabbat check; 056/059 are also used as +970, find a primary source on which form WhatsApp registers; guard --recipient (BSUID) with an OTP copy-code/one-tap/zero-tap template (BSUIDs unsupported there); Coexistence limits (20 mps, 6 months history, no groups) and the MM API marketing_lite pricing category.",
+        "Text-header variable send shape: no Meta page read on 2026-11-04 (components HTML and .md, utility, marketing, custom-marketing, overview) shows it; script does not build one. Re-check next cycle.",
+        "Deferred MINOR (carried): is_valid_sending_time knows Friday/Saturday only, no chag source.",
+        "Deferred MINOR: template pacing coexistence caveats; business username change limit (Oct 23 2026 BSUID changelog).",
+        "Tooling: developers.facebook.com returns HTTP 400 to verify-evidence's desktop Chrome UA but 200 to curl's default UA. Meta claims were checked with tools/metacheck.py (imports the gate's _norm and fragment logic) against default-UA bodies, then the gate was run with --allow-unreachable. The WhatsApp changelog page served by curl stops at 12 May 2026 and the rendered page fails to load.",
+        "Tooling: the gate now rejects ellipsis-stitched snippets; split into one entry per contiguous quote. Cite Hebrew statute subsections by Hebrew letter: (ט)=i, (י)=j, a transliteration slip mis-cited the damages clause once this cycle."
+      ]
     }
   ]
 }

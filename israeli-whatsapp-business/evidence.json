@@ -1,20 +1,33 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-whatsapp-business",
-  "generated_at": "2026-09-13T20:20:00Z",
+  "generated_at": "2026-11-04T13:30:00Z",
   "claims": [
     {
       "claim_id": "per-user-marketing-cap-applies-to-israel",
-      "claim": "The per-user marketing template message limit is NOT active only for the European Economic Area, United Kingdom, Japan and South Korea. Israel is not on the exclusion list, so the cap applies to Israeli recipients.",
-      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits",
-      "raw_snippet": "Per-user marketing template message limits are not currently active for messages sent from a business phone number in the European Economic Area, United Kingdom, Japan, or South Korea, or to a WhatsApp user in these countries.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "claim": "Meta lists the places where per-user marketing template limits are not active: the EEA, the UK, Japan, South Korea, Nigeria, South Africa and Thailand. Israel is not on the list, so the cap applies to Israeli recipients.",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/get-started",
+      "raw_snippet": "European Economic Area, United Kingdom, Japan, South Korea, Nigeria, South Africa, Thailand",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "per-user-marketing-cap-applies-to-israel-2",
+      "claim": "Meta lists the places where per-user marketing template limits are not active: the EEA, the UK, Japan, South Korea, Nigeria, South Africa and Thailand. Israel is not on the list, so the cap applies to Israeli recipients.",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/get-started",
+      "raw_snippet": "are also not active in these countries",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "marketing-to-us-numbers-paused",
@@ -72,14 +85,12 @@
       "claim_id": "error-130429",
       "claim": "Error 130429 is a rate limit error",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
-      "raw_snippet": "Combination of the error code and its title. For example: (#130429) Rate limit hit.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "(#130429) Rate limit hit",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "error-131049-text",
@@ -96,55 +107,58 @@
     },
     {
       "claim_id": "non-template-free-since-nov-2024",
-      "claim": "Non-template (service) messages sent inside an open customer service window have not been charged since 1 November 2024; this ends on 1 October 2026",
+      "claim": "Service (non-template) messages were free from 1 November 2024 until they became charged on 1 October 2026",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "As of November 1, 2024 - Meta does not charge for non-template messages",
-      "fetched_at": "2026-09-13T20:00:00Z",
+      "raw_snippet": "Service messages, which became free as of Nov. 1, 2024",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
+      ]
     },
     {
       "claim_id": "per-message-pricing-july-2025",
       "claim": "Per-message pricing effective 1 July 2025",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "Effective July 1, 2025, Meta charges on a per-message basis",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Effective July 1, 2025",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
+    },
+    {
+      "claim_id": "per-message-pricing-july-2025-2",
+      "claim": "Per-message pricing effective 1 July 2025",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Meta charges by category",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "utility-free-in-csw",
-      "claim": "Utility templates sent in response to users inside an open customer service window have not been charged since 1 July 2025; this ends on 1 October 2026",
+      "claim": "Utility templates sent in response to users inside an open customer service window were free from 1 July 2025 until they became charged on 1 October 2026",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "As of July 1, 2025 - Meta does not charge for utility templates in response to users",
-      "fetched_at": "2026-09-13T20:00:00Z",
+      "raw_snippet": "Utility messages sent in response to users (thus in an open",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
+      ]
     },
     {
-      "claim_id": "free-entry-point-72h",
-      "claim": "All messages including templates are free for 72 hours inside an open free entry point window",
+      "claim_id": "utility-free-in-csw-2",
+      "claim": "Utility templates sent in response to users inside an open customer service window were free from 1 July 2025 until they became charged on 1 October 2026",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "All messages, including template messages, are free for 72 hours, if sent within an open free entry point window",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "which became free as of July 1, 2025",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "pricing-quarterly-cadence",
@@ -163,40 +177,34 @@
       "claim_id": "max-price-marketing",
       "claim": "Businesses on Marketing Messages API can set a max price per marketing message delivery",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "can choose to set a max-price per marketing message delivery",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "when a max-price is set, Meta will charge that max-price or lower for delivery",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "ai-provider-pricing-feb-2026",
       "claim": "A separate AI Providers pricing policy is effective 16 February 2026",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "which is effective February 16, 2026",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "effective February 16, 2026 and updated as of May 12, 2026",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "rates-vary-by-country",
-      "claim": "Rates vary by template category, volume tier and country/region, so the Israeli rate must be read from the rate card row for country code 972",
+      "claim": "Rates vary by message category and by the recipient's country calling code (market), so the Israeli rate must be read from the rate card row for 972",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "Rates vary based on template category , volume tier , and country/region rate.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Rates for messages vary based on 2 factors",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "messaging-limit-default-250",
@@ -254,40 +262,45 @@
       "claim_id": "messaging-limit-field",
       "claim": "The whatsapp_business_manager_messaging_limit field returns the current limit; messaging_limit_tier is deprecated",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits",
-      "raw_snippet": "the messaging_limit_tier , which used to return the phone number’s messaging limit, has been deprecated",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "field, which used to return a business phone number's messaging limit, has been deprecated",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "calling-israel-supported",
       "claim": "Business-initiated calling is available everywhere Cloud API is available except the United States, Canada, Egypt, Vietnam and Nigeria, so Israel is supported",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/calling",
-      "raw_snippet": "Business-initiated calling is available in every location Cloud API is available",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Business-initiated calling is available in",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
+    },
+    {
+      "claim_id": "calling-israel-supported-2",
+      "claim": "Business-initiated calling is available everywhere Cloud API is available except the United States, Canada, Egypt, Vietnam and Nigeria, so Israel is supported",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/calling",
+      "raw_snippet": "except the following countries",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "calling-user-initiated",
       "claim": "User-initiated calling is available in every location Cloud API is available",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/calling",
-      "raw_snippet": "User-initiated calling is available in every location Cloud API is available",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "User-initiated calling is available in",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "graph-api-v26",
@@ -305,7 +318,7 @@
     },
     {
       "claim_id": "graph-api-endpoints",
-      "claim": "Cloud API sends via POST /{version}/{phone-number-id}/messages and creates templates via /{waba-id}/message_templates",
+      "claim": "Cloud API sends via POST /{version}/{phone-number-id}/messages and creates templates via /{waba-id}/message_templates. In the skill: `POST /{phone_number_id}/messages`",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
       "raw_snippet": "curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messages'",
       "fetched_at": "2026-09-13T20:20:00Z",
@@ -346,33 +359,18 @@
     },
     {
       "claim_id": "platform-overview",
-      "claim": "WhatsApp Business Platform documentation root",
-      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp",
-      "raw_snippet": "WhatsApp Business Platform",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "claim": "WhatsApp Business Platform documentation (platform overview)",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform",
+      "raw_snippet": "The WhatsApp Business Platform enables businesses to communicate with customers at scale",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
-    },
-    {
-      "claim_id": "amendment-13-privacy-authority",
-      "claim": "Privacy Protection Law Amendment 13 is a published topic of the Israeli Privacy Protection Authority, which also operates the database (maagar meida) registration services",
-      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
-      "raw_snippet": "תיקון 13 לחוק הגנת הפרטיות",
-      "fetched_at": "2026-08-09T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z"
+      ]
     },
     {
       "claim_id": "spam-law-damages-1000",
-      "claim": "Section 30A(i)(1): the court may award compensation of up to NIS 1,000 for each advertisement sent in breach, without proof of damage, and the award accumulates סעיף 30א(י)(1): פיצוי של עד 1,000 ש\"ח לכל דבר פרסומת, ללא הוכחת נזק.",
+      "claim": "Section 30א(י)(1): the court may award compensation of up to NIS 1,000 for each advertisement sent in breach, without proof of damage, and the award accumulates סעיף 30א(י)(1): פיצוי של עד 1,000 ש\"ח לכל דבר פרסומת, ללא הוכחת נזק.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
       "raw_snippet": "פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -473,18 +471,6 @@
       ]
     },
     {
-      "claim_id": "israeli-mobile-prefixes",
-      "claim": "Israeli mobile prefixes: 050 (Pelephone), 051 (We4G), 052 (Cellcom), 053 (HOT Mobile), 054 (Partner), 055 (MVNO), 058 (Golan Telecom)",
-      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
-      "raw_snippet": "Telephone numbers in Israel",
-      "fetched_at": "2026-08-09T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
-        "scripts/send_whatsapp.py"
-      ]
-    },
-    {
       "claim_id": "bsp-360dialog",
       "claim": "360dialog operates as an active WhatsApp Business API provider and Meta Partner.",
       "source_url": "https://www.360dialog.com/whatsapp-business-api",
@@ -575,45 +561,28 @@
       ]
     },
     {
-      "claim_id": "example-discount-percentage",
-      "claim": "20% is a generic illustrative discount used only in the Hebrew template-rejection example and in the compliant MARKETING body sample; it is not a regulatory or pricing claim",
-      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits",
-      "raw_snippet": "Per-user marketing template message limits",
-      "fetched_at": "2026-08-09T00:00:00Z",
-      "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z",
+      "claim_id": "service-messages-free-tier-oct-2026",
+      "claim": "Since 1 October 2026 each business phone number gets 1,000 free service messages a month",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Each business phone number has one free tier of 1,000 delivered service messages per month",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/platform-2026.md"
       ]
     },
     {
-      "claim_id": "service-messages-free-tier-oct-2026",
-      "claim": "From 1 October 2026 each business phone number gets 1,000 free service messages a month, and Meta charges from the 1,001st",
-      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "Every business phone number will receive 1,000 free service messages per month",
-      "fetched_at": "2026-09-13T20:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
-        "references/platform-2026.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
-    },
-    {
       "claim_id": "service-messages-charged-from-1001",
-      "claim": "From 1 October 2026 Meta charges service messages from the 1,001st delivered each month",
+      "claim": "Since 1 October 2026 Meta charges service messages from the 1,001st delivered each month",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "Meta will only charge as of the 1,001st service message delivered each month",
-      "fetched_at": "2026-09-13T20:00:00Z",
+      "raw_snippet": "Meta charges as of the 1,001st service message per month, after the free tier has been used",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/platform-2026.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
+      ]
     },
     {
       "claim_id": "utility-in-csw-charged-oct-2026",
@@ -735,13 +704,11 @@
       "claim_id": "bsuid-failed-status-no-contacts",
       "claim": "On a failed status webhook the contacts block is omitted entirely",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
-      "raw_snippet": "the contacts block is omitted entirely",
-      "fetched_at": "2026-09-13T20:00:00Z",
+      "raw_snippet": "the `contacts` block is omitted entirely",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "references/platform-2026.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
+      ]
     },
     {
       "claim_id": "user-preferences-webhook",
@@ -839,15 +806,13 @@
     },
     {
       "claim_id": "utility-restriction-recategorized",
-      "claim": "Under a utility restriction all approved utility templates on the WABA are recategorized to MARKETING",
+      "claim": "Under a utility restriction all approved utility templates on the Messaging account are recategorized to MARKETING",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
-      "raw_snippet": "All approved utility templates on the WABA are recategorized to",
-      "fetched_at": "2026-09-13T20:00:00Z",
+      "raw_snippet": "All approved utility templates on the Messaging account are recategorized to `MARKETING`",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "references/platform-2026.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
+      ]
     },
     {
       "claim_id": "utility-restriction-duration",
@@ -927,30 +892,27 @@
     },
     {
       "claim_id": "no-payment-method-stops-at-1001",
-      "claim": "The pricing page says an account without a payment method has its first 1,000 service messages a month delivered and not beyond",
+      "claim": "A Messaging account with no payment method gets its free-tier service messages delivered and not those beyond the free tier",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "deliver your first 1,000 service messages each month but",
-      "fetched_at": "2026-09-13T20:10:00Z",
+      "raw_snippet": "Meta will deliver service messages within the free tier but _not_ deliver them after the free tier has been used",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/platform-2026.md"
       ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13",
       "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
     },
     {
       "claim_id": "status-pricing-type-changes",
-      "claim": "The pricing page webhook table shows the status pricing type for service messages changing from 1 October 2026 (free_customer_service to regular from the 1,001st)",
+      "claim": "Since 1 October 2026 the status webhook pricing type for utility messages sent inside the customer service window is regular, no longer free_customer_service",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "Starting with the 1,001st service message each month, per business phone number",
-      "fetched_at": "2026-09-13T20:10:00Z",
+      "raw_snippet": "changed from `free_customer_service` to `regular` as of October 1, 2026",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
-        "references/platform-2026.md"
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
       ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13",
       "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
     },
     {
@@ -970,20 +932,18 @@
     },
     {
       "claim_id": "auth-always-charged",
-      "claim": "Meta's category table shows authentication templates as charged, with no in-window exception",
-      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
-      "raw_snippet": "Does Meta charge? Yes Yes Yes",
-      "fetched_at": "2026-09-13T20:10:00Z",
+      "claim": "The only free messages are all messages in a free entry point window and the monthly service free tier, so authentication templates are charged inside the customer service window and free only in a free entry point window",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "_Free messages_: Two instances (all messages in free entry point window; free tier of monthly service messages)",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
+      ]
     },
     {
       "claim_id": "graph-api-message-templates-endpoint",
-      "claim": "Templates are created on the WABA message_templates edge",
+      "claim": "Templates are created on the WABA message_templates edge. In the skill: `POST /{waba_id}/message_templates`",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
       "raw_snippet": "curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates'",
       "fetched_at": "2026-09-13T20:20:00Z",
@@ -1025,13 +985,11 @@
       "claim_id": "service-free-tier-no-rollover",
       "claim": "Unused free service messages do not roll over",
       "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
-      "raw_snippet": "Service messages in the free tier do not roll over if not used in a specific month",
-      "fetched_at": "2026-09-13T20:20:00Z",
+      "raw_snippet": "Unused service messages in the free tier do not roll over to the next month",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "references/platform-2026.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13"
+      ]
     },
     {
       "claim_id": "bsuid-send-recipient-field",
@@ -1128,19 +1086,1807 @@
       "verified_at": "2026-09-13"
     },
     {
-      "claim_id": "no-payment-method-stop-service-oct-2026",
-      "claim": "The non-template messages page says businesses without a payment method on file by 30 September 2026 stop having service messages delivered from 1 October 2026",
-      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
-      "raw_snippet": "have a payment method on file by September 30, 2026, Meta will",
-      "fetched_at": "2026-09-13T20:40:00Z",
+      "claim_id": "five-categories-mba",
+      "claim": "Meta has five message categories, including Meta Business Agent from 1 July 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Meta has 5 different message categories on the WhatsApp Business Platform, with the introduction of Meta Business Agent as of July 1, 2026",
+      "fetched_at": "2026-11-04T10:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/platform-2026.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-09-13",
-      "verification_note": "Read 2026-09-13 via the r.jina.ai headless-browser rendering proxy; direct fetches from this machine were HTTP 429."
+      ]
+    },
+    {
+      "claim_id": "mba-definition",
+      "claim": "Meta Business Agent messages are non-template messages powered by the Meta Business Agent Platform; service messages are those not powered by it, by people or a third-party AI",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Any non-template message _not_ powered by the Meta Business Agent Platform. These can be powered by a 3rd-party AI solution or people",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "mba-per-token-aug-2026",
+      "claim": "Meta Business Agent messages are charged per token from 1 August 2026, one charge covering processing and delivery",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "Meta will charge on a per-token basis for",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "mba-per-token-aug-2026-2",
+      "claim": "Meta Business Agent messages are charged per token from 1 August 2026, one charge covering processing and delivery",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "Meta will apply one charge that encompasses both token consumption (input and output tokens only) and message delivery",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "mba-per-token-aug-2026-3",
+      "claim": "Meta Business Agent messages are charged per token from 1 August 2026, one charge covering processing and delivery",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "Effective August 1, 2026",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "service-charged-oct-2026",
+      "claim": "From 1 October 2026 Meta charges per message for all service messages and for utility messages sent in response to users",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages",
+      "raw_snippet": "Effective October 1, 2026** - Meta will charge on a per-message basis for all **service messages",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "israel-named-market",
+      "claim": "Israel is a named market on the rate card under country calling code 972",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Israel (IL) - 972",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "gov-nonprofit-service-free",
+      "claim": "Eligible government and non-profit organizations keep service messages free beyond the monthly free tier, through 31 December 2027",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Service messages remain free beyond the monthly free tier only for eligible government and non-profit organizations",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "gov-nonprofit-service-free-2",
+      "claim": "Eligible government and non-profit organizations keep service messages free beyond the monthly free tier, through 31 December 2027",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "This pricing policy will be in effect through December 31, 2027",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "gov-nonprofit-eligibility-fields",
+      "claim": "Eligibility is reported through a subtype webhook field from 12 October 2026 and the service_pricing_policy field from 23 October 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "As of October 12, 2026, via webhooks",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "gov-nonprofit-eligibility-fields-2",
+      "claim": "Eligibility is reported through a subtype webhook field from 12 October 2026 and the service_pricing_policy field from 23 October 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "As of October 23, 2026, via the `service_pricing_policy` field",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ai-providers-not-oct-change",
+      "claim": "The October 2026 service-message pricing updates do not apply to AI Providers",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Pricing updates for service messages launching October 1, 2026 do not apply to AI Providers",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "free-tier-reset-timezone",
+      "claim": "The service free tier resets monthly at midnight by Messaging account time zone",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "This reset happens at 12am by Messaging account timezone",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "cloud-marketing-sunset-2027",
+      "claim": "Cloud API stops supporting marketing messages on 13 October 2027, after which a marketing send on Cloud API errors",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview",
+      "raw_snippet": "Cloud API will stop supporting marketing messages on **October 13, 2027**",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/compliance-checklist.md",
+        "references/domain-checklist.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "cloud-marketing-sunset-2027-2",
+      "claim": "Cloud API stops supporting marketing messages on 13 October 2027, after which a marketing send on Cloud API errors",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview",
+      "raw_snippet": "After this date, sending marketing messages on Cloud API will produce an error",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/compliance-checklist.md",
+        "references/domain-checklist.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "mm-new-accounts-apr-2027",
+      "claim": "A Messaging account created on or after 13 April 2027 cannot send marketing messages via Cloud API",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview",
+      "raw_snippet": "April 13, 2027**. Any new Messaging account created on or after this date will not be able to send marketing messages via Cloud API",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/compliance-checklist.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "mm-other-messaging-unaffected",
+      "claim": "Service, authentication and utility messages stay on Cloud API",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview",
+      "raw_snippet": "Service, authentication, and utility messages will continue to be supported on the Cloud API",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "mm-same-schema",
+      "claim": "The Marketing Messages API has a similar technical schema and the same billing model as Cloud API",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview",
+      "raw_snippet": "MM API for WhatsApp offers a similar technical schema and the same billing model as Cloud API",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "mm-endpoint",
+      "claim": "Marketing templates are sent to /<PHONE_NUMBER_ID>/marketing_messages; all other categories to /messages. In the skill: `POST /{phone_number_id}/marketing_messages`",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/route-template-messages",
+      "raw_snippet": "`MARKETING` | `/<PHONE_NUMBER_ID>/marketing_messages`",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "mm-route-latest-category",
+      "claim": "Route each send by the template's latest category, because a UTILITY template can be changed to MARKETING after approval",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/route-template-messages",
+      "raw_snippet": "A template's category can change after approval",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/compliance-checklist.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "mm-route-latest-category-2",
+      "claim": "Route each send by the template's latest category, because a UTILITY template can be changed to MARKETING after approval",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/route-template-messages",
+      "raw_snippet": "Use the latest category to select the send endpoint",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/compliance-checklist.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "mm-category-webhook",
+      "claim": "Update the category mapping from the template category update webhook only after the completed notification",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/route-template-messages",
+      "raw_snippet": "Update the active mapping and cache only after the completed notification",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "mm-disable-flag-131063",
+      "claim": "With disable_marketing_messages_on_cloud_api set to true, /messages rejects marketing templates with error 131063",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/route-template-messages",
+      "raw_snippet": "Then `/messages` rejects marketing templates with error `131063`",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "error-131063",
+      "claim": "Error 131063: the template is categorized as Marketing but marketing templates are disabled for the Cloud API configuration",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "Your template is categorized as Marketing, but marketing templates are currently disabled for your Cloud API configuration",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "mm-accept-terms",
+      "claim": "Using the Marketing Messages API starts with accepting its Terms of Service in the App Dashboard Quickstart panel",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/get-started",
+      "raw_snippet": "Step 1: Accept Terms of Service",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "max-price-open-beta",
+      "claim": "Max price on the Marketing Messages API entered open beta on 1 October 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/pricing",
+      "raw_snippet": "Max price enters open beta on October 1, 2026",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "max-price-ga-q2-2027",
+      "claim": "At general availability in Q2 2027 max price becomes required in eligible geographies and fixed published marketing rates apply only on Cloud API",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/pricing",
+      "raw_snippet": "General Availability (GA) as of **Q2 2027**",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "max-price-ga-q2-2027-2",
+      "claim": "At general availability in Q2 2027 max price becomes required in eligible geographies and fixed published marketing rates apply only on Cloud API",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/pricing",
+      "raw_snippet": "The max price feature will become required in eligible geographies and fixed, published rates for marketing messages will only apply on the Cloud API",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "max-price-bid-amount",
+      "claim": "Max price is expressed as bid_amount per 1,000 deliveries in optimization_spec",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/pricing",
+      "raw_snippet": "value per 1,000 deliveries within the `optimization_spec` object",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-ga-dates",
+      "claim": "The new account model became generally available on 23 September 2026 and reaches all businesses by mid-October 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "The new account model becomes generally available on September 23, 2026, and reaches all businesses by mid-October 2026",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/bsp-selection.md"
+      ]
+    },
+    {
+      "claim_id": "ame-ids-keep-working",
+      "claim": "Existing IDs, endpoints and access tokens keep working throughout the rollout",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Your existing IDs, endpoints, and access tokens keep working throughout the rollout",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ame-waac-contents",
+      "claim": "A WhatsApp account holds a single business phone number, the business profile and catalogs, is always owned by the client or direct developer, and can be shared with multiple partners",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "A WAAC is always owned by the client or direct developer and can be shared across direct integrations and multiple partners",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/bsp-selection.md"
+      ]
+    },
+    {
+      "claim_id": "ame-messaging-account-contents",
+      "claim": "A Messaging account is a container for templates, billing and webhook subscriptions",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "a container for your templates, billing, and webhook subscriptions",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-waba-ids",
+      "claim": "Existing WABA IDs denote Messaging account IDs",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Existing WABA IDs remain the same and denote Messaging account IDs",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/template-rejections.md"
+      ]
+    },
+    {
+      "claim_id": "ame-partner-own-account",
+      "claim": "Each partner working with a client gets its own Messaging account",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Each partner working with a client gets their own Messaging account",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-no-number-migration",
+      "claim": "Migrating a business phone number from one Solution Partner to another is not supported in the new account model; the client shares its WhatsApp account instead and the number does not move",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Migrating a business phone number from one Solution Partner to another is not supported in the new account model",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/bsp-selection.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-no-number-migration-2",
+      "claim": "Migrating a business phone number from one Solution Partner to another is not supported in the new account model; the client shares its WhatsApp account instead and the number does not move",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "The number does not move, conversations are uninterrupted",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/bsp-selection.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-template-isolation",
+      "claim": "Templates belong to the Messaging account they were created in and are not shared across Messaging accounts",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Templates belong to the Messaging account in which they were created and are not shared across Messaging accounts",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/bsp-selection.md"
+      ]
+    },
+    {
+      "claim_id": "ame-template-migration-reset",
+      "claim": "Migrated templates' quality ratings and messaging tier reset to baseline, with a ramp-up of approximately 2 to 4 weeks",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "When templates are migrated to a new Messaging account, their quality ratings and messaging tier reset to baseline, requiring a ramp-up period of approximately 2-4 weeks",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/bsp-selection.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-credit-line",
+      "claim": "A client-owned Messaging account carrying a partner credit line cannot be shared with another partner",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "If you attach your credit line to a client owned Messaging account, that Messaging account cannot be shared with another partner",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/bsp-selection.md"
+      ]
+    },
+    {
+      "claim_id": "ame-shared-throughput-limits",
+      "claim": "Partners sharing a phone number share its throughput and the portfolio-level messaging limit",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "When multiple partners share a phone number, they share the phone number's throughput capacity",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-shared-throughput-limits-2",
+      "claim": "Partners sharing a phone number share its throughput and the portfolio-level messaging limit",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "the messaging limit (unique users per 24-hour period) is shared across all partners on that number",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-messaging-account-id",
+      "claim": "messaging_account_id should be sent when the token has messaging access to more than one Messaging account on the number; paid_messaging_account_id remains as a deprecated alias",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Include it whenever the access token you are sending with has messaging access to more than one Messaging account",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-messaging-account-id-2",
+      "claim": "messaging_account_id should be sent when the token has messaging access to more than one Messaging account on the number; paid_messaging_account_id remains as a deprecated alias",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "is supported as a deprecated, backward-compatible alias",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-phases-2027-2028",
+      "claim": "A new Graph API version in H1 2027 requires messaging_account_id for multi-Messaging-account setups; from H1 2028 APIs that target a phone number ID must use WAAC IDs",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Newest Messages API version requires `messaging_account_id` for multi-Messaging account setups",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-phases-2027-2028-2",
+      "claim": "A new Graph API version in H1 2027 requires messaging_account_id for multi-Messaging-account setups; from H1 2028 APIs that target a phone number ID must use WAAC IDs",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "must use WAAC IDs instead",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ame-mbs-tabs",
+      "claim": "After migration Meta Business Suite shows separate WhatsApp Accounts and Messaging Accounts tabs; until then WhatsApp Manager shows the previous WABA experience",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Meta Business Suite shows WhatsApp Accounts and Messaging Accounts tabs",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-mbs-tabs-2",
+      "claim": "After migration Meta Business Suite shows separate WhatsApp Accounts and Messaging Accounts tabs; until then WhatsApp Manager shows the previous WABA experience",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "continue to show the previous WhatsApp Business account (WABA) experience",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-own-payment-method",
+      "claim": "Each Messaging account has its own payment method",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Each Messaging account has its own payment method",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-2fa-pin",
+      "claim": "The 6-digit 2FA PIN is being deprecated for eligible Cloud API numbers; keep sending a valid pin on register calls until an API change is announced",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "The 2FA PIN is deprecated for eligible Cloud API phone numbers",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-2fa-pin-2",
+      "claim": "The 6-digit 2FA PIN is being deprecated for eligible Cloud API numbers; keep sending a valid pin on register calls until an API change is announced",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "Continue sending a valid 6-digit `pin` parameter",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "es-v2-v3-deprecated",
+      "claim": "Embedded Signup v2 and v3 and their public previews were deprecated on 15 October 2026 and are served as v4; the latest version is v5",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/versions",
+      "raw_snippet": "v2, v3 and their public preview versions were deprecated on October 15, 2026",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "es-v2-v3-deprecated-2",
+      "claim": "Embedded Signup v2 and v3 and their public previews were deprecated on 15 October 2026 and are served as v4; the latest version is v5",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/versions",
+      "raw_snippet": "are served as v4",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "es-v2-v3-deprecated-3",
+      "claim": "Embedded Signup v2 and v3 and their public previews were deprecated on 15 October 2026 and are served as v4; the latest version is v5",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/versions",
+      "raw_snippet": "The latest Embedded Signup Version is: `v5`",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-four-channels-consent",
+      "claim": "Section 30א(ב): no advertising by fax, automatic dialling system, electronic message or SMS without the recipient's prior express consent in writing; WhatsApp is not named",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "לא ישגר מפרסם דבר פרסומת באמצעות פקסימיליה, מערכת חיוג אוטומטי, הודעה אלקטרונית או הודעת מסר קצר, בלא קבלת הסכמה מפורשת מראש של הנמען, בכתב",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-electronic-message-def",
+      "claim": "An electronic message is defined as an encoded message carried over the internet that can be stored and retrieved by computer",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "מסר בזק מקודד המועבר ברשת האינטרנט אל נמען או קבוצה של נמענים, וניתן לשמירה ולאחזור בדרך ממוחשבת",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-advert-definition",
+      "claim": "A דבר פרסומת includes a commercial message encouraging a purchase or spending, and a message to the public soliciting a donation or propaganda",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "מסר המופץ באופן מסחרי, שמטרתו לעודד רכישת מוצר או שירות או לעודד הוצאת כספים בדרך אחרת",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-c-existing-customer",
+      "claim": "Section 30א(ג): advertising without consent is permitted when the recipient gave details during a purchase or negotiation and was notified, had a chance to refuse and did not, and the advert concerns a similar kind of product",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "הנמען מסר את פרטיו למפרסם במהלך רכישה של מוצר או שירות, או במהלך משא ומתן לרכישה כאמור",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-c-existing-customer-2",
+      "claim": "Section 30א(ג): advertising without consent is permitted when the recipient gave details during a purchase or negotiation and was notified, had a chance to refuse and did not, and the advert concerns a similar kind of product",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-d2-ongoing-ends",
+      "claim": "Section 30א(ד)(2): when an ongoing purchase relationship ends, the recipient is treated as having given a refusal notice",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "יראו את הנמען כמי שנתן הודעת סירוב במועד סיום ההתקשרות",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-d1-refusal-channel",
+      "claim": "A refusal is given in writing or by the channel the advertising was sent on, at the recipient's choice",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "הודעת הסירוב תינתן בכתב או בדרך שבה שוגר דבר הפרסומת, לפי בחירת הנמען",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-e-word-at-start",
+      "claim": "Section 30א(ה)(1)(א): the word פרסומת must appear at the start of the advertisement, and in the subject line of an electronic message",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "יופיעו בתחילת דבר הפרסומת, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md",
+        "references/template-rejections.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-e-name-address",
+      "claim": "The advertisement must state the advertiser's name, address and contact details",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-e-internet-address",
+      "claim": "For an electronic message the refusal details must include a valid internet address of the advertiser for giving a refusal",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "כתובת תקפה של המפרסם ברשת האינטרנט לצורך מתן הודעת סירוב",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-e2-sms",
+      "claim": "Section 30א(ה)(2): an SMS advertisement need state only the advertiser's name and contact details for a refusal",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "מפרסם המשגר דבר פרסומת באמצעות הודעת מסר קצר יציין בדבר הפרסומת רק את שמו ואת דרכי יצירת הקשר עמו לצורך מתן הודעת סירוב",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-b1-email-only",
+      "claim": "Section 30א(ב1): the עמותה / חל\"צ donation and propaganda carve-out applies only to email",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "משלוח דבר פרסומת באמצעות דואר אלקטרוני לשם קבלת תרומה או תעמולה על ידי מפרסם שהוא עמותה או חברה לתועלת הציבור",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-business-one-off",
+      "claim": "A one-off approach to a business recipient offering to send it advertising is not a breach",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "פנייה חד־פעמית מטעם מפרסם לנמען שהוא בית עסק",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-j1-1000",
+      "claim": "Section 30א(י)(1): exemplary damages not dependent on harm, up to NIS 1,000 for each advertisement received in breach",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען בניגוד להוראות סעיף זה",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-j5-presumption",
+      "claim": "Section 30א(י)(5): an advertiser who sent in breach is presumed to have done so knowingly unless it proves otherwise",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "חזקה על מפרסם ששיגר דבר פרסומת בניגוד להוראות סעיף זה, שעשה כך ביודעין",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-f-fines",
+      "claim": "Section 30א(ו): sending in breach of (ב) or (ג) carries the Penal Law 61(א)(4) fine; missing or misleading mandatory content carries the 61(א)(3) fine",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "מפרסם המשגר דבר פרסומת בניגוד להוראות סעיפים קטנים (ב) או (ג), דינו",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-f-fines-2",
+      "claim": "Section 30א(ו): sending in breach of (ב) or (ג) carries the Penal Law 61(א)(4) fine; missing or misleading mandatory content carries the 61(א)(3) fine",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "שלא צוינו בו הפרטים האמורים בסעיף קטן (ה) באופן בולט וברור",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-h-officers",
+      "claim": "Section 30א(ח): the company manager and whoever is responsible for marketing or advertising must supervise to prevent offences",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "מנהל של תאגיד וכן מי שאחראי לתחומי השיווק או הפרסום בתאגיד",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-penal-61-amounts",
+      "claim": "סעיף 61 לחוק העונשין. Penal Law s.61(א): fine up to NIS 75,300 under (3) and up to NIS 226,000 under (4)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%A2%D7%95%D7%A0%D7%A9%D7%99%D7%9F",
+      "raw_snippet": "קנס עד 75,300 שקלים חדשים",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-penal-61-amounts-2",
+      "claim": "Penal Law s.61(א): fine up to NIS 75,300 under (3) and up to NIS 226,000 under (4)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%A2%D7%95%D7%A0%D7%A9%D7%99%D7%9F",
+      "raw_snippet": "קנס עד 226,000 שקלים חדשים",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-direct-mail-def",
+      "claim": "Direct mail is defined as a personal approach based on belonging to a population group set by characteristics of people in a database",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "פנייה אישית לאדם, בהתבסס על השתייכותו לקבוצת אוכלוסין, שנקבעה על פי אפיון אחד או יותר של בני אדם ששמותיהם כלולים במאגר מידע",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-17f-content",
+      "claim": "סעיף 17ו לחוק הגנת הפרטיות. Section 17ו(א): each direct-mail approach must state it is direct mail, the right to be deleted with an address, and the controller's identity, address and data sources",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "ציון כי הפניה היא בדיוור ישיר",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-17f-content-2",
+      "claim": "Section 17ו(א): each direct-mail approach must state it is direct mail, the right to be deleted with an address, and the controller's identity, address and data sources",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "הודעה על זכותו של מקבל הפניה להימחק מן המאגר",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-17f-content-3",
+      "claim": "Section 17ו(א): each direct-mail approach must state it is direct mail, the right to be deleted with an address, and the controller's identity, address and data sources",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "זהותו ומענו של בעל השליטה במאגר המידע שבו מצוי המידע האישי",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-17f-30-days",
+      "claim": "A written deletion demand must be acted on and confirmed in writing; if not within 30 days the person may go to the Magistrates' Court",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "לא הודיע בעל השליטה במאגר המידע כאמור בסעיף קטן (ד) תוך 30 ימים",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-17e-source-record",
+      "claim": "A database used for direct-mail services must record the source and date of each data set and to whom it was passed",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "רישום המציין את המקור שממנו קיבל כל אוסף נתונים המשמש לצורך מאגר המידע ומועד קבלתו",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-8a-10000",
+      "claim": "A database whose main purpose is passing personal data to others, including direct-mail services, must be registered if it holds data on more than 10,000 people",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "מטרתו העיקרית היא איסוף מידע אישי לשם מסירתו לאחר כדרך עיסוק או בתמורה, לרבות שירותי דיוור ישיר, ויש במאגר מידע אישי על יותר מ־10,000 בני אדם",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-a13-commencement",
+      "claim": "Amendment 13 was published on 14 August 2024 and took effect one year after publication, on 14 August 2025",
+      "source_url": "https://fs.knesset.gov.il/25/law/25_lsr_4810658.pdf",
+      "raw_snippet": "תחילתו של חוק זה שנה מיום פרסומו",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-a13-published",
+      "claim": "Amendment 13 appeared in Sefer HaChukim 3287 dated 14.8.2024",
+      "source_url": "https://fs.knesset.gov.il/25/law/25_lsr_4810658.pdf",
+      "raw_snippet": "ספר החוקים 3287, י' באב התשפ\"ד, 14.8.2024",
+      "fetched_at": "2026-11-04T10:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "fep-reply-opens-window",
+      "claim": "The free entry point window opens when the business replies within the customer service window to a user who messaged from a Click-to-WhatsApp ad; that reply is not charged",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "That message is _not_ charged and opens a Free Entry Point (\"FEP\") window, starting from the time when you responded",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "fep-up-to-7-days",
+      "claim": "The free entry point window may remain open for up to 7 days",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "The FEP window may remain open for up to 7 days",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "fep-mobile-only",
+      "claim": "The free entry point window applies only to users on the Android or iOS app; desktop and web are not supported",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "using a device running our Android or iOS app (since our desktop and web apps are not supported)",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "fep-all-free-but-mba",
+      "claim": "While the FEP window is open Meta does not charge for marketing, utility, authentication or service messages, but continues to charge Meta Business Agent messages",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "raw_snippet": "Meta continues to charge for Meta Business Agent messages in the FEP window",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "prefix-051-wecom",
+      "claim": "The 051 mobile prefix belongs to wecom",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "051 XXX-XXXX +972 51 XXX-XXXX wecom",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "prefix-056-ooredoo",
+      "claim": "056 is a +972 mobile prefix of Ooredoo Palestine, Palestinian territories only",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "056 XXX-XXXX +972 56 XXX-XXXX Ooredoo Palestine Palestinian territories only",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "prefix-059-jawwal",
+      "claim": "059 is a +972 mobile prefix of Jawwal, Palestinian territories only",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "059 XXX-XXXX +972 59 XXX-XXXX Jawwal Palestinian territories only",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "prefix-057-retired",
+      "claim": "HOT Mobile used the 057 area code until November 2014",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "Operator was using the area code 057 until November 2014",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "prefix-050-058",
+      "claim": "050 Pelephone, 052 Cellcom, 054 Partner and 058 Golan Telecom are +972 mobile prefixes",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "050 XXX-XXXX +972 50 XXX-XXXX Pelephone",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "prefix-058-golan",
+      "claim": "058 is Golan Telecom",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "058 XXX-XXXX +972 58 XXX-XXXX Golan Telecom",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "prefix-055-mvno",
+      "claim": "055 is split into ranges including Cellcom and virtual operators such as 019 Mobile",
+      "source_url": "https://en.wikipedia.org/wiki/Telephone_numbers_in_Israel",
+      "raw_snippet": "019 Mobile (019 Telzar) Virtual operator",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "payments-india-doc",
+      "claim": "Meta has a Payments API for India (UPI and other methods) in addition to Brazil; its in-chat payments documentation does not cover Israel",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/overview",
+      "raw_snippet": "The Payments API enables you to accept payments from your customers through all UPI apps installed on their devices",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "auth-preset-text",
+      "claim": "Authentication templates consist of fixed, non-customizable preset text with an optional security disclaimer and expiration warning",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates",
+      "raw_snippet": "Fixed, non-customizable **preset text**",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "auth-buttons",
+      "claim": "Authentication templates carry a one-tap autofill or copy code button, or no button for zero-tap",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates",
+      "raw_snippet": "Either a **one-tap autofill** button, a **copy code** button, or no button at all if using [zero-tap]",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "auth-must-use",
+      "claim": "OTPs and verification codes must be sent with an authentication template",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates",
+      "raw_snippet": "you must use an authentication template",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "auth-send-code-body-and-button",
+      "claim": "An authentication template send passes the code as a body parameter and as the parameter of the URL button at index 0",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates",
+      "raw_snippet": "\"type\": \"button\", \"sub_type\": \"url\", \"index\": \"0\", \"parameters\": [ { \"type\": \"text\", \"text\": \"<ONE-TIME PASSWORD>\" } ]",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "tpl-positional-default",
+      "claim": "Template parameters are positional by default unless parameter_format named is specified",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview",
+      "raw_snippet": "If you do not specify a format, the template uses `positional` format by default",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "tpl-named-lowercase",
+      "claim": "Named parameters are unique single strings of lowercase characters and underscores in double curly brackets",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview",
+      "raw_snippet": "Parameters using the named format must be unique, single strings, composed of lowercase characters and underscores",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "tpl-named-send",
+      "claim": "Named parameters are sent with parameter_name in the send payload",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview",
+      "raw_snippet": "\"type\": \"text\", \"parameter_name\": \"first_name\", \"text\": \"Jessica\"",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "tpl-name-rules",
+      "claim": "Template names are lowercase alphanumeric characters and underscores, up to 512 characters",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview",
+      "raw_snippet": "consisting of lowercase alphanumeric characters and underscores",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "tpl-same-name-languages",
+      "claim": "Templates can share a name across different languages",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview",
+      "raw_snippet": "This flexibility allows you to create multiple templates with the same name, but in different languages",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "lang-hebrew-he",
+      "claim": "The template language code for Hebrew is he",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages",
+      "raw_snippet": "| Hebrew | `he` |",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "button-url-param-send",
+      "claim": "A URL button parameter is sent as a button component with sub_type url and an index",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/components",
+      "raw_snippet": "\"type\": \"button\", \"sub_type\": \"url\", \"index\": \"0\"",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "webhook-signature-header",
+      "claim": "Meta signs webhook payloads in the X-Hub-Signature-256 header as sha256=<hash of the payload>",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint",
+      "raw_snippet": "X-Hub-Signature-256: sha256=<SHA256_PAYLOAD_HASH>",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "token-permissions",
+      "claim": "The system user token needs business_management, whatsapp_business_messaging and whatsapp_business_management permissions",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started",
+      "raw_snippet": "Add the following permissions to the token",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "token-permission-names",
+      "claim": "Permission names: whatsapp_business_messaging, whatsapp_business_management",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started",
+      "raw_snippet": "[whatsapp_business_messaging](https://developers.facebook.com/docs/permissions#w) - [whatsapp_business_management]",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "calling-user-initiated-free",
+      "claim": "All user-initiated calls are free",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/pricing",
+      "raw_snippet": "All user-initiated calls are free.",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "calling-pulses",
+      "claim": "Businesses are charged for calls by duration in six-second pulses, the called number's country code and a monthly volume tier",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/pricing",
+      "raw_snippet": "Duration of the call (calculated in six-second pulses)",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "error-130403",
+      "claim": "Error 130403: the business has blocked the end user; do not retry, unblock first",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "Unable to deliver the message. This business has blocked the end user on WhatsApp",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "error-130472",
+      "claim": "Error 130472: message not sent as part of an experiment",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "Message was not sent as part of an [experiment]",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "error-132015",
+      "claim": "Error 132015: template paused due to low quality",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "Template is paused due to [low quality]",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "error-132016",
+      "claim": "Error 132016: template paused too many times and permanently disabled",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes",
+      "raw_snippet": "and is now permanently disabled",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "cat-ladder-warning",
+      "claim": "After a categorization warning, utility-to-marketing category changes become instant with no advance notice",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
+      "raw_snippet": "After a warning, utility-to-marketing category changes become instant with no advance notice",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "cat-ladder-rate-limit",
+      "claim": "Rate limiting caps utility volume within a rolling 24 hours and rejects messages over the cap, for at least 7 days",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
+      "raw_snippet": "Utility message volume on the Messaging account is capped within a 24-hour rolling window. Messages exceeding the cap are rejected.",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "cat-ladder-portfolio",
+      "claim": "A business portfolio level restriction recategorizes utility templates across all Messaging accounts for 30 days",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization",
+      "raw_snippet": "all approved utility templates across all Messaging accounts are recategorized to `MARKETING`",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "pacing-manual-unpause",
+      "claim": "Templates paused during Template Pacing must be manually unpaused through the API or WhatsApp Manager; the API call is `POST /{template_id}/unpause` (Meta writes the ID as whats_app_message_template_id)",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pausing",
+      "raw_snippet": "templates paused during Template Pacing must be manually unpaused",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "peruser-in-window-not-counted",
+      "claim": "Marketing messages sent within an open customer service window do not count towards the per-user marketing limit",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits",
+      "raw_snippet": "Marketing messages sent within this window do not count towards the limit.",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "us-marketing-not-delivered-131049",
+      "claim": "Meta does not deliver marketing messages to WhatsApp users in the United States, returning error 131049",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/get-started",
+      "raw_snippet": "Meta does not deliver marketing messages sent to WhatsApp users in the United States (error code 131049)",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "mm-ttl",
+      "claim": "The Marketing Messages API offers message time-to-live expiration dates for time-sensitive campaigns",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview",
+      "raw_snippet": "Message time-to-live expiration dates, to avoid delayed message delivery for time-sensitive campaigns",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "mm-two-weeks",
+      "claim": "Meta says most Marketing Messages API integrations take about two weeks",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview",
+      "raw_snippet": "Most integrations may take about two weeks",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "ame-paid-alias-deadline",
+      "claim": "Meta asks integrators to migrate from paid_messaging_account_id to messaging_account_id by 31 December 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/account-model-evolution/",
+      "raw_snippet": "migrate to `messaging_account_id` by December 31, 2026",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "bsuid-request-contact-info",
+      "claim": "A REQUEST_CONTACT_INFO button can be added to utility and marketing templates or sent as an interactive message",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "a `REQUEST_CONTACT_INFO` button type is available that can be added to `utility` and `marketing` templates",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "bsuid-from-user-id",
+      "claim": "Inbound contacts webhooks carry the sender BSUID in from_user_id",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "\"from_user_id\": \"<BSUID>\"",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "bsuid-system-changed-number",
+      "claim": "A user_changed_number system message arrives when a user changes phone number, which also regenerates the BSUID",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "Will be set to `user_changed_number` when a WhatsApp user changes their phone number, which also regenerates their BSUID",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "bsuid-system-changed-user-id",
+      "claim": "A user_changed_user_id system message arrives when the BSUID changes and no phone can be shared",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "You will receive a `user_changed_user_id` system message instead when the user's BSUID changes and no phone number can be shared with you",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "bsuid-previous-user-id",
+      "claim": "System messages carry previous_user_id, the BSUID the user had before the change",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "Will be set to the BSUID the user had before the change",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "bsuid-parent",
+      "claim": "Managed businesses with multiple portfolios can enroll to receive parent BSUIDs",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "If you are a managed business and want to enroll your business portfolios to receive parent BSUIDs",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "username-reserve-june-2026",
+      "claim": "Business usernames can be reserved from 29 June 2026",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "Starting June 29, 2026 you can begin reserving your business username",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "username-not-hide-number",
+      "claim": "A business username does not hide the business phone number",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids",
+      "raw_snippet": "it will not cause your business phone number to be hidden in the app",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/platform-2026.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "webhook-mtls",
+      "claim": "WhatsApp webhooks support mutual TLS",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview",
+      "raw_snippet": "Webhooks support mutual TLS (mTLS) for added security",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-c1-notice-ways",
+      "claim": "Section 30א(ג)(1): the notice that details will be used for advertising must be given in one of the ways in subsection (ב), i.e. by fax, automatic dialling system, electronic message or SMS",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "ישמשו לצורך משלוח דבר פרסומת מטעמו, באחת הדרכים האמורות בסעיף קטן (ב)",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-30a-b-written-consent-forms",
+      "claim": "Consent must be in writing, including by electronic message or recorded call",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "בכתב, לרבות בהודעה אלקטרונית או בשיחה מוקלטת",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-17f-registration-number",
+      "claim": "Section 17ו(א)(1) requires the direct-mail statement together with the registration number of the database used for direct-mail services",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "בצירוף ציון מספר הרישום של המאגר המשמש לשירותי דיוור ישיר במרשם מאגרי מידע",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-s11-notice",
+      "claim": "סעיף 11 לחוק הגנת הפרטיות: a request for personal data for a database must be accompanied by a notice",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "פניה לאדם לקבלת מידע אישי לשם עיבודו במאגר מידע תלווה בהודעה שיצויינו בה",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-s11-voluntary",
+      "claim": "The notice states whether there is a legal duty to give the data or it is voluntary, and the result of not consenting",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "או שמסירת המידע תלויה ברצונו ובהסכמתו ומהי תוצאת אי־ההסכמה",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-s11-purpose",
+      "claim": "The notice states the purpose for which the data is requested",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "המטרה אשר לשמה מבוקש המידע",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-s11-controller",
+      "claim": "The notice states the controller's name and contact details",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "שמו של בעל השליטה במאגר המידע, ודרכי ההתקשרות עימו",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-s11-recipients",
+      "claim": "The notice states to whom the data will be passed and the purposes",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "למי יימסר המידע ומטרות המסירה",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-privacy-s11-rights",
+      "claim": "The notice states the rights of access (s.13) and correction (s.14)",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "ושל זכות לבקש תיקון של המידע האישי",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-transfer-reg1-adequacy",
+      "claim": "Reg. 1: no transfer of data from an Israeli database abroad unless the destination law gives protection not lower than Israeli law",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%94%D7%A2%D7%91%D7%A8%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%90%D7%9C_%D7%9E%D7%90%D7%92%D7%A8%D7%99_%D7%9E%D7%99%D7%93%D7%A2_%D7%A9%D7%9E%D7%97%D7%95%D7%A5_%D7%9C%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
+      "raw_snippet": "לא יעביר אדם מידע ולא יאפשר העברה של מידע ממאגר מידע בישראל אל מחוץ לגבולותיה, אלא אם כן דין המדינה שאליה מועבר המידע",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md",
+        "references/compliance-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "law-transfer-reg2-consent",
+      "claim": "Reg. 2(1): transfer is allowed if the person consented",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%94%D7%A2%D7%91%D7%A8%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%90%D7%9C_%D7%9E%D7%90%D7%92%D7%A8%D7%99_%D7%9E%D7%99%D7%93%D7%A2_%D7%A9%D7%9E%D7%97%D7%95%D7%A5_%D7%9C%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
+      "raw_snippet": "האדם שעליו המידע הסכים להעברה",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-transfer-reg2-contract",
+      "claim": "Reg. 2(4): transfer is allowed to a recipient who undertook by contract to keep the Israeli conditions",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%94%D7%A2%D7%91%D7%A8%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%90%D7%9C_%D7%9E%D7%90%D7%92%D7%A8%D7%99_%D7%9E%D7%99%D7%93%D7%A2_%D7%A9%D7%9E%D7%97%D7%95%D7%A5_%D7%9C%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
+      "raw_snippet": "המידע מועבר למי שהתחייב בהסכם עם בעל מאגר המידע שממנו מועבר המידע",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "law-transfer-reg3-undertaking",
+      "claim": "Reg. 3: the controller must ensure by the recipient's written undertaking that it protects the data and will not pass it on",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA_(%D7%94%D7%A2%D7%91%D7%A8%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%90%D7%9C_%D7%9E%D7%90%D7%92%D7%A8%D7%99_%D7%9E%D7%99%D7%93%D7%A2_%D7%A9%D7%9E%D7%97%D7%95%D7%A5_%D7%9C%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
+      "raw_snippet": "בהתחייבות בכתב של מקבל המידע, כי מקבל המידע נוקט אמצעים מספיקים להבטחת פרטיותם",
+      "fetched_at": "2026-11-04T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-law.md"
+      ]
+    },
+    {
+      "claim_id": "pacing-unpause-endpoint",
+      "claim": "Unpause a template with a POST to /{whats_app_message_template_id}/unpause",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pausing",
+      "raw_snippet": "The API by making a POST request to `/{whats_app_message_template_id}/unpause`",
+      "fetched_at": "2026-11-04T13:40:00Z",
+      "appears_in": [
+        "references/platform-2026.md"
+      ]
+    },
+    {
+      "claim_id": "header-media-send",
+      "claim": "A media header is sent as a header component whose parameter is the media type with an asset id",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/utility-templates/utility-templates",
+      "raw_snippet": "\"type\": \"header\", \"parameters\": [ { \"type\": \"<MEDIA_HEADER_TYPE>\", \"<MEDIA_HEADER_TYPE>\": { \"id\": \"<MEDIA_HEADER_ASSET_ID>\" } } ]",
+      "fetched_at": "2026-11-04T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "header-media-types",
+      "claim": "Media headers can be an image, video, gif or document such as a PDF",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/components",
+      "raw_snippet": "Media headers can be an image, video, gif, or a document such as a PDF",
+      "fetched_at": "2026-11-04T15:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "error-130472-no-resend",
+      "claim": "A marketing template withheld for an experiment fails with 130472, and resending gives the same error",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/support/experiments",
+      "raw_snippet": "Attempting to resend the message will result in the same error.",
+      "fetched_at": "2026-11-04T15:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-2026.md",
+        "scripts/send_whatsapp.py"
+      ]
+    },
+    {
+      "claim_id": "media-object-id-or-link",
+      "claim": "A media object takes an uploaded media id or a link to hosted media, which Meta does not recommend",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/image-messages",
+      "raw_snippet": "\"link\": \"<MEDIA_URL>\", <!-- Only if using hosted media (not recommended) -->",
+      "fetched_at": "2026-11-04T15:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_whatsapp.py"
+      ]
     }
   ]
 }

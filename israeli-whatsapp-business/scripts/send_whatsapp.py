@@ -3,7 +3,14 @@
 
 Recipient numbers are sent to the API WITHOUT a leading '+' and WITHOUT the
 Israeli leading zero, e.g. 972541234567. This script accepts 0521234567,
-+972521234567 and 972521234567 and normalises all three to that form.
++972521234567 and 972521234567 and normalises all three to that form. It
+rejects +9720521234567 and names the extra zero as the cause. A customer
+abroad is sent with --international and the full international number.
+
+The Shabbat and business-hours check runs for template sends only, because a
+template may be marketing. Pass --transactional for a utility or
+authentication template (an order update or an OTP) to skip it. Free-form
+replies (text, interactive, list) are in-window replies and are not checked.
 
 Usage:
     # Send template message
@@ -35,6 +42,28 @@ Usage:
     python send_whatsapp.py --mode template --to 0521234567 \
         --template-name appointment_reminder_he --dry-run
 
+    # Named template parameters ({{first_name}}) and a URL button suffix
+    # (a tracking link, or the code for a copy-code / one-tap OTP template)
+    python send_whatsapp.py --mode template --to 0521234567 --transactional \
+        --template-name shipping_update_he \
+        --named-parameters first_name=ישראל order_id=A1234 \
+        --button-url-param A1234 --dry-run
+
+    # A customer abroad (order updates to a tourist or an overseas buyer)
+    python send_whatsapp.py --mode template --international --to +447700900123 \
+        --template-name order_confirmation_en --language en --transactional --dry-run
+
+    # Send to a business-scoped user ID (a customer who has a username and
+    # arrived with no phone number). Goes in the "recipient" field.
+    python send_whatsapp.py --mode template --recipient "<BSUID from webhook>" \
+        --template-name order_update_he --dry-run
+
+    # Send a MARKETING template through the Marketing Messages API
+    # (POST /<PHONE_NUMBER_ID>/marketing_messages). Cloud API /messages stops
+    # accepting marketing templates on 13 October 2027.
+    python send_whatsapp.py --mode template --endpoint marketing \
+        --to 0521234567 --template-name holiday_sale_he --dry-run
+
 Environment variables:
     WHATSAPP_ACCESS_TOKEN   Meta System User Access Token
     WHATSAPP_PHONE_ID       WhatsApp Business Phone Number ID
@@ -53,11 +82,18 @@ except ImportError:
     print("Error: 'requests' library is required. Install with: pip install requests")
     sys.exit(1)
 
+# Israel time zone. Prefer pytz when installed, otherwise the standard
+# library's zoneinfo (Python 3.9+). Before this fallback the Shabbat and
+# business-hours check was silently skipped whenever pytz was missing.
 try:
     import pytz
-    HAS_PYTZ = True
+    ISRAEL_TZ = pytz.timezone('Asia/Jerusalem')
 except ImportError:
-    HAS_PYTZ = False
+    try:
+        from zoneinfo import ZoneInfo
+        ISRAEL_TZ = ZoneInfo('Asia/Jerusalem')
+    except Exception:  # no tz database available on this machine
+        ISRAEL_TZ = None
 
 
 API_VERSION = "v26.0"
@@ -67,7 +103,10 @@ BASE_URL = f"https://graph.facebook.com/{API_VERSION}"
 # alternation rather than a character range: the old pattern was 05[0-58],
 # a RANGE meaning {0,1,2,3,4,5,8}, which reads like a list and invites the
 # next editor to "add 056" as [0-568] and silently admit 056 AND 057.
-MOBILE_PREFIXES = ('050', '051', '052', '053', '054', '055', '058')
+# 056 (Ooredoo Palestine) and 059 (Jawwal) are +972 mobile ranges used in the
+# Palestinian territories only. They are real WhatsApp numbers, so they are
+# accepted. 057 is not a current mobile prefix (HOT moved off it in 2014).
+MOBILE_PREFIXES = ('050', '051', '052', '053', '054', '055', '056', '058', '059')
 MOBILE_RE = re.compile(r'^(?:' + '|'.join(MOBILE_PREFIXES) + r')\d{7}$')
 # Landline: area codes 2,3,4,8,9 plus the 07x non-geographic ranges, but
 # NEVER 05x. Without excluding 05 this branch matched any 10-digit 05x
@@ -83,6 +122,36 @@ DEFAULT_BUTTONS = [
 ]
 
 DRY_RUN = False
+
+# What to do for the Cloud API error codes an Israeli integration hits most.
+# Source: https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes
+ERROR_HINTS = {
+    131047: "More than 24 hours since the user last replied. Send an approved "
+            "template instead of a free-form message.",
+    131026: "Undeliverable: not a WhatsApp number, terms not accepted, or an old "
+            "WhatsApp version. Check the number format (972..., no +, no 0).",
+    130429: "Rate limit hit. Back off and retry with an increasing delay.",
+    131049: "Not delivered to keep ecosystem engagement healthy (per-user "
+            "marketing limit). Wait at least 24 hours before resending. For a "
+            "US +1 number this is permanent: marketing is not delivered there.",
+    131050: "The user stopped marketing messages from your business. Do not "
+            "retry; add them to your suppression list.",
+    131048: "Sending restricted after too many blocks or spam reports. Stop "
+            "campaigns and check quality in WhatsApp Manager.",
+    131056: "Too many messages to the same recipient in a short period. Wait "
+            "and retry.",
+    131042: "Payment method error. Fix billing on the Messaging account.",
+    131063: "Marketing templates are disabled on Cloud API for this account. "
+            "Resend with --endpoint marketing (Marketing Messages API).",
+    130472: "Not sent as part of a Meta marketing message experiment. "
+            "Resending gives the same error, so do not retry.",
+    130403: "Your business has blocked this user on WhatsApp. Unblock them "
+            "first; do not retry.",
+    132015: "The template is paused for low quality. Edit it and wait for "
+            "re-approval, or use another template.",
+    132016: "The template was paused too many times and is permanently "
+            "disabled. Create a new template.",
+}
 
 
 def _post(url: str, headers: dict, payload: dict) -> dict:
@@ -143,6 +212,23 @@ def parse_kv_pairs(items: list, what: str) -> list:
     return parsed
 
 
+def parse_name_values(items: list) -> list:
+    """Parse 'name=value' named-parameter pairs, checking Meta's name rule."""
+    out = []
+    for item in items or []:
+        if "=" not in item:
+            print(f"Error: named parameter must be name=value, got '{item}'")
+            sys.exit(1)
+        name, value = item.split("=", 1)
+        name = name.strip()
+        if not re.fullmatch(r'[a-z_]+', name):
+            print(f"Error: parameter name '{name}' must be lowercase letters "
+                  "and underscores, matching the template's {{name}}")
+            sys.exit(1)
+        out.append((name, value))
+    return out
+
+
 def validate_israeli_phone(phone: str) -> tuple[bool, str]:
     """Validate and normalize an Israeli phone number for WhatsApp.
 
@@ -189,26 +275,49 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
     return False, "Invalid Israeli phone number"
 
 
+def validate_international_phone(phone: str) -> tuple[bool, str]:
+    """Normalise a non-Israeli number given in full international form.
+
+    Accepts '+44 7700 900123' or '447700900123' and returns digits only, as
+    the API expects. Israeli numbers belong in validate_israeli_phone().
+    """
+    clean = re.sub(r'[\s\-\(\)\.\+]', '', phone)
+    if clean.startswith('00'):
+        clean = clean[2:]
+    if not clean.isdigit():
+        return False, "International number may contain digits only"
+    if clean.startswith('972'):
+        return False, "This is an Israeli number: drop --international"
+    if clean.startswith('0'):
+        return False, ("Give the full international number with its country "
+                       "code, e.g. +447700900123")
+    if not 8 <= len(clean) <= 15:
+        return False, "International number must be 8 to 15 digits with country code"
+    return True, clean
+
+
 def is_valid_sending_time() -> tuple[bool, str]:
     """Check if current time is appropriate for Israeli business messaging.
 
     Returns:
         Tuple of (is_ok, message).
     """
-    if not HAS_PYTZ:
-        return True, "pytz not installed, skipping time check"
+    if ISRAEL_TZ is None:
+        return False, ("No time zone database available, so the Shabbat and "
+                       "business-hours check cannot run. Install pytz or "
+                       "tzdata, or pass --skip-time-check deliberately.")
 
-    israel_tz = pytz.timezone('Asia/Jerusalem')
-    now = datetime.now(israel_tz)
+    now = datetime.now(ISRAEL_TZ)
     day = now.weekday()  # 0=Monday, 6=Sunday
 
-    # Friday after 14:00 -- pre-Shabbat
+    # Friday after 14:00 -- pre-Shabbat. Saturday evening also falls outside
+    # the 20:00 business-hours cutoff below, so the next window is Sunday.
     if day == 4 and now.time() > time(14, 0):
-        return False, "Pre-Shabbat hours. Send after Saturday 20:00."
+        return False, "Pre-Shabbat hours. Next send window: Sunday 08:30."
 
-    # Saturday before 20:00 -- Shabbat
-    if day == 5 and now.time() < time(20, 0):
-        return False, "Shabbat. Send after 20:00."
+    # Saturday -- Shabbat, then after 20:00 outside business hours
+    if day == 5:
+        return False, "Shabbat or Saturday night. Next send window: Sunday 08:30."
 
     # Business hours check
     if now.time() < time(8, 30) or now.time() > time(20, 0):
@@ -217,23 +326,54 @@ def is_valid_sending_time() -> tuple[bool, str]:
     return True, "OK to send."
 
 
+def recipient_fields(to: str) -> dict:
+    """Return the addressing fields for a payload.
+
+    A phone number goes in "to". A business-scoped user ID (BSUID), passed
+    with a "bsuid:" prefix by main(), goes in "recipient". The two are never
+    sent together: when both are present Meta uses the phone number.
+    """
+    if to.startswith("bsuid:"):
+        return {"recipient_type": "individual", "recipient": to[len("bsuid:"):]}
+    return {"to": to}
+
+
 def send_template_message(phone_number_id: str, access_token: str,
                           to: str, template_name: str, language: str,
-                          parameters: list) -> dict:
+                          parameters: list, endpoint: str = "messages",
+                          named: bool = False,
+                          button_url_param: str = None,
+                          button_index: int = 0,
+                          header_media: tuple = None) -> dict:
     """Send a WhatsApp template message.
 
     Args:
         phone_number_id: WhatsApp Business Phone Number ID.
         access_token: Meta System User Access Token.
-        to: Recipient number (format: 972XXXXXXXXX).
+        to: Recipient number (format: 972XXXXXXXXX), or "bsuid:<BSUID>".
         template_name: Approved template name.
         language: Template language code (e.g., "he" for Hebrew).
-        parameters: List of template parameter values.
+        parameters: List of template parameter values, or of (name, value)
+            pairs when named is True.
+        named: Send parameters with parameter_name, for a template created
+            with parameter_format "named".
+        button_url_param: Dynamic suffix for the template's URL button
+            (a tracking code, or the OTP for a copy-code template).
+        button_index: Position of that URL button among the template's
+            buttons (0 = first).
+        header_media: (type, ref) for a template with a media header, type
+            being image, document or video and ref an uploaded media ID or an
+            https link to hosted media (Meta does not recommend links).
+            Meta's pages show no send shape for a text-header variable, so
+            this function does not build one.
+        endpoint: "messages" (Cloud API) or "marketing_messages"
+            (Marketing Messages API, for templates whose latest category is
+            MARKETING).
 
     Returns:
         API response as dict.
     """
-    url = f"{BASE_URL}/{phone_number_id}/messages"
+    url = f"{BASE_URL}/{phone_number_id}/{endpoint}"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
@@ -241,7 +381,7 @@ def send_template_message(phone_number_id: str, access_token: str,
 
     payload = {
         "messaging_product": "whatsapp",
-        "to": to,
+        **recipient_fields(to),
         "type": "template",
         "template": {
             "name": template_name,
@@ -249,16 +389,26 @@ def send_template_message(phone_number_id: str, access_token: str,
         }
     }
 
-    # Add parameters if provided
+    components = []
+    if header_media:
+        mtype, ref = header_media
+        media = {"link": ref} if ref.startswith("https://") else {"id": ref}
+        components.append({"type": "header",
+                           "parameters": [{"type": mtype, mtype: media}]})
     if parameters:
-        payload["template"]["components"] = [
-            {
-                "type": "body",
-                "parameters": [
-                    {"type": "text", "text": p} for p in parameters
-                ]
-            }
-        ]
+        if named:
+            body_params = [{"type": "text", "parameter_name": k, "text": v}
+                           for k, v in parameters]
+        else:
+            body_params = [{"type": "text", "text": p} for p in parameters]
+        components.append({"type": "body", "parameters": body_params})
+    if button_url_param:
+        components.append({
+            "type": "button", "sub_type": "url", "index": str(button_index),
+            "parameters": [{"type": "text", "text": button_url_param}],
+        })
+    if components:
+        payload["template"]["components"] = components
 
     return _post(url, headers, payload)
 
@@ -284,7 +434,7 @@ def send_text_message(phone_number_id: str, access_token: str,
 
     payload = {
         "messaging_product": "whatsapp",
-        "to": to,
+        **recipient_fields(to),
         "type": "text",
         "text": {
             "preview_url": False,
@@ -318,7 +468,7 @@ def send_interactive_buttons(phone_number_id: str, access_token: str,
 
     payload = {
         "messaging_product": "whatsapp",
-        "to": to,
+        **recipient_fields(to),
         "type": "interactive",
         "interactive": {
             "type": "button",
@@ -364,7 +514,7 @@ def send_interactive_list(phone_number_id: str, access_token: str,
 
     payload = {
         "messaging_product": "whatsapp",
-        "to": to,
+        **recipient_fields(to),
         "type": "interactive",
         "interactive": {
             "type": "list",
@@ -396,7 +546,22 @@ def main():
     parser.add_argument("--mode",
                         choices=["template", "text", "interactive", "list"],
                         required=True, help="Message type to send")
-    parser.add_argument("--to", required=True, help="Recipient phone number")
+    target = parser.add_mutually_exclusive_group(required=True)
+    target.add_argument("--to", help="Recipient phone number")
+    target.add_argument("--recipient",
+                        help="Business-scoped user ID (BSUID) from a webhook, "
+                             "for a customer with no phone number on file")
+    parser.add_argument("--international", action="store_true",
+                        help="--to is a non-Israeli number in full "
+                             "international form, e.g. +447700900123")
+    parser.add_argument("--transactional", action="store_true",
+                        help="The template's LATEST category (it can change "
+                             "after approval) is utility or authentication: "
+                             "skip the Shabbat and business-hours check")
+    parser.add_argument("--endpoint", choices=["messages", "marketing"],
+                        default="messages",
+                        help="'marketing' sends a template through the "
+                             "Marketing Messages API (/marketing_messages)")
     parser.add_argument("--phone-id",
                         default=os.environ.get("WHATSAPP_PHONE_ID"),
                         help="WhatsApp Phone Number ID")
@@ -412,7 +577,22 @@ def main():
     # Template options
     parser.add_argument("--template-name", help="Template name")
     parser.add_argument("--language", default="he", help="Template language code")
-    parser.add_argument("--parameters", nargs="*", help="Template parameters")
+    params = parser.add_mutually_exclusive_group()
+    params.add_argument("--parameters", nargs="*",
+                        help="Positional template parameters ({{1}}, {{2}}...)")
+    params.add_argument("--named-parameters", nargs="*",
+                        help="Named template parameters as name=value, for a "
+                             "template created with parameter_format named")
+    parser.add_argument("--button-url-param",
+                        help="Dynamic suffix for the URL button at index 0 "
+                             "(tracking code, or the OTP for a copy-code template)")
+    parser.add_argument("--button-index", type=int, default=0,
+                        help="Position of the URL button among the template's "
+                             "buttons (default 0, the first)")
+    parser.add_argument("--header-media",
+                        help="Media header as type:ref, type being image, "
+                             "document or video and ref an uploaded media ID or "
+                             "an https link (e.g. document:1234567890)")
 
     # Text / interactive body
     parser.add_argument("--message", help="Message text (body text for "
@@ -443,30 +623,75 @@ def main():
         print("Error: --phone-id and --access-token required (or set env vars)")
         sys.exit(1)
 
-    # Validate phone number
-    is_valid, normalized = validate_israeli_phone(args.to)
-    if not is_valid:
-        print(f"Error: {normalized}")
+    if args.endpoint == "marketing" and args.mode != "template":
+        print("Error: --endpoint marketing sends template messages only")
         sys.exit(1)
 
-    # Check sending time
-    if not args.skip_time_check:
+    # Validate the recipient
+    if args.recipient:
+        if not args.recipient.strip():
+            print("Error: --recipient is empty")
+            sys.exit(1)
+        normalized = "bsuid:" + args.recipient.strip()
+    else:
+        validator = (validate_international_phone if args.international
+                     else validate_israeli_phone)
+        is_valid, normalized = validator(args.to)
+        if not is_valid:
+            print(f"Error: {normalized}")
+            sys.exit(1)
+
+    if args.mode != "template" and (args.named_parameters or args.button_url_param
+                                    or args.header_media):
+        print("Error: --named-parameters, --button-url-param and --header-media "
+              "apply to template mode")
+        sys.exit(1)
+    header_media = None
+    if args.header_media:
+        mtype, _, media_id = args.header_media.partition(":")
+        if mtype not in ("image", "document", "video") or not media_id.strip():
+            print("Error: --header-media must be image:, document: or video: "
+                  "followed by a media ID or an https:// link")
+            sys.exit(1)
+        media_id = media_id.strip()
+        if media_id.startswith("http") and not media_id.startswith("https://"):
+            print("Error: a --header-media link must be https://")
+            sys.exit(1)
+        header_media = (mtype, media_id)
+    if args.button_index < 0:
+        print("Error: --button-index must be 0 or more")
+        sys.exit(1)
+    if args.endpoint == "marketing" and args.transactional:
+        print("Error: --transactional and --endpoint marketing contradict each other")
+        sys.exit(1)
+
+    # Check sending time. Only template sends can be marketing; free-form
+    # replies (text, interactive, list) are in-window answers to the user.
+    needs_time_check = args.mode == "template" and not args.transactional
+    if needs_time_check and not args.skip_time_check:
         time_ok, time_msg = is_valid_sending_time()
         if not time_ok:
             print(f"Warning: {time_msg}")
             print("Use --skip-time-check to override.")
             sys.exit(1)
 
-    print(f"Sending {args.mode} message to: {normalized}")
+    shown = normalized.replace("bsuid:", "BSUID ", 1)
+    print(f"Sending {args.mode} message to: {shown}")
 
     # Send based on mode
     if args.mode == "template":
         if not args.template_name:
             print("Error: --template-name required for template mode")
             sys.exit(1)
+        named = bool(args.named_parameters)
+        values = (parse_name_values(args.named_parameters) if named
+                  else (args.parameters or []))
         result = send_template_message(
             args.phone_id, args.access_token, normalized,
-            args.template_name, args.language, args.parameters or []
+            args.template_name, args.language, values,
+            "marketing_messages" if args.endpoint == "marketing" else "messages",
+            named=named, button_url_param=args.button_url_param,
+            button_index=args.button_index, header_media=header_media
         )
 
     elif args.mode == "text":
@@ -507,6 +732,12 @@ def main():
         print(f"Code: {err.get('code', 'N/A')}")
         if err.get("http_status"):
             print(f"HTTP status: {err['http_status']}")
+        try:
+            hint = ERROR_HINTS.get(int(err.get("code")))
+        except (TypeError, ValueError):
+            hint = None
+        if hint:
+            print(f"What to do: {hint}")
         sys.exit(1)
     else:
         msg_id = result.get("messages", [{}])[0].get("id", "N/A")
