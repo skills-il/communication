@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-sms-gateway",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-11-11T00:00:00Z",
   "claims": [
     {
       "claim_id": "spam-law-30a-definition",
@@ -115,7 +115,7 @@
     },
     {
       "claim_id": "spam-law-30a-i1-damages-knowingly",
-      "claim": "Section 30A(i)(1): the up-to-1,000 NIS damages figure applies only where the advertisement was sent KNOWINGLY (ביודעין), and it is a discretionary ceiling the court MAY award, not an automatic per-message tariff. 1,000 שקלים חדשים is the statutory cap.",
+      "claim": "Section 30A(j)(1) [30א(י)(1)]: the up-to-1,000 NIS damages figure applies only where the advertisement was sent KNOWINGLY (ביודעין), and it is a discretionary ceiling the court MAY award, not an automatic per-message tariff. 1,000 שקלים חדשים is the statutory cap.",
       "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
       "raw_snippet": "ביודעין בניגוד להוראות סעיף זה, רשאי בית המשפט לפסוק בשל הפרה זו פיצויים שאינם תלויים בנזק (בסעיף זה – פיצויים לדוגמה), בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען בניגוד להוראות סעיף זה;",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -126,7 +126,7 @@
     },
     {
       "claim_id": "spam-law-30a-i5-knowingly-presumption",
-      "claim": "Section 30A(i)(5): an advertiser is PRESUMED to have acted knowingly unless it proves otherwise, and no defence is available at all where the message was sent after a refusal notice, or where the number came from a randomly generated list.",
+      "claim": "Section 30A(j)(5) [30א(י)(5)]: an advertiser is PRESUMED to have acted knowingly unless it proves otherwise, and no defence is available at all where the message was sent after a refusal notice, or where the number came from a randomly generated list.",
       "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_%28%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D%29",
       "raw_snippet": "חזקה על מפרסם ששיגר דבר פרסומת בניגוד להוראות סעיף זה, שעשה כך ביודעין כאמור בפסקה (1), אלא אם כן הוכיח אחרת",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -148,7 +148,7 @@
     },
     {
       "claim_id": "privacy-amendment-13-authority",
-      "claim": "Privacy Protection Law Amendment 13 (in force 14 August 2025) is administered by the Privacy Protection Authority, whose department page is the cited landing page. The page is served behind a bot filter that returns HTTP 403 to plain fetches, so it was confirmed by loading it in a real browser.",
+      "claim": "The Privacy Protection Authority is the regulator for Privacy Protection Law Amendment 13 (the 14.8.2025 in-force date is evidenced separately in amendment-13-in-force-14-8-2025).",
       "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
       "raw_snippet": "שירות זה מאפשר לרשום מאגר מידע, כהגדרתו בחוק הגנת הפרטיות, במרשם מאגרי המידע",
       "verified_via": "browser",
@@ -172,7 +172,7 @@
     },
     {
       "claim_id": "sender-id-no-verification-cases",
-      "claim": "Alphanumeric (Latin-text) sender IDs, withheld senders, and provider-supplied virtual numbers do NOT require the ownership verification step. Numeric mobile senders are verified via a link sent to that handset; numeric landline senders by calling from that line.",
+      "claim": "Under the 3.1.2021 rule, alphanumeric (Latin-text) sender IDs, withheld senders, and provider-supplied virtual numbers are exempt from the NUMBER ownership verification step (a separate 2022/2023 identity-verification duty applies to the sending business). Numeric mobile senders are verified via a link sent to that handset; numeric landline senders by calling from that line.",
       "source_url": "https://www.sms4free.co.il/Regulation.html",
       "raw_snippet": "זיהוי שולח שמי (טקסט באנגלית)",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -296,7 +296,7 @@
     },
     {
       "claim_id": "sms4free-v2-endpoint-and-envelope",
-      "claim": "SMS4Free live send endpoint is https://api.sms4free.co.il/ApiSMS/v2/SendSMS. Established by live HTTP probe on 2026-08-09, since the vendor's API page renders its details client-side: v2 answered HTTP 400 with the JSON envelope {\"status\":-1,\"message\":\"Incorrect key, username or password\"}, while the v1 path /ApiSMS/SendSMS answered HTTP 200 with the bare body -1, and the legacy host path www.sms4free.co.il/ApiSMS/SendSMS answered HTTP 302 redirecting to the site homepage. This is the sole basis for the claim that -1 means authentication failure and that v1 and v2 return different response types; no other status code is asserted.",
+      "claim": "SMS4Free live send endpoint is https://api.sms4free.co.il/ApiSMS/v2/SendSMS. Established by live HTTP probe on 2026-08-09, since the vendor's API page renders its details client-side: v2 answered HTTP 400 with the JSON envelope {\"status\":-1,\"message\":\"Incorrect key, username or password\"}, while the v1 path /ApiSMS/SendSMS answered HTTP 200 with the bare body -1, and the legacy host path www.sms4free.co.il/ApiSMS/SendSMS answered HTTP 302 redirecting to the site homepage. Together with the developer docs status table, this supports the claim that -1 means authentication failure and that v1 and v2 return different response types; no other status code is asserted.",
       "source_url": "https://www.sms4free.co.il/SMSByAPI.html",
       "raw_snippet": "https://api.sms4free.co.il/ApiSMS/v2/SendSMS",
       "verified_via": "browser",
@@ -438,16 +438,434 @@
     },
     {
       "claim_id": "activetrail-sms",
-      "claim": "ActiveTrail offers SMS bundled with its marketing automation plans.",
+      "claim": "ActiveTrail offers SMS campaigns within its marketing platform.",
       "source_url": "https://www.activetrail.co.il/",
-      "raw_snippet": "מערכת דיוור: אוטומציות ומסעות לקוח באקטיב טרייל",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "שליחת קמפיין SMS ישירות מהמחשב",
+      "fetched_at": "2026-11-11T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "moc-numbering-plan-07p",
+      "claim": "Ministry of Communications numbering plan (edition 4, 02.02.2023): non-geographic numbers are 10 digits in the pattern 07P-NXX-XXXX with P=2-9, so 070 and 071 are outside the plan; geographic numbers are 9 digits 0A-NXX-XXXX; mobile numbers 10 digits 05R-NXX-XXXX.",
+      "source_url": "https://www.gov.il/BlobFolder/policy/number_policy/en/The_numbering_plan-02-2023.pdf",
+      "raw_snippet": "הספרה P יכולה לקבל ערכים בין 2 ל-9",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/validate_phone.py",
+        "scripts/send_sms.py"
       ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-18"
+      "verified_via": "pdf",
+      "verified_at": "2026-11-11",
+      "verified_note": "Read from the PDF text layer (pdftotext) on 2026-11-11: \"מספר בן 10 ספרות, בתבנית 07P-NXX-XXXX\" followed by \"P=2-9, הספרה P יכולה לקבל ערכים בין 2 ל-9\"."
+    },
+    {
+      "claim_id": "twilio-il-landline-21614",
+      "claim": "Twilio cannot send SMS to an Israeli landline destination: the REST API returns HTTP 400 with error code 21614.",
+      "source_url": "https://www.twilio.com/en-us/guidelines/il/sms",
+      "raw_snippet": "You cannot send SMS to a landline destination number: the Twilio REST API will throw a 400 response with error code 21614",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "twilio-il-non-real-sender",
+      "claim": "Twilio Israel: using a local non-real number (for example a company fixed-line number) as the sender ID is not allowed and will most probably be rejected by the network operator.",
+      "source_url": "https://www.twilio.com/en-us/guidelines/il/sms",
+      "raw_snippet": "The use of Local Non-Real Numbers as a Sender ID (for example the fixed-line number of a company) is not allowed in Israel and will most probably result in SMS rejection by the network operator.",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "sms4free-status-codes",
+      "claim": "SMS4Free publishes status codes: positive = recipients accepted, 0 general error, -1 bad key/user/password, -2 invalid sender, -3 no recipients, -4 low balance, -5 message not valid, -6 sender number not first-verified.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "-6 מספר שולח לא עבר אימות ראשוני",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "sms4free-status-codes-b",
+      "claim": "SMS4Free status -1 = wrong key, username or password; -2 = invalid sender ID.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "-1 מפתח, שם משתמש או סיסמה שגויים",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "sms4free-status-codes-c",
+      "claim": "SMS4Free status -4 = insufficient message balance; -5 = message content not valid.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "-4 לא ניתן לשלוח הודעה — יתרת הודעות פנויות נמוכה",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "sms4free-http200-not-confirmation",
+      "claim": "SMS4Free: an HTTP 200 is not confirmation by itself, always check status; positive status is the number of messages accepted.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "קוד HTTP 200 אינו אישור בפני עצמו",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "sms4free-recipient-formats",
+      "claim": "SMS4Free accepts recipients as 05XXXXXXXX, 9725XXXXXXXX or +9725XXXXXXXX.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "מתקבלים 05XXXXXXXX , 9725XXXXXXXX , +9725XXXXXXXX",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "sms4free-trial-sender-locked",
+      "claim": "SMS4Free free trial: the sender is limited to the signup mobile number; after buying a package up to 11 Latin letters/digits or a verified number.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "עם 10 ההודעות החינמיות – רק מספר הנייד שנרשמתם איתו",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "sms4free-dlr-returnurl",
+      "claim": "SMS4Free DLR: pass returnUrl and usermsgid; SMS4Free POSTs form-encoded to, status, msgId. Statuses: 1 delivered, 5 not delivered, 6 kosher number.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "סטטוס נפוץ: 1 נמסר, 5 לא נמסר, 6 מספר כשר",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "sms4free-dlr-returnurl-b",
+      "claim": "SMS4Free DLR webhook is requested by passing returnUrl and usermsgid on the send.",
+      "source_url": "https://www.sms4free.co.il/docs/otp-api.html",
+      "raw_snippet": "דוחות מסירה (DLR / Webhook) זמין בשליחה העבירו returnUrl + usermsgid",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "inforu-phone-local-format",
+      "claim": "InforU SMS examples show the recipient phone in local format 0541234567.",
+      "source_url": "https://apidoc.inforu.co.il/api/collections/15332030/TzeWFTF1?segregateAuth=true&versionTag=latest",
+      "raw_snippet": "\\\"Phone\\\": \\\"0541234567\\\"",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/send_sms.py"
+      ]
+    },
+    {
+      "claim_id": "inforu-rate-limit",
+      "claim": "InforU API rate limit is 30 calls per second; calls over it return -429.",
+      "source_url": "https://apidoc.inforu.co.il/api/collections/15332030/TzeWFTF1?segregateAuth=true&versionTag=latest",
+      "raw_snippet": "API rate limit is 30 calls per second. Additional calls made over 30 per second will return -429 Too many request.",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "inforu-dlr-push",
+      "claim": "InforU can push delivery reports to a URL set in Settings.DeliveryNotificationUrl.",
+      "source_url": "https://apidoc.inforu.co.il/api/collections/15332030/TzeWFTF1?segregateAuth=true&versionTag=latest",
+      "raw_snippet": "DeliveryNotificationUrl",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "019sms-phone-format",
+      "claim": "019 SMS destination phone must be formatted 5xxxxxxx or 05xxxxxxx.",
+      "source_url": "https://docs.019sms.co.il/sms/send-sms.html",
+      "raw_snippet": "must be formatted : 5xxxxxxx or 05xxxxxxx",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "019sms-success-status-0",
+      "claim": "019 SMS success response carries status 0 and \"SMS will be sent\".",
+      "source_url": "https://docs.019sms.co.il/sms/send-sms.html",
+      "raw_snippet": "SMS will be sent",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-propaganda-excludes-political",
+      "claim": "Section 30A defines תעמולה as spreading ideas to influence positions or behaviour, EXCLUDING any political message, including election propaganda.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "למעט אם יש בה מסר פוליטי, ובכלל זה תעמולת בחירות",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-call-number-limb",
+      "claim": "Section 30A definition limb (3): a message to the general public that invites the recipient to call a specific phone number to receive a message is a דבר פרסומת.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "ונכללת בו הצעה לנמען להתקשר למספר טלפון מסוים לשם קבלת מסר כלשהו",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "moc-phishing-reform-2022",
+      "claim": "Ministry of Communications anti-phishing reform decided October 2022: a distributor using bulk SMS distribution systems must pass strong identity verification, e.g. a video call with identity documents, plus verification of the paying credit card; implementation within half a year.",
+      "source_url": "https://www.israeldefense.co.il/node/56135",
+      "raw_snippet": "מפיץ מסרונים המשתמש במערכות הפצת מסרונים יחויב לעבור אימות חזק ואמין כדוגמת הזדהות באמצעות שיחת וידאו מול גורם אנושי",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "moc-phishing-reform-2022-b",
+      "claim": "The reform was announced 25/10/2022 and includes verification of the credit card used to buy the distribution package.",
+      "source_url": "https://www.israeldefense.co.il/node/56135",
+      "raw_snippet": "יתבצע אימות על כרטיס האשראי",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "sender-alnum-restricted-25-4-2023",
+      "claim": "Providers report textual (alphanumeric) sender names have been restricted under the Ministry of Communications rule in force from 25.4.2023.",
+      "source_url": "https://www.sendmsg.co.il/%D7%9E%D7%A1%D7%A4%D7%A8-%D7%A9%D7%95%D7%9C%D7%97-%D7%98%D7%A7%D7%A1%D7%98%D7%95%D7%90%D7%9C%D7%99/",
+      "raw_snippet": "בעקבות חוק שנכנס בתוקף בתאריך 25.4.2023",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "sender-alnum-no-reply-optout",
+      "claim": "A recipient cannot remove themselves through the channel of an alphanumeric sender (cannot reply), relevant to the Communications Law Amendment 40 same-channel refusal.",
+      "source_url": "https://www.sendmsg.co.il/%D7%9E%D7%A1%D7%A4%D7%A8-%D7%A9%D7%95%D7%9C%D7%97-%D7%98%D7%A7%D7%A1%D7%98%D7%95%D7%90%D7%9C%D7%99/",
+      "raw_snippet": "לא ניתן להסיר באמצעות אופן קבלת המסר (לפי חוק התקשורת, תיקון 40)",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-direct-mail-definition",
+      "claim": "Privacy Protection Law definition: direct mail (דיוור ישיר) is a personal approach to a person based on belonging to a population group defined by one or more characteristics of people whose names are in a database.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "פנייה אישית לאדם, בהתבסס על השתייכותו לקבוצת אוכלוסין, שנקבעה על פי אפיון אחד או יותר של בני אדם ששמותיהם כלולים במאגר מידע",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-17v-a-contents",
+      "claim": "Section 17ו(א): every direct-mail approach must clearly and prominently contain a statement that it is direct mail with the database registration number, notice of the right to be deleted with the address for that, and the identity and address of the database controller and the sources of the data.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "כל פניה בדיוור ישיר תכיל באופן ברור ובולט",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-17v-a-contents-b",
+      "claim": "Section 17ו(א)(2)-(3): notice of the right to be deleted plus the address; identity and address of the controller and the data sources.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "זהותו ומענו של בעל השליטה במאגר המידע שבו מצוי המידע האישי שעל פיו בוצעה הפניה, והמקורות שמהם קיבל בעל השליטה במאגר מידע זה",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-23kv-c-sanction",
+      "claim": "Section 23כו(ג): the PPA head may impose a sanction of 50 NIS (51.18 NIS in 2026) times the number of people approached, including for direct mail contrary to 17ו(א) and for collecting data without the section 11 notice.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "בסכום השווה למכפלה של 50 שקלים חדשים (מתואם לשנת 2025; בשנת 2026, 51.18 ש״ח) במספר בני האדם שאליהם נעשתה הפנייה או הדרישה",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-23kv-c-direct-mail-limb",
+      "claim": "The per-person sanction applies to approaching a person by direct mail contrary to section 17ו(א).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "פנה לאדם בדיוור ישיר, בניגוד להוראות סעיף 17ו(א)",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-23kv-c-section-11-limb",
+      "claim": "The per-person sanction applies to approaching a person to collect personal data without the section 11 notice.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "פנה לאדם לקבלת מידע אישי לשם עיבודו במאגר מידע, בלי שמסר לו הודעה כנדרש בסעיף 11",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-23kv-c-minimum",
+      "claim": "If the per-person sanction is below 30,000 NIS (30,710 NIS in 2026), a sanction of 30,000 NIS may be imposed.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "קטן מ־30,000 שקלים חדשים (מתואם לשנת 2025; בשנת 2026, 30,710 ש״ח)",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "amendment-13-in-force-14-8-2025",
+      "claim": "Privacy Protection Law Amendment 13 entered into force on 14.8.2025.",
+      "source_url": "https://www.shibolet.com/?p=23026",
+      "raw_snippet": "מאז כניסתו לתוקף של תיקון 13 לחוק הגנת הפרטיות, התשמ\"א-1981 (\" התיקון \" ו-\" החוק \", בהתאמה) ביום 14.8.2025",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-j5-prior-violation",
+      "claim": "Section 30A(j)(5)(ב) [30א(י)(5)(ב)]: no defence where the advertiser previously sent the recipient an unlawful advertisement, even unknowingly.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "המפרסם שיגר בעבר דבר פרסומת לנמען בניגוד להוראות סעיף זה, אף אם לא ביודעין",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-f-criminal",
+      "claim": "Section 30A(ו)(1): an advertiser sending contrary to subsections (ב) or (ג) (no consent) is liable to a criminal fine.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "מפרסם המשגר דבר פרסומת בניגוד להוראות סעיפים קטנים (ב) או (ג), דינו – קנס כאמור בסעיף 61(א)(4) לחוק העונשין",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-h-officers",
+      "claim": "Section 30A(ח): the company manager and whoever is responsible for marketing must supervise to prevent the offence; if the company commits it, they are presumed to have breached the duty unless they did everything possible.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "מנהל של תאגיד וכן מי שאחראי לתחומי השיווק או הפרסום בתאגיד",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-h-officers-presumption",
+      "claim": "Section 30A(ח) presumption that the officer breached the duty.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "חזקה היא כי נושא משרה בתאגיד הפר את חובתו לפי סעיף קטן זה, אלא אם כן עשה כל שניתן כדי למלא את חובתו",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-30a-e2-only-two-items",
+      "claim": "Section 30A(ה)(2): an SMS advertiser shall state ONLY its name and the contact details for sending a refusal.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/032_002.htm",
+      "raw_snippet": "יציין בדבר הפרסומת רק את שמו ואת דרכי יצירת הקשר עמו לצורך מתן הודעת סירוב",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-section-23kv-financial-sanctions",
+      "claim": "Section 23כו of the Privacy Protection Law is the financial-sanctions section (עיצומים כספיים) under which the per-recipient direct-mail sanction is imposed.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "סך העיצומים הכספיים שהוטלו לפי סעיף 23כו",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "privacy-8a-registration-narrow",
+      "claim": "After Amendment 13, section 8א(א)(1) requires database registration only where (a) the main purpose is collecting personal data to pass to others, including direct-mail services, with data on more than 10,000 people, or (b) the controller is a public body.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "מטרתו העיקרית היא איסוף מידע אישי לשם מסירתו לאחר כדרך עיסוק או בתמורה, לרבות שירותי דיוור ישיר",
+      "fetched_at": "2026-11-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

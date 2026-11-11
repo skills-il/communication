@@ -15,7 +15,12 @@ Numbering plan encoded here (see SKILL.md "Reference Links" for the source):
     Palestinian mobile  056 (Ooredoo)  059 (Jawwal)   -> rejected on purpose
     Retired mobile      057                           -> rejected on purpose
     Geographic landline 02 03 04 08 09                -> 9 local digits
-    Non-geographic      07N (landline / VoIP)         -> 10 local digits
+    Non-geographic      072 to 079 (landline / VoIP)  -> 10 local digits
+                        (MoC plan: 07P with P=2-9, so 070 and 071 are rejected)
+
+A number that validates here is a valid PHONE number, not necessarily an SMS
+destination: landlines (geographic and 07P) generally cannot receive SMS, and
+send_sms.py refuses them. Use get_phone_type() or --sms-check to tell them apart.
 """
 
 import argparse
@@ -38,8 +43,10 @@ MOBILE_RE = re.compile(r'^(?:050|051|052|053|054|055|058)\d{7}$')
 # number that does not exist. Both bugs are closed by anchoring the length and
 # by never letting 05 reach this branch.
 LANDLINE_GEO_RE = re.compile(r'^0(?:2|3|4|8|9)\d{7}$')
-# Non-geographic landline / VoIP: 07N plus seven digits, 10 local digits.
-LANDLINE_NONGEO_RE = re.compile(r'^07\d{8}$')
+# Non-geographic landline / VoIP: 07P plus seven digits, 10 local digits. The
+# Ministry of Communications numbering plan (edition 4, 02.02.2023) defines the
+# pattern as 07P-NXX-XXXX with P=2-9, so 070 and 071 are outside the plan.
+LANDLINE_NONGEO_RE = re.compile(r'^07[2-9]\d{7}$')
 
 
 def normalize(phone: str) -> str:
@@ -108,8 +115,9 @@ def validate_israeli_phone(phone: str) -> tuple[bool, str]:
         return True, '+972' + clean[1:]
 
     if clean.startswith('07'):
-        return False, ('Invalid non-geographic number. 07N landline and VoIP '
-                       'numbers are 10 digits in total.')
+        return False, ('Invalid non-geographic number. Non-geographic landline and '
+                       'VoIP numbers are 072 to 079 followed by 7 digits (10 digits '
+                       'in total); 070 and 071 are not in the numbering plan.')
 
     if clean[1] in '23489':
         return False, ('Invalid Israeli landline. Geographic numbers (02, 03, 04, '
@@ -155,15 +163,22 @@ def main():
         epilog='Example: python validate_phone.py 054-1234567',
     )
     parser.add_argument('phone', help='Phone number in local (05X...) or international (+972...) form')
+    parser.add_argument('--sms-check', action='store_true',
+                        help='Also fail (exit 2) when the number is valid but is a landline, '
+                             'which generally cannot receive SMS')
     args = parser.parse_args()
 
     is_valid, result = validate_israeli_phone(args.phone)
 
-    if is_valid:
-        print(f'Valid: {result} ({get_phone_type(args.phone)})')
-    else:
+    if not is_valid:
         print(f'Invalid: {result}')
         sys.exit(1)
+
+    phone_type = get_phone_type(args.phone)
+    print(f'Valid: {result} ({phone_type})')
+    if args.sms_check and phone_type != 'mobile':
+        print('Not an SMS destination: landline numbers generally cannot receive SMS.')
+        sys.exit(2)
 
 
 if __name__ == '__main__':

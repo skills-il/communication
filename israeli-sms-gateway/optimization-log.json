@@ -1,0 +1,15 @@
+{
+  "cycles": [
+    {
+      "version": "1.4.0",
+      "date": "2026-11-11",
+      "lessons": [
+        "Expert MINOR deferred: s.30A(a)(3) call-a-number limb carve-outs (State bodies, rescue bodies) and the s.30A(b) one-time consent request to a business are not in the skill yet.",
+        "Discretionary edits deferred over the batch cap: SMS4Free billing unit (up to 134 chars billed as one message, each further 67 another) as a worked per-message vs per-segment example; Twilio failed-message processing fee; 019 SMS limits (1005-char message, 2500 destinations per request) and its built-in unsubscribe options; InforU Whitelist sender-verification endpoints and the IgnoreUnsubscribeCheck setting (never true for marketing).",
+        "019 SMS docs at /sms/ serve real text but under the evidence gate's minimum body size, so the three 019sms-api-base-and-sandbox entries need --allow-unreachable after a curl text check each cycle.",
+        "No primary gov.il text for the adopted October 2022 anti-phishing decision was found; the skill relies on a news report of the decision and a provider's in-force date (25.4.2023). Re-check for a Ministry licence-amendment document next cycle.",
+        "Validator design choice kept: 056/059 are rejected for SMS (the WhatsApp sibling accepts them as real WhatsApp numbers). Revisit if users report legitimate recipients on those networks."
+      ]
+    }
+  ]
+}

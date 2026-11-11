@@ -48,8 +48,19 @@ except ImportError:
 # range like 05[0-8] quietly admits numbers this skill is supposed to reject.
 MOBILE_RE = re.compile(r'^(?:050|051|052|053|054|055|058)\d{7}$')
 LANDLINE_GEO_RE = re.compile(r'^0(?:2|3|4|8|9)\d{7}$')
-LANDLINE_NONGEO_RE = re.compile(r'^07\d{8}$')
+# 07P with P=2-9 per the Ministry of Communications numbering plan.
+LANDLINE_NONGEO_RE = re.compile(r'^07[2-9]\d{7}$')
 PALESTINIAN_MOBILE_PREFIXES = ('056', '059')
+
+
+def is_mobile(normalized: str) -> bool:
+    """True when a +972 number returned by validate_israeli_phone is mobile."""
+    return bool(MOBILE_RE.match('0' + normalized[4:]))
+
+
+def to_local(normalized: str) -> str:
+    """+972541234567 -> 0541234567 (the form InforU documents for Recipients.Phone)."""
+    return '0' + normalized[4:]
 
 
 def validate_israeli_phone(phone: str) -> tuple[bool, str]:
@@ -92,7 +103,7 @@ GSM7_BASIC = (
     '¿abcdefghijklmnopqrstuvwxyzäöñüà'
 )
 # Characters reachable only through the escape sequence; each costs 2 septets.
-GSM7_EXTENDED = '^{}\\[~]|€'
+GSM7_EXTENDED = '^{}\\[~]|€\f'
 
 GSM7_SINGLE, GSM7_MULTI = 160, 153
 UCS2_SINGLE, UCS2_MULTI = 70, 67
@@ -116,21 +127,31 @@ def segment_count(message: str) -> dict:
     """
     if all(c in GSM7_BASIC or c in GSM7_EXTENDED for c in message):
         encoding = 'GSM-7'
-        units = sum(2 if c in GSM7_EXTENDED else 1 for c in message)
+        costs = [2 if c in GSM7_EXTENDED else 1 for c in message]
         single, multi = GSM7_SINGLE, GSM7_MULTI
     else:
         encoding = 'UCS-2'
-        # UCS-2 bills per 16-bit code unit, so an astral character (an emoji,
-        # for instance) is a surrogate pair and costs two units, not one.
-        units = sum(2 if ord(c) > 0xFFFF else 1 for c in message)
+        # UCS-2 bills per 16-bit code unit, so an astral character (most
+        # emoji, for instance) is a surrogate pair and costs two units.
+        costs = [2 if ord(c) > 0xFFFF else 1 for c in message]
         single, multi = UCS2_SINGLE, UCS2_MULTI
 
+    units = sum(costs)
     if units == 0:
         segments = 0
     elif units <= single:
         segments = 1
     else:
-        segments = -(-units // multi)  # ceiling division
+        # Fill segments character by character: a GSM-7 escape pair or a
+        # UCS-2 surrogate pair is never split, so one that would straddle a
+        # boundary moves whole into the next segment. Plain ceil(units/multi)
+        # undercounts by one in that case.
+        segments, used = 1, 0
+        for cost in costs:
+            if used + cost > multi:
+                segments += 1
+                used = 0
+            used += cost
 
     return {
         'encoding': encoding,
@@ -158,16 +179,32 @@ def _safe_json(response):
 # Providers
 # --------------------------------------------------------------------------
 
+# Status codes published in SMS4Free's developer documentation, section 6.
+# A positive value is the number of recipients the message was accepted for.
+SMS4FREE_STATUS = {
+    0: 'General error, contact SMS4Free support',
+    -1: 'Authentication failed (key, user, or pass rejected)',
+    -2: 'Invalid sender ID (free trial: only your signup number; '
+        'paid: up to 11 Latin letters/digits or a verified number)',
+    -3: 'No valid recipients found',
+    -4: 'Insufficient message balance',
+    -5: 'Message content not valid for sending',
+    -6: 'Sender number has not passed first-time verification',
+}
+
+
 def send_sms4free(to: str, message: str, api_key: str, user: str,
                   pass_key: str, sender: str) -> dict:
     """Send SMS via SMS4Free (api.sms4free.co.il), v2 JSON endpoint.
 
     v1 (/ApiSMS/SendSMS) answers with a bare integer body and v2
     (/ApiSMS/v2/SendSMS) answers with a JSON envelope, so the two cannot share
-    a parser. This function targets v2 and reads the envelope. Only -1
-    (authentication failure) is a documented, observed code; every other
-    outcome is reported using the API's own `message` field verbatim rather
-    than a guessed lookup table.
+    a parser. This function targets v2 and reads the envelope. SMS4Free's
+    developer documentation (sms4free.co.il/docs/otp-api.html, section 6)
+    publishes the status table mirrored in SMS4FREE_STATUS below; the API's
+    own `message` field is still surfaced next to it. An authentication
+    failure comes back as HTTP 400 with a JSON body, so the body is parsed
+    regardless of the HTTP status.
 
     Args:
         to: Recipient phone number (international format).
@@ -205,11 +242,13 @@ def send_sms4free(to: str, message: str, api_key: str, user: str,
     # successful multi-recipient send.
     success = isinstance(status, int) and status > 0
 
-    if status == -1:
-        detail = 'Authentication failed (key, user, or pass rejected)'
+    if success:
+        detail = result.get('message') or f'accepted for {status} recipient(s)'
     else:
-        # Surface the API's own wording instead of inventing a code table.
-        detail = result.get('message') or f'status={status}'
+        known = SMS4FREE_STATUS.get(status) if isinstance(status, int) else None
+        api_msg = result.get('message')
+        parts = [p for p in (known, api_msg) if p]
+        detail = ' | '.join(parts) if parts else f'status={status}'
 
     return {
         'success': success,
@@ -278,7 +317,9 @@ def send_inforu(to: str, message: str, user: str, api_token: str, sender: str) -
 
     The credential pair is username plus API TOKEN, not the account password,
     and the header value must be genuinely base64-encoded. Responses carry
-    StatusId and StatusDescription; StatusId 1 is success.
+    StatusId and StatusDescription; StatusId 1 is success. The recipient is
+    sent in local form (0541234567), which is the only form InforU's SMS
+    examples show.
 
     Args:
         to: Recipient phone number (international format).
@@ -299,7 +340,7 @@ def send_inforu(to: str, message: str, user: str, api_token: str, sender: str) -
     payload = {
         'Data': {
             'Message': message,
-            'Recipients': [{'Phone': to.replace('+', '')}],
+            'Recipients': [{'Phone': to_local(to)}],
             'Settings': {'Sender': sender},
         }
     }
@@ -358,6 +399,8 @@ def main():
     parser.add_argument('--to', help='Recipient phone number (not needed with --estimate)')
     parser.add_argument('--message', required=True, help='Message text')
 
+    parser.add_argument('--allow-landline', action='store_true',
+                        help='Send even when the recipient is a landline (refused by default)')
     parser.add_argument('--estimate', action='store_true',
                         help='Only report encoding, segment count, and estimated cost. No network call.')
     parser.add_argument('--price-per-segment', type=float, default=None,
@@ -396,6 +439,12 @@ def main():
     is_valid, normalized = validate_israeli_phone(args.to)
     if not is_valid:
         print(f'Error: {normalized}')
+        sys.exit(1)
+
+    if not is_mobile(normalized) and not args.allow_landline:
+        print(f'Error: {normalized} is a valid Israeli LANDLINE number, and landlines '
+              'generally cannot receive SMS (Twilio rejects them with error 21614). '
+              'Pass --allow-landline only if your provider confirms landline delivery.')
         sys.exit(1)
 
     info = segment_count(args.message)
